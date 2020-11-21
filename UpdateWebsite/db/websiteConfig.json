@@ -1,0 +1,544 @@
+{
+    "GitRepo": [
+        "https://github.com/Fsu0413/QtCompile.git",
+        "https://e.coding.net/Fsu0413/QtCompile.git",
+        "https://pf.osdn.net/gitroot/f/fs/fsu0413/Fsu0413-QtCompile.git"
+    ],
+    "MainGitRepo": "https://github.com/Fsu0413/QtCompile.git",
+    "MainGitRepoBranch": "master",
+    "UploadRepoBranch": "gh-pages",
+    "DownloadAddresses": {
+        "SF": {
+            "UrlStartsWith": "https://sourceforge.net/projects/fsu0413-qtbuilds/files/",
+            "UploadProtocol": "sftp",
+            "UploadAddress": "sftp://frs.sourceforge.net/home/pfs/project/fsu0413-qtbuilds"
+        }
+    },
+    "Configurations": {
+        "Q2wx3v5": {
+            "Configured": true,
+            "Subdirectory": "Qt5.12/Windows-x86",
+            "FileName": "Qt5.12.8-Windows-x86-VS2015-20200411.7z",
+            "Platform": "Windows",
+            "BuildHost": "Windows 8.1 Update",
+            "CompilerVersion": "VS2015 Update 3",
+            "Architecture": "x86",
+            "mkspecs": "win32-msvc"
+        },
+        "Q2wx3v5st": {
+            "Configured": true,
+            "Subdirectory": "Qt5.12/Windows-x86",
+            "FileName": "Qt5.12.8-Windows-x86-VS2015-static-20200410.7z",
+            "Platform": "Windows",
+            "BuildHost": "Windows 8.1 Update",
+            "CompilerVersion": "VS2015 Update 3",
+            "Architecture": "x86",
+            "mkspecs": "win32-msvc",
+            "Variant": "-static"
+        },
+        "Q2wx6v5": {
+            "Configured": true,
+            "Subdirectory": "Qt5.12/Windows-x86_64",
+            "FileName": "Qt5.12.8-Windows-x86_64-VS2015-20200410.7z",
+            "Platform": "Windows",
+            "BuildHost": "Windows 8.1 Update",
+            "CompilerVersion": "VS2015 Update 3",
+            "Architecture": "x86_64",
+            "mkspecs": "win32-msvc"
+        },
+        "Q2wx3v7": {
+            "Configured": true,
+            "Subdirectory": "Qt5.12/Windows-x86",
+            "FileName": "Qt5.12.8-Windows-x86-VS2017-15.9.21-20200409.7z",
+            "Platform": "Windows",
+            "BuildHost": "Windows 10 10.0.18363",
+            "CompilerVersion": "VS2017 15.9.21",
+            "Architecture": "x86",
+            "mkspecs": "win32-msvc"
+        },
+        "Q2wx3v7st": {
+            "Configured": true,
+            "Subdirectory": "Qt5.12/Windows-x86",
+            "FileName": "Qt5.12.8-Windows-x86-VS2017-15.9.21-static-20200408.7z",
+            "Platform": "Windows",
+            "BuildHost": "Windows 10 10.0.18363",
+            "CompilerVersion": "VS2017 15.9.21",
+            "Architecture": "x86",
+            "mkspecs": "win32-msvc",
+            "Variant": "-static"
+        },
+        "Q2wx3v7sf": {
+            "Configured": true,
+            "Subdirectory": "Qt5.12/Windows-x86",
+            "FileName": "Qt5.12.8-Windows-x86-VS2017-15.9.21-staticFull-20200409.7z",
+            "Platform": "Windows",
+            "BuildHost": "Windows 10 10.0.18363",
+            "CompilerVersion": "VS2017 15.9.21",
+            "Architecture": "x86",
+            "mkspecs": "win32-msvc",
+            "Variant": "-static(Full)"
+        },
+        "Q2wx6v7": {
+            "Configured": true,
+            "Subdirectory": "Qt5.12/Windows-x86_64",
+            "FileName": "Qt5.12.8-Windows-x86_64-VS2017-15.9.21-20200409.7z",
+            "Platform": "Windows",
+            "BuildHost": "Windows 10 10.0.18363",
+            "CompilerVersion": "VS2017 15.9.21",
+            "Architecture": "x86_64",
+            "mkspecs": "win32-msvc"
+        },
+        "Q2wx6v7sf": {
+            "Configured": true,
+            "Subdirectory": "Qt5.12/Windows-x86_64",
+            "FileName": "Qt5.12.8-Windows-x86_64-VS2017-15.9.21-staticFull-20200408.7z",
+            "Platform": "Windows",
+            "BuildHost": "Windows 10 10.0.18363",
+            "CompilerVersion": "VS2017 15.9.21",
+            "Architecture": "x86_64",
+            "mkspecs": "win32-msvc",
+            "Variant": "-static(Full)"
+        },
+        "Q2wx6v7_wa6v7": {
+            "Configured": true,
+            "Subdirectory": "Qt5.12/Windows-arm64",
+            "FileName": "Qt5.12.8-Windows-arm64-VS2017-15.9.21-XWindows-x86_64-VS2017-15.9.21-20200408.7z",
+            "Platform": "Windows",
+            "BuildHost": "Windows 10 10.0.18363",
+            "CompilerVersion": "VS2017 15.9.21",
+            "Architecture": "arm64",
+            "mkspecs": "win32-arm64-msvc2017"
+        },
+        "Q2wx3v9": {
+            "Configured": true,
+            "Subdirectory": "Qt5.12/Windows-x86",
+            "FileName": "Qt5.12.8-Windows-x86-VS2019-16.5.3-20200409.7z",
+            "Platform": "Windows",
+            "BuildHost": "Windows 10 10.0.18363",
+            "CompilerVersion": "VS2019 16.5.3",
+            "Architecture": "x86",
+            "mkspecs": "win32-msvc"
+        },
+        "Q2wx6v9": {
+            "Configured": true,
+            "Subdirectory": "Qt5.12/Windows-x86_64",
+            "FileName": "Qt5.12.8-Windows-x86_64-VS2019-16.5.3-20200408.7z",
+            "Platform": "Windows",
+            "BuildHost": "Windows 10 10.0.18363",
+            "CompilerVersion": "VS2019 16.5.3",
+            "Architecture": "x86_64",
+            "mkspecs": "win32-msvc"
+        },
+        "Q2wx3m7": {
+            "Configured": true,
+            "Subdirectory": "Qt5.12/Windows-x86",
+            "FileName": "Qt5.12.8-Windows-x86-MinGW7.3.0-20200411.7z",
+            "Platform": "Windows",
+            "BuildHost": "Windows 8.1 Update",
+            "CompilerVersion": "MinGW 7.3.0",
+            "Architecture": "x86",
+            "mkspecs": "win32-g++"
+        },
+        "Q2wx3m7sf": {
+            "Configured": true,
+            "Subdirectory": "Qt5.12/Windows-x86",
+            "FileName": "Qt5.12.8-Windows-x86-MinGW7.3.0-staticFull-20200411.7z",
+            "Platform": "Windows",
+            "BuildHost": "Windows 8.1 Update",
+            "CompilerVersion": "MinGW 7.3.0",
+            "Architecture": "x86",
+            "mkspecs": "win32-g++",
+            "Variant": "-static(Full)"
+        },
+        "Q2wx6m7": {
+            "Configured": true,
+            "Subdirectory": "Qt5.12/Windows-x86_64",
+            "FileName": "Qt5.12.8-Windows-x86_64-MinGW7.3.0-20200411.7z",
+            "Platform": "Windows",
+            "BuildHost": "Windows 8.1 Update",
+            "CompilerVersion": "MinGW 7.3.0",
+            "Architecture": "x86_64",
+            "mkspecs": "win32-g++"
+        },
+        "Q2wx6m7sf": {
+            "Configured": true,
+            "Subdirectory": "Qt5.12/Windows-x86_64",
+            "FileName": "Qt5.12.8-Windows-x86_64-MinGW7.3.0-staticFull-20200410.7z",
+            "Platform": "Windows",
+            "BuildHost": "Windows 8.1 Update",
+            "CompilerVersion": "MinGW 7.3.0",
+            "Architecture": "x86_64",
+            "mkspecs": "win32-g++",
+            "Variant": "-static(Full)"
+        },
+        "Q2lx6st": {
+            "Configured": true,
+            "Platform": "Linux",
+            "BuildHost": "CentOS 8",
+            "CompilerVersion": "GCC 8.3.1",
+            "Architecture": "x86_64",
+            "mkspecs": "linux-g++",
+            "Variant": "-static",
+            "WontUploadReason": "Won't upload, only used in QQtPatcher"
+        },
+        "Q2mx6": {
+            "Configured": true,
+            "Subdirectory": "Qt5.12/macOS-x86_64",
+            "FileName": "Qt5.12.7-macOS-x86_64-AppleClang11.0.0-20200204.tar.xz",
+            "Platform": "macOS",
+            "BuildHost": "macOS 10.15",
+            "CompilerVersion": "AppleClang 11.0",
+            "Architecture": "x86_64",
+            "mkspecs": "macx-clang",
+            "Variant": "-framework",
+            "CompileFailed": true
+        },
+        "Q2mx6nf": {
+            "Configured": true,
+            "Subdirectory": "Qt5.12/macOS-x86_64",
+            "FileName": "Qt5.12.7-macOS-x86_64-AppleClang11.0.0-noFramework-20200204.tar.xz",
+            "Platform": "macOS",
+            "BuildHost": "macOS 10.15",
+            "CompilerVersion": "AppleClang 11.0",
+            "Architecture": "x86_64",
+            "mkspecs": "macx-clang",
+            "Variant": "-no-framework",
+            "CompileFailed": true
+        },
+        "Q2mx6st": {
+            "Configured": true,
+            "Platform": "macOS",
+            "BuildHost": "macOS 10.15",
+            "CompilerVersion": "AppleClang 11.0",
+            "Architecture": "x86_64",
+            "mkspecs": "macx-clang",
+            "Variant": "-static",
+            "WontUploadReason": "Won't upload, only used in QQtPatcher"
+        },
+        "Q2wx6m7_aa3nl": {
+            "Configured": true,
+            "Subdirectory": "Qt5.12/Android",
+            "FileName": "Qt5.12.8-Android-arm-Clang-NDKr21b-XWindows-x86_64-MinGW7.3.0-20200603.7z",
+            "Platform": "Android",
+            "BuildHost": "Windows 10 10.0.19041",
+            "CompilerVersion": "ndk r21b",
+            "Architecture": "arm",
+            "mkspecs": "android-clang"
+        },
+        "Q2wx6m7_aa6nl": {
+            "Configured": true,
+            "Subdirectory": "Qt5.12/Android",
+            "FileName": "Qt5.12.8-Android-arm64-Clang-NDKr21b-XWindows-x86_64-MinGW7.3.0-20200603.7z",
+            "Platform": "Android",
+            "BuildHost": "Windows 10 10.0.19041",
+            "CompilerVersion": "ndk r21b",
+            "Architecture": "arm64",
+            "mkspecs": "android-clang"
+        },
+        "Q2wx6m7_ax3nl": {
+            "Configured": true,
+            "Subdirectory": "Qt5.12/Android",
+            "FileName": "Qt5.12.8-Android-x86-Clang-NDKr21b-XWindows-x86_64-MinGW7.3.0-20200603.7z",
+            "Platform": "Android",
+            "BuildHost": "Windows 10 10.0.19041",
+            "CompilerVersion": "ndk r21b",
+            "Architecture": "x86",
+            "mkspecs": "android-clang"
+        },
+        "Q2lx6_aa3nl": {
+            "Configured": true,
+            "Subdirectory": "Qt5.12/Android",
+            "FileName": "Qt5.12.8-Android-arm-Clang-NDKr21b-xLinux-x86_64-gcc8.3.1-20200603.tar.xz",
+            "Platform": "Android",
+            "BuildHost": "CentOS 8",
+            "CompilerVersion": "ndk r21b",
+            "Architecture": "arm",
+            "mkspecs": "android-clang"
+        },
+        "Q2lx6_aa6nl": {
+            "Configured": true,
+            "Subdirectory": "Qt5.12/Android",
+            "FileName": "Qt5.12.8-Android-arm64-Clang-NDKr21b-xLinux-x86_64-gcc8.3.1-20200603.tar.xz",
+            "Platform": "Android",
+            "BuildHost": "CentOS 8",
+            "CompilerVersion": "ndk r21b",
+            "Architecture": "arm64",
+            "mkspecs": "android-clang"
+        },
+        "Q2lx6_ax3nl": {
+            "Configured": true,
+            "Subdirectory": "Qt5.12/Android",
+            "FileName": "Qt5.12.8-Android-x86-Clang-NDKr21b-xLinux-x86_64-gcc8.3.1-20200603.tar.xz",
+            "Platform": "Android",
+            "BuildHost": "CentOS 8",
+            "CompilerVersion": "ndk r21b",
+            "Architecture": "x86",
+            "mkspecs": "android-clang"
+        },
+        "Q2mx6_aa3nl": {
+            "Configured": true,
+            "Subdirectory": "Qt5.12/Android",
+            "FileName": "Qt5.12.8-Android-arm-Clang-NDKr21b-xmacOS-x86_64-AppleClang11.0.3-20200603.tar.xz",
+            "Platform": "Android",
+            "BuildHost": "macOS 10.15",
+            "CompilerVersion": "ndk r21b",
+            "Architecture": "arm",
+            "mkspecs": "android-clang"
+        },
+        "Q2mx6_aa6nl": {
+            "Configured": true,
+            "Subdirectory": "Qt5.12/Android",
+            "FileName": "Qt5.12.8-Android-arm64-Clang-NDKr21b-xmacOS-x86_64-AppleClang11.0.3-20200603.tar.xz",
+            "Platform": "Android",
+            "BuildHost": "macOS 10.15",
+            "CompilerVersion": "ndk r21b",
+            "Architecture": "arm64",
+            "mkspecs": "android-clang"
+        },
+        "Q2mx6_ax3nl": {
+            "Configured": true,
+            "Subdirectory": "Qt5.12/Android",
+            "FileName": "Qt5.12.8-Android-x86-Clang-NDKr21b-xmacOS-x86_64-AppleClang11.0.3-20200603.tar.xz",
+            "Platform": "Android",
+            "BuildHost": "macOS 10.15",
+            "CompilerVersion": "ndk r21b",
+            "Architecture": "x86",
+            "mkspecs": "android-clang"
+        },
+        "Q2lx6_W": {
+            "Configured": true,
+            "Subdirectory": "Qt5.12/WebAssembly",
+            "FileName": "Qt5.12.8-WebAssembly-emscripten1.38.16-xLinux-x86_64-gcc8.3.1-20200602.tar.xz",
+            "Platform": "WebAssembly",
+            "BuildHost": "CentOS 8",
+            "CompilerVersion": "emscripten-1.38.16",
+            "Architecture": "-",
+            "mkspecs": "wasm-emscripten"
+        },
+        "Q2mx6_W": {
+            "Configured": true,
+            "Subdirectory": "Qt5.12/WebAssembly",
+            "FileName": "Qt5.12.8-WebAssembly-emscripten1.38.16-xmacOS-x86_64-AppleClang11.0.3-20200603.tar.xz",
+            "Platform": "WebAssembly",
+            "BuildHost": "macOS 10.15",
+            "CompilerVersion": "emscripten-1.38.16",
+            "Architecture": "-",
+            "mkspecs": "wasm-emscripten"
+        },
+        "Q5wx3v5": {
+            "Configured": true,
+            "Subdirectory": "Qt5.15/Windows-x86",
+            "FileName": "Qt5.15.0-Windows-x86-VS2015-20200602.7z",
+            "Platform": "Windows",
+            "BuildHost": "Windows 8.1 Update",
+            "CompilerVersion": "VS2015 Update 3",
+            "Architecture": "x86",
+            "mkspecs": "win32-msvc"
+        },
+        "Q5wx6v5": {
+            "Configured": true,
+            "Subdirectory": "Qt5.15/Windows-x86_64",
+            "FileName": "Qt5.15.0-Windows-x86_64-VS2015-20200602.7z",
+            "Platform": "Windows",
+            "BuildHost": "Windows 8.1 Update",
+            "CompilerVersion": "VS2015 Update 3",
+            "Architecture": "x86_64",
+            "mkspecs": "win32-msvc"
+        },
+        "Q5wx3v7": {
+            "Configured": true,
+            "Subdirectory": "Qt5.15/Windows-x86",
+            "FileName": "Qt5.15.0-Windows-x86-VS2017-15.9.23-20200601.7z",
+            "Platform": "Windows",
+            "BuildHost": "Windows 10 10.0.19041",
+            "CompilerVersion": "VS2017 15.9.23",
+            "Architecture": "x86",
+            "mkspecs": "win32-msvc"
+        },
+        "Q5wx6v7": {
+            "Configured": true,
+            "Subdirectory": "Qt5.15/Windows-x86_64",
+            "FileName": "Qt5.15.0-Windows-x86_64-VS2017-15.9.23-20200601.7z",
+            "Platform": "Windows",
+            "BuildHost": "Windows 10 10.0.19041",
+            "CompilerVersion": "VS2017 15.9.23",
+            "Architecture": "x86_64",
+            "mkspecs": "win32-msvc"
+        },
+        "Q5wx6v7_wa6v7": {
+            "Configured": true,
+            "Subdirectory": "Qt5.15/Windows-arm64",
+            "FileName": "Qt5.15.0-Windows-arm64-VS2017-15.9.23-XWindows-x86_64-VS2017-15.9.23-20200601.7z",
+            "Platform": "Windows",
+            "BuildHost": "Windows 10 10.0.19041",
+            "CompilerVersion": "VS2017 15.9.23",
+            "Architecture": "arm64",
+            "mkspecs": "win32-arm64-msvc2017"
+        },
+        "Q5wx3v9": {
+            "Configured": true,
+            "Subdirectory": "Qt5.15/Windows-x86",
+            "FileName": "Qt5.15.0-Windows-x86-VS2019-16.6.0-20200601.7z",
+            "Platform": "Windows",
+            "BuildHost": "Windows 10 10.0.19041",
+            "CompilerVersion": "VS2019 16.6.0",
+            "Architecture": "x86",
+            "mkspecs": "win32-msvc"
+        },
+        "Q5wx3v9sf": {
+            "Configured": true,
+            "Subdirectory": "Qt5.15/Windows-x86",
+            "FileName": "Qt5.15.0-Windows-x86-VS2019-16.6.0-staticFull-20200601.7z",
+            "Platform": "Windows",
+            "BuildHost": "Windows 10 10.0.19041",
+            "CompilerVersion": "VS2019 16.6.0",
+            "Architecture": "x86",
+            "mkspecs": "win32-msvc",
+            "Variant": "-static(Full)"
+        },
+        "Q5wx6v9": {
+            "Configured": true,
+            "Subdirectory": "Qt5.15/Windows-x86_64",
+            "FileName": "Qt5.15.0-Windows-x86_64-VS2019-16.6.0-20200601.7z",
+            "Platform": "Windows",
+            "BuildHost": "Windows 10 10.0.19041",
+            "CompilerVersion": "VS2019 16.6.0",
+            "Architecture": "x86_64",
+            "mkspecs": "win32-msvc"
+        },
+        "Q5wx6v9sf": {
+            "Configured": true,
+            "Subdirectory": "Qt5.15/Windows-x86_64",
+            "FileName": "Qt5.15.0-Windows-x86_64-VS2019-16.6.0-staticFull-20200601.7z",
+            "Platform": "Windows",
+            "BuildHost": "Windows 10 10.0.19041",
+            "CompilerVersion": "VS2019 16.6.0",
+            "Architecture": "x86_64",
+            "mkspecs": "win32-msvc"
+        },
+        "Q5wx3m8": {
+            "Configured": true,
+            "Subdirectory": "Qt5.15/Windows-x86",
+            "FileName": "Qt5.15.0-Windows-x86-MinGW8.1.0-20200601.7z",
+            "Platform": "Windows",
+            "BuildHost": "Windows 10 10.0.19041",
+            "CompilerVersion": "MinGW 8.1.0",
+            "Architecture": "x86",
+            "mkspecs": "win32-g++"
+        },
+        "Q5wx3m8sf": {
+            "Configured": true,
+            "Subdirectory": "Qt5.15/Windows-x86",
+            "FileName": "Qt5.15.0-Windows-x86-MinGW8.1.0-staticFull-20200601.7z",
+            "Platform": "Windows",
+            "BuildHost": "Windows 10 10.0.19041",
+            "CompilerVersion": "MinGW 8.1.0",
+            "Architecture": "x86",
+            "mkspecs": "win32-g++",
+            "Variant": "-static(Full)"
+        },
+        "Q5wx6m8": {
+            "Configured": true,
+            "Subdirectory": "Qt5.15/Windows-x86_64",
+            "FileName": "Qt5.15.0-Windows-x86_64-MinGW8.1.0-20200601.7z",
+            "Platform": "Windows",
+            "BuildHost": "Windows 10 10.0.19041",
+            "CompilerVersion": "MinGW 8.1.0",
+            "Architecture": "x86_64",
+            "mkspecs": "win32-g++"
+        },
+        "Q5wx6m8sf": {
+            "Configured": true,
+            "Subdirectory": "Qt5.15/Windows-x86_64",
+            "FileName": "Qt5.15.0-Windows-x86_64-MinGW8.1.0-staticFull-20200601.7z",
+            "Platform": "Windows",
+            "BuildHost": "Windows 10 10.0.19041",
+            "CompilerVersion": "MinGW 8.1.0",
+            "Architecture": "x86_64",
+            "mkspecs": "win32-g++",
+            "Variant": "-static(Full)"
+        },
+        "Q5mx6": {
+            "Configured": true,
+            "Subdirectory": "Qt5.15/macOS-x86_64",
+            "FileName": "Qt5.15.0-macOS-x86_64-AppleClang11.0.3-20200603.tar.xz",
+            "Platform": "macOS",
+            "BuildHost": "macOS 10.15",
+            "CompilerVersion": "AppleClang 11.0",
+            "Architecture": "x86_64",
+            "mkspecs": "macx-clang",
+            "Variant": "-framework"
+        },
+        "Q5mx6nf": {
+            "Configured": true,
+            "Subdirectory": "Qt5.15/macOS-x86_64",
+            "FileName": "Qt5.15.0-macOS-x86_64-AppleClang11.0.3-noFramework-20200603.tar.xz",
+            "Platform": "macOS",
+            "BuildHost": "macOS 10.15",
+            "CompilerVersion": "AppleClang 11.0",
+            "Architecture": "x86_64",
+            "mkspecs": "macx-clang",
+            "Variant": "-no-framework"
+        },
+        "Q5wx6m8_aalnl": {
+            "Configured": true,
+            "Subdirectory": "Qt5.15/Android",
+            "FileName": "Qt5.15.0-Android-ALL-Clang-NDKr21b-XWindows-x86_64-MinGW8.1.0-20200602.7z",
+            "Platform": "Android",
+            "BuildHost": "Windows 10 10.0.19041",
+            "CompilerVersion": "ndk r21b",
+            "Architecture": "ALL",
+            "mkspecs": "android-clang"
+        },
+        "Q5lx6_aalnl": {
+            "Configured": true,
+            "Subdirectory": "Qt5.15/Android",
+            "FileName": "Qt5.15.0-Android-ALL-Clang-NDKr21b-xLinux-x86_64-gcc8.3.1-20200602.tar.xz",
+            "Platform": "Android",
+            "BuildHost": "CentOS 8",
+            "CompilerVersion": "ndk r21b",
+            "Architecture": "ALL",
+            "mkspecs": "android-clang"
+        },
+        "Q5mx6_aalnl": {
+            "Configured": true,
+            "Subdirectory": "Qt5.15/Android",
+            "FileName": "Qt5.15.0-Android-ALL-Clang-NDKr21b-xmacOS-x86_64-AppleClang11.0.3-20200603.tar.xz",
+            "Platform": "Android",
+            "BuildHost": "macOS 10.15",
+            "CompilerVersion": "ndk r21b",
+            "Architecture": "ALL",
+            "mkspecs": "android-clang"
+        },
+        "Q5wx6m8_W": {
+            "Configured": true,
+            "Subdirectory": "Qt5.15/WebAssembly",
+            "FileName": "Qt5.15.0-WebAssembly-emscripten1.39.8-xWindows-x86_64-MinGW8.1.0-20200602.7z",
+            "Platform": "WebAssembly",
+            "BuildHost": "Windows 10 10.0.19041",
+            "CompilerVersion": "emscripten-1.39.8",
+            "Architecture": "-",
+            "mkspecs": "wasm-emscripten"
+        },
+        "Q5lx6_W": {
+            "Configured": true,
+            "Subdirectory": "Qt5.15/WebAssembly",
+            "FileName": "Qt5.15.0-WebAssembly-emscripten1.39.8-xLinux-x86_64-gcc8.3.1-20200602.tar.xz",
+            "Platform": "WebAssembly",
+            "BuildHost": "CentOS 8",
+            "CompilerVersion": "emscripten-1.39.8",
+            "Architecture": "-",
+            "mkspecs": "wasm-emscripten"
+        },
+        "Q5mx6_W": {
+            "Configured": true,
+            "Subdirectory": "Qt5.15/WebAssembly",
+            "FileName": "Qt5.15.0-WebAssembly-emscripten1.39.8-xmacOS-x86_64-AppleClang11.0.3-20200603.tar.xz",
+            "Platform": "WebAssembly",
+            "BuildHost": "macOS 10.15",
+            "CompilerVersion": "emscripten-1.39.8",
+            "Architecture": "-",
+            "mkspecs": "wasm-emscripten"
+        }
+    }
+}

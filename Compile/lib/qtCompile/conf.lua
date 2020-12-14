@@ -2513,7 +2513,8 @@ conf.Q5wx3v9 = {
 		-sql-odbc
 		-make-tool
 		jom
-		-webengine-proprietary-codecs
+		-skip
+		qtwebengine
 	]],
 }
 
@@ -2593,7 +2594,8 @@ conf.Q5wx6v9 = {
 		-sql-odbc
 		-make-tool
 		jom
-		-webengine-proprietary-codecs
+		-skip
+		qtwebengine
 	]],
 }
 
@@ -2826,7 +2828,8 @@ conf.Q5mx6 = {
 		-make-tool
 		"make -j5"
 		-rpath
-		-webengine-proprietary-codecs
+		-skip
+		qtwebengine
 	]],
 }
 
@@ -2863,7 +2866,8 @@ conf.Q5mx6nf = {
 		-make-tool
 		"make -j5"
 		-rpath
-		-webengine-proprietary-codecs
+		-skip
+		qtwebengine
 		-no-framework
 	]],
 }

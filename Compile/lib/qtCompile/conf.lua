@@ -3248,7 +3248,7 @@ local versionMo = {
 }
 
 local OpensslVersion = {
-	["default"] = "1.1.1h"
+	["default"] = "1.1.1i"
 }
 
 setmetatable(OpensslVersion, versionMo)
@@ -3267,8 +3267,8 @@ local QQtPatcherVersion = {
 setmetatable(QQtPatcherVersion, versionMo)
 
 local MsvcVer = {
-	["MSVC2017"] = "15.9.29",
-	["MSVC2019"] = "16.8.2",
+	["MSVC2017"] = "15.9.30",
+	["MSVC2019"] = "16.8.3",
 }
 
 local AppleClangVersion = {

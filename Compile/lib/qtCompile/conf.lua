@@ -3237,7 +3237,6 @@ conf.q0wx6m8st = {
 		-DBUILD_qtquickcontrols2=OFF
 		-DBUILD_qtquicktimeline=OFF
 		-DBUILD_qtshadertools=OFF
-		-DBUILD_qtsvg=OFF
 		-DBUILD_qtwayland=OFF
 	]],
 }

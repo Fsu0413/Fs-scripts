@@ -3241,6 +3241,112 @@ conf.q0wx6m8st = {
 	]],
 }
 
+conf.q0mx6 = {
+	name = "Qt6.0.0-macOS-x86_64-AppleClang&AppleClangVersion&",
+	qtVersion = "6.0.0",
+	host = "macOS1015",
+	ssl = "SecureTransport",
+	useCMake = true,
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DBUILD_SHARED_LIBS=ON
+		-DCMAKE_BUILD_TYPE="Release"
+		-DQT_QMAKE_TARGET_MKSPEC=macx-clang
+		-DBUILD_WITH_PCH=ON
+		-DBUILD_EXAMPLES=OFF
+		-DBUILD_TESTING=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengl=ON
+		-DFEATURE_opengles2=OFF
+		-DFEATURE_ssl=ON
+		-DFEATURE_openssl=OFF
+		-DFEATURE_securetransport=ON
+		-DFEATURE_sql_sqlite=ON
+		-DFEATURE_system_sqlite=OFF
+		-DCMAKE_SKIP_BUILD_RPATH=OFF
+		-DCMAKE_SKIP_INSTALL_RPATH=OFF
+		-DFEATURE_framework=ON
+	]],
+}
+
+conf.q0mx6nf = {
+	name = "Qt6.0.0-macOS-x86_64-AppleClang&AppleClangVersion&-noFramework",
+	qtVersion = "6.0.0",
+	host = "macOS1015",
+	variant = {"-noFramework"},
+	ssl = "SecureTransport",
+	useCMake = true,
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DBUILD_SHARED_LIBS=ON
+		-DCMAKE_BUILD_TYPE="Release"
+		-DQT_QMAKE_TARGET_MKSPEC=macx-clang
+		-DBUILD_WITH_PCH=ON
+		-DBUILD_EXAMPLES=OFF
+		-DBUILD_TESTING=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengl=ON
+		-DFEATURE_opengles2=OFF
+		-DFEATURE_ssl=ON
+		-DFEATURE_openssl=OFF
+		-DFEATURE_securetransport=ON
+		-DFEATURE_sql_sqlite=ON
+		-DFEATURE_system_sqlite=OFF
+		-DCMAKE_SKIP_BUILD_RPATH=OFF
+		-DCMAKE_SKIP_INSTALL_RPATH=OFF
+		-DFEATURE_framework=OFF
+	]],
+}
+
+conf.q0mx6st = {
+	name = "Qt6.0.0-macOS-x86_64-AppleClang&AppleClangVersion&-static",
+	qtVersion = "6.0.0",
+	host = "macOS1015",
+	variant = {"-static"},
+	ssl = "SecureTransport",
+	useCMake = true,
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DBUILD_SHARED_LIBS=OFF
+		-DCMAKE_BUILD_TYPE="Release"
+		-DQT_QMAKE_TARGET_MKSPEC=macx-clang
+		-DBUILD_WITH_PCH=ON
+		-DBUILD_EXAMPLES=OFF
+		-DBUILD_TESTING=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengl=ON
+		-DFEATURE_opengles2=OFF
+		-DFEATURE_ssl=ON
+		-DFEATURE_openssl=OFF
+		-DFEATURE_securetransport=ON
+		-DFEATURE_sql_sqlite=ON
+		-DFEATURE_system_sqlite=OFF
+		-DBUILD_qt3d=OFF
+		-DBUILD_qt5compat=OFF
+		-DBUILD_qtnetworkauth=OFF
+		-DBUILD_qtquick3d=OFF
+		-DBUILD_qtquickcontrols2=OFF
+		-DBUILD_qtquicktimeline=OFF
+		-DBUILD_qtshadertools=OFF
+		-DBUILD_qtwayland=OFF
+	]],
+}
+
 local versionMo = {
 	__index = function(t, k)
 		return t.default

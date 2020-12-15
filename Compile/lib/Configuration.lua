@@ -34,7 +34,7 @@ conf.host.win = {
 		["r21d"] = "D:\\android-ndk-r21d",
 	},
 	["emscriptenPath"] = "D:\\emsdk\\",
-	["mingwCmakePath"] = { "D:\\cmake-3.18.4-win64-x64\\bin", "D:\\ninja" },
+	["cMakePath"] = { "D:\\cmake-3.19.1-win64-x64\\bin", "D:\\ninja" },
 }
 
 -- msys is treated as another host since it uses windows agent and unix shell
@@ -121,10 +121,8 @@ conf.Qt.generateConfTable = function(self, host, job)
 			ret.msvcBat = confHost.toolchainPath[confDetail.toolchain]
 		else
 			table.insert(ret.path, confHost.toolchainPath[confDetail.toolchain])
-			if string.sub(confDetail.toolchain, 1, 5) == "MinGW" then
-				for _, p in ipairs(confHost.mingwCmakePath) do
-					table.insert(ret.path, p)
-				end
+			for _, p in ipairs(confHost.cMakePath) do
+				table.insert(ret.path, p)
 			end
 		end
 	end

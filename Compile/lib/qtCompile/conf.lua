@@ -6,7 +6,7 @@ abbrs:
 	Qt Versions:
 		Q2: Qt 5.12.10/Past Qt 5 LTS
 		Q5: Qt 5.15.2/Latest Qt 5 LTS
-		q0: Qt 6.0.0 (Not released)
+		q0: Qt 6.0.0
 	If prefixed with a lower-case "m", it is a modified Qt version
 
 	Platforms:
@@ -3141,13 +3141,12 @@ conf.Q5mx6_W = {
 --------------------------------------------------------------------
 
 conf.q0wx6v9 = {
-	name = "Qt6.0.0-beta3-Windows-x86_64-VS2019-&MSVCVER&",
-	qtVersion = "6.0.0-beta3",
+	name = "Qt6.0.0-Windows-x86_64-VS2019-&MSVCVER&",
+	qtVersion = "6.0.0",
 	host = "Win10",
 	toolchain = "MSVC2019-64",
 	ssl = "SChannel",
 	useCMake = true,
-	cMakeTwice = true,
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -3173,13 +3172,12 @@ conf.q0wx6v9 = {
 }
 
 conf.q0wx6m8 = {
-	name = "Qt6.0.0-beta3-Windows-x86_64-MinGW8.1.0",
-	qtVersion = "6.0.0-beta3",
+	name = "Qt6.0.0-Windows-x86_64-MinGW8.1.0",
+	qtVersion = "6.0.0",
 	host = "Win10",
 	toolchain = "MinGW810-64",
 	ssl = "SChannel",
 	useCMake = true,
-	cMakeTwice = true,
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -3205,13 +3203,12 @@ conf.q0wx6m8 = {
 }
 
 conf.q0wx6m8st = {
-	name = "Qt6.0.0-beta3-Windows-x86_64-MinGW8.1.0-static",
-	qtVersion = "6.0.0-beta3",
+	name = "Qt6.0.0-Windows-x86_64-MinGW8.1.0-static",
+	qtVersion = "6.0.0",
 	host = "Win10",
 	toolchain = "MinGW810-64",
 	ssl = "SChannel",
 	useCMake = true,
-	cMakeTwice = true,
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&

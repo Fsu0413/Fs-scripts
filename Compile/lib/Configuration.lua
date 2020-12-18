@@ -87,7 +87,7 @@ conf.host.mac = {
 	["makefileTemplate"] = "unix",
 	["pathSep"] = '/',
 	["androidSdkPath"] = {
-		["Latest"] = "/opt/env/android-sdk-mac/",
+		["Latest"] = "/opt/env/android-sdk-mac-2/",
 	},
 	["androidNdkPath"] = {
 		["r21b"] = "/opt/env/android-ndk-r21b/",

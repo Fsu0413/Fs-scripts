@@ -3236,7 +3236,6 @@ conf.q0wx6m8st = {
 		-DBUILD_qtquick3d=OFF
 		-DBUILD_qtquickcontrols2=OFF
 		-DBUILD_qtquicktimeline=OFF
-		-DBUILD_qtshadertools=OFF
 		-DBUILD_qtwayland=OFF
 	]],
 }
@@ -3344,7 +3343,6 @@ conf.q0mx6st = {
 		-DBUILD_qtquick3d=OFF
 		-DBUILD_qtquickcontrols2=OFF
 		-DBUILD_qtquicktimeline=OFF
-		-DBUILD_qtshadertools=OFF
 		-DBUILD_qtwayland=OFF
 	]],
 }

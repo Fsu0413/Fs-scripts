@@ -3347,6 +3347,42 @@ conf.q0mx6st = {
 	]],
 }
 
+conf.q0mx6_aa3nl = {
+	name = "Qt6.0.0-Android-arm-Clang-NDKr21d-xmacOS-x86_64-AppleClang&AppleClangVersion&",
+	qtVersion = "6.0.0",
+	host = "macOS1015",
+	target = "Android-24",
+	toolchainT = "Android-24-r21d-arm",
+	opensslConf = "o1aalnl24",
+	useCMake = true,
+	androidSdkVersion = "Latest",
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DQT_HOST_PATH=&HOSTQTDIR&
+		-DCMAKE_BUILD_TYPE=Release
+		-DBUILD_SHARED_LIBS=ON
+		-DQT_QMAKE_TARGET_MKSPEC=android-clang
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengles2=ON
+		-DFEATURE_ssl=ON
+		-DINPUT_openssl=linked
+		-DQT_EXTRA_INCLUDEPATHS=&OPENSSLDIR&/include/
+		-DQT_EXTRA_LIBDIRS=&OPENSSLDIR&/lib/
+		-DFEATURE_sql_sqlite=ON
+		-DANDROID_SDK_ROOT=/opt/env/android-sdk-mac-2/
+		-DCMAKE_TOOLCHAIN_PATH=/opt/env/android-ndk-r21d/build/cmake/android.toolchain.cmake
+		-DANDROID_NATIVE_API_LEVEL=24
+		-DANDROID_ABI=armeabi-v7a
+	]],
+}
+
 local versionMo = {
 	__index = function(t, k)
 		return t.default
@@ -3381,6 +3417,12 @@ local AppleClangVersion = {
 	["macOS1015"] = "12.0.0",
 }
 
+local Qt6StaticConf = {
+	["Win10"] = "q0wx6m8st",
+	["CentOS8"] = "q0lx6st",
+	["macOS1015"] = "q0mx6st",
+}
+
 local split = function(str, sep)
     local sep, fields = sep or "\t", {}
     local pattern = string.format("([^%s]+)", sep)
@@ -3408,11 +3450,6 @@ for name, value in pairs(conf) do
 		os.exit(1)
 	end
 
-	-- fill other info
-	if not value.ssl then
-		value.ssl = "OpenSSL " .. OpensslVersion[value.qtVersion]
-	end
-
 	if not value.toolchain then
 		value.toolchain = "PATH"
 	end
@@ -3426,6 +3463,13 @@ for name, value in pairs(conf) do
 
 	if string.find(value.name, "AppleClang") then
 		value.name = string.gsub(value.name, "%&AppleClangVersion%&", AppleClangVersion[value.host])
+	end
+end
+
+for name, value in pairs(conf) do
+	-- fill other info
+	if not value.ssl then
+		value.ssl = "OpenSSL " .. OpensslVersion[value.qtVersion]
 	end
 
 	if value.target and (value.target ~= value.host) then
@@ -3476,6 +3520,12 @@ for name, value in pairs(conf) do
 		value.qQtPatcherVersion = QQtPatcherVersion[value.host]
 	end
 
+	if tonumber(qtVersionSplit[1]) == 6 and value.crossCompile then
+		value.hostToolsConf = Qt6StaticConf[value.host]
+		value.hostToolsUrlwin = "http://172.24.13.2:8080/job/Qt/job/" .. Qt6StaticConf[value.host] .. "/lastSuccessfulBuild/artifact/buildDir/" .. conf[Qt6StaticConf[value.host]].name .. ".7z"
+		value.hostToolsUrlunix = "http://172.24.13.2:8080/job/Qt/job/" .. Qt6StaticConf[value.host] .. "/lastSuccessfulBuild/artifact/buildDir/" .. conf[Qt6StaticConf[value.host]].name .. ".tar.xz"
+	end
+
 	-- add dump function
 	value.dump = function(self)
 		local ret = name .. " - " .. self.name .. ":\n"
@@ -3491,7 +3541,12 @@ for name, value in pairs(conf) do
 		if self.opensslConf then
 			ret = ret .. "\tOpenSSL Configuration: " .. self.opensslConf .. "\n"
 		end
-		ret = ret .. "\tUsing QQtPatcher config: " .. self.qQtPatcher .. ", version: " .. self.qQtPatcherVersion .. "\n"
+		if self.qQtPatcher ~= "no" then
+			ret = ret .. "\tUsing QQtPatcher config: " .. self.qQtPatcher .. ", version: " .. self.qQtPatcherVersion .. "\n"
+		end
+		if self.corssCompile and self.hostToolsConf then
+			ret = ret .. "\tUsing Host Qt tools: " .. value.hostToolsConf .. "\n"
+		end
 
 		return ret
 	end

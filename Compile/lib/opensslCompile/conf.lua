@@ -192,6 +192,14 @@ conf.o1aalnl = {
 	useClang = true,
 }
 
+conf.o1aalnl24 = {
+	name = "OpenSSL1.1.1i-AndroidAPI24-ALL",
+	opensslVersion = "1.1.1i",
+	host = "CentOS8",
+	target = "Android-24",
+	toolchainT = "Android-24-r21d-all",
+	useClang = true,
+}
 --------------------------------------------------------------------
 
 local MsvcVer = {

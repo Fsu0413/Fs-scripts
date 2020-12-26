@@ -150,6 +150,16 @@ conf.Qt.generateConfTable = function(self, host, job)
 	end
 
 	if confDetail.crossCompile then
+		-- Qt 6: We need host tool to cross build Qt
+		if confDetail.hostToolsConf then
+			table.insert(download, confDetail["hostToolsUrl" .. confHost.makefileTemplate])
+			repl.HOSTQTDIR = os.getenv("WORKSPACE") .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. conf.Qt.configurations[confDetail.hostToolsConf].name
+			if confHost.makefileTemplate == "win" then
+				repl.HOSTQTDIR_DOUBLESLASH = string.gsub(repl.OPENSSLDIR, "%\\", "\\\\")
+				repl.HOSTQTDIR_FRONTSLASH = string.gsub(repl.OPENSSLDIR, "%\\", "/")
+			end
+		end
+
 		if string.sub(confDetail.toolchainT, 1, 7) == "Android" then -- Android
 			local matchStr = "Android%-(%d+)%-(r%d+%a?)%-(.+)"
 			local api, ndkVer, archi = string.match(confDetail.toolchainT, matchStr)
@@ -186,9 +196,9 @@ conf.Qt.generateConfTable = function(self, host, job)
 		elseif string.sub(confDetail.toolchainT, 1, 5) == "MinGW" then -- MinGW cross builds(Todo)
 			error("todo....")
 		end
-	else
-		repl.INSTALLROOT = installRoot
 	end
+	
+	repl.INSTALLROOT = installRoot
 
 	local sourcePackageBaseName = confDetail.sourcePackageBaseName
 
@@ -222,7 +232,7 @@ conf.Qt.generateConfTable = function(self, host, job)
 			error("not supported")
 		end
 	else
-		-- TODO: support ninja in CMake builds? or let CMake call the underlayer make tool?
+		-- let CMake call the underlayer make tool
 		ret.MAKE = "cmake --build . --parallel -- "
 	end
 	
@@ -240,13 +250,23 @@ conf.Qt.generateConfTable = function(self, host, job)
 			ret.INSTALLCOMMANDLINE = ret.INSTALLCOMMANDLINE .. "\"INSTALL_ROOT=" .. installRootMake .. "\""
 		end
 	else
-		ret.INSTALLCOMMANDLINE = "cmake --install . "
+		-- $MAKE install calls cmake --install, so let's call cmake --install directly
+		ret.INSTALLCOMMANDLINE = "cmake --install ."
 	end
 
 	ret.INSTALLROOT = installRoot
 	ret.INSTALLPATH = installFolderName
 
 	ret.EXTRAINSTALL = ""
+	
+	-- Qt host tool deploy
+	if confDetail.crossCompile and confDetail.hostToolsConf then
+		local deployShellCommand = scriptPath .. "/../qt6_deploy_host.sh"
+		if confHost.makefileTemplate == "win" then
+			deployShellCommand = "cscript " .. scriptPath .. "/../qt6_deploy_host.vbs"
+		end
+		ret.EXTRAINSTALL = ret.EXTRAINSTALL .. deployShellCommand .. " " .. installRoot .. " " .. repl.HOSTQTDIR .. "\n"
+	end
 
 	-- Qt configure file
 	local copyCmd = ((confHost.makefileTemplate == "unix") and "cp -f " or "copy /y ")
@@ -413,7 +433,6 @@ conf.hostToConfMap = {
 	["Win8"] = "win",
 	["Win8SH"] = "msys",
 	["CentOS8"] = "linux",
-	["macOS1014"] = "mac",
 	["macOS1015"] = "mac",
 }
 

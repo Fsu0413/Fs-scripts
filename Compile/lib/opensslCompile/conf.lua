@@ -201,6 +201,33 @@ conf.o1aa3nl24 = {
 	useClang = true,
 }
 
+conf.o1aa6nl24 = {
+	name = "OpenSSL1.1.1i-AndroidAPI24-arm64",
+	opensslVersion = "1.1.1i",
+	host = "CentOS8",
+	target = "Android-24",
+	toolchainT = "Android-24-r21d-arm64",
+	useClang = true,
+}
+
+conf.o1ax3nl24 = {
+	name = "OpenSSL1.1.1i-AndroidAPI24-x86",
+	opensslVersion = "1.1.1i",
+	host = "CentOS8",
+	target = "Android-24",
+	toolchainT = "Android-24-r21d-x86",
+	useClang = true,
+}
+
+conf.o1ax6nl24 = {
+	name = "OpenSSL1.1.1i-AndroidAPI24-x86_64",
+	opensslVersion = "1.1.1i",
+	host = "CentOS8",
+	target = "Android-24",
+	toolchainT = "Android-24-r21d-x86_64",
+	useClang = true,
+}
+
 conf.o1aalnl24 = {
 	name = "OpenSSL1.1.1i-AndroidAPI24-ALL",
 	opensslVersion = "1.1.1i",

@@ -3382,6 +3382,111 @@ conf.q0mx6_aa3nl = {
 	]],
 }
 
+conf.q0mx6_aa6nl = {
+	name = "Qt6.0.0-Android-arm64-Clang-NDKr21d-xmacOS-x86_64-AppleClang&AppleClangVersion&",
+	qtVersion = "6.0.0",
+	host = "macOS1015",
+	target = "Android-24",
+	toolchainT = "Android-24-r21d-arm64",
+	opensslConf = "o1aa6nl24",
+	useCMake = true,
+	androidSdkVersion = "Latest",
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DQT_HOST_PATH=&HOSTQTDIR&
+		-DCMAKE_BUILD_TYPE=Release
+		-DBUILD_SHARED_LIBS=ON
+		-DQT_QMAKE_TARGET_MKSPEC=android-clang
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengles2=ON
+		-DFEATURE_ssl=ON
+		-DINPUT_openssl=runtime
+		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
+		-DFEATURE_sql_sqlite=ON
+		-DANDROID_SDK_ROOT=/opt/env/android-sdk-mac-2/
+		-DCMAKE_TOOLCHAIN_FILE=/opt/env/android-ndk-r21d/build/cmake/android.toolchain.cmake
+		-DANDROID_NATIVE_API_LEVEL=24
+		-DANDROID_ABI=arm64-v8a
+	]],
+}
+
+conf.q0mx6_ax3nl = {
+	name = "Qt6.0.0-Android-x86-Clang-NDKr21d-xmacOS-x86_64-AppleClang&AppleClangVersion&",
+	qtVersion = "6.0.0",
+	host = "macOS1015",
+	target = "Android-24",
+	toolchainT = "Android-24-r21d-x86",
+	opensslConf = "o1ax3nl24",
+	useCMake = true,
+	androidSdkVersion = "Latest",
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DQT_HOST_PATH=&HOSTQTDIR&
+		-DCMAKE_BUILD_TYPE=Release
+		-DBUILD_SHARED_LIBS=ON
+		-DQT_QMAKE_TARGET_MKSPEC=android-clang
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengles2=ON
+		-DFEATURE_ssl=ON
+		-DINPUT_openssl=runtime
+		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
+		-DFEATURE_sql_sqlite=ON
+		-DANDROID_SDK_ROOT=/opt/env/android-sdk-mac-2/
+		-DCMAKE_TOOLCHAIN_FILE=/opt/env/android-ndk-r21d/build/cmake/android.toolchain.cmake
+		-DANDROID_NATIVE_API_LEVEL=24
+		-DANDROID_ABI=x86
+	]],
+}
+
+conf.q0mx6_ax6nl = {
+	name = "Qt6.0.0-Android-x86_64-Clang-NDKr21d-xmacOS-x86_64-AppleClang&AppleClangVersion&",
+	qtVersion = "6.0.0",
+	host = "macOS1015",
+	target = "Android-24",
+	toolchainT = "Android-24-r21d-x86_64",
+	opensslConf = "o1ax6nl24",
+	useCMake = true,
+	androidSdkVersion = "Latest",
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DQT_HOST_PATH=&HOSTQTDIR&
+		-DCMAKE_BUILD_TYPE=Release
+		-DBUILD_SHARED_LIBS=ON
+		-DQT_QMAKE_TARGET_MKSPEC=android-clang
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengles2=ON
+		-DFEATURE_ssl=ON
+		-DINPUT_openssl=runtime
+		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
+		-DFEATURE_sql_sqlite=ON
+		-DANDROID_SDK_ROOT=/opt/env/android-sdk-mac-2/
+		-DCMAKE_TOOLCHAIN_FILE=/opt/env/android-ndk-r21d/build/cmake/android.toolchain.cmake
+		-DANDROID_NATIVE_API_LEVEL=24
+		-DANDROID_ABI=x86_64
+	]],
+}
+
 local versionMo = {
 	__index = function(t, k)
 		return t.default

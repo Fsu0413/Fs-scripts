@@ -3376,7 +3376,7 @@ conf.q0mx6_aa3nl = {
 		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
 		-DFEATURE_sql_sqlite=ON
 		-DANDROID_SDK_ROOT=/opt/env/android-sdk-mac-2/
-		-DCMAKE_TOOLCHAIN_PATH=/opt/env/android-ndk-r21d/build/cmake/android.toolchain.cmake
+		-DCMAKE_TOOLCHAIN_FILE=/opt/env/android-ndk-r21d/build/cmake/android.toolchain.cmake
 		-DANDROID_NATIVE_API_LEVEL=24
 		-DANDROID_ABI=armeabi-v7a
 	]],

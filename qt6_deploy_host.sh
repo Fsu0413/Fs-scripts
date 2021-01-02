@@ -24,8 +24,8 @@ if [ ! -e "${PATH_TO_TARGET}/bin/target_qt.conf" ]; then
 	exit 1
 fi
 
-if [ ! -e "${PATH_TO_HOST}/bin/qt_cmake" ]; then
-	echo "Host path $1 does not contain bin/qt_cmake." >&2
+if [ ! -e "${PATH_TO_HOST}/bin/qt-cmake" ]; then
+	echo "Host path $1 does not contain bin/qt-cmake." >&2
 	exit 1
 fi
 

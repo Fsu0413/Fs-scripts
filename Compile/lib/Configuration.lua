@@ -251,7 +251,8 @@ conf.Qt.generateConfTable = function(self, host, job)
 		end
 	else
 		-- $MAKE install calls cmake --install, so let's call cmake --install directly
-		ret.INSTALLCOMMANDLINE = "cmake --install ."
+		-- strip the binary for smaller size
+		ret.INSTALLCOMMANDLINE = "cmake --install . --strip"
 	end
 
 	ret.INSTALLROOT = installRoot

@@ -3241,6 +3241,186 @@ conf.q0wx6m8st = {
 	]],
 }
 
+conf.q0lx6st = {
+	name = "Qt6.0.0-Linux-x86_64-gcc8.3.1-static",
+	qtVersion = "6.0.0",
+	host = "CentOS8",
+	variant = {"-static"},
+	ssl = "OpenSSL from package manager",
+	useCMake = true,
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DBUILD_SHARED_LIBS=OFF
+		-DCMAKE_BUILD_TYPE="Release"
+		-DQT_QMAKE_TARGET_MKSPEC=linux-g++
+		-DBUILD_WITH_PCH=ON
+		-DBUILD_EXAMPLES=OFF
+		-DBUILD_TESTING=OFF
+		-DFEATURE_relocatable=ON
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengl=ON
+		-DFEATURE_opengles2=OFF
+		-DFEATURE_ssl=ON
+		-DFEATURE_openssl=ON
+		-DINPUT_openssl=linked
+		-DFEATURE_sql_sqlite=ON
+		-DFEATURE_system_sqlite=OFF
+		-DBUILD_qt3d=OFF
+		-DBUILD_qtdoc=OFF
+		-DBUILD_qt5compat=OFF
+		-DBUILD_qtnetworkauth=OFF
+		-DBUILD_qtquick3d=OFF
+		-DBUILD_qtquickcontrols2=OFF
+		-DBUILD_qtquicktimeline=OFF
+		-DBUILD_qtwayland=OFF
+	]],
+}
+
+conf.q0lx6_aa3nl = {
+	name = "Qt6.0.0-Android-arm-Clang-NDKr21d-xLinux-x86_64-gcc8.3.1",
+	qtVersion = "6.0.0",
+	host = "CentOS8",
+	target = "Android-24",
+	toolchainT = "Android-24-r21d-arm",
+	opensslConf = "o1aa3nl24",
+	useCMake = true,
+	androidSdkVersion = "Latest",
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DQT_HOST_PATH=&HOSTQTDIR&
+		-DCMAKE_BUILD_TYPE=Release
+		-DBUILD_SHARED_LIBS=ON
+		-DQT_QMAKE_TARGET_MKSPEC=android-clang
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengles2=ON
+		-DFEATURE_ssl=ON
+		-DINPUT_openssl=runtime
+		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
+		-DFEATURE_sql_sqlite=ON
+		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
+		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
+		-DANDROID_NATIVE_API_LEVEL=24
+		-DANDROID_ABI=armeabi-v7a
+	]],
+}
+
+conf.q0lx6_aa6nl = {
+	name = "Qt6.0.0-Android-arm64-Clang-NDKr21d-xLinux-x86_64-gcc8.3.1",
+	qtVersion = "6.0.0",
+	host = "CentOS8",
+	target = "Android-24",
+	toolchainT = "Android-24-r21d-arm64",
+	opensslConf = "o1aa6nl24",
+	useCMake = true,
+	androidSdkVersion = "Latest",
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DQT_HOST_PATH=&HOSTQTDIR&
+		-DCMAKE_BUILD_TYPE=Release
+		-DBUILD_SHARED_LIBS=ON
+		-DQT_QMAKE_TARGET_MKSPEC=android-clang
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengles2=ON
+		-DFEATURE_ssl=ON
+		-DINPUT_openssl=runtime
+		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
+		-DFEATURE_sql_sqlite=ON
+		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
+		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
+		-DANDROID_NATIVE_API_LEVEL=24
+		-DANDROID_ABI=arm64-v8a
+	]],
+}
+
+conf.q0lx6_ax3nl = {
+	name = "Qt6.0.0-Android-x86-Clang-NDKr21d-xLinux-x86_64-gcc8.3.1",
+	qtVersion = "6.0.0",
+	host = "CentOS8",
+	target = "Android-24",
+	toolchainT = "Android-24-r21d-x86",
+	opensslConf = "o1ax3nl24",
+	useCMake = true,
+	androidSdkVersion = "Latest",
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DQT_HOST_PATH=&HOSTQTDIR&
+		-DCMAKE_BUILD_TYPE=Release
+		-DBUILD_SHARED_LIBS=ON
+		-DQT_QMAKE_TARGET_MKSPEC=android-clang
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengles2=ON
+		-DFEATURE_ssl=ON
+		-DINPUT_openssl=runtime
+		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
+		-DFEATURE_sql_sqlite=ON
+		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
+		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
+		-DANDROID_NATIVE_API_LEVEL=24
+		-DANDROID_ABI=x86
+	]],
+}
+
+conf.q0lx6_ax6nl = {
+	name = "Qt6.0.0-Android-x86_64-Clang-NDKr21d-xLinux-x86_64-gcc8.3.1",
+	qtVersion = "6.0.0",
+	host = "CentOS8",
+	target = "Android-24",
+	toolchainT = "Android-24-r21d-x86_64",
+	opensslConf = "o1ax6nl24",
+	useCMake = true,
+	androidSdkVersion = "Latest",
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DQT_HOST_PATH=&HOSTQTDIR&
+		-DCMAKE_BUILD_TYPE=Release
+		-DBUILD_SHARED_LIBS=ON
+		-DQT_QMAKE_TARGET_MKSPEC=android-clang
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengles2=ON
+		-DFEATURE_ssl=ON
+		-DINPUT_openssl=runtime
+		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
+		-DFEATURE_sql_sqlite=ON
+		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
+		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
+		-DANDROID_NATIVE_API_LEVEL=24
+		-DANDROID_ABI=x86_64
+	]],
+}
+
 conf.q0mx6 = {
 	name = "Qt6.0.0-macOS-x86_64-AppleClang&AppleClangVersion&",
 	qtVersion = "6.0.0",
@@ -3376,8 +3556,8 @@ conf.q0mx6_aa3nl = {
 		-DINPUT_openssl=runtime
 		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
 		-DFEATURE_sql_sqlite=ON
-		-DANDROID_SDK_ROOT=/opt/env/android-sdk-mac-2/
-		-DCMAKE_TOOLCHAIN_FILE=/opt/env/android-ndk-r21d/build/cmake/android.toolchain.cmake
+		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
+		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
 		-DANDROID_NATIVE_API_LEVEL=24
 		-DANDROID_ABI=armeabi-v7a
 	]],
@@ -3411,8 +3591,8 @@ conf.q0mx6_aa6nl = {
 		-DINPUT_openssl=runtime
 		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
 		-DFEATURE_sql_sqlite=ON
-		-DANDROID_SDK_ROOT=/opt/env/android-sdk-mac-2/
-		-DCMAKE_TOOLCHAIN_FILE=/opt/env/android-ndk-r21d/build/cmake/android.toolchain.cmake
+		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
+		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
 		-DANDROID_NATIVE_API_LEVEL=24
 		-DANDROID_ABI=arm64-v8a
 	]],
@@ -3446,8 +3626,8 @@ conf.q0mx6_ax3nl = {
 		-DINPUT_openssl=runtime
 		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
 		-DFEATURE_sql_sqlite=ON
-		-DANDROID_SDK_ROOT=/opt/env/android-sdk-mac-2/
-		-DCMAKE_TOOLCHAIN_FILE=/opt/env/android-ndk-r21d/build/cmake/android.toolchain.cmake
+		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
+		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
 		-DANDROID_NATIVE_API_LEVEL=24
 		-DANDROID_ABI=x86
 	]],
@@ -3481,8 +3661,8 @@ conf.q0mx6_ax6nl = {
 		-DINPUT_openssl=runtime
 		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
 		-DFEATURE_sql_sqlite=ON
-		-DANDROID_SDK_ROOT=/opt/env/android-sdk-mac-2/
-		-DCMAKE_TOOLCHAIN_FILE=/opt/env/android-ndk-r21d/build/cmake/android.toolchain.cmake
+		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
+		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
 		-DANDROID_NATIVE_API_LEVEL=24
 		-DANDROID_ABI=x86_64
 	]],

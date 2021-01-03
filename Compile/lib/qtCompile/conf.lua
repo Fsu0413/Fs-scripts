@@ -799,9 +799,10 @@ conf.Q2wx6m7sf = {
 }
 
 conf.Q2lx6st = {
-	name = "Qt5.12.10-Linux-x86_64-gcc8.3.1",
+	name = "Qt5.12.10-Linux-x86_64-gcc8.3.1-static",
 	qtVersion = "5.12.10",
 	host = "CentOS8",
+	variant = {"-static"},
 	ssl = "OpenSSL from package manager",
 	configureParameter = [[
 		-prefix

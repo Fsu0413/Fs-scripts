@@ -4,7 +4,6 @@ local conf = {}
 --[[
 abbrs:
 	OpenSSL Versions:
-		o0: OpenSSL 1.0.2u (Reached EOL at 2019/12/31)
 		o1: OpenSSL 1.1.1i
 		o3: OpenSSL 3.0.0 (Not released yet)
 	Most of OpenSSL builds has its makefiles changed for our use. No "m" will be prefixed.
@@ -30,8 +29,7 @@ abbrs:
 		v7: VS2017
 		v9: VS2019
 		m7: MinGW 7.3.0
-		n0: Android NDK r10e
-		nl: Android NDK r21/Latest Available
+		nl: Android NDK r21e/Latest LTS
 	If suffixed with a lower-case "c", it is clang compiler, with the original one as base.
 	If omitted, it use a toolchain in default PATH, which should be AppleClang in macOS, or GCC in Linux.
 
@@ -42,7 +40,6 @@ abbrs:
 --------------------------------------------------------------------
 
 -- OpenSSL 1.1.1i
-
 
 conf.o1wx3v5 = {
 	name = "OpenSSL1.1.1i-Windows-x86-VS2015",
@@ -152,7 +149,7 @@ conf.o1aa3nl = {
 	opensslVersion = "1.1.1i",
 	host = "CentOS8",
 	target = "Android-21",
-	toolchainT = "Android-21-r21d-arm",
+	toolchainT = "Android-21-r21e-arm",
 	useClang = true,
 }
 
@@ -161,7 +158,7 @@ conf.o1aa6nl = {
 	opensslVersion = "1.1.1i",
 	host = "CentOS8",
 	target = "Android-21",
-	toolchainT = "Android-21-r21d-arm64",
+	toolchainT = "Android-21-r21e-arm64",
 	useClang = true,
 }
 
@@ -170,7 +167,7 @@ conf.o1ax3nl = {
 	opensslVersion = "1.1.1i",
 	host = "CentOS8",
 	target = "Android-21",
-	toolchainT = "Android-21-r21d-x86",
+	toolchainT = "Android-21-r21e-x86",
 	useClang = true,
 }
 
@@ -179,7 +176,7 @@ conf.o1ax6nl = {
 	opensslVersion = "1.1.1i",
 	host = "CentOS8",
 	target = "Android-21",
-	toolchainT = "Android-21-r21d-x86_64",
+	toolchainT = "Android-21-r21e-x86_64",
 	useClang = true,
 }
 
@@ -188,7 +185,7 @@ conf.o1aalnl = {
 	opensslVersion = "1.1.1i",
 	host = "CentOS8",
 	target = "Android-21",
-	toolchainT = "Android-21-r21d-all",
+	toolchainT = "Android-21-r21e-all",
 	useClang = true,
 }
 
@@ -197,7 +194,7 @@ conf.o1aa3nl24 = {
 	opensslVersion = "1.1.1i",
 	host = "CentOS8",
 	target = "Android-24",
-	toolchainT = "Android-24-r21d-arm",
+	toolchainT = "Android-24-r21e-arm",
 	useClang = true,
 }
 
@@ -206,7 +203,7 @@ conf.o1aa6nl24 = {
 	opensslVersion = "1.1.1i",
 	host = "CentOS8",
 	target = "Android-24",
-	toolchainT = "Android-24-r21d-arm64",
+	toolchainT = "Android-24-r21e-arm64",
 	useClang = true,
 }
 
@@ -215,7 +212,7 @@ conf.o1ax3nl24 = {
 	opensslVersion = "1.1.1i",
 	host = "CentOS8",
 	target = "Android-24",
-	toolchainT = "Android-24-r21d-x86",
+	toolchainT = "Android-24-r21e-x86",
 	useClang = true,
 }
 
@@ -224,7 +221,7 @@ conf.o1ax6nl24 = {
 	opensslVersion = "1.1.1i",
 	host = "CentOS8",
 	target = "Android-24",
-	toolchainT = "Android-24-r21d-x86_64",
+	toolchainT = "Android-24-r21e-x86_64",
 	useClang = true,
 }
 
@@ -233,15 +230,15 @@ conf.o1aalnl24 = {
 	opensslVersion = "1.1.1i",
 	host = "CentOS8",
 	target = "Android-24",
-	toolchainT = "Android-24-r21d-all",
+	toolchainT = "Android-24-r21e-all",
 	useClang = true,
 }
 
 --------------------------------------------------------------------
 
 local MsvcVer = {
-	["MSVC2017"] = "15.9.30",
-	["MSVC2019"] = "16.8.3",
+	["MSVC2017"] = "15.9.31",
+	["MSVC2019"] = "16.8.4",
 }
 
 for name, value in pairs(conf) do

@@ -12,9 +12,9 @@ abbrs:
 	Platforms:
 		w: Windows
 		l: Linux
-		m: macOS/OS X
+		m: macOS
 		a: Android
-		W: WebAssembly
+		W: WebAssembly (w/o Architecture)
 	Other platforms will be added when supported.
 	Some platforms needs cross compiling, especially Android, WebAssembly and Windows on ARM64, we use an underscore to mark a cross compiled version.
 
@@ -32,8 +32,8 @@ abbrs:
 		v9: VS2019
 		m7: MinGW-w64 7.3.0
 		m8: MinGW-w64 8.1.0
-		ml: MinGW-w64 *.*.*/Latest Available
-		nl: Android NDK r21e, Clang/Latest LTS
+		nl: Android NDK r21e/Latest LTS
+		n2: Android NDK r22/Latest
 	If suffixed with a lower-case "c", it is clang compiler with the original one as base.
 	If omitted, it use a toolchain in default PATH, which should be AppleClang in macOS, or GCC in Linux.
 
@@ -3144,7 +3144,7 @@ local versionMo = {
 }
 
 local OpensslVersion = {
-	["default"] = "1.1.1i"
+	["default"] = "1.1.1j"
 }
 
 setmetatable(OpensslVersion, versionMo)

@@ -31,6 +31,7 @@ conf.host.win = {
 	},
 	["androidNdkPath"] = {
 		["r21e"] = "D:\\android-ndk-r21e",
+		["r22"] = "D:\\android-ndk-r22",
 	},
 	["emscriptenPath"] = "D:\\emsdk\\",
 	["cMakePath"] = { "D:\\cmake-3.19.1-win64-x64\\bin", "D:\\ninja" },
@@ -54,6 +55,7 @@ conf.host.msys = {
 	["sourcePackagePath"] = "/d/Qt/",
 	["androidNdkPath"] = {
 		["r21e"] = "/d/android-ndk-r21e/",
+		["r22"] = "/d/android-ndk-r22/",
 	},
 }
 
@@ -70,6 +72,7 @@ conf.host.linux = {
 	},
 	["androidNdkPath"] = {
 		["r21e"] = "/opt/env/android-ndk-r21e/",
+		["r22"] = "/opt/env/android-ndk-r22/",
 	},
 	["sourcePackagePath"] = "/opt/sources/",
 	["buildRootPath"] = "/opt/build/",
@@ -88,6 +91,7 @@ conf.host.mac = {
 	},
 	["androidNdkPath"] = {
 		["r21e"] = "/opt/env/android-ndk-r21e/",
+		["r22"] = "/opt/env/android-ndk-r22/",
 	},
 	["sourcePackagePath"] = "/opt/sources/",
 	["buildRootPath"] = "/opt/build/",

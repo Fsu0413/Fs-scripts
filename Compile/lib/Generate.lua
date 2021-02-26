@@ -125,7 +125,12 @@ popd
 -- MSVCBATCALL
 -- PATHSET
 -- ENVSET
+-- BUILDDIR
+-- WORKSPACE
 -- CONFIGURECOMMANDLINE
+-- MAKE
+-- INSTALLCOMMANDLINE
+-- INSTALLROOT
 -- INSTALLPATH
 gen.win.template4OpenSSL = [[
 
@@ -135,8 +140,22 @@ gen.win.template4OpenSSL = [[
 
 &ENVSET&
 
+rmdir /s /q &BUILDDIR&
+mkdir &BUILDDIR&
+cd /d &BUILDDIR&
+
 cmd /c &CONFIGURECOMMANDLINE&
 if errorlevel 1 exit 1
+
+cmd /c &MAKE& clean
+
+cmd /c &MAKE&
+if errorlevel 1 exit 1
+
+cmd /c &INSTALLCOMMANDLINE&
+if errorlevel 1 exit 1
+
+cd &INSTALLROOT&\..
 
 7z a -t7z -m0=LZMA2:d256m:fb273 -mmt=3 -myx -mqs -ms=on -- &INSTALLPATH&.7z &INSTALLPATH&
 
@@ -251,7 +270,12 @@ popd
 
 -- PATHSET
 -- ENVSET
+-- BUILDDIR
+-- WORKSPACE
 -- CONFIGURECOMMANDLINE
+-- MAKE
+-- INSTALLCOMMANDLINE
+-- INSTALLROOT
 -- INSTALLPATH
 gen.unix.template4OpenSSL = [[
 set -x
@@ -283,8 +307,31 @@ for i in 7zr 7za 7z; do
 	fi
 done
 
+rm -rf &BUILDDIR&
+mkdir &BUILDDIR&
+cd &BUILDDIR&
+
 &CONFIGURECOMMANDLINE&
 [ $? -eq 0 ] || exit 1
+
+PARALLELNUM=3
+if [ "$NUMBER_OF_PROCESSORS" ]; then
+	PARALLELNUM=`expr $NUMBER_OF_PROCESSORS + 1`
+elif [ -e /proc/cpuinfo ]; then
+	PARALLELNUM=$(expr `cat /proc/cpuinfo | grep processor | wc -l` + 1 )
+elif [ x`uname` = xDarwin ]; then
+	PARALLELNUM=$(expr `sysctl machdep.cpu.thread_count | cut -d " " -f 2` + 1 )
+fi
+
+&MAKE& clean
+
+&MAKE&
+[ $? -eq 0 ] || exit 1
+
+&INSTALLCOMMANDLINE&
+[ $? -eq 0 ] || exit 1
+
+cd &INSTALLROOT&/..
 
 $TAR -cf - &INSTALLPATH& | $SEVENZIP a -txz -m0=LZMA2:d256m:fb273 -mmt=3 -myx -si -- &INSTALLPATH&.tar.xz
 $SEVENZIP a -t7z -m0=LZMA2:d256m:fb273 -mmt=3 -myx -mqs -ms=on -- &INSTALLPATH&.7z &INSTALLPATH&

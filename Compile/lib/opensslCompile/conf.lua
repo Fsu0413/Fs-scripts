@@ -45,6 +45,13 @@ conf.o1wx3v5 = {
 	host = "Win8",
 	toolchain = "MSVC2015-32",
 	libPath = { "bin\\libssl-1_1.dll", "bin\\libcrypto-1_1.dll" },
+	configureParameter = [[
+		no-asm
+		shared
+		--prefix=&INSTALLROOT&
+		--openssldir=&INSTALLROOT&\ssl
+		VC-WIN32
+	]],
 }
 
 conf.o1wx3v5st = {
@@ -54,6 +61,13 @@ conf.o1wx3v5st = {
 	toolchain = "MSVC2015-32",
 	variant = {"-static"},
 	staticlibPath = { "lib\\libssl.lib", "lib\\libcrypto.lib" },
+	configureParameter = [[
+		no-asm
+		no-shared
+		--prefix=&INSTALLROOT&
+		--openssldir=&INSTALLROOT&\ssl
+		VC-WIN32
+	]],
 }
 
 conf.o1wx6v5 = {
@@ -62,6 +76,13 @@ conf.o1wx6v5 = {
 	host = "Win8",
 	toolchain = "MSVC2015-64",
 	libPath = { "bin\\libssl-1_1-x64.dll", "bin\\libcrypto-1_1-x64.dll" },
+	configureParameter = [[
+		no-asm
+		shared
+		--prefix=&INSTALLROOT&
+		--openssldir=&INSTALLROOT&\ssl
+		VC-WIN64A
+	]],
 }
 
 --------------------------------------------------------------------
@@ -73,6 +94,13 @@ conf.o1wx3m7 = {
 	toolchain = "MinGW730-32",
 	libPath = { "bin\\libssl-1_1.dll", "bin\\libcrypto-1_1.dll" },
 	staticlibPath = { "lib\\libssl.a", "lib\\libcrypto.a" },
+	configureParameter = [[
+		no-asm
+		shared
+		--prefix=&INSTALLROOT&
+		--openssldir=&INSTALLROOT&/ssl
+		mingw
+	]],
 }
 
 conf.o1wx6m7 = {
@@ -82,6 +110,13 @@ conf.o1wx6m7 = {
 	toolchain = "MinGW730-64",
 	libPath = { "bin\\libssl-1_1-x64.dll", "bin\\libcrypto-1_1-x64.dll" },
 	staticlibPath = { "lib\\libssl.a", "lib\\libcrypto.a" },
+	configureParameter = [[
+		no-asm
+		shared
+		--prefix=&INSTALLROOT&
+		--openssldir=&INSTALLROOT&/ssl
+		mingw64
+	]],
 }
 
 --------------------------------------------------------------------
@@ -92,6 +127,13 @@ conf.o1wx3v7 = {
 	host = "Win10",
 	toolchain = "MSVC2017-32",
 	libPath = { "bin\\libssl-1_1.dll", "bin\\libcrypto-1_1.dll" },
+	configureParameter = [[
+		no-asm
+		shared
+		--prefix=&INSTALLROOT&
+		--openssldir=&INSTALLROOT&\ssl
+		VC-WIN32
+	]],
 }
 
 conf.o1wx3v7st = {
@@ -101,6 +143,13 @@ conf.o1wx3v7st = {
 	toolchain = "MSVC2017-32",
 	variant = {"-static"},
 	staticlibPath = { "lib\\libssl.lib", "lib\\libcrypto.lib" },
+	configureParameter = [[
+		no-asm
+		no-shared
+		--prefix=&INSTALLROOT&
+		--openssldir=&INSTALLROOT&\ssl
+		VC-WIN32
+	]],
 }
 
 conf.o1wx6v7 = {
@@ -109,6 +158,13 @@ conf.o1wx6v7 = {
 	host = "Win10",
 	toolchain = "MSVC2017-64",
 	libPath = { "bin\\libssl-1_1-x64.dll", "bin\\libcrypto-1_1-x64.dll" },
+	configureParameter = [[
+		no-asm
+		shared
+		--prefix=&INSTALLROOT&
+		--openssldir=&INSTALLROOT&\ssl
+		VC-WIN64A
+	]],
 }
 
 conf.o1wx6v7st = {
@@ -118,6 +174,13 @@ conf.o1wx6v7st = {
 	toolchain = "MSVC2017-64",
 	variant = {"-static"},
 	staticlibPath = { "lib\\libssl.lib", "lib\\libcrypto.lib" },
+	configureParameter = [[
+		no-asm
+		no-shared
+		--prefix=&INSTALLROOT&
+		--openssldir=&INSTALLROOT&\ssl
+		VC-WIN64A
+	]],
 }
 
 conf.o1wa6v7 = {
@@ -128,6 +191,13 @@ conf.o1wa6v7 = {
 	toolchain = "MSVC2017-64", -- only a placeholder here, in fact it only uses "toolchainT"
 	toolchainT = "MSVC2017-arm64",
 	libPath = { "bin\\libssl-1_1-arm64.dll", "bin\\libcrypto-1_1-arm64.dll" },
+	configureParameter = [[
+		no-asm
+		no-shared
+		--prefix=&INSTALLROOT&
+		--openssldir=&INSTALLROOT&\ssl
+		VC-WIN64-ARM
+	]],
 }
 
 --------------------------------------------------------------------
@@ -138,6 +208,13 @@ conf.o1wx3v9 = {
 	host = "Win10",
 	toolchain = "MSVC2019-32",
 	libPath = { "bin\\libssl-1_1.dll", "bin\\libcrypto-1_1.dll" },
+	configureParameter = [[
+		no-asm
+		shared
+		--prefix=&INSTALLROOT&
+		--openssldir=&INSTALLROOT&\ssl
+		VC-WIN32
+	]],
 }
 
 conf.o1wx6v9 = {
@@ -146,6 +223,13 @@ conf.o1wx6v9 = {
 	host = "Win10",
 	toolchain = "MSVC2019-64",
 	libPath = { "bin\\libssl-1_1-x64.dll", "bin\\libcrypto-1_1-x64.dll" },
+	configureParameter = [[
+		no-asm
+		shared
+		--prefix=&INSTALLROOT&
+		--openssldir=&INSTALLROOT&\ssl
+		VC-WIN64A
+	]],
 }
 
 --------------------------------------------------------------------
@@ -156,7 +240,23 @@ conf.o1aa3nl = {
 	host = "CentOS8",
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-arm",
-	useClang = true,
+	configureParameter = [[
+		no-asm
+		no-shared
+		--prefix=//
+		--openssldir=//ssl
+		android-arm
+		-D__ANDROID_ABI__=21
+		-march=armv7-a
+		-mfloat-abi=softfp
+		-mfpu=vfp
+		-fno-builtin-memmove
+		-mthumb
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
 }
 
 conf.o1aa6nl = {
@@ -165,7 +265,18 @@ conf.o1aa6nl = {
 	host = "CentOS8",
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-arm64",
-	useClang = true,
+	configureParameter = [[
+		no-asm
+		no-shared
+		--prefix=//
+		--openssldir=//ssl
+		android-arm64
+		-D__ANDROID_ABI__=21
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
 }
 
 conf.o1ax3nl = {
@@ -174,7 +285,18 @@ conf.o1ax3nl = {
 	host = "CentOS8",
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-x86",
-	useClang = true,
+	configureParameter = [[
+		no-asm
+		no-shared
+		--prefix=//
+		--openssldir=//ssl
+		android-x86
+		-D__ANDROID_ABI__=21
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
 }
 
 conf.o1ax6nl = {
@@ -183,7 +305,18 @@ conf.o1ax6nl = {
 	host = "CentOS8",
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-x86_64",
-	useClang = true,
+	configureParameter = [[
+		no-asm
+		no-shared
+		--prefix=//
+		--openssldir=//ssl
+		android-x86_64
+		-D__ANDROID_ABI__=21
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
 }
 
 conf.o1aalnl = {
@@ -203,7 +336,23 @@ conf.o1aa3nl24 = {
 	host = "CentOS8",
 	target = "Android-24",
 	toolchainT = "Android-24-r21e-arm",
-	useClang = true,
+	configureParameter = [[
+		no-asm
+		no-shared
+		--prefix=//
+		--openssldir=//ssl
+		android-arm
+		-D__ANDROID_ABI__=24
+		-march=armv7-a
+		-mfloat-abi=softfp
+		-mfpu=vfp
+		-fno-builtin-memmove
+		-mthumb
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
 }
 
 conf.o1aa6nl24 = {
@@ -212,7 +361,18 @@ conf.o1aa6nl24 = {
 	host = "CentOS8",
 	target = "Android-24",
 	toolchainT = "Android-24-r21e-arm64",
-	useClang = true,
+	configureParameter = [[
+		no-asm
+		no-shared
+		--prefix=//
+		--openssldir=//ssl
+		android-arm64
+		-D__ANDROID_ABI__=24
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
 }
 
 conf.o1ax3nl24 = {
@@ -221,7 +381,18 @@ conf.o1ax3nl24 = {
 	host = "CentOS8",
 	target = "Android-24",
 	toolchainT = "Android-24-r21e-x86",
-	useClang = true,
+	configureParameter = [[
+		no-asm
+		no-shared
+		--prefix=//
+		--openssldir=//ssl
+		android-x86
+		-D__ANDROID_ABI__=24
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
 }
 
 conf.o1ax6nl24 = {
@@ -230,7 +401,18 @@ conf.o1ax6nl24 = {
 	host = "CentOS8",
 	target = "Android-24",
 	toolchainT = "Android-24-r21e-x86_64",
-	useClang = true,
+	configureParameter = [[
+		no-asm
+		no-shared
+		--prefix=//
+		--openssldir=//ssl
+		android-x86_64
+		-D__ANDROID_ABI__=24
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
 }
 
 conf.o1aalnl24 = {
@@ -250,7 +432,23 @@ conf.o1aa3n224 = {
 	host = "CentOS8",
 	target = "Android-24",
 	toolchainT = "Android-24-r22-arm",
-	useClang = true,
+	configureParameter = [[
+		no-asm
+		no-shared
+		--prefix=//
+		--openssldir=//ssl
+		android-arm
+		-D__ANDROID_ABI__=24
+		-march=armv7-a
+		-mfloat-abi=softfp
+		-mfpu=vfp
+		-fno-builtin-memmove
+		-mthumb
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
 }
 
 conf.o1aa6n224 = {
@@ -259,7 +457,18 @@ conf.o1aa6n224 = {
 	host = "CentOS8",
 	target = "Android-24",
 	toolchainT = "Android-24-r22-arm64",
-	useClang = true,
+	configureParameter = [[
+		no-asm
+		no-shared
+		--prefix=//
+		--openssldir=//ssl
+		android-arm64
+		-D__ANDROID_ABI__=24
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
 }
 
 conf.o1ax3n224 = {
@@ -268,7 +477,18 @@ conf.o1ax3n224 = {
 	host = "CentOS8",
 	target = "Android-24",
 	toolchainT = "Android-24-r22-x86",
-	useClang = true,
+	configureParameter = [[
+		no-asm
+		no-shared
+		--prefix=//
+		--openssldir=//ssl
+		android-x86
+		-D__ANDROID_ABI__=24
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
 }
 
 conf.o1ax6n224 = {
@@ -277,7 +497,18 @@ conf.o1ax6n224 = {
 	host = "CentOS8",
 	target = "Android-24",
 	toolchainT = "Android-24-r22-x86_64",
-	useClang = true,
+	configureParameter = [[
+		no-asm
+		no-shared
+		--prefix=//
+		--openssldir=//ssl
+		android-x86_64
+		-D__ANDROID_ABI__=24
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
 }
 
 conf.o1aaln224 = {
@@ -292,8 +523,8 @@ conf.o1aaln224 = {
 --------------------------------------------------------------------
 
 local MsvcVer = {
-	["MSVC2017"] = "15.9.31",
-	["MSVC2019"] = "16.8.4",
+	["MSVC2017"] = "15.9.33",
+	["MSVC2019"] = "16.8.6",
 }
 
 for name, value in pairs(conf) do

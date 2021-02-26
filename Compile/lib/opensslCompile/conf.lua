@@ -51,6 +51,7 @@ conf.o1wx3v5 = {
 		--prefix=&INSTALLROOT&
 		--openssldir=&INSTALLROOT&\ssl
 		VC-WIN32
+		-FS
 	]],
 }
 
@@ -67,6 +68,7 @@ conf.o1wx3v5st = {
 		--prefix=&INSTALLROOT&
 		--openssldir=&INSTALLROOT&\ssl
 		VC-WIN32
+		-FS
 	]],
 }
 
@@ -82,6 +84,7 @@ conf.o1wx6v5 = {
 		--prefix=&INSTALLROOT&
 		--openssldir=&INSTALLROOT&\ssl
 		VC-WIN64A
+		-FS
 	]],
 }
 
@@ -133,6 +136,7 @@ conf.o1wx3v7 = {
 		--prefix=&INSTALLROOT&
 		--openssldir=&INSTALLROOT&\ssl
 		VC-WIN32
+		-FS
 	]],
 }
 
@@ -149,6 +153,7 @@ conf.o1wx3v7st = {
 		--prefix=&INSTALLROOT&
 		--openssldir=&INSTALLROOT&\ssl
 		VC-WIN32
+		-FS
 	]],
 }
 
@@ -164,6 +169,7 @@ conf.o1wx6v7 = {
 		--prefix=&INSTALLROOT&
 		--openssldir=&INSTALLROOT&\ssl
 		VC-WIN64A
+		-FS
 	]],
 }
 
@@ -180,6 +186,7 @@ conf.o1wx6v7st = {
 		--prefix=&INSTALLROOT&
 		--openssldir=&INSTALLROOT&\ssl
 		VC-WIN64A
+		-FS
 	]],
 }
 
@@ -197,6 +204,7 @@ conf.o1wa6v7 = {
 		--prefix=&INSTALLROOT&
 		--openssldir=&INSTALLROOT&\ssl
 		VC-WIN64-ARM
+		-FS
 	]],
 }
 
@@ -214,6 +222,7 @@ conf.o1wx3v9 = {
 		--prefix=&INSTALLROOT&
 		--openssldir=&INSTALLROOT&\ssl
 		VC-WIN32
+		-FS
 	]],
 }
 
@@ -229,6 +238,7 @@ conf.o1wx6v9 = {
 		--prefix=&INSTALLROOT&
 		--openssldir=&INSTALLROOT&\ssl
 		VC-WIN64A
+		-FS
 	]],
 }
 

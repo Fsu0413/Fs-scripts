@@ -429,7 +429,7 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 		-- MSVC version of Makefile supports only nmake, jom is not supported
 		-- some pull requests which tries to support jom on MSVC builds are simply closed.
 		-- maybe adding "/FS" to the compiler command line is an idea?
-		ret.MAKE = "nmake"
+		ret.MAKE = "jom"
 	else
 		error("not supported")
 	end

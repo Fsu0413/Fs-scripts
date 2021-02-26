@@ -246,7 +246,7 @@ conf.o1aa3nl = {
 		--prefix=//
 		--openssldir=//ssl
 		android-arm
-		-D__ANDROID_ABI__=21
+		-D__ANDROID_API__=21
 		-march=armv7-a
 		-mfloat-abi=softfp
 		-mfpu=vfp
@@ -271,7 +271,7 @@ conf.o1aa6nl = {
 		--prefix=//
 		--openssldir=//ssl
 		android-arm64
-		-D__ANDROID_ABI__=21
+		-D__ANDROID_API__=21
 		-fstack-protector-strong
 		-fPIC
 		-Wl,-s
@@ -291,7 +291,7 @@ conf.o1ax3nl = {
 		--prefix=//
 		--openssldir=//ssl
 		android-x86
-		-D__ANDROID_ABI__=21
+		-D__ANDROID_API__=21
 		-fstack-protector-strong
 		-fPIC
 		-Wl,-s
@@ -311,7 +311,7 @@ conf.o1ax6nl = {
 		--prefix=//
 		--openssldir=//ssl
 		android-x86_64
-		-D__ANDROID_ABI__=21
+		-D__ANDROID_API__=21
 		-fstack-protector-strong
 		-fPIC
 		-Wl,-s
@@ -342,7 +342,7 @@ conf.o1aa3nl24 = {
 		--prefix=//
 		--openssldir=//ssl
 		android-arm
-		-D__ANDROID_ABI__=24
+		-D__ANDROID_API__=24
 		-march=armv7-a
 		-mfloat-abi=softfp
 		-mfpu=vfp
@@ -367,7 +367,7 @@ conf.o1aa6nl24 = {
 		--prefix=//
 		--openssldir=//ssl
 		android-arm64
-		-D__ANDROID_ABI__=24
+		-D__ANDROID_API__=24
 		-fstack-protector-strong
 		-fPIC
 		-Wl,-s
@@ -387,7 +387,7 @@ conf.o1ax3nl24 = {
 		--prefix=//
 		--openssldir=//ssl
 		android-x86
-		-D__ANDROID_ABI__=24
+		-D__ANDROID_API__=24
 		-fstack-protector-strong
 		-fPIC
 		-Wl,-s
@@ -407,7 +407,7 @@ conf.o1ax6nl24 = {
 		--prefix=//
 		--openssldir=//ssl
 		android-x86_64
-		-D__ANDROID_ABI__=24
+		-D__ANDROID_API__=24
 		-fstack-protector-strong
 		-fPIC
 		-Wl,-s
@@ -438,7 +438,7 @@ conf.o1aa3n224 = {
 		--prefix=//
 		--openssldir=//ssl
 		android-arm
-		-D__ANDROID_ABI__=24
+		-D__ANDROID_API__=24
 		-march=armv7-a
 		-mfloat-abi=softfp
 		-mfpu=vfp
@@ -463,7 +463,7 @@ conf.o1aa6n224 = {
 		--prefix=//
 		--openssldir=//ssl
 		android-arm64
-		-D__ANDROID_ABI__=24
+		-D__ANDROID_API__=24
 		-fstack-protector-strong
 		-fPIC
 		-Wl,-s
@@ -483,7 +483,7 @@ conf.o1ax3n224 = {
 		--prefix=//
 		--openssldir=//ssl
 		android-x86
-		-D__ANDROID_ABI__=24
+		-D__ANDROID_API__=24
 		-fstack-protector-strong
 		-fPIC
 		-Wl,-s
@@ -503,7 +503,7 @@ conf.o1ax6n224 = {
 		--prefix=//
 		--openssldir=//ssl
 		android-x86_64
-		-D__ANDROID_ABI__=24
+		-D__ANDROID_API__=24
 		-fstack-protector-strong
 		-fPIC
 		-Wl,-s

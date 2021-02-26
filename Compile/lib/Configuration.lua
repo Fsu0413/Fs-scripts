@@ -368,26 +368,17 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 
 	if confDetail.crossCompile then
 		if string.sub(confDetail.toolchainT, 1, 7) == "Android" then -- Android
-		--[[ Legacy openssl_compile_android version
-			repl.commandLine = scriptPath .. "/../openssl_compile_android.sh"
+			-- Let's use NDK package directly, assume confHost.pathSep = "/"
 			local matchStr = "Android%-(%d+)%-(r%d+%a?)%-(.+)"
 			local api, ndkVer, archi = string.match(confDetail.toolchainT, matchStr)
 			if api then
-				repl.parameter = {
-					archi,
-					confHost.androidNdkPath[ndkVer],
-					api,
-					(confDetail.useClang and "true" or "false"),
-				}
+				ret.envSet.ANDROID_NDK_HOME = confHost.androidNdkPath[ndkVer]
+				ret.envSet.CC = "clang"
+				table.insert(ret.path, confHost.androidNdkPath[ndkVer] .. "/toolchains/llvm/prebuilt/" .. confHost.androidNdkHost .. "/bin")
+				ret.INSTALLCOMMANDLINE = ret.INSTALLCOMMANDLINE .. " DESTDIR=" .. installRoot .. " "
 			else
 				error("confDetail.toolchainT is not matched")
 			end
-			]]
-			-- Let's use NDK package directly, assume confHost.pathSep = "/"
-			ret.envSet.ANDROID_NDK_HOME = confHost.androidNdkPath[ndkVer]
-			ret.envSet.CC = "clang"
-			table.insert(ret.path, confHost.androidNdkPath[ndkVer] .. "/toolchains/llvm/prebuilt/" .. confHost.androidNdkHost .. "/bin")
-			ret.INSTALLCOMMANDLINE = ret.INSTALLCOMMANDLINE .. " DESTDIR=" .. installRoot .. " "
 		elseif string.sub(confDetail.toolchainT, 1, 10) == "emscripten" then -- WebAssembly
 			error("todo....")
 		elseif string.sub(confDetail.toolchainT, 1, 4) == "MSVC" then -- Windows UWP/ARM64 Desktop

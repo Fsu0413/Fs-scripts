@@ -227,9 +227,9 @@ conf.Qt.generateConfTable = function(self, host, job)
 
 	if not confDetail.useCMake then
 		if confHost.makefileTemplate == "unix" then
-			ret.MAKE = "make -j10"
+			ret.MAKE = "make -j$PARALLELNUM"
 		elseif string.sub(confDetail.toolchain, 1, 5) == "MinGW" then
-			ret.MAKE = "mingw32-make -j10"
+			ret.MAKE = "mingw32-make -j%PARALLELNUM%"
 		elseif string.sub(confDetail.toolchain, 1, 4) == "MSVC" then
 			ret.MAKE = "jom"
 		else
@@ -421,14 +421,13 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 	end), "%s+", " ")
 
 	if confHost.makefileTemplate == "unix" then
-		ret.MAKE = "make -j$PARALLELNUM"
-	elseif string.sub(confDetail.toolchain, 1, 5) == "MinGW" then
-		-- OpenSSL on MinGW is using MSYS2 make, not MinGW make
+		-- OpenSSL on MinGW is using MSYS2, so only runs on Unix environment
 		ret.MAKE = "make -j$PARALLELNUM"
 	elseif string.sub(confDetail.toolchain, 1, 4) == "MSVC" then
-		-- MSVC version of Makefile supports only nmake, jom is not supported
+		-- MSVC version of Makefile supports only nmake, jom is not supported offically
 		-- some pull requests which tries to support jom on MSVC builds are simply closed.
-		-- maybe adding "/FS" to the compiler command line is an idea?
+		-- currently adding "/FS" to the compiler command line, but it fails randomly.
+		-- Retry is added when build fails, for 3 times.
 		ret.MAKE = "jom"
 	else
 		error("not supported")

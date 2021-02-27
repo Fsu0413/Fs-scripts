@@ -664,7 +664,7 @@ conf.Q2wx3m7 = {
 		-sql-sqlite
 		-sql-odbc
 		-make-tool
-		"mingw32-make -j10"
+		"mingw32-make -j%PARALLELNUM%"
 	]],
 }
 
@@ -709,7 +709,7 @@ conf.Q2wx3m7sf = {
 		-sql-sqlite
 		-sql-odbc
 		-make-tool
-		"mingw32-make -j10"
+		"mingw32-make -j%PARALLELNUM%"
 	]],
 }
 
@@ -748,7 +748,7 @@ conf.Q2wx6m7 = {
 		-sql-sqlite
 		-sql-odbc
 		-make-tool
-		"mingw32-make -j10"
+		"mingw32-make -j%PARALLELNUM%"
 	]],
 }
 
@@ -793,7 +793,7 @@ conf.Q2wx6m7sf = {
 		-sql-sqlite
 		-sql-odbc
 		-make-tool
-		"mingw32-make -j10"
+		"mingw32-make -j%PARALLELNUM%"
 	]],
 }
 
@@ -826,7 +826,7 @@ conf.Q2lx6st = {
 		-ssl
 		-openssl-linked
 		-make-tool
-		"make -j8"
+		"make -j$PARALLELNUM"
 		-skip
 		qt3d
 		-skip
@@ -920,7 +920,7 @@ conf.Q2mx6 = {
 		-securetransport
 		-sql-sqlite
 		-make-tool
-		"make -j5"
+		"make -j$PARALLELNUM"
 		-rpath
 		-webengine-proprietary-codecs
 	]],
@@ -957,7 +957,7 @@ conf.Q2mx6nf = {
 		-securetransport
 		-sql-sqlite
 		-make-tool
-		"make -j5"
+		"make -j$PARALLELNUM"
 		-rpath
 		-webengine-proprietary-codecs
 		-no-framework
@@ -995,7 +995,7 @@ conf.Q2mx6st = {
 		-securetransport
 		-sql-sqlite
 		-make-tool
-		"make -j5"
+		"make -j$PARALLELNUM"
 		-skip
 		qt3d
 		-skip
@@ -1099,7 +1099,7 @@ conf.Q2wx6m7_aa3nl = {
 		"OPENSSL_LIBS=&OPENSSLDIR&\lib\libssl.a &OPENSSLDIR&\lib\libcrypto.a"
 		-sql-sqlite
 		-make-tool
-		"mingw32-make -j13"
+		"mingw32-make -j%PARALLELNUM%"
 		-android-sdk
 		&ANDROIDSDKROOT&
 		-android-ndk
@@ -1153,7 +1153,7 @@ conf.Q2wx6m7_aa6nl = {
 		"OPENSSL_LIBS=&OPENSSLDIR&\lib\libssl.a &OPENSSLDIR&\lib\libcrypto.a"
 		-sql-sqlite
 		-make-tool
-		"mingw32-make -j13"
+		"mingw32-make -j%PARALLELNUM%"
 		-android-sdk
 		&ANDROIDSDKROOT&
 		-android-ndk
@@ -1207,7 +1207,7 @@ conf.Q2wx6m7_ax3nl = {
 		"OPENSSL_LIBS=&OPENSSLDIR&\lib\libssl.a &OPENSSLDIR&\lib\libcrypto.a"
 		-sql-sqlite
 		-make-tool
-		"mingw32-make -j13"
+		"mingw32-make -j%PARALLELNUM%"
 		-android-sdk
 		&ANDROIDSDKROOT&
 		-android-ndk
@@ -1259,7 +1259,7 @@ conf.Q2lx6_aa3nl = {
 		&OPENSSLDIR&/include/
 		-sql-sqlite
 		-make-tool
-		"gmake -j8"
+		"make -j$PARALLELNUM"
 		-android-sdk
 		&ANDROIDSDKROOT&
 		-android-ndk
@@ -1312,7 +1312,7 @@ conf.Q2lx6_aa6nl = {
 		&OPENSSLDIR&/include/
 		-sql-sqlite
 		-make-tool
-		"gmake -j8"
+		"make -j$PARALLELNUM"
 		-android-sdk
 		&ANDROIDSDKROOT&
 		-android-ndk
@@ -1365,7 +1365,7 @@ conf.Q2lx6_ax3nl = {
 		&OPENSSLDIR&/include/
 		-sql-sqlite
 		-make-tool
-		"gmake -j8"
+		"make -j$PARALLELNUM"
 		-android-sdk
 		&ANDROIDSDKROOT&
 		-android-ndk
@@ -1418,7 +1418,7 @@ conf.Q2mx6_aa3nl = {
 		&OPENSSLDIR&/include/
 		-sql-sqlite
 		-make-tool
-		"make -j8"
+		"make -j$PARALLELNUM"
 		-android-sdk
 		&ANDROIDSDKROOT&
 		-android-ndk
@@ -1471,7 +1471,7 @@ conf.Q2mx6_aa6nl = {
 		&OPENSSLDIR&/include/
 		-sql-sqlite
 		-make-tool
-		"make -j8"
+		"make -j$PARALLELNUM"
 		-android-sdk
 		&ANDROIDSDKROOT&
 		-android-ndk
@@ -1524,7 +1524,7 @@ conf.Q2mx6_ax3nl = {
 		&OPENSSLDIR&/include/
 		-sql-sqlite
 		-make-tool
-		"make -j8"
+		"make -j$PARALLELNUM"
 		-android-sdk
 		&ANDROIDSDKROOT&
 		-android-ndk
@@ -1572,7 +1572,7 @@ conf.Q2lx6_W = {
 		-no-ssl
 		-sql-sqlite
 		-make-tool
-		"make -j8"
+		"make -j$PARALLELNUM"
 	]],
 }
 
@@ -1607,7 +1607,7 @@ conf.Q2mx6_W = {
 		-no-ssl
 		-sql-sqlite
 		-make-tool
-		"make -j8"
+		"make -j$PARALLELNUM"
 	]],
 }
 
@@ -2000,7 +2000,7 @@ conf.Q5wx3m8 = {
 		-sql-sqlite
 		-sql-odbc
 		-make-tool
-		"mingw32-make -j10"
+		"mingw32-make -j%PARALLELNUM%"
 	]],
 }
 
@@ -2041,7 +2041,7 @@ conf.Q5wx3m8sf = {
 		-sql-sqlite
 		-sql-odbc
 		-make-tool
-		"mingw32-make -j10"
+		"mingw32-make -j%PARALLELNUM%"
 	]],
 }
 
@@ -2077,7 +2077,7 @@ conf.Q5wx6m8 = {
 		-sql-sqlite
 		-sql-odbc
 		-make-tool
-		"mingw32-make -j10"
+		"mingw32-make -j%PARALLELNUM%"
 	]],
 }
 
@@ -2118,7 +2118,7 @@ conf.Q5wx6m8sf = {
 		-sql-sqlite
 		-sql-odbc
 		-make-tool
-		"mingw32-make -j10"
+		"mingw32-make -j%PARALLELNUM%"
 	]],
 }
 
@@ -2152,7 +2152,7 @@ conf.Q5mx6 = {
 		-securetransport
 		-sql-sqlite
 		-make-tool
-		"make -j5"
+		"make -j$PARALLELNUM"
 		-rpath
 		-skip
 		qtwebengine
@@ -2190,7 +2190,7 @@ conf.Q5mx6nf = {
 		-securetransport
 		-sql-sqlite
 		-make-tool
-		"make -j5"
+		"make -j$PARALLELNUM"
 		-rpath
 		-skip
 		qtwebengine
@@ -2237,7 +2237,7 @@ conf.Q5wx6m8_aalnl = {
 		&OPENSSLDIR&/lib/
 		-sql-sqlite
 		-make-tool
-		"mingw32-make -j13"
+		"mingw32-make -j%PARALLELNUM%"
 		-android-sdk
 		&ANDROIDSDKROOT&
 		-android-ndk
@@ -2289,7 +2289,7 @@ conf.Q5lx6_aalnl = {
 		&OPENSSLDIR&/lib/
 		-sql-sqlite
 		-make-tool
-		"gmake -j8"
+		"make -j$PARALLELNUM"
 		-android-sdk
 		&ANDROIDSDKROOT&
 		-android-ndk
@@ -2341,7 +2341,7 @@ conf.Q5mx6_aalnl = {
 		&OPENSSLDIR&/lib/
 		-sql-sqlite
 		-make-tool
-		"make -j8"
+		"make -j$PARALLELNUM"
 		-android-sdk
 		&ANDROIDSDKROOT&
 		-android-ndk
@@ -2388,7 +2388,7 @@ conf.Q5wx6m8_W = {
 		-feature-thread
 		-sql-sqlite
 		-make-tool
-		"mingw32-make -j13"
+		"mingw32-make -j%PARALLELNUM%"
 	]],
 }
 
@@ -2424,7 +2424,7 @@ conf.Q5lx6_W = {
 		-feature-thread
 		-sql-sqlite
 		-make-tool
-		"make -j8"
+		"make -j$PARALLELNUM"
 	]],
 }
 
@@ -2460,7 +2460,7 @@ conf.Q5mx6_W = {
 		-feature-thread
 		-sql-sqlite
 		-make-tool
-		"make -j8"
+		"make -j$PARALLELNUM"
 	]],
 }
 

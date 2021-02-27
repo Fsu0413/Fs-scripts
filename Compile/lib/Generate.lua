@@ -60,6 +60,10 @@ rmdir /s /q &BUILDDIR&
 mkdir &BUILDDIR&
 cd /d &BUILDDIR&
 
+set PARALLELNUM=0
+
+set /a PARALLELNUM=%NUMBER_OF_PROCESSORS%+1
+
 set j=0
 
 cmd /c &CONFIGURECOMMANDLINE&
@@ -143,6 +147,10 @@ gen.win.template4OpenSSL = [[
 rmdir /s /q &BUILDDIR&
 mkdir &BUILDDIR&
 cd /d &BUILDDIR&
+
+set PARALLELNUM=0
+
+set /a PARALLELNUM=%NUMBER_OF_PROCESSORS%+1
 
 cmd /c &CONFIGURECOMMANDLINE&
 if errorlevel 1 exit 1
@@ -235,6 +243,15 @@ rm -rf &BUILDDIR&
 mkdir &BUILDDIR&
 cd &BUILDDIR&
 
+PARALLELNUM=3
+if [ "$NUMBER_OF_PROCESSORS" ]; then
+	PARALLELNUM=`expr $NUMBER_OF_PROCESSORS + 1`
+elif [ -e /proc/cpuinfo ]; then
+	PARALLELNUM=$(expr `cat /proc/cpuinfo | grep processor | wc -l` + 1 )
+elif [ x`uname` = xDarwin ]; then
+	PARALLELNUM=$(expr `sysctl machdep.cpu.thread_count | cut -d " " -f 2` + 1 )
+fi
+
 &CONFIGURECOMMANDLINE&
 [ $? -eq 0 ] || exit 1
 
@@ -323,9 +340,6 @@ rm -rf &BUILDDIR&
 mkdir &BUILDDIR&
 cd &BUILDDIR&
 
-&CONFIGURECOMMANDLINE&
-[ $? -eq 0 ] || exit 1
-
 PARALLELNUM=3
 if [ "$NUMBER_OF_PROCESSORS" ]; then
 	PARALLELNUM=`expr $NUMBER_OF_PROCESSORS + 1`
@@ -334,6 +348,9 @@ elif [ -e /proc/cpuinfo ]; then
 elif [ x`uname` = xDarwin ]; then
 	PARALLELNUM=$(expr `sysctl machdep.cpu.thread_count | cut -d " " -f 2` + 1 )
 fi
+
+&CONFIGURECOMMANDLINE&
+[ $? -eq 0 ] || exit 1
 
 &MAKE& clean
 

@@ -397,13 +397,13 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 
 		if confDetail.crossCompile then
 			if string.sub(confDetail.toolchainT, 1, 7) == "Android" then -- Android
-				-- Let's use NDK package directly, assume confHost.pathSep = "/"
+				-- Let's use NDK package directly
 				local matchStr = "Android%-(%d+)%-(r%d+%a?)%-(.+)"
 				local api, ndkVer, archi = string.match(confDetail.toolchainT, matchStr)
 				if api then
 					ret.envSet.ANDROID_NDK_HOME = confHost.androidNdkPath[ndkVer]
 					ret.envSet.CC = "clang"
-					table.insert(ret.path, confHost.androidNdkPath[ndkVer] .. "/toolchains/llvm/prebuilt/" .. confHost.androidNdkHost .. "/bin")
+					table.insert(ret.path, confHost.androidNdkPath[ndkVer] .. confHost.pathSep .. "toolchains" .. confHost.pathSep .. "llvm" .. confHost.pathSep .. "prebuilt" .. confHost.pathSep .. confHost.androidNdkHost .. confHost.pathSep .. "bin")
 					ret.INSTALLCOMMANDLINE = ret.INSTALLCOMMANDLINE .. " DESTDIR=" .. installRoot .. " "
 				else
 					error("confDetail.toolchainT is not matched")

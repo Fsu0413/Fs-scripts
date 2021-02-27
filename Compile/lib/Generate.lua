@@ -149,11 +149,23 @@ if errorlevel 1 exit 1
 
 cmd /c &MAKE& clean
 
+set i=0
+
+:LOOP
+set /a i=%i%+1
+if %i% gtr 3 exit 1
+
 cmd /c &MAKE&
-if errorlevel 1 exit 1
+if errorlevel 1 goto LOOP
+
+set j=0
+
+:LOOP2
+set /a j=%j%+1
+if %j% gtr 3 exit 1
 
 cmd /c &INSTALLCOMMANDLINE&
-if errorlevel 1 exit 1
+if errorlevel 1 goto LOOP2
 
 cd &INSTALLROOT&\..
 

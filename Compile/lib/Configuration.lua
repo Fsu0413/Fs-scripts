@@ -338,107 +338,137 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 	local confHost = conf.host[conf.hostToConfMap[host]]
 	local confDetail = conf.OpenSSL.configurations[job]
 
-	local ret = {}
-	ret.buildContent = "OpenSSL"
-	ret.template = confHost.makefileTemplate
-	ret.path = {}
-	ret.WORKSPACE = os.getenv("WORKSPACE")
-	ret.BUILDDIR = os.getenv("WORKSPACE") .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. "build-OpenSSL" .. job
-	ret.INSTALLCOMMANDLINE = " "
-	local download = {}
-	table.insert(download, confDetail["sourcePackageUrl" .. confHost.makefileTemplate])
+	if confDetail.opensslAndroidAll then
+		local ret = {}
+		ret.buildContent = "OpenSSLAndroidAll"
+		ret.template = confHost.makefileTemplate
+		ret.path = {}
+		ret.WORKSPACE = os.getenv("WORKSPACE")
+		ret.INSTALLROOT = os.getenv("WORKSPACE") .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. confDetail.name
+		ret.INSTALLPATH = confDetail.name
+		ret.OPENSSLDIRFUNCTION = ""
+		local download = {}
 
-	if confDetail.toolchain ~= "PATH" then
-		if string.sub(confDetail.toolchain, 1, 4) == "MSVC" then
-			ret.msvcBat = confHost.toolchainPath[confDetail.toolchain]
-		else
-			table.insert(ret.path, confHost.toolchainPath[confDetail.toolchain])
+		local repl = {}
+		repl.arch = {}
+
+		for arch, androidConf in pairs(confDetail.opensslAndroidAll) do
+			table.insert(download, conf.OpenSSL:binaryFileDownloadPath(host, androidConf))
+			ret.OPENSSLDIRFUNCTION = ret.OPENSSLDIRFUNCTION .. "if [ \"x$1\" = \"x" .. arch .. "\" ]; then\n" .. "CURRENTARCHDIR=\"" .. conf.OpenSSL.configurations[androidConf].name .. "\"\nexport CURRENTARCHDIR\nel"
+			table.insert(repl.arch, arch)
 		end
-	end
 
-	ret.envSet = {}
+		ret.ARCHITECTURES = repl.arch[1]
+		for i = 2, #repl.arch, 1 do
+			ret.ARCHITECTURES = ret.ARCHITECTURES .. " " .. repl.arch[i]
+		end
 
-	local repl = {}
-	repl.parameter = {}
-	
-	local installFolderName =  confDetail.name
-	local installRoot = os.getenv("WORKSPACE") .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. installFolderName
+		ret.OPENSSLDIRFUNCTION = ret.OPENSSLDIRFUNCTION .. "se\nreturn 1\nfi"
 
-	repl.INSTALLROOT = installRoot
+		return download, ret
+	else
+		local ret = {}
+		ret.buildContent = "OpenSSL"
+		ret.template = confHost.makefileTemplate
+		ret.path = {}
+		ret.WORKSPACE = os.getenv("WORKSPACE")
+		ret.BUILDDIR = os.getenv("WORKSPACE") .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. "build-OpenSSL" .. job
+		ret.INSTALLCOMMANDLINE = " "
+		local download = {}
+		table.insert(download, confDetail["sourcePackageUrl" .. confHost.makefileTemplate])
 
-	if confDetail.crossCompile then
-		if string.sub(confDetail.toolchainT, 1, 7) == "Android" then -- Android
-			-- Let's use NDK package directly, assume confHost.pathSep = "/"
-			local matchStr = "Android%-(%d+)%-(r%d+%a?)%-(.+)"
-			local api, ndkVer, archi = string.match(confDetail.toolchainT, matchStr)
-			if api then
-				ret.envSet.ANDROID_NDK_HOME = confHost.androidNdkPath[ndkVer]
-				ret.envSet.CC = "clang"
-				table.insert(ret.path, confHost.androidNdkPath[ndkVer] .. "/toolchains/llvm/prebuilt/" .. confHost.androidNdkHost .. "/bin")
-				ret.INSTALLCOMMANDLINE = ret.INSTALLCOMMANDLINE .. " DESTDIR=" .. installRoot .. " "
+		if confDetail.toolchain ~= "PATH" then
+			if string.sub(confDetail.toolchain, 1, 4) == "MSVC" then
+				ret.msvcBat = confHost.toolchainPath[confDetail.toolchain]
 			else
-				error("confDetail.toolchainT is not matched")
+				table.insert(ret.path, confHost.toolchainPath[confDetail.toolchain])
 			end
-		elseif string.sub(confDetail.toolchainT, 1, 10) == "emscripten" then -- WebAssembly
-			error("todo....")
-		elseif string.sub(confDetail.toolchainT, 1, 4) == "MSVC" then -- Windows UWP/ARM64 Desktop
-			-- First, deal with ret.msvcBat
-			ret.msvcBat = confHost.toolchainPath[confDetail.toolchainT]
-			-- ... then copy what host build of MSVC does.
-			-- nothing special
-		elseif string.sub(confDetail.toolchainT, 1, 11) == "GCCForLinux" then -- GNU/Linux cross builds(Todo)
-			error("todo....")
-		elseif string.sub(confDetail.toolchainT, 1, 5) == "MinGW" then -- MinGW cross builds(Todo)
-			error("todo....")
-		else
-			error("not supported")
 		end
-	else
-		if string.sub(confDetail.toolchain, 1, 4) == "MSVC" then -- if conf.hostToConfMap[host] == "win" then
-			-- nothing special
-		elseif string.sub(confDetail.toolchain, 1, 5) == "MinGW" then -- elseif conf.hostToConfMap[host] == "msys" then
-			-- nothing special
-		elseif conf.hostToConfMap[host] == "mac" then
-			-- OpenSSL build for macOS is not used when compiling Qt 5. Since build of Qt 4 has been defuncted, this may also be defuncted.
-			error("defuncted")
-		else
-			error("not supported")
-		end
-	end
 
-	local configureArgs = ""
-	for _, p in ipairs(repl.parameter) do
-		configureArgs = configureArgs .. " " .. p
-	end
+		ret.envSet = {}
 
-	ret.CONFIGURECOMMANDLINE = "perl ../" .. confDetail.sourcePackageBaseName .. "/Configure "
-	ret.CONFIGURECOMMANDLINE = ret.CONFIGURECOMMANDLINE .. string.gsub(string.gsub(confDetail.configureParameter, "%&([%w_]+)%&", function(s)
-		if repl[s] then
-			return repl[s]
-		else
-			return ""
-		end
-	end), "%s+", " ")
-
-	if confHost.makefileTemplate == "unix" then
-		-- OpenSSL on MinGW is using MSYS2, so only runs on Unix environment
-		ret.MAKE = "make -j$PARALLELNUM"
-	elseif string.sub(confDetail.toolchain, 1, 4) == "MSVC" then
-		-- MSVC version of Makefile supports only nmake, jom is not supported offically
-		-- some pull requests which tries to support jom on MSVC builds are simply closed.
-		-- currently adding "/FS" to the compiler command line, but it fails randomly.
-		-- Retry is added when build fails, for 3 times.
-		ret.MAKE = "jom"
-	else
-		error("not supported")
-	end
+		local repl = {}
+		repl.parameter = {}
 	
-	ret.INSTALLCOMMANDLINE = ret.MAKE .. " install_sw install_ssldirs " .. ret.INSTALLCOMMANDLINE
+		local installFolderName =  confDetail.name
+		local installRoot = os.getenv("WORKSPACE") .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. installFolderName
 
-	ret.INSTALLROOT = installRoot
-	ret.INSTALLPATH = confDetail.name
+		repl.INSTALLROOT = installRoot
 
-	return download, ret
+		if confDetail.crossCompile then
+			if string.sub(confDetail.toolchainT, 1, 7) == "Android" then -- Android
+				-- Let's use NDK package directly, assume confHost.pathSep = "/"
+				local matchStr = "Android%-(%d+)%-(r%d+%a?)%-(.+)"
+				local api, ndkVer, archi = string.match(confDetail.toolchainT, matchStr)
+				if api then
+					ret.envSet.ANDROID_NDK_HOME = confHost.androidNdkPath[ndkVer]
+					ret.envSet.CC = "clang"
+					table.insert(ret.path, confHost.androidNdkPath[ndkVer] .. "/toolchains/llvm/prebuilt/" .. confHost.androidNdkHost .. "/bin")
+					ret.INSTALLCOMMANDLINE = ret.INSTALLCOMMANDLINE .. " DESTDIR=" .. installRoot .. " "
+				else
+					error("confDetail.toolchainT is not matched")
+				end
+			elseif string.sub(confDetail.toolchainT, 1, 10) == "emscripten" then -- WebAssembly
+				error("todo....")
+			elseif string.sub(confDetail.toolchainT, 1, 4) == "MSVC" then -- Windows UWP/ARM64 Desktop
+				-- First, deal with ret.msvcBat
+				ret.msvcBat = confHost.toolchainPath[confDetail.toolchainT]
+				-- ... then copy what host build of MSVC does.
+				-- nothing special
+			elseif string.sub(confDetail.toolchainT, 1, 11) == "GCCForLinux" then -- GNU/Linux cross builds(Todo)
+				error("todo....")
+			elseif string.sub(confDetail.toolchainT, 1, 5) == "MinGW" then -- MinGW cross builds(Todo)
+				error("todo....")
+			else
+				error("not supported")
+			end
+		else
+			if string.sub(confDetail.toolchain, 1, 4) == "MSVC" then -- if conf.hostToConfMap[host] == "win" then
+				-- nothing special
+			elseif string.sub(confDetail.toolchain, 1, 5) == "MinGW" then -- elseif conf.hostToConfMap[host] == "msys" then
+				-- nothing special
+			elseif conf.hostToConfMap[host] == "mac" then
+				-- OpenSSL build for macOS is not used when compiling Qt 5. Since build of Qt 4 has been defuncted, this may also be defuncted.
+				error("defuncted")
+			else
+				error("not supported")
+			end
+		end
+
+		local configureArgs = ""
+		for _, p in ipairs(repl.parameter) do
+			configureArgs = configureArgs .. " " .. p
+		end
+
+		ret.CONFIGURECOMMANDLINE = "perl ../" .. confDetail.sourcePackageBaseName .. "/Configure "
+		ret.CONFIGURECOMMANDLINE = ret.CONFIGURECOMMANDLINE .. string.gsub(string.gsub(confDetail.configureParameter, "%&([%w_]+)%&", function(s)
+			if repl[s] then
+				return repl[s]
+			else
+				return ""
+			end
+		end), "%s+", " ")
+
+		if confHost.makefileTemplate == "unix" then
+			-- OpenSSL on MinGW is using MSYS2, so only runs on Unix environment
+			ret.MAKE = "make -j$PARALLELNUM"
+		elseif string.sub(confDetail.toolchain, 1, 4) == "MSVC" then
+			-- MSVC version of Makefile supports only nmake, jom is not supported offically
+			-- some pull requests which tries to support jom on MSVC builds are simply closed.
+			-- currently adding "/FS" to the compiler command line, but it fails randomly.
+			-- Retry is added when build fails, for 3 times.
+			ret.MAKE = "jom"
+		else
+			error("not supported")
+		end
+	
+		ret.INSTALLCOMMANDLINE = ret.MAKE .. " install_sw install_ssldirs " .. ret.INSTALLCOMMANDLINE
+
+		ret.INSTALLROOT = installRoot
+		ret.INSTALLPATH = confDetail.name
+
+		return download, ret
+	end
 end
 
 conf.OpenSSL.binaryFileDownloadPath = function(self, host, job)

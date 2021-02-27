@@ -333,9 +333,12 @@ conf.o1aalnl = {
 	name = "OpenSSL1.1.1j-Android-ALL-NDKr21eAPI21",
 	opensslVersion = "1.1.1j",
 	host = "CentOS8",
-	target = "Android-21",
-	toolchainT = "Android-21-r21e-all",
-	useClang = true,
+	opensslAndroidAll = {
+		["armeabi-v7a"] = "o1aa3nl",
+		["arm64-v8a"] = "o1aa6nl",
+		["x86"] = "o1ax3nl",
+		["x86_64"] = "o1ax6nl",
+	},
 }
 
 --------------------------------------------------------------------
@@ -429,9 +432,12 @@ conf.o1aalnl24 = {
 	name = "OpenSSL1.1.1j-Android-ALL-NDKr21eAPI24",
 	opensslVersion = "1.1.1j",
 	host = "CentOS8",
-	target = "Android-24",
-	toolchainT = "Android-24-r21e-all",
-	useClang = true,
+	opensslAndroidAll = {
+		["armeabi-v7a"] = "o1aa3nl24",
+		["arm64-v8a"] = "o1aa6nl24",
+		["x86"] = "o1ax3nl24",
+		["x86_64"] = "o1ax6nl24",
+	},
 }
 
 --------------------------------------------------------------------
@@ -525,9 +531,12 @@ conf.o1aaln224 = {
 	name = "OpenSSL1.1.1j-Android-ALL-NDKr22API24",
 	opensslVersion = "1.1.1j",
 	host = "CentOS8",
-	target = "Android-24",
-	toolchainT = "Android-24-r22-all",
-	useClang = true,
+	opensslAndroidAll = {
+		["armeabi-v7a"] = "o1aa3n224",
+		["arm64-v8a"] = "o1aa6n224",
+		["x86"] = "o1ax3n224",
+		["x86_64"] = "o1ax6n224",
+	},
 }
 
 --------------------------------------------------------------------

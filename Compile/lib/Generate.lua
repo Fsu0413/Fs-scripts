@@ -367,6 +367,76 @@ $SEVENZIP a -t7z -m0=LZMA2:d256m:fb273 -mmt=3 -myx -mqs -ms=on -- &INSTALLPATH&.
 
 ]]
 
+-- PATHSET
+-- ENVSET
+-- OPENSSLDIRFUNCTION
+-- ARCHITECTURES
+-- WORKSPACE
+-- INSTALLROOT
+-- INSTALLPATH
+gen.unix.template4OpenSSLAndroidAll = [[
+set -x
+
+&PATHSET&
+
+&ENVSET&
+
+TAR=
+
+for i in bsdtar tar; do
+	if $i --help; then
+		TAR=$i
+		break
+	fi
+done
+
+if [ "x$TAR" = "x" ]; then
+	echo "tar not found" >&2
+	exit 1
+fi
+
+SEVENZIP=
+
+for i in 7zr 7za 7z; do
+	if $i; then
+		SEVENZIP=$i
+		break
+	fi
+done
+
+getOpenSSLDir() {
+&OPENSSLDIRFUNCTION&
+return 0
+}
+
+rm -rf &INSTALLROOT&
+mkdir &INSTALLROOT&
+cd &INSTALLROOT&
+
+mkdir lib
+mkdir bin
+
+for ar in &ARCHITECTURES&; do
+	getOpenSSLDir "$ar"
+	if [ $? -ne 0 ]; then
+		exit 1
+	fi
+	cp ../$CURRENTARCHDIR/lib/libssl.a ./lib/libssl_$ar.a
+	cp ../$CURRENTARCHDIR/lib/libcrypto.a ./lib/libcrypto_$ar.a
+	cp ../$CURRENTARCHDIR/bin/openssl ./bin/openssl_$ar
+	if [ "x$ar" = "xarm64-v8a" ]; then
+		cp -R ../$CURRENTARCHDIR/include ./include
+		cp -R ../$CURRENTARCHDIR/ssl ./ssl
+	fi
+done
+
+cd &INSTALLROOT&/..
+
+$TAR -cf - &INSTALLPATH& | $SEVENZIP a -txz -m0=LZMA2:d256m:fb273 -mmt=3 -myx -si -- &INSTALLPATH&.tar.xz
+$SEVENZIP a -t7z -m0=LZMA2:d256m:fb273 -mmt=3 -myx -mqs -ms=on -- &INSTALLPATH&.7z &INSTALLPATH&
+
+]]
+
 gen.generate = function(self, para)
 	-- para.template should be "unix" or "win"
 	-- para.buildContent should be "Qt" or "OpenSSL" or "QQtPatcher"
@@ -386,6 +456,13 @@ gen.generate = function(self, para)
 	local template = self[para.template]["template4" .. para.buildContent]
 	if not template then
 		return
+	end
+
+	if template == "OpenSSLAndroidAll" then
+		if para.template ~= "unix" then
+			print("[Generate.generate] ERROR: Generation of OpenSSL Android All builds is not available in para.template ~= \"unix\"")
+			os.exit(1)
+		end
 	end
 
 	if template ~= "QQtPatcher" then

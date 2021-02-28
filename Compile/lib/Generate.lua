@@ -116,7 +116,7 @@ cd /d &WORKSPACE&\buildDir
 
 cd &INSTALLROOT&\..
 
-&SEVENZIP& a -t7z -m0=LZMA2:d256m:fb273 -mmt=3 -myx -mqs -ms=on -- &INSTALLPATHWITHDATE&.7z &INSTALLPATH&
+%SEVENZIP% a -t7z -m0=LZMA2:d256m:fb273 -mmt=3 -myx -mqs -ms=on -- &INSTALLPATHWITHDATE&.7z &INSTALLPATH&
 copy /y &INSTALLPATHWITHDATE&.7z &INSTALLPATH&.7z
 
 exit 0

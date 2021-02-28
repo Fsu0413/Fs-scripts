@@ -15,7 +15,6 @@ package.path = scriptPath .. "/lib/?.lua;" .. package.path
 
 local conf = require("Configuration")
 local gen = require("Generate")
-local dau = require("Download")
 
 local buildJob = os.getenv("JOB_BASE_NAME")
 local buildHost = os.getenv("NODE_NAME")
@@ -25,12 +24,7 @@ BuildTime = os.date("*t")
 local main = function(argc, argv)
 	local buildContent = conf:buildContent(buildJob)
 
-	local downloadContent, confTable, optionalQQtPatcherTable = conf[buildContent]:generateConfTable(buildHost, buildJob)
-
-	for _, d in ipairs(downloadContent) do
-		print("downloading " .. d .. "\n")
-		dau:downloadAndUncompress(d)
-	end
+	local confTable, optionalQQtPatcherTable = conf[buildContent]:generateConfTable(buildHost, buildJob)
 
 	-- QQtPatcher buildconf
 	if optionalQQtPatcherTable then

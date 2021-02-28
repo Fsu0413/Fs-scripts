@@ -32,6 +32,11 @@ gen.win.pathEnvSuf = "%PATH%"
 gen.win.envPre = "set &ENVNAME&="
 gen.win.envSuf = ""
 
+gen.win.delete = "del /q"
+gen.win.extract = {}
+gen.win.extract.sevenzip = "%SEVENZIP% x -y"
+gen.win.download = "!DOWNLOADTOOL! -!pd!"
+
 -- MSVCBATCALL
 -- EMCALL
 -- PATHSET
@@ -48,6 +53,32 @@ gen.win.envSuf = ""
 -- CONFIGFAIL
 -- CONFIGRETRY
 gen.win.template4Qt = [[
+
+setlocal enabledelayedexpansion
+
+set DOWNLOADTOOL=
+
+for %%i in (aria2c curl wget) do (
+	if "!DOWNLOADTOOL!" == "" (
+		set p="--help"
+		if "%%i" == "aria2c" set p="-h"
+		%%i !p! >NUL 2>NUL
+		if not ERRORLEVEL 1 set DOWNLOADTOOL=%%i
+		set p=
+	)
+)
+
+set pd=o
+if "!DOWNLOADTOOL!" == "wget" set pd=O
+
+&DOWNLOADPACKAGE&
+
+endlocal
+
+set SEVENZIP=7z
+
+&UNCOMPRESSPACKAGE&
+&DELETEUNCOMPRESSED&
 
 &MSVCBATCALL&
 &EMCALL&
@@ -85,7 +116,7 @@ cd /d &WORKSPACE&\buildDir
 
 cd &INSTALLROOT&\..
 
-7z a -t7z -m0=LZMA2:d256m:fb273 -mmt=3 -myx -mqs -ms=on -- &INSTALLPATHWITHDATE&.7z &INSTALLPATH&
+&SEVENZIP& a -t7z -m0=LZMA2:d256m:fb273 -mmt=3 -myx -mqs -ms=on -- &INSTALLPATHWITHDATE&.7z &INSTALLPATH&
 copy /y &INSTALLPATHWITHDATE&.7z &INSTALLPATH&.7z
 
 exit 0
@@ -124,6 +155,32 @@ popd
 -- INSTALLROOT
 -- INSTALLPATH
 gen.win.template4OpenSSL = [[
+
+setlocal enabledelayedexpansion
+
+set DOWNLOADTOOL=
+
+for %%i in (aria2c curl wget) do (
+	if "!DOWNLOADTOOL!" == "" (
+		set p="--help"
+		if "%%i" == "aria2c" set p="-h"
+		%%i !p! >NUL 2>NUL
+		if not ERRORLEVEL 1 set DOWNLOADTOOL=%%i
+		set p=
+	)
+)
+
+set pd=o
+if "!DOWNLOADTOOL!" == "wget" set pd=O
+
+&DOWNLOADPACKAGE&
+
+endlocal
+
+set SEVENZIP=7z
+
+&UNCOMPRESSPACKAGE&
+&DELETEUNCOMPRESSED&
 
 &MSVCBATCALL&
 
@@ -164,7 +221,7 @@ if errorlevel 1 goto LOOP2
 
 cd &INSTALLROOT&\..
 
-7z a -t7z -m0=LZMA2:d256m:fb273 -mmt=3 -myx -mqs -ms=on -- &INSTALLPATH&.7z &INSTALLPATH&
+%SEVENZIP% a -t7z -m0=LZMA2:d256m:fb273 -mmt=3 -myx -mqs -ms=on -- &INSTALLPATH&.7z &INSTALLPATH&
 
 ]]
 
@@ -176,6 +233,12 @@ gen.unix.pathEnvSuf = "$PATH\"; export PATH"
 
 gen.unix.envPre = "&ENVNAME&=\""
 gen.unix.envSuf = "\"; export &ENVNAME&"
+
+gen.unix.delete = "rm -f"
+gen.unix.extract = {}
+gen.unix.extract.sevenzip = "$SEVENZIP x -y"
+gen.unix.extract.tar = "$TAR -xf"
+gen.unix.download = "$DOWNLOADTOOL -$DOWNLOADP"
 
 -- EMCALL
 -- PATHSET
@@ -192,16 +255,35 @@ gen.unix.envSuf = "\"; export &ENVNAME&"
 gen.unix.template4Qt = [[
 set -x
 
-&EMCALL&
+DOWNLOAD=
 
-&PATHSET&
+for i in aria2c wget curl; do
+	p="--help"
+	if [ x$i = xaria2c ]; then
+		p="-h"
+	fi
+	if $i $p >/dev/null 2>/dev/null; then
+		DOWNLOAD=$i
+		break
+	fi
+done
 
-&ENVSET&
+if [ "x$DOWNLOAD" = "x" ]; then
+	echo "no download tool" >&2
+	exit 1
+fi
+
+DOWNLOADP="o"
+if [ "x$DOWNLOAD" = "xwget" ]; then
+	DOWNLOADP="O"
+fi
+
+&DOWNLOADPACKAGE&
 
 TAR=
 
 for i in bsdtar tar; do
-	if $i --help; then
+	if $i --help >/dev/null 2>/dev/null; then
 		TAR=$i
 		break
 	fi
@@ -214,7 +296,7 @@ fi
 
 SEVENZIP=
 
-for i in 7zr 7za 7z; do
+for i in 7zr 7za 7z >/dev/null 2>/dev/null; do
 	if $i; then
 		SEVENZIP=$i
 		break
@@ -225,6 +307,15 @@ if [ "x$SEVENZIP" = "x" ]; then
 	echo "7-zip not found" >&2
 	exit 1
 fi
+
+&UNCOMPRESSPACKAGE&
+&DELETEUNCOMPRESSED&
+
+&EMCALL&
+
+&PATHSET&
+
+&ENVSET&
 
 rm -rf &BUILDDIR&
 mkdir &BUILDDIR&
@@ -296,13 +387,34 @@ popd
 gen.unix.template4OpenSSL = [[
 set -x
 
-&PATHSET&
+DOWNLOAD=
 
-&ENVSET&
+for i in aria2c wget curl; do
+	p="--help"
+	if [ x$i = xaria2c ]; then
+		p="-h"
+	fi
+	if $i $p >/dev/null 2>/dev/null; then
+		DOWNLOAD=$i
+		break
+	fi
+done
+
+if [ "x$DOWNLOAD" = "x" ]; then
+	echo "no download tool" >&2
+	exit 1
+fi
+
+DOWNLOADP="o"
+if [ "x$DOWNLOAD" = "xwget" ]; then
+	DOWNLOADP="O"
+fi
+
+&DOWNLOADPACKAGE&
 
 TAR=
 
-for i in bsdtar tar; do
+for i in bsdtar tar >/dev/null 2>/dev/null; do
 	if $i --help; then
 		TAR=$i
 		break
@@ -316,12 +428,19 @@ fi
 
 SEVENZIP=
 
-for i in 7zr 7za 7z; do
+for i in 7zr 7za 7z >/dev/null 2>/dev/null; do
 	if $i; then
 		SEVENZIP=$i
 		break
 	fi
 done
+
+&UNCOMPRESSPACKAGE&
+&DELETEUNCOMPRESSED&
+
+&PATHSET&
+
+&ENVSET&
 
 rm -rf &BUILDDIR&
 mkdir &BUILDDIR&
@@ -364,9 +483,30 @@ $SEVENZIP a -t7z -m0=LZMA2:d256m:fb273 -mmt=3 -myx -mqs -ms=on -- &INSTALLPATH&.
 gen.unix.template4OpenSSLAndroidAll = [[
 set -x
 
-&PATHSET&
+DOWNLOAD=
 
-&ENVSET&
+for i in aria2c wget curl; do
+	p="--help"
+	if [ x$i = xaria2c ]; then
+		p="-h"
+	fi
+	if $i $p >/dev/null 2>/dev/null; then
+		DOWNLOAD=$i
+		break
+	fi
+done
+
+if [ "x$DOWNLOAD" = "x" ]; then
+	echo "no download tool" >&2
+	exit 1
+fi
+
+DOWNLOADP="o"
+if [ "x$DOWNLOAD" = "xwget" ]; then
+	DOWNLOADP="O"
+fi
+
+&DOWNLOADPACKAGE&
 
 TAR=
 
@@ -391,10 +531,17 @@ for i in 7zr 7za 7z; do
 	fi
 done
 
+&UNCOMPRESSPACKAGE&
+&DELETEUNCOMPRESSED&
+
 getOpenSSLDir() {
 &OPENSSLDIRFUNCTION&
 return 0
 }
+
+&PATHSET&
+
+&ENVSET&
 
 rm -rf &INSTALLROOT&
 mkdir &INSTALLROOT&
@@ -424,14 +571,35 @@ $SEVENZIP a -t7z -m0=LZMA2:d256m:fb273 -mmt=3 -myx -mqs -ms=on -- &INSTALLPATH&.
 
 ]]
 
+local filenameAndToolFromUrl = function(url)
+	-- get filename from URL since we don't use redirections
+	local n, n2
+	repeat
+		n = n2
+		n2 = string.find(url, "/", n and (n + 1) or 1)
+	until n2 == nil
+	local target = string.sub(url, n + 1)
+	local tool = "unknown"
+
+	-- uncompress
+	if (string.sub(target, -3) == ".7z") or (string.sub(target, -4) == ".zip") then
+		tool = "sevenzip"
+	elseif ((string.sub(target, -7) == ".tar.gz") or (string.sub(target, -8) == ".tar.bz2") or (string.sub(target, -7) == ".tar.xz")) then
+		tool = "tar"
+	end
+
+	return target, tool
+end
+
 gen.generate = function(self, para)
 	-- para.template should be "unix" or "win"
-	-- para.buildContent should be "Qt" or "OpenSSL" or "QQtPatcher"
+	-- para.buildContent should be "Qt", "OpenSSL", "OpenSSLAndroidAll" or "QQtPatcher"
 	-- other contents in para goes to the replacement function
 	-- for buildContent other than QQtPatcher:
 	--   "MAKE" "SOURCEFILE" "CONFIGURECOMMANDLINE" "date" must be provided. Fails if either one is missing.
 	--   MSVC builds must provide "MSVCBATCALL". MinGW builds must not provide "MSVCBATCALL".
 	--   if there is "path" and no "PATHSET" we calculate the PATHSET for user. If both are missing the PATHSET will be "". "path" should be a table with numbered index
+	--   if there is "download" the final script will download and extract the needed files.
 	-- QQtPatcher buildContent is designed to be put in EXTRAINSTALL so there is neither seprate PATHSET nor ENVSET
 	--   however, MAKE is needed
 	local paraCopy = {}
@@ -461,6 +629,24 @@ gen.generate = function(self, para)
 
 		if para.envSet then
 			paraCopy.ENVSET = otherEnvCalc(self[para.template], para.envSet)
+		end
+
+		if para.download and type(para.download) == "table" then
+			for _, url in ipairs(para.download) do
+				local filename, tool = filenameAndToolFromUrl(url)
+				if not paraCopy.DOWNLOADPACKAGE then
+					paraCopy.DOWNLOADPACKAGE = ""
+				end
+				paraCopy.DOWNLOADPACKAGE = paraCopy.DOWNLOADPACKAGE .. self[para.template].download .. " \"" .. filename .. "\" \"" .. url .. "\"\n"
+				if not paraCopy.UNCOMPRESSPACKAGE then
+					paraCopy.UNCOMPRESSPACKAGE = ""
+				end
+				paraCopy.UNCOMPRESSPACKAGE = paraCopy.UNCOMPRESSPACKAGE .. self[para.template].extract[tool] .. " \"" .. filename .. "\"\n"
+				if not paraCopy.DELETEUNCOMPRESSED then
+					paraCopy.DELETEUNCOMPRESSED = ""
+				end
+				paraCopy.DELETEUNCOMPRESSED = paraCopy.DELETEUNCOMPRESSED .. self[para.template].delete .. " \"" .. filename .. "\"\n"
+			end
 		end
 	end
 	if para.msvcBat then

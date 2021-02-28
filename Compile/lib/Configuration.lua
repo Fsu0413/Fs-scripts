@@ -118,7 +118,7 @@ conf.Qt.generateConfTable = function(self, host, job)
 	ret.path = {}
 	ret.WORKSPACE = os.getenv("WORKSPACE")
 	ret.BUILDDIR = confHost.buildRootPath .. "build-Qt" .. job
-	local download = {}
+	ret.download = {}
 
 	if confDetail.toolchain ~= "PATH" then
 		if string.sub(confDetail.toolchain, 1, 4) == "MSVC" then
@@ -141,7 +141,7 @@ conf.Qt.generateConfTable = function(self, host, job)
 	local installRoot = os.getenv("WORKSPACE") .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. installFolderName
 
 	if confDetail.opensslConf then
-		table.insert(download, conf.OpenSSL:binaryFileDownloadPath(host, confDetail.opensslConf))
+		table.insert(ret.download, conf.OpenSSL:binaryFileDownloadPath(host, confDetail.opensslConf))
 		repl.OPENSSLDIR = os.getenv("WORKSPACE") .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. conf.OpenSSL.configurations[confDetail.opensslConf].name
 		if confHost.makefileTemplate == "win" then
 			repl.OPENSSLDIR_DOUBLESLASH = string.gsub(repl.OPENSSLDIR, "%\\", "\\\\")
@@ -156,7 +156,7 @@ conf.Qt.generateConfTable = function(self, host, job)
 	if confDetail.crossCompile then
 		-- Qt 6: We need host tool to cross build Qt
 		if confDetail.hostToolsConf then
-			table.insert(download, confDetail["hostToolsUrl" .. confHost.makefileTemplate])
+			table.insert(ret.download, confDetail["hostToolsUrl" .. confHost.makefileTemplate])
 			repl.HOSTQTDIR = os.getenv("WORKSPACE") .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. conf.Qt.configurations[confDetail.hostToolsConf].name
 			if confHost.makefileTemplate == "win" then
 				repl.HOSTQTDIR_DOUBLESLASH = string.gsub(repl.OPENSSLDIR, "%\\", "\\\\")
@@ -201,7 +201,7 @@ conf.Qt.generateConfTable = function(self, host, job)
 			error("todo....")
 		end
 	end
-	
+
 	repl.INSTALLROOT = installRoot
 
 	local sourcePackageBaseName = confDetail.sourcePackageBaseName
@@ -236,7 +236,7 @@ conf.Qt.generateConfTable = function(self, host, job)
 		-- let CMake call the underlayer make tool
 		ret.MAKE = "cmake --build . --parallel -- "
 	end
-	
+
 	if not confDetail.useCMake then
 		ret.INSTALLCOMMANDLINE = ret.MAKE .. " install "
 		if confDetail.crossCompile then
@@ -260,7 +260,7 @@ conf.Qt.generateConfTable = function(self, host, job)
 	ret.INSTALLPATH = installFolderName
 
 	ret.EXTRAINSTALL = ""
-	
+
 	-- Qt host tool deploy
 	if confDetail.crossCompile and confDetail.hostToolsConf then
 		local deployShellCommand = scriptPath .. "/../qt6_deploy_host.sh"
@@ -313,9 +313,9 @@ conf.Qt.generateConfTable = function(self, host, job)
 				MAKE = ret.MAKE,
 				VERSION = confDetail.qQtPatcherVersion,
 			}
-			table.insert(download, confDetail["qQtPatcherSourceUrl" .. confHost.makefileTemplate])
+			table.insert(ret.download, confDetail["qQtPatcherSourceUrl" .. confHost.makefileTemplate])
 		else
-			table.insert(download, confDetail["qQtPatcherUrl" .. confHost.makefileTemplate])
+			table.insert(ret.download, confDetail["qQtPatcherUrl" .. confHost.makefileTemplate])
 		end
 		ret.EXTRAINSTALL = ret.EXTRAINSTALL .. copyCmd .. "QQtPatcher" .. (((confHost.makefileTemplate == "unix") and (conf.hostToConfMap[host] ~= "msys")) and "" or ".exe") .. " " .. installRoot .. "\n"
 
@@ -324,7 +324,7 @@ conf.Qt.generateConfTable = function(self, host, job)
 		end
 	end
 
-	return download, ret, qQtPatcherTable
+	return ret, qQtPatcherTable
 end
 
 conf.OpenSSL = {}
@@ -344,13 +344,13 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 		ret.INSTALLROOT = os.getenv("WORKSPACE") .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. confDetail.name
 		ret.INSTALLPATH = confDetail.name
 		ret.OPENSSLDIRFUNCTION = ""
-		local download = {}
+		ret.download = {}
 
 		local repl = {}
 		repl.arch = {}
 
 		for arch, androidConf in pairs(confDetail.opensslAndroidAll) do
-			table.insert(download, conf.OpenSSL:binaryFileDownloadPath(host, androidConf))
+			table.insert(ret.download, conf.OpenSSL:binaryFileDownloadPath(host, androidConf))
 			ret.OPENSSLDIRFUNCTION = ret.OPENSSLDIRFUNCTION .. "if [ \"x$1\" = \"x" .. arch .. "\" ]; then\n" .. "CURRENTARCHDIR=\"" .. conf.OpenSSL.configurations[androidConf].name .. "\"\nexport CURRENTARCHDIR\nel"
 			table.insert(repl.arch, arch)
 		end
@@ -371,8 +371,8 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 		ret.WORKSPACE = os.getenv("WORKSPACE")
 		ret.BUILDDIR = os.getenv("WORKSPACE") .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. "build-OpenSSL" .. job
 		ret.INSTALLCOMMANDLINE = " "
-		local download = {}
-		table.insert(download, confDetail["sourcePackageUrl" .. confHost.makefileTemplate])
+		ret.download = {}
+		table.insert(ret.download, confDetail["sourcePackageUrl" .. confHost.makefileTemplate])
 
 		if confDetail.toolchain ~= "PATH" then
 			if string.sub(confDetail.toolchain, 1, 4) == "MSVC" then
@@ -386,7 +386,7 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 
 		local repl = {}
 		repl.parameter = {}
-	
+
 		local installFolderName =  confDetail.name
 		local installRoot = os.getenv("WORKSPACE") .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. installFolderName
 
@@ -458,13 +458,13 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 		else
 			error("not supported")
 		end
-	
+
 		ret.INSTALLCOMMANDLINE = ret.MAKE .. " install_sw install_ssldirs " .. ret.INSTALLCOMMANDLINE
 
 		ret.INSTALLROOT = installRoot
 		ret.INSTALLPATH = confDetail.name
 
-		return download, ret
+		return ret
 	end
 end
 
@@ -492,4 +492,3 @@ conf.hostToConfMap = {
 }
 
 return conf
-

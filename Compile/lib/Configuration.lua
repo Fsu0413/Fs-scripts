@@ -220,9 +220,6 @@ conf.Qt.generateConfTable = function(self, host, job)
 	end), "%s+", " ")
 	if confDetail.useCMake then
 		ret.CONFIGURECOMMANDLINE = ret.CONFIGURECOMMANDLINE .. confHost.sourcePackagePath .. sourcePackageBaseName
-		if confDetail.cMakeTwice then
-			ret.reconfigure = "cmake ."
-		end
 	end
 
 	if not confDetail.useCMake then

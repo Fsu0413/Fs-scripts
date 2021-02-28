@@ -64,12 +64,8 @@ set PARALLELNUM=0
 
 set /a PARALLELNUM=%NUMBER_OF_PROCESSORS%+1
 
-set j=0
-
 cmd /c &CONFIGURECOMMANDLINE&
-if errorlevel 1 &CONFIGFAIL&
-
-:RESUME
+if errorlevel 1 exit 1
 
 set i=0
 
@@ -93,15 +89,6 @@ cd &INSTALLROOT&\..
 copy /y &INSTALLPATHWITHDATE&.7z &INSTALLPATH&.7z
 
 exit 0
-
-:LOOP2
-
-set /a j=%j%+1
-if %j% gtr 3 exit 1
-cmd /c &CONFIGRETRY&
-if errorlevel 1 goto LOOP2
-
-goto RESUME
 
 ]]
 
@@ -496,20 +483,6 @@ gen.generate = function(self, para)
 	end
 	if para.buildContent == "Qt" then
 		paraCopy.INSTALLPATHWITHDATE = para.INSTALLPATH .. "-" .. para.date
-	end
-	if para.reconfigure then
-		if para.template == "win" then
-			paraCopy.CONFIGFAIL = "goto LOOP2"
-			paraCopy.CONFIGRETRY = para.reconfigure
-		else
-			-- todo
-		end
-	else
-		if para.template == "win" then
-			paraCopy.CONFIGFAIL = "exit 1"
-		else
-			-- todo
-		end
 	end
 
 	local ret = string.gsub(template, "%&([%w_]+)%&", function(s)

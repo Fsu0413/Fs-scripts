@@ -255,7 +255,7 @@ gen.unix.download = "$DOWNLOADTOOL -$DOWNLOADP"
 gen.unix.template4Qt = [[
 set -x
 
-DOWNLOAD=
+DOWNLOADTOOL=
 
 for i in aria2c wget curl; do
 	p="--help"
@@ -263,18 +263,18 @@ for i in aria2c wget curl; do
 		p="-h"
 	fi
 	if $i $p >/dev/null 2>/dev/null; then
-		DOWNLOAD=$i
+		DOWNLOADTOOL=$i
 		break
 	fi
 done
 
-if [ "x$DOWNLOAD" = "x" ]; then
+if [ "x$DOWNLOADTOOL" = "x" ]; then
 	echo "no download tool" >&2
 	exit 1
 fi
 
 DOWNLOADP="o"
-if [ "x$DOWNLOAD" = "xwget" ]; then
+if [ "x$DOWNLOADTOOL" = "xwget" ]; then
 	DOWNLOADP="O"
 fi
 
@@ -296,8 +296,8 @@ fi
 
 SEVENZIP=
 
-for i in 7zr 7za 7z >/dev/null 2>/dev/null; do
-	if $i; then
+for i in 7zr 7za 7z; do
+	if $i >/dev/null 2>/dev/null; then
 		SEVENZIP=$i
 		break
 	fi
@@ -387,7 +387,7 @@ popd
 gen.unix.template4OpenSSL = [[
 set -x
 
-DOWNLOAD=
+DOWNLOADTOOL=
 
 for i in aria2c wget curl; do
 	p="--help"
@@ -395,18 +395,18 @@ for i in aria2c wget curl; do
 		p="-h"
 	fi
 	if $i $p >/dev/null 2>/dev/null; then
-		DOWNLOAD=$i
+		DOWNLOADTOOL=$i
 		break
 	fi
 done
 
-if [ "x$DOWNLOAD" = "x" ]; then
+if [ "x$DOWNLOADTOOL" = "x" ]; then
 	echo "no download tool" >&2
 	exit 1
 fi
 
 DOWNLOADP="o"
-if [ "x$DOWNLOAD" = "xwget" ]; then
+if [ "x$DOWNLOADTOOL" = "xwget" ]; then
 	DOWNLOADP="O"
 fi
 
@@ -428,8 +428,8 @@ fi
 
 SEVENZIP=
 
-for i in 7zr 7za 7z >/dev/null 2>/dev/null; do
-	if $i; then
+for i in 7zr 7za 7z; do
+	if $i >/dev/null 2>/dev/null; then
 		SEVENZIP=$i
 		break
 	fi
@@ -483,7 +483,7 @@ $SEVENZIP a -t7z -m0=LZMA2:d256m:fb273 -mmt=3 -myx -mqs -ms=on -- &INSTALLPATH&.
 gen.unix.template4OpenSSLAndroidAll = [[
 set -x
 
-DOWNLOAD=
+DOWNLOADTOOL=
 
 for i in aria2c wget curl; do
 	p="--help"
@@ -491,18 +491,18 @@ for i in aria2c wget curl; do
 		p="-h"
 	fi
 	if $i $p >/dev/null 2>/dev/null; then
-		DOWNLOAD=$i
+		DOWNLOADTOOL=$i
 		break
 	fi
 done
 
-if [ "x$DOWNLOAD" = "x" ]; then
+if [ "x$DOWNLOADTOOL" = "x" ]; then
 	echo "no download tool" >&2
 	exit 1
 fi
 
 DOWNLOADP="o"
-if [ "x$DOWNLOAD" = "xwget" ]; then
+if [ "x$DOWNLOADTOOL" = "xwget" ]; then
 	DOWNLOADP="O"
 fi
 
@@ -525,7 +525,7 @@ fi
 SEVENZIP=
 
 for i in 7zr 7za 7z; do
-	if $i; then
+	if $i >/dev/null 2>/dev/null; then
 		SEVENZIP=$i
 		break
 	fi

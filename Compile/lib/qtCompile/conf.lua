@@ -5,8 +5,9 @@ local conf = {}
 abbrs:
 	Qt Versions:
 		Q2: Qt 5.12.10/Past Qt 5 LTS
-		Q5: Qt 5.15.2/Latest Qt 5 LTS
+		Q5: Qt 5.15.2/Latest Qt 5 LTS w/ latest QtWebEngine and latest QtScript
 		q0: Qt 6.0.1
+		qp: Qt 6.1.0 Alpha/Qt Prerelase
 	If prefixed with a lower-case "m", it is a modified Qt version
 
 	Platforms:
@@ -2605,7 +2606,6 @@ conf.q0lx6st = {
 	]],
 }
 
-
 conf.q0mx6 = {
 	name = "Qt6.0.1-macOS-x86_64-AppleClang&AppleClangVersion&",
 	qtVersion = "6.0.1",
@@ -3172,9 +3172,15 @@ local AppleClangVersion = {
 }
 
 local Qt6StaticConf = {
-	["Win10"] = "q0wx6m8st",
-	["CentOS8"] = "q0lx6st",
-	["macOS1015"] = "q0mx6st",
+	Win10 = {
+		["6.0.1"] = "q0wx6m8st",
+	},
+	CentOS8 = {
+		["6.0.1"] = "q0lx6st",
+	},
+	macOS1015 = {
+		["6.0.1"] = "q0mx6st",
+	},
 }
 
 local split = function(str, sep)
@@ -3275,9 +3281,9 @@ for name, value in pairs(conf) do
 	end
 
 	if tonumber(qtVersionSplit[1]) == 6 and value.crossCompile then
-		value.hostToolsConf = Qt6StaticConf[value.host]
-		value.hostToolsUrlwin = "http://172.24.13.2:8080/job/Qt/job/" .. Qt6StaticConf[value.host] .. "/lastSuccessfulBuild/artifact/buildDir/" .. conf[Qt6StaticConf[value.host]].name .. ".7z"
-		value.hostToolsUrlunix = "http://172.24.13.2:8080/job/Qt/job/" .. Qt6StaticConf[value.host] .. "/lastSuccessfulBuild/artifact/buildDir/" .. conf[Qt6StaticConf[value.host]].name .. ".tar.xz"
+		value.hostToolsConf = Qt6StaticConf[value.host][value.qtVersion]
+		value.hostToolsUrlwin = "http://172.24.13.2:8080/job/Qt/job/" .. Qt6StaticConf[value.host][value.qtVersion] .. "/lastSuccessfulBuild/artifact/buildDir/" .. conf[Qt6StaticConf[value.host][value.qtVersion]].name .. ".7z"
+		value.hostToolsUrlunix = "http://172.24.13.2:8080/job/Qt/job/" .. Qt6StaticConf[value.host][value.qtVersion] .. "/lastSuccessfulBuild/artifact/buildDir/" .. conf[Qt6StaticConf[value.host][value.qtVersion]].name .. ".tar.xz"
 	end
 
 	-- add dump function
@@ -3298,7 +3304,7 @@ for name, value in pairs(conf) do
 		if self.qQtPatcher ~= "no" then
 			ret = ret .. "\tUsing QQtPatcher config: " .. self.qQtPatcher .. ", version: " .. self.qQtPatcherVersion .. "\n"
 		end
-		if self.corssCompile and self.hostToolsConf then
+		if self.crossCompile and self.hostToolsConf then
 			ret = ret .. "\tUsing Host Qt tools: " .. value.hostToolsConf .. "\n"
 		end
 

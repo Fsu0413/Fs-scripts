@@ -221,6 +221,9 @@ conf.Qt.generateConfTable = function(self, host, job)
 	if confDetail.useCMake then
 		ret.CONFIGURECOMMANDLINE = ret.CONFIGURECOMMANDLINE .. confHost.sourcePackagePath .. sourcePackageBaseName
 	end
+	if (string.sub(confDetail.qtVersion, 1, 2) == "6.") and confDetail.crossCompile and (string.sub(confDetail.toolchainT, 1, 10) == "emscripten") then
+		ret.CONFIGURECOMMANDLINE = "emconfigure " .. ret.CONFIGURECOMMANDLINE
+	end
 
 	if not confDetail.useCMake then
 		if confHost.makefileTemplate == "unix" then
@@ -235,6 +238,9 @@ conf.Qt.generateConfTable = function(self, host, job)
 	else
 		-- let CMake call the underlayer make tool
 		ret.MAKE = "cmake --build . --parallel -- "
+	end
+	if (string.sub(confDetail.qtVersion, 1, 2) == "6.") and confDetail.crossCompile and (string.sub(confDetail.toolchainT, 1, 10) == "emscripten") then
+		ret.MAKE = "emmake " .. ret.MAKE
 	end
 
 	if not confDetail.useCMake then

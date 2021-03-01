@@ -3133,6 +3133,118 @@ conf.q0mx6_ax6nl = {
 	]],
 }
 
+conf.q0wx6m8_W = {
+	name = "Qt6.0.1-WebAssembly-emscripten1.39.8-xWindows-x86_64-MinGW8.1.0",
+	qtVersion = "6.0.1",
+	host = "Win10",
+	toolchain = "MinGW810-64",
+	target = "WebAssembly",
+	toolchainT = "emscripten-1.39.8",
+	ssl = "No",
+	useCMake = true,
+	configureParameter = [[
+		-GNinja
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DQT_HOST_PATH=&HOSTQTDIR&
+		-DCMAKE_BUILD_TYPE=Release
+		-DBUILD_SHARED_LIBS=OFF
+		-DQT_QMAKE_TARGET_MKSPEC=wasm-emscripten
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DBUILD_WITH_PCH=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengles2=ON
+		-DFEATURE_ssl=OFF
+		-DBUILD_qtquick3d=OFF
+		-DBUILD_qtdeclarative=OFF
+		-DBUILD_qttools=OFF
+		-DBUILD_qtquickcontrols2=OFF
+		-DBUILD_qtdoc=OFF
+		-DBUILD_qtquicktimeline=OFF
+		-DBUILD_qttranslations=OFF
+		-DBUILD_qtwayland=OFF
+		-DFEATURE_sql_sqlite=ON
+	]],
+}
+
+conf.q0lx6_W = {
+	name = "Qt6.0.1-WebAssembly-emscripten1.39.8-xLinux-x86_64-gcc8.3.1",
+	qtVersion = "6.0.1",
+	host = "CentOS8",
+	target = "WebAssembly",
+	toolchainT = "emscripten-1.39.8",
+	ssl = "No",
+	useCMake = true,
+	configureParameter = [[
+		-GNinja
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DQT_HOST_PATH=&HOSTQTDIR&
+		-DCMAKE_BUILD_TYPE=Release
+		-DBUILD_SHARED_LIBS=OFF
+		-DQT_QMAKE_TARGET_MKSPEC=wasm-emscripten
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DBUILD_WITH_PCH=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengles2=ON
+		-DFEATURE_ssl=OFF
+		-DBUILD_qtquick3d=OFF
+		-DBUILD_qtdeclarative=OFF
+		-DBUILD_qttools=OFF
+		-DBUILD_qtquickcontrols2=OFF
+		-DBUILD_qtdoc=OFF
+		-DBUILD_qtquicktimeline=OFF
+		-DBUILD_qttranslations=OFF
+		-DBUILD_qtwayland=OFF
+		-DFEATURE_sql_sqlite=ON
+	]],
+}
+
+conf.q0mx6_W = {
+	name = "Qt6.0.1-WebAssembly-emscripten1.39.8-xmacOS-x86_64-AppleClang&AppleClangVersion&",
+	qtVersion = "6.0.1",
+	host = "macOS1015",
+	target = "WebAssembly",
+	toolchainT = "emscripten-1.39.8",
+	ssl = "No",
+	useCMake = true,
+	configureParameter = [[
+		-GNinja
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DQT_HOST_PATH=&HOSTQTDIR&
+		-DCMAKE_BUILD_TYPE=Release
+		-DBUILD_SHARED_LIBS=OFF
+		-DQT_QMAKE_TARGET_MKSPEC=wasm-emscripten
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DBUILD_WITH_PCH=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengles2=ON
+		-DFEATURE_ssl=OFF
+		-DBUILD_qtquick3d=OFF
+		-DBUILD_qtdeclarative=OFF
+		-DBUILD_qttools=OFF
+		-DBUILD_qtquickcontrols2=OFF
+		-DBUILD_qtdoc=OFF
+		-DBUILD_qtquicktimeline=OFF
+		-DBUILD_qttranslations=OFF
+		-DBUILD_qtwayland=OFF
+		-DFEATURE_sql_sqlite=ON
+	]],
+}
+
 --------------------------------------------------------------------
 
 conf.qpwx6v9 = {
@@ -3802,6 +3914,118 @@ conf.qpmx6_ax6nl = {
 		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
 		-DANDROID_NATIVE_API_LEVEL=24
 		-DANDROID_ABI=x86_64
+	]],
+}
+
+conf.qpwx6m8_W = {
+	name = "Qt6.1.0-alpha-WebAssembly-emscripten1.39.8-xWindows-x86_64-MinGW8.1.0",
+	qtVersion = "6.1.0-alpha",
+	host = "Win10",
+	toolchain = "MinGW810-64",
+	target = "WebAssembly",
+	toolchainT = "emscripten-1.39.8",
+	ssl = "No",
+	useCMake = true,
+	configureParameter = [[
+		-GNinja
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DQT_HOST_PATH=&HOSTQTDIR&
+		-DCMAKE_BUILD_TYPE=Release
+		-DBUILD_SHARED_LIBS=OFF
+		-DQT_QMAKE_TARGET_MKSPEC=wasm-emscripten
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DBUILD_WITH_PCH=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengles2=ON
+		-DFEATURE_ssl=OFF
+		-DBUILD_qtquick3d=OFF
+		-DBUILD_qtdeclarative=OFF
+		-DBUILD_qttools=OFF
+		-DBUILD_qtquickcontrols2=OFF
+		-DBUILD_qtdoc=OFF
+		-DBUILD_qtquicktimeline=OFF
+		-DBUILD_qttranslations=OFF
+		-DBUILD_qtwayland=OFF
+		-DFEATURE_sql_sqlite=ON
+	]],
+}
+
+conf.qplx6_W = {
+	name = "Qt6.1.0-alpha-WebAssembly-emscripten1.39.8-xLinux-x86_64-gcc8.3.1",
+	qtVersion = "6.1.0-alpha",
+	host = "CentOS8",
+	target = "WebAssembly",
+	toolchainT = "emscripten-1.39.8",
+	ssl = "No",
+	useCMake = true,
+	configureParameter = [[
+		-GNinja
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DQT_HOST_PATH=&HOSTQTDIR&
+		-DCMAKE_BUILD_TYPE=Release
+		-DBUILD_SHARED_LIBS=OFF
+		-DQT_QMAKE_TARGET_MKSPEC=wasm-emscripten
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DBUILD_WITH_PCH=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengles2=ON
+		-DFEATURE_ssl=OFF
+		-DBUILD_qtquick3d=OFF
+		-DBUILD_qtdeclarative=OFF
+		-DBUILD_qttools=OFF
+		-DBUILD_qtquickcontrols2=OFF
+		-DBUILD_qtdoc=OFF
+		-DBUILD_qtquicktimeline=OFF
+		-DBUILD_qttranslations=OFF
+		-DBUILD_qtwayland=OFF
+		-DFEATURE_sql_sqlite=ON
+	]],
+}
+
+conf.qpmx6_W = {
+	name = "Qt6.1.0-alpha-WebAssembly-emscripten1.39.8-xmacOS-x86_64-AppleClang&AppleClangVersion&",
+	qtVersion = "6.1.0-alpha",
+	host = "macOS1015",
+	target = "WebAssembly",
+	toolchainT = "emscripten-1.39.8",
+	ssl = "No",
+	useCMake = true,
+	configureParameter = [[
+		-GNinja
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DQT_HOST_PATH=&HOSTQTDIR&
+		-DCMAKE_BUILD_TYPE=Release
+		-DBUILD_SHARED_LIBS=OFF
+		-DQT_QMAKE_TARGET_MKSPEC=wasm-emscripten
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DBUILD_WITH_PCH=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengles2=ON
+		-DFEATURE_ssl=OFF
+		-DBUILD_qtquick3d=OFF
+		-DBUILD_qtdeclarative=OFF
+		-DBUILD_qttools=OFF
+		-DBUILD_qtquickcontrols2=OFF
+		-DBUILD_qtdoc=OFF
+		-DBUILD_qtquicktimeline=OFF
+		-DBUILD_qttranslations=OFF
+		-DBUILD_qtwayland=OFF
+		-DFEATURE_sql_sqlite=ON
 	]],
 }
 

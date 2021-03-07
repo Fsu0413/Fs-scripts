@@ -1809,7 +1809,7 @@ conf.Q5wx6v7_wa6v7 = {
 
 conf.Q5wx3v9 = {
 	name = "Qt5.15.2-Windows-x86-VS2019-&MSVCVER&",
-	qtVersion = "5.15.2",
+	qtVersion = "5.15.2-1",
 	host = "Win10",
 	toolchain = "MSVC2019-32",
 	ssl = "SChannel",
@@ -1889,7 +1889,7 @@ conf.Q5wx3v9sf = {
 
 conf.Q5wx6v9 = {
 	name = "Qt5.15.2-Windows-x86_64-VS2019-&MSVCVER&",
-	qtVersion = "5.15.2",
+	qtVersion = "5.15.2-1",
 	host = "Win10",
 	toolchain = "MSVC2019-64",
 	ssl = "SChannel",
@@ -2123,7 +2123,7 @@ conf.Q5wx6m8sf = {
 
 conf.Q5mx6 = {
 	name = "Qt5.15.2-macOS-x86_64-AppleClang&AppleClangVersion&",
-	qtVersion = "5.15.2",
+	qtVersion = "5.15.2-1",
 	host = "macOS1015",
 	ssl = "SecureTransport",
 	configureParameter = [[
@@ -2159,7 +2159,7 @@ conf.Q5mx6 = {
 
 conf.Q5mx6nf = {
 	name = "Qt5.15.2-macOS-x86_64-AppleClang&AppleClangVersion&-noFramework",
-	qtVersion = "5.15.2",
+	qtVersion = "5.15.2-1",
 	host = "macOS1015",
 	variant = {"-noFramework"},
 	ssl = "SecureTransport",

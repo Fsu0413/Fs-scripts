@@ -3915,6 +3915,9 @@ for name, value in pairs(conf) do
 
 	local qtVersionSplit = split(value.qtVersion, ".")
 	local qtSourcePackagePrefix = "qt-everywhere-src-"
+	if (value.qtVersion == "5.15.2-1") and (value.host == "Win10") then
+		qtSourcePackagePrefix = "qt-src-"
+	end
 	local qtSourcePackageSuffix = ".tar.xz"
 	value.sourcePackageFileNameunix = qtSourcePackagePrefix .. value.qtVersion .. qtSourcePackageSuffix
 	value.sourcePackageFileNamewin = qtSourcePackagePrefix .. value.qtVersion .. ".zip"

@@ -3922,8 +3922,6 @@ for name, value in pairs(conf) do
 	value.sourcePackageFileNameunix = qtSourcePackagePrefix .. value.qtVersion .. qtSourcePackageSuffix
 	value.sourcePackageFileNamewin = qtSourcePackagePrefix .. value.qtVersion .. ".zip"
 	value.sourcePackageBaseName = qtSourcePackagePrefix .. value.qtVersion
-	value.sourcePackageUrlunix = "http://172.24.13.2/webdav/sources/" .. value.sourcePackageFileNameunix
-	value.sourcePackageUrlwin = "http://172.24.13.2/webdav/sources/" .. value.sourcePackageFileNamewin
 
 	-- config file
 	if tonumber(qtVersionSplit[1]) == 5 then

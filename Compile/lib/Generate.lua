@@ -579,7 +579,7 @@ local filenameAndToolFromUrl = function(url)
 		n2 = string.find(url, "/", n and (n + 1) or 1)
 	until n2 == nil
 	local target = string.sub(url, n + 1)
-	local tool = "unknown"
+	local tool = nil
 
 	-- uncompress
 	if (string.sub(target, -3) == ".7z") or (string.sub(target, -4) == ".zip") then
@@ -641,11 +641,13 @@ gen.generate = function(self, para)
 				if not paraCopy.UNCOMPRESSPACKAGE then
 					paraCopy.UNCOMPRESSPACKAGE = ""
 				end
-				paraCopy.UNCOMPRESSPACKAGE = paraCopy.UNCOMPRESSPACKAGE .. self[para.template].extract[tool] .. " \"" .. filename .. "\"\n"
-				if not paraCopy.DELETEUNCOMPRESSED then
-					paraCopy.DELETEUNCOMPRESSED = ""
+				if tool then
+					paraCopy.UNCOMPRESSPACKAGE = paraCopy.UNCOMPRESSPACKAGE .. self[para.template].extract[tool] .. " \"" .. filename .. "\"\n"
+					if not paraCopy.DELETEUNCOMPRESSED then
+						paraCopy.DELETEUNCOMPRESSED = ""
+					end
+					paraCopy.DELETEUNCOMPRESSED = paraCopy.DELETEUNCOMPRESSED .. self[para.template].delete .. " \"" .. filename .. "\"\n"
 				end
-				paraCopy.DELETEUNCOMPRESSED = paraCopy.DELETEUNCOMPRESSED .. self[para.template].delete .. " \"" .. filename .. "\"\n"
 			end
 		end
 	end

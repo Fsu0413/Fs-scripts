@@ -56,7 +56,7 @@ compilerVer.msvc = function(envBat)
 	return parseVersionNum(ret)
 end
 
-compilerVer.gcc = function(isWin, path)
+compilerVer.gcc = function(isWin, path, executableName)
 	local script = ""
 	if path then
 		if isWin then
@@ -65,8 +65,12 @@ compilerVer.gcc = function(isWin, path)
 			script = "PATH=\"" .. path .. ":$PATH\"; export PATH\n"
 		end
 	end
+
+	if not executableName then
+		executableName = "gcc"
+	end
 	
-	script = script .. "gcc -dumpfullversion -dumpversion"
+	script = script .. executableName .. " -dumpfullversion -dumpversion"
 	if isWin then
 		script = script .. "\r\n"
 	else
@@ -84,9 +88,7 @@ compilerVer.gcc = function(isWin, path)
 end
 
 compilerVer.appleClang = function()
-	local script = "LANG=C clang --version | grep \"^Apple\\s\\+\\(clang\\|LLVM\\)\\s\\+version\\s\\+\" | cut -d \" \" -f 4\n"
-	local ret = runShScript(script)
-	return parseVersionNum(ret)
+	return compilerVer.gcc(nil, nil, "clang")
 end
 
 return compilerVer

@@ -3134,8 +3134,8 @@ conf.q0mx6_ax6nl = {
 }
 
 conf.q0wx6m8_W = {
-	name = "Qt6.0.1-WebAssembly-emscripten1.39.8-xWindows-x86_64-MinGW8.1.0",
-	qtVersion = "6.0.1",
+	name = "Qt6.0.2-WebAssembly-emscripten1.39.8-xWindows-x86_64-MinGW8.1.0",
+	qtVersion = "6.0.2",
 	host = "Win10",
 	toolchain = "MinGW810-64",
 	target = "WebAssembly",
@@ -3172,8 +3172,8 @@ conf.q0wx6m8_W = {
 }
 
 conf.q0lx6_W = {
-	name = "Qt6.0.1-WebAssembly-emscripten1.39.8-xLinux-x86_64-gcc8.3.1",
-	qtVersion = "6.0.1",
+	name = "Qt6.0.2-WebAssembly-emscripten1.39.8-xLinux-x86_64-gcc8.3.1",
+	qtVersion = "6.0.2",
 	host = "CentOS8",
 	target = "WebAssembly",
 	toolchainT = "emscripten-1.39.8",
@@ -3209,8 +3209,8 @@ conf.q0lx6_W = {
 }
 
 conf.q0mx6_W = {
-	name = "Qt6.0.1-WebAssembly-emscripten1.39.8-xmacOS-x86_64-AppleClang&AppleClangVersion&",
-	qtVersion = "6.0.1",
+	name = "Qt6.0.2-WebAssembly-emscripten1.39.8-xmacOS-x86_64-AppleClang&AppleClangVersion&",
+	qtVersion = "6.0.2",
 	host = "macOS1015",
 	target = "WebAssembly",
 	toolchainT = "emscripten-1.39.8",
@@ -4178,6 +4178,7 @@ for name, value in pairs(conf) do
 
 	if tonumber(qtVersionSplit[1]) == 6 and value.crossCompile then
 		value.hostToolsConf = Qt6StaticConf[value.host][value.qtVersion]
+		print(value.host, value.qtVersion, Qt6StaticConf[value.host][value.qtVersion])
 		value.hostToolsUrlwin = "http://172.24.13.2:8080/job/Qt/job/" .. Qt6StaticConf[value.host][value.qtVersion] .. "/lastSuccessfulBuild/artifact/buildDir/" .. conf[Qt6StaticConf[value.host][value.qtVersion]].name .. ".7z"
 		value.hostToolsUrlunix = "http://172.24.13.2:8080/job/Qt/job/" .. Qt6StaticConf[value.host][value.qtVersion] .. "/lastSuccessfulBuild/artifact/buildDir/" .. conf[Qt6StaticConf[value.host][value.qtVersion]].name .. ".tar.xz"
 	end

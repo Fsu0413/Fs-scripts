@@ -6,7 +6,7 @@ conf.host.win = {
 	-- Preinstalled jom(need to set path manually)
 	-- Preinstalled MSVC(need to set path manually)
 	-- Preinstalled MinGW-w64 toolchain(need to set path manually)
-	-- Preinstalled Android-NDK/SDK toolchain(no need to set path, path is managed in Qt Makefiles)
+	-- Preinstalled Android-NDK/SDK toolchain
 	["makefileTemplate"] = "win",
 	["pathSep"] = '\\',
 	["toolchainPath"] = {
@@ -41,7 +41,7 @@ conf.host.win = {
 -- msys is treated as another host since it uses windows agent and unix shell
 -- used in compiling OpenSSL
 conf.host.msys = {
-	-- Preinstalled Android-NDK toolchain(no need to set path, path is set in openssl_compile_android.sh)
+	-- Preinstalled Android-NDK toolchain
 	-- Preinstalled GNU make in path and is used
 	-- Preinstalled MinGW-w64 toolchain(need to set path manually)
 	-- Preinstalled p7zip in path and is used
@@ -64,7 +64,7 @@ conf.host.msys = {
 conf.host.linux = {
 	-- Preinstalled OpenSSL(using software source)
 	-- Preinstalled GNU make in path and is used
-	-- Preinstalled Android-NDK/SDK toolchain(no need to set path, path is managed in Qt Makefiles/openssl_compile_android.sh)
+	-- Preinstalled Android-NDK/SDK toolchain
 	-- Preinstalled host toolchain in path and is used
 	-- Preinstalled p7zip in path and is used
 	["makefileTemplate"] = "unix",
@@ -84,7 +84,7 @@ conf.host.linux = {
 
 conf.host.mac = {
 	-- Preinstalled GNU make in path and is used
-	-- Preinstalled Android-NDK/SDK toolchain(no need to set path, path is managed in Qt Makefiles/openssl_compile_android.sh)
+	-- Preinstalled Android-NDK/SDK toolchain
 	-- Preinstalled host toolchain in path and is used
 	-- Preinstalled p7zip in path and is used
 	["makefileTemplate"] = "unix",
@@ -143,10 +143,6 @@ conf.Qt.generateConfTable = function(self, host, job)
 	if confDetail.opensslConf then
 		table.insert(ret.download, conf.OpenSSL:binaryFileDownloadPath(host, confDetail.opensslConf))
 		repl.OPENSSLDIR = os.getenv("WORKSPACE") .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. conf.OpenSSL.configurations[confDetail.opensslConf].name
-		if confHost.makefileTemplate == "win" then
-			repl.OPENSSLDIR_DOUBLESLASH = string.gsub(repl.OPENSSLDIR, "%\\", "\\\\")
-			repl.OPENSSLDIR_FRONTSLASH = string.gsub(repl.OPENSSLDIR, "%\\", "/")
-		end
 		if confDetail.OPENSSL_LIBS then
 			local opensslLibs = string.gsub(confDetail.OPENSSL_LIBS, "%&OPENSSLDIR%&", repl.OPENSSLDIR)
 			ret.envSet.OPENSSL_LIBS = opensslLibs
@@ -158,10 +154,6 @@ conf.Qt.generateConfTable = function(self, host, job)
 		if confDetail.hostToolsConf then
 			table.insert(ret.download, confDetail["hostToolsUrl" .. confHost.makefileTemplate])
 			repl.HOSTQTDIR = os.getenv("WORKSPACE") .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. conf.Qt.configurations[confDetail.hostToolsConf].name
-			if confHost.makefileTemplate == "win" then
-				repl.HOSTQTDIR_DOUBLESLASH = string.gsub(repl.OPENSSLDIR, "%\\", "\\\\")
-				repl.HOSTQTDIR_FRONTSLASH = string.gsub(repl.OPENSSLDIR, "%\\", "/")
-			end
 		end
 
 		if string.sub(confDetail.toolchainT, 1, 7) == "Android" then -- Android
@@ -458,6 +450,9 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 		elseif string.sub(confDetail.toolchain, 1, 4) == "MSVC" then
 			-- MSVC version of Makefile supports only nmake, jom is not supported offically
 			-- some pull requests which tries to support jom on MSVC builds are simply closed.
+			-- OpenSSL maintainers said that cmake can't cover their supported platforms, so they use a custom build system.
+			-- It seems reasonable but is not the reason why they don't support a 'speed-boosting drop-in replacement' make tool with just a few workarounds.
+
 			-- currently adding "/FS" to the compiler command line, but it fails randomly.
 			-- Retry is added when build fails, for 3 times.
 			ret.MAKE = "jom"

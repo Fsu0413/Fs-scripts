@@ -4178,7 +4178,6 @@ for name, value in pairs(conf) do
 
 	if tonumber(qtVersionSplit[1]) == 6 and value.crossCompile then
 		value.hostToolsConf = Qt6StaticConf[value.host][value.qtVersion]
-		print(value.host, value.qtVersion, Qt6StaticConf[value.host][value.qtVersion])
 		value.hostToolsUrlwin = "http://172.24.13.2:8080/job/Qt/job/" .. Qt6StaticConf[value.host][value.qtVersion] .. "/lastSuccessfulBuild/artifact/buildDir/" .. conf[Qt6StaticConf[value.host][value.qtVersion]].name .. ".7z"
 		value.hostToolsUrlunix = "http://172.24.13.2:8080/job/Qt/job/" .. Qt6StaticConf[value.host][value.qtVersion] .. "/lastSuccessfulBuild/artifact/buildDir/" .. conf[Qt6StaticConf[value.host][value.qtVersion]].name .. ".tar.xz"
 	end

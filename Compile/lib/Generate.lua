@@ -416,8 +416,8 @@ fi
 
 TAR=
 
-for i in bsdtar tar >/dev/null 2>/dev/null; do
-	if $i --help; then
+for i in bsdtar tar; do
+	if $i --help >/dev/null 2>/dev/null; then
 		TAR=$i
 		break
 	fi

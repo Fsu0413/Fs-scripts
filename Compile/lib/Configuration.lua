@@ -360,7 +360,7 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 
 		ret.OPENSSLDIRFUNCTION = ret.OPENSSLDIRFUNCTION .. "se\nreturn 1\nfi"
 
-		return download, ret
+		return ret
 	else
 		local ret = {}
 		ret.buildContent = "OpenSSL"

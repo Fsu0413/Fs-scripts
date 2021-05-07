@@ -35,7 +35,7 @@ conf.host.win = {
 	},
 	["androidNdkHost"] = "windows-x86_64",
 	["emscriptenPath"] = "D:\\emsdk\\",
-	["cMakePath"] = { "D:\\cmake-3.19.1-win64-x64\\bin", "D:\\ninja" },
+	["cMakePath"] = { "D:\\cmake-3.20.2-windows-x86_64\\bin", "D:\\ninja" },
 }
 
 -- msys is treated as another host since it uses windows agent and unix shell

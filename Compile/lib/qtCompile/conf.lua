@@ -6,8 +6,7 @@ abbrs:
 	Qt Versions:
 		Q2: Qt 5.12.10/Past Qt 5 LTS
 		Q5: Qt 5.15.2/Latest Qt 5 LTS w/ latest QtWebEngine and latest QtScript
-		q0: Qt 6.0.3
-		qp: Qt 6.1.0 Alpha/Qt Prerelase
+		q6_1: Qt 6.1.0
 	If prefixed with a lower-case "m", it is a modified Qt version
 
 	Platforms:
@@ -2463,9 +2462,9 @@ conf.Q5mx6_W = {
 
 --------------------------------------------------------------------
 
-conf.q0wx6v9 = {
-	name = "Qt6.0.3-Windows-x86_64-VS2019-&MSVCVER&",
-	qtVersion = "6.0.3",
+conf.q6_1wx6v9 = {
+	name = "Qt6.1.0-Windows-x86_64-VS2019-&MSVCVER&",
+	qtVersion = "6.1.0",
 	host = "Win10",
 	toolchain = "MSVC2019-64",
 	ssl = "SChannel",
@@ -2494,9 +2493,9 @@ conf.q0wx6v9 = {
 	]],
 }
 
-conf.q0wx6m8 = {
-	name = "Qt6.0.3-Windows-x86_64-MinGW8.1.0",
-	qtVersion = "6.0.3",
+conf.q6_1wx6m8 = {
+	name = "Qt6.1.0-Windows-x86_64-MinGW8.1.0",
+	qtVersion = "6.1.0",
 	host = "Win10",
 	toolchain = "MinGW810-64",
 	ssl = "SChannel",
@@ -2525,9 +2524,9 @@ conf.q0wx6m8 = {
 	]],
 }
 
-conf.q0wx6m8st = {
-	name = "Qt6.0.3-Windows-x86_64-MinGW8.1.0-static",
-	qtVersion = "6.0.3",
+conf.q6_1wx6m8st = {
+	name = "Qt6.1.0-Windows-x86_64-MinGW8.1.0-static",
+	qtVersion = "6.1.0",
 	host = "Win10",
 	toolchain = "MinGW810-64",
 	ssl = "SChannel",
@@ -2563,9 +2562,9 @@ conf.q0wx6m8st = {
 	]],
 }
 
-conf.q0lx6st = {
-	name = "Qt6.0.3-Linux-x86_64-gcc8.3.1-static",
-	qtVersion = "6.0.3",
+conf.q6_1lx6st = {
+	name = "Qt6.1.0-Linux-x86_64-gcc8.3.1-static",
+	qtVersion = "6.1.0",
 	host = "CentOS8",
 	variant = {"-static"},
 	ssl = "OpenSSL from package manager",
@@ -2602,9 +2601,9 @@ conf.q0lx6st = {
 	]],
 }
 
-conf.q0mx6 = {
-	name = "Qt6.0.3-macOS-x86_64-AppleClang&AppleClangVersion&",
-	qtVersion = "6.0.3",
+conf.q6_1mx6 = {
+	name = "Qt6.1.0-macOS-x86_64-AppleClang&AppleClangVersion&",
+	qtVersion = "6.1.0",
 	host = "macOS1015",
 	ssl = "SecureTransport",
 	useCMake = true,
@@ -2635,9 +2634,9 @@ conf.q0mx6 = {
 	]],
 }
 
-conf.q0mx6nf = {
-	name = "Qt6.0.3-macOS-x86_64-AppleClang&AppleClangVersion&-noFramework",
-	qtVersion = "6.0.3",
+conf.q6_1mx6nf = {
+	name = "Qt6.1.0-macOS-x86_64-AppleClang&AppleClangVersion&-noFramework",
+	qtVersion = "6.1.0",
 	host = "macOS1015",
 	variant = {"-noFramework"},
 	ssl = "SecureTransport",
@@ -2669,9 +2668,9 @@ conf.q0mx6nf = {
 	]],
 }
 
-conf.q0mx6st = {
-	name = "Qt6.0.3-macOS-x86_64-AppleClang&AppleClangVersion&-static",
-	qtVersion = "6.0.3",
+conf.q6_1mx6st = {
+	name = "Qt6.1.0-macOS-x86_64-AppleClang&AppleClangVersion&-static",
+	qtVersion = "6.1.0",
 	host = "macOS1015",
 	variant = {"-static"},
 	ssl = "SecureTransport",
@@ -2709,9 +2708,9 @@ conf.q0mx6st = {
 	]],
 }
 
-conf.q0wx6m8_aa3nl = {
-	name = "Qt6.0.3-Android-arm-Clang-NDKr21e-XWindows-x86_64-MinGW8.1.0",
-	qtVersion = "6.0.3",
+conf.q6_1wx6m8_aa3nl = {
+	name = "Qt6.1.0-Android-arm-Clang-NDKr21e-XWindows-x86_64-MinGW8.1.0",
+	qtVersion = "6.1.0",
 	host = "Win10",
 	target = "Android-24",
 	toolchain = "MinGW810-64",
@@ -2735,791 +2734,7 @@ conf.q0wx6m8_aa3nl = {
 		-DFEATURE_icu=OFF
 		-DFEATURE_opengles2=ON
 		-DFEATURE_ssl=ON
-		-DINPUT_openssl=runtime
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
-		-DFEATURE_sql_sqlite=ON
-		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
-		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&\build\cmake\android.toolchain.cmake
-		-DANDROID_NATIVE_API_LEVEL=24
-		-DANDROID_ABI=armeabi-v7a
-	]],
-}
-
-conf.q0wx6m8_aa6nl = {
-	name = "Qt6.0.3-Android-arm64-Clang-NDKr21e-XWindows-x86_64-MinGW8.1.0",
-	qtVersion = "6.0.3",
-	host = "Win10",
-	target = "Android-24",
-	toolchain = "MinGW810-64",
-	toolchainT = "Android-24-r21e-arm64",
-	opensslConf = "o1aa6nl24",
-	useCMake = true,
-	androidSdkVersion = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DQT_HOST_PATH=&HOSTQTDIR&
-		-DCMAKE_BUILD_TYPE=Release
-		-DBUILD_SHARED_LIBS=ON
-		-DQT_QMAKE_TARGET_MKSPEC=android-clang
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengles2=ON
-		-DFEATURE_ssl=ON
-		-DINPUT_openssl=runtime
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
-		-DFEATURE_sql_sqlite=ON
-		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
-		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&\build\cmake\android.toolchain.cmake
-		-DANDROID_NATIVE_API_LEVEL=24
-		-DANDROID_ABI=arm64-v8a
-	]],
-}
-
-conf.q0wx6m8_ax3nl = {
-	name = "Qt6.0.3-Android-x86-Clang-NDKr21e-XWindows-x86_64-MinGW8.1.0",
-	qtVersion = "6.0.3",
-	host = "Win10",
-	target = "Android-24",
-	toolchain = "MinGW810-64",
-	toolchainT = "Android-24-r21e-x86",
-	opensslConf = "o1ax3nl24",
-	useCMake = true,
-	androidSdkVersion = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DQT_HOST_PATH=&HOSTQTDIR&
-		-DCMAKE_BUILD_TYPE=Release
-		-DBUILD_SHARED_LIBS=ON
-		-DQT_QMAKE_TARGET_MKSPEC=android-clang
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengles2=ON
-		-DFEATURE_ssl=ON
-		-DINPUT_openssl=runtime
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
-		-DFEATURE_sql_sqlite=ON
-		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
-		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&\build\cmake\android.toolchain.cmake
-		-DANDROID_NATIVE_API_LEVEL=24
-		-DANDROID_ABI=x86
-	]],
-}
-
-conf.q0wx6m8_ax6nl = {
-	name = "Qt6.0.3-Android-x86_64-Clang-NDKr21e-XWindows-x86_64-MinGW8.1.0",
-	qtVersion = "6.0.3",
-	host = "Win10",
-	target = "Android-24",
-	toolchain = "MinGW810-64",
-	toolchainT = "Android-24-r21e-x86_64",
-	opensslConf = "o1ax6nl24",
-	useCMake = true,
-	androidSdkVersion = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DQT_HOST_PATH=&HOSTQTDIR&
-		-DCMAKE_BUILD_TYPE=Release
-		-DBUILD_SHARED_LIBS=ON
-		-DQT_QMAKE_TARGET_MKSPEC=android-clang
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengles2=ON
-		-DFEATURE_ssl=ON
-		-DINPUT_openssl=runtime
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
-		-DFEATURE_sql_sqlite=ON
-		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
-		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&\build\cmake\android.toolchain.cmake
-		-DANDROID_NATIVE_API_LEVEL=24
-		-DANDROID_ABI=x86_64
-	]],
-}
-
-conf.q0lx6_aa3nl = {
-	name = "Qt6.0.3-Android-arm-Clang-NDKr21e-xLinux-x86_64-gcc8.3.1",
-	qtVersion = "6.0.3",
-	host = "CentOS8",
-	target = "Android-24",
-	toolchainT = "Android-24-r21e-arm",
-	opensslConf = "o1aa3nl24",
-	useCMake = true,
-	androidSdkVersion = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DQT_HOST_PATH=&HOSTQTDIR&
-		-DCMAKE_BUILD_TYPE=Release
-		-DBUILD_SHARED_LIBS=ON
-		-DQT_QMAKE_TARGET_MKSPEC=android-clang
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengles2=ON
-		-DFEATURE_ssl=ON
-		-DINPUT_openssl=runtime
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
-		-DFEATURE_sql_sqlite=ON
-		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
-		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
-		-DANDROID_NATIVE_API_LEVEL=24
-		-DANDROID_ABI=armeabi-v7a
-	]],
-}
-
-conf.q0lx6_aa6nl = {
-	name = "Qt6.0.3-Android-arm64-Clang-NDKr21e-xLinux-x86_64-gcc8.3.1",
-	qtVersion = "6.0.3",
-	host = "CentOS8",
-	target = "Android-24",
-	toolchainT = "Android-24-r21e-arm64",
-	opensslConf = "o1aa6nl24",
-	useCMake = true,
-	androidSdkVersion = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DQT_HOST_PATH=&HOSTQTDIR&
-		-DCMAKE_BUILD_TYPE=Release
-		-DBUILD_SHARED_LIBS=ON
-		-DQT_QMAKE_TARGET_MKSPEC=android-clang
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengles2=ON
-		-DFEATURE_ssl=ON
-		-DINPUT_openssl=runtime
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
-		-DFEATURE_sql_sqlite=ON
-		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
-		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
-		-DANDROID_NATIVE_API_LEVEL=24
-		-DANDROID_ABI=arm64-v8a
-	]],
-}
-
-conf.q0lx6_ax3nl = {
-	name = "Qt6.0.3-Android-x86-Clang-NDKr21e-xLinux-x86_64-gcc8.3.1",
-	qtVersion = "6.0.3",
-	host = "CentOS8",
-	target = "Android-24",
-	toolchainT = "Android-24-r21e-x86",
-	opensslConf = "o1ax3nl24",
-	useCMake = true,
-	androidSdkVersion = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DQT_HOST_PATH=&HOSTQTDIR&
-		-DCMAKE_BUILD_TYPE=Release
-		-DBUILD_SHARED_LIBS=ON
-		-DQT_QMAKE_TARGET_MKSPEC=android-clang
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengles2=ON
-		-DFEATURE_ssl=ON
-		-DINPUT_openssl=runtime
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
-		-DFEATURE_sql_sqlite=ON
-		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
-		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
-		-DANDROID_NATIVE_API_LEVEL=24
-		-DANDROID_ABI=x86
-	]],
-}
-
-conf.q0lx6_ax6nl = {
-	name = "Qt6.0.3-Android-x86_64-Clang-NDKr21e-xLinux-x86_64-gcc8.3.1",
-	qtVersion = "6.0.3",
-	host = "CentOS8",
-	target = "Android-24",
-	toolchainT = "Android-24-r21e-x86_64",
-	opensslConf = "o1ax6nl24",
-	useCMake = true,
-	androidSdkVersion = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DQT_HOST_PATH=&HOSTQTDIR&
-		-DCMAKE_BUILD_TYPE=Release
-		-DBUILD_SHARED_LIBS=ON
-		-DQT_QMAKE_TARGET_MKSPEC=android-clang
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengles2=ON
-		-DFEATURE_ssl=ON
-		-DINPUT_openssl=runtime
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
-		-DFEATURE_sql_sqlite=ON
-		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
-		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
-		-DANDROID_NATIVE_API_LEVEL=24
-		-DANDROID_ABI=x86_64
-	]],
-}
-
-conf.q0mx6_aa3nl = {
-	name = "Qt6.0.3-Android-arm-Clang-NDKr21e-xmacOS-x86_64-AppleClang&AppleClangVersion&",
-	qtVersion = "6.0.3",
-	host = "macOS1015",
-	target = "Android-24",
-	toolchainT = "Android-24-r21e-arm",
-	opensslConf = "o1aa3nl24",
-	useCMake = true,
-	androidSdkVersion = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DQT_HOST_PATH=&HOSTQTDIR&
-		-DCMAKE_BUILD_TYPE=Release
-		-DBUILD_SHARED_LIBS=ON
-		-DQT_QMAKE_TARGET_MKSPEC=android-clang
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengles2=ON
-		-DFEATURE_ssl=ON
-		-DINPUT_openssl=runtime
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
-		-DFEATURE_sql_sqlite=ON
-		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
-		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
-		-DANDROID_NATIVE_API_LEVEL=24
-		-DANDROID_ABI=armeabi-v7a
-	]],
-}
-
-conf.q0mx6_aa6nl = {
-	name = "Qt6.0.3-Android-arm64-Clang-NDKr21e-xmacOS-x86_64-AppleClang&AppleClangVersion&",
-	qtVersion = "6.0.3",
-	host = "macOS1015",
-	target = "Android-24",
-	toolchainT = "Android-24-r21e-arm64",
-	opensslConf = "o1aa6nl24",
-	useCMake = true,
-	androidSdkVersion = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DQT_HOST_PATH=&HOSTQTDIR&
-		-DCMAKE_BUILD_TYPE=Release
-		-DBUILD_SHARED_LIBS=ON
-		-DQT_QMAKE_TARGET_MKSPEC=android-clang
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengles2=ON
-		-DFEATURE_ssl=ON
-		-DINPUT_openssl=runtime
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
-		-DFEATURE_sql_sqlite=ON
-		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
-		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
-		-DANDROID_NATIVE_API_LEVEL=24
-		-DANDROID_ABI=arm64-v8a
-	]],
-}
-
-conf.q0mx6_ax3nl = {
-	name = "Qt6.0.3-Android-x86-Clang-NDKr21e-xmacOS-x86_64-AppleClang&AppleClangVersion&",
-	qtVersion = "6.0.3",
-	host = "macOS1015",
-	target = "Android-24",
-	toolchainT = "Android-24-r21e-x86",
-	opensslConf = "o1ax3nl24",
-	useCMake = true,
-	androidSdkVersion = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DQT_HOST_PATH=&HOSTQTDIR&
-		-DCMAKE_BUILD_TYPE=Release
-		-DBUILD_SHARED_LIBS=ON
-		-DQT_QMAKE_TARGET_MKSPEC=android-clang
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengles2=ON
-		-DFEATURE_ssl=ON
-		-DINPUT_openssl=runtime
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
-		-DFEATURE_sql_sqlite=ON
-		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
-		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
-		-DANDROID_NATIVE_API_LEVEL=24
-		-DANDROID_ABI=x86
-	]],
-}
-
-conf.q0mx6_ax6nl = {
-	name = "Qt6.0.3-Android-x86_64-Clang-NDKr21e-xmacOS-x86_64-AppleClang&AppleClangVersion&",
-	qtVersion = "6.0.3",
-	host = "macOS1015",
-	target = "Android-24",
-	toolchainT = "Android-24-r21e-x86_64",
-	opensslConf = "o1ax6nl24",
-	useCMake = true,
-	androidSdkVersion = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DQT_HOST_PATH=&HOSTQTDIR&
-		-DCMAKE_BUILD_TYPE=Release
-		-DBUILD_SHARED_LIBS=ON
-		-DQT_QMAKE_TARGET_MKSPEC=android-clang
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengles2=ON
-		-DFEATURE_ssl=ON
-		-DINPUT_openssl=runtime
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
-		-DFEATURE_sql_sqlite=ON
-		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
-		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
-		-DANDROID_NATIVE_API_LEVEL=24
-		-DANDROID_ABI=x86_64
-	]],
-}
-
-conf.q0wx6m8_W = {
-	name = "Qt6.0.3-WebAssembly-emscripten1.39.8-xWindows-x86_64-MinGW8.1.0",
-	qtVersion = "6.0.3",
-	host = "Win10",
-	toolchain = "MinGW810-64",
-	target = "WebAssembly",
-	toolchainT = "emscripten-1.39.8",
-	ssl = "No",
-	useCMake = true,
-	configureParameter = [[
-		-GNinja
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DQT_HOST_PATH=&HOSTQTDIR&
-		-DCMAKE_BUILD_TYPE=Release
-		-DBUILD_SHARED_LIBS=OFF
-		-DQT_QMAKE_TARGET_MKSPEC=wasm-emscripten
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DBUILD_WITH_PCH=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengles2=ON
-		-DFEATURE_ssl=OFF
-		-DBUILD_qtquick3d=OFF
-		-DBUILD_qtdeclarative=OFF
-		-DBUILD_qttools=OFF
-		-DBUILD_qtquickcontrols2=OFF
-		-DBUILD_qtdoc=OFF
-		-DBUILD_qtquicktimeline=OFF
-		-DBUILD_qttranslations=OFF
-		-DBUILD_qtwayland=OFF
-		-DFEATURE_sql_sqlite=ON
-	]],
-}
-
-conf.q0lx6_W = {
-	name = "Qt6.0.3-WebAssembly-emscripten1.39.8-xLinux-x86_64-gcc8.3.1",
-	qtVersion = "6.0.3",
-	host = "CentOS8",
-	target = "WebAssembly",
-	toolchainT = "emscripten-1.39.8",
-	ssl = "No",
-	useCMake = true,
-	configureParameter = [[
-		-GNinja
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DQT_HOST_PATH=&HOSTQTDIR&
-		-DCMAKE_BUILD_TYPE=Release
-		-DBUILD_SHARED_LIBS=OFF
-		-DQT_QMAKE_TARGET_MKSPEC=wasm-emscripten
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DBUILD_WITH_PCH=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengles2=ON
-		-DFEATURE_ssl=OFF
-		-DBUILD_qtquick3d=OFF
-		-DBUILD_qtdeclarative=OFF
-		-DBUILD_qttools=OFF
-		-DBUILD_qtquickcontrols2=OFF
-		-DBUILD_qtdoc=OFF
-		-DBUILD_qtquicktimeline=OFF
-		-DBUILD_qttranslations=OFF
-		-DBUILD_qtwayland=OFF
-		-DFEATURE_sql_sqlite=ON
-	]],
-}
-
-conf.q0mx6_W = {
-	name = "Qt6.0.3-WebAssembly-emscripten1.39.8-xmacOS-x86_64-AppleClang&AppleClangVersion&",
-	qtVersion = "6.0.3",
-	host = "macOS1015",
-	target = "WebAssembly",
-	toolchainT = "emscripten-1.39.8",
-	ssl = "No",
-	useCMake = true,
-	configureParameter = [[
-		-GNinja
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DQT_HOST_PATH=&HOSTQTDIR&
-		-DCMAKE_BUILD_TYPE=Release
-		-DBUILD_SHARED_LIBS=OFF
-		-DQT_QMAKE_TARGET_MKSPEC=wasm-emscripten
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DBUILD_WITH_PCH=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengles2=ON
-		-DFEATURE_ssl=OFF
-		-DBUILD_qtquick3d=OFF
-		-DBUILD_qtdeclarative=OFF
-		-DBUILD_qttools=OFF
-		-DBUILD_qtquickcontrols2=OFF
-		-DBUILD_qtdoc=OFF
-		-DBUILD_qtquicktimeline=OFF
-		-DBUILD_qttranslations=OFF
-		-DBUILD_qtwayland=OFF
-		-DFEATURE_sql_sqlite=ON
-	]],
-}
-
---------------------------------------------------------------------
-
-conf.qpwx6v9 = {
-	name = "Qt6.1.0-alpha-Windows-x86_64-VS2019-&MSVCVER&",
-	qtVersion = "6.1.0-alpha",
-	host = "Win10",
-	toolchain = "MSVC2019-64",
-	ssl = "SChannel",
-	useCMake = true,
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DBUILD_SHARED_LIBS=ON
-		-DCMAKE_BUILD_TYPE="Release"
-		-DQT_QMAKE_TARGET_MKSPEC=win32-msvc
-		-DBUILD_WITH_PCH=ON
-		-DBUILD_EXAMPLES=OFF
-		-DBUILD_TESTING=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengl_dynamic=ON
-		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=OFF
-		-DFEATURE_schannel=ON
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_sql_odbc=ON
-		-DFEATURE_system_sqlite=OFF
-	]],
-}
-
-conf.qpwx6m8 = {
-	name = "Qt6.1.0-alpha-Windows-x86_64-MinGW8.1.0",
-	qtVersion = "6.1.0-alpha",
-	host = "Win10",
-	toolchain = "MinGW810-64",
-	ssl = "SChannel",
-	useCMake = true,
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DBUILD_SHARED_LIBS=ON
-		-DCMAKE_BUILD_TYPE="Release"
-		-DQT_QMAKE_TARGET_MKSPEC=win32-g++
-		-DBUILD_WITH_PCH=ON
-		-DBUILD_EXAMPLES=OFF
-		-DBUILD_TESTING=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengl_dynamic=ON
-		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=OFF
-		-DFEATURE_schannel=ON
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_sql_odbc=ON
-		-DFEATURE_system_sqlite=OFF
-	]],
-}
-
-conf.qpwx6m8st = {
-	name = "Qt6.1.0-alpha-Windows-x86_64-MinGW8.1.0-static",
-	qtVersion = "6.1.0-alpha",
-	host = "Win10",
-	toolchain = "MinGW810-64",
-	ssl = "SChannel",
-	useCMake = true,
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DBUILD_SHARED_LIBS=OFF
-		-DCMAKE_BUILD_TYPE="Release"
-		-DQT_QMAKE_TARGET_MKSPEC=win32-g++
-		-DBUILD_WITH_PCH=ON
-		-DBUILD_EXAMPLES=OFF
-		-DBUILD_TESTING=OFF
-		-DFEATURE_relocatable=ON
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengl_dynamic=ON
-		-DFEATURE_ssl=OFF
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_sql_odbc=ON
-		-DFEATURE_system_sqlite=OFF
-		-DBUILD_qt3d=OFF
-		-DBUILD_qtdoc=OFF
-		-DBUILD_qt5compat=OFF
-		-DBUILD_qtnetworkauth=OFF
-		-DBUILD_qtquick3d=OFF
-		-DBUILD_qtquickcontrols2=OFF
-		-DBUILD_qtquicktimeline=OFF
-		-DBUILD_qtwayland=OFF
-	]],
-}
-
-conf.qplx6st = {
-	name = "Qt6.1.0-alpha-Linux-x86_64-gcc8.3.1-static",
-	qtVersion = "6.1.0-alpha",
-	host = "CentOS8",
-	variant = {"-static"},
-	ssl = "OpenSSL from package manager",
-	useCMake = true,
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DBUILD_SHARED_LIBS=OFF
-		-DCMAKE_BUILD_TYPE="Release"
-		-DQT_QMAKE_TARGET_MKSPEC=linux-g++
-		-DBUILD_WITH_PCH=ON
-		-DBUILD_EXAMPLES=OFF
-		-DBUILD_TESTING=OFF
-		-DFEATURE_relocatable=ON
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DINPUT_opengl=no
-		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=ON
 		-DINPUT_openssl=linked
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_system_sqlite=OFF
-		-DBUILD_qt3d=OFF
-		-DBUILD_qtdoc=OFF
-		-DBUILD_qt5compat=OFF
-		-DBUILD_qtnetworkauth=OFF
-		-DBUILD_qtquick3d=OFF
-		-DBUILD_qtquickcontrols2=OFF
-		-DBUILD_qtquicktimeline=OFF
-		-DBUILD_qtwayland=OFF
-	]],
-}
-
-conf.qpmx6 = {
-	name = "Qt6.1.0-alpha-macOS-x86_64-AppleClang&AppleClangVersion&",
-	qtVersion = "6.1.0-alpha",
-	host = "macOS1015",
-	ssl = "SecureTransport",
-	useCMake = true,
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DBUILD_SHARED_LIBS=ON
-		-DCMAKE_BUILD_TYPE="Release"
-		-DQT_QMAKE_TARGET_MKSPEC=macx-clang
-		-DBUILD_WITH_PCH=ON
-		-DBUILD_EXAMPLES=OFF
-		-DBUILD_TESTING=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengl=ON
-		-DFEATURE_opengles2=OFF
-		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=OFF
-		-DFEATURE_securetransport=ON
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_system_sqlite=OFF
-		-DCMAKE_SKIP_BUILD_RPATH=OFF
-		-DCMAKE_SKIP_INSTALL_RPATH=OFF
-		-DFEATURE_framework=ON
-	]],
-}
-
-conf.qpmx6nf = {
-	name = "Qt6.1.0-alpha-macOS-x86_64-AppleClang&AppleClangVersion&-noFramework",
-	qtVersion = "6.1.0-alpha",
-	host = "macOS1015",
-	variant = {"-noFramework"},
-	ssl = "SecureTransport",
-	useCMake = true,
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DBUILD_SHARED_LIBS=ON
-		-DCMAKE_BUILD_TYPE="Release"
-		-DQT_QMAKE_TARGET_MKSPEC=macx-clang
-		-DBUILD_WITH_PCH=ON
-		-DBUILD_EXAMPLES=OFF
-		-DBUILD_TESTING=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengl=ON
-		-DFEATURE_opengles2=OFF
-		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=OFF
-		-DFEATURE_securetransport=ON
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_system_sqlite=OFF
-		-DCMAKE_SKIP_BUILD_RPATH=OFF
-		-DCMAKE_SKIP_INSTALL_RPATH=OFF
-		-DFEATURE_framework=OFF
-	]],
-}
-
-conf.qpmx6st = {
-	name = "Qt6.1.0-alpha-macOS-x86_64-AppleClang&AppleClangVersion&-static",
-	qtVersion = "6.1.0-alpha",
-	host = "macOS1015",
-	variant = {"-static"},
-	ssl = "SecureTransport",
-	useCMake = true,
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DBUILD_SHARED_LIBS=OFF
-		-DCMAKE_BUILD_TYPE="Release"
-		-DQT_QMAKE_TARGET_MKSPEC=macx-clang
-		-DBUILD_WITH_PCH=ON
-		-DBUILD_EXAMPLES=OFF
-		-DBUILD_TESTING=OFF
-		-DFEATURE_relocatable=ON
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengl=ON
-		-DFEATURE_opengles2=OFF
-		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=OFF
-		-DFEATURE_securetransport=ON
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_system_sqlite=OFF
-		-DBUILD_qt3d=OFF
-		-DBUILD_qtdoc=OFF
-		-DBUILD_qt5compat=OFF
-		-DBUILD_qtnetworkauth=OFF
-		-DBUILD_qtquick3d=OFF
-		-DBUILD_qtquickcontrols2=OFF
-		-DBUILD_qtquicktimeline=OFF
-		-DBUILD_qtwayland=OFF
-	]],
-}
-
-conf.qpwx6m8_aa3nl = {
-	name = "Qt6.1.0-alpha-Android-arm-Clang-NDKr21e-XWindows-x86_64-MinGW8.1.0",
-	qtVersion = "6.1.0-alpha",
-	host = "Win10",
-	target = "Android-24",
-	toolchain = "MinGW810-64",
-	toolchainT = "Android-24-r21e-arm",
-	opensslConf = "o1aa3nl24",
-	useCMake = true,
-	androidSdkVersion = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DQT_HOST_PATH=&HOSTQTDIR&
-		-DCMAKE_BUILD_TYPE=Release
-		-DBUILD_SHARED_LIBS=ON
-		-DQT_QMAKE_TARGET_MKSPEC=android-clang
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengles2=ON
-		-DFEATURE_ssl=ON
-		-DINPUT_openssl=runtime
 		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
 		-DFEATURE_sql_sqlite=ON
 		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
@@ -3529,9 +2744,9 @@ conf.qpwx6m8_aa3nl = {
 	]],
 }
 
-conf.qpwx6m8_aa6nl = {
-	name = "Qt6.1.0-alpha-Android-arm64-Clang-NDKr21e-XWindows-x86_64-MinGW8.1.0",
-	qtVersion = "6.1.0-alpha",
+conf.q6_1wx6m8_aa6nl = {
+	name = "Qt6.1.0-Android-arm64-Clang-NDKr21e-XWindows-x86_64-MinGW8.1.0",
+	qtVersion = "6.1.0",
 	host = "Win10",
 	target = "Android-24",
 	toolchain = "MinGW810-64",
@@ -3555,7 +2770,7 @@ conf.qpwx6m8_aa6nl = {
 		-DFEATURE_icu=OFF
 		-DFEATURE_opengles2=ON
 		-DFEATURE_ssl=ON
-		-DINPUT_openssl=runtime
+		-DINPUT_openssl=linked
 		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
 		-DFEATURE_sql_sqlite=ON
 		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
@@ -3565,9 +2780,9 @@ conf.qpwx6m8_aa6nl = {
 	]],
 }
 
-conf.qpwx6m8_ax3nl = {
-	name = "Qt6.1.0-alpha-Android-x86-Clang-NDKr21e-XWindows-x86_64-MinGW8.1.0",
-	qtVersion = "6.1.0-alpha",
+conf.q6_1wx6m8_ax3nl = {
+	name = "Qt6.1.0-Android-x86-Clang-NDKr21e-XWindows-x86_64-MinGW8.1.0",
+	qtVersion = "6.1.0",
 	host = "Win10",
 	target = "Android-24",
 	toolchain = "MinGW810-64",
@@ -3591,7 +2806,7 @@ conf.qpwx6m8_ax3nl = {
 		-DFEATURE_icu=OFF
 		-DFEATURE_opengles2=ON
 		-DFEATURE_ssl=ON
-		-DINPUT_openssl=runtime
+		-DINPUT_openssl=linked
 		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
 		-DFEATURE_sql_sqlite=ON
 		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
@@ -3601,9 +2816,9 @@ conf.qpwx6m8_ax3nl = {
 	]],
 }
 
-conf.qpwx6m8_ax6nl = {
-	name = "Qt6.1.0-alpha-Android-x86_64-Clang-NDKr21e-XWindows-x86_64-MinGW8.1.0",
-	qtVersion = "6.1.0-alpha",
+conf.q6_1wx6m8_ax6nl = {
+	name = "Qt6.1.0-Android-x86_64-Clang-NDKr21e-XWindows-x86_64-MinGW8.1.0",
+	qtVersion = "6.1.0",
 	host = "Win10",
 	target = "Android-24",
 	toolchain = "MinGW810-64",
@@ -3627,7 +2842,7 @@ conf.qpwx6m8_ax6nl = {
 		-DFEATURE_icu=OFF
 		-DFEATURE_opengles2=ON
 		-DFEATURE_ssl=ON
-		-DINPUT_openssl=runtime
+		-DINPUT_openssl=linked
 		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
 		-DFEATURE_sql_sqlite=ON
 		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
@@ -3637,9 +2852,9 @@ conf.qpwx6m8_ax6nl = {
 	]],
 }
 
-conf.qplx6_aa3nl = {
-	name = "Qt6.1.0-alpha-Android-arm-Clang-NDKr21e-xLinux-x86_64-gcc8.3.1",
-	qtVersion = "6.1.0-alpha",
+conf.q6_1lx6_aa3nl = {
+	name = "Qt6.1.0-Android-arm-Clang-NDKr21e-xLinux-x86_64-gcc8.3.1",
+	qtVersion = "6.1.0",
 	host = "CentOS8",
 	target = "Android-24",
 	toolchainT = "Android-24-r21e-arm",
@@ -3662,7 +2877,7 @@ conf.qplx6_aa3nl = {
 		-DFEATURE_icu=OFF
 		-DFEATURE_opengles2=ON
 		-DFEATURE_ssl=ON
-		-DINPUT_openssl=runtime
+		-DINPUT_openssl=linked
 		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
 		-DFEATURE_sql_sqlite=ON
 		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
@@ -3672,9 +2887,9 @@ conf.qplx6_aa3nl = {
 	]],
 }
 
-conf.qplx6_aa6nl = {
-	name = "Qt6.1.0-alpha-Android-arm64-Clang-NDKr21e-xLinux-x86_64-gcc8.3.1",
-	qtVersion = "6.1.0-alpha",
+conf.q6_1lx6_aa6nl = {
+	name = "Qt6.1.0-Android-arm64-Clang-NDKr21e-xLinux-x86_64-gcc8.3.1",
+	qtVersion = "6.1.0",
 	host = "CentOS8",
 	target = "Android-24",
 	toolchainT = "Android-24-r21e-arm64",
@@ -3697,7 +2912,7 @@ conf.qplx6_aa6nl = {
 		-DFEATURE_icu=OFF
 		-DFEATURE_opengles2=ON
 		-DFEATURE_ssl=ON
-		-DINPUT_openssl=runtime
+		-DINPUT_openssl=linked
 		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
 		-DFEATURE_sql_sqlite=ON
 		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
@@ -3707,9 +2922,9 @@ conf.qplx6_aa6nl = {
 	]],
 }
 
-conf.qplx6_ax3nl = {
-	name = "Qt6.1.0-alpha-Android-x86-Clang-NDKr21e-xLinux-x86_64-gcc8.3.1",
-	qtVersion = "6.1.0-alpha",
+conf.q6_1lx6_ax3nl = {
+	name = "Qt6.1.0-Android-x86-Clang-NDKr21e-xLinux-x86_64-gcc8.3.1",
+	qtVersion = "6.1.0",
 	host = "CentOS8",
 	target = "Android-24",
 	toolchainT = "Android-24-r21e-x86",
@@ -3732,7 +2947,7 @@ conf.qplx6_ax3nl = {
 		-DFEATURE_icu=OFF
 		-DFEATURE_opengles2=ON
 		-DFEATURE_ssl=ON
-		-DINPUT_openssl=runtime
+		-DINPUT_openssl=linked
 		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
 		-DFEATURE_sql_sqlite=ON
 		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
@@ -3742,9 +2957,9 @@ conf.qplx6_ax3nl = {
 	]],
 }
 
-conf.qplx6_ax6nl = {
-	name = "Qt6.1.0-alpha-Android-x86_64-Clang-NDKr21e-xLinux-x86_64-gcc8.3.1",
-	qtVersion = "6.1.0-alpha",
+conf.q6_1lx6_ax6nl = {
+	name = "Qt6.1.0-Android-x86_64-Clang-NDKr21e-xLinux-x86_64-gcc8.3.1",
+	qtVersion = "6.1.0",
 	host = "CentOS8",
 	target = "Android-24",
 	toolchainT = "Android-24-r21e-x86_64",
@@ -3767,7 +2982,7 @@ conf.qplx6_ax6nl = {
 		-DFEATURE_icu=OFF
 		-DFEATURE_opengles2=ON
 		-DFEATURE_ssl=ON
-		-DINPUT_openssl=runtime
+		-DINPUT_openssl=linked
 		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
 		-DFEATURE_sql_sqlite=ON
 		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
@@ -3777,9 +2992,9 @@ conf.qplx6_ax6nl = {
 	]],
 }
 
-conf.qpmx6_aa3nl = {
-	name = "Qt6.1.0-alpha-Android-arm-Clang-NDKr21e-xmacOS-x86_64-AppleClang&AppleClangVersion&",
-	qtVersion = "6.1.0-alpha",
+conf.q6_1mx6_aa3nl = {
+	name = "Qt6.1.0-Android-arm-Clang-NDKr21e-xmacOS-x86_64-AppleClang&AppleClangVersion&",
+	qtVersion = "6.1.0",
 	host = "macOS1015",
 	target = "Android-24",
 	toolchainT = "Android-24-r21e-arm",
@@ -3802,7 +3017,7 @@ conf.qpmx6_aa3nl = {
 		-DFEATURE_icu=OFF
 		-DFEATURE_opengles2=ON
 		-DFEATURE_ssl=ON
-		-DINPUT_openssl=runtime
+		-DINPUT_openssl=linked
 		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
 		-DFEATURE_sql_sqlite=ON
 		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
@@ -3812,9 +3027,9 @@ conf.qpmx6_aa3nl = {
 	]],
 }
 
-conf.qpmx6_aa6nl = {
-	name = "Qt6.1.0-alpha-Android-arm64-Clang-NDKr21e-xmacOS-x86_64-AppleClang&AppleClangVersion&",
-	qtVersion = "6.1.0-alpha",
+conf.q6_1mx6_aa6nl = {
+	name = "Qt6.1.0-Android-arm64-Clang-NDKr21e-xmacOS-x86_64-AppleClang&AppleClangVersion&",
+	qtVersion = "6.1.0",
 	host = "macOS1015",
 	target = "Android-24",
 	toolchainT = "Android-24-r21e-arm64",
@@ -3837,7 +3052,7 @@ conf.qpmx6_aa6nl = {
 		-DFEATURE_icu=OFF
 		-DFEATURE_opengles2=ON
 		-DFEATURE_ssl=ON
-		-DINPUT_openssl=runtime
+		-DINPUT_openssl=linked
 		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
 		-DFEATURE_sql_sqlite=ON
 		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
@@ -3847,9 +3062,9 @@ conf.qpmx6_aa6nl = {
 	]],
 }
 
-conf.qpmx6_ax3nl = {
-	name = "Qt6.1.0-alpha-Android-x86-Clang-NDKr21e-xmacOS-x86_64-AppleClang&AppleClangVersion&",
-	qtVersion = "6.1.0-alpha",
+conf.q6_1mx6_ax3nl = {
+	name = "Qt6.1.0-Android-x86-Clang-NDKr21e-xmacOS-x86_64-AppleClang&AppleClangVersion&",
+	qtVersion = "6.1.0",
 	host = "macOS1015",
 	target = "Android-24",
 	toolchainT = "Android-24-r21e-x86",
@@ -3872,7 +3087,7 @@ conf.qpmx6_ax3nl = {
 		-DFEATURE_icu=OFF
 		-DFEATURE_opengles2=ON
 		-DFEATURE_ssl=ON
-		-DINPUT_openssl=runtime
+		-DINPUT_openssl=linked
 		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
 		-DFEATURE_sql_sqlite=ON
 		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
@@ -3882,9 +3097,9 @@ conf.qpmx6_ax3nl = {
 	]],
 }
 
-conf.qpmx6_ax6nl = {
-	name = "Qt6.1.0-alpha-Android-x86_64-Clang-NDKr21e-xmacOS-x86_64-AppleClang&AppleClangVersion&",
-	qtVersion = "6.1.0-alpha",
+conf.q6_1mx6_ax6nl = {
+	name = "Qt6.1.0-Android-x86_64-Clang-NDKr21e-xmacOS-x86_64-AppleClang&AppleClangVersion&",
+	qtVersion = "6.1.0",
 	host = "macOS1015",
 	target = "Android-24",
 	toolchainT = "Android-24-r21e-x86_64",
@@ -3907,7 +3122,7 @@ conf.qpmx6_ax6nl = {
 		-DFEATURE_icu=OFF
 		-DFEATURE_opengles2=ON
 		-DFEATURE_ssl=ON
-		-DINPUT_openssl=runtime
+		-DINPUT_openssl=linked
 		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
 		-DFEATURE_sql_sqlite=ON
 		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
@@ -3917,9 +3132,9 @@ conf.qpmx6_ax6nl = {
 	]],
 }
 
-conf.qpwx6m8_W = {
-	name = "Qt6.1.0-alpha-WebAssembly-emscripten1.39.8-xWindows-x86_64-MinGW8.1.0",
-	qtVersion = "6.1.0-alpha",
+conf.q6_1wx6m8_W = {
+	name = "Qt6.1.0-WebAssembly-emscripten1.39.8-xWindows-x86_64-MinGW8.1.0",
+	qtVersion = "6.1.0",
 	host = "Win10",
 	toolchain = "MinGW810-64",
 	target = "WebAssembly",
@@ -3955,9 +3170,9 @@ conf.qpwx6m8_W = {
 	]],
 }
 
-conf.qplx6_W = {
-	name = "Qt6.1.0-alpha-WebAssembly-emscripten1.39.8-xLinux-x86_64-gcc8.3.1",
-	qtVersion = "6.1.0-alpha",
+conf.q6_1lx6_W = {
+	name = "Qt6.1.0-WebAssembly-emscripten1.39.8-xLinux-x86_64-gcc8.3.1",
+	qtVersion = "6.1.0",
 	host = "CentOS8",
 	target = "WebAssembly",
 	toolchainT = "emscripten-1.39.8",
@@ -3992,9 +3207,9 @@ conf.qplx6_W = {
 	]],
 }
 
-conf.qpmx6_W = {
-	name = "Qt6.1.0-alpha-WebAssembly-emscripten1.39.8-xmacOS-x86_64-AppleClang&AppleClangVersion&",
-	qtVersion = "6.1.0-alpha",
+conf.q6_1mx6_W = {
+	name = "Qt6.1.0-WebAssembly-emscripten1.39.8-xmacOS-x86_64-AppleClang&AppleClangVersion&",
+	qtVersion = "6.1.0",
 	host = "macOS1015",
 	target = "WebAssembly",
 	toolchainT = "emscripten-1.39.8",
@@ -4055,26 +3270,26 @@ local QQtPatcherVersion = {
 setmetatable(QQtPatcherVersion, versionMo)
 
 local MsvcVer = {
-	["MSVC2017"] = "15.9.34",
-	["MSVC2019"] = "16.9.3",
+	["MSVC2017"] = "15.9.35",
+	["MSVC2019"] = "16.9.4",
 }
 
 local AppleClangVersion = {
-	["macOS1015"] = "12.0.0",
+	["macOS1015"] = "12.0.5",
 }
 
 local Qt6StaticConf = {
 	Win10 = {
 		["6.0.3"] = "q0wx6m8st",
-		["6.1.0-alpha"] = "qpwx6m8st",
+		["6.1.0"] = "q6_1wx6m8st",
 	},
 	CentOS8 = {
 		["6.0.3"] = "q0lx6st",
-		["6.1.0-alpha"] = "qplx6st",
+		["6.1.0"] = "q6_1lx6st",
 	},
 	macOS1015 = {
 		["6.0.3"] = "q0mx6st",
-		["6.1.0-alpha"] = "qpmx6st",
+		["6.1.0"] = "q6_1mx6st",
 	},
 }
 

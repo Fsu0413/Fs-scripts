@@ -2564,7 +2564,6 @@ conf.q6_1wx6m8st = {
 		-DBUILD_qtlottie=OFF
 		-DBUILD_qtmqtt=OFF
 		-DBUILD_qtcoap=OFF
-		-DBUILD_qtscxml=OFF
 		-DBUILD_qtvirtualkeyboard=OFF
 		-DBUILD_qtopcua=OFF
 	]],
@@ -2611,7 +2610,6 @@ conf.q6_1lx6st = {
 		-DBUILD_qtlottie=OFF
 		-DBUILD_qtmqtt=OFF
 		-DBUILD_qtcoap=OFF
-		-DBUILD_qtscxml=OFF
 		-DBUILD_qtvirtualkeyboard=OFF
 		-DBUILD_qtopcua=OFF
 	]],
@@ -2726,7 +2724,6 @@ conf.q6_1mx6st = {
 		-DBUILD_qtlottie=OFF
 		-DBUILD_qtmqtt=OFF
 		-DBUILD_qtcoap=OFF
-		-DBUILD_qtscxml=OFF
 		-DBUILD_qtvirtualkeyboard=OFF
 		-DBUILD_qtopcua=OFF
 	]],

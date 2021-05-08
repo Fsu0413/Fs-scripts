@@ -2559,6 +2559,14 @@ conf.q6_1wx6m8st = {
 		-DBUILD_qtquickcontrols2=OFF
 		-DBUILD_qtquicktimeline=OFF
 		-DBUILD_qtwayland=OFF
+		-DBUILD_qtactiveqt=OFF
+		-DBUILD_qtcharts=OFF
+		-DBUILD_qtdatavis3d=OFF
+		-DBUILD_qtlottie=OFF
+		-DBUILD_qtmqtt=OFF
+		-DBUILD_qtcoap=OFF
+		-DBUILD_qtscxml=OFF
+		-DBUILD_qtvirtualkeyboard=OFF
 	]],
 }
 
@@ -2598,6 +2606,14 @@ conf.q6_1lx6st = {
 		-DBUILD_qtquickcontrols2=OFF
 		-DBUILD_qtquicktimeline=OFF
 		-DBUILD_qtwayland=OFF
+		-DBUILD_qtactiveqt=OFF
+		-DBUILD_qtcharts=OFF
+		-DBUILD_qtdatavis3d=OFF
+		-DBUILD_qtlottie=OFF
+		-DBUILD_qtmqtt=OFF
+		-DBUILD_qtcoap=OFF
+		-DBUILD_qtscxml=OFF
+		-DBUILD_qtvirtualkeyboard=OFF
 	]],
 }
 
@@ -2705,6 +2721,14 @@ conf.q6_1mx6st = {
 		-DBUILD_qtquickcontrols2=OFF
 		-DBUILD_qtquicktimeline=OFF
 		-DBUILD_qtwayland=OFF
+		-DBUILD_qtactiveqt=OFF
+		-DBUILD_qtcharts=OFF
+		-DBUILD_qtdatavis3d=OFF
+		-DBUILD_qtlottie=OFF
+		-DBUILD_qtmqtt=OFF
+		-DBUILD_qtcoap=OFF
+		-DBUILD_qtscxml=OFF
+		-DBUILD_qtvirtualkeyboard=OFF
 	]],
 }
 

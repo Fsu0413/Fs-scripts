@@ -1808,7 +1808,7 @@ conf.Q5wx6v7_wa6v7 = {
 
 conf.Q5wx3v9 = {
 	name = "Qt5.15.2-Windows-x86-VS2019-&MSVCVER&",
-	qtVersion = "5.15.2-1",
+	qtVersion = "5.15.2-2",
 	host = "Win10",
 	toolchain = "MSVC2019-32",
 	ssl = "SChannel",
@@ -1888,7 +1888,7 @@ conf.Q5wx3v9sf = {
 
 conf.Q5wx6v9 = {
 	name = "Qt5.15.2-Windows-x86_64-VS2019-&MSVCVER&",
-	qtVersion = "5.15.2-1",
+	qtVersion = "5.15.2-2",
 	host = "Win10",
 	toolchain = "MSVC2019-64",
 	ssl = "SChannel",
@@ -2122,7 +2122,7 @@ conf.Q5wx6m8sf = {
 
 conf.Q5mx6 = {
 	name = "Qt5.15.2-macOS-x86_64-AppleClang&AppleClangVersion&",
-	qtVersion = "5.15.2-1",
+	qtVersion = "5.15.2-2",
 	host = "macOS1015",
 	ssl = "SecureTransport",
 	configureParameter = [[
@@ -2158,7 +2158,7 @@ conf.Q5mx6 = {
 
 conf.Q5mx6nf = {
 	name = "Qt5.15.2-macOS-x86_64-AppleClang&AppleClangVersion&-noFramework",
-	qtVersion = "5.15.2-1",
+	qtVersion = "5.15.2-2",
 	host = "macOS1015",
 	variant = {"-noFramework"},
 	ssl = "SecureTransport",
@@ -3291,8 +3291,8 @@ local QQtPatcherVersion = {
 setmetatable(QQtPatcherVersion, versionMo)
 
 local MsvcVer = {
-	["MSVC2017"] = "15.9.35",
-	["MSVC2019"] = "16.9.4",
+	["MSVC2017"] = "15.9.36",
+	["MSVC2019"] = "16.9.5",
 }
 
 local AppleClangVersion = {
@@ -3375,7 +3375,7 @@ for name, value in pairs(conf) do
 
 	local qtVersionSplit = split(value.qtVersion, ".")
 	local qtSourcePackagePrefix = "qt-everywhere-src-"
-	if (value.qtVersion == "5.15.2-1") and (value.host == "Win10") then
+	if (value.qtVersion == "5.15.2-2") and (value.host == "Win10") then
 		qtSourcePackagePrefix = "qt-src-"
 	end
 	local qtSourcePackageSuffix = ".tar.xz"

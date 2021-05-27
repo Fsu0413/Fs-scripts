@@ -543,7 +543,7 @@ conf.o1aaln224 = {
 
 local MsvcVer = {
 	["MSVC2017"] = "15.9.36",
-	["MSVC2019"] = "16.9.5",
+	["MSVC2019"] = "16.10.0",
 }
 
 for name, value in pairs(conf) do

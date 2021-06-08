@@ -123,6 +123,9 @@ conf.Qt.generateConfTable = function(self, host, job)
 	if confDetail.toolchain ~= "PATH" then
 		if string.sub(confDetail.toolchain, 1, 4) == "MSVC" then
 			ret.msvcBat = confHost.toolchainPath[confDetail.toolchain]
+			for _, p in ipairs(confHost.cMakePath) do
+				table.insert(ret.path, p)
+			end
 		else
 			table.insert(ret.path, confHost.toolchainPath[confDetail.toolchain])
 			for _, p in ipairs(confHost.cMakePath) do

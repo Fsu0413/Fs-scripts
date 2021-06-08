@@ -798,7 +798,7 @@ conf.Q2wx6m7sf = {
 }
 
 conf.Q2lx6st = {
-	name = "Qt5.12.11-Linux-x86_64-gcc8.3.1-static",
+	name = "Qt5.12.11-Linux-x86_64-gcc8.4.1-static",
 	qtVersion = "5.12.11",
 	host = "CentOS8",
 	variant = {"-static"},
@@ -1226,7 +1226,7 @@ conf.Q2wx6m7_ax3nl = {
 }
 
 conf.Q2lx6_aa3nl = {
-	name = "Qt5.12.11-Android-arm-Clang-NDKr21e-xLinux-x86_64-gcc8.3.1",
+	name = "Qt5.12.11-Android-arm-Clang-NDKr21e-xLinux-x86_64-gcc8.4.1",
 	qtVersion = "5.12.11",
 	host = "CentOS8",
 	target = "Android-21",
@@ -1279,7 +1279,7 @@ conf.Q2lx6_aa3nl = {
 }
 
 conf.Q2lx6_aa6nl = {
-	name = "Qt5.12.11-Android-arm64-Clang-NDKr21e-xLinux-x86_64-gcc8.3.1",
+	name = "Qt5.12.11-Android-arm64-Clang-NDKr21e-xLinux-x86_64-gcc8.4.1",
 	qtVersion = "5.12.11",
 	host = "CentOS8",
 	target = "Android-21",
@@ -1332,7 +1332,7 @@ conf.Q2lx6_aa6nl = {
 }
 
 conf.Q2lx6_ax3nl = {
-	name = "Qt5.12.11-Android-x86-Clang-NDKr21e-xLinux-x86_64-gcc8.3.1",
+	name = "Qt5.12.11-Android-x86-Clang-NDKr21e-xLinux-x86_64-gcc8.4.1",
 	qtVersion = "5.12.11",
 	host = "CentOS8",
 	target = "Android-21",
@@ -1544,7 +1544,7 @@ conf.Q2mx6_ax3nl = {
 }
 
 conf.Q2lx6_W = {
-	name = "Qt5.12.11-WebAssembly-emscripten1.38.16-xLinux-x86_64-gcc8.3.1",
+	name = "Qt5.12.11-WebAssembly-emscripten1.38.16-xLinux-x86_64-gcc8.4.1",
 	qtVersion = "5.12.11",
 	host = "CentOS8",
 	target = "WebAssembly",
@@ -2250,7 +2250,7 @@ conf.Q5wx6m8_aalnl = {
 }
 
 conf.Q5lx6_aalnl = {
-	name = "Qt5.15.2-Android-ALL-Clang-NDKr21e-xLinux-x86_64-gcc8.3.1",
+	name = "Qt5.15.2-Android-ALL-Clang-NDKr21e-xLinux-x86_64-gcc8.4.1",
 	qtVersion = "5.15.2",
 	host = "CentOS8",
 	target = "Android-21",
@@ -2391,7 +2391,7 @@ conf.Q5wx6m8_W = {
 }
 
 conf.Q5lx6_W = {
-	name = "Qt5.15.2-WebAssembly-emscripten1.39.8-xLinux-x86_64-gcc8.3.1",
+	name = "Qt5.15.2-WebAssembly-emscripten1.39.8-xLinux-x86_64-gcc8.4.1",
 	qtVersion = "5.15.2",
 	host = "CentOS8",
 	target = "WebAssembly",
@@ -2572,7 +2572,7 @@ conf.q6_1wx6m8st = {
 }
 
 conf.q6_1lx6st = {
-	name = "Qt6.1.1-Linux-x86_64-gcc8.3.1-static",
+	name = "Qt6.1.1-Linux-x86_64-gcc8.4.1-static",
 	qtVersion = "6.1.1",
 	host = "CentOS8",
 	variant = {"-static"},
@@ -2876,7 +2876,7 @@ conf.q6_1wx6m8_ax6nl = {
 }
 
 conf.q6_1lx6_aa3nl = {
-	name = "Qt6.1.1-Android-arm-Clang-NDKr21e-xLinux-x86_64-gcc8.3.1",
+	name = "Qt6.1.1-Android-arm-Clang-NDKr21e-xLinux-x86_64-gcc8.4.1",
 	qtVersion = "6.1.1",
 	host = "CentOS8",
 	target = "Android-24",
@@ -2911,7 +2911,7 @@ conf.q6_1lx6_aa3nl = {
 }
 
 conf.q6_1lx6_aa6nl = {
-	name = "Qt6.1.1-Android-arm64-Clang-NDKr21e-xLinux-x86_64-gcc8.3.1",
+	name = "Qt6.1.1-Android-arm64-Clang-NDKr21e-xLinux-x86_64-gcc8.4.1",
 	qtVersion = "6.1.1",
 	host = "CentOS8",
 	target = "Android-24",
@@ -2946,7 +2946,7 @@ conf.q6_1lx6_aa6nl = {
 }
 
 conf.q6_1lx6_ax3nl = {
-	name = "Qt6.1.1-Android-x86-Clang-NDKr21e-xLinux-x86_64-gcc8.3.1",
+	name = "Qt6.1.1-Android-x86-Clang-NDKr21e-xLinux-x86_64-gcc8.4.1",
 	qtVersion = "6.1.1",
 	host = "CentOS8",
 	target = "Android-24",
@@ -2981,7 +2981,7 @@ conf.q6_1lx6_ax3nl = {
 }
 
 conf.q6_1lx6_ax6nl = {
-	name = "Qt6.1.1-Android-x86_64-Clang-NDKr21e-xLinux-x86_64-gcc8.3.1",
+	name = "Qt6.1.1-Android-x86_64-Clang-NDKr21e-xLinux-x86_64-gcc8.4.1",
 	qtVersion = "6.1.1",
 	host = "CentOS8",
 	target = "Android-24",
@@ -3194,7 +3194,7 @@ conf.q6_1wx6m8_W = {
 }
 
 conf.q6_1lx6_W = {
-	name = "Qt6.1.1-WebAssembly-emscripten1.39.8-xLinux-x86_64-gcc8.3.1",
+	name = "Qt6.1.1-WebAssembly-emscripten1.39.8-xLinux-x86_64-gcc8.4.1",
 	qtVersion = "6.1.1",
 	host = "CentOS8",
 	target = "WebAssembly",

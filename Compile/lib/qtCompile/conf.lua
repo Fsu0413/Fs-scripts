@@ -893,7 +893,7 @@ conf.Q2lx6st = {
 conf.Q2mx6 = {
 	name = "Qt5.12.11-macOS-x86_64-AppleClang&AppleClangVersion&",
 	qtVersion = "5.12.11",
-	host = "macOS1015",
+	host = "macOSLegacy",
 	ssl = "SecureTransport",
 	configureParameter = [[
 		-prefix
@@ -930,7 +930,7 @@ conf.Q2mx6 = {
 conf.Q2mx6nf = {
 	name = "Qt5.12.11-macOS-x86_64-AppleClang&AppleClangVersion&-noFramework",
 	qtVersion = "5.12.11",
-	host = "macOS1015",
+	host = "macOSLegacy",
 	variant = {"-noFramework"},
 	ssl = "SecureTransport",
 	configureParameter = [[
@@ -970,6 +970,103 @@ conf.Q2mx6st = {
 	name = "Qt5.12.11-macOS-x86_64-AppleClang&AppleClangVersion&-static",
 	qtVersion = "5.12.11",
 	host = "macOS1015",
+	variant = {"-static"},
+	ssl = "SecureTransport",
+	configureParameter = [[
+		-prefix
+		&INSTALLROOT&
+		-opensource
+		-static
+		-release
+		-confirm-license
+		-platform
+		macx-clang
+		-pch
+		-nomake
+		examples
+		-nomake
+		tests
+		-no-compile-examples
+		-qt-doubleconversion
+		-qt-zlib
+		-qt-pcre
+		-no-icu
+		-opengl
+		desktop
+		-no-openssl
+		-securetransport
+		-sql-sqlite
+		-make-tool
+		"make -j$PARALLELNUM"
+		-skip
+		qt3d
+		-skip
+		qtcanvas3d
+		-skip
+		qtcharts
+		-skip
+		qtdatavis3d
+		-skip
+		qtgamepad
+		-skip
+		qtgraphicaleffects
+		-skip
+		qtlocation
+		-skip
+		qtmultimedia
+		-skip
+		qtpurchasing
+		-skip
+		qtquickcontrols
+		-skip
+		qtquickcontrols2
+		-skip
+		qtscxml
+		-skip
+		qtsensors
+		-skip
+		qtserialbus
+		-skip
+		qtserialport
+		-skip
+		qtspeech
+		-skip
+		qtsvg
+		-skip
+		qtwayland
+		-skip
+		qtwebchannel
+		-skip
+		qtwebsockets
+		-skip
+		qtsensors
+		-skip
+		qtnetworkauth
+		-skip
+		qtremoteobjects
+		-skip
+		qtwebview
+		-skip
+		qtandroidextras
+		-skip
+		qtconnectivity
+		-skip
+		qtwinextras
+		-skip
+		qtwebengine
+		-skip
+		qtx11extras
+		-skip
+		qtscript
+		-skip
+		qtactiveqt
+	]],
+}
+
+conf.q5_12mLx6st = {
+	name = "Qt5.12.11-macOSLegacy-x86_64-AppleClang&AppleClangVersion&-static",
+	qtVersion = "5.12.11",
+	host = "macOSLegacy",
 	variant = {"-static"},
 	ssl = "SecureTransport",
 	configureParameter = [[
@@ -3284,6 +3381,7 @@ local QQtPatcherConf = {
 	["Win8"] = "Q2wx3v5st",
 	["CentOS8"] = "Q2lx6st",
 	["macOS1015"] = "Q2mx6st",
+	["macOSLegacy"] = "q5_12mLx6st",
 }
 
 local QQtPatcherVersion = {
@@ -3299,6 +3397,7 @@ local MsvcVer = {
 
 local AppleClangVersion = {
 	["macOS1015"] = "12.0.5",
+	["macOSLegacy"] = "12.0.0",
 }
 
 local Qt6StaticConf = {

@@ -6,7 +6,9 @@ conf.host.win = {
 	-- Preinstalled jom(need to set path manually)
 	-- Preinstalled MSVC(need to set path manually)
 	-- Preinstalled MinGW-w64 toolchain(need to set path manually)
+	-- Preinstalled CMake and ninja
 	-- Preinstalled Android-NDK/SDK toolchain
+	-- Preinstalled emsdk toolchain
 	["makefileTemplate"] = "win",
 	["pathSep"] = '\\',
 	["toolchainPath"] = {
@@ -64,7 +66,9 @@ conf.host.msys = {
 conf.host.linux = {
 	-- Preinstalled OpenSSL(using software source)
 	-- Preinstalled GNU make in path and is used
+	-- Preinstalled CMake and ninja in path and is used
 	-- Preinstalled Android-NDK/SDK toolchain
+	-- Preinstalled emsdk toolchain
 	-- Preinstalled host toolchain in path and is used
 	-- Preinstalled p7zip in path and is used
 	["makefileTemplate"] = "unix",
@@ -84,7 +88,9 @@ conf.host.linux = {
 
 conf.host.mac = {
 	-- Preinstalled GNU make in path and is used
+	-- Preinstalled CMake and ninja in path and is used
 	-- Preinstalled Android-NDK/SDK toolchain
+	-- Preinstalled emsdk toolchain
 	-- Preinstalled host toolchain in path and is used
 	-- Preinstalled p7zip in path and is used
 	["makefileTemplate"] = "unix",
@@ -100,6 +106,16 @@ conf.host.mac = {
 	["sourcePackagePath"] = "/opt/sources/",
 	["buildRootPath"] = "/opt/build/",
 	["emscriptenPath"] = "/opt/env/emsdk/",
+}
+
+conf.host.macLegacy = {
+	-- Preinstalled GNU make in path and is used
+	-- Preinstalled host toolchain in path and is used
+	-- Preinstalled p7zip in path and is used
+	["makefileTemplate"] = "unix",
+	["pathSep"] = '/',
+	["sourcePackagePath"] = "/Volumes/opt/sources/",
+	["buildRootPath"] = "/Volumes/opt/build/",
 }
 
 --[[ conf.host.linuxarm = {} ]] -- Todo: Prepare an arm linux host. It should be hosted on my old mobile phone, I assumed.
@@ -493,6 +509,7 @@ conf.hostToConfMap = {
 	["Win8SH"] = "msys",
 	["CentOS8"] = "linux",
 	["macOS1015"] = "mac",
+	["macOSLegacy"] = "macLegacy",
 }
 
 return conf

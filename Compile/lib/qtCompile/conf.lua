@@ -922,8 +922,7 @@ conf.Q2mx6 = {
 		-make-tool
 		"make -j$PARALLELNUM"
 		-rpath
-		-skip
-		qtwebengine
+		-webengine-proprietary-codecs
 	]],
 }
 
@@ -960,8 +959,7 @@ conf.Q2mx6nf = {
 		-make-tool
 		"make -j$PARALLELNUM"
 		-rpath
-		-skip
-		qtwebengine
+		-webengine-proprietary-codecs
 		-no-framework
 	]],
 }

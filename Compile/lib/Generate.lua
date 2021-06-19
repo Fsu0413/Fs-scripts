@@ -114,7 +114,7 @@ cd /d &WORKSPACE&\buildDir
 
 &EXTRAINSTALL&
 
-cd &INSTALLROOT&\..
+cd /d &INSTALLROOT&\..
 
 %SEVENZIP% a -t7z -m0=LZMA2:d256m:fb273 -mmt=3 -myx -mqs -ms=on -- &INSTALLPATHWITHDATE&.7z &INSTALLPATH&
 copy /y &INSTALLPATHWITHDATE&.7z &INSTALLPATH&.7z
@@ -219,7 +219,7 @@ if %j% gtr 3 exit 1
 cmd /c &INSTALLCOMMANDLINE&
 if errorlevel 1 goto LOOP2
 
-cd &INSTALLROOT&\..
+cd /d &INSTALLROOT&\..
 
 %SEVENZIP% a -t7z -m0=LZMA2:d256m:fb273 -mmt=3 -myx -mqs -ms=on -- &INSTALLPATH&.7z &INSTALLPATH&
 

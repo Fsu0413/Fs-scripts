@@ -3498,20 +3498,20 @@ for name, value in pairs(conf) do
 		local usingQQtPatcher = QQtPatcherConf[value.host]
 		if usingQQtPatcher == name then
 			value.qQtPatcher = "build"
-			value.qQtPatcherSourceUrlwin = "http://172.24.13.2/webdav/sources/QQtPatcher-" .. QQtPatcherVersion[value.host] .. ".zip"
-			value.qQtPatcherSourceUrlunix = "http://172.24.13.2/webdav/sources/QQtPatcher-" .. QQtPatcherVersion[value.host] .. ".tar.gz"
+			value.qQtPatcherSourceUrlwin = "http://172.24.13.6/webdav/sources/QQtPatcher-" .. QQtPatcherVersion[value.host] .. ".zip"
+			value.qQtPatcherSourceUrlunix = "http://172.24.13.6/webdav/sources/QQtPatcher-" .. QQtPatcherVersion[value.host] .. ".tar.gz"
 		else
 			value.qQtPatcher = usingQQtPatcher
-			value.qQtPatcherUrlwin = "http://172.24.13.2:8080/job/Qt/job/" .. value.qQtPatcher .. "/lastSuccessfulBuild/artifact/buildDir/QQtPatcher.exe"
-			value.qQtPatcherUrlunix = "http://172.24.13.2:8080/job/Qt/job/" .. value.qQtPatcher .. "/lastSuccessfulBuild/artifact/buildDir/QQtPatcher"
+			value.qQtPatcherUrlwin = "http://172.24.13.6:8080/job/Qt/job/" .. value.qQtPatcher .. "/lastSuccessfulBuild/artifact/buildDir/QQtPatcher.exe"
+			value.qQtPatcherUrlunix = "http://172.24.13.6:8080/job/Qt/job/" .. value.qQtPatcher .. "/lastSuccessfulBuild/artifact/buildDir/QQtPatcher"
 		end
 		value.qQtPatcherVersion = QQtPatcherVersion[value.host]
 	end
 
 	if tonumber(qtVersionSplit[1]) == 6 and value.crossCompile then
 		value.hostToolsConf = Qt6StaticConf[value.host][value.qtVersion]
-		value.hostToolsUrlwin = "http://172.24.13.2:8080/job/Qt/job/" .. Qt6StaticConf[value.host][value.qtVersion] .. "/lastSuccessfulBuild/artifact/buildDir/" .. conf[Qt6StaticConf[value.host][value.qtVersion]].name .. ".7z"
-		value.hostToolsUrlunix = "http://172.24.13.2:8080/job/Qt/job/" .. Qt6StaticConf[value.host][value.qtVersion] .. "/lastSuccessfulBuild/artifact/buildDir/" .. conf[Qt6StaticConf[value.host][value.qtVersion]].name .. ".tar.xz"
+		value.hostToolsUrlwin = "http://172.24.13.6:8080/job/Qt/job/" .. Qt6StaticConf[value.host][value.qtVersion] .. "/lastSuccessfulBuild/artifact/buildDir/" .. conf[Qt6StaticConf[value.host][value.qtVersion]].name .. ".7z"
+		value.hostToolsUrlunix = "http://172.24.13.6:8080/job/Qt/job/" .. Qt6StaticConf[value.host][value.qtVersion] .. "/lastSuccessfulBuild/artifact/buildDir/" .. conf[Qt6StaticConf[value.host][value.qtVersion]].name .. ".tar.xz"
 	end
 
 	-- add dump function

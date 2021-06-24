@@ -588,11 +588,11 @@ for name, value in pairs(conf) do
 	end
 
 	-- temporary path
-	value.binaryPackageUrlunix = "http://172.24.13.2:8080/job/OpenSSL/job/" .. name .. "/lastSuccessfulBuild/artifact/buildDir/" .. value.name .. ".tar.xz"
-	value.sourcePackageUrlunix = "http://172.24.13.2/webdav/sources/openssl-" .. value.opensslVersion .. ".tar.gz"
+	value.binaryPackageUrlunix = "http://172.24.13.6:8080/job/OpenSSL/job/" .. name .. "/lastSuccessfulBuild/artifact/buildDir/" .. value.name .. ".tar.xz"
+	value.sourcePackageUrlunix = "http://172.24.13.6/webdav/sources/openssl-" .. value.opensslVersion .. ".tar.gz"
 	value.sourcePackageBaseName = "openssl-" .. value.opensslVersion
-	value.binaryPackageUrlwin = "http://172.24.13.2:8080/job/OpenSSL/job/" .. name .. "/lastSuccessfulBuild/artifact/buildDir/" .. value.name .. ".7z"
-	value.sourcePackageUrlwin = "http://172.24.13.2/webdav/sources/openssl-" .. value.opensslVersion .. ".zip"
+	value.binaryPackageUrlwin = "http://172.24.13.6:8080/job/OpenSSL/job/" .. name .. "/lastSuccessfulBuild/artifact/buildDir/" .. value.name .. ".7z"
+	value.sourcePackageUrlwin = "http://172.24.13.6/webdav/sources/openssl-" .. value.opensslVersion .. ".zip"
 
 	-- add dump function
 	value.dump = function(self)

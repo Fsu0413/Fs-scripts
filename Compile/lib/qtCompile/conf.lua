@@ -802,7 +802,6 @@ conf.Q2lx6st = {
 	qtVersion = "5.12.11",
 	host = "CentOS8",
 	variant = {"-static"},
-	ssl = "OpenSSL from package manager",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -894,7 +893,6 @@ conf.Q2mx6 = {
 	name = "Qt5.12.11-macOS-x86_64-AppleClang&AppleClangVersion&",
 	qtVersion = "5.12.11",
 	host = "macOSLegacy",
-	ssl = "SecureTransport",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -931,7 +929,6 @@ conf.Q2mx6nf = {
 	qtVersion = "5.12.11",
 	host = "macOSLegacy",
 	variant = {"-noFramework"},
-	ssl = "SecureTransport",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -969,7 +966,6 @@ conf.Q2mx6st = {
 	qtVersion = "5.12.11",
 	host = "macOS1015",
 	variant = {"-static"},
-	ssl = "SecureTransport",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -1066,7 +1062,6 @@ conf.q5_12mLx6st = {
 	qtVersion = "5.12.11",
 	host = "macOSLegacy",
 	variant = {"-static"},
-	ssl = "SecureTransport",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -1644,7 +1639,6 @@ conf.Q2lx6_W = {
 	host = "CentOS8",
 	target = "WebAssembly",
 	toolchainT = "emscripten-1.38.16",
-	ssl = "No",
 	configureParameter = [[
 		-prefix
 		/
@@ -1679,7 +1673,6 @@ conf.Q2mx6_W = {
 	host = "macOS1015",
 	target = "WebAssembly",
 	toolchainT = "emscripten-1.38.16",
-	ssl = "No",
 	configureParameter = [[
 		-prefix
 		/
@@ -1717,7 +1710,6 @@ conf.Q5wx3v5 = {
 	qtVersion = "5.15.2",
 	host = "Win8",
 	toolchain = "MSVC2015-32",
-	ssl = "SChannel",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -1753,7 +1745,6 @@ conf.Q5wx6v5 = {
 	qtVersion = "5.15.2",
 	host = "Win8",
 	toolchain = "MSVC2015-64",
-	ssl = "SChannel",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -1789,7 +1780,6 @@ conf.Q5wx3v7 = {
 	qtVersion = "5.15.2",
 	host = "Win10",
 	toolchain = "MSVC2017-32",
-	ssl = "SChannel",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -1827,7 +1817,6 @@ conf.Q5wx6v7 = {
 	qtVersion = "5.15.2",
 	host = "Win10",
 	toolchain = "MSVC2017-64",
-	ssl = "SChannel",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -1867,7 +1856,6 @@ conf.Q5wx6v7_wa6v7 = {
 	target = "Win10Arm",
 	toolchain = "MSVC2017-64",
 	toolchainT = "MSVC2017-arm64", -- only a placeholder here, in fact it uses "toolchain" instead of "toolchainT"
-	ssl = "SChannel",
 	configureParameter = [[
 		-prefix
 		/
@@ -1908,7 +1896,6 @@ conf.Q5wx3v9 = {
 	qtVersion = "5.15.2-3",
 	host = "Win10",
 	toolchain = "MSVC2019-32",
-	ssl = "SChannel",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -1946,7 +1933,6 @@ conf.Q5wx3v9sf = {
 	host = "Win10",
 	toolchain = "MSVC2019-32",
 	variant = {"-staticFull"},
-	ssl = "SChannel",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -1988,7 +1974,6 @@ conf.Q5wx6v9 = {
 	qtVersion = "5.15.2-3",
 	host = "Win10",
 	toolchain = "MSVC2019-64",
-	ssl = "SChannel",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -2026,7 +2011,6 @@ conf.Q5wx6v9sf = {
 	host = "Win10",
 	toolchain = "MSVC2019-64",
 	variant = {"-staticFull"},
-	ssl = "SChannel",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -2068,7 +2052,6 @@ conf.Q5wx3m8 = {
 	qtVersion = "5.15.2",
 	host = "Win10",
 	toolchain = "MinGW810-32",
-	ssl = "SChannel",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -2105,7 +2088,6 @@ conf.Q5wx3m8sf = {
 	host = "Win10",
 	toolchain = "MinGW810-32",
 	variant = {"-staticFull"},
-	ssl = "SChannel",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -2145,7 +2127,6 @@ conf.Q5wx6m8 = {
 	qtVersion = "5.15.2",
 	host = "Win10",
 	toolchain = "MinGW810-64",
-	ssl = "SChannel",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -2182,7 +2163,6 @@ conf.Q5wx6m8sf = {
 	host = "Win10",
 	toolchain = "MinGW810-64",
 	variant = {"-staticFull"},
-	ssl = "SChannel",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -2221,7 +2201,6 @@ conf.Q5mx6 = {
 	name = "Qt5.15.2-macOS-x86_64-AppleClang&AppleClangVersion&",
 	qtVersion = "5.15.2-3",
 	host = "macOS1015",
-	ssl = "SecureTransport",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -2258,7 +2237,6 @@ conf.Q5mx6nf = {
 	qtVersion = "5.15.2-3",
 	host = "macOS1015",
 	variant = {"-noFramework"},
-	ssl = "SecureTransport",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -2455,7 +2433,6 @@ conf.Q5wx6m8_W = {
 	toolchain = "MinGW810-64",
 	target = "WebAssembly",
 	toolchainT = "emscripten-1.39.8",
-	ssl = "No",
 	configureParameter = [[
 		-prefix
 		/
@@ -2491,7 +2468,6 @@ conf.Q5lx6_W = {
 	host = "CentOS8",
 	target = "WebAssembly",
 	toolchainT = "emscripten-1.39.8",
-	ssl = "No",
 	configureParameter = [[
 		-prefix
 		/
@@ -2527,7 +2503,6 @@ conf.Q5mx6_W = {
 	host = "macOS1015",
 	target = "WebAssembly",
 	toolchainT = "emscripten-1.39.8",
-	ssl = "No",
 	configureParameter = [[
 		-prefix
 		/
@@ -2564,7 +2539,6 @@ conf.q6_1wx6v9 = {
 	qtVersion = "6.1.1",
 	host = "Win10",
 	toolchain = "MSVC2019-64",
-	ssl = "SChannel",
 	useCMake = true,
 	configureParameter = [[
 		-G"Ninja"
@@ -2595,7 +2569,6 @@ conf.q6_1wx6m8 = {
 	qtVersion = "6.1.1",
 	host = "Win10",
 	toolchain = "MinGW810-64",
-	ssl = "SChannel",
 	useCMake = true,
 	configureParameter = [[
 		-G"Ninja"
@@ -2626,7 +2599,6 @@ conf.q6_1wx6m8st = {
 	qtVersion = "6.1.1",
 	host = "Win10",
 	toolchain = "MinGW810-64",
-	ssl = "SChannel",
 	useCMake = true,
 	configureParameter = [[
 		-G"Ninja"
@@ -2671,7 +2643,6 @@ conf.q6_1lx6st = {
 	qtVersion = "6.1.1",
 	host = "CentOS8",
 	variant = {"-static"},
-	ssl = "OpenSSL from package manager",
 	useCMake = true,
 	configureParameter = [[
 		-G"Ninja"
@@ -2716,7 +2687,6 @@ conf.q6_1mx6 = {
 	name = "Qt6.1.1-macOS-x86_64-AppleClang&AppleClangVersion&",
 	qtVersion = "6.1.1",
 	host = "macOS1015",
-	ssl = "SecureTransport",
 	useCMake = true,
 	configureParameter = [[
 		-G"Ninja"
@@ -2750,7 +2720,6 @@ conf.q6_1mx6nf = {
 	qtVersion = "6.1.1",
 	host = "macOS1015",
 	variant = {"-noFramework"},
-	ssl = "SecureTransport",
 	useCMake = true,
 	configureParameter = [[
 		-G"Ninja"
@@ -2784,7 +2753,6 @@ conf.q6_1mx6st = {
 	qtVersion = "6.1.1",
 	host = "macOS1015",
 	variant = {"-static"},
-	ssl = "SecureTransport",
 	useCMake = true,
 	configureParameter = [[
 		-G"Ninja"
@@ -3257,7 +3225,6 @@ conf.q6_1wx6m8_W = {
 	toolchain = "MinGW810-64",
 	target = "WebAssembly",
 	toolchainT = "emscripten-1.39.8",
-	ssl = "No",
 	useCMake = true,
 	configureParameter = [[
 		-GNinja
@@ -3294,7 +3261,6 @@ conf.q6_1lx6_W = {
 	host = "CentOS8",
 	target = "WebAssembly",
 	toolchainT = "emscripten-1.39.8",
-	ssl = "No",
 	useCMake = true,
 	configureParameter = [[
 		-GNinja
@@ -3331,7 +3297,6 @@ conf.q6_1mx6_W = {
 	host = "macOS1015",
 	target = "WebAssembly",
 	toolchainT = "emscripten-1.39.8",
-	ssl = "No",
 	useCMake = true,
 	configureParameter = [[
 		-GNinja
@@ -3361,18 +3326,6 @@ conf.q6_1mx6_W = {
 		-DFEATURE_sql_sqlite=ON
 	]],
 }
-
-local versionMo = {
-	__index = function(t, k)
-		return t.default
-	end
-}
-
-local OpensslVersion = {
-	["default"] = "1.1.1k"
-}
-
-setmetatable(OpensslVersion, versionMo)
 
 local QQtPatcherConf = {
 	["Win10"] = "Q2wx3v7st",
@@ -3454,11 +3407,6 @@ for name, value in pairs(conf) do
 end
 
 for name, value in pairs(conf) do
-	-- fill other info
-	if not value.ssl then
-		value.ssl = "OpenSSL " .. OpensslVersion[value.qtVersion]
-	end
-
 	if value.target and (value.target ~= value.host) then
 		value.crossCompile = true
 	else
@@ -3525,7 +3473,6 @@ for name, value in pairs(conf) do
 			ret = ret .. "\tTarget: " .. self.target .. "\n"
 			ret = ret .. "\tTarget Toolchain: " .. self.toolchainT .. "\n"
 		end
-		ret = ret .. "\tSSL Backend: " .. self.ssl .. "\n"
 		if self.opensslConf then
 			ret = ret .. "\tOpenSSL Configuration: " .. self.opensslConf .. "\n"
 		end

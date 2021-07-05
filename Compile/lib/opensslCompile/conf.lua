@@ -14,18 +14,24 @@ abbrs:
 	Other platforms will be added when supported.
 	Crossed compiled versions does not marked using underscore because there is no need for distinguishing it from another version.
 
-	Architectures:
+	Supported Architectures:
 		x3: x86
 		x6: x86_64
 		a3: arm(eabi)_v7
 		a6: arm64
 		al: All architectures
+	Other architectures will be added when supported.
 
 	Toolchains: (especially, not in system PATH by default)
 		v5: VS2015
 		v7: VS2017
 		v9: VS2019
-		m7: MinGW 7.3.0
+		m7: MinGW-w64 7.3.0
+		m8: MinGW-w64 8.1.0
+		m5: MinGW-w64 8.5.0 (Built by Fsu0413)
+		m9: MinGW-w64 9.4.0 (Built by Fsu0413)
+		m0: MinGW-w64 10.3.0 (Built by Fsu0413)
+		mr: MinGW-w64 10.2.0 (Built by ray_linn)
 		nl: Android NDK r21e/Latest LTS
 		n2: Android NDK r22/Latest
 	If suffixed with a lower-case "c", it is clang compiler, with the original one as base.

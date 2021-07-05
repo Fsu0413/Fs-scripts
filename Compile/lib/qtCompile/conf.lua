@@ -3452,6 +3452,12 @@ conf.q6_1mx6_W = {
 	]],
 }
 
+local versionMo = {
+	__index = function(t, k)
+		return t.default
+	end
+}
+
 local QQtPatcherConf = {
 	["Win10"] = "Q2wx3v7st",
 	["Win8"] = "Q2wx3v5st",

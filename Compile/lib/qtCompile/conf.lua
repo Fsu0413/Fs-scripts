@@ -2690,7 +2690,7 @@ conf.q6_1wx6m0 = {
 }
 
 conf.q6_1wx6mr = {
-	name = "Qt6.1.2-Windows-x86_64-MinGW10.3.0",
+	name = "Qt6.1.2-Windows-x86_64-MinGW10.2.0",
 	qtVersion = "6.1.2",
 	host = "Win10",
 	toolchain = "MinGWrl1020-64",

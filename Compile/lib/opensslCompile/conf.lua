@@ -27,11 +27,6 @@ abbrs:
 		v7: VS2017
 		v9: VS2019
 		m7: MinGW-w64 7.3.0
-		m8: MinGW-w64 8.1.0
-		m5: MinGW-w64 8.5.0 (Built by Fsu0413)
-		m9: MinGW-w64 9.4.0 (Built by Fsu0413)
-		m0: MinGW-w64 10.3.0 (Built by Fsu0413)
-		mr: MinGW-w64 10.2.0 (Built by ray_linn)
 		nl: Android NDK r21e/Latest LTS
 		n2: Android NDK r22/Latest
 	If suffixed with a lower-case "c", it is clang compiler, with the original one as base.

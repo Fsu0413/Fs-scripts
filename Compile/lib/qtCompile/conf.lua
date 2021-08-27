@@ -19,10 +19,10 @@ abbrs:
 	Other platforms will be added when supported.
 	Some platforms needs cross compiling, especially Android, WebAssembly and Windows on ARM64, we use an underscore to mark a cross compiled version.
 
+	Supported Architectures:
 		x3: x86
 		x6: x86_64
 		a3: arm(eabi)_v7
-	Supported Architectures:
 		a6: arm64_v8a
 		al: All
 	Other architectures will be added when supported.
@@ -33,10 +33,6 @@ abbrs:
 		v9: VS2019
 		m7: MinGW-w64 7.3.0
 		m8: MinGW-w64 8.1.0
-		m5: MinGW-w64 8.5.0 (Built by Fsu0413)
-		m9: MinGW-w64 9.4.0 (Built by Fsu0413)
-		m0: MinGW-w64 10.3.0 (Built by Fsu0413)
-		mr: MinGW-w64 10.2.0 (Built by ray_linn)
 		nl: Android NDK r21e/Latest LTS
 		n2: Android NDK r22/Latest
 	If suffixed with a lower-case "c", it is clang compiler with the original one as base.
@@ -2574,126 +2570,6 @@ conf.q6_1wx6m8 = {
 	qtVersion = "6.1.2",
 	host = "Win10",
 	toolchain = "MinGW810-64",
-	useCMake = true,
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DBUILD_SHARED_LIBS=ON
-		-DCMAKE_BUILD_TYPE="Release"
-		-DQT_QMAKE_TARGET_MKSPEC=win32-g++
-		-DBUILD_WITH_PCH=ON
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengl_dynamic=ON
-		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=OFF
-		-DFEATURE_schannel=ON
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_sql_odbc=ON
-		-DFEATURE_system_sqlite=OFF
-	]],
-}
-
-conf.q6_1wx6m5 = {
-	name = "Qt6.1.2-Windows-x86_64-MinGW8.5.0",
-	qtVersion = "6.1.2",
-	host = "Win10",
-	toolchain = "MinGWFs850-64",
-	useCMake = true,
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DBUILD_SHARED_LIBS=ON
-		-DCMAKE_BUILD_TYPE="Release"
-		-DQT_QMAKE_TARGET_MKSPEC=win32-g++
-		-DBUILD_WITH_PCH=ON
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengl_dynamic=ON
-		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=OFF
-		-DFEATURE_schannel=ON
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_sql_odbc=ON
-		-DFEATURE_system_sqlite=OFF
-	]],
-}
-
-conf.q6_1wx6m9 = {
-	name = "Qt6.1.2-Windows-x86_64-MinGW9.4.0",
-	qtVersion = "6.1.2",
-	host = "Win10",
-	toolchain = "MinGWFs940-64",
-	useCMake = true,
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DBUILD_SHARED_LIBS=ON
-		-DCMAKE_BUILD_TYPE="Release"
-		-DQT_QMAKE_TARGET_MKSPEC=win32-g++
-		-DBUILD_WITH_PCH=ON
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengl_dynamic=ON
-		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=OFF
-		-DFEATURE_schannel=ON
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_sql_odbc=ON
-		-DFEATURE_system_sqlite=OFF
-	]],
-}
-
-conf.q6_1wx6m0 = {
-	name = "Qt6.1.2-Windows-x86_64-MinGW10.3.0",
-	qtVersion = "6.1.2",
-	host = "Win10",
-	toolchain = "MinGWFs1030-64",
-	useCMake = true,
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DBUILD_SHARED_LIBS=ON
-		-DCMAKE_BUILD_TYPE="Release"
-		-DQT_QMAKE_TARGET_MKSPEC=win32-g++
-		-DBUILD_WITH_PCH=ON
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengl_dynamic=ON
-		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=OFF
-		-DFEATURE_schannel=ON
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_sql_odbc=ON
-		-DFEATURE_system_sqlite=OFF
-	]],
-}
-
-conf.q6_1wx6mr = {
-	name = "Qt6.1.2-Windows-x86_64-MinGW10.2.0",
-	qtVersion = "6.1.2",
-	host = "Win10",
-	toolchain = "MinGWrl1020-64",
 	useCMake = true,
 	configureParameter = [[
 		-G"Ninja"

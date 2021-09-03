@@ -133,6 +133,12 @@ conf.Qt.generateConfTable = function(self, host, job)
 	ret.template = confHost.makefileTemplate
 	ret.path = {}
 	ret.WORKSPACE = os.getenv("WORKSPACE")
+	-- dirty hack here for Windows drive since Windows services always starts in drive C
+	if confHost.makefileTemplate == "win" and string.sub(ret.WORKSPACE, 1, 26) == "C:\\Users\\Fs\\Work\\Jenkins10" then
+		local rightpart = string.sub(ret.WORKSPACE, 27)
+		ret.WORKSPACE = "D:\\Jenkins10" .. rightpart
+	end
+	-- dirty hack end
 	ret.BUILDDIR = confHost.buildRootPath .. "build-Qt" .. job
 	ret.download = {}
 
@@ -157,11 +163,11 @@ conf.Qt.generateConfTable = function(self, host, job)
 	ret.SOURCEFILE = confDetail["sourcePackageFileName" .. confHost.makefileTemplate]
 	ret.date = string.format("%04d%02d%02d", BuildTime.year, BuildTime.month, BuildTime.day)
 	local installFolderName =  confDetail.name
-	local installRoot = os.getenv("WORKSPACE") .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. installFolderName
+	local installRoot = ret.WORKSPACE .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. installFolderName
 
 	if confDetail.opensslConf then
 		table.insert(ret.download, conf.OpenSSL:binaryFileDownloadPath(host, confDetail.opensslConf))
-		repl.OPENSSLDIR = os.getenv("WORKSPACE") .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. conf.OpenSSL.configurations[confDetail.opensslConf].name
+		repl.OPENSSLDIR = ret.WORKSPACE .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. conf.OpenSSL.configurations[confDetail.opensslConf].name
 		if confDetail.OPENSSL_LIBS then
 			local opensslLibs = string.gsub(confDetail.OPENSSL_LIBS, "%&OPENSSLDIR%&", repl.OPENSSLDIR)
 			ret.envSet.OPENSSL_LIBS = opensslLibs
@@ -172,7 +178,7 @@ conf.Qt.generateConfTable = function(self, host, job)
 		-- Qt 6: We need host tool to cross build Qt
 		if confDetail.hostToolsConf then
 			table.insert(ret.download, confDetail["hostToolsUrl" .. confHost.makefileTemplate])
-			repl.HOSTQTDIR = os.getenv("WORKSPACE") .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. conf.Qt.configurations[confDetail.hostToolsConf].name
+			repl.HOSTQTDIR = ret.WORKSPACE .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. conf.Qt.configurations[confDetail.hostToolsConf].name
 		end
 
 		if string.sub(confDetail.toolchainT, 1, 7) == "Android" then -- Android
@@ -358,7 +364,13 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 		ret.template = confHost.makefileTemplate
 		ret.path = {}
 		ret.WORKSPACE = os.getenv("WORKSPACE")
-		ret.INSTALLROOT = os.getenv("WORKSPACE") .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. confDetail.name
+		-- dirty hack here for Windows drive since Windows services always starts in drive C
+		if confHost.makefileTemplate == "win" and string.sub(ret.WORKSPACE, 1, 26) == "C:\\Users\\Fs\\Work\\Jenkins10" then
+			local rightpart = string.sub(ret.WORKSPACE, 27)
+			ret.WORKSPACE = "D:\\Jenkins10" .. rightpart
+		end
+		-- dirty hack end
+		ret.INSTALLROOT = ret.WORKSPACE .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. confDetail.name
 		ret.INSTALLPATH = confDetail.name
 		ret.OPENSSLDIRFUNCTION = ""
 		ret.download = {}
@@ -386,7 +398,13 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 		ret.template = confHost.makefileTemplate
 		ret.path = {}
 		ret.WORKSPACE = os.getenv("WORKSPACE")
-		ret.BUILDDIR = os.getenv("WORKSPACE") .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. "build-OpenSSL" .. job
+		-- dirty hack here for Windows drive since Windows services always starts in drive C
+		if confHost.makefileTemplate == "win" and string.sub(ret.WORKSPACE, 1, 26) == "C:\\Users\\Fs\\Work\\Jenkins10" then
+			local rightpart = string.sub(ret.WORKSPACE, 27)
+			ret.WORKSPACE = "D:\\Jenkins10" .. rightpart
+		end
+		-- dirty hack end
+		ret.BUILDDIR = ret.WORKSPACE .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. "build-OpenSSL" .. job
 		ret.INSTALLCOMMANDLINE = " "
 		ret.download = {}
 		table.insert(ret.download, confDetail["sourcePackageUrl" .. confHost.makefileTemplate])
@@ -405,7 +423,7 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 		repl.parameter = {}
 
 		local installFolderName =  confDetail.name
-		local installRoot = os.getenv("WORKSPACE") .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. installFolderName
+		local installRoot = ret.WORKSPACE .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. installFolderName
 
 		repl.INSTALLROOT = installRoot
 

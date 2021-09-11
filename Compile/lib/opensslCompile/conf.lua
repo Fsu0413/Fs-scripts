@@ -5,7 +5,7 @@ local conf = {}
 abbrs:
 	OpenSSL Versions:
 		o1: OpenSSL 1.1.1l
-		o3: OpenSSL 3.0.0 (Not released yet)
+		o3: OpenSSL 3.0.0
 	Most of OpenSSL builds has its makefiles changed for our use. No "m" will be prefixed.
 
 	Platforms:
@@ -27,8 +27,8 @@ abbrs:
 		v7: VS2017
 		v9: VS2019
 		m7: MinGW-w64 7.3.0
-		nl: Android NDK r21e/Latest LTS
-		n2: Android NDK r22/Latest
+		nl: Android NDK r21e/Past LTS
+		n3: Android NDK r23/Latest LTS
 	If suffixed with a lower-case "c", it is clang compiler, with the original one as base.
 	If omitted, it use a toolchain in default PATH, which should be AppleClang in macOS, or GCC in Linux.
 
@@ -443,12 +443,12 @@ conf.o1aalnl24 = {
 
 --------------------------------------------------------------------
 
-conf.o1aa3n224 = {
-	name = "OpenSSL1.1.1l-Android-arm-NDKr22API24",
+conf.o1aa3n324 = {
+	name = "OpenSSL1.1.1l-Android-arm-NDKr23API24",
 	opensslVersion = "1.1.1l",
 	host = "CentOS8",
 	target = "Android-24",
-	toolchainT = "Android-24-r22-arm",
+	toolchainT = "Android-24-r23-arm",
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -468,12 +468,12 @@ conf.o1aa3n224 = {
 	]],
 }
 
-conf.o1aa6n224 = {
-	name = "OpenSSL1.1.1l-Android-arm64-NDKr22API24",
+conf.o1aa6n324 = {
+	name = "OpenSSL1.1.1l-Android-arm64-NDKr23API24",
 	opensslVersion = "1.1.1l",
 	host = "CentOS8",
 	target = "Android-24",
-	toolchainT = "Android-24-r22-arm64",
+	toolchainT = "Android-24-r23-arm64",
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -488,12 +488,12 @@ conf.o1aa6n224 = {
 	]],
 }
 
-conf.o1ax3n224 = {
-	name = "OpenSSL1.1.1l-Android-x86-NDKr22API24",
+conf.o1ax3n324 = {
+	name = "OpenSSL1.1.1l-Android-x86-NDKr23API24",
 	opensslVersion = "1.1.1l",
 	host = "CentOS8",
 	target = "Android-24",
-	toolchainT = "Android-24-r22-x86",
+	toolchainT = "Android-24-r23-x86",
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -508,12 +508,12 @@ conf.o1ax3n224 = {
 	]],
 }
 
-conf.o1ax6n224 = {
-	name = "OpenSSL1.1.1l-Android-x86_64-NDKr22API24",
+conf.o1ax6n324 = {
+	name = "OpenSSL1.1.1l-Android-x86_64-NDKr23API24",
 	opensslVersion = "1.1.1l",
 	host = "CentOS8",
 	target = "Android-24",
-	toolchainT = "Android-24-r22-x86_64",
+	toolchainT = "Android-24-r23-x86_64",
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -528,15 +528,15 @@ conf.o1ax6n224 = {
 	]],
 }
 
-conf.o1aaln224 = {
-	name = "OpenSSL1.1.1l-Android-ALL-NDKr22API24",
+conf.o1aaln324 = {
+	name = "OpenSSL1.1.1l-Android-ALL-NDKr23API24",
 	opensslVersion = "1.1.1l",
 	host = "CentOS8",
 	opensslAndroidAll = {
-		["armeabi-v7a"] = "o1aa3n224",
-		["arm64-v8a"] = "o1aa6n224",
-		["x86"] = "o1ax3n224",
-		["x86_64"] = "o1ax6n224",
+		["armeabi-v7a"] = "o1aa3n324",
+		["arm64-v8a"] = "o1aa6n324",
+		["x86"] = "o1ax3n324",
+		["x86_64"] = "o1ax6n324",
 	},
 }
 

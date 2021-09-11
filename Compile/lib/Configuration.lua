@@ -33,7 +33,7 @@ conf.host.win = {
 	},
 	["androidNdkPath"] = {
 		["r21e"] = "D:\\android-ndk-r21e",
-		["r22"] = "D:\\android-ndk-r22",
+		["r23"] = "D:\\android-ndk-r23",
 	},
 	["androidNdkHost"] = "windows-x86_64",
 	["emscriptenPath"] = "D:\\emsdk\\",
@@ -58,7 +58,7 @@ conf.host.msys = {
 	["sourcePackagePath"] = "/d/Qt/",
 	["androidNdkPath"] = {
 		["r21e"] = "/d/android-ndk-r21e/",
-		["r22"] = "/d/android-ndk-r22/",
+		["r23"] = "/d/android-ndk-r23/",
 	},
 	["androidNdkHost"] = "windows-x86_64",
 }
@@ -78,7 +78,7 @@ conf.host.linux = {
 	},
 	["androidNdkPath"] = {
 		["r21e"] = "/opt/env/android-ndk-r21e/",
-		["r22"] = "/opt/env/android-ndk-r22/",
+		["r23"] = "/opt/env/android-ndk-r23/",
 	},
 	["androidNdkHost"] = "linux-x86_64",
 	["sourcePackagePath"] = "/opt/sources/",
@@ -100,7 +100,7 @@ conf.host.mac = {
 	},
 	["androidNdkPath"] = {
 		["r21e"] = "/opt/env/android-ndk-r21e/",
-		["r22"] = "/opt/env/android-ndk-r22/",
+		["r23"] = "/Applications/AndroidNDK7599858.app/Contents/NDK/", -- NDK r23 only distributes as APP bundle...
 	},
 	["androidNdkHost"] = "darwin-x86_64",
 	["sourcePackagePath"] = "/opt/sources/",

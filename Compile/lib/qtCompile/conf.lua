@@ -3389,7 +3389,6 @@ conf.q6_2wx6v9sf = {
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
 		-DFEATURE_system_sqlite=OFF
-		-DFEATURE_webengine_proprietary_codecs=ON
 	]],
 }
 
@@ -3656,7 +3655,7 @@ conf.q6_2mx6st = {
 	]],
 }
 
-conf.q6_2mx6st = {
+conf.q6_2mx6sf = {
 	name = "Qt6.2.0-rc-macOS-x86_64-AppleClang&AppleClangVersion&-staticFull",
 	qtVersion = "6.2.0-rc",
 	host = "macOS1015",
@@ -3687,7 +3686,7 @@ conf.q6_2mx6st = {
 	]],
 }
 
-conf.q6_2wx6m8_aa3nl = {
+conf.q6_2wx6m8_aa3n3 = {
 	name = "Qt6.2.0-rc-Android-arm-Clang-NDKr23-XWindows-x86_64-MinGW8.1.0",
 	qtVersion = "6.2.0-rc",
 	host = "Win10",
@@ -3723,7 +3722,7 @@ conf.q6_2wx6m8_aa3nl = {
 	]],
 }
 
-conf.q6_2wx6m8_aa6nl = {
+conf.q6_2wx6m8_aa6n3 = {
 	name = "Qt6.2.0-rc-Android-arm64-Clang-NDKr23-XWindows-x86_64-MinGW8.1.0",
 	qtVersion = "6.2.0-rc",
 	host = "Win10",
@@ -3759,7 +3758,7 @@ conf.q6_2wx6m8_aa6nl = {
 	]],
 }
 
-conf.q6_2wx6m8_ax3nl = {
+conf.q6_2wx6m8_ax3n3 = {
 	name = "Qt6.2.0-rc-Android-x86-Clang-NDKr23-XWindows-x86_64-MinGW8.1.0",
 	qtVersion = "6.2.0-rc",
 	host = "Win10",
@@ -3795,7 +3794,7 @@ conf.q6_2wx6m8_ax3nl = {
 	]],
 }
 
-conf.q6_2wx6m8_ax6nl = {
+conf.q6_2wx6m8_ax6n3 = {
 	name = "Qt6.2.0-rc-Android-x86_64-Clang-NDKr23-XWindows-x86_64-MinGW8.1.0",
 	qtVersion = "6.2.0-rc",
 	host = "Win10",
@@ -3831,7 +3830,7 @@ conf.q6_2wx6m8_ax6nl = {
 	]],
 }
 
-conf.q6_2lx6_aa3nl = {
+conf.q6_2lx6_aa3n3 = {
 	name = "Qt6.2.0-rc-Android-arm-Clang-NDKr23-xLinux-x86_64-gcc8.4.1",
 	qtVersion = "6.2.0-rc",
 	host = "CentOS8",
@@ -3866,7 +3865,7 @@ conf.q6_2lx6_aa3nl = {
 	]],
 }
 
-conf.q6_2lx6_aa6nl = {
+conf.q6_2lx6_aa6n3 = {
 	name = "Qt6.2.0-rc-Android-arm64-Clang-NDKr23-xLinux-x86_64-gcc8.4.1",
 	qtVersion = "6.2.0-rc",
 	host = "CentOS8",
@@ -3901,7 +3900,7 @@ conf.q6_2lx6_aa6nl = {
 	]],
 }
 
-conf.q6_2lx6_ax3nl = {
+conf.q6_2lx6_ax3n3 = {
 	name = "Qt6.2.0-rc-Android-x86-Clang-NDKr23-xLinux-x86_64-gcc8.4.1",
 	qtVersion = "6.2.0-rc",
 	host = "CentOS8",
@@ -3936,7 +3935,7 @@ conf.q6_2lx6_ax3nl = {
 	]],
 }
 
-conf.q6_2lx6_ax6nl = {
+conf.q6_2lx6_ax6n3 = {
 	name = "Qt6.2.0-rc-Android-x86_64-Clang-NDKr23-xLinux-x86_64-gcc8.4.1",
 	qtVersion = "6.2.0-rc",
 	host = "CentOS8",
@@ -3971,7 +3970,7 @@ conf.q6_2lx6_ax6nl = {
 	]],
 }
 
-conf.q6_2mx6_aa3nl = {
+conf.q6_2mx6_aa3n3 = {
 	name = "Qt6.2.0-rc-Android-arm-Clang-NDKr23-xmacOS-x86_64-AppleClang&AppleClangVersion&",
 	qtVersion = "6.2.0-rc",
 	host = "macOS1015",
@@ -4006,7 +4005,7 @@ conf.q6_2mx6_aa3nl = {
 	]],
 }
 
-conf.q6_2mx6_aa6nl = {
+conf.q6_2mx6_aa6n3 = {
 	name = "Qt6.2.0-rc-Android-arm64-Clang-NDKr23-xmacOS-x86_64-AppleClang&AppleClangVersion&",
 	qtVersion = "6.2.0-rc",
 	host = "macOS1015",
@@ -4041,7 +4040,7 @@ conf.q6_2mx6_aa6nl = {
 	]],
 }
 
-conf.q6_2mx6_ax3nl = {
+conf.q6_2mx6_ax3n3 = {
 	name = "Qt6.2.0-rc-Android-x86-Clang-NDKr23-xmacOS-x86_64-AppleClang&AppleClangVersion&",
 	qtVersion = "6.2.0-rc",
 	host = "macOS1015",
@@ -4076,7 +4075,7 @@ conf.q6_2mx6_ax3nl = {
 	]],
 }
 
-conf.q6_2mx6_ax6nl = {
+conf.q6_2mx6_ax6n3 = {
 	name = "Qt6.2.0-rc-Android-x86_64-Clang-NDKr23-xmacOS-x86_64-AppleClang&AppleClangVersion&",
 	qtVersion = "6.2.0-rc",
 	host = "macOS1015",

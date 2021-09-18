@@ -139,7 +139,7 @@ conf.Qt.generateConfTable = function(self, host, job)
 	ret.WORKSPACE = os.getenv("WORKSPACE")
 	-- dirty hack here for Windows drive since Windows services always starts in drive C
 	if confHost.makefileTemplate == "win" and string.sub(ret.WORKSPACE, 1, 24) == "C:\\Users\\Fs\\Work\\Jenkins" then
-		local rightpart = string.sub(ret.WORKSPACE, 27)
+		local rightpart = string.sub(ret.WORKSPACE, 25)
 		ret.WORKSPACE = "D:\\Jenkins" .. rightpart
 	end
 	-- dirty hack end
@@ -370,7 +370,7 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 		ret.WORKSPACE = os.getenv("WORKSPACE")
 		-- dirty hack here for Windows drive since Windows services always starts in drive C
 		if confHost.makefileTemplate == "win" and string.sub(ret.WORKSPACE, 1, 24) == "C:\\Users\\Fs\\Work\\Jenkins" then
-			local rightpart = string.sub(ret.WORKSPACE, 27)
+			local rightpart = string.sub(ret.WORKSPACE, 25)
 			ret.WORKSPACE = "D:\\Jenkins" .. rightpart
 		end
 		-- dirty hack end
@@ -404,7 +404,7 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 		ret.WORKSPACE = os.getenv("WORKSPACE")
 		-- dirty hack here for Windows drive since Windows services always starts in drive C
 		if confHost.makefileTemplate == "win" and string.sub(ret.WORKSPACE, 1, 24) == "C:\\Users\\Fs\\Work\\Jenkins" then
-			local rightpart = string.sub(ret.WORKSPACE, 27)
+			local rightpart = string.sub(ret.WORKSPACE, 25)
 			ret.WORKSPACE = "D:\\Jenkins" .. rightpart
 		end
 		-- dirty hack end

@@ -37,7 +37,11 @@ conf.host.win = {
 	},
 	["androidNdkHost"] = "windows-x86_64",
 	["emscriptenPath"] = "D:\\emsdk\\",
-	["cMakePath"] = { "D:\\cmake-3.20.2-windows-x86_64\\bin", "D:\\ninja" },
+
+	-- For building QtWebEngine 6.2+ on Windows, GnuWin32 is needed.
+	-- Qt removes GnuWin32 since 6.0. Since we are using CMake for build Qt 6.0+
+	-- Because all later build will be Qt 6.2+ since the time of this commit (which will be at 2021/9/18), let's temporarily just re-use this for setting path of GnuWin32.
+	["cMakePath"] = { "D:\\cmake-3.20.2-windows-x86_64\\bin", "D:\\ninja", "D:\\gnuwin32\\bin" },
 }
 
 -- msys is treated as another host since it uses windows agent and unix shell
@@ -100,7 +104,7 @@ conf.host.mac = {
 	},
 	["androidNdkPath"] = {
 		["r21e"] = "/opt/env/android-ndk-r21e/",
-		["r23"] = "/Applications/AndroidNDK7599858.app/Contents/NDK/", -- NDK r23 only distributes as APP bundle...
+		["r23"] = "/Applications/AndroidNDK7599858.app/Contents/NDK/", -- NDK r23 only distributes as APP bundle, so we install the APP in /Applications.
 	},
 	["androidNdkHost"] = "darwin-x86_64",
 	["sourcePackagePath"] = "/opt/sources/",
@@ -134,9 +138,9 @@ conf.Qt.generateConfTable = function(self, host, job)
 	ret.path = {}
 	ret.WORKSPACE = os.getenv("WORKSPACE")
 	-- dirty hack here for Windows drive since Windows services always starts in drive C
-	if confHost.makefileTemplate == "win" and string.sub(ret.WORKSPACE, 1, 26) == "C:\\Users\\Fs\\Work\\Jenkins10" then
+	if confHost.makefileTemplate == "win" and string.sub(ret.WORKSPACE, 1, 24) == "C:\\Users\\Fs\\Work\\Jenkins" then
 		local rightpart = string.sub(ret.WORKSPACE, 27)
-		ret.WORKSPACE = "D:\\Jenkins10" .. rightpart
+		ret.WORKSPACE = "D:\\Jenkins" .. rightpart
 	end
 	-- dirty hack end
 	ret.BUILDDIR = confHost.buildRootPath .. "build-Qt" .. job
@@ -365,9 +369,9 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 		ret.path = {}
 		ret.WORKSPACE = os.getenv("WORKSPACE")
 		-- dirty hack here for Windows drive since Windows services always starts in drive C
-		if confHost.makefileTemplate == "win" and string.sub(ret.WORKSPACE, 1, 26) == "C:\\Users\\Fs\\Work\\Jenkins10" then
+		if confHost.makefileTemplate == "win" and string.sub(ret.WORKSPACE, 1, 24) == "C:\\Users\\Fs\\Work\\Jenkins" then
 			local rightpart = string.sub(ret.WORKSPACE, 27)
-			ret.WORKSPACE = "D:\\Jenkins10" .. rightpart
+			ret.WORKSPACE = "D:\\Jenkins" .. rightpart
 		end
 		-- dirty hack end
 		ret.INSTALLROOT = ret.WORKSPACE .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. confDetail.name
@@ -399,9 +403,9 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 		ret.path = {}
 		ret.WORKSPACE = os.getenv("WORKSPACE")
 		-- dirty hack here for Windows drive since Windows services always starts in drive C
-		if confHost.makefileTemplate == "win" and string.sub(ret.WORKSPACE, 1, 26) == "C:\\Users\\Fs\\Work\\Jenkins10" then
+		if confHost.makefileTemplate == "win" and string.sub(ret.WORKSPACE, 1, 24) == "C:\\Users\\Fs\\Work\\Jenkins" then
 			local rightpart = string.sub(ret.WORKSPACE, 27)
-			ret.WORKSPACE = "D:\\Jenkins10" .. rightpart
+			ret.WORKSPACE = "D:\\Jenkins" .. rightpart
 		end
 		-- dirty hack end
 		ret.BUILDDIR = ret.WORKSPACE .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. "build-OpenSSL" .. job

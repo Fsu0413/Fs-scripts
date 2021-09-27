@@ -4133,12 +4133,12 @@ conf.q6_2mx6_ax6n3 = {
 }
 
 conf.q6_2wx6m8_W = {
-	name = "Qt6.2.0-rc-WebAssembly-emscripten1.39.8-xWindows-x86_64-MinGW8.1.0",
+	name = "Qt6.2.0-rc-WebAssembly-emscripten2.0.14-xWindows-x86_64-MinGW8.1.0",
 	qtVersion = "6.2.0-rc",
 	host = "Win10",
 	toolchain = "MinGW810-64",
 	target = "WebAssembly",
-	toolchainT = "emscripten-1.39.8",
+	toolchainT = "emscripten-2.0.14",
 	useCMake = true,
 	configureParameter = [[
 		-GNinja
@@ -4162,11 +4162,11 @@ conf.q6_2wx6m8_W = {
 }
 
 conf.q6_2lx6_W = {
-	name = "Qt6.2.0-rc-WebAssembly-emscripten1.39.8-xLinux-x86_64-gcc8.4.1",
+	name = "Qt6.2.0-rc-WebAssembly-emscripten2.0.14-xLinux-x86_64-gcc8.4.1",
 	qtVersion = "6.2.0-rc",
 	host = "CentOS8",
 	target = "WebAssembly",
-	toolchainT = "emscripten-1.39.8",
+	toolchainT = "emscripten-2.0.14",
 	useCMake = true,
 	configureParameter = [[
 		-GNinja
@@ -4190,11 +4190,11 @@ conf.q6_2lx6_W = {
 }
 
 conf.q6_2mx6_W = {
-	name = "Qt6.2.0-rc-WebAssembly-emscripten1.39.8-xmacOS-x86_64-AppleClang&AppleClangVersion&",
+	name = "Qt6.2.0-rc-WebAssembly-emscripten2.0.14-xmacOS-x86_64-AppleClang&AppleClangVersion&",
 	qtVersion = "6.2.0-rc",
 	host = "macOS1015",
 	target = "WebAssembly",
-	toolchainT = "emscripten-1.39.8",
+	toolchainT = "emscripten-2.0.14",
 	useCMake = true,
 	configureParameter = [[
 		-GNinja

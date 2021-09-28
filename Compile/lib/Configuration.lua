@@ -41,7 +41,7 @@ conf.host.win = {
 	-- For building QtWebEngine 6.2+ on Windows, GnuWin32 is needed.
 	-- Qt removes GnuWin32 since 6.0. Since we are using CMake for build Qt 6.0+
 	-- Because all later build will be Qt 6.2+ since the time of this commit (which will be at 2021/9/18), let's temporarily just re-use this for setting path of GnuWin32.
-	["cMakePath"] = { "D:\\cmake-3.21.2-windows-x86_64\\bin", "D:\\ninja", "D:\\gnuwin32\\bin" },
+	["cMakePath"] = { "D:\\cmake-3.21.3-windows-x86_64\\bin", "D:\\ninja", "D:\\gnuwin32\\bin" },
 }
 
 -- msys is treated as another host since it uses windows agent and unix shell

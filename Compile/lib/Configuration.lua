@@ -234,7 +234,11 @@ conf.Qt.generateConfTable = function(self, host, job)
 	if not confDetail.useCMake then
 		ret.CONFIGURECOMMANDLINE = confHost.sourcePackagePath .. sourcePackageBaseName .. confHost.pathSep .. "configure "
 	else
-		ret.CONFIGURECOMMANDLINE = "cmake "
+		if (string.sub(confDetail.qtVersion, 1, 2) == "6.") and confDetail.crossCompile and (string.sub(confDetail.toolchainT, 1, 10) == "emscripten") then
+			ret.CONFIGURECOMMANDLINE = "emcmake "
+		else
+			ret.CONFIGURECOMMANDLINE = "cmake "
+		end
 	end
 	ret.CONFIGURECOMMANDLINE = ret.CONFIGURECOMMANDLINE .. string.gsub(string.gsub(confDetail.configureParameter, "%&([%w_]+)%&", function(s)
 		if repl[s] then
@@ -245,9 +249,6 @@ conf.Qt.generateConfTable = function(self, host, job)
 	end), "%s+", " ")
 	if confDetail.useCMake then
 		ret.CONFIGURECOMMANDLINE = ret.CONFIGURECOMMANDLINE .. confHost.sourcePackagePath .. sourcePackageBaseName
-	end
-	if (string.sub(confDetail.qtVersion, 1, 2) == "6.") and confDetail.crossCompile and (string.sub(confDetail.toolchainT, 1, 10) == "emscripten") then
-		ret.CONFIGURECOMMANDLINE = "emconfigure " .. ret.CONFIGURECOMMANDLINE
 	end
 
 	if not confDetail.useCMake then

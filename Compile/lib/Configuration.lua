@@ -204,10 +204,14 @@ conf.Qt.generateConfTable = function(self, host, job)
 			local emsdkVer, ver1, ver2 = string.match(confDetail.toolchainT, matchStr)
 			if emsdkVer then
 				-- emsdk renamed their 1.38.x releases from "sdk-1.38.x-64bit" to "sdk-fastcomp-1.38.x-64bit", so...
-				if ver1 == "1" and ver2 == "38" then
-					emsdkVer = "fastcomp-" .. emsdkVer
+				-- emsdk 1.39.8 does not work anymore after emsdk 2.0.14 is installed. Poor emsdk doesn't provide a way for downgrade...
+				if ver1 == "1" then
+					if ver2 == "38" then
+						emsdkVer = "fastcomp-" .. emsdkVer
+					end
+					emsdkVer = "sdk-" .. emsdkVer .. "-64bit"
 				end
-				ret.emBat = confHost.emscriptenPath .. "emsdk activate sdk-" .. emsdkVer .. "-64bit"
+				ret.emBat = confHost.emscriptenPath .. "emsdk activate " .. emsdkVer
 				if confHost.makefileTemplate == "unix" then
 					ret.emSource =  confHost.emscriptenPath .. "emsdk_env.sh"
 				end

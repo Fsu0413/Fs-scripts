@@ -664,11 +664,11 @@ gen.generate = function(self, para)
 		if para.template == "win" then
 			-- emsdk construct_env on Windows nukes local paths https://github.com/emscripten-core/emsdk/issues/189
 			-- the associated pull request has not closed yet
-			paraCopy.EMCALL = "call " .. para.emBat .. "\nif errorlevel 1 exit 1\n" .. "echo on\nset PATH=%TOOLSPATH%;%PATH%\n"
+			paraCopy.EMCALL = "call " .. para.emBat .. "\nif errorlevel 1 exit 1\ncall " .. para.emBat .. "\nif errorlevel 1 exit 1\n" .. "echo on\nset PATH=%TOOLSPATH%;%PATH%\n"
 		else
 			-- emsdk failes to compile a program when switching from high version to lower version.
 			-- It seems to be cache problem. Removing cache seems work with a simple program like "int main(){return 0;}".
-			paraCopy.EMCALL = para.emBat .. "\n[ $? -eq 0 ] || exit 1\n. " .. para.emSource .. "\nrm -rf $EM_CACHE\n"
+			paraCopy.EMCALL = para.emBat .. "\n[ $? -eq 0 ] || exit 1\n" .. para.emBat .. "\n[ $? -eq 0 ] || exit 1\n. " .. para.emSource .. "\nrm -rf $EM_CACHE\n"
 		end
 	end
 	if para.buildContent == "Qt" then

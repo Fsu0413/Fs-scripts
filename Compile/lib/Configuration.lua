@@ -247,7 +247,11 @@ conf.Qt.generateConfTable = function(self, host, job)
 		ret.CONFIGURECOMMANDLINE = ret.CONFIGURECOMMANDLINE .. confHost.sourcePackagePath .. sourcePackageBaseName
 	end
 	if (string.sub(confDetail.qtVersion, 1, 2) == "6.") and confDetail.crossCompile and (string.sub(confDetail.toolchainT, 1, 10) == "emscripten") then
-		ret.CONFIGURECOMMANDLINE = "emconfigure " .. ret.CONFIGURECOMMANDLINE
+		if not confDetail.useCMake then
+			ret.CONFIGURECOMMANDLINE = "emconfigure " .. ret.CONFIGURECOMMANDLINE
+		else
+			ret.CONFIGURECOMMANDLINE = "emcmake " .. ret.CONFIGURECOMMANDLINE
+		end
 	end
 
 	if not confDetail.useCMake then

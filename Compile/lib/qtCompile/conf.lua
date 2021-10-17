@@ -2716,7 +2716,7 @@ conf.q6_2wx6mu = {
 	name = "Qt6.2.0-Windows-x86_64-MinGWLLVM-ucrt13",
 	qtVersion = "6.2.0",
 	host = "Win10",
-	toolchain = "MinGWLLVM-ucrt13",
+	toolchain = "MinGWLLVM-ucrt13-64",
 	useCMake = true,
 	configureParameter = [[
 		-G"Ninja"
@@ -2750,7 +2750,7 @@ conf.q6_2wx6mv = {
 	name = "Qt6.2.0-Windows-x86_64-MinGWLLVM-msvcrt13",
 	qtVersion = "6.2.0",
 	host = "Win10",
-	toolchain = "MinGWLLVM-msvcrt13",
+	toolchain = "MinGWLLVM-msvcrt13-64",
 	useCMake = true,
 	configureParameter = [[
 		-G"Ninja"

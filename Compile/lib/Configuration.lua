@@ -12,14 +12,20 @@ conf.host.win = {
 	["makefileTemplate"] = "win",
 	["pathSep"] = '\\',
 	["toolchainPath"] = {
-		-- MSVC toolchains, BAT file
-		["MSVC2019-32"] = "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Auxiliary\\Build\\vcvarsamd64_x86.bat",
-		["MSVC2019-64"] = "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Auxiliary\\Build\\vcvars64.bat",
+		-- MSVC toolchains
+		-- Since MSVC toolchain must be configured using BAT file, we make this file appear FIRST in the table
+		-- For building QtWebEngine 6.2+ on Windows, GnuWin32 is needed. Qt removes GnuWin32 since 6.0, so manually add it here
+		["MSVC2019-32"] = {"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Auxiliary\\Build\\vcvarsamd64_x86.bat", "D:\\gnuwin32\\bin"},
+		["MSVC2019-64"] = {"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Auxiliary\\Build\\vcvars64.bat", "D:\\gnuwin32\\bin"},
 		["MSVC2017-arm64"] = "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Auxiliary\\Build\\vcvarsamd64_arm64.bat",
 		["MSVC2017-32"] = "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Auxiliary\\Build\\vcvarsamd64_x86.bat",
 		["MSVC2017-64"] = "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Auxiliary\\Build\\vcvars64.bat",
 		["MSVC2015-32"] = "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\bin\\amd64_x86\\vcvarsamd64_x86.bat",
 		["MSVC2015-64"] = "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\bin\\amd64\\vcvars64.bat",
+
+		-- MSVC toolchains with Clang / LLVM, currently not used
+		-- use official LLVM prebuilt binary
+		["MSVC2019LLVM-64"] = {"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Auxiliary\\Build\\vcvars64.bat", "D:\\LLVM\\bin", "D:\\gnuwin32\\bin"},
 
 		-- MinGW toolchains with GCC / Binutils, only path
 		["MinGW730-32"] = "D:\\mingw-w64\\7.3.0\\mingw32\\bin",
@@ -28,8 +34,12 @@ conf.host.win = {
 		["MinGW810-64"] = "D:\\mingw-w64\\8.1.0\\mingw64\\bin",
 
 		-- MinGW toolchains with Clang / LLVM, currently used in Qt 6 only
-		["MinGWLLVM-msvcrt13"] = "D:\\mingw-w64\\llvm-mingw-20211002-msvcrt-x86_64\\bin",
-		["MinGWLLVM-ucrt13"] = "D:\\mingw-w64\\llvm-mingw-20211002-ucrt-x86_64\\bin",
+		-- LLVM always acts as an cross compiler, but the target libraries are architecture-dependent
+		-- Since some binaries built also acts as host tool, we should add the target libraries to PATH too, otherwise the program won't start
+		["MinGWLLVM-msvcrt13-64"] = {"D:\\mingw-w64\\llvm-mingw-20211002-msvcrt-x86_64\\x86_64-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20211002-msvcrt-x86_64\\bin"},
+		["MinGWLLVM-ucrt13-64"] = {"D:\\mingw-w64\\llvm-mingw-20211002-ucrt-x86_64\\x86_64-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20211002-ucrt-x86_64\\bin"},
+		["MinGWLLVM-msvcrt13-32"] = {"D:\\mingw-w64\\llvm-mingw-20211002-msvcrt-x86_64\\i686-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20211002-msvcrt-x86_64\\bin"},
+		["MinGWLLVM-ucrt13-32"] = {"D:\\mingw-w64\\llvm-mingw-20211002-ucrt-x86_64\\i686-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20211002-ucrt-x86_64\\bin"},
 	},
 	["sourcePackagePath"] = "D:\\Qt\\",
 	["buildRootPath"] = "D:\\Qt\\", -- On Windows, the build root should be same with source package
@@ -43,10 +53,7 @@ conf.host.win = {
 	["androidNdkHost"] = "windows-x86_64",
 	["emscriptenPath"] = "D:\\emsdk\\",
 
-	-- For building QtWebEngine 6.2+ on Windows, GnuWin32 is needed.
-	-- Qt removes GnuWin32 since 6.0. Since we are using CMake for build Qt 6.0+
-	-- Because all later build will be Qt 6.2+ since the time of this commit (which will be at 2021/9/18), let's temporarily just re-use this for setting path of GnuWin32.
-	["cMakePath"] = { "D:\\cmake-3.21.3-windows-x86_64\\bin", "D:\\ninja", "D:\\gnuwin32\\bin" },
+	["cMakePath"] = {"D:\\cmake-3.21.3-windows-x86_64\\bin", "D:\\ninja"},
 }
 
 -- msys is treated as another host since it uses windows agent and unix shell
@@ -152,16 +159,19 @@ conf.Qt.generateConfTable = function(self, host, job)
 	ret.download = {}
 
 	if confDetail.toolchain ~= "PATH" then
+		local paths = confHost.toolchainPath[confDetail.toolchain]
+		if type(confHost.toolchainPath[confDetail.toolchain]) == "string" then
+			paths = {confHost.toolchainPath[confDetail.toolchain]}
+		end
 		if string.sub(confDetail.toolchain, 1, 4) == "MSVC" then
-			ret.msvcBat = confHost.toolchainPath[confDetail.toolchain]
-			for _, p in ipairs(confHost.cMakePath) do
-				table.insert(ret.path, p)
-			end
-		else
-			table.insert(ret.path, confHost.toolchainPath[confDetail.toolchain])
-			for _, p in ipairs(confHost.cMakePath) do
-				table.insert(ret.path, p)
-			end
+			ret.msvcBat = paths[1]
+			table.remove(paths, 1)
+		end
+		for _, x in ipairs(paths) do
+			table.insert(ret.path, x)
+		end
+		for _, p in ipairs(confHost.cMakePath) do
+			table.insert(ret.path, p)
 		end
 	end
 

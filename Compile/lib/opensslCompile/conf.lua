@@ -26,10 +26,9 @@ abbrs:
 		v5: VS2015
 		v7: VS2017
 		v9: VS2019
-		m7: MinGW-w64 7.3.0
-		nl: Android NDK r21e/Past LTS
+		m7: MinGW-w64, with GCC 7.3.0
+		nl: Android NDK r21e/Previous LTS
 		n3: Android NDK r23/Latest LTS
-	If suffixed with a lower-case "c", it is clang compiler, with the original one as base.
 	If omitted, it use a toolchain in default PATH, which should be AppleClang in macOS, or GCC in Linux.
 
 	Variants:

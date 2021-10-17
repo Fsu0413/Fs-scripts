@@ -12,7 +12,7 @@ conf.host.win = {
 	["makefileTemplate"] = "win",
 	["pathSep"] = '\\',
 	["toolchainPath"] = {
-		-- for MSVC, it is a bat file with parameter, for MinGW, it is a path to the bin folder of the toolchain
+		-- MSVC toolchains, BAT file
 		["MSVC2019-32"] = "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Auxiliary\\Build\\vcvarsamd64_x86.bat",
 		["MSVC2019-64"] = "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Auxiliary\\Build\\vcvars64.bat",
 		["MSVC2017-arm64"] = "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Auxiliary\\Build\\vcvarsamd64_arm64.bat",
@@ -21,10 +21,15 @@ conf.host.win = {
 		["MSVC2015-32"] = "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\bin\\amd64_x86\\vcvarsamd64_x86.bat",
 		["MSVC2015-64"] = "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\bin\\amd64\\vcvars64.bat",
 
+		-- MinGW toolchains with GCC / Binutils, only path
 		["MinGW730-32"] = "D:\\mingw-w64\\7.3.0\\mingw32\\bin",
 		["MinGW730-64"] = "D:\\mingw-w64\\7.3.0\\mingw64\\bin",
 		["MinGW810-32"] = "D:\\mingw-w64\\8.1.0\\mingw32\\bin",
 		["MinGW810-64"] = "D:\\mingw-w64\\8.1.0\\mingw64\\bin",
+
+		-- MinGW toolchains with Clang / LLVM, currently used in Qt 6 only
+		["MinGWLLVM-msvcrt13"] = "D:\\mingw-w64\\llvm-mingw-20211002-msvcrt-x86_64\\bin",
+		["MinGWLLVM-ucrt13"] = "D:\\mingw-w64\\llvm-mingw-20211002-ucrt-x86_64\\bin",
 	},
 	["sourcePackagePath"] = "D:\\Qt\\",
 	["buildRootPath"] = "D:\\Qt\\", -- On Windows, the build root should be same with source package

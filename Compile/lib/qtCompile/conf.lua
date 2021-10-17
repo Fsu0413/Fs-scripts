@@ -4,9 +4,9 @@ local conf = {}
 --[[
 abbrs:
 	Qt Versions:
-		Q2: Qt 5.12.11/Past Qt 5 LTS
+		Q2: Qt 5.12.11/Previous Qt 5 LTS
 		Q5: Qt 5.15.2/Latest Qt 5 LTS w/ latest QtWebEngine and latest QtScript
-		q6_2: Qt 6.2.0
+		q6_2: Qt 6.2.0/Latest Qt 6 LTS w/ latest QtWebEngine and latest QtScript
 	If prefixed with a lower-case "m", it is a modified Qt version
 
 	Platforms:
@@ -30,11 +30,12 @@ abbrs:
 		v5: VS2015
 		v7: VS2017
 		v9: VS2019
-		m7: MinGW-w64 7.3.0
-		m8: MinGW-w64 8.1.0
-		nl: Android NDK r21e/Latest LTS
-		n2: Android NDK r22/Latest
-	If suffixed with a lower-case "c", it is clang compiler with the original one as base.
+		m7: MinGW-w64, with GCC 7.3.0
+		m8: MinGW-w64, with GCC 8.1.0
+		mv: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 13
+		mu: LLVM/Clang based MinGW-w64, ucrt, with LLVM 13
+		nl: Android NDK r21e/Previous LTS
+		n3: Android NDK r23/Latest LTS
 	If omitted, it use a toolchain in default PATH, which should be AppleClang in macOS, or GCC in Linux.
 
 	Variants:
@@ -2708,6 +2709,74 @@ conf.q6_2wx6m8sf = {
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
 		-DFEATURE_system_sqlite=OFF
+	]],
+}
+
+conf.q6_2wx6mu = {
+	name = "Qt6.2.0-Windows-x86_64-MinGWLLVM-ucrt13",
+	qtVersion = "6.2.0",
+	host = "Win10",
+	toolchain = "MinGWLLVM-ucrt13",
+	useCMake = true,
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DBUILD_SHARED_LIBS=ON
+		-DCMAKE_BUILD_TYPE="Release"
+		-DQT_QMAKE_TARGET_MKSPEC=win32-clang-g++
+		-DBUILD_WITH_PCH=ON
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengl_dynamic=ON
+		-DFEATURE_ssl=ON
+		-DFEATURE_openssl=OFF
+		-DFEATURE_schannel=ON
+		-DFEATURE_sql_sqlite=ON
+		-DFEATURE_sql_odbc=ON
+		-DFEATURE_system_sqlite=OFF
+		-DBUILD_qtwebengine=OFF
+		-DCMAKE_C_COMPILER="x86_64-w64-mingw32-clang"
+		-DCMAKE_ASM_COMPILER="x86_64-w64-mingw32-clang"
+		-DCMAKE_CXX_COMPILER="x86_64-w64-mingw32-clang++"
+	]],
+}
+
+conf.q6_2wx6mv = {
+	name = "Qt6.2.0-Windows-x86_64-MinGWLLVM-msvcrt13",
+	qtVersion = "6.2.0",
+	host = "Win10",
+	toolchain = "MinGWLLVM-msvcrt13",
+	useCMake = true,
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DBUILD_SHARED_LIBS=ON
+		-DCMAKE_BUILD_TYPE="Release"
+		-DQT_QMAKE_TARGET_MKSPEC=win32-clang-g++
+		-DBUILD_WITH_PCH=ON
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengl_dynamic=ON
+		-DFEATURE_ssl=ON
+		-DFEATURE_openssl=OFF
+		-DFEATURE_schannel=ON
+		-DFEATURE_sql_sqlite=ON
+		-DFEATURE_sql_odbc=ON
+		-DFEATURE_system_sqlite=OFF
+		-DBUILD_qtwebengine=OFF
+		-DCMAKE_C_COMPILER="x86_64-w64-mingw32-clang"
+		-DCMAKE_ASM_COMPILER="x86_64-w64-mingw32-clang"
+		-DCMAKE_CXX_COMPILER="x86_64-w64-mingw32-clang++"
 	]],
 }
 

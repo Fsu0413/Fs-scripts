@@ -2566,6 +2566,58 @@ conf.q6_2wx6v9 = {
 	]],
 }
 
+conf.q6_2wx6v9st = {
+	name = "Qt6.2.0-Windows-x86_64-VS2019-&MSVCVER&-static",
+	qtVersion = "6.2.0",
+	host = "Win10",
+	toolchain = "MSVC2019-64",
+	variant = {"-static"},
+	useCMake = true,
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DBUILD_SHARED_LIBS=OFF
+		-DCMAKE_BUILD_TYPE="Release"
+		-DQT_QMAKE_TARGET_MKSPEC=win32-msvc
+		-DBUILD_WITH_PCH=ON
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengl_dynamic=ON
+		-DFEATURE_ssl=ON
+		-DFEATURE_openssl=OFF
+		-DFEATURE_schannel=ON
+		-DFEATURE_sql_sqlite=ON
+		-DFEATURE_sql_odbc=ON
+		-DFEATURE_system_sqlite=OFF
+		-DBUILD_qt3d=OFF
+		-DBUILD_qt5compat=OFF
+		-DBUILD_qtcharts=OFF
+		-DBUILD_qtcoap=OFF
+		-DBUILD_qtconnectivity=OFF
+		-DBUILD_qtdatavis3d=OFF
+		-DBUILD_qtdoc=OFF
+		-DBUILD_qtlocation=OFF
+		-DBUILD_qtlottie=OFF
+		-DBUILD_qtmqtt=OFF
+		-DBUILD_qtnetworkauth=OFF
+		-DBUILD_qtquicktimeline=OFF
+		-DBUILD_qtsensors=OFF
+		-DBUILD_qtserialbus=OFF
+		-DBUILD_qtserialport=OFF
+		-DBUILD_qtvirtualkeyboard=OFF
+		-DBUILD_qtwayland=OFF
+		-DBUILD_qtwebchannel=OFF
+		-DBUILD_qtwebengine=OFF
+		-DBUILD_qtwebsockets=OFF
+		-DBUILD_qtwebview=OFF
+	]],
+}
+
 conf.q6_2wx6v9sf = {
 	name = "Qt6.2.0-Windows-x86_64-VS2019-&MSVCVER&-staticFull",
 	qtVersion = "6.2.0",
@@ -3528,15 +3580,15 @@ local AppleClangVersion = {
 
 local Qt6StaticConf = {
 	Win10 = {
-		["6.1.3"] = "q6_1wx6m8st",
 		["6.2.0"] = "q6_2wx6m8st",
 	},
+	Win10MSVC2019 = {
+		["6.2.0"] = "q6_2wx6v9st",
+	},
 	CentOS8 = {
-		["6.1.3"] = "q6_1lx6st",
 		["6.2.0"] = "q6_2lx6st",
 	},
 	macOS1015 = {
-		["6.1.3"] = "q6_1mx6st",
 		["6.2.0"] = "q6_2mx6st",
 	},
 }
@@ -3635,9 +3687,14 @@ for name, value in pairs(conf) do
 	end
 
 	if tonumber(qtVersionSplit[1]) == 6 and value.crossCompile then
-		value.hostToolsConf = Qt6StaticConf[value.host][value.qtVersion]
-		value.hostToolsUrlwin = "http://172.24.13.6:8080/job/Qt/job/" .. Qt6StaticConf[value.host][value.qtVersion] .. "/lastSuccessfulBuild/artifact/buildDir/" .. conf[Qt6StaticConf[value.host][value.qtVersion]].name .. ".7z"
-		value.hostToolsUrlunix = "http://172.24.13.6:8080/job/Qt/job/" .. Qt6StaticConf[value.host][value.qtVersion] .. "/lastSuccessfulBuild/artifact/buildDir/" .. conf[Qt6StaticConf[value.host][value.qtVersion]].name .. ".tar.xz"
+		-- cross build of MSVC target needs same version of MSVC host
+		local valuehost = value.host
+		if string.sub(value.toolchain, 1, 4) == "MSVC" then
+			valuehost = value.host .. string.sub(value.toolchain, 1, 8)
+		end
+		value.hostToolsConf = Qt6StaticConf[valuehost][value.qtVersion]
+		value.hostToolsUrlwin = "http://172.24.13.6:8080/job/Qt/job/" .. Qt6StaticConf[valuehost][value.qtVersion] .. "/lastSuccessfulBuild/artifact/buildDir/" .. conf[Qt6StaticConf[valuehost][value.qtVersion]].name .. ".7z"
+		value.hostToolsUrlunix = "http://172.24.13.6:8080/job/Qt/job/" .. Qt6StaticConf[valuehost][value.qtVersion] .. "/lastSuccessfulBuild/artifact/buildDir/" .. conf[Qt6StaticConf[valuehost][value.qtVersion]].name .. ".tar.xz"
 	end
 
 	-- add dump function

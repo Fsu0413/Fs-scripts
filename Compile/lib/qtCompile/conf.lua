@@ -2649,6 +2649,40 @@ conf.q6_2wx6v9sf = {
 	]],
 }
 
+conf.q6_2wx6v9_wa6v9 = {
+	name = "Qt6.2.0-Windows-arm64-VS2019-&MSVCVER&-XWindows-x86_64-VS2019-&MSVCVER&",
+	qtVersion = "6.2.0",
+	host = "Win10",
+	target = "Win10Arm",
+	toolchain = "MSVC2019-64", -- only a placeholder here, in fact it uses "toolchainT" instead of "toolchain"
+	toolchainT = "MSVC2019-arm64",
+	useCMake = true,
+	-- TODO: Toolchain file or just write the CMAKE_xxx_COMPILER here?
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DQT_HOST_PATH=&HOSTQTDIR&
+		-DBUILD_SHARED_LIBS=ON
+		-DCMAKE_BUILD_TYPE="Release"
+		-DQT_QMAKE_TARGET_MKSPEC=win32-arm64-msvc
+		-DBUILD_WITH_PCH=ON
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengl_dynamic=ON
+		-DFEATURE_ssl=ON
+		-DFEATURE_openssl=OFF
+		-DFEATURE_schannel=ON
+		-DFEATURE_sql_sqlite=ON
+		-DFEATURE_sql_odbc=ON
+		-DFEATURE_system_sqlite=OFF
+	]],
+}
+
 conf.q6_2wx6m8 = {
 	name = "Qt6.2.0-Windows-x86_64-MinGW8.1.0",
 	qtVersion = "6.2.0",
@@ -3463,6 +3497,7 @@ conf.q6_2mx6_ax6n3 = {
 	]],
 }
 
+-- WebAssembly uses emcmake which don't need a toolchain file
 conf.q6_2wx6m8_W = {
 	name = "Qt6.2.0-WebAssembly-emscripten2.0.14-xWindows-x86_64-MinGW8.1.0",
 	qtVersion = "6.2.0",

@@ -28,7 +28,7 @@ abbrs:
 		v9: VS2019
 		m7: MinGW-w64, with GCC 7.3.0
 		nl: Android NDK r21e/Previous LTS
-		n3: Android NDK r23/Latest LTS
+		n3: Android NDK r23b/Latest LTS
 	If omitted, it use a toolchain in default PATH, which should be AppleClang in macOS, or GCC in Linux.
 
 	Variants:
@@ -443,11 +443,11 @@ conf.o1aalnl24 = {
 --------------------------------------------------------------------
 
 conf.o1aa3n324 = {
-	name = "OpenSSL1.1.1l-Android-arm-NDKr23API24",
+	name = "OpenSSL1.1.1l-Android-arm-NDKr23bAPI24",
 	opensslVersion = "1.1.1l",
 	host = "CentOS8",
 	target = "Android-24",
-	toolchainT = "Android-24-r23-arm",
+	toolchainT = "Android-24-r23b-arm",
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -468,11 +468,11 @@ conf.o1aa3n324 = {
 }
 
 conf.o1aa6n324 = {
-	name = "OpenSSL1.1.1l-Android-arm64-NDKr23API24",
+	name = "OpenSSL1.1.1l-Android-arm64-NDKr23bAPI24",
 	opensslVersion = "1.1.1l",
 	host = "CentOS8",
 	target = "Android-24",
-	toolchainT = "Android-24-r23-arm64",
+	toolchainT = "Android-24-r23b-arm64",
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -488,11 +488,11 @@ conf.o1aa6n324 = {
 }
 
 conf.o1ax3n324 = {
-	name = "OpenSSL1.1.1l-Android-x86-NDKr23API24",
+	name = "OpenSSL1.1.1l-Android-x86-NDKr23bAPI24",
 	opensslVersion = "1.1.1l",
 	host = "CentOS8",
 	target = "Android-24",
-	toolchainT = "Android-24-r23-x86",
+	toolchainT = "Android-24-r23b-x86",
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -508,11 +508,11 @@ conf.o1ax3n324 = {
 }
 
 conf.o1ax6n324 = {
-	name = "OpenSSL1.1.1l-Android-x86_64-NDKr23API24",
+	name = "OpenSSL1.1.1l-Android-x86_64-NDKr23bAPI24",
 	opensslVersion = "1.1.1l",
 	host = "CentOS8",
 	target = "Android-24",
-	toolchainT = "Android-24-r23-x86_64",
+	toolchainT = "Android-24-r23b-x86_64",
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -528,7 +528,7 @@ conf.o1ax6n324 = {
 }
 
 conf.o1aaln324 = {
-	name = "OpenSSL1.1.1l-Android-ALL-NDKr23API24",
+	name = "OpenSSL1.1.1l-Android-ALL-NDKr23bAPI24",
 	opensslVersion = "1.1.1l",
 	host = "CentOS8",
 	opensslAndroidAll = {

@@ -35,7 +35,7 @@ abbrs:
 		mv: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 13
 		mu: LLVM/Clang based MinGW-w64, ucrt, with LLVM 13
 		nl: Android NDK r21e/Previous LTS
-		n3: Android NDK r23/Latest LTS
+		n3: Android NDK r23b/Latest LTS
 	If omitted, it use a toolchain in default PATH, which should be AppleClang in macOS, or GCC in Linux.
 
 	Variants:
@@ -3070,12 +3070,12 @@ conf.q6_2mx6sf = {
 }
 
 conf.q6_2wx6m8_aa3n3 = {
-	name = "Qt6.2.1-Android-arm-Clang-NDKr23-XWindows-x86_64-MinGW8.1.0",
+	name = "Qt6.2.1-Android-arm-Clang-NDKr23b-XWindows-x86_64-MinGW8.1.0",
 	qtVersion = "6.2.1",
 	host = "Win10",
 	target = "Android-24",
 	toolchain = "MinGW810-64",
-	toolchainT = "Android-24-r23-arm",
+	toolchainT = "Android-24-r23b-arm",
 	opensslConf = "o1aa3n324",
 	useCMake = true,
 	androidSdkVersion = "Latest",
@@ -3107,12 +3107,12 @@ conf.q6_2wx6m8_aa3n3 = {
 }
 
 conf.q6_2wx6m8_aa6n3 = {
-	name = "Qt6.2.1-Android-arm64-Clang-NDKr23-XWindows-x86_64-MinGW8.1.0",
+	name = "Qt6.2.1-Android-arm64-Clang-NDKr23b-XWindows-x86_64-MinGW8.1.0",
 	qtVersion = "6.2.1",
 	host = "Win10",
 	target = "Android-24",
 	toolchain = "MinGW810-64",
-	toolchainT = "Android-24-r23-arm64",
+	toolchainT = "Android-24-r23b-arm64",
 	opensslConf = "o1aa6n324",
 	useCMake = true,
 	androidSdkVersion = "Latest",
@@ -3144,12 +3144,12 @@ conf.q6_2wx6m8_aa6n3 = {
 }
 
 conf.q6_2wx6m8_ax3n3 = {
-	name = "Qt6.2.1-Android-x86-Clang-NDKr23-XWindows-x86_64-MinGW8.1.0",
+	name = "Qt6.2.1-Android-x86-Clang-NDKr23b-XWindows-x86_64-MinGW8.1.0",
 	qtVersion = "6.2.1",
 	host = "Win10",
 	target = "Android-24",
 	toolchain = "MinGW810-64",
-	toolchainT = "Android-24-r23-x86",
+	toolchainT = "Android-24-r23b-x86",
 	opensslConf = "o1ax3n324",
 	useCMake = true,
 	androidSdkVersion = "Latest",
@@ -3181,12 +3181,12 @@ conf.q6_2wx6m8_ax3n3 = {
 }
 
 conf.q6_2wx6m8_ax6n3 = {
-	name = "Qt6.2.1-Android-x86_64-Clang-NDKr23-XWindows-x86_64-MinGW8.1.0",
+	name = "Qt6.2.1-Android-x86_64-Clang-NDKr23b-XWindows-x86_64-MinGW8.1.0",
 	qtVersion = "6.2.1",
 	host = "Win10",
 	target = "Android-24",
 	toolchain = "MinGW810-64",
-	toolchainT = "Android-24-r23-x86_64",
+	toolchainT = "Android-24-r23b-x86_64",
 	opensslConf = "o1ax6n324",
 	useCMake = true,
 	androidSdkVersion = "Latest",
@@ -3218,11 +3218,11 @@ conf.q6_2wx6m8_ax6n3 = {
 }
 
 conf.q6_2lx6_aa3n3 = {
-	name = "Qt6.2.1-Android-arm-Clang-NDKr23-xLinux-x86_64-gcc8.4.1",
+	name = "Qt6.2.1-Android-arm-Clang-NDKr23b-xLinux-x86_64-gcc8.4.1",
 	qtVersion = "6.2.1",
 	host = "CentOS8",
 	target = "Android-24",
-	toolchainT = "Android-24-r23-arm",
+	toolchainT = "Android-24-r23b-arm",
 	opensslConf = "o1aa3n324",
 	useCMake = true,
 	androidSdkVersion = "Latest",
@@ -3253,11 +3253,11 @@ conf.q6_2lx6_aa3n3 = {
 }
 
 conf.q6_2lx6_aa6n3 = {
-	name = "Qt6.2.1-Android-arm64-Clang-NDKr23-xLinux-x86_64-gcc8.4.1",
+	name = "Qt6.2.1-Android-arm64-Clang-NDKr23b-xLinux-x86_64-gcc8.4.1",
 	qtVersion = "6.2.1",
 	host = "CentOS8",
 	target = "Android-24",
-	toolchainT = "Android-24-r23-arm64",
+	toolchainT = "Android-24-r23b-arm64",
 	opensslConf = "o1aa6n324",
 	useCMake = true,
 	androidSdkVersion = "Latest",
@@ -3288,11 +3288,11 @@ conf.q6_2lx6_aa6n3 = {
 }
 
 conf.q6_2lx6_ax3n3 = {
-	name = "Qt6.2.1-Android-x86-Clang-NDKr23-xLinux-x86_64-gcc8.4.1",
+	name = "Qt6.2.1-Android-x86-Clang-NDKr23b-xLinux-x86_64-gcc8.4.1",
 	qtVersion = "6.2.1",
 	host = "CentOS8",
 	target = "Android-24",
-	toolchainT = "Android-24-r23-x86",
+	toolchainT = "Android-24-r23b-x86",
 	opensslConf = "o1ax3n324",
 	useCMake = true,
 	androidSdkVersion = "Latest",
@@ -3323,11 +3323,11 @@ conf.q6_2lx6_ax3n3 = {
 }
 
 conf.q6_2lx6_ax6n3 = {
-	name = "Qt6.2.1-Android-x86_64-Clang-NDKr23-xLinux-x86_64-gcc8.4.1",
+	name = "Qt6.2.1-Android-x86_64-Clang-NDKr23b-xLinux-x86_64-gcc8.4.1",
 	qtVersion = "6.2.1",
 	host = "CentOS8",
 	target = "Android-24",
-	toolchainT = "Android-24-r23-x86_64",
+	toolchainT = "Android-24-r23b-x86_64",
 	opensslConf = "o1ax6n324",
 	useCMake = true,
 	androidSdkVersion = "Latest",
@@ -3358,11 +3358,11 @@ conf.q6_2lx6_ax6n3 = {
 }
 
 conf.q6_2mx6_aa3n3 = {
-	name = "Qt6.2.1-Android-arm-Clang-NDKr23-xmacOS-x86_64-AppleClang&AppleClangVersion&",
+	name = "Qt6.2.1-Android-arm-Clang-NDKr23b-xmacOS-x86_64-AppleClang&AppleClangVersion&",
 	qtVersion = "6.2.1",
 	host = "macOS1015",
 	target = "Android-24",
-	toolchainT = "Android-24-r23-arm",
+	toolchainT = "Android-24-r23b-arm",
 	opensslConf = "o1aa3n324",
 	useCMake = true,
 	androidSdkVersion = "Latest",
@@ -3393,11 +3393,11 @@ conf.q6_2mx6_aa3n3 = {
 }
 
 conf.q6_2mx6_aa6n3 = {
-	name = "Qt6.2.1-Android-arm64-Clang-NDKr23-xmacOS-x86_64-AppleClang&AppleClangVersion&",
+	name = "Qt6.2.1-Android-arm64-Clang-NDKr23b-xmacOS-x86_64-AppleClang&AppleClangVersion&",
 	qtVersion = "6.2.1",
 	host = "macOS1015",
 	target = "Android-24",
-	toolchainT = "Android-24-r23-arm64",
+	toolchainT = "Android-24-r23b-arm64",
 	opensslConf = "o1aa6n324",
 	useCMake = true,
 	androidSdkVersion = "Latest",
@@ -3428,11 +3428,11 @@ conf.q6_2mx6_aa6n3 = {
 }
 
 conf.q6_2mx6_ax3n3 = {
-	name = "Qt6.2.1-Android-x86-Clang-NDKr23-xmacOS-x86_64-AppleClang&AppleClangVersion&",
+	name = "Qt6.2.1-Android-x86-Clang-NDKr23b-xmacOS-x86_64-AppleClang&AppleClangVersion&",
 	qtVersion = "6.2.1",
 	host = "macOS1015",
 	target = "Android-24",
-	toolchainT = "Android-24-r23-x86",
+	toolchainT = "Android-24-r23b-x86",
 	opensslConf = "o1ax3n324",
 	useCMake = true,
 	androidSdkVersion = "Latest",
@@ -3463,11 +3463,11 @@ conf.q6_2mx6_ax3n3 = {
 }
 
 conf.q6_2mx6_ax6n3 = {
-	name = "Qt6.2.1-Android-x86_64-Clang-NDKr23-xmacOS-x86_64-AppleClang&AppleClangVersion&",
+	name = "Qt6.2.1-Android-x86_64-Clang-NDKr23b-xmacOS-x86_64-AppleClang&AppleClangVersion&",
 	qtVersion = "6.2.1",
 	host = "macOS1015",
 	target = "Android-24",
-	toolchainT = "Android-24-r23-x86_64",
+	toolchainT = "Android-24-r23b-x86_64",
 	opensslConf = "o1ax6n324",
 	useCMake = true,
 	androidSdkVersion = "Latest",

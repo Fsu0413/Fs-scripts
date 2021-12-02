@@ -32,6 +32,7 @@ conf.host.win = {
 		["MinGW730-64"] = "D:\\mingw-w64\\7.3.0\\mingw64\\bin",
 		["MinGW810-32"] = "D:\\mingw-w64\\8.1.0\\mingw32\\bin",
 		["MinGW810-64"] = "D:\\mingw-w64\\8.1.0\\mingw64\\bin",
+		["MinGW1120-64"] = "D:\\mingw-w64\\11.2.0\\mingw64\\bin",
 
 		-- MinGW toolchains with Clang / LLVM, currently used in Qt 6 only
 		-- LLVM always acts as an cross compiler, but the target libraries are architecture-dependent
@@ -53,7 +54,7 @@ conf.host.win = {
 	["androidNdkHost"] = "windows-x86_64",
 	["emscriptenPath"] = "D:\\emsdk\\",
 
-	["cMakePath"] = {"D:\\cmake-3.21.3-windows-x86_64\\bin", "D:\\ninja"},
+	["cMakePath"] = {"D:\\cmake-3.22.0-windows-x86_64\\bin", "D:\\ninja"},
 }
 
 -- msys is treated as another host since it uses windows agent and unix shell
@@ -70,6 +71,7 @@ conf.host.msys = {
 		["MinGW730-64"] = "/d/mingw-w64/7.3.0/mingw64/bin/",
 		["MinGW810-32"] = "/d/mingw-w64/8.1.0/mingw32/bin/",
 		["MinGW810-64"] = "/d/mingw-w64/8.1.0/mingw64/bin/",
+		["MinGW1120-64"] = "/d/mingw-w64/11.2.0/mingw64/bin/",
 	},
 	["sourcePackagePath"] = "/d/Qt/",
 	["androidNdkPath"] = {

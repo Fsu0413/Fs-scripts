@@ -439,10 +439,16 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 		table.insert(ret.download, confDetail["sourcePackageUrl" .. confHost.makefileTemplate])
 
 		if confDetail.toolchain ~= "PATH" then
+			local paths = confHost.toolchainPath[confDetail.toolchain]
+			if type(confHost.toolchainPath[confDetail.toolchain]) == "string" then
+				paths = {confHost.toolchainPath[confDetail.toolchain]}
+			end
 			if string.sub(confDetail.toolchain, 1, 4) == "MSVC" then
-				ret.msvcBat = confHost.toolchainPath[confDetail.toolchain]
-			else
-				table.insert(ret.path, confHost.toolchainPath[confDetail.toolchain])
+				ret.msvcBat = paths[1]
+				table.remove(paths, 1)
+			end
+			for _, x in ipairs(paths) do
+				table.insert(ret.path, x)
 			end
 		end
 

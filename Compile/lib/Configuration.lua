@@ -132,8 +132,16 @@ conf.host.macLegacy = {
 	-- Preinstalled p7zip in path and is used
 	["makefileTemplate"] = "unix",
 	["pathSep"] = '/',
+	["androidSdkPath"] = {
+		["Latest"] = "/Volumes/opt/env/android-sdk-mac-2/",
+	},
+	["androidNdkPath"] = {
+		["r21e"] = "/Volumes/opt/env/android-ndk-r21e/",
+	},
+	["androidNdkHost"] = "darwin-x86_64",
 	["sourcePackagePath"] = "/Volumes/opt/sources/",
 	["buildRootPath"] = "/Volumes/opt/build/",
+	["emscriptenPath"] = "/Volumes/opt/env/emsdk/",
 }
 
 --[[ conf.host.linuxarm = {} ]] -- Todo: Prepare an arm linux host. It should be hosted on my old mobile phone, I assumed.

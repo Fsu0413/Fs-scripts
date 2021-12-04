@@ -891,174 +891,6 @@ conf.Q2lx6st = {
 	]],
 }
 
-conf.Q2mx6 = {
-	name = "Qt5.12.12-macOS-x86_64-AppleClang&AppleClangVersion&",
-	qtVersion = "5.12.12",
-	host = "macOSLegacy",
-	configureParameter = [[
-		-prefix
-		&INSTALLROOT&
-		-opensource
-		-shared
-		-release
-		-confirm-license
-		-platform
-		macx-clang
-		-pch
-		-nomake
-		examples
-		-nomake
-		tests
-		-no-compile-examples
-		-qt-doubleconversion
-		-qt-zlib
-		-qt-pcre
-		-no-icu
-		-opengl
-		desktop
-		-no-openssl
-		-securetransport
-		-sql-sqlite
-		-make-tool
-		"make -j$PARALLELNUM"
-		-rpath
-		-webengine-proprietary-codecs
-	]],
-}
-
-conf.Q2mx6nf = {
-	name = "Qt5.12.12-macOS-x86_64-AppleClang&AppleClangVersion&-noFramework",
-	qtVersion = "5.12.12",
-	host = "macOSLegacy",
-	variant = {"-noFramework"},
-	configureParameter = [[
-		-prefix
-		&INSTALLROOT&
-		-opensource
-		-shared
-		-release
-		-confirm-license
-		-platform
-		macx-clang
-		-pch
-		-nomake
-		examples
-		-nomake
-		tests
-		-no-compile-examples
-		-qt-doubleconversion
-		-qt-zlib
-		-qt-pcre
-		-no-icu
-		-opengl
-		desktop
-		-no-openssl
-		-securetransport
-		-sql-sqlite
-		-make-tool
-		"make -j$PARALLELNUM"
-		-rpath
-		-webengine-proprietary-codecs
-		-no-framework
-	]],
-}
-
-conf.Q2mx6st = {
-	name = "Qt5.12.12-macOS-x86_64-AppleClang&AppleClangVersion&-static",
-	qtVersion = "5.12.12",
-	host = "macOS1015",
-	variant = {"-static"},
-	configureParameter = [[
-		-prefix
-		&INSTALLROOT&
-		-opensource
-		-static
-		-release
-		-confirm-license
-		-platform
-		macx-clang
-		-pch
-		-nomake
-		examples
-		-nomake
-		tests
-		-no-compile-examples
-		-qt-doubleconversion
-		-qt-zlib
-		-qt-pcre
-		-no-icu
-		-opengl
-		desktop
-		-no-openssl
-		-securetransport
-		-sql-sqlite
-		-make-tool
-		"make -j$PARALLELNUM"
-		-skip
-		qt3d
-		-skip
-		qtcanvas3d
-		-skip
-		qtcharts
-		-skip
-		qtdatavis3d
-		-skip
-		qtgamepad
-		-skip
-		qtgraphicaleffects
-		-skip
-		qtlocation
-		-skip
-		qtmultimedia
-		-skip
-		qtpurchasing
-		-skip
-		qtquickcontrols
-		-skip
-		qtquickcontrols2
-		-skip
-		qtscxml
-		-skip
-		qtsensors
-		-skip
-		qtserialbus
-		-skip
-		qtserialport
-		-skip
-		qtspeech
-		-skip
-		qtsvg
-		-skip
-		qtwayland
-		-skip
-		qtwebchannel
-		-skip
-		qtwebsockets
-		-skip
-		qtsensors
-		-skip
-		qtnetworkauth
-		-skip
-		qtremoteobjects
-		-skip
-		qtwebview
-		-skip
-		qtandroidextras
-		-skip
-		qtconnectivity
-		-skip
-		qtwinextras
-		-skip
-		qtwebengine
-		-skip
-		qtx11extras
-		-skip
-		qtscript
-		-skip
-		qtactiveqt
-	]],
-}
-
 conf.q5_12mLx6st = {
 	name = "Qt5.12.12-macOSLegacy-x86_64-AppleClang&AppleClangVersion&-static",
 	qtVersion = "5.12.12",
@@ -1479,7 +1311,7 @@ conf.Q2lx6_ax3nl = {
 conf.Q2mx6_aa3nl = {
 	name = "Qt5.12.12-Android-arm-Clang-NDKr21e-xmacOS-x86_64-AppleClang&AppleClangVersion&",
 	qtVersion = "5.12.12",
-	host = "macOS1015",
+	host = "macOSLegacy",
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-arm",
 	opensslConf = "o1aa3nl",
@@ -1532,7 +1364,7 @@ conf.Q2mx6_aa3nl = {
 conf.Q2mx6_aa6nl = {
 	name = "Qt5.12.12-Android-arm64-Clang-NDKr21e-xmacOS-x86_64-AppleClang&AppleClangVersion&",
 	qtVersion = "5.12.12",
-	host = "macOS1015",
+	host = "macOSLegacy",
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-arm64",
 	opensslConf = "o1aa6nl",
@@ -1585,7 +1417,7 @@ conf.Q2mx6_aa6nl = {
 conf.Q2mx6_ax3nl = {
 	name = "Qt5.12.12-Android-x86-Clang-NDKr21e-xmacOS-x86_64-AppleClang&AppleClangVersion&",
 	qtVersion = "5.12.12",
-	host = "macOS1015",
+	host = "macOSLegacy",
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-x86",
 	opensslConf = "o1ax3nl",
@@ -1672,7 +1504,7 @@ conf.Q2lx6_W = {
 conf.Q2mx6_W = {
 	name = "Qt5.12.12-WebAssembly-emscripten1.38.16-xmacOS-x86_64-AppleClang&AppleClangVersion&",
 	qtVersion = "5.12.12",
-	host = "macOS1015",
+	host = "macOSLegacy",
 	target = "WebAssembly",
 	toolchainT = "emscripten-1.38.16",
 	configureParameter = [[
@@ -2202,7 +2034,7 @@ conf.Q5wx6m8sf = {
 conf.Q5mx6 = {
 	name = "Qt5.15.2-macOS-x86_64-AppleClang&AppleClangVersion&",
 	qtVersion = "5.15.2-5",
-	host = "macOS1015",
+	host = "macOSLegacy",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -2237,7 +2069,7 @@ conf.Q5mx6 = {
 conf.Q5mx6nf = {
 	name = "Qt5.15.2-macOS-x86_64-AppleClang&AppleClangVersion&-noFramework",
 	qtVersion = "5.15.2-5",
-	host = "macOS1015",
+	host = "macOSLegacy",
 	variant = {"-noFramework"},
 	configureParameter = [[
 		-prefix
@@ -2379,7 +2211,7 @@ conf.Q5lx6_aalnl = {
 conf.Q5mx6_aalnl = {
 	name = "Qt5.15.2-Android-ALL-Clang-NDKr21e-xmacOS-x86_64-AppleClang&AppleClangVersion&",
 	qtVersion = "5.15.2",
-	host = "macOS1015",
+	host = "macOSLegacy",
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-all",
 	opensslConf = "o1aalnl",
@@ -2502,7 +2334,7 @@ conf.Q5lx6_W = {
 conf.Q5mx6_W = {
 	name = "Qt5.15.2-WebAssembly-emscripten1.39.8-xmacOS-x86_64-AppleClang&AppleClangVersion&",
 	qtVersion = "5.15.2",
-	host = "macOS1015",
+	host = "macOSLegacy",
 	target = "WebAssembly",
 	toolchainT = "emscripten-1.39.8",
 	configureParameter = [[
@@ -3596,7 +3428,6 @@ local QQtPatcherConf = {
 	["Win10"] = "Q2wx3v7st",
 	["Win8"] = "Q2wx3v5st",
 	["CentOS8"] = "Q2lx6st",
-	["macOS1015"] = "Q2mx6st",
 	["macOSLegacy"] = "q5_12mLx6st",
 }
 
@@ -3613,7 +3444,7 @@ local MsvcVer = {
 
 local AppleClangVersion = {
 	["macOS1015"] = "13.0.0",
-	["macOSLegacy"] = "12.0.0",
+	["macOSLegacy"] = "12.0.5",
 }
 
 local Qt6StaticConf = {

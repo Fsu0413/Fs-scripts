@@ -32,7 +32,7 @@ abbrs:
 		v9: VS2019
 		m7: MinGW-w64, with GCC 7.3.0
 		m8: MinGW-w64, with GCC 8.1.0
-		M1: MinGW-w64, with GCC 11.2.0
+		m1: MinGW-w64, with GCC 11.2.0
 		mv: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 13
 		mu: LLVM/Clang based MinGW-w64, ucrt, with LLVM 13
 		nl: Android NDK r21e/Previous LTS
@@ -2516,7 +2516,7 @@ conf.q6_2wx6v9_wa6v9 = {
 	]],
 }
 
-conf.q6_2wx6M1 = {
+conf.q6_2wx6m1 = {
 	name = "Qt6.2.2-Windows-x86_64-MinGW11.2.0",
 	qtVersion = "6.2.2",
 	host = "Win10",
@@ -2546,7 +2546,7 @@ conf.q6_2wx6M1 = {
 	]],
 }
 
-conf.q6_2wx6M1st = {
+conf.q6_2wx6m1st = {
 	name = "Qt6.2.2-Windows-x86_64-MinGW11.2.0-static",
 	qtVersion = "6.2.2",
 	host = "Win10",
@@ -2599,7 +2599,7 @@ conf.q6_2wx6M1st = {
 	]],
 }
 
-conf.q6_2wx6M1sf = {
+conf.q6_2wx6m1sf = {
 	name = "Qt6.2.2-Windows-x86_64-MinGW11.2.0-staticFull",
 	qtVersion = "6.2.2",
 	host = "Win10",
@@ -2902,7 +2902,7 @@ conf.q6_2mx6sf = {
 	]],
 }
 
-conf.q6_2wx6M1_aa3n3 = {
+conf.q6_2wx6m1_aa3n3 = {
 	name = "Qt6.2.2-Android-arm-Clang-NDKr23b-XWindows-x86_64-MinGW11.2.0",
 	qtVersion = "6.2.2",
 	host = "Win10",
@@ -2939,7 +2939,7 @@ conf.q6_2wx6M1_aa3n3 = {
 	]],
 }
 
-conf.q6_2wx6M1_aa6n3 = {
+conf.q6_2wx6m1_aa6n3 = {
 	name = "Qt6.2.2-Android-arm64-Clang-NDKr23b-XWindows-x86_64-MinGW11.2.0",
 	qtVersion = "6.2.2",
 	host = "Win10",
@@ -2976,7 +2976,7 @@ conf.q6_2wx6M1_aa6n3 = {
 	]],
 }
 
-conf.q6_2wx6M1_ax3n3 = {
+conf.q6_2wx6m1_ax3n3 = {
 	name = "Qt6.2.2-Android-x86-Clang-NDKr23b-XWindows-x86_64-MinGW11.2.0",
 	qtVersion = "6.2.2",
 	host = "Win10",
@@ -3013,7 +3013,7 @@ conf.q6_2wx6M1_ax3n3 = {
 	]],
 }
 
-conf.q6_2wx6M1_ax6n3 = {
+conf.q6_2wx6m1_ax6n3 = {
 	name = "Qt6.2.2-Android-x86_64-Clang-NDKr23b-XWindows-x86_64-MinGW11.2.0",
 	qtVersion = "6.2.2",
 	host = "Win10",
@@ -3331,7 +3331,7 @@ conf.q6_2mx6_ax6n3 = {
 }
 
 -- WebAssembly uses emcmake which don't need a toolchain file
-conf.q6_2wx6M1_W = {
+conf.q6_2wx6m1_W = {
 	name = "Qt6.2.2-WebAssembly-emscripten2.0.14-xWindows-x86_64-MinGW11.2.0",
 	qtVersion = "6.2.2",
 	host = "Win10",
@@ -3449,7 +3449,7 @@ local AppleClangVersion = {
 
 local Qt6StaticConf = {
 	Win10 = {
-		["6.2.2"] = "q6_2wx6M1st",
+		["6.2.2"] = "q6_2wx6m1st",
 	},
 	Win10MSVC2019 = {
 		["6.2.2"] = "q6_2wx6v9st",

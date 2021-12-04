@@ -141,7 +141,7 @@ conf.host.macLegacy = {
 	["androidNdkHost"] = "darwin-x86_64",
 	["sourcePackagePath"] = "/Volumes/opt/sources/",
 	["buildRootPath"] = "/Volumes/opt/build/",
-	["emscriptenPath"] = "/Volumes/opt/env/emsdk/",
+	["emscriptenPath"] = "/opt/env/emsdk/",
 }
 
 --[[ conf.host.linuxarm = {} ]] -- Todo: Prepare an arm linux host. It should be hosted on my old mobile phone, I assumed.

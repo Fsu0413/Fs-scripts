@@ -995,7 +995,7 @@ conf.Q2wx6m7_aa3nl = {
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-arm",
 	opensslConf = "o1aa3nl",
-	androidSdkVersion = "Latest",
+	androidSdkVersion = "29",
 	configureParameter = [[
 		-prefix
 		/
@@ -1049,7 +1049,7 @@ conf.Q2wx6m7_aa6nl = {
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-arm64",
 	opensslConf = "o1aa6nl",
-	androidSdkVersion = "Latest",
+	androidSdkVersion = "29",
 	configureParameter = [[
 		-prefix
 		/
@@ -1103,7 +1103,7 @@ conf.Q2wx6m7_ax3nl = {
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-x86",
 	opensslConf = "o1ax3nl",
-	androidSdkVersion = "Latest",
+	androidSdkVersion = "29",
 	configureParameter = [[
 		-prefix
 		/
@@ -1156,7 +1156,7 @@ conf.Q2lx6_aa3nl = {
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-arm",
 	opensslConf = "o1aa3nl",
-	androidSdkVersion = "Latest",
+	androidSdkVersion = "29",
 	configureParameter = [[
 		-prefix
 		/
@@ -1209,7 +1209,7 @@ conf.Q2lx6_aa6nl = {
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-arm64",
 	opensslConf = "o1aa6nl",
-	androidSdkVersion = "Latest",
+	androidSdkVersion = "29",
 	configureParameter = [[
 		-prefix
 		/
@@ -1262,7 +1262,7 @@ conf.Q2lx6_ax3nl = {
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-x86",
 	opensslConf = "o1ax3nl",
-	androidSdkVersion = "Latest",
+	androidSdkVersion = "29",
 	configureParameter = [[
 		-prefix
 		/
@@ -1315,7 +1315,7 @@ conf.Q2mx6_aa3nl = {
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-arm",
 	opensslConf = "o1aa3nl",
-	androidSdkVersion = "Latest",
+	androidSdkVersion = "29",
 	configureParameter = [[
 		-prefix
 		/
@@ -1368,7 +1368,7 @@ conf.Q2mx6_aa6nl = {
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-arm64",
 	opensslConf = "o1aa6nl",
-	androidSdkVersion = "Latest",
+	androidSdkVersion = "29",
 	configureParameter = [[
 		-prefix
 		/
@@ -1421,7 +1421,7 @@ conf.Q2mx6_ax3nl = {
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-x86",
 	opensslConf = "o1ax3nl",
-	androidSdkVersion = "Latest",
+	androidSdkVersion = "29",
 	configureParameter = [[
 		-prefix
 		/
@@ -2111,7 +2111,7 @@ conf.Q5wx6m8_aalnl = {
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-all",
 	opensslConf = "o1aalnl",
-	androidSdkVersion = "Latest",
+	androidSdkVersion = "29",
 	configureParameter = [[
 		-prefix
 		/
@@ -2163,7 +2163,7 @@ conf.Q5lx6_aalnl = {
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-all",
 	opensslConf = "o1aalnl",
-	androidSdkVersion = "Latest",
+	androidSdkVersion = "29",
 	configureParameter = [[
 		-prefix
 		/
@@ -2215,7 +2215,7 @@ conf.Q5mx6_aalnl = {
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-all",
 	opensslConf = "o1aalnl",
-	androidSdkVersion = "Latest",
+	androidSdkVersion = "29",
 	configureParameter = [[
 		-prefix
 		/

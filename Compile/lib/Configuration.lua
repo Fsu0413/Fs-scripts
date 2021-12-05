@@ -55,7 +55,10 @@ conf.host.win = {
 	["androidNdkHost"] = "windows-x86_64",
 	["emscriptenPath"] = "D:\\emsdk\\",
 
-	["cMakePath"] = {"D:\\cmake-3.22.0-windows-x86_64\\bin", "D:\\ninja"},
+	["cMakePath"] = {
+		["20"] = {"D:\\cmake-3.20.2-windows-x86_64\\bin", "D:\\ninja"},
+		["Latest"] = {"D:\\cmake-3.22.0-windows-x86_64\\bin", "D:\\ninja"},
+	}
 }
 
 -- msys is treated as another host since it uses windows agent and unix shell
@@ -183,7 +186,10 @@ conf.Qt.generateConfTable = function(self, host, job)
 		for _, x in ipairs(paths) do
 			table.insert(ret.path, x)
 		end
-		for _, p in ipairs(confHost.cMakePath) do
+	end
+
+	if confDetail.useCMake and confHost.cMakePath then
+		for _, p in ipairs(confHost.cMakePath[confDetail.useCMake]) do
 			table.insert(ret.path, p)
 		end
 	end

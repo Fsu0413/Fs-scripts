@@ -2373,7 +2373,7 @@ conf.q6_2wx6v9 = {
 	qtVersion = "6.2.2",
 	host = "Win10",
 	toolchain = "MSVC2019-64",
-	useCMake = true,
+	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -2405,7 +2405,7 @@ conf.q6_2wx6v9st = {
 	host = "Win10",
 	toolchain = "MSVC2019-64",
 	variant = {"-static"},
-	useCMake = true,
+	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -2457,7 +2457,7 @@ conf.q6_2wx6v9sf = {
 	host = "Win10",
 	toolchain = "MSVC2019-64",
 	variant = {"-staticFull"},
-	useCMake = true,
+	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -2489,7 +2489,7 @@ conf.q6_2wx6v9_wa6v9 = {
 	target = "Win10Arm",
 	toolchain = "MSVC2019-64", -- only a placeholder here, in fact it uses "toolchainT" instead of "toolchain"
 	toolchainT = "MSVC2019-arm64",
-	useCMake = true,
+	useCMake = "Latest",
 	-- TODO: Toolchain file or just write the CMAKE_xxx_COMPILER here?
 	configureParameter = [[
 		-G"Ninja"
@@ -2521,7 +2521,7 @@ conf.q6_2wx6m1 = {
 	qtVersion = "6.2.2",
 	host = "Win10",
 	toolchain = "MinGW1120-64",
-	useCMake = true,
+	useCMake = "20",
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -2552,7 +2552,7 @@ conf.q6_2wx6m1st = {
 	host = "Win10",
 	toolchain = "MinGW1120-64",
 	variant = {"-static"},
-	useCMake = true,
+	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -2605,7 +2605,7 @@ conf.q6_2wx6m1sf = {
 	host = "Win10",
 	toolchain = "MinGW1120-64",
 	variant = {"-staticFull"},
-	useCMake = true,
+	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -2636,7 +2636,7 @@ conf.q6_2wx6mu = {
 	qtVersion = "6.2.2",
 	host = "Win10",
 	toolchain = "MinGWLLVM-ucrt13-64",
-	useCMake = true,
+	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -2671,7 +2671,7 @@ conf.q6_2wx6mv = {
 	qtVersion = "6.2.2",
 	host = "Win10",
 	toolchain = "MinGWLLVM-msvcrt13-64",
-	useCMake = true,
+	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -2706,7 +2706,7 @@ conf.q6_2lx6st = {
 	qtVersion = "6.2.2",
 	host = "CentOS8",
 	variant = {"-static"},
-	useCMake = true,
+	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -2756,7 +2756,7 @@ conf.q6_2mx6 = {
 	name = "Qt6.2.2-macOS-x86_64-AppleClang&AppleClangVersion&",
 	qtVersion = "6.2.2",
 	host = "macOS1015",
-	useCMake = true,
+	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -2790,7 +2790,7 @@ conf.q6_2mx6nf = {
 	qtVersion = "6.2.2",
 	host = "macOS1015",
 	variant = {"-noFramework"},
-	useCMake = true,
+	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -2824,7 +2824,7 @@ conf.q6_2mx6st = {
 	qtVersion = "6.2.2",
 	host = "macOS1015",
 	variant = {"-static"},
-	useCMake = true,
+	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -2876,7 +2876,7 @@ conf.q6_2mx6sf = {
 	qtVersion = "6.2.2",
 	host = "macOS1015",
 	variant = {"-staticFull"},
-	useCMake = true,
+	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -2910,7 +2910,7 @@ conf.q6_2wx6m1_aa3n3 = {
 	toolchain = "MinGW1120-64",
 	toolchainT = "Android-24-r23b-arm",
 	opensslConf = "o1aa3n324",
-	useCMake = true,
+	useCMake = "Latest",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -2948,7 +2948,7 @@ conf.q6_2wx6m1_aa6n3 = {
 	toolchain = "MinGW1120-64",
 	toolchainT = "Android-24-r23b-arm64",
 	opensslConf = "o1aa6n324",
-	useCMake = true,
+	useCMake = "Latest",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -2986,7 +2986,7 @@ conf.q6_2wx6m1_ax3n3 = {
 	toolchain = "MinGW1120-64",
 	toolchainT = "Android-24-r23b-x86",
 	opensslConf = "o1ax3n324",
-	useCMake = true,
+	useCMake = "Latest",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -3024,7 +3024,7 @@ conf.q6_2wx6m1_ax6n3 = {
 	toolchain = "MinGW1120-64",
 	toolchainT = "Android-24-r23b-x86_64",
 	opensslConf = "o1ax6n324",
-	useCMake = true,
+	useCMake = "Latest",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -3061,7 +3061,7 @@ conf.q6_2lx6_aa3n3 = {
 	target = "Android-24",
 	toolchainT = "Android-24-r23b-arm",
 	opensslConf = "o1aa3n324",
-	useCMake = true,
+	useCMake = "Latest",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -3097,7 +3097,7 @@ conf.q6_2lx6_aa6n3 = {
 	target = "Android-24",
 	toolchainT = "Android-24-r23b-arm64",
 	opensslConf = "o1aa6n324",
-	useCMake = true,
+	useCMake = "Latest",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -3133,7 +3133,7 @@ conf.q6_2lx6_ax3n3 = {
 	target = "Android-24",
 	toolchainT = "Android-24-r23b-x86",
 	opensslConf = "o1ax3n324",
-	useCMake = true,
+	useCMake = "Latest",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -3169,7 +3169,7 @@ conf.q6_2lx6_ax6n3 = {
 	target = "Android-24",
 	toolchainT = "Android-24-r23b-x86_64",
 	opensslConf = "o1ax6n324",
-	useCMake = true,
+	useCMake = "Latest",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -3205,7 +3205,7 @@ conf.q6_2mx6_aa3n3 = {
 	target = "Android-24",
 	toolchainT = "Android-24-r23b-arm",
 	opensslConf = "o1aa3n324",
-	useCMake = true,
+	useCMake = "Latest",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -3241,7 +3241,7 @@ conf.q6_2mx6_aa6n3 = {
 	target = "Android-24",
 	toolchainT = "Android-24-r23b-arm64",
 	opensslConf = "o1aa6n324",
-	useCMake = true,
+	useCMake = "Latest",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -3277,7 +3277,7 @@ conf.q6_2mx6_ax3n3 = {
 	target = "Android-24",
 	toolchainT = "Android-24-r23b-x86",
 	opensslConf = "o1ax3n324",
-	useCMake = true,
+	useCMake = "Latest",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -3313,7 +3313,7 @@ conf.q6_2mx6_ax6n3 = {
 	target = "Android-24",
 	toolchainT = "Android-24-r23b-x86_64",
 	opensslConf = "o1ax6n324",
-	useCMake = true,
+	useCMake = "Latest",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -3350,7 +3350,7 @@ conf.q6_2wx6m1_W = {
 	toolchain = "MinGW1120-64",
 	target = "WebAssembly",
 	toolchainT = "emscripten-2.0.14",
-	useCMake = true,
+	useCMake = "Latest",
 	-- workaround https://github.com/emscripten-core/emscripten/issues/15163
 	configureParameter = [[
 		-G
@@ -3380,7 +3380,7 @@ conf.q6_2lx6_W = {
 	host = "CentOS8",
 	target = "WebAssembly",
 	toolchainT = "emscripten-2.0.14",
-	useCMake = true,
+	useCMake = "Latest",
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -3408,7 +3408,7 @@ conf.q6_2mx6_W = {
 	host = "macOS1015",
 	target = "WebAssembly",
 	toolchainT = "emscripten-2.0.14",
-	useCMake = true,
+	useCMake = "Latest",
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&

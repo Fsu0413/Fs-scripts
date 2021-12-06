@@ -3554,6 +3554,7 @@ local MsvcVer = {
 
 local AppleClangVersion = {
 	["macOS1015"] = "13.0.0",
+	["macOSM1"] = "13.0.0",
 	["macOSLegacy"] = "12.0.5",
 }
 

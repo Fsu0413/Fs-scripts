@@ -132,6 +132,17 @@ conf.host.mac = {
 	["emscriptenPath"] = "/opt/env/emsdk/",
 }
 
+conf.host.macM1 = {
+	-- Preinstalled GNU make in path and is used
+	-- Preinstalled CMake and ninja in path and is used
+	-- Preinstalled host toolchain in path and is used
+	-- Preinstalled p7zip in path and is used
+	["makefileTemplate"] = "unix",
+	["pathSep"] = '/',
+	["sourcePackagePath"] = "/opt/sources/",
+	["buildRootPath"] = "/opt/build/",
+}
+
 conf.host.macLegacy = {
 	-- Preinstalled GNU make in path and is used
 	-- Preinstalled host toolchain in path and is used
@@ -580,6 +591,7 @@ conf.hostToConfMap = {
 	["CentOS8"] = "linux",
 	["macOS1015"] = "mac",
 	["macOSLegacy"] = "macLegacy",
+	["macOSM1"] = "macM1",
 }
 
 return conf

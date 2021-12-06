@@ -2902,6 +2902,104 @@ conf.q6_2mx6sf = {
 	]],
 }
 
+conf.q6_2ma6 = {
+	name = "Qt6.2.2-macOS-arm64_v8a-AppleClang&AppleClangVersion&",
+	qtVersion = "6.2.2",
+	host = "macOSM1",
+	useCMake = true,
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DBUILD_SHARED_LIBS=ON
+		-DCMAKE_BUILD_TYPE="Release"
+		-DQT_QMAKE_TARGET_MKSPEC=macx-clang
+		-DBUILD_WITH_PCH=ON
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengl=ON
+		-DFEATURE_opengles2=OFF
+		-DFEATURE_ssl=ON
+		-DFEATURE_openssl=OFF
+		-DFEATURE_securetransport=ON
+		-DFEATURE_sql_sqlite=ON
+		-DFEATURE_system_sqlite=OFF
+		-DFEATURE_webengine_proprietary_codecs=ON
+		-DCMAKE_SKIP_BUILD_RPATH=OFF
+		-DCMAKE_SKIP_INSTALL_RPATH=OFF
+		-DFEATURE_framework=ON
+	]],
+}
+
+conf.q6_2ma6nf = {
+	name = "Qt6.2.2-macOS-arm64_v8a-AppleClang&AppleClangVersion&-noFramework",
+	qtVersion = "6.2.2",
+	host = "macOSM1",
+	variant = {"-noFramework"},
+	useCMake = true,
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DBUILD_SHARED_LIBS=ON
+		-DCMAKE_BUILD_TYPE="Release"
+		-DQT_QMAKE_TARGET_MKSPEC=macx-clang
+		-DBUILD_WITH_PCH=ON
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengl=ON
+		-DFEATURE_opengles2=OFF
+		-DFEATURE_ssl=ON
+		-DFEATURE_openssl=OFF
+		-DFEATURE_securetransport=ON
+		-DFEATURE_sql_sqlite=ON
+		-DFEATURE_system_sqlite=OFF
+		-DFEATURE_webengine_proprietary_codecs=ON
+		-DCMAKE_SKIP_BUILD_RPATH=OFF
+		-DCMAKE_SKIP_INSTALL_RPATH=OFF
+		-DFEATURE_framework=OFF
+	]],
+}
+
+conf.q6_2ma6sf = {
+	name = "Qt6.2.2-macOS-arm64_v8a-AppleClang&AppleClangVersion&-staticFull",
+	qtVersion = "6.2.2",
+	host = "macOSM1",
+	variant = {"-staticFull"},
+	useCMake = true,
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DBUILD_SHARED_LIBS=OFF
+		-DCMAKE_BUILD_TYPE="Release"
+		-DQT_QMAKE_TARGET_MKSPEC=macx-clang
+		-DBUILD_WITH_PCH=ON
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_relocatable=ON
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengl=ON
+		-DFEATURE_opengles2=OFF
+		-DFEATURE_ssl=ON
+		-DFEATURE_openssl=OFF
+		-DFEATURE_securetransport=ON
+		-DFEATURE_sql_sqlite=ON
+		-DFEATURE_system_sqlite=OFF
+	]],
+}
+
 conf.q6_2wx6m1_aa3n3 = {
 	name = "Qt6.2.2-Android-arm-Clang-NDKr23b-XWindows-x86_64-MinGW11.2.0",
 	qtVersion = "6.2.2",

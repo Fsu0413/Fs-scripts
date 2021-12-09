@@ -190,24 +190,6 @@ conf.o1wx6v7st = {
 	]],
 }
 
-conf.o1wa6v7 = {
-	name = "OpenSSL1.1.1l-Windows-arm64-VS2017-&MSVCVER&",
-	opensslVersion = "1.1.1l",
-	host = "Win10",
-	target = "Win10Arm",
-	toolchain = "MSVC2017-64", -- only a placeholder here, in fact it only uses "toolchainT"
-	toolchainT = "MSVC2017-arm64",
-	libPath = { "bin\\libssl-1_1-arm64.dll", "bin\\libcrypto-1_1-arm64.dll" },
-	configureParameter = [[
-		no-asm
-		no-shared
-		--prefix=&INSTALLROOT&
-		--openssldir=&INSTALLROOT&\ssl
-		VC-WIN64-ARM
-		-FS
-	]],
-}
-
 --------------------------------------------------------------------
 
 conf.o1wx3v9 = {

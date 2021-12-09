@@ -30,6 +30,7 @@ abbrs:
 		v5: VS2015
 		v7: VS2017
 		v9: VS2019
+		v2: VS2022
 		m7: MinGW-w64, with GCC 7.3.0
 		m8: MinGW-w64, with GCC 8.1.0
 		m1: MinGW-w64, with GCC 11.2.0
@@ -1565,7 +1566,7 @@ conf.Q5wx6v5 = {
 
 conf.Q5wx3v7 = {
 	name = "Qt5.15.2-Windows-x86-VS2017-&MSVCVER&",
-	qtVersion = "5.15.2",
+	qtVersion = "5.15.2-5",
 	host = "Win10",
 	toolchain = "MSVC2017-32",
 	configureParameter = [[
@@ -1602,7 +1603,7 @@ conf.Q5wx3v7 = {
 
 conf.Q5wx6v7 = {
 	name = "Qt5.15.2-Windows-x86_64-VS2017-&MSVCVER&",
-	qtVersion = "5.15.2",
+	qtVersion = "5.15.2-5",
 	host = "Win10",
 	toolchain = "MSVC2017-64",
 	configureParameter = [[
@@ -1675,7 +1676,7 @@ conf.Q5wx3v9 = {
 
 conf.Q5wx3v9sf = {
 	name = "Qt5.15.2-Windows-x86-VS2019-&MSVCVER&-staticFull",
-	qtVersion = "5.15.2",
+	qtVersion = "5.15.2-5",
 	host = "Win10",
 	toolchain = "MSVC2019-32",
 	variant = {"-staticFull"},
@@ -1753,7 +1754,7 @@ conf.Q5wx6v9 = {
 
 conf.Q5wx6v9sf = {
 	name = "Qt5.15.2-Windows-x86_64-VS2019-&MSVCVER&-staticFull",
-	qtVersion = "5.15.2",
+	qtVersion = "5.15.2-5",
 	host = "Win10",
 	toolchain = "MSVC2019-64",
 	variant = {"-staticFull"},
@@ -1782,6 +1783,43 @@ conf.Q5wx6v9sf = {
 		-opengl
 		es2
 		-angle
+		-ssl
+		-schannel
+		-sql-sqlite
+		-sql-odbc
+		-make-tool
+		jom
+		-skip
+		qtwebengine
+	]],
+}
+
+conf.Q5wx6v2 = {
+	name = "Qt5.15.2-Windows-x86_64-VS2022-&MSVCVER&",
+	qtVersion = "5.15.2-5",
+	host = "Win10",
+	toolchain = "MSVC2022-64",
+	configureParameter = [[
+		-prefix
+		&INSTALLROOT&
+		-opensource
+		-shared
+		-release
+		-confirm-license
+		-platform
+		win32-msvc
+		-pch
+		-nomake
+		examples
+		-nomake
+		tests
+		-no-compile-examples
+		-qt-doubleconversion
+		-qt-zlib
+		-qt-pcre
+		-no-icu
+		-opengl
+		dynamic
 		-ssl
 		-schannel
 		-sql-sqlite
@@ -2426,6 +2464,38 @@ conf.q6_2wx6v9_wa6v9 = {
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
 		-DFEATURE_system_sqlite=OFF
+	]],
+}
+
+conf.q6_2wx6v2 = {
+	name = "Qt6.2.2-Windows-x86_64-VS2022-&MSVCVER&",
+	qtVersion = "6.2.2",
+	host = "Win10",
+	toolchain = "MSVC2022-64",
+	useCMake = "Latest",
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DBUILD_SHARED_LIBS=ON
+		-DCMAKE_BUILD_TYPE="Release"
+		-DQT_QMAKE_TARGET_MKSPEC=win32-msvc
+		-DBUILD_WITH_PCH=ON
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengl_dynamic=ON
+		-DFEATURE_ssl=ON
+		-DFEATURE_openssl=OFF
+		-DFEATURE_schannel=ON
+		-DFEATURE_sql_sqlite=ON
+		-DFEATURE_sql_odbc=ON
+		-DFEATURE_system_sqlite=OFF
+		-DFEATURE_webengine_proprietary_codecs=ON
+		-DFEATURE_qtpdf_build=ON
 	]],
 }
 
@@ -3467,6 +3537,7 @@ setmetatable(QQtPatcherVersion, versionMo)
 local MsvcVer = {
 	["MSVC2017"] = "15.9.41",
 	["MSVC2019"] = "16.11.7",
+	["MSVC2022"] = "17.0.2",
 }
 
 local AppleClangVersion = {
@@ -3522,12 +3593,9 @@ for name, value in pairs(conf) do
 	end
 
 	-- hack MSVCVER into name
-	if string.sub(value.toolchain, 1, 8) == "MSVC2017" then
-		value.name = string.gsub(value.name, "%&MSVCVER%&", MsvcVer.MSVC2017)
-	elseif string.sub(value.toolchain, 1, 8) == "MSVC2019" then
-		value.name = string.gsub(value.name, "%&MSVCVER%&", MsvcVer.MSVC2019)
+	if string.sub(value.toolchain, 1, 4) == "MSVC" then
+		value.name = string.gsub(value.name, "%&MSVCVER%&", MsvcVer[string.sub(value.toolchain, 1, 8)])
 	end
-
 	if string.find(value.name, "AppleClang") then
 		value.name = string.gsub(value.name, "%&AppleClangVersion%&", AppleClangVersion[value.host])
 	end

@@ -15,6 +15,7 @@ conf.host.win = {
 		-- MSVC toolchains
 		-- Since MSVC toolchain must be configured using BAT file, we make this file appear FIRST in the table
 		-- For building QtWebEngine 6.2+ on Windows, GnuWin32 is needed. Qt removes GnuWin32 since 6.0, so manually add it here
+		["MSVC2022-64"] = {"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\Build\\vcvars64.bat", "D:\\gnuwin32\\bin"},
 		["MSVC2019-32"] = {"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Auxiliary\\Build\\vcvarsamd64_x86.bat", "D:\\gnuwin32\\bin"},
 		["MSVC2019-64"] = {"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Auxiliary\\Build\\vcvars64.bat", "D:\\gnuwin32\\bin"},
 		["MSVC2017-32"] = "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Auxiliary\\Build\\vcvarsamd64_x86.bat",
@@ -40,8 +41,8 @@ conf.host.win = {
 		-- LLVM always acts as an cross compiler, but the target libraries are architecture-dependent
 		-- Since some binaries built also acts as host tool, we should add the target libraries to PATH too, otherwise the program won't start
 		["MinGWLLVM-msvcrt13-64"] = {"D:\\mingw-w64\\llvm-mingw-20211002-msvcrt-x86_64\\x86_64-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20211002-msvcrt-x86_64\\bin"},
-		["MinGWLLVM-ucrt13-64"] = {"D:\\mingw-w64\\llvm-mingw-20211002-ucrt-x86_64\\x86_64-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20211002-ucrt-x86_64\\bin"},
 		["MinGWLLVM-msvcrt13-32"] = {"D:\\mingw-w64\\llvm-mingw-20211002-msvcrt-x86_64\\i686-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20211002-msvcrt-x86_64\\bin"},
+		["MinGWLLVM-ucrt13-64"] = {"D:\\mingw-w64\\llvm-mingw-20211002-ucrt-x86_64\\x86_64-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20211002-ucrt-x86_64\\bin"},
 		["MinGWLLVM-ucrt13-32"] = {"D:\\mingw-w64\\llvm-mingw-20211002-ucrt-x86_64\\i686-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20211002-ucrt-x86_64\\bin"},
 	},
 	["sourcePackagePath"] = "D:\\Qt\\",

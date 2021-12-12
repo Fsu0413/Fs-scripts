@@ -3529,7 +3529,7 @@ local QQtPatcherConf = {
 }
 
 local QQtPatcherVersion = {
-	["default"] = "0.7.4"
+	["default"] = "0.8.0"
 }
 
 setmetatable(QQtPatcherVersion, versionMo)

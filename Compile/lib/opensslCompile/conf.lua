@@ -4,7 +4,7 @@ local conf = {}
 --[[
 abbrs:
 	OpenSSL Versions:
-		o1: OpenSSL 1.1.1l
+		o1: OpenSSL 1.1.1m
 		o3: OpenSSL 3.0.0
 	Most of OpenSSL builds has its makefiles changed for our use. No "m" will be prefixed.
 
@@ -37,11 +37,11 @@ abbrs:
 
 --------------------------------------------------------------------
 
--- OpenSSL 1.1.1l
+-- OpenSSL 1.1.1m
 
 conf.o1wx3v5 = {
-	name = "OpenSSL1.1.1l-Windows-x86-VS2015",
-	opensslVersion = "1.1.1l",
+	name = "OpenSSL1.1.1m-Windows-x86-VS2015",
+	opensslVersion = "1.1.1m",
 	host = "Win8",
 	toolchain = "MSVC2015-32",
 	libPath = { "bin\\libssl-1_1.dll", "bin\\libcrypto-1_1.dll" },
@@ -56,8 +56,8 @@ conf.o1wx3v5 = {
 }
 
 conf.o1wx3v5st = {
-	name = "OpenSSL1.1.1l-Windows-x86-VS2015-static",
-	opensslVersion = "1.1.1l",
+	name = "OpenSSL1.1.1m-Windows-x86-VS2015-static",
+	opensslVersion = "1.1.1m",
 	host = "Win8",
 	toolchain = "MSVC2015-32",
 	variant = {"-static"},
@@ -73,8 +73,8 @@ conf.o1wx3v5st = {
 }
 
 conf.o1wx6v5 = {
-	name = "OpenSSL1.1.1l-Windows-x86_64-VS2015",
-	opensslVersion = "1.1.1l",
+	name = "OpenSSL1.1.1m-Windows-x86_64-VS2015",
+	opensslVersion = "1.1.1m",
 	host = "Win8",
 	toolchain = "MSVC2015-64",
 	libPath = { "bin\\libssl-1_1-x64.dll", "bin\\libcrypto-1_1-x64.dll" },
@@ -91,8 +91,8 @@ conf.o1wx6v5 = {
 --------------------------------------------------------------------
 
 conf.o1wx3m7 = {
-	name = "OpenSSL1.1.1l-Windows-x86-MinGW-GCC7.3.0",
-	opensslVersion = "1.1.1l",
+	name = "OpenSSL1.1.1m-Windows-x86-MinGW-GCC7.3.0",
+	opensslVersion = "1.1.1m",
 	host = "Win8SH",
 	toolchain = "MinGW730-32",
 	libPath = { "bin\\libssl-1_1.dll", "bin\\libcrypto-1_1.dll" },
@@ -107,8 +107,8 @@ conf.o1wx3m7 = {
 }
 
 conf.o1wx6m7 = {
-	name = "OpenSSL1.1.1l-Windows-x86_64-MinGW-GCC7.3.0",
-	opensslVersion = "1.1.1l",
+	name = "OpenSSL1.1.1m-Windows-x86_64-MinGW-GCC7.3.0",
+	opensslVersion = "1.1.1m",
 	host = "Win8SH",
 	toolchain = "MinGW730-64",
 	libPath = { "bin\\libssl-1_1-x64.dll", "bin\\libcrypto-1_1-x64.dll" },
@@ -125,8 +125,8 @@ conf.o1wx6m7 = {
 --------------------------------------------------------------------
 
 conf.o1wx3v7 = {
-	name = "OpenSSL1.1.1l-Windows-x86-VS2017-&MSVCVER&",
-	opensslVersion = "1.1.1l",
+	name = "OpenSSL1.1.1m-Windows-x86-VS2017-&MSVCVER&",
+	opensslVersion = "1.1.1m",
 	host = "Win10",
 	toolchain = "MSVC2017-32",
 	libPath = { "bin\\libssl-1_1.dll", "bin\\libcrypto-1_1.dll" },
@@ -141,8 +141,8 @@ conf.o1wx3v7 = {
 }
 
 conf.o1wx3v7st = {
-	name = "OpenSSL1.1.1l-Windows-x86-VS2017-&MSVCVER&-static",
-	opensslVersion = "1.1.1l",
+	name = "OpenSSL1.1.1m-Windows-x86-VS2017-&MSVCVER&-static",
+	opensslVersion = "1.1.1m",
 	host = "Win10",
 	toolchain = "MSVC2017-32",
 	variant = {"-static"},
@@ -158,8 +158,8 @@ conf.o1wx3v7st = {
 }
 
 conf.o1wx6v7 = {
-	name = "OpenSSL1.1.1l-Windows-x86_64-VS2017-&MSVCVER&",
-	opensslVersion = "1.1.1l",
+	name = "OpenSSL1.1.1m-Windows-x86_64-VS2017-&MSVCVER&",
+	opensslVersion = "1.1.1m",
 	host = "Win10",
 	toolchain = "MSVC2017-64",
 	libPath = { "bin\\libssl-1_1-x64.dll", "bin\\libcrypto-1_1-x64.dll" },
@@ -174,8 +174,8 @@ conf.o1wx6v7 = {
 }
 
 conf.o1wx6v7st = {
-	name = "OpenSSL1.1.1l-Windows-x86_64-VS2017-&MSVCVER&-static",
-	opensslVersion = "1.1.1l",
+	name = "OpenSSL1.1.1m-Windows-x86_64-VS2017-&MSVCVER&-static",
+	opensslVersion = "1.1.1m",
 	host = "Win10",
 	toolchain = "MSVC2017-64",
 	variant = {"-static"},
@@ -193,8 +193,8 @@ conf.o1wx6v7st = {
 --------------------------------------------------------------------
 
 conf.o1wx3v9 = {
-	name = "OpenSSL1.1.1l-Windows-x86-VS2019-&MSVCVER&",
-	opensslVersion = "1.1.1l",
+	name = "OpenSSL1.1.1m-Windows-x86-VS2019-&MSVCVER&",
+	opensslVersion = "1.1.1m",
 	host = "Win10",
 	toolchain = "MSVC2019-32",
 	libPath = { "bin\\libssl-1_1.dll", "bin\\libcrypto-1_1.dll" },
@@ -209,8 +209,8 @@ conf.o1wx3v9 = {
 }
 
 conf.o1wx6v9 = {
-	name = "OpenSSL1.1.1l-Windows-x86_64-VS2019-&MSVCVER&",
-	opensslVersion = "1.1.1l",
+	name = "OpenSSL1.1.1m-Windows-x86_64-VS2019-&MSVCVER&",
+	opensslVersion = "1.1.1m",
 	host = "Win10",
 	toolchain = "MSVC2019-64",
 	libPath = { "bin\\libssl-1_1-x64.dll", "bin\\libcrypto-1_1-x64.dll" },
@@ -227,8 +227,8 @@ conf.o1wx6v9 = {
 --------------------------------------------------------------------
 
 conf.o1aa3nl = {
-	name = "OpenSSL1.1.1l-Android-arm-NDKr21eAPI21",
-	opensslVersion = "1.1.1l",
+	name = "OpenSSL1.1.1m-Android-arm-NDKr21eAPI21",
+	opensslVersion = "1.1.1m",
 	host = "CentOS8",
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-arm",
@@ -252,8 +252,8 @@ conf.o1aa3nl = {
 }
 
 conf.o1aa6nl = {
-	name = "OpenSSL1.1.1l-Android-arm64-NDKr21eAPI21",
-	opensslVersion = "1.1.1l",
+	name = "OpenSSL1.1.1m-Android-arm64-NDKr21eAPI21",
+	opensslVersion = "1.1.1m",
 	host = "CentOS8",
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-arm64",
@@ -272,8 +272,8 @@ conf.o1aa6nl = {
 }
 
 conf.o1ax3nl = {
-	name = "OpenSSL1.1.1l-Android-x86-NDKr21eAPI21",
-	opensslVersion = "1.1.1l",
+	name = "OpenSSL1.1.1m-Android-x86-NDKr21eAPI21",
+	opensslVersion = "1.1.1m",
 	host = "CentOS8",
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-x86",
@@ -292,8 +292,8 @@ conf.o1ax3nl = {
 }
 
 conf.o1ax6nl = {
-	name = "OpenSSL1.1.1l-Android-x86_64-NDKr21eAPI21",
-	opensslVersion = "1.1.1l",
+	name = "OpenSSL1.1.1m-Android-x86_64-NDKr21eAPI21",
+	opensslVersion = "1.1.1m",
 	host = "CentOS8",
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-x86_64",
@@ -312,8 +312,8 @@ conf.o1ax6nl = {
 }
 
 conf.o1aalnl = {
-	name = "OpenSSL1.1.1l-Android-ALL-NDKr21eAPI21",
-	opensslVersion = "1.1.1l",
+	name = "OpenSSL1.1.1m-Android-ALL-NDKr21eAPI21",
+	opensslVersion = "1.1.1m",
 	host = "CentOS8",
 	opensslAndroidAll = {
 		["armeabi-v7a"] = "o1aa3nl",
@@ -326,8 +326,8 @@ conf.o1aalnl = {
 --------------------------------------------------------------------
 
 conf.o1aa3nl24 = {
-	name = "OpenSSL1.1.1l-Android-arm-NDKr21eAPI24",
-	opensslVersion = "1.1.1l",
+	name = "OpenSSL1.1.1m-Android-arm-NDKr21eAPI24",
+	opensslVersion = "1.1.1m",
 	host = "CentOS8",
 	target = "Android-24",
 	toolchainT = "Android-24-r21e-arm",
@@ -351,8 +351,8 @@ conf.o1aa3nl24 = {
 }
 
 conf.o1aa6nl24 = {
-	name = "OpenSSL1.1.1l-Android-arm64-NDKr21eAPI24",
-	opensslVersion = "1.1.1l",
+	name = "OpenSSL1.1.1m-Android-arm64-NDKr21eAPI24",
+	opensslVersion = "1.1.1m",
 	host = "CentOS8",
 	target = "Android-24",
 	toolchainT = "Android-24-r21e-arm64",
@@ -371,8 +371,8 @@ conf.o1aa6nl24 = {
 }
 
 conf.o1ax3nl24 = {
-	name = "OpenSSL1.1.1l-Android-x86-NDKr21eAPI24",
-	opensslVersion = "1.1.1l",
+	name = "OpenSSL1.1.1m-Android-x86-NDKr21eAPI24",
+	opensslVersion = "1.1.1m",
 	host = "CentOS8",
 	target = "Android-24",
 	toolchainT = "Android-24-r21e-x86",
@@ -391,8 +391,8 @@ conf.o1ax3nl24 = {
 }
 
 conf.o1ax6nl24 = {
-	name = "OpenSSL1.1.1l-Android-x86_64-NDKr21eAPI24",
-	opensslVersion = "1.1.1l",
+	name = "OpenSSL1.1.1m-Android-x86_64-NDKr21eAPI24",
+	opensslVersion = "1.1.1m",
 	host = "CentOS8",
 	target = "Android-24",
 	toolchainT = "Android-24-r21e-x86_64",
@@ -411,8 +411,8 @@ conf.o1ax6nl24 = {
 }
 
 conf.o1aalnl24 = {
-	name = "OpenSSL1.1.1l-Android-ALL-NDKr21eAPI24",
-	opensslVersion = "1.1.1l",
+	name = "OpenSSL1.1.1m-Android-ALL-NDKr21eAPI24",
+	opensslVersion = "1.1.1m",
 	host = "CentOS8",
 	opensslAndroidAll = {
 		["armeabi-v7a"] = "o1aa3nl24",
@@ -425,8 +425,8 @@ conf.o1aalnl24 = {
 --------------------------------------------------------------------
 
 conf.o1aa3n324 = {
-	name = "OpenSSL1.1.1l-Android-arm-NDKr23bAPI24",
-	opensslVersion = "1.1.1l",
+	name = "OpenSSL1.1.1m-Android-arm-NDKr23bAPI24",
+	opensslVersion = "1.1.1m",
 	host = "CentOS8",
 	target = "Android-24",
 	toolchainT = "Android-24-r23b-arm",
@@ -450,8 +450,8 @@ conf.o1aa3n324 = {
 }
 
 conf.o1aa6n324 = {
-	name = "OpenSSL1.1.1l-Android-arm64-NDKr23bAPI24",
-	opensslVersion = "1.1.1l",
+	name = "OpenSSL1.1.1m-Android-arm64-NDKr23bAPI24",
+	opensslVersion = "1.1.1m",
 	host = "CentOS8",
 	target = "Android-24",
 	toolchainT = "Android-24-r23b-arm64",
@@ -470,8 +470,8 @@ conf.o1aa6n324 = {
 }
 
 conf.o1ax3n324 = {
-	name = "OpenSSL1.1.1l-Android-x86-NDKr23bAPI24",
-	opensslVersion = "1.1.1l",
+	name = "OpenSSL1.1.1m-Android-x86-NDKr23bAPI24",
+	opensslVersion = "1.1.1m",
 	host = "CentOS8",
 	target = "Android-24",
 	toolchainT = "Android-24-r23b-x86",
@@ -490,8 +490,8 @@ conf.o1ax3n324 = {
 }
 
 conf.o1ax6n324 = {
-	name = "OpenSSL1.1.1l-Android-x86_64-NDKr23bAPI24",
-	opensslVersion = "1.1.1l",
+	name = "OpenSSL1.1.1m-Android-x86_64-NDKr23bAPI24",
+	opensslVersion = "1.1.1m",
 	host = "CentOS8",
 	target = "Android-24",
 	toolchainT = "Android-24-r23b-x86_64",
@@ -510,8 +510,8 @@ conf.o1ax6n324 = {
 }
 
 conf.o1aaln324 = {
-	name = "OpenSSL1.1.1l-Android-ALL-NDKr23bAPI24",
-	opensslVersion = "1.1.1l",
+	name = "OpenSSL1.1.1m-Android-ALL-NDKr23bAPI24",
+	opensslVersion = "1.1.1m",
 	host = "CentOS8",
 	opensslAndroidAll = {
 		["armeabi-v7a"] = "o1aa3n324",
@@ -525,7 +525,7 @@ conf.o1aaln324 = {
 
 local MsvcVer = {
 	["MSVC2017"] = "15.9.41",
-	["MSVC2019"] = "16.11.7",
+	["MSVC2019"] = "16.11.8",
 }
 
 for name, value in pairs(conf) do
@@ -574,7 +574,7 @@ for name, value in pairs(conf) do
 	value.sourcePackageUrlunix = "http://172.24.13.6/webdav/sources/openssl-" .. value.opensslVersion .. ".tar.gz"
 	value.sourcePackageBaseName = "openssl-" .. value.opensslVersion
 	value.binaryPackageUrlwin = "http://172.24.13.6:8080/job/OpenSSL/job/" .. name .. "/lastSuccessfulBuild/artifact/buildDir/" .. value.name .. ".7z"
-	value.sourcePackageUrlwin = "http://172.24.13.6/webdav/sources/openssl-" .. value.opensslVersion .. ".zip"
+	value.sourcePackageUrlwin = "http://172.24.13.6/webdav/sources/openssl-" .. value.opensslVersion .. ".7z"
 
 	-- add dump function
 	value.dump = function(self)

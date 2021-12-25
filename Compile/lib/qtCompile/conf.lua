@@ -1826,8 +1826,6 @@ conf.Q5wx6v2 = {
 		-sql-odbc
 		-make-tool
 		jom
-		-skip
-		qtwebengine
 	]],
 }
 
@@ -3529,7 +3527,7 @@ local QQtPatcherConf = {
 }
 
 local QQtPatcherVersion = {
-	["default"] = "0.8.0"
+	["default"] = "0.8.1"
 }
 
 setmetatable(QQtPatcherVersion, versionMo)
@@ -3537,8 +3535,8 @@ setmetatable(QQtPatcherVersion, versionMo)
 local MsvcVer = {
 	["MSVC2015"] = "14",
 	["MSVC2017"] = "15.9.41",
-	["MSVC2019"] = "16.11.7",
-	["MSVC2022"] = "17.0.2",
+	["MSVC2019"] = "16.11.8",
+	["MSVC2022"] = "17.0.4",
 }
 
 local AppleClangVersion = {

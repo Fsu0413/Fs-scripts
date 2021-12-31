@@ -1928,7 +1928,7 @@ conf.q6_2wx6v9 = {
 	qtVersion = "6.2.2",
 	host = "Win10",
 	toolchain = "MSVC2019-64",
-	opensslConf = "o3wx6v9",
+	opensslConf = "o1wx6v9",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -1964,7 +1964,7 @@ conf.q6_2wx6v9st = {
 	host = "Win10",
 	toolchain = "MSVC2019-64",
 	variant = {"-static"},
-	-- opensslConf = "o3wx6v9", -- need a static version after build passed
+	-- opensslConf = "o1wx6v9", -- need a static version after build passed
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -2020,7 +2020,7 @@ conf.q6_2wx6v9sf = {
 	host = "Win10",
 	toolchain = "MSVC2019-64",
 	variant = {"-staticFull"},
-	-- opensslConf = "o3wx6v9", -- need a static version after build passed
+	-- opensslConf = "o1wx6v9", -- need a static version after build passed
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -2089,7 +2089,7 @@ conf.q6_2wx6v2 = {
 	qtVersion = "6.2.2",
 	host = "Win10",
 	toolchain = "MSVC2022-64",
-	opensslConf = "o3wx6v2",
+	opensslConf = "o1wx6v2",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"

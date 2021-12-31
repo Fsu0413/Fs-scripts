@@ -226,6 +226,24 @@ conf.o1wx6v9 = {
 
 --------------------------------------------------------------------
 
+conf.o1wx6v2 = {
+	name = "OpenSSL1.1.1m-Windows-x86_64-VS2022-&MSVCVER&",
+	opensslVersion = "1.1.1m",
+	host = "Win10",
+	toolchain = "MSVC2022-64",
+	libPath = { "bin\\libssl-1_1-x64.dll", "bin\\libcrypto-1_1-x64.dll" },
+	configureParameter = [[
+		no-asm
+		shared
+		--prefix=&INSTALLROOT&
+		--openssldir=&INSTALLROOT&\ssl
+		VC-WIN64A
+		-FS
+	]],
+}
+
+--------------------------------------------------------------------
+
 conf.o1aa3nl = {
 	name = "OpenSSL1.1.1m-Android-arm-NDKr21eAPI21",
 	opensslVersion = "1.1.1m",

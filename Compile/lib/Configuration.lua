@@ -559,7 +559,7 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 			-- Retry is added when build fails, for 3 times.
 			ret.MAKE = "jom"
 
-			-- however, install process of OpenSSL 3 breaks with jom and will make jom stucks
+			-- however, install process of OpenSSL 3 breaks with jom and will make jom stucks. So fallback to nmake to pass build
 			ret.INSTALLCOMMANDLINE = "nmake install_sw install_ssldirs " .. ret.INSTALLCOMMANDLINE
 		else
 			error("not supported")

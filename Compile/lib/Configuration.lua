@@ -587,6 +587,7 @@ end
 
 conf.hostToConfMap = {
 	["Win10"] = "win",
+	["Win10SH"] = "msys",
 	["Win8"] = "win",
 	["Win8SH"] = "msys",
 	["CentOS8"] = "linux",

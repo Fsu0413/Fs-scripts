@@ -1826,6 +1826,7 @@ conf.Q5wx6v2 = {
 		-sql-odbc
 		-make-tool
 		jom
+		-webengine-proprietary-codecs
 	]],
 }
 

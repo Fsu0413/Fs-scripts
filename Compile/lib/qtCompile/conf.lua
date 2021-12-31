@@ -3600,6 +3600,12 @@ for name, value in pairs(conf) do
 	end
 end
 
+local valueMo = {
+	__tostring = function(v)
+		return v:dump()
+	end
+}
+
 for name, value in pairs(conf) do
 	if value.target and (value.target ~= value.host) then
 		value.crossCompile = true
@@ -3684,6 +3690,8 @@ for name, value in pairs(conf) do
 
 		return ret
 	end
+
+	setmetatable(value, valueMo)
 end
 
 local mo = {

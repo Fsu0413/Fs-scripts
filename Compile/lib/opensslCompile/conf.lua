@@ -523,9 +523,239 @@ conf.o1aaln324 = {
 
 --------------------------------------------------------------------
 
+-- OpenSSL 3.0.1
+
+conf.o3wx6v9 = {
+	name = "OpenSSL3.0.1-Windows-x86_64-VS2019-&MSVCVER&",
+	opensslVersion = "3.0.1",
+	host = "Win10",
+	toolchain = "MSVC2019-64",
+	libPath = { "bin\\libssl-3-x64.dll", "bin\\libcrypto-3-x64.dll" },
+	configureParameter = [[
+		no-asm
+		shared
+		--prefix=&INSTALLROOT&
+		--openssldir=&INSTALLROOT&\ssl
+		VC-WIN64A
+		-FS
+	]],
+}
+
+conf.o3wx6v2 = {
+	name = "OpenSSL3.0.1-Windows-x86_64-VS2022-&MSVCVER&",
+	opensslVersion = "3.0.1",
+	host = "Win10",
+	toolchain = "MSVC2022-64",
+	libPath = { "bin\\libssl-3-x64.dll", "bin\\libcrypto-3-x64.dll" },
+	configureParameter = [[
+		no-asm
+		shared
+		--prefix=&INSTALLROOT&
+		--openssldir=&INSTALLROOT&\ssl
+		VC-WIN64A
+		-FS
+	]],
+}
+
+--------------------------------------------------------------------
+
+conf.o3wx6m1 = {
+	name = "OpenSSL3.0.1-Windows-x86_64-MinGW-GCC11.2.0",
+	opensslVersion = "3.0.1",
+	host = "Win10SH",
+	toolchain = "MinGW1120-64",
+	libPath = { "bin\\libssl-3-x64.dll", "bin\\libcrypto-3-x64.dll" },
+	staticlibPath = { "lib\\libssl.a", "lib\\libcrypto.a" },
+	configureParameter = [[
+		no-asm
+		shared
+		--prefix=&INSTALLROOT&
+		--openssldir=&INSTALLROOT&/ssl
+		--libdir=&INSTALLROOT&/lib
+		mingw64
+	]],
+}
+
+conf.o3wx6mu = {
+	name = "OpenSSL3.0.1-Windows-x86_64-MinGWLLVM-ucrt13",
+	opensslVersion = "3.0.1",
+	host = "Win10SH",
+	toolchain = "MinGWLLVM-ucrt13-64",
+	libPath = { "bin\\libssl-3-x64.dll", "bin\\libcrypto-3-x64.dll" },
+	staticlibPath = { "lib\\libssl.a", "lib\\libcrypto.a" },
+	clangTriplet = "x86_64-w64-mingw32",
+	configureParameter = [[
+		no-asm
+		shared
+		--prefix=&INSTALLROOT&
+		--openssldir=&INSTALLROOT&/ssl
+		--libdir=&INSTALLROOT&/lib
+		mingw64
+	]],
+}
+
+conf.o3wx6mv = {
+	name = "OpenSSL3.0.1-Windows-x86_64-MinGWLLVM-msvcrt13",
+	opensslVersion = "3.0.1",
+	host = "Win10SH",
+	toolchain = "MinGWLLVM-msvcrt13-64",
+	libPath = { "bin\\libssl-3-x64.dll", "bin\\libcrypto-3-x64.dll" },
+	staticlibPath = { "lib\\libssl.a", "lib\\libcrypto.a" },
+	clangTriplet = "x86_64-w64-mingw32",
+	configureParameter = [[
+		no-asm
+		shared
+		--prefix=&INSTALLROOT&
+		--openssldir=&INSTALLROOT&/ssl
+		--libdir=&INSTALLROOT&/lib
+		mingw64
+	]],
+}
+
+--------------------------------------------------------------------
+
+conf.o3mx6 = {
+	name = "OpenSSL3.0.1-macOS-x86_64-AppleClang&AppleClangVersion&",
+	opensslVersion = "3.0.1",
+	host = "macOS1015",
+	libPath = { "lib/libssl.3.dylib", "lib/libcrypto.3.dylib" },
+	staticlibPath = { "lib/libssl.a", "lib/libcrypto.a" },
+	configureParameter = [[
+		no-asm
+		shared
+		--prefix=&INSTALLROOT&
+		--openssldir=&INSTALLROOT&/ssl
+		darwin64-x86_64-cc
+	]],
+}
+
+conf.o3ma6 = {
+	name = "OpenSSL3.0.1-macOS-arm64_v8a-AppleClang&AppleClangVersion&",
+	opensslVersion = "3.0.1",
+	host = "macOSM1",
+	libPath = { "lib/libssl.3.dylib", "lib/libcrypto.3.dylib" },
+	staticlibPath = { "lib/libssl.a", "lib/libcrypto.a" },
+	configureParameter = [[
+		no-asm
+		shared
+		--prefix=&INSTALLROOT&
+		--openssldir=&INSTALLROOT&/ssl
+		darwin64-arm64-cc
+	]],
+}
+
+--------------------------------------------------------------------
+
+conf.o3aa3n324 = {
+	name = "OpenSSL3.0.1-Android-arm-NDKr23bAPI24",
+	opensslVersion = "3.0.1",
+	host = "CentOS8",
+	target = "Android-24",
+	toolchainT = "Android-24-r23b-arm",
+	configureParameter = [[
+		no-asm
+		no-shared
+		--prefix=//
+		--openssldir=//ssl
+		android-arm
+		-D__ANDROID_API__=24
+		-march=armv7-a
+		-mfloat-abi=softfp
+		-mfpu=vfp
+		-fno-builtin-memmove
+		-mthumb
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
+}
+
+conf.o3aa6n324 = {
+	name = "OpenSSL3.0.1-Android-arm64-NDKr23bAPI24",
+	opensslVersion = "3.0.1",
+	host = "CentOS8",
+	target = "Android-24",
+	toolchainT = "Android-24-r23b-arm64",
+	configureParameter = [[
+		no-asm
+		no-shared
+		--prefix=//
+		--openssldir=//ssl
+		android-arm64
+		-D__ANDROID_API__=24
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
+}
+
+conf.o3ax3n324 = {
+	name = "OpenSSL3.0.1-Android-x86-NDKr23bAPI24",
+	opensslVersion = "3.0.1",
+	host = "CentOS8",
+	target = "Android-24",
+	toolchainT = "Android-24-r23b-x86",
+	configureParameter = [[
+		no-asm
+		no-shared
+		--prefix=//
+		--openssldir=//ssl
+		android-x86
+		-D__ANDROID_API__=24
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
+}
+
+conf.o3ax6n324 = {
+	name = "OpenSSL3.0.1-Android-x86_64-NDKr23bAPI24",
+	opensslVersion = "3.0.1",
+	host = "CentOS8",
+	target = "Android-24",
+	toolchainT = "Android-24-r23b-x86_64",
+	configureParameter = [[
+		no-asm
+		no-shared
+		--prefix=//
+		--openssldir=//ssl
+		android-x86_64
+		-D__ANDROID_API__=24
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
+}
+
+conf.o3aaln324 = {
+	name = "OpenSSL3.0.1-Android-ALL-NDKr23bAPI24",
+	opensslVersion = "3.0.1",
+	host = "CentOS8",
+	opensslAndroidAll = {
+		["armeabi-v7a"] = "o3aa3n324",
+		["arm64-v8a"] = "o3aa6n324",
+		["x86"] = "o3ax3n324",
+		["x86_64"] = "o3ax6n324",
+	},
+}
+
+--------------------------------------------------------------------
+
 local MsvcVer = {
+	["MSVC2015"] = "14",
 	["MSVC2017"] = "15.9.41",
 	["MSVC2019"] = "16.11.8",
+	["MSVC2022"] = "17.0.4",
+}
+
+local AppleClangVersion = {
+	["macOS1015"] = "13.0.0",
+	["macOSM1"] = "13.0.0",
+	["macOSLegacy"] = "12.0.5",
 }
 
 for name, value in pairs(conf) do
@@ -553,12 +783,21 @@ for name, value in pairs(conf) do
 	end
 
 	-- hack MSVCVER into name
-	if string.sub(value.toolchain, 1, 8) == "MSVC2017" then
-		value.name = string.gsub(value.name, "%&MSVCVER%&", MsvcVer.MSVC2017)
-	elseif string.sub(value.toolchain, 1, 8) == "MSVC2019" then
-		value.name = string.gsub(value.name, "%&MSVCVER%&", MsvcVer.MSVC2019)
+	if string.sub(value.toolchain, 1, 4) == "MSVC" then
+		value.name = string.gsub(value.name, "%&MSVCVER%&", MsvcVer[string.sub(value.toolchain, 1, 8)])
 	end
+	if string.find(value.name, "AppleClang") then
+		value.name = string.gsub(value.name, "%&AppleClangVersion%&", AppleClangVersion[value.host])
+	end
+end
 
+local valueMo = {
+	__tostring = function(v)
+		return v:dump()
+	end
+}
+
+for name, value in pairs(conf) do
 	if value.target and (value.target ~= value.host) then
 		value.crossCompile = true
 	else
@@ -569,7 +808,6 @@ for name, value in pairs(conf) do
 		value.variant = {}
 	end
 
-	-- temporary path
 	value.binaryPackageUrlunix = "http://172.24.13.6:8080/job/OpenSSL/job/" .. name .. "/lastSuccessfulBuild/artifact/buildDir/" .. value.name .. ".tar.xz"
 	value.sourcePackageUrlunix = "http://172.24.13.6/webdav/sources/openssl-" .. value.opensslVersion .. ".tar.gz"
 	value.sourcePackageBaseName = "openssl-" .. value.opensslVersion
@@ -590,6 +828,8 @@ for name, value in pairs(conf) do
 
 		return ret
 	end
+
+	setmetatable(value, valueMo)
 end
 
 local mo = {

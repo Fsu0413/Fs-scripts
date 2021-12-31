@@ -79,6 +79,9 @@ conf.host.msys = {
 		["MinGW810-32"] = "/d/mingw-w64/8.1.0/mingw32/bin/",
 		["MinGW810-64"] = "/d/mingw-w64/8.1.0/mingw64/bin/",
 		["MinGW1120-64"] = "/d/mingw-w64/11.2.0/mingw64/bin/",
+
+		["MinGWLLVM-msvcrt13-64"] = {"/d/mingw-w64/llvm-mingw-20211002-msvcrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20211002-msvcrt-x86_64/bin"},
+		["MinGWLLVM-ucrt13-64"] = {"/d/mingw-w64/llvm-mingw-20211002-ucrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20211002-ucrt-x86_64/bin"},
 	},
 	["sourcePackagePath"] = "/d/Qt/",
 	["androidNdkPath"] = {
@@ -417,23 +420,25 @@ conf.OpenSSL.configurations = dofile(scriptPath .. "/lib/opensslCompile/conf.lua
 conf.OpenSSL.generateConfTable = function(self, host, job)
 	local confHost = conf.host[conf.hostToConfMap[host]]
 	local confDetail = conf.OpenSSL.configurations[job]
+	local ret = {}
+	ret.template = confHost.makefileTemplate
+	ret.path = {}
+	ret.WORKSPACE = os.getenv("WORKSPACE")
+	-- dirty hack here for Windows drive since Windows services always starts in drive C
+	if confHost.makefileTemplate == "win" and string.sub(ret.WORKSPACE, 1, 24) == "C:\\Users\\Fs\\Work\\Jenkins" then
+		local rightpart = string.sub(ret.WORKSPACE, 25)
+		ret.WORKSPACE = "D:\\Jenkins" .. rightpart
+	end
+	-- dirty hack end
+	ret.download = {}
 
 	if confDetail.opensslAndroidAll then
-		local ret = {}
+		-- currently this script runs only on CentOS8 and no windows compatible is made.
+		-- no plan for Windows support.
 		ret.buildContent = "OpenSSLAndroidAll"
-		ret.template = confHost.makefileTemplate
-		ret.path = {}
-		ret.WORKSPACE = os.getenv("WORKSPACE")
-		-- dirty hack here for Windows drive since Windows services always starts in drive C
-		if confHost.makefileTemplate == "win" and string.sub(ret.WORKSPACE, 1, 24) == "C:\\Users\\Fs\\Work\\Jenkins" then
-			local rightpart = string.sub(ret.WORKSPACE, 25)
-			ret.WORKSPACE = "D:\\Jenkins" .. rightpart
-		end
-		-- dirty hack end
 		ret.INSTALLROOT = ret.WORKSPACE .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. confDetail.name
 		ret.INSTALLPATH = confDetail.name
 		ret.OPENSSLDIRFUNCTION = ""
-		ret.download = {}
 
 		local repl = {}
 		repl.arch = {}
@@ -450,23 +455,10 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 		end
 
 		ret.OPENSSLDIRFUNCTION = ret.OPENSSLDIRFUNCTION .. "se\nreturn 1\nfi"
-
-		return ret
 	else
-		local ret = {}
 		ret.buildContent = "OpenSSL"
-		ret.template = confHost.makefileTemplate
-		ret.path = {}
-		ret.WORKSPACE = os.getenv("WORKSPACE")
-		-- dirty hack here for Windows drive since Windows services always starts in drive C
-		if confHost.makefileTemplate == "win" and string.sub(ret.WORKSPACE, 1, 24) == "C:\\Users\\Fs\\Work\\Jenkins" then
-			local rightpart = string.sub(ret.WORKSPACE, 25)
-			ret.WORKSPACE = "D:\\Jenkins" .. rightpart
-		end
-		-- dirty hack end
 		ret.BUILDDIR = ret.WORKSPACE .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. "build-OpenSSL" .. job
 		ret.INSTALLCOMMANDLINE = " "
-		ret.download = {}
 		table.insert(ret.download, confDetail["sourcePackageUrl" .. confHost.makefileTemplate])
 
 		if confDetail.toolchain ~= "PATH" then
@@ -524,10 +516,15 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 			if string.sub(confDetail.toolchain, 1, 4) == "MSVC" then -- if conf.hostToConfMap[host] == "win" then
 				-- nothing special
 			elseif string.sub(confDetail.toolchain, 1, 5) == "MinGW" then -- elseif conf.hostToConfMap[host] == "msys" then
-				-- nothing special
-			elseif conf.hostToConfMap[host] == "mac" then
-				-- OpenSSL build for macOS is not used when compiling Qt 5. Since build of Qt 4 has been defuncted, this may also be defuncted.
-				error("defuncted")
+				-- Clang-llvm need clang be called with target triplet
+				if confDetail.clangTriplet then
+					ret.envSet.CC = "clang --target=" .. confDetail.clangTriplet
+				end
+			elseif string.sub(conf.hostToConfMap[host], 1, 3) == "mac" then
+				-- OpenSSL build for macOS is not used when building Qt 5. Since build of Qt 4 has been defuncted, this may also be defuncted.
+				-- But OpenSSL is revived in Qt 6! Seems Strange? It's because that SecureTransport has been deprecated by Apple and won't support TLS 1.3!
+				-- Currently only OpenSSL 3 is building. Since macOS comes with 2 different archtectures, we should distinguish them using CC environment variable
+				ret.envSet.CC = "clang -arch " .. ((conf.hostToConfMap[host] == "mac") and "x86_64" or "arm64")
 			else
 				error("not supported")
 			end
@@ -550,6 +547,7 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 		if confHost.makefileTemplate == "unix" then
 			-- OpenSSL on MinGW is using MSYS2, so only runs on Unix environment
 			ret.MAKE = "make -j$PARALLELNUM"
+			ret.INSTALLCOMMANDLINE = ret.MAKE .. " install_sw install_ssldirs " .. ret.INSTALLCOMMANDLINE
 		elseif string.sub(confDetail.toolchain, 1, 4) == "MSVC" then
 			-- MSVC version of Makefile supports only nmake, jom is not supported offically
 			-- some pull requests which tries to support jom on MSVC builds are simply closed.
@@ -559,17 +557,17 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 			-- currently adding "/FS" to the compiler command line, but it fails randomly.
 			-- Retry is added when build fails, for 3 times.
 			ret.MAKE = "jom"
+
+			-- however, install process of OpenSSL 3 breaks with jom and will make jom stucks
+			ret.INSTALLCOMMANDLINE = "nmake install_sw install_ssldirs " .. ret.INSTALLCOMMANDLINE
 		else
 			error("not supported")
 		end
 
-		ret.INSTALLCOMMANDLINE = ret.MAKE .. " install_sw install_ssldirs " .. ret.INSTALLCOMMANDLINE
-
 		ret.INSTALLROOT = installRoot
 		ret.INSTALLPATH = confDetail.name
-
-		return ret
 	end
+	return ret
 end
 
 conf.OpenSSL.binaryFileDownloadPath = function(self, host, job)

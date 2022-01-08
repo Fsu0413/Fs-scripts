@@ -1928,7 +1928,7 @@ conf.q6_2wx6v9 = {
 	qtVersion = "6.2.2",
 	host = "Win10",
 	toolchain = "MSVC2019-64",
-	opensslConf = "o1wx6v9",
+	opensslConf = "o3wx6v9",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -1955,6 +1955,7 @@ conf.q6_2wx6v9 = {
 		-DFEATURE_system_sqlite=OFF
 		-DFEATURE_webengine_proprietary_codecs=ON
 		-DFEATURE_qtpdf_build=ON
+		-DBUILD_qtopcua=OFF
 	]],
 }
 
@@ -1997,6 +1998,7 @@ conf.q6_2wx6v9st = {
 		-DBUILD_qtlottie=OFF
 		-DBUILD_qtmqtt=OFF
 		-DBUILD_qtnetworkauth=OFF
+		-DBUILD_qtopcua=OFF
 		-DBUILD_qtquicktimeline=OFF
 		-DBUILD_qtsensors=OFF
 		-DBUILD_qtserialbus=OFF
@@ -2038,6 +2040,7 @@ conf.q6_2wx6v9sf = {
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
 		-DFEATURE_system_sqlite=OFF
+		-DBUILD_qtopcua=OFF
 	]],
 }
 
@@ -2073,6 +2076,7 @@ conf.q6_2wx6v9_wa6v9 = {
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
 		-DFEATURE_system_sqlite=OFF
+		-DBUILD_qtopcua=OFF
 	]],
 }
 
@@ -2081,7 +2085,7 @@ conf.q6_2wx6v2 = {
 	qtVersion = "6.2.2",
 	host = "Win10",
 	toolchain = "MSVC2022-64",
-	opensslConf = "o1wx6v2",
+	opensslConf = "o3wx6v2",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -2108,6 +2112,7 @@ conf.q6_2wx6v2 = {
 		-DFEATURE_system_sqlite=OFF
 		-DFEATURE_webengine_proprietary_codecs=ON
 		-DFEATURE_qtpdf_build=ON
+		-DBUILD_qtopcua=OFF
 	]],
 }
 
@@ -2141,6 +2146,7 @@ conf.q6_2wx6m1 = {
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
 		-DFEATURE_system_sqlite=OFF
+		-DBUILD_qtopcua=OFF
 	]],
 }
 
@@ -2188,6 +2194,7 @@ conf.q6_2wx6m1st = {
 		-DBUILD_qtlottie=OFF
 		-DBUILD_qtmqtt=OFF
 		-DBUILD_qtnetworkauth=OFF
+		-DBUILD_qtopcua=OFF
 		-DBUILD_qtquicktimeline=OFF
 		-DBUILD_qtsensors=OFF
 		-DBUILD_qtserialbus=OFF
@@ -2234,6 +2241,7 @@ conf.q6_2wx6m1sf = {
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
 		-DFEATURE_system_sqlite=OFF
+		-DBUILD_qtopcua=OFF
 	]],
 }
 
@@ -2269,6 +2277,7 @@ conf.q6_2wx6mu = {
 		-DFEATURE_system_sqlite=OFF
 		-DFEATURE_wmf=OFF
 		-DBUILD_qtwebengine=OFF
+		-DBUILD_qtopcua=OFF
 		-DCMAKE_C_COMPILER="x86_64-w64-mingw32-clang"
 		-DCMAKE_ASM_COMPILER="x86_64-w64-mingw32-clang"
 		-DCMAKE_CXX_COMPILER="x86_64-w64-mingw32-clang++"
@@ -2307,6 +2316,7 @@ conf.q6_2wx6mv = {
 		-DFEATURE_system_sqlite=OFF
 		-DFEATURE_wmf=OFF
 		-DBUILD_qtwebengine=OFF
+		-DBUILD_qtopcua=OFF
 		-DCMAKE_C_COMPILER="x86_64-w64-mingw32-clang"
 		-DCMAKE_ASM_COMPILER="x86_64-w64-mingw32-clang"
 		-DCMAKE_CXX_COMPILER="x86_64-w64-mingw32-clang++"
@@ -2351,6 +2361,7 @@ conf.q6_2lx6st = {
 		-DBUILD_qtlottie=OFF
 		-DBUILD_qtmqtt=OFF
 		-DBUILD_qtnetworkauth=OFF
+		-DBUILD_qtopcua=OFF
 		-DBUILD_qtquicktimeline=OFF
 		-DBUILD_qtsensors=OFF
 		-DBUILD_qtserialbus=OFF
@@ -2398,6 +2409,7 @@ conf.q6_2mx6 = {
 		-DCMAKE_SKIP_BUILD_RPATH=OFF
 		-DCMAKE_SKIP_INSTALL_RPATH=OFF
 		-DFEATURE_framework=ON
+		-DBUILD_qtopcua=OFF
 	]],
 }
 
@@ -2436,6 +2448,7 @@ conf.q6_2mx6nf = {
 		-DCMAKE_SKIP_BUILD_RPATH=OFF
 		-DCMAKE_SKIP_INSTALL_RPATH=OFF
 		-DFEATURE_framework=OFF
+		-DBUILD_qtopcua=OFF
 	]],
 }
 
@@ -2482,6 +2495,7 @@ conf.q6_2mx6st = {
 		-DBUILD_qtlottie=OFF
 		-DBUILD_qtmqtt=OFF
 		-DBUILD_qtnetworkauth=OFF
+		-DBUILD_qtopcua=OFF
 		-DBUILD_qtquicktimeline=OFF
 		-DBUILD_qtsensors=OFF
 		-DBUILD_qtserialbus=OFF
@@ -2527,6 +2541,7 @@ conf.q6_2mx6sf = {
 		-DFEATURE_securetransport=ON
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_system_sqlite=OFF
+		-DBUILD_qtopcua=OFF
 	]],
 }
 
@@ -2564,6 +2579,7 @@ conf.q6_2ma6 = {
 		-DCMAKE_SKIP_BUILD_RPATH=OFF
 		-DCMAKE_SKIP_INSTALL_RPATH=OFF
 		-DFEATURE_framework=ON
+		-DBUILD_qtopcua=OFF
 	]],
 }
 
@@ -2602,6 +2618,7 @@ conf.q6_2ma6nf = {
 		-DCMAKE_SKIP_BUILD_RPATH=OFF
 		-DCMAKE_SKIP_INSTALL_RPATH=OFF
 		-DFEATURE_framework=OFF
+		-DBUILD_qtopcua=OFF
 	]],
 }
 
@@ -2637,6 +2654,7 @@ conf.q6_2ma6sf = {
 		-DFEATURE_securetransport=ON
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_system_sqlite=OFF
+		-DBUILD_qtopcua=OFF
 	]],
 }
 
@@ -2669,6 +2687,7 @@ conf.q6_2wx6m1_aa3n3 = {
 		-DINPUT_openssl=linked
 		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
 		-DFEATURE_sql_sqlite=ON
+		-DBUILD_qtopcua=OFF
 		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
 		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&\build\cmake\android.toolchain.cmake
 		-DANDROID_NATIVE_API_LEVEL=24
@@ -2707,6 +2726,7 @@ conf.q6_2wx6m1_aa6n3 = {
 		-DINPUT_openssl=linked
 		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
 		-DFEATURE_sql_sqlite=ON
+		-DBUILD_qtopcua=OFF
 		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
 		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&\build\cmake\android.toolchain.cmake
 		-DANDROID_NATIVE_API_LEVEL=24
@@ -2745,6 +2765,7 @@ conf.q6_2wx6m1_ax3n3 = {
 		-DINPUT_openssl=linked
 		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
 		-DFEATURE_sql_sqlite=ON
+		-DBUILD_qtopcua=OFF
 		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
 		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&\build\cmake\android.toolchain.cmake
 		-DANDROID_NATIVE_API_LEVEL=24
@@ -2783,6 +2804,7 @@ conf.q6_2wx6m1_ax6n3 = {
 		-DINPUT_openssl=linked
 		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
 		-DFEATURE_sql_sqlite=ON
+		-DBUILD_qtopcua=OFF
 		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
 		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&\build\cmake\android.toolchain.cmake
 		-DANDROID_NATIVE_API_LEVEL=24
@@ -2820,6 +2842,7 @@ conf.q6_2lx6_aa3n3 = {
 		-DINPUT_openssl=linked
 		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
 		-DFEATURE_sql_sqlite=ON
+		-DBUILD_qtopcua=OFF
 		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
 		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
 		-DANDROID_NATIVE_API_LEVEL=24
@@ -2856,6 +2879,7 @@ conf.q6_2lx6_aa6n3 = {
 		-DINPUT_openssl=linked
 		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
 		-DFEATURE_sql_sqlite=ON
+		-DBUILD_qtopcua=OFF
 		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
 		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
 		-DANDROID_NATIVE_API_LEVEL=24
@@ -2892,6 +2916,7 @@ conf.q6_2lx6_ax3n3 = {
 		-DINPUT_openssl=linked
 		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
 		-DFEATURE_sql_sqlite=ON
+		-DBUILD_qtopcua=OFF
 		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
 		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
 		-DANDROID_NATIVE_API_LEVEL=24
@@ -2928,6 +2953,7 @@ conf.q6_2lx6_ax6n3 = {
 		-DINPUT_openssl=linked
 		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
 		-DFEATURE_sql_sqlite=ON
+		-DBUILD_qtopcua=OFF
 		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
 		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
 		-DANDROID_NATIVE_API_LEVEL=24
@@ -2964,6 +2990,7 @@ conf.q6_2mx6_aa3n3 = {
 		-DINPUT_openssl=linked
 		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
 		-DFEATURE_sql_sqlite=ON
+		-DBUILD_qtopcua=OFF
 		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
 		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
 		-DANDROID_NATIVE_API_LEVEL=24
@@ -3000,6 +3027,7 @@ conf.q6_2mx6_aa6n3 = {
 		-DINPUT_openssl=linked
 		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
 		-DFEATURE_sql_sqlite=ON
+		-DBUILD_qtopcua=OFF
 		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
 		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
 		-DANDROID_NATIVE_API_LEVEL=24
@@ -3036,6 +3064,7 @@ conf.q6_2mx6_ax3n3 = {
 		-DINPUT_openssl=linked
 		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
 		-DFEATURE_sql_sqlite=ON
+		-DBUILD_qtopcua=OFF
 		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
 		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
 		-DANDROID_NATIVE_API_LEVEL=24
@@ -3072,6 +3101,7 @@ conf.q6_2mx6_ax6n3 = {
 		-DINPUT_openssl=linked
 		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
 		-DFEATURE_sql_sqlite=ON
+		-DBUILD_qtopcua=OFF
 		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
 		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
 		-DANDROID_NATIVE_API_LEVEL=24
@@ -3109,6 +3139,7 @@ conf.q6_2wx6m1_W = {
 		-DFEATURE_opengles2=ON
 		-DFEATURE_ssl=OFF
 		-DFEATURE_sql_sqlite=ON
+		-DBUILD_qtopcua=OFF
 	]],
 }
 
@@ -3137,6 +3168,7 @@ conf.q6_2lx6_W = {
 		-DFEATURE_opengles2=ON
 		-DFEATURE_ssl=OFF
 		-DFEATURE_sql_sqlite=ON
+		-DBUILD_qtopcua=OFF
 	]],
 }
 
@@ -3165,6 +3197,7 @@ conf.q6_2mx6_W = {
 		-DFEATURE_opengles2=ON
 		-DFEATURE_ssl=OFF
 		-DFEATURE_sql_sqlite=ON
+		-DBUILD_qtopcua=OFF
 	]],
 }
 

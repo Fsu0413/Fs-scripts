@@ -1923,11 +1923,11 @@ conf.Q5mx6_aalnl = {
 
 --------------------------------------------------------------------
 
-conf.q5_kdewx3m1 = {
-	name = "Qt5.15-KDE-Windows-x86-MinGW11.2.0",
+conf.q5_kdewx3m8 = {
+	name = "Qt5.15-KDE-Windows-x86-MinGW8.1.0",
 	qtVersion = "5.15.k",
 	host = "Win10",
-	toolchain = "MinGW1120-32",
+	toolchain = "MinGW810-32",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -1958,11 +1958,11 @@ conf.q5_kdewx3m1 = {
 	]],
 }
 
-conf.q5_kdewx6m1 = {
-	name = "Qt5.15-KDE-Windows-x86_64-MinGW11.2.0",
+conf.q5_kdewx6m8 = {
+	name = "Qt5.15-KDE-Windows-x86_64-MinGW8.1.0",
 	qtVersion = "5.15.k",
 	host = "Win10",
-	toolchain = "MinGW1120-64",
+	toolchain = "MinGW810-64",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -2173,83 +2173,11 @@ conf.q5_kdemx6nf = {
 	]],
 }
 
-conf.q5_kdema6 = {
-	name = "Qt5.15-KDE-macOS-arm64_v8a-AppleClang&AppleClangVersion&",
-	qtVersion = "5.15.k",
-	host = "macOSM1",
-	configureParameter = [[
-		-prefix
-		&INSTALLROOT&
-		-opensource
-		-shared
-		-release
-		-confirm-license
-		-platform
-		macx-clang
-		-pch
-		-nomake
-		examples
-		-nomake
-		tests
-		-no-compile-examples
-		-qt-doubleconversion
-		-qt-zlib
-		-qt-pcre
-		-no-icu
-		-opengl
-		desktop
-		-no-openssl
-		-securetransport
-		-sql-sqlite
-		-make-tool
-		"make -j$PARALLELNUM"
-		-rpath
-		-webengine-proprietary-codecs
-	]],
-}
-
-conf.q5_kdema6nf = {
-	name = "Qt5.15-KDE-macOS-arm64_v8a-AppleClang&AppleClangVersion&-noFramework",
-	qtVersion = "5.15.k",
-	host = "macOSM1",
-	variant = {"-noFramework"},
-	configureParameter = [[
-		-prefix
-		&INSTALLROOT&
-		-opensource
-		-shared
-		-release
-		-confirm-license
-		-platform
-		macx-clang
-		-pch
-		-nomake
-		examples
-		-nomake
-		tests
-		-no-compile-examples
-		-qt-doubleconversion
-		-qt-zlib
-		-qt-pcre
-		-no-icu
-		-opengl
-		desktop
-		-no-openssl
-		-securetransport
-		-sql-sqlite
-		-make-tool
-		"make -j$PARALLELNUM"
-		-rpath
-		-webengine-proprietary-codecs
-		-no-framework
-	]],
-}
-
-conf.q5_kdewx6m1_aalnl = {
-	name = "Qt5.15-KDE-Android-ALL-Clang-NDKr21e-XWindows-x86_64-MinGW11.2.0",
+conf.q5_kdewx6m8_aalnl = {
+	name = "Qt5.15-KDE-Android-ALL-Clang-NDKr21e-XWindows-x86_64-MinGW8.1.0",
 	qtVersion = "5.15.k",
 	host = "Win10",
-	toolchain = "MinGW1120-64",
+	toolchain = "MinGW810-64",
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-all",
 	opensslConf = "o1aalnl",

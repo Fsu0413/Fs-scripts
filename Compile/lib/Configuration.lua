@@ -215,7 +215,6 @@ conf.Qt.generateConfTable = function(self, host, job)
 
 	local repl = {}
 
-	ret.SOURCEFILE = confDetail["sourcePackageFileName" .. confHost.makefileTemplate]
 	ret.date = string.format("%04d%02d%02d", BuildTime.year, BuildTime.month, BuildTime.day)
 	local installFolderName =  confDetail.name
 	local installRoot = ret.WORKSPACE .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. installFolderName

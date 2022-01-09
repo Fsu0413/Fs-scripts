@@ -598,7 +598,7 @@ gen.generate = function(self, para)
 	-- para.buildContent should be "Qt", "OpenSSL", "OpenSSLAndroidAll" or "QQtPatcher"
 	-- other contents in para goes to the replacement function
 	-- for buildContent other than QQtPatcher:
-	--   "MAKE" "SOURCEFILE" "CONFIGURECOMMANDLINE" "date" must be provided. Fails if either one is missing.
+	--   "MAKE" "CONFIGURECOMMANDLINE" "date" must be provided. Fails if either one is missing.
 	--   MSVC builds must provide "MSVCBATCALL". MinGW builds must not provide "MSVCBATCALL".
 	--   if there is "path" and no "PATHSET" we calculate the PATHSET for user. If both are missing the PATHSET will be "". "path" should be a table with numbered index
 	--   if there is "download" the final script will download and extract the needed files.

@@ -2173,8 +2173,8 @@ conf.q5_kdemx6nf = {
 	]],
 }
 
-conf.q5_kdemx6 = {
-	name = "Qt5.15-KDE-macOS-x86_64-AppleClang&AppleClangVersion&",
+conf.q5_kdema6 = {
+	name = "Qt5.15-KDE-macOS-arm64_v8a-AppleClang&AppleClangVersion&",
 	qtVersion = "5.15.k",
 	host = "macOSM1",
 	configureParameter = [[
@@ -2208,8 +2208,8 @@ conf.q5_kdemx6 = {
 	]],
 }
 
-conf.q5_kdemx6nf = {
-	name = "Qt5.15-KDE-macOS-x86_64-AppleClang&AppleClangVersion&-noFramework",
+conf.q5_kdema6nf = {
+	name = "Qt5.15-KDE-macOS-arm64_v8a-AppleClang&AppleClangVersion&-noFramework",
 	qtVersion = "5.15.k",
 	host = "macOSM1",
 	variant = {"-noFramework"},

@@ -1923,6 +1923,487 @@ conf.Q5mx6_aalnl = {
 
 --------------------------------------------------------------------
 
+conf.q5_kdewx3m1 = {
+	name = "Qt5.15-KDE-Windows-x86-MinGW11.2.0",
+	qtVersion = "5.15.k",
+	host = "Win10",
+	toolchain = "MinGW1120-32",
+	configureParameter = [[
+		-prefix
+		&INSTALLROOT&
+		-opensource
+		-shared
+		-release
+		-confirm-license
+		-platform
+		win32-g++
+		-pch
+		-nomake
+		examples
+		-nomake
+		tests
+		-no-compile-examples
+		-qt-doubleconversion
+		-qt-zlib
+		-qt-pcre
+		-no-icu
+		-opengl
+		dynamic
+		-ssl
+		-schannel
+		-sql-sqlite
+		-sql-odbc
+		-make-tool
+		"mingw32-make -j%PARALLELNUM%"
+	]],
+}
+
+conf.q5_kdewx6m1 = {
+	name = "Qt5.15-KDE-Windows-x86_64-MinGW11.2.0",
+	qtVersion = "5.15.k",
+	host = "Win10",
+	toolchain = "MinGW1120-64",
+	configureParameter = [[
+		-prefix
+		&INSTALLROOT&
+		-opensource
+		-shared
+		-release
+		-confirm-license
+		-platform
+		win32-g++
+		-pch
+		-nomake
+		examples
+		-nomake
+		tests
+		-no-compile-examples
+		-qt-doubleconversion
+		-qt-zlib
+		-qt-pcre
+		-no-icu
+		-opengl
+		dynamic
+		-ssl
+		-schannel
+		-sql-sqlite
+		-sql-odbc
+		-make-tool
+		"mingw32-make -j%PARALLELNUM%"
+	]],
+}
+
+conf.q5_kdewx3v9 = {
+	name = "Qt5.15-KDE-Windows-x86-VS2019-&MSVCVER&",
+	qtVersion = "5.15.k",
+	host = "Win10",
+	toolchain = "MSVC2019-32",
+	configureParameter = [[
+		-prefix
+		&INSTALLROOT&
+		-opensource
+		-shared
+		-release
+		-confirm-license
+		-platform
+		win32-msvc
+		-pch
+		-nomake
+		examples
+		-nomake
+		tests
+		-no-compile-examples
+		-qt-doubleconversion
+		-qt-zlib
+		-qt-pcre
+		-no-icu
+		-opengl
+		dynamic
+		-ssl
+		-schannel
+		-sql-sqlite
+		-sql-odbc
+		-make-tool
+		jom
+		-webengine-proprietary-codecs
+	]],
+}
+
+conf.q5_kdewx6v9 = {
+	name = "Qt5.15-KDE-Windows-x86_64-VS2019-&MSVCVER&",
+	qtVersion = "5.15.k",
+	host = "Win10",
+	toolchain = "MSVC2019-64",
+	configureParameter = [[
+		-prefix
+		&INSTALLROOT&
+		-opensource
+		-shared
+		-release
+		-confirm-license
+		-platform
+		win32-msvc
+		-pch
+		-nomake
+		examples
+		-nomake
+		tests
+		-no-compile-examples
+		-qt-doubleconversion
+		-qt-zlib
+		-qt-pcre
+		-no-icu
+		-opengl
+		dynamic
+		-ssl
+		-schannel
+		-sql-sqlite
+		-sql-odbc
+		-make-tool
+		jom
+		-webengine-proprietary-codecs
+	]],
+}
+
+conf.q5_kdewx6v2 = {
+	name = "Qt5.15-KDE-Windows-x86_64-VS2022-&MSVCVER&",
+	qtVersion = "5.15.k",
+	host = "Win10",
+	toolchain = "MSVC2022-64",
+	configureParameter = [[
+		-prefix
+		&INSTALLROOT&
+		-opensource
+		-shared
+		-release
+		-confirm-license
+		-platform
+		win32-msvc
+		-pch
+		-nomake
+		examples
+		-nomake
+		tests
+		-no-compile-examples
+		-qt-doubleconversion
+		-qt-zlib
+		-qt-pcre
+		-no-icu
+		-opengl
+		dynamic
+		-ssl
+		-schannel
+		-sql-sqlite
+		-sql-odbc
+		-make-tool
+		jom
+		-webengine-proprietary-codecs
+	]],
+}
+
+conf.q5_kdemx6 = {
+	name = "Qt5.15-KDE-macOS-x86_64-AppleClang&AppleClangVersion&",
+	qtVersion = "5.15.k",
+	host = "macOS1015",
+	configureParameter = [[
+		-prefix
+		&INSTALLROOT&
+		-opensource
+		-shared
+		-release
+		-confirm-license
+		-platform
+		macx-clang
+		-pch
+		-nomake
+		examples
+		-nomake
+		tests
+		-no-compile-examples
+		-qt-doubleconversion
+		-qt-zlib
+		-qt-pcre
+		-no-icu
+		-opengl
+		desktop
+		-no-openssl
+		-securetransport
+		-sql-sqlite
+		-make-tool
+		"make -j$PARALLELNUM"
+		-rpath
+		-webengine-proprietary-codecs
+	]],
+}
+
+conf.q5_kdemx6nf = {
+	name = "Qt5.15-KDE-macOS-x86_64-AppleClang&AppleClangVersion&-noFramework",
+	qtVersion = "5.15.k",
+	host = "macOS1015",
+	variant = {"-noFramework"},
+	configureParameter = [[
+		-prefix
+		&INSTALLROOT&
+		-opensource
+		-shared
+		-release
+		-confirm-license
+		-platform
+		macx-clang
+		-pch
+		-nomake
+		examples
+		-nomake
+		tests
+		-no-compile-examples
+		-qt-doubleconversion
+		-qt-zlib
+		-qt-pcre
+		-no-icu
+		-opengl
+		desktop
+		-no-openssl
+		-securetransport
+		-sql-sqlite
+		-make-tool
+		"make -j$PARALLELNUM"
+		-rpath
+		-webengine-proprietary-codecs
+		-no-framework
+	]],
+}
+
+conf.q5_kdemx6 = {
+	name = "Qt5.15-KDE-macOS-x86_64-AppleClang&AppleClangVersion&",
+	qtVersion = "5.15.k",
+	host = "macOSM1",
+	configureParameter = [[
+		-prefix
+		&INSTALLROOT&
+		-opensource
+		-shared
+		-release
+		-confirm-license
+		-platform
+		macx-clang
+		-pch
+		-nomake
+		examples
+		-nomake
+		tests
+		-no-compile-examples
+		-qt-doubleconversion
+		-qt-zlib
+		-qt-pcre
+		-no-icu
+		-opengl
+		desktop
+		-no-openssl
+		-securetransport
+		-sql-sqlite
+		-make-tool
+		"make -j$PARALLELNUM"
+		-rpath
+		-webengine-proprietary-codecs
+	]],
+}
+
+conf.q5_kdemx6nf = {
+	name = "Qt5.15-KDE-macOS-x86_64-AppleClang&AppleClangVersion&-noFramework",
+	qtVersion = "5.15.k",
+	host = "macOSM1",
+	variant = {"-noFramework"},
+	configureParameter = [[
+		-prefix
+		&INSTALLROOT&
+		-opensource
+		-shared
+		-release
+		-confirm-license
+		-platform
+		macx-clang
+		-pch
+		-nomake
+		examples
+		-nomake
+		tests
+		-no-compile-examples
+		-qt-doubleconversion
+		-qt-zlib
+		-qt-pcre
+		-no-icu
+		-opengl
+		desktop
+		-no-openssl
+		-securetransport
+		-sql-sqlite
+		-make-tool
+		"make -j$PARALLELNUM"
+		-rpath
+		-webengine-proprietary-codecs
+		-no-framework
+	]],
+}
+
+conf.q5_kdewx6m1_aalnl = {
+	name = "Qt5.15-KDE-Android-ALL-Clang-NDKr21e-XWindows-x86_64-MinGW11.2.0",
+	qtVersion = "5.15.k",
+	host = "Win10",
+	toolchain = "MinGW1120-64",
+	target = "Android-21",
+	toolchainT = "Android-21-r21e-all",
+	opensslConf = "o1aalnl",
+	androidSdkVersion = "29",
+	configureParameter = [[
+		-prefix
+		/
+		-opensource
+		-shared
+		-release
+		-confirm-license
+		-platform
+		win32-g++
+		-xplatform
+		android-clang
+		-nomake
+		examples
+		-nomake
+		tests
+		-no-compile-examples
+		-qt-doubleconversion
+		-qt-zlib
+		-qt-pcre
+		-no-icu
+		-opengl
+		es2
+		-ssl
+		-openssl-linked
+		-I
+		&OPENSSLDIR&\include
+		-L
+		&OPENSSLDIR&/lib/
+		-sql-sqlite
+		-make-tool
+		"mingw32-make -j%PARALLELNUM%"
+		-android-sdk
+		&ANDROIDSDKROOT&
+		-android-ndk
+		&ANDROIDNDKROOT&
+		-android-ndk-platform
+		android-21
+		-android-ndk-host
+		windows-x86_64
+		-skip
+		qtscript
+	]],
+}
+
+conf.q5_kdelx6_aalnl = {
+	name = "Qt5.15-KDE-Android-ALL-Clang-NDKr21e-xLinux-x86_64-gcc8.5.0",
+	qtVersion = "5.15.k",
+	host = "CentOS8",
+	target = "Android-21",
+	toolchainT = "Android-21-r21e-all",
+	opensslConf = "o1aalnl",
+	androidSdkVersion = "29",
+	configureParameter = [[
+		-prefix
+		/
+		-opensource
+		-shared
+		-release
+		-confirm-license
+		-platform
+		linux-g++
+		-xplatform
+		android-clang
+		-nomake
+		examples
+		-nomake
+		tests
+		-no-compile-examples
+		-qt-doubleconversion
+		-qt-zlib
+		-qt-pcre
+		-no-icu
+		-opengl
+		es2
+		-ssl
+		-openssl-linked
+		-I
+		&OPENSSLDIR&/include/
+		-L
+		&OPENSSLDIR&/lib/
+		-sql-sqlite
+		-make-tool
+		"make -j$PARALLELNUM"
+		-android-sdk
+		&ANDROIDSDKROOT&
+		-android-ndk
+		&ANDROIDNDKROOT&
+		-android-ndk-platform
+		android-21
+		-android-ndk-host
+		linux-x86_64
+		-skip
+		qtscript
+	]],
+}
+
+conf.q5_kdemx6_aalnl = {
+	name = "Qt5.15-KDE-Android-ALL-Clang-NDKr21e-xmacOS-x86_64-AppleClang&AppleClangVersion&",
+	qtVersion = "5.15.k",
+	host = "macOS1015",
+	target = "Android-21",
+	toolchainT = "Android-21-r21e-all",
+	opensslConf = "o1aalnl",
+	androidSdkVersion = "29",
+	configureParameter = [[
+		-prefix
+		/
+		-opensource
+		-shared
+		-release
+		-confirm-license
+		-platform
+		macx-clang
+		-xplatform
+		android-clang
+		-nomake
+		examples
+		-nomake
+		tests
+		-no-compile-examples
+		-qt-doubleconversion
+		-qt-zlib
+		-qt-pcre
+		-no-icu
+		-opengl
+		es2
+		-ssl
+		-openssl-linked
+		-I
+		&OPENSSLDIR&/include/
+		-L
+		&OPENSSLDIR&/lib/
+		-sql-sqlite
+		-make-tool
+		"make -j$PARALLELNUM"
+		-android-sdk
+		&ANDROIDSDKROOT&
+		-android-ndk
+		&ANDROIDNDKROOT&
+		-android-ndk-platform
+		android-21
+		-android-ndk-host
+		darwin-x86_64
+		-skip
+		qtscript
+	]],
+}
+
+--------------------------------------------------------------------
+
 conf.q6_2wx6v9 = {
 	name = "Qt6.2.2-Windows-x86_64-VS2019-&MSVCVER&",
 	qtVersion = "6.2.2",
@@ -3306,15 +3787,15 @@ for name, value in pairs(conf) do
 	end
 
 	local qtVersionSplit = split(value.qtVersion, ".")
-	local qtSourcePackagePrefix = "qt-everywhere-src-"
-	if ((value.qtVersion == "5.15.2-6") or (value.qtVersion == "6.2.2")) and (value.host == "Win10") then
-		qtSourcePackagePrefix = "qt-src-"
+	if value.qtVersion == "5.15.k" then
+		value.sourcePackageBaseName = "qt5-kde"
+	else
+		local qtSourcePackagePrefix = "qt-everywhere-src-"
+		if ((value.qtVersion == "5.15.2-6") or (value.qtVersion == "6.2.2")) and (value.host == "Win10") then
+			qtSourcePackagePrefix = "qt-src-"
+		end
+		value.sourcePackageBaseName = qtSourcePackagePrefix .. value.qtVersion
 	end
-	local qtSourcePackageSuffix = ".tar.xz"
-	value.sourcePackageFileNameunix = qtSourcePackagePrefix .. value.qtVersion .. qtSourcePackageSuffix
-	value.sourcePackageFileNamewin = qtSourcePackagePrefix .. value.qtVersion .. ".zip"
-	value.sourcePackageBaseName = qtSourcePackagePrefix .. value.qtVersion
-
 	-- config file
 	if tonumber(qtVersionSplit[1]) == 5 then
 		value.configFile = { "config.log", "config.opt", "config.summary" }

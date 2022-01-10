@@ -343,6 +343,24 @@ conf.o3wx6v9 = {
 	]],
 }
 
+conf.o3wx6v9st = {
+	name = "OpenSSL3.0.1-Windows-x86_64-VS2019-&MSVCVER&-static",
+	opensslVersion = "3.0.1",
+	host = "Win10",
+	toolchain = "MSVC2019-64",
+	variant = {"-static"},
+	staticlibPath = { "lib\\libssl.lib", "lib\\libcrypto.lib" },
+	configureParameter = [[
+		no-asm
+		no-shared
+		--prefix=&INSTALLROOT&
+		--openssldir=&INSTALLROOT&\ssl
+		VC-WIN64A
+		-FS
+	]],
+}
+
+
 conf.o3wx6v2 = {
 	name = "OpenSSL3.0.1-Windows-x86_64-VS2022-&MSVCVER&",
 	opensslVersion = "3.0.1",

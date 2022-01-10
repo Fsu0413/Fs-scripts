@@ -2374,7 +2374,7 @@ conf.q6_2wx6v9st = {
 	host = "Win10",
 	toolchain = "MSVC2019-64",
 	variant = {"-static"},
-	-- opensslConf = "o1wx6v9", -- need a static version after build passed
+	opensslConf = "o3wx6v9st",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -2431,7 +2431,7 @@ conf.q6_2wx6v9sf = {
 	host = "Win10",
 	toolchain = "MSVC2019-64",
 	variant = {"-staticFull"},
-	-- opensslConf = "o1wx6v9", -- need a static version after build passed
+	opensslConf = "o3wx6v9st",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"

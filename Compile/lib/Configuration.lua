@@ -56,7 +56,10 @@ conf.host.win = {
 		["r23b"] = "D:\\android-ndk-r23b",
 	},
 	["androidNdkHost"] = "windows-x86_64",
-	["emscriptenPath"] = "D:\\emsdk\\",
+	["emscriptenPath"] = {
+		["2.0.14"] = "D:\\emsdk-2.0.14\\",
+		["3.0.0"] = "D:\\emsdk-3.0.0\\",
+	},
 
 	["cMakePath"] = {
 		["20"] = {"D:\\cmake-3.20.2-windows-x86_64\\bin", "D:\\ninja"},
@@ -112,7 +115,10 @@ conf.host.linux = {
 	["androidNdkHost"] = "linux-x86_64",
 	["sourcePackagePath"] = "/opt/sources/",
 	["buildRootPath"] = "/opt/build/",
-	["emscriptenPath"] = "/opt/env/emsdk/",
+	["emscriptenPath"] = {
+		["2.0.14"] = "/opt/env/emsdk-2.0.14/",
+		["3.0.0"] = "/opt/env/emsdk-3.0.0/",
+	},
 }
 
 conf.host.mac = {
@@ -135,7 +141,10 @@ conf.host.mac = {
 	["androidNdkHost"] = "darwin-x86_64",
 	["sourcePackagePath"] = "/opt/sources/",
 	["buildRootPath"] = "/opt/build/",
-	["emscriptenPath"] = "/opt/env/emsdk/",
+	["emscriptenPath"] = {
+		["2.0.14"] = "/opt/env/emsdk-2.0.14/",
+		["3.0.0"] = "/opt/env/emsdk-3.0.0/",
+	},
 }
 
 conf.host.macM1 = {
@@ -164,7 +173,6 @@ conf.host.macLegacy = {
 	["androidNdkHost"] = "darwin-x86_64",
 	["sourcePackagePath"] = "/Volumes/opt/sources/",
 	["buildRootPath"] = "/Volumes/opt/build/",
-	["emscriptenPath"] = "/opt/env/emsdk/",
 }
 
 --[[ conf.host.linuxarm = {} ]] -- Todo: Prepare an arm linux host. It should be hosted on my old mobile phone, I assumed.
@@ -250,20 +258,14 @@ conf.Qt.generateConfTable = function(self, host, job)
 				error("Android - confDetail.androidSdkVersion is not set")
 			end
 		elseif string.sub(confDetail.toolchainT, 1, 10) == "emscripten" then -- WebAssembly
-			local matchStr = "emscripten%-((%d+)%.(%d+)%.%d+)"
-			local emsdkVer, ver1, ver2 = string.match(confDetail.toolchainT, matchStr)
+			local matchStr = "^emscripten%-(.+)$"
+			local emsdkVer = string.match(confDetail.toolchainT, matchStr)
 			if emsdkVer then
-				-- emsdk renamed their 1.38.x releases from "sdk-1.38.x-64bit" to "sdk-fastcomp-1.38.x-64bit", so...
-				-- emsdk 1.39.8 does not work anymore after emsdk 2.0.14 is installed. Poor emsdk doesn't provide a way for downgrade...
-				if ver1 == "1" then
-					if ver2 == "38" then
-						emsdkVer = "fastcomp-" .. emsdkVer
-					end
-					emsdkVer = "sdk-" .. emsdkVer .. "-64bit"
-				end
-				ret.emBat = confHost.emscriptenPath .. "emsdk activate " .. emsdkVer
+				-- Since emsdk doesn't provide a way for downgrade, we have to split each emsdk installation.
+				-- Currently all emsdk version we are using can be simply matched using only its version number, so ...
+				ret.emBat = confHost.emscriptenPath[emsdkVer] .. "emsdk activate " .. emsdkVer
 				if confHost.makefileTemplate == "unix" then
-					ret.emSource =  confHost.emscriptenPath .. "emsdk_env.sh"
+					ret.emSource = confHost.emscriptenPath[emsdkVer] .. "/emsdk_env.sh"
 				end
 			else
 				error("WebAssembly - confDetail.toolchainT is not matched")

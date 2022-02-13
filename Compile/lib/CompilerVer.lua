@@ -25,8 +25,11 @@ end
 
 local parseVersionNum = function(str)
 	local major, minor, patch
-	string.gsub(str, "(%d+)%.(%d+)%.(%d+)", function(...) major, minor, patch = ...  end )
-	return major, minor, patch
+	local match = { string.match(str, "(%d+)%.(%d+)%.(%d+)") }
+	if #match > 0 then
+		return setmetatable(match, { __tostring = function(m) return m[1] .. "." .. m[2] .. "." .. m[3] end})
+	end
+	return nil
 end
 
 local runShScript = function(script)

@@ -360,7 +360,6 @@ conf.o3wx6v9st = {
 	]],
 }
 
-
 conf.o3wx6v2 = {
 	name = "OpenSSL3.0.1-Windows-x86_64-VS2022-&MSVCVER&",
 	opensslVersion = "3.0.1",
@@ -370,6 +369,23 @@ conf.o3wx6v2 = {
 	configureParameter = [[
 		no-asm
 		shared
+		--prefix=&INSTALLROOT&
+		--openssldir=&INSTALLROOT&\ssl
+		VC-WIN64A
+		-FS
+	]],
+}
+
+conf.o3wx6v2st = {
+	name = "OpenSSL3.0.1-Windows-x86_64-VS2022-&MSVCVER&-static",
+	opensslVersion = "3.0.1",
+	host = "Win10",
+	toolchain = "MSVC2022-64",
+	variant = {"-static"},
+	staticlibPath = { "lib\\libssl.lib", "lib\\libcrypto.lib" },
+	configureParameter = [[
+		no-asm
+		no-shared
 		--prefix=&INSTALLROOT&
 		--openssldir=&INSTALLROOT&\ssl
 		VC-WIN64A
@@ -567,9 +583,9 @@ conf.o3aaln324 = {
 
 local MsvcVer = {
 	["MSVC2015"] = "14",
-	["MSVC2017"] = "15.9.43",
-	["MSVC2019"] = "16.11.9",
-	["MSVC2022"] = "17.0.5",
+	["MSVC2017"] = "15.9.44",
+	["MSVC2019"] = "16.11.10",
+	["MSVC2022"] = "17.0.6",
 }
 
 local AppleClangVersion = {

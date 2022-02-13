@@ -56,15 +56,8 @@ compilerVer.msvc = function(envBat)
 	return parseVersionNum(ret)
 end
 
-compilerVer.gcc = function(isWin, path, executableName)
+local gccCommon = function(isWin, executableName)
 	local script = ""
-	if path then
-		if isWin then
-			script = "@set path=" .. path .. ";%path%\r\n@"
-		else
-			script = "PATH=\"" .. path .. ":$PATH\"; export PATH\n"
-		end
-	end
 
 	if not executableName then
 		executableName = "gcc"
@@ -76,7 +69,22 @@ compilerVer.gcc = function(isWin, path, executableName)
 	else
 		script = script .. "\n"
 	end
+
+	return script
+end
+
+compilerVer.gcc = function(isWin, path, executableName)
+	local script = ""
+	if path then
+		if isWin then
+			script = "@set path=" .. path .. ";%path%\r\n@"
+		else
+			script = "PATH=\"" .. path .. ":$PATH\"; export PATH\n"
+		end
+	end
 	
+	script = script .. gccCommon(isWin, executableName)
+
 	local ret
 	if isWin then
 		ret = runCmdScript(script)
@@ -88,7 +96,30 @@ compilerVer.gcc = function(isWin, path, executableName)
 end
 
 compilerVer.appleClang = function()
-	return compilerVer.gcc(nil, nil, "clang")
+	local ret = runShScript(gccCommon(nil, "clang"))
+	return parseVersionNum(ret)
+end
+
+compilerVer.emcc = function(isWin, path)
+	local script = ""
+	if path then
+		if isWin then
+			script = "@call " .. path .. "\\emsdk_env.bat > NUL 2> NUL\r\n@"
+		else
+			script = ". " .. path .. "/emsdk_env.sh > /dev/null 2> /dev/null\n"
+		end
+	end
+	
+	script = script .. gccCommon(isWin, "emcc")
+
+	local ret
+	if isWin then
+		ret = runCmdScript(script)
+	else
+		ret = runShScript(script)
+	end
+
+	return parseVersionNum(ret)
 end
 
 return compilerVer

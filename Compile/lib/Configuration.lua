@@ -156,6 +156,13 @@ conf.host.macM1 = {
 	["pathSep"] = '/',
 	["sourcePackagePath"] = "/opt/sources/",
 	["buildRootPath"] = "/opt/build/",
+	["androidNdkPath"] = {
+		["r23b"] = "/Applications/AndroidNDK7779620.app/Contents/NDK/", -- NDK r23b only distributes as APP bundle, so we install the APP in /Applications.
+	},
+	["androidNdkHost"] = "darwin-x86_64",
+	["emscriptenPath"] = {
+		["3.0.0"] = "/opt/env/emsdk-3.0.0/",
+	},
 }
 
 conf.host.macLegacy = {

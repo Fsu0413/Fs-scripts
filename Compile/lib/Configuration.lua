@@ -156,6 +156,9 @@ conf.host.macM1 = {
 	["pathSep"] = '/',
 	["sourcePackagePath"] = "/opt/sources/",
 	["buildRootPath"] = "/opt/build/",
+	["androidSdkPath"] = {
+		["Latest"] = "/opt/env/android-sdk-mac-2/",
+	},
 	["androidNdkPath"] = {
 		["r23b"] = "/Applications/AndroidNDK7779620.app/Contents/NDK/", -- NDK r23b only distributes as APP bundle, so we install the APP in /Applications.
 	},

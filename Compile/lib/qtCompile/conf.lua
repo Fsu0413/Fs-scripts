@@ -4777,7 +4777,7 @@ for name, value in pairs(conf) do
 		value.sourcePackageBaseName = "qt5-kde"
 	else
 		local qtSourcePackagePrefix = "qt-everywhere-src-"
-		if ((value.qtVersion == "5.15.2-6") or (value.qtVersion == "6.2.3")) and (value.host == "Win10") then
+		if ((value.qtVersion == "5.15.2-6") or (value.qtVersion == "6.2.3") or (value.qtVersion == "6.3.0-beta1")) and (value.host == "Win10") then
 			qtSourcePackagePrefix = "qt-src-"
 		end
 		value.sourcePackageBaseName = qtSourcePackagePrefix .. value.qtVersion

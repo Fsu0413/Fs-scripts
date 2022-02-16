@@ -585,7 +585,7 @@ local MsvcVer = {
 	["MSVC2015"] = "14",
 	["MSVC2017"] = "15.9.44",
 	["MSVC2019"] = "16.11.10",
-	["MSVC2022"] = "17.0.6",
+	["MSVC2022"] = "17.1.0",
 }
 
 local AppleClangVersion = {

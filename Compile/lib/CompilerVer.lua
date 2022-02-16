@@ -98,11 +98,6 @@ compilerVer.gcc = function(isWin, path, executableName)
 	return parseVersionNum(ret)
 end
 
-compilerVer.appleClang = function()
-	local ret = runShScript(gccCommon(nil, "clang"))
-	return parseVersionNum(ret)
-end
-
 compilerVer.emcc = function(isWin, path)
 	local script = ""
 	if path then

@@ -63,7 +63,7 @@ conf.host.win = {
 
 	["cMakePath"] = {
 		["20"] = {"D:\\cmake-3.20.2-windows-x86_64\\bin", "D:\\ninja"},
-		["Latest"] = {"D:\\cmake-3.22.0-windows-x86_64\\bin", "D:\\ninja"},
+		["Latest"] = {"D:\\cmake-3.22.2-windows-x86_64\\bin", "D:\\ninja"},
 	}
 }
 

@@ -846,6 +846,78 @@ conf.Q2lx6st = {
 	]],
 }
 
+conf.Q2mx6 = {
+	name = "Qt5.12.12-macOS-x86_64-AppleClang&AppleClangVersion&",
+	qtVersion = "5.12.12",
+	host = "macOSLegacyLegacy",
+	configureParameter = [[
+		-prefix
+		&INSTALLROOT&
+		-opensource
+		-shared
+		-release
+		-confirm-license
+		-platform
+		macx-clang
+		-pch
+		-nomake
+		examples
+		-nomake
+		tests
+		-no-compile-examples
+		-qt-doubleconversion
+		-qt-zlib
+		-qt-pcre
+		-no-icu
+		-opengl
+		desktop
+		-no-openssl
+		-securetransport
+		-sql-sqlite
+		-make-tool
+		"make -j$PARALLELNUM"
+		-rpath
+		-webengine-proprietary-codecs
+	]],
+}
+
+conf.Q2mx6nf = {
+	name = "Qt5.12.12-macOS-x86_64-AppleClang&AppleClangVersion&-noFramework",
+	qtVersion = "5.12.12",
+	host = "macOSLegacyLegacy",
+	variant = {"-noFramework"},
+	configureParameter = [[
+		-prefix
+		&INSTALLROOT&
+		-opensource
+		-shared
+		-release
+		-confirm-license
+		-platform
+		macx-clang
+		-pch
+		-nomake
+		examples
+		-nomake
+		tests
+		-no-compile-examples
+		-qt-doubleconversion
+		-qt-zlib
+		-qt-pcre
+		-no-icu
+		-opengl
+		desktop
+		-no-openssl
+		-securetransport
+		-sql-sqlite
+		-make-tool
+		"make -j$PARALLELNUM"
+		-rpath
+		-webengine-proprietary-codecs
+		-no-framework
+	]],
+}
+
 conf.q5_12mLx6st = {
 	name = "Qt5.12.12-macOSLegacy-x86_64-AppleClang&AppleClangVersion&-static",
 	qtVersion = "5.12.12",
@@ -5083,6 +5155,7 @@ local AppleClangVersion = {
 	["macOS1015"] = "13.0.0",
 	["macOSM1"] = "13.0.0",
 	["macOSLegacy"] = "12.0.5",
+	["macOSLegacyLegacy"] = "12.0.0",
 }
 
 local Qt6StaticConf = {

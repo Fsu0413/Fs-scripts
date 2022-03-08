@@ -610,7 +610,6 @@ conf.hostToConfMap = {
 	["CentOS8"] = "linux",
 	["macOS1015"] = "mac",
 	["macOSLegacy"] = "macLegacy",
-	["macOSLegacyLegacy"] = "macLegacy",
 	["macOSM1"] = "macM1",
 }
 

@@ -40,10 +40,10 @@ conf.host.win = {
 		-- MinGW toolchains with Clang / LLVM, currently used in Qt 6 only
 		-- LLVM always acts as an cross compiler, but the target libraries are architecture-dependent
 		-- Since some binaries built also acts as host tool, we should add the target libraries to PATH too, otherwise the program won't start
-		["MinGWLLVM-msvcrt13-64"] = {"D:\\mingw-w64\\llvm-mingw-20211002-msvcrt-x86_64\\x86_64-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20211002-msvcrt-x86_64\\bin"},
-		["MinGWLLVM-msvcrt13-32"] = {"D:\\mingw-w64\\llvm-mingw-20211002-msvcrt-x86_64\\i686-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20211002-msvcrt-x86_64\\bin"},
-		["MinGWLLVM-ucrt13-64"] = {"D:\\mingw-w64\\llvm-mingw-20211002-ucrt-x86_64\\x86_64-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20211002-ucrt-x86_64\\bin"},
-		["MinGWLLVM-ucrt13-32"] = {"D:\\mingw-w64\\llvm-mingw-20211002-ucrt-x86_64\\i686-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20211002-ucrt-x86_64\\bin"},
+		["MinGWLLVM-msvcrt14-64"] = {"D:\\mingw-w64\\llvm-mingw-20220323-msvcrt-x86_64\\x86_64-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20220323-msvcrt-x86_64\\bin"},
+		["MinGWLLVM-msvcrt14-32"] = {"D:\\mingw-w64\\llvm-mingw-20220323-msvcrt-x86_64\\i686-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20220323-msvcrt-x86_64\\bin"},
+		["MinGWLLVM-ucrt14-64"] = {"D:\\mingw-w64\\llvm-mingw-20220323-ucrt-x86_64\\x86_64-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20220323-ucrt-x86_64\\bin"},
+		["MinGWLLVM-ucrt14-32"] = {"D:\\mingw-w64\\llvm-mingw-20220323-ucrt-x86_64\\i686-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20220323-ucrt-x86_64\\bin"},
 	},
 	["sourcePackagePath"] = "D:\\Qt\\",
 	["buildRootPath"] = "D:\\Qt\\", -- On Windows, the build root should be same with source package

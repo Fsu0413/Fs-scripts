@@ -3057,10 +3057,10 @@ conf.q6_2wx6m1sf = {
 }
 
 conf.q6_2wx6mu = {
-	name = "Qt6.2.4-Windows-x86_64-MinGWLLVM-ucrt13",
+	name = "Qt6.2.4-Windows-x86_64-llvm-mingw-14.0.0-ucrt",
 	qtVersion = "6.2.4",
 	host = "Win10",
-	toolchain = "MinGWLLVM-ucrt13-64",
+	toolchain = "MinGWLLVM-ucrt14-64",
 	opensslConf = "o3wx6mu",
 	useCMake = "Latest",
 	configureParameter = [[
@@ -3096,10 +3096,10 @@ conf.q6_2wx6mu = {
 }
 
 conf.q6_2wx6mv = {
-	name = "Qt6.2.4-Windows-x86_64-MinGWLLVM-msvcrt13",
+	name = "Qt6.2.4-Windows-x86_64-llvm-mingw-14.0.0-msvcrt",
 	qtVersion = "6.2.4",
 	host = "Win10",
-	toolchain = "MinGWLLVM-msvcrt13-64",
+	toolchain = "MinGWLLVM-msvcrt14-64",
 	opensslConf = "o3wx6mv",
 	useCMake = "Latest",
 	configureParameter = [[
@@ -4232,10 +4232,10 @@ conf.q6_3wx6m1st = {
 }
 
 conf.q6_3wx6mu = {
-	name = "Qt6.3.0-beta3-Windows-x86_64-MinGWLLVM-ucrt13",
+	name = "Qt6.3.0-beta3-Windows-x86_64-llvm-mingw-14.0.0-ucrt",
 	qtVersion = "6.3.0-beta3",
 	host = "Win10",
-	toolchain = "MinGWLLVM-ucrt13-64",
+	toolchain = "MinGWLLVM-ucrt14-64",
 	opensslConf = "o3wx6mu",
 	useCMake = "Latest",
 	configureParameter = [[
@@ -4271,10 +4271,10 @@ conf.q6_3wx6mu = {
 }
 
 conf.q6_3wx6mv = {
-	name = "Qt6.3.0-beta3-Windows-x86_64-MinGWLLVM-msvcrt13",
+	name = "Qt6.3.0-beta3-Windows-x86_64-llvm-mingw-14.0.0-msvcrt",
 	qtVersion = "6.3.0-beta3",
 	host = "Win10",
-	toolchain = "MinGWLLVM-msvcrt13-64",
+	toolchain = "MinGWLLVM-msvcrt14-64",
 	opensslConf = "o3wx6mv",
 	useCMake = "Latest",
 	configureParameter = [[

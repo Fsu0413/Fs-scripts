@@ -84,8 +84,8 @@ conf.host.msys = {
 		["MinGW810-64"] = "/d/mingw-w64/8.1.0/mingw64/bin/",
 		["MinGW1120-64"] = "/d/mingw-w64/11.2.0/mingw64/bin/",
 
-		["MinGWLLVM-msvcrt13-64"] = {"/d/mingw-w64/llvm-mingw-20211002-msvcrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20211002-msvcrt-x86_64/bin"},
-		["MinGWLLVM-ucrt13-64"] = {"/d/mingw-w64/llvm-mingw-20211002-ucrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20211002-ucrt-x86_64/bin"},
+		["MinGWLLVM-msvcrt14-64"] = {"/d/mingw-w64/llvm-mingw-20220323-msvcrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20220323-msvcrt-x86_64/bin"},
+		["MinGWLLVM-ucrt14-64"] = {"/d/mingw-w64/llvm-mingw-20220323-ucrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20220323-ucrt-x86_64/bin"},
 	},
 	["sourcePackagePath"] = "/d/Qt/",
 	["androidNdkPath"] = {

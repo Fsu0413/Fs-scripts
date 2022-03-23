@@ -1,0 +1,15 @@
+name: update
+
+on: [push]
+
+jobs:
+  osdn:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: yehan-coding/yehan-git-sync@v1
+      with:
+        ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+        source_repo_url: git@github.com:${{ github.repository }}.git
+        source_branch: master
+        destination_repo_url: fsu0413@git.pf.osdn.net:/gitroot/f/fs/fsu0413/Fs-scripts.git
+        destination_branch: master

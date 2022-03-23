@@ -418,10 +418,10 @@ conf.o3wx6m1 = {
 }
 
 conf.o3wx6mu = {
-	name = "OpenSSL3.0.2-Windows-x86_64-MinGWLLVM-ucrt13",
+	name = "OpenSSL3.0.2-Windows-x86_64-llvm-mingw-14.0.0-ucrt",
 	opensslVersion = "3.0.2",
 	host = "Win10SH",
-	toolchain = "MinGWLLVM-ucrt13-64",
+	toolchain = "MinGWLLVM-ucrt14-64",
 	libPath = { "bin\\libssl-3-x64.dll", "bin\\libcrypto-3-x64.dll" },
 	staticlibPath = { "lib\\libssl.a", "lib\\libcrypto.a" },
 	clangTriplet = "x86_64-w64-mingw32",
@@ -436,10 +436,10 @@ conf.o3wx6mu = {
 }
 
 conf.o3wx6mv = {
-	name = "OpenSSL3.0.2-Windows-x86_64-MinGWLLVM-msvcrt13",
+	name = "OpenSSL3.0.2-Windows-x86_64-llvm-mingw-14.0.0-msvcrt",
 	opensslVersion = "3.0.2",
 	host = "Win10SH",
-	toolchain = "MinGWLLVM-msvcrt13-64",
+	toolchain = "MinGWLLVM-msvcrt14-64",
 	libPath = { "bin\\libssl-3-x64.dll", "bin\\libcrypto-3-x64.dll" },
 	staticlibPath = { "lib\\libssl.a", "lib\\libcrypto.a" },
 	clangTriplet = "x86_64-w64-mingw32",

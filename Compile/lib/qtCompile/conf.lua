@@ -1567,7 +1567,7 @@ conf.Q5wx6v5 = {
 
 conf.Q5wx3v7 = {
 	name = "Qt5.15.3-Windows-x86-VS2017-&MSVCVER&",
-	qtVersion = "5.15.3-5",
+	qtVersion = "5.15.3-6",
 	host = "Win10",
 	toolchain = "MSVC2017-32",
 	configureParameter = [[
@@ -1604,7 +1604,7 @@ conf.Q5wx3v7 = {
 
 conf.Q5wx6v7 = {
 	name = "Qt5.15.3-Windows-x86_64-VS2017-&MSVCVER&",
-	qtVersion = "5.15.3-5",
+	qtVersion = "5.15.3-6",
 	host = "Win10",
 	toolchain = "MSVC2017-64",
 	configureParameter = [[
@@ -1641,7 +1641,7 @@ conf.Q5wx6v7 = {
 
 conf.Q5wx3v9 = {
 	name = "Qt5.15.3-Windows-x86-VS2019-&MSVCVER&",
-	qtVersion = "5.15.3-5",
+	qtVersion = "5.15.3-6",
 	host = "Win10",
 	toolchain = "MSVC2019-32",
 	configureParameter = [[
@@ -1677,7 +1677,7 @@ conf.Q5wx3v9 = {
 
 conf.Q5wx3v9sf = {
 	name = "Qt5.15.3-Windows-x86-VS2019-&MSVCVER&-staticFull",
-	qtVersion = "5.15.3-5",
+	qtVersion = "5.15.3-6",
 	host = "Win10",
 	toolchain = "MSVC2019-32",
 	variant = {"-staticFull"},
@@ -1719,7 +1719,7 @@ conf.Q5wx3v9sf = {
 
 conf.Q5wx6v9 = {
 	name = "Qt5.15.3-Windows-x86_64-VS2019-&MSVCVER&",
-	qtVersion = "5.15.3-5",
+	qtVersion = "5.15.3-6",
 	host = "Win10",
 	toolchain = "MSVC2019-64",
 	configureParameter = [[
@@ -1755,7 +1755,7 @@ conf.Q5wx6v9 = {
 
 conf.Q5wx6v9sf = {
 	name = "Qt5.15.3-Windows-x86_64-VS2019-&MSVCVER&-staticFull",
-	qtVersion = "5.15.3-5",
+	qtVersion = "5.15.3-6",
 	host = "Win10",
 	toolchain = "MSVC2019-64",
 	variant = {"-staticFull"},
@@ -1797,7 +1797,7 @@ conf.Q5wx6v9sf = {
 
 conf.Q5wx6v2 = {
 	name = "Qt5.15.3-Windows-x86_64-VS2022-&MSVCVER&",
-	qtVersion = "5.15.3-5",
+	qtVersion = "5.15.3-6",
 	host = "Win10",
 	toolchain = "MSVC2022-64",
 	configureParameter = [[
@@ -1983,7 +1983,7 @@ conf.Q5wx6m8sf = {
 
 conf.Q5mx6 = {
 	name = "Qt5.15.3-macOS-x86_64-AppleClang&AppleClangVersion&",
-	qtVersion = "5.15.3-5",
+	qtVersion = "5.15.3-6",
 	host = "macOSLegacy",
 	configureParameter = [[
 		-prefix
@@ -2018,7 +2018,7 @@ conf.Q5mx6 = {
 
 conf.Q5mx6nf = {
 	name = "Qt5.15.3-macOS-x86_64-AppleClang&AppleClangVersion&-noFramework",
-	qtVersion = "5.15.3-5",
+	qtVersion = "5.15.3-6",
 	host = "macOSLegacy",
 	variant = {"-noFramework"},
 	configureParameter = [[
@@ -5167,7 +5167,7 @@ for name, value in pairs(conf) do
 		value.sourcePackageBaseName = "qt5-kde"
 	else
 		local qtSourcePackagePrefix = "qt-everywhere-src-"
-		if ((value.qtVersion == "5.15.3-5") or (value.qtVersion == "6.2.4") or (value.qtVersion == "6.3.0-beta3")) and (value.host == "Win10") then
+		if ((value.qtVersion == "5.15.3-6") or (value.qtVersion == "6.2.4") or (value.qtVersion == "6.3.0-beta3")) and (value.host == "Win10") then
 			qtSourcePackagePrefix = "qt-src-"
 		end
 		value.sourcePackageBaseName = qtSourcePackagePrefix .. value.qtVersion

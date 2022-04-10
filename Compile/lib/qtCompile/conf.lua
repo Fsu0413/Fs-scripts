@@ -1827,7 +1827,8 @@ conf.Q5wx6v2 = {
 		-sql-odbc
 		-make-tool
 		jom
-		-webengine-proprietary-codecs
+		-skip
+		qtwebengine
 	]],
 }
 
@@ -4076,8 +4077,7 @@ conf.q6_3wx6v2 = {
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
 		-DFEATURE_system_sqlite=OFF
-		-DFEATURE_webengine_proprietary_codecs=ON
-		-DFEATURE_qtpdf_build=ON
+		-DBUILD_qtwebengine=OFF
 		-DBUILD_qtopcua=OFF
 	]],
 }

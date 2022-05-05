@@ -5106,9 +5106,9 @@ setmetatable(QQtPatcherVersion, versionMo)
 
 local MsvcVer = {
 	["MSVC2015"] = "14",
-	["MSVC2017"] = "15.9.45",
-	["MSVC2019"] = "16.11.11",
-	["MSVC2022"] = "17.1.3",
+	["MSVC2017"] = "15.9.47",
+	["MSVC2019"] = "16.11.13",
+	["MSVC2022"] = "17.1.6",
 }
 
 local AppleClangVersion = {

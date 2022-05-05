@@ -4,10 +4,11 @@ local conf = {}
 --[[
 abbrs:
 	Qt Versions:
-		Q2: Qt 5.12.12/Previous Qt 5 LTS
-		Q5: Qt 5.15.3/Latest Qt 5 LTS w/ latest QtWebEngine and latest QtScript
-		q6_2: Qt 6.2.4/Latest Qt 6 LTS w/ latest QtWebEngine and latest QtScript
-		q6_3: Qt 6.3.0 (Beta)
+		Q2 / q5_12: Qt 5.12.12/Previous Qt 5 LTS
+		Q5: Qt 5.15.3/Previous Qt 5 LTS w/ latest QtWebEngine and latest QtScript
+		q5_kde: Qt 5.15.x KDE maintained version w/ latest QtWebEngine and latest QtScript
+		q6_2: Qt 6.2.4/Latest Qt 6 LTS w/ latest QtWebEngine
+		q6_3: Qt 6.3.0
 	If prefixed with a lower-case "m", it is a modified Qt version
 
 	Platforms:
@@ -35,8 +36,8 @@ abbrs:
 		m7: MinGW-w64, with GCC 7.3.0
 		m8: MinGW-w64, with GCC 8.1.0
 		m1: MinGW-w64, with GCC 11.2.0
-		mv: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 13
-		mu: LLVM/Clang based MinGW-w64, ucrt, with LLVM 13
+		mv: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 14
+		mu: LLVM/Clang based MinGW-w64, ucrt, with LLVM 14
 		nl: Android NDK r21e/Previous LTS
 		n3: Android NDK r23b/Latest LTS
 	If omitted, it use a toolchain in default PATH, which should be AppleClang in macOS, or GCC in Linux.

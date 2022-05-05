@@ -30,8 +30,8 @@ abbrs:
 		m7: MinGW-w64, with GCC 7.3.0
 		m8: MinGW-w64, with GCC 8.1.0
 		m1: MinGW-w64, with GCC 11.2.0
-		mv: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 13
-		mu: LLVM/Clang based MinGW-w64, ucrt, with LLVM 13
+		mv: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 14
+		mu: LLVM/Clang based MinGW-w64, ucrt, with LLVM 14
 		nl: Android NDK r21e/Previous LTS
 		n3: Android NDK r23b/Latest LTS
 	If omitted, it use a toolchain in default PATH, which should be AppleClang in macOS, or GCC in Linux.

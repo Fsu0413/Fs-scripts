@@ -61,11 +61,14 @@ conf.host.win = {
 		["2.0.14"] = "D:\\emsdk-2.0.14\\",
 		["3.0.0"] = "D:\\emsdk-3.0.0\\",
 	},
-
 	["cMakePath"] = {
 		["20"] = {"D:\\cmake-3.20.2-windows-x86_64\\bin", "D:\\ninja"},
 		["Latest"] = {"D:\\cmake-3.22.3-windows-x86_64\\bin", "D:\\ninja"},
-	}
+	},
+	["jdkPath"] = {
+		["8"] = "D:\OpenJDK8U-jdk_x64_windows_hotspot_8u332b09\jdk8u332-b09",
+		["11"] = "D:\OpenJDK11U-jdk_x64_windows_hotspot_11.0.15_10\jdk-11.0.15+10",
+	},
 }
 
 -- msys is treated as another host since it uses windows agent and unix shell
@@ -271,6 +274,11 @@ conf.Qt.generateConfTable = function(self, host, job)
 				repl.ANDROIDSDKROOT = confHost.androidSdkPath[confDetail.androidSdkVersion]
 			else
 				error("Android - confDetail.androidSdkVersion is not set")
+			end
+
+			if confHost.makefileTemplate == "win" then
+				ret.envSet.JAVA_HOME = confHost.jdkPath["8"]
+				table.insert(ret.path, confHost.jdkPath["8"] .. "\\bin")
 			end
 		elseif string.sub(confDetail.toolchainT, 1, 10) == "emscripten" then -- WebAssembly
 			local matchStr = "^emscripten%-(.+)$"

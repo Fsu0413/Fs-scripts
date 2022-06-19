@@ -54,6 +54,13 @@ gen.win.download = "!DOWNLOADTOOL! -!pd!"
 -- CONFIGRETRY
 gen.win.template4Qt = [[
 
+rem Unset it for now since it is only used in Jenkins.
+rem Building Qt doesn't need JDK, except for Android versions.
+rem Set it in ENVSET instead for using correct JDK version for building.
+rem Temporarily using JDK 8 for all Android versions and switch to JDK 11 if incompatible.
+
+set JAVA_HOME=
+
 setlocal enabledelayedexpansion
 
 set DOWNLOADTOOL=
@@ -155,6 +162,11 @@ popd
 -- INSTALLROOT
 -- INSTALLPATH
 gen.win.template4OpenSSL = [[
+
+rem Unset it for now since it is only used in Jenkins.
+rem Building OpenSSL doesn't need JDK.
+
+set JAVA_HOME=
 
 setlocal enabledelayedexpansion
 

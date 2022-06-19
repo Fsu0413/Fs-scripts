@@ -590,9 +590,9 @@ conf.o3aaln324 = {
 
 local MsvcVer = {
 	["MSVC2015"] = "14",
-	["MSVC2017"] = "15.9.48",
-	["MSVC2019"] = "16.11.14",
-	["MSVC2022"] = "17.2.0",
+	["MSVC2017"] = "15.9.49",
+	["MSVC2019"] = "16.11.16",
+	["MSVC2022"] = "17.2.4",
 }
 
 local AppleClangVersion = {

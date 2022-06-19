@@ -5,10 +5,10 @@ local conf = {}
 abbrs:
 	Qt Versions:
 		Q2 / q5_12: Qt 5.12.12/Previous Qt 5 LTS
-		Q5: Qt 5.15.4/Previous Qt 5 LTS w/ latest QtWebEngine and latest QtScript
+		Q5: Qt 5.15.5/Previous Qt 5 LTS w/ latest QtWebEngine and latest QtScript
 		q5_kde: Qt 5.15.x KDE maintained version w/ latest QtWebEngine and latest QtScript
 		q6_2: Qt 6.2.4/Latest Qt 6 LTS w/ latest QtWebEngine
-		q6_3: Qt 6.3.0
+		q6_3: Qt 6.3.1
 	If prefixed with a lower-case "m", it is a modified Qt version
 
 	Platforms:
@@ -1494,11 +1494,11 @@ conf.Q2mx6_W = {
 
 --------------------------------------------------------------------
 
--- Qt 5.15.4
+-- Qt 5.15.5
 
 conf.Q5wx3v5 = {
-	name = "Qt5.15.4-Windows-x86-VS2015",
-	qtVersion = "5.15.4",
+	name = "Qt5.15.5-Windows-x86-VS2015",
+	qtVersion = "5.15.5",
 	host = "Win8",
 	toolchain = "MSVC2015-32",
 	configureParameter = [[
@@ -1532,8 +1532,8 @@ conf.Q5wx3v5 = {
 }
 
 conf.Q5wx6v5 = {
-	name = "Qt5.15.4-Windows-x86_64-VS2015",
-	qtVersion = "5.15.4",
+	name = "Qt5.15.5-Windows-x86_64-VS2015",
+	qtVersion = "5.15.5",
 	host = "Win8",
 	toolchain = "MSVC2015-64",
 	configureParameter = [[
@@ -1567,8 +1567,8 @@ conf.Q5wx6v5 = {
 }
 
 conf.Q5wx3v7 = {
-	name = "Qt5.15.4-Windows-x86-VS2017-&MSVCVER&",
-	qtVersion = "5.15.4-5",
+	name = "Qt5.15.5-Windows-x86-VS2017-&MSVCVER&",
+	qtVersion = "5.15.5-5",
 	host = "Win10",
 	toolchain = "MSVC2017-32",
 	configureParameter = [[
@@ -1604,8 +1604,8 @@ conf.Q5wx3v7 = {
 }
 
 conf.Q5wx6v7 = {
-	name = "Qt5.15.4-Windows-x86_64-VS2017-&MSVCVER&",
-	qtVersion = "5.15.4-5",
+	name = "Qt5.15.5-Windows-x86_64-VS2017-&MSVCVER&",
+	qtVersion = "5.15.5-5",
 	host = "Win10",
 	toolchain = "MSVC2017-64",
 	configureParameter = [[
@@ -1641,8 +1641,8 @@ conf.Q5wx6v7 = {
 }
 
 conf.Q5wx3v9 = {
-	name = "Qt5.15.4-Windows-x86-VS2019-&MSVCVER&",
-	qtVersion = "5.15.4-5",
+	name = "Qt5.15.5-Windows-x86-VS2019-&MSVCVER&",
+	qtVersion = "5.15.5-5",
 	host = "Win10",
 	toolchain = "MSVC2019-32",
 	configureParameter = [[
@@ -1677,8 +1677,8 @@ conf.Q5wx3v9 = {
 }
 
 conf.Q5wx3v9sf = {
-	name = "Qt5.15.4-Windows-x86-VS2019-&MSVCVER&-staticFull",
-	qtVersion = "5.15.4-5",
+	name = "Qt5.15.5-Windows-x86-VS2019-&MSVCVER&-staticFull",
+	qtVersion = "5.15.5-5",
 	host = "Win10",
 	toolchain = "MSVC2019-32",
 	variant = {"-staticFull"},
@@ -1719,8 +1719,8 @@ conf.Q5wx3v9sf = {
 }
 
 conf.Q5wx6v9 = {
-	name = "Qt5.15.4-Windows-x86_64-VS2019-&MSVCVER&",
-	qtVersion = "5.15.4-5",
+	name = "Qt5.15.5-Windows-x86_64-VS2019-&MSVCVER&",
+	qtVersion = "5.15.5-5",
 	host = "Win10",
 	toolchain = "MSVC2019-64",
 	configureParameter = [[
@@ -1755,8 +1755,8 @@ conf.Q5wx6v9 = {
 }
 
 conf.Q5wx6v9sf = {
-	name = "Qt5.15.4-Windows-x86_64-VS2019-&MSVCVER&-staticFull",
-	qtVersion = "5.15.4-5",
+	name = "Qt5.15.5-Windows-x86_64-VS2019-&MSVCVER&-staticFull",
+	qtVersion = "5.15.5-5",
 	host = "Win10",
 	toolchain = "MSVC2019-64",
 	variant = {"-staticFull"},
@@ -1797,8 +1797,8 @@ conf.Q5wx6v9sf = {
 }
 
 conf.Q5wx6v2 = {
-	name = "Qt5.15.4-Windows-x86_64-VS2022-&MSVCVER&",
-	qtVersion = "5.15.4-5",
+	name = "Qt5.15.5-Windows-x86_64-VS2022-&MSVCVER&",
+	qtVersion = "5.15.5-5",
 	host = "Win10",
 	toolchain = "MSVC2022-64",
 	configureParameter = [[
@@ -1834,8 +1834,8 @@ conf.Q5wx6v2 = {
 }
 
 conf.Q5wx3m8 = {
-	name = "Qt5.15.4-Windows-x86-MinGW8.1.0",
-	qtVersion = "5.15.4",
+	name = "Qt5.15.5-Windows-x86-MinGW8.1.0",
+	qtVersion = "5.15.5",
 	host = "Win10",
 	toolchain = "MinGW810-32",
 	configureParameter = [[
@@ -1869,8 +1869,8 @@ conf.Q5wx3m8 = {
 }
 
 conf.Q5wx3m8sf = {
-	name = "Qt5.15.4-Windows-x86-MinGW8.1.0-staticFull",
-	qtVersion = "5.15.4",
+	name = "Qt5.15.5-Windows-x86-MinGW8.1.0-staticFull",
+	qtVersion = "5.15.5",
 	host = "Win10",
 	toolchain = "MinGW810-32",
 	variant = {"-staticFull"},
@@ -1909,8 +1909,8 @@ conf.Q5wx3m8sf = {
 }
 
 conf.Q5wx6m8 = {
-	name = "Qt5.15.4-Windows-x86_64-MinGW8.1.0",
-	qtVersion = "5.15.4",
+	name = "Qt5.15.5-Windows-x86_64-MinGW8.1.0",
+	qtVersion = "5.15.5",
 	host = "Win10",
 	toolchain = "MinGW810-64",
 	configureParameter = [[
@@ -1944,8 +1944,8 @@ conf.Q5wx6m8 = {
 }
 
 conf.Q5wx6m8sf = {
-	name = "Qt5.15.4-Windows-x86_64-MinGW8.1.0-staticFull",
-	qtVersion = "5.15.4",
+	name = "Qt5.15.5-Windows-x86_64-MinGW8.1.0-staticFull",
+	qtVersion = "5.15.5",
 	host = "Win10",
 	toolchain = "MinGW810-64",
 	variant = {"-staticFull"},
@@ -1984,8 +1984,8 @@ conf.Q5wx6m8sf = {
 }
 
 conf.Q5mx6 = {
-	name = "Qt5.15.4-macOS-x86_64-AppleClang&AppleClangVersion&",
-	qtVersion = "5.15.4-5",
+	name = "Qt5.15.5-macOS-x86_64-AppleClang&AppleClangVersion&",
+	qtVersion = "5.15.5-5",
 	host = "macOSLegacy",
 	configureParameter = [[
 		-prefix
@@ -2019,8 +2019,8 @@ conf.Q5mx6 = {
 }
 
 conf.Q5mx6nf = {
-	name = "Qt5.15.4-macOS-x86_64-AppleClang&AppleClangVersion&-noFramework",
-	qtVersion = "5.15.4-5",
+	name = "Qt5.15.5-macOS-x86_64-AppleClang&AppleClangVersion&-noFramework",
+	qtVersion = "5.15.5-5",
 	host = "macOSLegacy",
 	variant = {"-noFramework"},
 	configureParameter = [[
@@ -2056,8 +2056,8 @@ conf.Q5mx6nf = {
 }
 
 conf.Q5wx6m8_aalnl = {
-	name = "Qt5.15.4-Android-ALL-Clang-NDKr21e-XWindows-x86_64-MinGW8.1.0",
-	qtVersion = "5.15.4",
+	name = "Qt5.15.5-Android-ALL-Clang-NDKr21e-XWindows-x86_64-MinGW8.1.0",
+	qtVersion = "5.15.5",
 	host = "Win10",
 	toolchain = "MinGW810-64",
 	target = "Android-21",
@@ -2109,8 +2109,8 @@ conf.Q5wx6m8_aalnl = {
 }
 
 conf.Q5lx6_aalnl = {
-	name = "Qt5.15.4-Android-ALL-Clang-NDKr21e-xLinux-x86_64-gcc8.5.0",
-	qtVersion = "5.15.4",
+	name = "Qt5.15.5-Android-ALL-Clang-NDKr21e-xLinux-x86_64-gcc8.5.0",
+	qtVersion = "5.15.5",
 	host = "CentOS8",
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-all",
@@ -2161,8 +2161,8 @@ conf.Q5lx6_aalnl = {
 }
 
 conf.Q5mx6_aalnl = {
-	name = "Qt5.15.4-Android-ALL-Clang-NDKr21e-xmacOS-x86_64-AppleClang&AppleClangVersion&",
-	qtVersion = "5.15.4",
+	name = "Qt5.15.5-Android-ALL-Clang-NDKr21e-xmacOS-x86_64-AppleClang&AppleClangVersion&",
+	qtVersion = "5.15.5",
 	host = "macOSLegacy",
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-all",
@@ -2213,8 +2213,8 @@ conf.Q5mx6_aalnl = {
 }
 
 conf.Q5wx6m8_W = {
-	name = "Qt5.15.4-WebAssembly-emscripten1.39.8-xWindows-x86_64-MinGW8.1.0",
-	qtVersion = "5.15.4",
+	name = "Qt5.15.5-WebAssembly-emscripten1.39.8-xWindows-x86_64-MinGW8.1.0",
+	qtVersion = "5.15.5",
 	host = "Win10",
 	toolchain = "MinGW810-64",
 	target = "WebAssembly",
@@ -2249,8 +2249,8 @@ conf.Q5wx6m8_W = {
 }
 
 conf.Q5lx6_W = {
-	name = "Qt5.15.4-WebAssembly-emscripten1.39.8-xLinux-x86_64-gcc8.5.0",
-	qtVersion = "5.15.4",
+	name = "Qt5.15.5-WebAssembly-emscripten1.39.8-xLinux-x86_64-gcc8.5.0",
+	qtVersion = "5.15.5",
 	host = "CentOS8",
 	target = "WebAssembly",
 	toolchainT = "emscripten-1.39.8",
@@ -2284,8 +2284,8 @@ conf.Q5lx6_W = {
 }
 
 conf.Q5mx6_W = {
-	name = "Qt5.15.4-WebAssembly-emscripten1.39.8-xmacOS-x86_64-AppleClang&AppleClangVersion&",
-	qtVersion = "5.15.4",
+	name = "Qt5.15.5-WebAssembly-emscripten1.39.8-xmacOS-x86_64-AppleClang&AppleClangVersion&",
+	qtVersion = "5.15.5",
 	host = "macOSLegacy",
 	target = "WebAssembly",
 	toolchainT = "emscripten-1.39.8",
@@ -4013,8 +4013,8 @@ conf.q6_2mx6_W = {
 --------------------------------------------------------------------
 
 conf.q6_3wx6v9 = {
-	name = "Qt6.3.0-Windows-x86_64-VS2019-&MSVCVER&",
-	qtVersion = "6.3.0",
+	name = "Qt6.3.1-Windows-x86_64-VS2019-&MSVCVER&",
+	qtVersion = "6.3.1",
 	host = "Win10",
 	toolchain = "MSVC2019-64",
 	opensslConf = "o3wx6v9",
@@ -4049,8 +4049,8 @@ conf.q6_3wx6v9 = {
 }
 
 conf.q6_3wx6v2 = {
-	name = "Qt6.3.0-Windows-x86_64-VS2022-&MSVCVER&",
-	qtVersion = "6.3.0",
+	name = "Qt6.3.1-Windows-x86_64-VS2022-&MSVCVER&",
+	qtVersion = "6.3.1",
 	host = "Win10",
 	toolchain = "MSVC2022-64",
 	opensslConf = "o3wx6v2",
@@ -4084,8 +4084,8 @@ conf.q6_3wx6v2 = {
 }
 
 conf.q6_3wx6v2st = {
-	name = "Qt6.3.0-Windows-x86_64-VS2022-&MSVCVER&-static",
-	qtVersion = "6.3.0",
+	name = "Qt6.3.1-Windows-x86_64-VS2022-&MSVCVER&-static",
+	qtVersion = "6.3.1",
 	host = "Win10",
 	toolchain = "MSVC2022-64",
 	variant = {"-static"},
@@ -4141,8 +4141,8 @@ conf.q6_3wx6v2st = {
 }
 
 conf.q6_3wx6v2_wa6v2 = {
-	name = "Qt6.3.0-Windows-arm64-VS2022-&MSVCVER&-XWindows-x86_64-VS2022-&MSVCVER&",
-	qtVersion = "6.3.0",
+	name = "Qt6.3.1-Windows-arm64-VS2022-&MSVCVER&-XWindows-x86_64-VS2022-&MSVCVER&",
+	qtVersion = "6.3.1",
 	host = "Win10",
 	target = "Win10Arm",
 	toolchain = "MSVC2022-64", -- only a placeholder here, in fact it uses "toolchainT" instead of "toolchain"
@@ -4177,8 +4177,8 @@ conf.q6_3wx6v2_wa6v2 = {
 }
 
 conf.q6_3wx6m1 = {
-	name = "Qt6.3.0-Windows-x86_64-MinGW11.2.0",
-	qtVersion = "6.3.0",
+	name = "Qt6.3.1-Windows-x86_64-MinGW11.2.0",
+	qtVersion = "6.3.1",
 	host = "Win10",
 	toolchain = "MinGW1120-64",
 	opensslConf = "o3wx6m1",
@@ -4211,8 +4211,8 @@ conf.q6_3wx6m1 = {
 }
 
 conf.q6_3wx6m1st = {
-	name = "Qt6.3.0-Windows-x86_64-MinGW11.2.0-static",
-	qtVersion = "6.3.0",
+	name = "Qt6.3.1-Windows-x86_64-MinGW11.2.0-static",
+	qtVersion = "6.3.1",
 	host = "Win10",
 	toolchain = "MinGW1120-64",
 	variant = {"-static"},
@@ -4269,8 +4269,8 @@ conf.q6_3wx6m1st = {
 }
 
 conf.q6_3wx6mu = {
-	name = "Qt6.3.0-Windows-x86_64-llvm-mingw-14.0.0-ucrt",
-	qtVersion = "6.3.0",
+	name = "Qt6.3.1-Windows-x86_64-llvm-mingw-14.0.0-ucrt",
+	qtVersion = "6.3.1",
 	host = "Win10",
 	toolchain = "MinGWLLVM-ucrt14-64",
 	opensslConf = "o3wx6mu",
@@ -4308,8 +4308,8 @@ conf.q6_3wx6mu = {
 }
 
 conf.q6_3wx6mv = {
-	name = "Qt6.3.0-Windows-x86_64-llvm-mingw-14.0.0-msvcrt",
-	qtVersion = "6.3.0",
+	name = "Qt6.3.1-Windows-x86_64-llvm-mingw-14.0.0-msvcrt",
+	qtVersion = "6.3.1",
 	host = "Win10",
 	toolchain = "MinGWLLVM-msvcrt14-64",
 	opensslConf = "o3wx6mv",
@@ -4347,8 +4347,8 @@ conf.q6_3wx6mv = {
 }
 
 conf.q6_3lx6st = {
-	name = "Qt6.3.0-Linux-x86_64-gcc8.5.0-static",
-	qtVersion = "6.3.0",
+	name = "Qt6.3.1-Linux-x86_64-gcc8.5.0-static",
+	qtVersion = "6.3.1",
 	host = "CentOS8",
 	variant = {"-static"},
 	useCMake = "Latest",
@@ -4399,8 +4399,8 @@ conf.q6_3lx6st = {
 }
 
 conf.q6_3mx6 = {
-	name = "Qt6.3.0-macOS-x86_64-AppleClang&AppleClangVersion&",
-	qtVersion = "6.3.0",
+	name = "Qt6.3.1-macOS-x86_64-AppleClang&AppleClangVersion&",
+	qtVersion = "6.3.1",
 	host = "macOS1015",
 	opensslConf = "o3mx6",
 	useCMake = "Latest",
@@ -4437,8 +4437,8 @@ conf.q6_3mx6 = {
 }
 
 conf.q6_3mx6nf = {
-	name = "Qt6.3.0-macOS-x86_64-AppleClang&AppleClangVersion&-noFramework",
-	qtVersion = "6.3.0",
+	name = "Qt6.3.1-macOS-x86_64-AppleClang&AppleClangVersion&-noFramework",
+	qtVersion = "6.3.1",
 	host = "macOS1015",
 	variant = {"-noFramework"},
 	opensslConf = "o3mx6",
@@ -4476,8 +4476,8 @@ conf.q6_3mx6nf = {
 }
 
 conf.q6_3mx6st = {
-	name = "Qt6.3.0-macOS-x86_64-AppleClang&AppleClangVersion&-static",
-	qtVersion = "6.3.0",
+	name = "Qt6.3.1-macOS-x86_64-AppleClang&AppleClangVersion&-static",
+	qtVersion = "6.3.1",
 	host = "macOS1015",
 	variant = {"-static"},
 	opensslConf = "o3mx6",
@@ -4533,8 +4533,8 @@ conf.q6_3mx6st = {
 }
 
 conf.q6_3ma6 = {
-	name = "Qt6.3.0-macOS-arm64_v8a-AppleClang&AppleClangVersion&",
-	qtVersion = "6.3.0",
+	name = "Qt6.3.1-macOS-arm64_v8a-AppleClang&AppleClangVersion&",
+	qtVersion = "6.3.1",
 	host = "macOSM1",
 	opensslConf = "o3ma6",
 	useCMake = "Latest",
@@ -4571,8 +4571,8 @@ conf.q6_3ma6 = {
 }
 
 conf.q6_3ma6nf = {
-	name = "Qt6.3.0-macOS-arm64_v8a-AppleClang&AppleClangVersion&-noFramework",
-	qtVersion = "6.3.0",
+	name = "Qt6.3.1-macOS-arm64_v8a-AppleClang&AppleClangVersion&-noFramework",
+	qtVersion = "6.3.1",
 	host = "macOSM1",
 	variant = {"-noFramework"},
 	opensslConf = "o3ma6",
@@ -4610,8 +4610,8 @@ conf.q6_3ma6nf = {
 }
 
 conf.q6_3ma6st = {
-	name = "Qt6.3.0-macOS-arm64_v8a-AppleClang&AppleClangVersion&-static",
-	qtVersion = "6.3.0",
+	name = "Qt6.3.1-macOS-arm64_v8a-AppleClang&AppleClangVersion&-static",
+	qtVersion = "6.3.1",
 	host = "macOSM1",
 	variant = {"-static"},
 	opensslConf = "o3ma6",
@@ -4667,8 +4667,8 @@ conf.q6_3ma6st = {
 }
 
 conf.q6_3wx6m1_aa6n3 = {
-	name = "Qt6.3.0-Android-arm64-Clang-NDKr23b-XWindows-x86_64-MinGW11.2.0",
-	qtVersion = "6.3.0",
+	name = "Qt6.3.1-Android-arm64-Clang-NDKr23b-XWindows-x86_64-MinGW11.2.0",
+	qtVersion = "6.3.1",
 	host = "Win10",
 	target = "Android-24",
 	toolchain = "MinGW1120-64",
@@ -4706,8 +4706,8 @@ conf.q6_3wx6m1_aa6n3 = {
 }
 
 conf.q6_3wx6m1_ax6n3 = {
-	name = "Qt6.3.0-Android-x86_64-Clang-NDKr23b-XWindows-x86_64-MinGW11.2.0",
-	qtVersion = "6.3.0",
+	name = "Qt6.3.1-Android-x86_64-Clang-NDKr23b-XWindows-x86_64-MinGW11.2.0",
+	qtVersion = "6.3.1",
 	host = "Win10",
 	target = "Android-24",
 	toolchain = "MinGW1120-64",
@@ -4745,8 +4745,8 @@ conf.q6_3wx6m1_ax6n3 = {
 }
 
 conf.q6_3lx6_aa6n3 = {
-	name = "Qt6.3.0-Android-arm64-Clang-NDKr23b-xLinux-x86_64-gcc8.5.0",
-	qtVersion = "6.3.0",
+	name = "Qt6.3.1-Android-arm64-Clang-NDKr23b-xLinux-x86_64-gcc8.5.0",
+	qtVersion = "6.3.1",
 	host = "CentOS8",
 	target = "Android-24",
 	toolchainT = "Android-24-r23b-arm64",
@@ -4782,8 +4782,8 @@ conf.q6_3lx6_aa6n3 = {
 }
 
 conf.q6_3lx6_ax6n3 = {
-	name = "Qt6.3.0-Android-x86_64-Clang-NDKr23b-xLinux-x86_64-gcc8.5.0",
-	qtVersion = "6.3.0",
+	name = "Qt6.3.1-Android-x86_64-Clang-NDKr23b-xLinux-x86_64-gcc8.5.0",
+	qtVersion = "6.3.1",
 	host = "CentOS8",
 	target = "Android-24",
 	toolchainT = "Android-24-r23b-x86_64",
@@ -4819,8 +4819,8 @@ conf.q6_3lx6_ax6n3 = {
 }
 
 conf.q6_3mx6_aa6n3 = {
-	name = "Qt6.3.0-Android-arm64-Clang-NDKr23b-xmacOS-x86_64-AppleClang&AppleClangVersion&",
-	qtVersion = "6.3.0",
+	name = "Qt6.3.1-Android-arm64-Clang-NDKr23b-xmacOS-x86_64-AppleClang&AppleClangVersion&",
+	qtVersion = "6.3.1",
 	host = "macOS1015",
 	target = "Android-24",
 	toolchainT = "Android-24-r23b-arm64",
@@ -4856,8 +4856,8 @@ conf.q6_3mx6_aa6n3 = {
 }
 
 conf.q6_3mx6_ax6n3 = {
-	name = "Qt6.3.0-Android-x86_64-Clang-NDKr23b-xmacOS-x86_64-AppleClang&AppleClangVersion&",
-	qtVersion = "6.3.0",
+	name = "Qt6.3.1-Android-x86_64-Clang-NDKr23b-xmacOS-x86_64-AppleClang&AppleClangVersion&",
+	qtVersion = "6.3.1",
 	host = "macOS1015",
 	target = "Android-24",
 	toolchainT = "Android-24-r23b-x86_64",
@@ -4893,8 +4893,8 @@ conf.q6_3mx6_ax6n3 = {
 }
 
 conf.q6_3ma6_aa6n3 = {
-	name = "Qt6.3.0-Android-arm64-Clang-NDKr23b-xmacOS-arm64_v8a-AppleClang&AppleClangVersion&",
-	qtVersion = "6.3.0",
+	name = "Qt6.3.1-Android-arm64-Clang-NDKr23b-xmacOS-arm64_v8a-AppleClang&AppleClangVersion&",
+	qtVersion = "6.3.1",
 	host = "macOSM1",
 	target = "Android-24",
 	toolchainT = "Android-24-r23b-arm64",
@@ -4930,8 +4930,8 @@ conf.q6_3ma6_aa6n3 = {
 }
 
 conf.q6_3ma6_ax6n3 = {
-	name = "Qt6.3.0-Android-x86_64-Clang-NDKr23b-xmacOS-arm64_v8a-AppleClang&AppleClangVersion&",
-	qtVersion = "6.3.0",
+	name = "Qt6.3.1-Android-x86_64-Clang-NDKr23b-xmacOS-arm64_v8a-AppleClang&AppleClangVersion&",
+	qtVersion = "6.3.1",
 	host = "macOSM1",
 	target = "Android-24",
 	toolchainT = "Android-24-r23b-x86_64",
@@ -4968,8 +4968,8 @@ conf.q6_3ma6_ax6n3 = {
 
 -- WebAssembly uses emcmake which don't need a toolchain file
 conf.q6_3wx6m1_W = {
-	name = "Qt6.3.0-WebAssembly-emscripten3.0.0-xWindows-x86_64-MinGW11.2.0",
-	qtVersion = "6.3.0",
+	name = "Qt6.3.1-WebAssembly-emscripten3.0.0-xWindows-x86_64-MinGW11.2.0",
+	qtVersion = "6.3.1",
 	host = "Win10",
 	toolchain = "MinGW1120-64",
 	target = "WebAssembly",
@@ -5000,8 +5000,8 @@ conf.q6_3wx6m1_W = {
 }
 
 conf.q6_3lx6_W = {
-	name = "Qt6.3.0-WebAssembly-emscripten3.0.0-xLinux-x86_64-gcc8.5.0",
-	qtVersion = "6.3.0",
+	name = "Qt6.3.1-WebAssembly-emscripten3.0.0-xLinux-x86_64-gcc8.5.0",
+	qtVersion = "6.3.1",
 	host = "CentOS8",
 	target = "WebAssembly",
 	toolchainT = "emscripten-3.0.0",
@@ -5029,8 +5029,8 @@ conf.q6_3lx6_W = {
 }
 
 conf.q6_3mx6_W = {
-	name = "Qt6.3.0-WebAssembly-emscripten3.0.0-xmacOS-x86_64-AppleClang&AppleClangVersion&",
-	qtVersion = "6.3.0",
+	name = "Qt6.3.1-WebAssembly-emscripten3.0.0-xmacOS-x86_64-AppleClang&AppleClangVersion&",
+	qtVersion = "6.3.1",
 	host = "macOS1015",
 	target = "WebAssembly",
 	toolchainT = "emscripten-3.0.0",
@@ -5058,8 +5058,8 @@ conf.q6_3mx6_W = {
 }
 
 conf.q6_3ma6_W = {
-	name = "Qt6.3.0-WebAssembly-emscripten3.0.0-xmacOS-arm64_v8a-AppleClang&AppleClangVersion&",
-	qtVersion = "6.3.0",
+	name = "Qt6.3.1-WebAssembly-emscripten3.0.0-xmacOS-arm64_v8a-AppleClang&AppleClangVersion&",
+	qtVersion = "6.3.1",
 	host = "macOS1015",
 	target = "WebAssembly",
 	toolchainT = "emscripten-3.0.0",
@@ -5107,9 +5107,9 @@ setmetatable(QQtPatcherVersion, versionMo)
 
 local MsvcVer = {
 	["MSVC2015"] = "14",
-	["MSVC2017"] = "15.9.48",
-	["MSVC2019"] = "16.11.14",
-	["MSVC2022"] = "17.2.0",
+	["MSVC2017"] = "15.9.49",
+	["MSVC2019"] = "16.11.16",
+	["MSVC2022"] = "17.2.4",
 }
 
 local AppleClangVersion = {
@@ -5121,24 +5121,24 @@ local AppleClangVersion = {
 local Qt6StaticConf = {
 	Win10 = {
 		["6.2.4"] = "q6_2wx6m1st",
-		["6.3.0"] = "q6_3wx6m1st",
+		["6.3.1"] = "q6_3wx6m1st",
 	},
 	Win10MSVC2019 = {
 		["6.2.4"] = "q6_2wx6v9st",
 	},
 	Win10MSVC2022 = {
-		["6.3.0"] = "q6_3wx6v2st",
+		["6.3.1"] = "q6_3wx6v2st",
 	},
 	CentOS8 = {
 		["6.2.4"] = "q6_2lx6st",
-		["6.3.0"] = "q6_3lx6st",
+		["6.3.1"] = "q6_3lx6st",
 	},
 	macOS1015 = {
 		["6.2.4"] = "q6_2mx6st",
-		["6.3.0"] = "q6_3mx6st",
+		["6.3.1"] = "q6_3mx6st",
 	},
 	macOSM1 = {
-		["6.3.0"] = "q6_3ma6st",
+		["6.3.1"] = "q6_3ma6st",
 	},
 }
 
@@ -5204,7 +5204,7 @@ for name, value in pairs(conf) do
 		value.sourcePackageBaseName = "qt5-kde"
 	else
 		local qtSourcePackagePrefix = "qt-everywhere-src-"
-		if ((value.qtVersion == "5.15.4-5") or (value.qtVersion == "6.2.4") or (value.qtVersion == "6.3.0")) and (value.host == "Win10") then
+		if ((value.qtVersion == "5.15.5-5") or (value.qtVersion == "6.2.4") or (value.qtVersion == "6.3.1")) and (value.host == "Win10") then
 			qtSourcePackagePrefix = "qt-src-"
 		end
 		value.sourcePackageBaseName = qtSourcePackagePrefix .. value.qtVersion

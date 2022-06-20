@@ -33,7 +33,7 @@ abbrs:
 		mv: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 14
 		mu: LLVM/Clang based MinGW-w64, ucrt, with LLVM 14
 		nl: Android NDK r21e/Previous LTS
-		n3: Android NDK r23b/Latest LTS
+		n3: Android NDK r23c/Latest LTS
 	If omitted, it use a toolchain in default PATH, which should be AppleClang in macOS, or GCC in Linux.
 
 	Variants:
@@ -490,11 +490,11 @@ conf.o3ma6 = {
 --------------------------------------------------------------------
 
 conf.o3aa3n324 = {
-	name = "OpenSSL3.0.3-Android-arm-NDKr23bAPI24",
+	name = "OpenSSL3.0.3-Android-arm-NDKr23cAPI24",
 	opensslVersion = "3.0.3",
 	host = "CentOS8",
 	target = "Android-24",
-	toolchainT = "Android-24-r23b-arm",
+	toolchainT = "Android-24-r23c-arm",
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -515,11 +515,11 @@ conf.o3aa3n324 = {
 }
 
 conf.o3aa6n324 = {
-	name = "OpenSSL3.0.3-Android-arm64-NDKr23bAPI24",
+	name = "OpenSSL3.0.3-Android-arm64-NDKr23cAPI24",
 	opensslVersion = "3.0.3",
 	host = "CentOS8",
 	target = "Android-24",
-	toolchainT = "Android-24-r23b-arm64",
+	toolchainT = "Android-24-r23c-arm64",
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -535,11 +535,11 @@ conf.o3aa6n324 = {
 }
 
 conf.o3ax3n324 = {
-	name = "OpenSSL3.0.3-Android-x86-NDKr23bAPI24",
+	name = "OpenSSL3.0.3-Android-x86-NDKr23cAPI24",
 	opensslVersion = "3.0.3",
 	host = "CentOS8",
 	target = "Android-24",
-	toolchainT = "Android-24-r23b-x86",
+	toolchainT = "Android-24-r23c-x86",
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -555,11 +555,11 @@ conf.o3ax3n324 = {
 }
 
 conf.o3ax6n324 = {
-	name = "OpenSSL3.0.3-Android-x86_64-NDKr23bAPI24",
+	name = "OpenSSL3.0.3-Android-x86_64-NDKr23cAPI24",
 	opensslVersion = "3.0.3",
 	host = "CentOS8",
 	target = "Android-24",
-	toolchainT = "Android-24-r23b-x86_64",
+	toolchainT = "Android-24-r23c-x86_64",
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -575,7 +575,7 @@ conf.o3ax6n324 = {
 }
 
 conf.o3aaln324 = {
-	name = "OpenSSL3.0.3-Android-ALL-NDKr23bAPI24",
+	name = "OpenSSL3.0.3-Android-ALL-NDKr23cAPI24",
 	opensslVersion = "3.0.3",
 	host = "CentOS8",
 	opensslAndroidAll = {

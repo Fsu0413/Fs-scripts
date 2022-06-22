@@ -1750,7 +1750,8 @@ conf.Q5wx6v9 = {
 		-sql-odbc
 		-make-tool
 		jom
-		-webengine-proprietary-codecs
+		-skip
+		qtwebengine
 	]],
 }
 

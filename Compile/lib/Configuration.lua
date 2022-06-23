@@ -156,27 +156,6 @@ conf.host.mac = {
 	},
 }
 
-conf.host.macM1 = {
-	-- Preinstalled GNU make in path and is used
-	-- Preinstalled CMake and ninja in path and is used
-	-- Preinstalled host toolchain in path and is used
-	-- Preinstalled p7zip in path and is used
-	["makefileTemplate"] = "unix",
-	["pathSep"] = '/',
-	["sourcePackagePath"] = "/opt/sources/",
-	["buildRootPath"] = "/opt/build/",
-	["androidSdkPath"] = {
-		["Latest"] = "/opt/env/android-sdk-mac-2/",
-	},
-	["androidNdkPath"] = {
-		["r23c"] = "/Applications/AndroidNDK8568313.app/Contents/NDK/", -- NDK r23c only distributes as APP bundle, so we install the APP in /Applications.
-	},
-	["androidNdkHost"] = "darwin-x86_64",
-	["emscriptenPath"] = {
-		["3.0.0"] = "/opt/env/emsdk-3.0.0/",
-	},
-}
-
 conf.host.macLegacy = {
 	-- Preinstalled GNU make in path and is used
 	-- Preinstalled host toolchain in path and is used
@@ -197,7 +176,7 @@ conf.host.macLegacy = {
 	},
 }
 
---[[ conf.host.linuxarm = {} ]] -- Todo: Prepare an arm linux host. It should be hosted on my old mobile phone, I assumed.
+--[[ conf.host.linuxarm = {} ]] -- Todo: Prepare an arm linux host. It should be hosted on my old mobile phone, I assumed, or raspi?
 
 conf.Qt = {}
 
@@ -471,7 +450,7 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 	ret.download = {}
 
 	if confDetail.opensslAndroidAll then
-		-- currently this script runs only on CentOS8 and no windows compatible is made.
+		-- currently this part of script runs only on CentOS8 and no windows compatible is made.
 		-- no plan for Windows support.
 		ret.buildContent = "OpenSSLAndroidAll"
 		ret.INSTALLROOT = ret.WORKSPACE .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. confDetail.name
@@ -563,7 +542,7 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 				-- OpenSSL build for macOS is not used when building Qt 5. Since build of Qt 4 has been defuncted, this may also be defuncted.
 				-- But OpenSSL is revived in Qt 6! Seems Strange? It's because that SecureTransport has been deprecated by Apple and won't support TLS 1.3!
 				-- Currently only OpenSSL 3 is building. Since macOS comes with 2 different archtectures, we should distinguish them using CC environment variable
-				ret.envSet.CC = "clang -arch " .. ((conf.hostToConfMap[host] == "mac") and "x86_64" or "arm64")
+				ret.envSet.CC = "clang -arch " .. ((host ~= "macOSM1") and "x86_64" or "arm64")
 			else
 				error("not supported")
 			end
@@ -632,7 +611,7 @@ conf.hostToConfMap = {
 	["CentOS8"] = "linux",
 	["macOS1015"] = "mac",
 	["macOSLegacy"] = "macLegacy",
-	["macOSM1"] = "macM1",
+	["macOSM1"] = "mac",
 }
 
 return conf

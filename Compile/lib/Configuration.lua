@@ -69,6 +69,10 @@ conf.host.win = {
 		["8"] = "D:\\OpenJDK8U-jdk_x64_windows_hotspot_8u332b09\\jdk8u332-b09",
 		["11"] = "D:\\OpenJDK11U-jdk_x64_windows_hotspot_11.0.15_10\\jdk-11.0.15+10",
 	},
+	["pythonPath"] = {
+		["2"] = "D:\\Python27",
+		["3"] = "D:\\Python39",
+	},
 }
 
 -- msys is treated as another host since it uses windows agent and unix shell
@@ -345,6 +349,16 @@ conf.Qt.generateConfTable = function(self, host, job)
 	end
 	if (string.sub(confDetail.qtVersion, 1, 2) == "6.") and confDetail.crossCompile and (string.sub(confDetail.toolchainT, 1, 10) == "emscripten") then
 		ret.MAKE = "emmake " .. ret.MAKE
+	end
+
+	-- For whatever reason Python can't be in PATH in Windows.
+	-- Python for windows has its executable versionless. We need to prepend its path to the PATH valuable.
+	if confHost.pythonPath then
+		if string.sub(confDetail.qtVersion, 1, 2) == "6." then
+			table.insert(ret.path, confHost.pythonPath["3"])
+		else
+			table.insert(ret.path, confHost.pythonPath["2"])
+		end
 	end
 
 	if not confDetail.useCMake then

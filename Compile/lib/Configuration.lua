@@ -91,6 +91,7 @@ conf.host.msys = {
 		["MinGW810-32"] = "/d/mingw-w64/8.1.0/mingw32/bin/",
 		["MinGW810-64"] = "/d/mingw-w64/8.1.0/mingw64/bin/",
 		["MinGW1120-64"] = "/d/mingw-w64/11.2.0-4/mingw64/bin/",
+		["MinGW1210-64"] = "/d/mingw-w64/12.1.0/mingw64/bin/",
 
 		["MinGWLLVM-msvcrt14-64"] = {"/d/mingw-w64/llvm-mingw-20220323-msvcrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20220323-msvcrt-x86_64/bin"},
 		["MinGWLLVM-ucrt14-64"] = {"/d/mingw-w64/llvm-mingw-20220323-ucrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20220323-ucrt-x86_64/bin"},

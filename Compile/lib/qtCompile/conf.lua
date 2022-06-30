@@ -3058,6 +3058,77 @@ conf.q6_2wx6m1sf = {
 	]],
 }
 
+conf.q6_2wx6m2 = {
+	name = "Qt6.2.4-Windows-x86_64-MinGW12.1.0",
+	qtVersion = "6.2.4",
+	host = "Win10",
+	toolchain = "MinGW1210-64",
+	opensslConf = "o3wx6m2",
+	useCMake = "20",
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DBUILD_SHARED_LIBS=ON
+		-DCMAKE_BUILD_TYPE="Release"
+		-DQT_QMAKE_TARGET_MKSPEC=win32-g++
+		-DBUILD_WITH_PCH=ON
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengl_dynamic=ON
+		-DFEATURE_ssl=ON
+		-DFEATURE_openssl=ON
+		-DINPUT_openssl=linked
+		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
+		-DFEATURE_schannel=ON
+		-DFEATURE_sql_sqlite=ON
+		-DFEATURE_sql_odbc=ON
+		-DFEATURE_system_sqlite=OFF
+		-DBUILD_qtopcua=OFF
+	]],
+}
+
+conf.q6_2wx6m2sf = {
+	name = "Qt6.2.4-Windows-x86_64-MinGW12.1.0-staticFull",
+	qtVersion = "6.2.4",
+	host = "Win10",
+	toolchain = "MinGW1210-64",
+	variant = {"-staticFull"},
+	opensslConf = "o3wx6m2",
+	useCMake = "Latest",
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DBUILD_SHARED_LIBS=OFF
+		-DCMAKE_BUILD_TYPE="Release"
+		-DQT_QMAKE_TARGET_MKSPEC=win32-g++
+		-DBUILD_WITH_PCH=ON
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_relocatable=ON
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengl_dynamic=ON
+		-DFEATURE_ssl=ON
+		-DFEATURE_openssl=ON
+		-DINPUT_openssl=linked
+		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
+		-DOPENSSL_USE_STATIC_LIBS=TRUE
+		-DFEATURE_schannel=ON
+		-DFEATURE_sql_sqlite=ON
+		-DFEATURE_sql_odbc=ON
+		-DFEATURE_system_sqlite=OFF
+		-DBUILD_qtopcua=OFF
+	]],
+}
+
 conf.q6_2wx6mu = {
 	name = "Qt6.2.4-Windows-x86_64-llvm-mingw-14.0.0-ucrt",
 	qtVersion = "6.2.4",
@@ -4265,6 +4336,40 @@ conf.q6_3wx6m1st = {
 		-DBUILD_qtwebengine=OFF
 		-DBUILD_qtwebsockets=OFF
 		-DBUILD_qtwebview=OFF
+	]],
+}
+
+conf.q6_3wx6m2 = {
+	name = "Qt6.3.1-Windows-x86_64-MinGW12.1.0",
+	qtVersion = "6.3.1",
+	host = "Win10",
+	toolchain = "MinGW1210-64",
+	opensslConf = "o3wx6m2",
+	useCMake = "20",
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DBUILD_SHARED_LIBS=ON
+		-DCMAKE_BUILD_TYPE="Release"
+		-DQT_QMAKE_TARGET_MKSPEC=win32-g++
+		-DBUILD_WITH_PCH=ON
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengl_dynamic=ON
+		-DFEATURE_ssl=ON
+		-DFEATURE_openssl=ON
+		-DINPUT_openssl=linked
+		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
+		-DFEATURE_schannel=ON
+		-DFEATURE_sql_sqlite=ON
+		-DFEATURE_sql_odbc=ON
+		-DFEATURE_system_sqlite=OFF
+		-DBUILD_qtopcua=OFF
 	]],
 }
 

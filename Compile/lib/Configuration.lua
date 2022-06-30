@@ -36,6 +36,7 @@ conf.host.win = {
 		["MinGW810-32"] = "D:\\mingw-w64\\8.1.0\\mingw32\\bin",
 		["MinGW810-64"] = "D:\\mingw-w64\\8.1.0\\mingw64\\bin",
 		["MinGW1120-64"] = "D:\\mingw-w64\\11.2.0-4\\mingw64\\bin",
+		["MinGW1210-64"] = "D:\\mingw-w64\\12.1.0\\mingw64\\bin",
 
 		-- MinGW toolchains with Clang / LLVM, currently used in Qt 6 only
 		-- LLVM always acts as an cross compiler, but the target libraries are architecture-dependent

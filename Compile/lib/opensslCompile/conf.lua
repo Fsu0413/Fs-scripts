@@ -10,6 +10,7 @@ abbrs:
 
 	Platforms:
 		w: Windows
+		m: macOS
 		a: Android
 	Other platforms will be added when supported.
 	Crossed compiled versions does not marked using underscore because there is no need for distinguishing it from another version.
@@ -30,8 +31,8 @@ abbrs:
 		m7: MinGW-w64, with GCC 7.3.0
 		m8: MinGW-w64, with GCC 8.1.0
 		m1: MinGW-w64, with GCC 11.2.0
-		mv: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 14
-		mu: LLVM/Clang based MinGW-w64, ucrt, with LLVM 14
+		Lv / (deprecated) mv: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 14
+		Lu / (deprecated) mu: LLVM/Clang based MinGW-w64, ucrt, with LLVM 14
 		nl: Android NDK r21e/Previous LTS
 		n3: Android NDK r23c/Latest LTS
 	If omitted, it use a toolchain in default PATH, which should be AppleClang in macOS, or GCC in Linux.
@@ -434,6 +435,8 @@ conf.o3wx6m2 = {
 	]],
 }
 
+-- Note: Current instruction by "o*wx6mu" has nowhere to indicate that this is an LLVM-based toolchain.
+-- Note: Future version of this build configuration should be called "o*wx6Lu" where "L" means LLVM-based toolchain.
 conf.o3wx6mu = {
 	name = "OpenSSL3.0.4-Windows-x86_64-llvm-mingw-14.0.0-ucrt",
 	opensslVersion = "3.0.4",
@@ -452,6 +455,8 @@ conf.o3wx6mu = {
 	]],
 }
 
+-- Note: Current instruction by "o*wx6mv" has nowhere to indicate that this is an LLVM-based toolchain.
+-- Note: Future version of this build configuration should be called "o*wx6Lv" where "L" means LLVM-based toolchain.
 conf.o3wx6mv = {
 	name = "OpenSSL3.0.4-Windows-x86_64-llvm-mingw-14.0.0-msvcrt",
 	opensslVersion = "3.0.4",

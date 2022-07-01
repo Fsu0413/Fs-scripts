@@ -4,7 +4,7 @@ local conf = {}
 --[[
 abbrs:
 	Qt Versions:
-		Q2 / q5_12: Qt 5.12.12/Previous Qt 5 LTS
+		Q2 / q5_12: Qt 5.12.12/Discontinued Qt 5 LTS
 		Q5: Qt 5.15.5/Previous Qt 5 LTS w/ latest QtWebEngine and latest QtScript
 		q5_kde: Qt 5.15.x KDE maintained version w/ latest QtWebEngine and latest QtScript
 		q6_2: Qt 6.2.4/Latest Qt 6 LTS w/ latest QtWebEngine
@@ -18,7 +18,7 @@ abbrs:
 		a: Android
 		W: WebAssembly (w/o Architecture)
 	Other platforms will be added when supported.
-	Some platforms needs cross compiling, especially Android, WebAssembly and Windows on ARM64, we use an underscore to mark a cross compiled version.
+	Some platforms needs cross build, especially Android, WebAssembly and Windows on ARM64, we use an underscore to mark a cross built version.
 
 	Supported Architectures:
 		x3: x86
@@ -36,8 +36,8 @@ abbrs:
 		m7: MinGW-w64, with GCC 7.3.0
 		m8: MinGW-w64, with GCC 8.1.0
 		m1: MinGW-w64, with GCC 11.2.0
-		mv: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 14
-		mu: LLVM/Clang based MinGW-w64, ucrt, with LLVM 14
+		Lv / (deprecated) mv: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 14
+		Lu / (deprecated) mu: LLVM/Clang based MinGW-w64, ucrt, with LLVM 14
 		nl: Android NDK r21e/Previous LTS
 		n3: Android NDK r23c/Latest LTS
 	If omitted, it use a toolchain in default PATH, which should be AppleClang in macOS, or GCC in Linux.
@@ -3129,6 +3129,8 @@ conf.q6_2wx6m2sf = {
 	]],
 }
 
+-- Note: Current instruction by "q6_*wx6mu" has nowhere to indicate that this is an LLVM-based toolchain.
+-- Future version of this build configuration should be called "q6_*wx6Lu" where "L" means LLVM-based toolchain.
 conf.q6_2wx6mu = {
 	name = "Qt6.2.4-Windows-x86_64-llvm-mingw-14.0.0-ucrt",
 	qtVersion = "6.2.4",
@@ -3168,6 +3170,8 @@ conf.q6_2wx6mu = {
 	]],
 }
 
+-- Note: Current instruction by "q6_*wx6mv" has nowhere to indicate that this is an LLVM-based toolchain.
+-- Note: Future version of this build configuration should be called "q6_*wx6Lv" where "L" means LLVM-based toolchain.
 conf.q6_2wx6mv = {
 	name = "Qt6.2.4-Windows-x86_64-llvm-mingw-14.0.0-msvcrt",
 	qtVersion = "6.2.4",
@@ -4373,6 +4377,8 @@ conf.q6_3wx6m2 = {
 	]],
 }
 
+-- Note: Current instruction by "q6_*wx6mu" has nowhere to indicate that this is an LLVM-based toolchain.
+-- Note: Future version of this build configuration should be called "q6_*wx6Lu" where "L" means LLVM-based toolchain.
 conf.q6_3wx6mu = {
 	name = "Qt6.3.1-Windows-x86_64-llvm-mingw-14.0.0-ucrt",
 	qtVersion = "6.3.1",
@@ -4412,6 +4418,8 @@ conf.q6_3wx6mu = {
 	]],
 }
 
+-- Note: Current instruction by "q6_*wx6mv" has nowhere to indicate that this is an LLVM-based toolchain.
+-- Note: Future version of this build configuration should be called "q6_*wx6Lv" where "L" means LLVM-based toolchain.
 conf.q6_3wx6mv = {
 	name = "Qt6.3.1-Windows-x86_64-llvm-mingw-14.0.0-msvcrt",
 	qtVersion = "6.3.1",

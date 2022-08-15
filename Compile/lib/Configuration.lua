@@ -1,5 +1,7 @@
 local conf = {}
 
+local compilerVer = require("CompilerVer")
+
 conf.host = {}
 
 conf.host.win = {
@@ -74,6 +76,7 @@ conf.host.win = {
 		["2"] = "D:\\Python27",
 		["3"] = "D:\\Python39",
 	},
+	["defaultToolchainExecutableName"] = "gcc",
 }
 
 -- msys is treated as another host since it uses windows agent and unix shell
@@ -102,6 +105,7 @@ conf.host.msys = {
 		["r23c"] = "/d/android-ndk-r23c/",
 	},
 	["androidNdkHost"] = "windows-x86_64",
+	["defaultToolchainExecutableName"] = "gcc",
 }
 
 conf.host.linux = {
@@ -130,6 +134,7 @@ conf.host.linux = {
 		["2.0.14"] = "/opt/env/emsdk-2.0.14/",
 		["3.0.0"] = "/opt/env/emsdk-3.0.0/",
 	},
+	["defaultToolchainExecutableName"] = "gcc",
 }
 
 conf.host.mac = {
@@ -156,6 +161,7 @@ conf.host.mac = {
 		["2.0.14"] = "/opt/env/emsdk-2.0.14/",
 		["3.0.0"] = "/opt/env/emsdk-3.0.0/",
 	},
+	["defaultToolchainExecutableName"] = "clang",
 }
 
 conf.host.macLegacy = {
@@ -176,9 +182,21 @@ conf.host.macLegacy = {
 	["emscriptenPath"] = {
 		["1.39.8"] = "/opt/env/emsdk-1.39.8/",
 	},
+	["defaultToolchainExecutableName"] = "clang",
 }
 
 --[[ conf.host.linuxarm = {} ]] -- Todo: Prepare an arm linux host. It should be hosted on my old mobile phone, I assumed, or raspi?
+
+local replaceVersion = function(input, hostToolchainVersion, targetToolchainVersion)
+	local output = input
+	if hostToolchainVersion then
+		output = string.gsub(output, "%&HOSTTOOLVERSION%&", tostring(hostToolchainVersion))
+	end
+	if targetToolchainVersion then
+		output = string.gsub(output, "%&TARGETTOOLVERSION%&", tostring(targetToolchainVersion))
+	end
+	return output
+end
 
 conf.Qt = {}
 
@@ -201,20 +219,32 @@ conf.Qt.generateConfTable = function(self, host, job)
 	-- dirty hack end
 	ret.BUILDDIR = confHost.buildRootPath .. "build-Qt" .. job
 	ret.download = {}
+	
+	-- DO REMEMBER TO USE tostring IF A VERSION STRING IS NEEDED!!
+	local hostToolchainVersion, targetToolchainVersion
+	local hostToolchainVersionQueryFuncName = "gcc"
+	local hostToolchainVersionQueryPath
+	local hostToolchainExecutableName = confHost.defaultToolchainExecutableName
 
 	if confDetail.toolchain ~= "PATH" then
 		local paths = confHost.toolchainPath[confDetail.toolchain]
 		if type(confHost.toolchainPath[confDetail.toolchain]) == "string" then
 			paths = {confHost.toolchainPath[confDetail.toolchain]}
 		end
+		hostToolchainVersionQueryPath = paths[1]
 		if string.sub(confDetail.toolchain, 1, 4) == "MSVC" then
+			hostToolchainVersionQueryFuncName = "msvc"
 			ret.msvcBat = paths[1]
 			table.remove(paths, 1)
+		elseif string.sub(confDetail.toolchain, 1, 4) == "MinGWLLVM" then
+			hostToolchainExecutableName = "clang"
 		end
 		for _, x in ipairs(paths) do
 			table.insert(ret.path, x)
 		end
 	end
+
+	hostToolchainVersion = compilerVer[hostToolchainVersionQueryFuncName](confHost.makefileTemplate == "win", hostToolchainVersionQueryPath, hostToolchainExecutableName)
 
 	if confDetail.useCMake and confHost.cMakePath then
 		for _, p in ipairs(confHost.cMakePath[confDetail.useCMake]) do
@@ -223,27 +253,15 @@ conf.Qt.generateConfTable = function(self, host, job)
 	end
 
 	ret.envSet = {}
+	ret.date = string.format("%04d%02d%02d", BuildTime.year, BuildTime.month, BuildTime.day)
 
 	local repl = {}
-
-	ret.date = string.format("%04d%02d%02d", BuildTime.year, BuildTime.month, BuildTime.day)
-	local installFolderName =  confDetail.name
-	local installRoot = ret.WORKSPACE .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. installFolderName
-
-	if confDetail.opensslConf then
-		table.insert(ret.download, conf.OpenSSL:binaryFileDownloadPath(host, confDetail.opensslConf))
-		repl.OPENSSLDIR = ret.WORKSPACE .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. conf.OpenSSL.configurations[confDetail.opensslConf].name
-		if confDetail.OPENSSL_LIBS then
-			local opensslLibs = string.gsub(confDetail.OPENSSL_LIBS, "%&OPENSSLDIR%&", repl.OPENSSLDIR)
-			ret.envSet.OPENSSL_LIBS = opensslLibs
-		end
-	end
-
+	
 	if confDetail.crossCompile then
 		-- Qt 6: We need host tool to cross build Qt
 		if confDetail.hostToolsConf then
-			table.insert(ret.download, confDetail["hostToolsUrl" .. confHost.makefileTemplate])
-			repl.HOSTQTDIR = ret.WORKSPACE .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. conf.Qt.configurations[confDetail.hostToolsConf].name
+			table.insert(ret.download, conf.Qt:hostToolDownloadPath(confHost, job, hostToolchainVersion))
+			repl.HOSTQTDIR = ret.WORKSPACE .. confHost.pathSep .. "buildDir" .. confHost.pathSep ..replaceVersion(conf.Qt.configurations[confDetail.hostToolsConf].name, hostToolchainVersion)
 		end
 
 		if string.sub(confDetail.toolchainT, 1, 7) == "Android" then -- Android
@@ -271,10 +289,13 @@ conf.Qt.generateConfTable = function(self, host, job)
 			if emsdkVer then
 				-- Since emsdk doesn't provide a way for downgrade, we have to split each emsdk installation.
 				-- Currently all emsdk version we are using can be simply matched using only its version number, so ...
+				-- TODO: remove ret.emBat and use ret.emSource also for Windows
 				ret.emBat = confHost.emscriptenPath[emsdkVer] .. "emsdk activate " .. emsdkVer
 				if confHost.makefileTemplate == "unix" then
 					ret.emSource = confHost.emscriptenPath[emsdkVer] .. "/emsdk_env.sh"
 				end
+				
+				targetToolchainVersion = compilerVer.emcc(confHost.makefileTemplate == "win", confHost.emscriptenPath[emsdkVer])
 			else
 				error("WebAssembly - confDetail.toolchainT is not matched")
 			end
@@ -285,8 +306,21 @@ conf.Qt.generateConfTable = function(self, host, job)
 		elseif string.sub(confDetail.toolchainT, 1, 5) == "MinGW" then -- MinGW cross builds(Todo)
 			error("todo....")
 		end
+	else
+		targetToolchainVersion = hostToolchainVersion
 	end
 
+	if confDetail.opensslConf then
+		table.insert(ret.download, conf.OpenSSL:binaryFileDownloadPath(confHost, confDetail.opensslConf, targetToolchainVersion))
+		repl.OPENSSLDIR = ret.WORKSPACE .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. replaceVersion(conf.OpenSSL.configurations[confDetail.opensslConf].name, nil, targetToolchainVersion)
+		if confDetail.OPENSSL_LIBS then
+			local opensslLibs = string.gsub(confDetail.OPENSSL_LIBS, "%&OPENSSLDIR%&", repl.OPENSSLDIR)
+			ret.envSet.OPENSSL_LIBS = opensslLibs
+		end
+	end
+
+	local installFolderName = replaceVersion(confDetail.name, hostToolchainVersion, targetToolchainVersion)
+	local installRoot = ret.WORKSPACE .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. installFolderName
 	repl.INSTALLROOT = installRoot
 
 	local sourcePackageBaseName = confDetail.sourcePackageBaseName
@@ -325,7 +359,7 @@ conf.Qt.generateConfTable = function(self, host, job)
 			error("not supported")
 		end
 	else
-		-- let CMake call the underlayer make tool
+		-- let CMake call the underlying make tool
 		ret.MAKE = "cmake --build . --parallel -- "
 	end
 	if (string.sub(confDetail.qtVersion, 1, 2) == "6.") and confDetail.crossCompile and (string.sub(confDetail.toolchainT, 1, 10) == "emscripten") then
@@ -333,7 +367,7 @@ conf.Qt.generateConfTable = function(self, host, job)
 	end
 
 	-- For whatever reason Python can't be in PATH in Windows.
-	-- Python for windows has its executable versionless. We need to prepend its path to the PATH valuable.
+	-- Python for windows has its executable versionless. We need to prepend its path to the PATH variable.
 	if confHost.pythonPath then
 		if string.sub(confDetail.qtVersion, 1, 2) == "6." then
 			table.insert(ret.path, confHost.pythonPath["3"])
@@ -432,6 +466,11 @@ conf.Qt.generateConfTable = function(self, host, job)
 	return ret, qQtPatcherTable
 end
 
+conf.Qt.hostToolDownloadPath = function(self, confHost, job, version)
+	local pathWithVersionNotSubstituted = conf.Qt.configurations[job]["hostToolsUrl" .. confHost.makefileTemplate]
+	return replaceVersion(pathWithVersionNotSubstituted, version)
+end
+
 conf.OpenSSL = {}
 
 conf.OpenSSL.configurations = dofile(scriptPath .. "/lib/opensslCompile/conf.lua")
@@ -452,7 +491,7 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 	ret.download = {}
 
 	if confDetail.opensslAndroidAll then
-		-- currently this part of script runs only on CentOS8 and no windows compatible is made.
+		-- currently this part of script runs only on whatever Linux host (CentOS8 on my build environment) and no Windows compatibility is made.
 		-- no plan for Windows support.
 		ret.buildContent = "OpenSSLAndroidAll"
 		ret.INSTALLROOT = ret.WORKSPACE .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. confDetail.name
@@ -463,7 +502,7 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 		repl.arch = {}
 
 		for arch, androidConf in pairs(confDetail.opensslAndroidAll) do
-			table.insert(ret.download, conf.OpenSSL:binaryFileDownloadPath(host, androidConf))
+			table.insert(ret.download, conf.OpenSSL:binaryFileDownloadPath(confHost, androidConf))
 			ret.OPENSSLDIRFUNCTION = ret.OPENSSLDIRFUNCTION .. "if [ \"x$1\" = \"x" .. arch .. "\" ]; then\n" .. "CURRENTARCHDIR=\"" .. conf.OpenSSL.configurations[androidConf].name .. "\"\nexport CURRENTARCHDIR\nel"
 			table.insert(repl.arch, arch)
 		end
@@ -480,29 +519,36 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 		ret.INSTALLCOMMANDLINE = " "
 		table.insert(ret.download, confDetail["sourcePackageUrl" .. confHost.makefileTemplate])
 
+		-- DO REMEMBER TO USE tostring IF A VERSION STRING IS NEEDED!!
+		local hostToolchainVersion, targetToolchainVersion
+		local hostToolchainVersionQueryFuncName = "gcc"
+		local hostToolchainVersionQueryPath
+		local hostToolchainExecutableName = confHost.defaultToolchainExecutableName
+
 		if confDetail.toolchain ~= "PATH" then
 			local paths = confHost.toolchainPath[confDetail.toolchain]
 			if type(confHost.toolchainPath[confDetail.toolchain]) == "string" then
 				paths = {confHost.toolchainPath[confDetail.toolchain]}
 			end
+			hostToolchainVersionQueryPath = paths[1]
 			if string.sub(confDetail.toolchain, 1, 4) == "MSVC" then
+				hostToolchainVersionQueryFuncName = "msvc"
 				ret.msvcBat = paths[1]
 				table.remove(paths, 1)
+			elseif string.sub(confDetail.toolchain, 1, 4) == "MinGWLLVM" then
+				hostToolchainExecutableName = "clang"
 			end
 			for _, x in ipairs(paths) do
 				table.insert(ret.path, x)
 			end
 		end
 
+		hostToolchainVersion = compilerVer[hostToolchainVersionQueryFuncName](confHost.makefileTemplate == "win", hostToolchainVersionQueryPath, hostToolchainExecutableName)
+
 		ret.envSet = {}
 
 		local repl = {}
 		repl.parameter = {}
-
-		local installFolderName =  confDetail.name
-		local installRoot = ret.WORKSPACE .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. installFolderName
-
-		repl.INSTALLROOT = installRoot
 
 		if confDetail.crossCompile then
 			if string.sub(confDetail.toolchainT, 1, 7) == "Android" then -- Android
@@ -533,6 +579,7 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 				error("not supported")
 			end
 		else
+			targetToolchainVersion = hostToolchainVersion
 			if string.sub(confDetail.toolchain, 1, 4) == "MSVC" then -- if conf.hostToConfMap[host] == "win" then
 				-- nothing special
 			elseif string.sub(confDetail.toolchain, 1, 5) == "MinGW" then -- elseif conf.hostToConfMap[host] == "msys" then
@@ -542,13 +589,18 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 				end
 			elseif string.sub(conf.hostToConfMap[host], 1, 3) == "mac" then
 				-- OpenSSL build for macOS is not used when building Qt 5. Since build of Qt 4 has been defuncted, this may also be defuncted.
-				-- But OpenSSL is revived in Qt 6! Seems Strange? It's because that SecureTransport has been deprecated by Apple and won't support TLS 1.3!
+				-- But you know what? OpenSSL is revived in Qt 6! Seems Strange? It's because that SecureTransport has been deprecated by Apple and won't support TLS 1.3!
 				-- Currently only OpenSSL 3 is building. Since macOS comes with 2 different archtectures, we should distinguish them using CC environment variable
 				ret.envSet.CC = "clang -arch " .. ((host ~= "macOSM1") and "x86_64" or "arm64")
 			else
 				error("not supported")
 			end
 		end
+
+		local installFolderName = replaceVersion(confDetail.name, nil, targetToolchainVersion)
+		local installRoot = ret.WORKSPACE .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. installFolderName
+
+		repl.INSTALLROOT = installRoot
 
 		local configureArgs = ""
 		for _, p in ipairs(repl.parameter) do
@@ -565,14 +617,14 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 		end), "%s+", " ")
 
 		if confHost.makefileTemplate == "unix" then
-			-- OpenSSL on MinGW is using MSYS2, so only runs on Unix environment
+			-- OpenSSL on MinGW is built using MSYS2, so only runs on Unix environment
 			ret.MAKE = "make -j$PARALLELNUM"
 			ret.INSTALLCOMMANDLINE = ret.MAKE .. " install_sw install_ssldirs " .. ret.INSTALLCOMMANDLINE
 		elseif string.sub(confDetail.toolchain, 1, 4) == "MSVC" then
 			-- MSVC version of Makefile supports only nmake, jom is not supported offically
 			-- some pull requests which tries to support jom on MSVC builds are simply closed.
 			-- OpenSSL maintainers said that cmake can't cover their supported platforms, so they use a custom build system.
-			-- It seems reasonable but is not the reason why they don't support a 'speed-boosting drop-in replacement' make tool with just a few workarounds.
+			-- It seems reasonable but is not the reason why they don't accept modifications about a 'speed-boosting drop-in replacement' make tool with just a few workarounds.
 
 			-- currently adding "/FS" to the compiler command line, but it fails randomly.
 			-- Retry is added when build fails, for 3 times.
@@ -585,14 +637,14 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 		end
 
 		ret.INSTALLROOT = installRoot
-		ret.INSTALLPATH = confDetail.name
+		ret.INSTALLPATH = installFolderName
 	end
 	return ret
 end
 
-conf.OpenSSL.binaryFileDownloadPath = function(self, host, job)
-	local confHost = conf.host[conf.hostToConfMap[host]]
-	return conf.OpenSSL.configurations[job]["binaryPackageUrl" .. confHost.makefileTemplate]
+conf.OpenSSL.binaryFileDownloadPath = function(self, confHost, job, version)
+	local pathWithVersionNotSubstituted = conf.OpenSSL.configurations[job]["binaryPackageUrl" .. confHost.makefileTemplate]
+	return replaceVersion(pathWithVersionNotSubstituted, nil, version)
 end
 
 conf.buildContent = function(self, buildJob)

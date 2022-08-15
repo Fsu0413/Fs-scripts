@@ -53,7 +53,7 @@ local runShScript = function(script)
 	return ret
 end
 
-compilerVer.msvc = function(envBat)
+compilerVer.msvc = function(isWin, envBat)
 	local shellScript = "@call \"" .. envBat .. "\" > NUL\r\n@echo %VSCMD_VER%\r\n"
 	local ret = runCmdScript(shellScript)
 	return parseVersionNum(ret)

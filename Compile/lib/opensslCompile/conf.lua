@@ -97,7 +97,7 @@ conf.o1wx6v5 = {
 --------------------------------------------------------------------
 
 conf.o1wx3m7 = {
-	name = "OpenSSL1.1.1q-Windows-x86-MinGW-GCC7.3.0",
+	name = "OpenSSL1.1.1q-Windows-x86-MinGW-GCC&TARGETTOOLVERSION&",
 	opensslVersion = "1.1.1q",
 	host = "Win8SH",
 	toolchain = "MinGW730-32",
@@ -113,7 +113,7 @@ conf.o1wx3m7 = {
 }
 
 conf.o1wx6m7 = {
-	name = "OpenSSL1.1.1q-Windows-x86_64-MinGW-GCC7.3.0",
+	name = "OpenSSL1.1.1q-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&",
 	opensslVersion = "1.1.1q",
 	host = "Win8SH",
 	toolchain = "MinGW730-64",
@@ -131,7 +131,7 @@ conf.o1wx6m7 = {
 --------------------------------------------------------------------
 
 conf.o1wx3v7 = {
-	name = "OpenSSL1.1.1q-Windows-x86-VS2017-&MSVCVER&",
+	name = "OpenSSL1.1.1q-Windows-x86-VS2017-&TARGETTOOLVERSION&",
 	opensslVersion = "1.1.1q",
 	host = "Win10",
 	toolchain = "MSVC2017-32",
@@ -147,7 +147,7 @@ conf.o1wx3v7 = {
 }
 
 conf.o1wx3v7st = {
-	name = "OpenSSL1.1.1q-Windows-x86-VS2017-&MSVCVER&-static",
+	name = "OpenSSL1.1.1q-Windows-x86-VS2017-&TARGETTOOLVERSION&-static",
 	opensslVersion = "1.1.1q",
 	host = "Win10",
 	toolchain = "MSVC2017-32",
@@ -164,7 +164,7 @@ conf.o1wx3v7st = {
 }
 
 conf.o1wx6v7 = {
-	name = "OpenSSL1.1.1q-Windows-x86_64-VS2017-&MSVCVER&",
+	name = "OpenSSL1.1.1q-Windows-x86_64-VS2017-&TARGETTOOLVERSION&",
 	opensslVersion = "1.1.1q",
 	host = "Win10",
 	toolchain = "MSVC2017-64",
@@ -180,7 +180,7 @@ conf.o1wx6v7 = {
 }
 
 conf.o1wx6v7st = {
-	name = "OpenSSL1.1.1q-Windows-x86_64-VS2017-&MSVCVER&-static",
+	name = "OpenSSL1.1.1q-Windows-x86_64-VS2017-&TARGETTOOLVERSION&-static",
 	opensslVersion = "1.1.1q",
 	host = "Win10",
 	toolchain = "MSVC2017-64",
@@ -199,7 +199,7 @@ conf.o1wx6v7st = {
 --------------------------------------------------------------------
 
 conf.o1wx3v9 = {
-	name = "OpenSSL1.1.1q-Windows-x86-VS2019-&MSVCVER&",
+	name = "OpenSSL1.1.1q-Windows-x86-VS2019-&TARGETTOOLVERSION&",
 	opensslVersion = "1.1.1q",
 	host = "Win10",
 	toolchain = "MSVC2019-32",
@@ -215,7 +215,7 @@ conf.o1wx3v9 = {
 }
 
 conf.o1wx6v9 = {
-	name = "OpenSSL1.1.1q-Windows-x86_64-VS2019-&MSVCVER&",
+	name = "OpenSSL1.1.1q-Windows-x86_64-VS2019-&TARGETTOOLVERSION&",
 	opensslVersion = "1.1.1q",
 	host = "Win10",
 	toolchain = "MSVC2019-64",
@@ -334,7 +334,7 @@ conf.o1aalnl = {
 -- OpenSSL 3.0.5
 
 conf.o3wx6v9 = {
-	name = "OpenSSL3.0.5-Windows-x86_64-VS2019-&MSVCVER&",
+	name = "OpenSSL3.0.5-Windows-x86_64-VS2019-&TARGETTOOLVERSION&",
 	opensslVersion = "3.0.5",
 	host = "Win10",
 	toolchain = "MSVC2019-64",
@@ -350,7 +350,7 @@ conf.o3wx6v9 = {
 }
 
 conf.o3wx6v9st = {
-	name = "OpenSSL3.0.5-Windows-x86_64-VS2019-&MSVCVER&-static",
+	name = "OpenSSL3.0.5-Windows-x86_64-VS2019-&TARGETTOOLVERSION&-static",
 	opensslVersion = "3.0.5",
 	host = "Win10",
 	toolchain = "MSVC2019-64",
@@ -367,7 +367,7 @@ conf.o3wx6v9st = {
 }
 
 conf.o3wx6v2 = {
-	name = "OpenSSL3.0.5-Windows-x86_64-VS2022-&MSVCVER&",
+	name = "OpenSSL3.0.5-Windows-x86_64-VS2022-&TARGETTOOLVERSION&",
 	opensslVersion = "3.0.5",
 	host = "Win10",
 	toolchain = "MSVC2022-64",
@@ -383,7 +383,7 @@ conf.o3wx6v2 = {
 }
 
 conf.o3wx6v2st = {
-	name = "OpenSSL3.0.5-Windows-x86_64-VS2022-&MSVCVER&-static",
+	name = "OpenSSL3.0.5-Windows-x86_64-VS2022-&TARGETTOOLVERSION&-static",
 	opensslVersion = "3.0.5",
 	host = "Win10",
 	toolchain = "MSVC2022-64",
@@ -402,7 +402,7 @@ conf.o3wx6v2st = {
 --------------------------------------------------------------------
 
 conf.o3wx6m1 = {
-	name = "OpenSSL3.0.5-Windows-x86_64-MinGW-GCC11.2.0",
+	name = "OpenSSL3.0.5-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&",
 	opensslVersion = "3.0.5",
 	host = "Win10SH",
 	toolchain = "MinGW1120-64",
@@ -419,7 +419,7 @@ conf.o3wx6m1 = {
 }
 
 conf.o3wx6m2 = {
-	name = "OpenSSL3.0.5-Windows-x86_64-MinGW-GCC12.1.0",
+	name = "OpenSSL3.0.5-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&",
 	opensslVersion = "3.0.5",
 	host = "Win10SH",
 	toolchain = "MinGW1210-64",
@@ -438,7 +438,7 @@ conf.o3wx6m2 = {
 -- Note: Current instruction by "o*wx6mu" has nowhere to indicate that this is an LLVM-based toolchain.
 -- Note: Future version of this build configuration should be called "o*wx6Lu" where "L" means LLVM-based toolchain.
 conf.o3wx6mu = {
-	name = "OpenSSL3.0.5-Windows-x86_64-llvm-mingw-14.0.0-ucrt",
+	name = "OpenSSL3.0.5-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-ucrt",
 	opensslVersion = "3.0.5",
 	host = "Win10SH",
 	toolchain = "MinGWLLVM-ucrt14-64",
@@ -458,7 +458,7 @@ conf.o3wx6mu = {
 -- Note: Current instruction by "o*wx6mv" has nowhere to indicate that this is an LLVM-based toolchain.
 -- Note: Future version of this build configuration should be called "o*wx6Lv" where "L" means LLVM-based toolchain.
 conf.o3wx6mv = {
-	name = "OpenSSL3.0.5-Windows-x86_64-llvm-mingw-14.0.0-msvcrt",
+	name = "OpenSSL3.0.5-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-msvcrt",
 	opensslVersion = "3.0.5",
 	host = "Win10SH",
 	toolchain = "MinGWLLVM-msvcrt14-64",
@@ -478,7 +478,7 @@ conf.o3wx6mv = {
 --------------------------------------------------------------------
 
 conf.o3mx6 = {
-	name = "OpenSSL3.0.5-macOS-x86_64-AppleClang&AppleClangVersion&",
+	name = "OpenSSL3.0.5-macOS-x86_64-AppleClang&TARGETTOOLVERSION&",
 	opensslVersion = "3.0.5",
 	host = "macOS1015",
 	libPath = { "lib/libssl.3.dylib", "lib/libcrypto.3.dylib" },
@@ -494,7 +494,7 @@ conf.o3mx6 = {
 }
 
 conf.o3ma6 = {
-	name = "OpenSSL3.0.5-macOS-arm64_v8a-AppleClang&AppleClangVersion&",
+	name = "OpenSSL3.0.5-macOS-arm64_v8a-AppleClang&TARGETTOOLVERSION&",
 	opensslVersion = "3.0.5",
 	host = "macOSM1",
 	libPath = { "lib/libssl.3.dylib", "lib/libcrypto.3.dylib" },
@@ -610,19 +610,6 @@ conf.o3aaln324 = {
 
 --------------------------------------------------------------------
 
-local MsvcVer = {
-	["MSVC2015"] = "14",
-	["MSVC2017"] = "15.9.49",
-	["MSVC2019"] = "16.11.16",
-	["MSVC2022"] = "17.2.4",
-}
-
-local AppleClangVersion = {
-	["macOS1015"] = "13.1.6",
-	["macOSM1"] = "13.1.6",
-	["macOSLegacy"] = "12.0.5",
-}
-
 for name, value in pairs(conf) do
 	-- sanity check
 	if value.name == nil then
@@ -645,14 +632,6 @@ for name, value in pairs(conf) do
 
 	if not value.toolchain then
 		value.toolchain = "PATH"
-	end
-
-	-- hack MSVCVER into name
-	if string.sub(value.toolchain, 1, 4) == "MSVC" then
-		value.name = string.gsub(value.name, "%&MSVCVER%&", MsvcVer[string.sub(value.toolchain, 1, 8)])
-	end
-	if string.find(value.name, "AppleClang") then
-		value.name = string.gsub(value.name, "%&AppleClangVersion%&", AppleClangVersion[value.host])
 	end
 end
 

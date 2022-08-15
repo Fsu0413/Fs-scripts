@@ -236,7 +236,8 @@ conf.Qt.generateConfTable = function(self, host, job)
 			hostToolchainVersionQueryFuncName = "msvc"
 			ret.msvcBat = paths[1]
 			table.remove(paths, 1)
-		elseif string.sub(confDetail.toolchain, 1, 4) == "MinGWLLVM" then
+		elseif string.sub(confDetail.toolchain, 1, 9) == "MinGWLLVM" then
+			hostToolchainVersionQueryPath = paths[2]
 			hostToolchainExecutableName = "clang"
 		end
 		for _, x in ipairs(paths) do
@@ -535,7 +536,8 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 				hostToolchainVersionQueryFuncName = "msvc"
 				ret.msvcBat = paths[1]
 				table.remove(paths, 1)
-			elseif string.sub(confDetail.toolchain, 1, 4) == "MinGWLLVM" then
+			elseif string.sub(confDetail.toolchain, 1, 9) == "MinGWLLVM" then
+				hostToolchainVersionQueryPath = paths[2]
 				hostToolchainExecutableName = "clang"
 			end
 			for _, x in ipairs(paths) do

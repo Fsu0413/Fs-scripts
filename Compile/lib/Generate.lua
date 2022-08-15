@@ -333,13 +333,16 @@ rm -rf &BUILDDIR&
 mkdir &BUILDDIR&
 cd &BUILDDIR&
 
-PARALLELNUM=3
-if [ "$NUMBER_OF_PROCESSORS" ]; then
-	PARALLELNUM=`expr $NUMBER_OF_PROCESSORS + 1`
-elif [ -e /proc/cpuinfo ]; then
-	PARALLELNUM=$(expr `cat /proc/cpuinfo | grep processor | wc -l` + 1 )
-elif [ x`uname` = xDarwin ]; then
-	PARALLELNUM=$(expr `sysctl machdep.cpu.thread_count | cut -d " " -f 2` + 1 )
+PARALLELNUM=`nproc 2> /dev/null`
+if [ $? -ne 0 ]; then
+	PARALLELNUM=3
+	if [ "$NUMBER_OF_PROCESSORS" ]; then
+		PARALLELNUM=`expr $NUMBER_OF_PROCESSORS + 1`
+	elif [ -e /proc/cpuinfo ]; then
+		PARALLELNUM=$(expr `cat /proc/cpuinfo | grep processor | wc -l` + 1 )
+	elif [ x`uname` = xDarwin ]; then
+		PARALLELNUM=$(expr `sysctl machdep.cpu.thread_count | cut -d " " -f 2` + 1 )
+	fi
 fi
 
 &CONFIGURECOMMANDLINE&
@@ -460,13 +463,16 @@ rm -rf &BUILDDIR&
 mkdir &BUILDDIR&
 cd &BUILDDIR&
 
-PARALLELNUM=3
-if [ "$NUMBER_OF_PROCESSORS" ]; then
-	PARALLELNUM=`expr $NUMBER_OF_PROCESSORS + 1`
-elif [ -e /proc/cpuinfo ]; then
-	PARALLELNUM=$(expr `cat /proc/cpuinfo | grep processor | wc -l` + 1 )
-elif [ x`uname` = xDarwin ]; then
-	PARALLELNUM=$(expr `sysctl machdep.cpu.thread_count | cut -d " " -f 2` + 1 )
+PARALLELNUM=`nproc 2> /dev/null`
+if [ $? -ne 0 ]; then
+	PARALLELNUM=3
+	if [ "$NUMBER_OF_PROCESSORS" ]; then
+		PARALLELNUM=`expr $NUMBER_OF_PROCESSORS + 1`
+	elif [ -e /proc/cpuinfo ]; then
+		PARALLELNUM=$(expr `cat /proc/cpuinfo | grep processor | wc -l` + 1 )
+	elif [ x`uname` = xDarwin ]; then
+		PARALLELNUM=$(expr `sysctl machdep.cpu.thread_count | cut -d " " -f 2` + 1 )
+	fi
 fi
 
 &CONFIGURECOMMANDLINE&

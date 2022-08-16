@@ -293,10 +293,10 @@ conf.Qt.generateConfTable = function(self, host, job)
 			if emsdkVer then
 				-- Since emsdk doesn't provide a way for downgrade, we have to split each emsdk installation.
 				-- Currently all emsdk version we are using can be simply matched using only its version number, so ...
-				-- TODO: remove ret.emBat and use ret.emSource also for Windows
-				ret.emBat = confHost.emscriptenPath[emsdkVer] .. "emsdk activate " .. emsdkVer
 				if confHost.makefileTemplate == "unix" then
 					ret.emSource = confHost.emscriptenPath[emsdkVer] .. "/emsdk_env.sh"
+				else
+					ret.emSource = confHost.emscriptenPath[emsdkVer] .. "emsdk_env.bat"
 				end
 				
 				targetToolchainVersion = compilerVer.emcc(confHost.makefileTemplate == "win", confHost.emscriptenPath[emsdkVer])

@@ -555,9 +555,6 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 		local repl = {}
 		repl.parameter = {}
 
-		local installFolderName = replaceVersion(confDetail.name, nil, targetToolchainVersion)
-		local installRoot = ret.WORKSPACE .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. installFolderName
-
 		if confDetail.crossCompile then
 			if string.sub(confDetail.toolchainT, 1, 7) == "Android" then -- Android
 				-- Let's use NDK package directly
@@ -568,7 +565,6 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 					ret.envSet.ANDROID_NDK_ROOT = confHost.androidNdkPath[ndkVer]
 					ret.envSet.CC = "clang"
 					table.insert(ret.path, confHost.androidNdkPath[ndkVer] .. confHost.pathSep .. "toolchains" .. confHost.pathSep .. "llvm" .. confHost.pathSep .. "prebuilt" .. confHost.pathSep .. confHost.androidNdkHost .. confHost.pathSep .. "bin")
-					ret.INSTALLCOMMANDLINE = ret.INSTALLCOMMANDLINE .. " DESTDIR=" .. installRoot .. " "
 				else
 					error("confDetail.toolchainT is not matched")
 				end
@@ -605,6 +601,9 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 			end
 		end
 
+		local installFolderName = replaceVersion(confDetail.name, nil, targetToolchainVersion)
+		local installRoot = ret.WORKSPACE .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. installFolderName
+
 		repl.INSTALLROOT = installRoot
 
 		local configureArgs = ""
@@ -620,6 +619,10 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 				return ""
 			end
 		end), "%s+", " ")
+		
+		if confDetail.crossCompile then
+			ret.INSTALLCOMMANDLINE = ret.INSTALLCOMMANDLINE .. " DESTDIR=" .. installRoot .. " "
+		end
 
 		if confHost.makefileTemplate == "unix" then
 			-- OpenSSL on MinGW is built using MSYS2, so only runs on Unix environment

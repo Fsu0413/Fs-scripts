@@ -555,6 +555,9 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 		local repl = {}
 		repl.parameter = {}
 
+		local installFolderName = replaceVersion(confDetail.name, nil, targetToolchainVersion)
+		local installRoot = ret.WORKSPACE .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. installFolderName
+
 		if confDetail.crossCompile then
 			if string.sub(confDetail.toolchainT, 1, 7) == "Android" then -- Android
 				-- Let's use NDK package directly
@@ -601,9 +604,6 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 				error("not supported")
 			end
 		end
-
-		local installFolderName = replaceVersion(confDetail.name, nil, targetToolchainVersion)
-		local installRoot = ret.WORKSPACE .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. installFolderName
 
 		repl.INSTALLROOT = installRoot
 

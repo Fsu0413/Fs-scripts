@@ -34,7 +34,8 @@ abbrs:
 		Lv / (deprecated) mv: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 14
 		Lu / (deprecated) mu: LLVM/Clang based MinGW-w64, ucrt, with LLVM 14
 		nl: Android NDK r21e/Previous LTS
-		n3: Android NDK r23c/Latest LTS
+		n3: Android NDK r23c/Previous LTS
+		n5: Android NDK r25/Latest LTS
 	If omitted, it use a toolchain in default PATH, which should be AppleClang in macOS, or GCC in Linux.
 
 	Variants:
@@ -605,6 +606,104 @@ conf.o3aaln324 = {
 		["arm64-v8a"] = "o3aa6n324",
 		["x86"] = "o3ax3n324",
 		["x86_64"] = "o3ax6n324",
+	},
+}
+--------------------------------------------------------------------
+
+conf.o3aa3n527 = {
+	name = "OpenSSL3.0.5-Android-arm-NDKr25API27",
+	opensslVersion = "3.0.5",
+	host = "Rocky9",
+	target = "Android-27",
+	toolchainT = "Android-27-r25-arm",
+	configureParameter = [[
+		no-asm
+		no-shared
+		--prefix=//
+		--openssldir=//ssl
+		android-arm
+		-D__ANDROID_API__=27
+		-march=armv7-a
+		-mfloat-abi=softfp
+		-mfpu=vfp
+		-fno-builtin-memmove
+		-mthumb
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
+}
+
+conf.o3aa6n527 = {
+	name = "OpenSSL3.0.5-Android-arm64-NDKr25API27",
+	opensslVersion = "3.0.5",
+	host = "Rocky9",
+	target = "Android-27",
+	toolchainT = "Android-27-r25-arm64",
+	configureParameter = [[
+		no-asm
+		no-shared
+		--prefix=//
+		--openssldir=//ssl
+		android-arm64
+		-D__ANDROID_API__=27
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
+}
+
+conf.o3ax3n527 = {
+	name = "OpenSSL3.0.5-Android-x86-NDKr25API27",
+	opensslVersion = "3.0.5",
+	host = "Rocky9",
+	target = "Android-27",
+	toolchainT = "Android-27-r25-x86",
+	configureParameter = [[
+		no-asm
+		no-shared
+		--prefix=//
+		--openssldir=//ssl
+		android-x86
+		-D__ANDROID_API__=27
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
+}
+
+conf.o3ax6n527 = {
+	name = "OpenSSL3.0.5-Android-x86_64-NDKr23cAPI27",
+	opensslVersion = "3.0.5",
+	host = "Rocky9",
+	target = "Android-27",
+	toolchainT = "Android-27-r25-x86_64",
+	configureParameter = [[
+		no-asm
+		no-shared
+		--prefix=//
+		--openssldir=//ssl
+		android-x86_64
+		-D__ANDROID_API__=24
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
+}
+
+conf.o3aaln527 = {
+	name = "OpenSSL3.0.5-Android-ALL-NDKr25API27",
+	opensslVersion = "3.0.5",
+	host = "Rocky9",
+	opensslAndroidAll = {
+		["armeabi-v7a"] = "o3aa3n527",
+		["arm64-v8a"] = "o3aa6n527",
+		["x86"] = "o3ax3n527",
+		["x86_64"] = "o3ax6n527",
 	},
 }
 

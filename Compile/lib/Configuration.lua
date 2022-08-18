@@ -57,6 +57,7 @@ conf.host.win = {
 	["androidNdkPath"] = {
 		["r21e"] = "D:\\android-ndk-r21e",
 		["r23c"] = "D:\\android-ndk-r23c",
+		["r25"] = "D:\\android-ndk-r25",
 	},
 	["androidNdkHost"] = "windows-x86_64",
 	["emscriptenPath"] = {
@@ -104,6 +105,7 @@ conf.host.msys = {
 	["androidNdkPath"] = {
 		["r21e"] = "/d/android-ndk-r21e/",
 		["r23c"] = "/d/android-ndk-r23c/",
+		["r25"] = "/d/android-ndk-r25/",
 	},
 	["androidNdkHost"] = "windows-x86_64",
 	["defaultToolchainExecutableName"] = "gcc",
@@ -126,6 +128,7 @@ conf.host.linux = {
 	["androidNdkPath"] = {
 		["r21e"] = "/opt/env/android-ndk-r21e/",
 		["r23c"] = "/opt/env/android-ndk-r23c/",
+		["r25"] = "/opt/env/android-ndk-r25/",
 	},
 	["androidNdkHost"] = "linux-x86_64",
 	["sourcePackagePath"] = "/opt/sources/",
@@ -135,6 +138,10 @@ conf.host.linux = {
 		["2.0.14"] = "/opt/env/emsdk-2.0.14/",
 		["3.1.6"] = "/opt/env/emsdk-3.1.6/",
 		["3.1.10"] = "/opt/env/emsdk-3.1.10/",
+	},
+	["jdkPath"] = {
+		["8"] = "/usr/lib/jvm/java-1.8.0-openjdk",
+		["11"] = "/usr/lib/jvm/java-11-openjdk",
 	},
 	["defaultToolchainExecutableName"] = "gcc",
 }
@@ -154,7 +161,9 @@ conf.host.mac = {
 	},
 	["androidNdkPath"] = {
 		["r21e"] = "/opt/env/android-ndk-r21e/",
-		["r23c"] = "/Applications/AndroidNDK8568313.app/Contents/NDK/", -- NDK r23c only distributes as APP bundle, so we install the APP in /Applications.
+		-- NDK after r23 only distributes as APP bundle, so we install the APP in /Applications.
+		["r23c"] = "/Applications/AndroidNDK8568313.app/Contents/NDK/",
+		["r25"] = "/Applications/AndroidNDK8775105.app/Contents/NDK/",
 	},
 	["androidNdkHost"] = "darwin-x86_64",
 	["sourcePackagePath"] = "/opt/sources/",
@@ -283,7 +292,7 @@ conf.Qt.generateConfTable = function(self, host, job)
 				error("Android - confDetail.androidSdkVersion is not set")
 			end
 
-			if confHost.makefileTemplate == "win" then
+			if confHost.jdkPath then
 				ret.envSet.JAVA_HOME = confHost.jdkPath["8"]
 				table.insert(ret.path, confHost.jdkPath["8"] .. "\\bin")
 			end
@@ -671,6 +680,7 @@ conf.hostToConfMap = {
 	["Win8"] = "win",
 	["Win8SH"] = "msys",
 	["CentOS8"] = "linux",
+	["Rocky9"] = "linux",
 	["macOS1015"] = "mac",
 	["macOSLegacy"] = "macLegacy",
 	["macOSM1"] = "mac",

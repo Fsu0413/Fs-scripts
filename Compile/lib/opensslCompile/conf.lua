@@ -28,11 +28,12 @@ abbrs:
 		v7: VS2017
 		v9: VS2019
 		v2: VS2022
-		m7: MinGW-w64, with GCC 7.3.0
-		m8: MinGW-w64, with GCC 8.1.0
-		m1: MinGW-w64, with GCC 11.2.0
-		Lv / (deprecated) mv: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 14
-		Lu / (deprecated) mu: LLVM/Clang based MinGW-w64, ucrt, with LLVM 14
+		m7: MinGW-w64, with GCC 7.3.0 (no new builds)
+		m8: MinGW-w64, with GCC 8.1.0 (no new builds)
+		g1 / (deprecated) m1: MinGW-w64, with GCC 11.2.0
+		g2 / (deprecated) m2: MinGW-w64, with GCC 12.1.0
+		m4 / (deprecated) mv: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 14 (naming conflicted with previous MinGW-w64 with GCC 4.9.4. Since there is currently no build who uses GCC 4.9.4 we can safely use this name)
+		u4 / (deprecated) mu: LLVM/Clang based MinGW-w64, ucrt, with LLVM 14
 		nl: Android NDK r21e/Previous LTS
 		n3: Android NDK r23c/Previous LTS
 		n5: Android NDK r25/Latest LTS
@@ -402,6 +403,8 @@ conf.o3wx6v2st = {
 
 --------------------------------------------------------------------
 
+-- Note: "m" changed its meaning for LLVM-based toolchain with MinGW-w64 MSVCRT.
+-- Note: Future version of this build configuration should be called "o*wx6g1" where "g" means GNU-based toolchain with MinGW-w64.
 conf.o3wx6m1 = {
 	name = "OpenSSL3.0.5-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&",
 	opensslVersion = "3.0.5",
@@ -419,6 +422,8 @@ conf.o3wx6m1 = {
 	]],
 }
 
+-- Note: "m" changed its meaning for LLVM-based toolchain with MinGW-w64 MSVCRT.
+-- Note: Future version of this build configuration should be called "o*wx6g2" where "g" means GNU-based toolchain with MinGW-w64.
 conf.o3wx6m2 = {
 	name = "OpenSSL3.0.5-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&",
 	opensslVersion = "3.0.5",
@@ -436,8 +441,7 @@ conf.o3wx6m2 = {
 	]],
 }
 
--- Note: Current instruction by "o*wx6mu" has nowhere to indicate that this is an LLVM-based toolchain.
--- Note: Future version of this build configuration should be called "o*wx6Lu" where "L" means LLVM-based toolchain.
+-- Note: Future version of this build configuration should be called "o*wx6u4" where "u" means LLVM-based toolchain with MinGW-w64 UCRT.
 conf.o3wx6mu = {
 	name = "OpenSSL3.0.5-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-ucrt",
 	opensslVersion = "3.0.5",
@@ -456,8 +460,7 @@ conf.o3wx6mu = {
 	]],
 }
 
--- Note: Current instruction by "o*wx6mv" has nowhere to indicate that this is an LLVM-based toolchain.
--- Note: Future version of this build configuration should be called "o*wx6Lv" where "L" means LLVM-based toolchain.
+-- Note: Future version of this build configuration should be called "o*wx6m4" where "m" means LLVM-based toolchain with MinGW-w64 MSVCRT.
 conf.o3wx6mv = {
 	name = "OpenSSL3.0.5-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-msvcrt",
 	opensslVersion = "3.0.5",

@@ -9,6 +9,7 @@ abbrs:
 		q5_kde: Qt 5.15.x KDE maintained version w/ latest QtWebEngine and latest QtScript
 		q6_2: Qt 6.2.4/Latest Qt 6 LTS w/ latest QtWebEngine
 		q6_3: Qt 6.3.1
+		q6_4: Qt 6.4.0 (Pre-release)
 	If prefixed with a lower-case "m", it is a modified Qt version
 
 	Platforms:
@@ -35,11 +36,13 @@ abbrs:
 		v2: VS2022
 		m7: MinGW-w64, with GCC 7.3.0
 		m8: MinGW-w64, with GCC 8.1.0
-		m1: MinGW-w64, with GCC 11.2.0
-		Lv / (deprecated) mv: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 14
-		Lu / (deprecated) mu: LLVM/Clang based MinGW-w64, ucrt, with LLVM 14
+		g1 / (deprecated) m1: MinGW-w64, with GCC 11.2.0
+		g2 / (deprecated) m2: MinGW-w64, with GCC 12.1.0
+		m4 / (deprecated) mv: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 14 (naming conflicted with previous MinGW-w64 with GCC 4.9.4. Since there is currently no build who uses GCC 4.9.4 we can safely use this name)
+		u4 / (deprecated) mu: LLVM/Clang based MinGW-w64, ucrt, with LLVM 14
 		nl: Android NDK r21e/Previous LTS
-		n3: Android NDK r23c/Latest LTS
+		n3: Android NDK r23c/Previous LTS
+		n5: Android NDK r25/Latest LTS
 	If omitted, it use a toolchain in default PATH, which should be AppleClang in macOS, or GCC in Linux.
 
 	Variants:
@@ -3061,8 +3064,6 @@ conf.q6_2wx6m2sf = {
 	]],
 }
 
--- Note: Current instruction by "q6_*wx6mu" has nowhere to indicate that this is an LLVM-based toolchain.
--- Future version of this build configuration should be called "q6_*wx6Lu" where "L" means LLVM-based toolchain.
 conf.q6_2wx6mu = {
 	name = "Qt6.2.4-Windows-x86_64-llvm-mingw-&HOSTTOOLVERSION&-ucrt",
 	qtVersion = "6.2.4",
@@ -3102,8 +3103,6 @@ conf.q6_2wx6mu = {
 	]],
 }
 
--- Note: Current instruction by "q6_*wx6mv" has nowhere to indicate that this is an LLVM-based toolchain.
--- Note: Future version of this build configuration should be called "q6_*wx6Lv" where "L" means LLVM-based toolchain.
 conf.q6_2wx6mv = {
 	name = "Qt6.2.4-Windows-x86_64-llvm-mingw-&HOSTTOOLVERSION&-msvcrt",
 	qtVersion = "6.2.4",
@@ -4183,6 +4182,8 @@ conf.q6_3wx6v2_wa6v2 = {
 	]],
 }
 
+-- Note: "m" changed its meaning for LLVM-based toolchain with MinGW-w64 MSVCRT.
+-- Note: Future version of this build configuration should be called "q*_*wx6g1" where "g" means GNU-based toolchain with MinGW-w64.
 conf.q6_3wx6m1 = {
 	name = "Qt6.3.1-Windows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "6.3.1",
@@ -4217,6 +4218,8 @@ conf.q6_3wx6m1 = {
 	]],
 }
 
+-- Note: "m" changed its meaning for LLVM-based toolchain with MinGW-w64 MSVCRT.
+-- Note: Future version of this build configuration should be called "q*_*wx6g2st" where "g" means GNU-based toolchain with MinGW-w64, and is updated to GCC 12 series.
 conf.q6_3wx6m1st = {
 	name = "Qt6.3.1-Windows-x86_64-MinGW&HOSTTOOLVERSION&-static",
 	qtVersion = "6.3.1",
@@ -4275,6 +4278,8 @@ conf.q6_3wx6m1st = {
 	]],
 }
 
+-- Note: "m" changed its meaning for LLVM-based toolchain with MinGW-w64 MSVCRT.
+-- Note: Future version of this build configuration should be called "q*_*wx6g2" where "g" means GNU-based toolchain with MinGW-w64.
 conf.q6_3wx6m2 = {
 	name = "Qt6.3.1-Windows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "6.3.1",
@@ -4309,8 +4314,7 @@ conf.q6_3wx6m2 = {
 	]],
 }
 
--- Note: Current instruction by "q6_*wx6mu" has nowhere to indicate that this is an LLVM-based toolchain.
--- Note: Future version of this build configuration should be called "q6_*wx6Lu" where "L" means LLVM-based toolchain.
+-- Note: Future version of this build configuration is called "q*_*wx6u4" where "u" means LLVM-based toolchain with MinGW-w64 UCRT.
 conf.q6_3wx6mu = {
 	name = "Qt6.3.1-Windows-x86_64-llvm-mingw-&HOSTTOOLVERSION&-ucrt",
 	qtVersion = "6.3.1",
@@ -4350,8 +4354,7 @@ conf.q6_3wx6mu = {
 	]],
 }
 
--- Note: Current instruction by "q6_*wx6mv" has nowhere to indicate that this is an LLVM-based toolchain.
--- Note: Future version of this build configuration should be called "q6_*wx6Lv" where "L" means LLVM-based toolchain.
+-- Note: Future version of this build configuration is called "q*_*wx6m4" where "m" means LLVM-based toolchain with MinGW-w64 MSVCRT.
 conf.q6_3wx6mv = {
 	name = "Qt6.3.1-Windows-x86_64-llvm-mingw-&HOSTTOOLVERSION&-msvcrt",
 	qtVersion = "6.3.1",
@@ -4711,6 +4714,8 @@ conf.q6_3ma6st = {
 	]],
 }
 
+-- Note: "m" changed its meaning for LLVM-based toolchain with MinGW-w64 MSVCRT.
+-- Note: Future version of this build configuration is called "q*_*wx6g2_aa6n5" where "g" means GNU-based toolchain with MinGW-w64, and is updated its host tools to GCC 12 series, while NDK is updated to r25.
 conf.q6_3wx6m1_aa6n3 = {
 	name = "Qt6.3.1-Android-arm64-Clang-NDKr23c-XWindows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "6.3.1",
@@ -4750,6 +4755,8 @@ conf.q6_3wx6m1_aa6n3 = {
 	]],
 }
 
+-- Note: "m" changed its meaning for LLVM-based toolchain with MinGW-w64 MSVCRT.
+-- Note: Future version of this build configuration is called "q*_*wx6g2_ax6n5" where "g" means GNU-based toolchain with MinGW-w64, and is updated its host tools to GCC 12 series, while NDK is updated to r25.
 conf.q6_3wx6m1_ax6n3 = {
 	name = "Qt6.3.1-Android-x86_64-Clang-NDKr23c-XWindows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "6.3.1",
@@ -5012,6 +5019,8 @@ conf.q6_3ma6_ax6n3 = {
 }
 
 -- WebAssembly uses emcmake which don't need a toolchain file
+-- Note: "m" changed its meaning for LLVM-based toolchain with MinGW-w64 MSVCRT.
+-- Note: Future version of this build configuration is called "q*_*wx6g2_W" where "g" means GNU-based toolchain with MinGW-w64, and is updated its host tools to GCC 12 series.
 conf.q6_3wx6m1_W = {
 	name = "Qt6.3.1-WebAssembly-emscripten&TARGETEMCCVERSION&-xWindows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "6.3.1",
@@ -5298,7 +5307,7 @@ conf.q6_4wx6v2_wa6v2 = {
 	]],
 }
 
-conf.q6_4wx6m2 = {
+conf.q6_4wx6g2 = {
 	name = "Qt6.4.0-beta3-Windows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "6.4.0-beta3",
 	host = "Win10",
@@ -5332,7 +5341,7 @@ conf.q6_4wx6m2 = {
 	]],
 }
 
-conf.q6_4wx6m2st = {
+conf.q6_4wx6g2st = {
 	name = "Qt6.4.0-beta3-Windows-x86_64-MinGW&HOSTTOOLVERSION&-static",
 	qtVersion = "6.4.0-beta3",
 	host = "Win10",
@@ -5390,7 +5399,7 @@ conf.q6_4wx6m2st = {
 	]],
 }
 
-conf.q6_4wx6Lu = {
+conf.q6_4wx6u4 = {
 	name = "Qt6.4.0-beta3-Windows-x86_64-llvm-mingw-&HOSTTOOLVERSION&-ucrt",
 	qtVersion = "6.4.0-beta3",
 	host = "Win10",
@@ -5429,7 +5438,7 @@ conf.q6_4wx6Lu = {
 	]],
 }
 
-conf.q6_4wx6Lv = {
+conf.q6_4wx6m4 = {
 	name = "Qt6.4.0-beta3-Windows-x86_64-llvm-mingw-&HOSTTOOLVERSION&-msvcrt",
 	qtVersion = "6.4.0-beta3",
 	host = "Win10",
@@ -5788,7 +5797,7 @@ conf.q6_4ma6st = {
 	]],
 }
 
-conf.q6_4wx6m2_aa6n3 = {
+conf.q6_4wx6g2_aa6n5 = {
 	name = "Qt6.4.0-beta3-Android-arm64-Clang-NDKr25-XWindows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "6.4.0-beta3",
 	host = "Win10",
@@ -5827,7 +5836,7 @@ conf.q6_4wx6m2_aa6n3 = {
 	]],
 }
 
-conf.q6_4wx6m2_ax6n3 = {
+conf.q6_4wx6g2_ax6n5 = {
 	name = "Qt6.4.0-beta3-Android-x86_64-Clang-NDKr25-XWindows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "6.4.0-beta3",
 	host = "Win10",
@@ -5866,7 +5875,7 @@ conf.q6_4wx6m2_ax6n3 = {
 	]],
 }
 
-conf.q6_4lx6_aa6n3 = {
+conf.q6_4lx6_aa6n5 = {
 	name = "Qt6.4.0-beta3-Android-arm64-Clang-NDKr25-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
 	qtVersion = "6.4.0-beta3",
 	host = "Rocky9",
@@ -5903,7 +5912,7 @@ conf.q6_4lx6_aa6n3 = {
 	]],
 }
 
-conf.q6_4lx6_ax6n3 = {
+conf.q6_4lx6_ax6n5 = {
 	name = "Qt6.4.0-beta3-Android-x86_64-Clang-NDKr25-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
 	qtVersion = "6.4.0-beta3",
 	host = "Rocky9",
@@ -5940,7 +5949,7 @@ conf.q6_4lx6_ax6n3 = {
 	]],
 }
 
-conf.q6_4mx6_aa6n3 = {
+conf.q6_4mx6_aa6n5 = {
 	name = "Qt6.4.0-beta3-Android-arm64-Clang-NDKr25-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "6.4.0-beta3",
 	host = "macOS1015",
@@ -5977,7 +5986,7 @@ conf.q6_4mx6_aa6n3 = {
 	]],
 }
 
-conf.q6_4mx6_ax6n3 = {
+conf.q6_4mx6_ax6n5 = {
 	name = "Qt6.4.0-beta3-Android-x86_64-Clang-NDKr25-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "6.4.0-beta3",
 	host = "macOS1015",
@@ -6014,7 +6023,7 @@ conf.q6_4mx6_ax6n3 = {
 	]],
 }
 
-conf.q6_4ma6_aa6n3 = {
+conf.q6_4ma6_aa6n5 = {
 	name = "Qt6.4.0-beta3-Android-arm64-Clang-NDKr25-xmacOS-arm64_v8a-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "6.4.0-beta3",
 	host = "macOSM1",
@@ -6051,7 +6060,7 @@ conf.q6_4ma6_aa6n3 = {
 	]],
 }
 
-conf.q6_4ma6_ax6n3 = {
+conf.q6_4ma6_ax6n5 = {
 	name = "Qt6.4.0-beta3-Android-x86_64-Clang-NDKr25-xmacOS-arm64_v8a-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "6.4.0-beta3",
 	host = "macOSM1",
@@ -6089,7 +6098,7 @@ conf.q6_4ma6_ax6n3 = {
 }
 
 -- WebAssembly uses emcmake which don't need a toolchain file
-conf.q6_4wx6m1_W = {
+conf.q6_4wx6g2_W = {
 	name = "Qt6.4.0-beta3-WebAssembly-emscripten&TARGETEMCCVERSION&-xWindows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "6.4.0-beta3",
 	host = "Win10",
@@ -6231,7 +6240,7 @@ local Qt6StaticConf = {
 	Win10 = {
 		["6.2.4"] = "q6_2wx6m1st",
 		["6.3.1"] = "q6_3wx6m1st",
-		["6.4.0-beta3"] = "q6_4wx6m2st",
+		["6.4.0-beta3"] = "q6_4wx6g2st",
 	},
 	Win10MSVC2019 = {
 		["6.2.4"] = "q6_2wx6v9st",
@@ -6254,7 +6263,7 @@ local Qt6StaticConf = {
 	},
 	macOSM1 = {
 		["6.3.1"] = "q6_3ma6st",
-		["6.4.0-beta3"] = "q6_4mx6st",
+		["6.4.0-beta3"] = "q6_4ma6st",
 	},
 }
 

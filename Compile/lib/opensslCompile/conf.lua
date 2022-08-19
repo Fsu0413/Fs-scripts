@@ -676,7 +676,7 @@ conf.o3ax3n527 = {
 }
 
 conf.o3ax6n527 = {
-	name = "OpenSSL3.0.5-Android-x86_64-NDKr23cAPI27",
+	name = "OpenSSL3.0.5-Android-x86_64-NDKr25API27",
 	opensslVersion = "3.0.5",
 	host = "Rocky9",
 	target = "Android-27",
@@ -687,7 +687,7 @@ conf.o3ax6n527 = {
 		--prefix=//
 		--openssldir=//ssl
 		android-x86_64
-		-D__ANDROID_API__=24
+		-D__ANDROID_API__=27
 		-fstack-protector-strong
 		-fPIC
 		-Wl,-s

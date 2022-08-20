@@ -5172,8 +5172,7 @@ conf.q6_4wx6v9 = {
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
 		-DFEATURE_system_sqlite=OFF
-		-DFEATURE_webengine_proprietary_codecs=ON
-		-DFEATURE_qtpdf_build=ON
+		-DBUILD_qtwebengine=OFF
 		-DBUILD_qtopcua=OFF
 	]],
 }
@@ -5208,8 +5207,7 @@ conf.q6_4wx6v2 = {
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
 		-DFEATURE_system_sqlite=OFF
-		-DFEATURE_webengine_proprietary_codecs=ON
-		-DFEATURE_qtpdf_build=ON
+		-DBUILD_qtwebengine=OFF
 		-DBUILD_qtopcua=OFF
 	]],
 }

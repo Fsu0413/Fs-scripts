@@ -2148,7 +2148,7 @@ conf.Q5mx6_aalnl = {
 }
 
 conf.Q5wx6m8_W = {
-	name = "Qt5.15.5-WebAssembly-emscripten&TARGETEMCCVERSION&-xWindows-x86_64-MinGW&HOSTTOOLVERSION&",
+	name = "Qt5.15.5-WebAssembly-emscripten&TARGETTOOLVERSION&-xWindows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "5.15.5",
 	host = "Win10",
 	toolchain = "MinGW810-64",
@@ -2184,7 +2184,7 @@ conf.Q5wx6m8_W = {
 }
 
 conf.Q5lx6_W = {
-	name = "Qt5.15.5-WebAssembly-emscripten&TARGETEMCCVERSION&-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
+	name = "Qt5.15.5-WebAssembly-emscripten&TARGETTOOLVERSION&-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
 	qtVersion = "5.15.5",
 	host = "CentOS8",
 	target = "WebAssembly",
@@ -2219,7 +2219,7 @@ conf.Q5lx6_W = {
 }
 
 conf.Q5mx6_W = {
-	name = "Qt5.15.5-WebAssembly-emscripten&TARGETEMCCVERSION&-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
+	name = "Qt5.15.5-WebAssembly-emscripten&TARGETTOOLVERSION&-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "5.15.5",
 	host = "macOSLegacy",
 	target = "WebAssembly",
@@ -3927,7 +3927,7 @@ conf.q6_2mx6_ax6n3 = {
 
 -- WebAssembly uses emcmake which don't need a toolchain file
 conf.q6_2wx6m1_W = {
-	name = "Qt6.2.4-WebAssembly-emscripten&TARGETEMCCVERSION&-xWindows-x86_64-MinGW&HOSTTOOLVERSION&",
+	name = "Qt6.2.4-WebAssembly-emscripten&TARGETTOOLVERSION&-xWindows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "6.2.4",
 	host = "Win10",
 	toolchain = "MinGW1120-64",
@@ -3959,7 +3959,7 @@ conf.q6_2wx6m1_W = {
 }
 
 conf.q6_2lx6_W = {
-	name = "Qt6.2.4-WebAssembly-emscripten&TARGETEMCCVERSION&-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
+	name = "Qt6.2.4-WebAssembly-emscripten&TARGETTOOLVERSION&-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
 	qtVersion = "6.2.4",
 	host = "CentOS8",
 	target = "WebAssembly",
@@ -3988,7 +3988,7 @@ conf.q6_2lx6_W = {
 }
 
 conf.q6_2mx6_W = {
-	name = "Qt6.2.4-WebAssembly-emscripten&TARGETEMCCVERSION&-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
+	name = "Qt6.2.4-WebAssembly-emscripten&TARGETTOOLVERSION&-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "6.2.4",
 	host = "macOS1015",
 	target = "WebAssembly",
@@ -5022,7 +5022,7 @@ conf.q6_3ma6_ax6n3 = {
 -- Note: "m" changed its meaning for LLVM-based toolchain with MinGW-w64 MSVCRT.
 -- Note: Future version of this build configuration is called "q*_*wx6g2_W" where "g" means GNU-based toolchain with MinGW-w64, and is updated its host tools to GCC 12 series.
 conf.q6_3wx6m1_W = {
-	name = "Qt6.3.1-WebAssembly-emscripten&TARGETEMCCVERSION&-xWindows-x86_64-MinGW&HOSTTOOLVERSION&",
+	name = "Qt6.3.1-WebAssembly-emscripten&TARGETTOOLVERSION&-xWindows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "6.3.1",
 	host = "Win10",
 	toolchain = "MinGW1120-64",
@@ -5054,7 +5054,7 @@ conf.q6_3wx6m1_W = {
 }
 
 conf.q6_3lx6_W = {
-	name = "Qt6.3.1-WebAssembly-emscripten&TARGETEMCCVERSION&-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
+	name = "Qt6.3.1-WebAssembly-emscripten&TARGETTOOLVERSION&-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
 	qtVersion = "6.3.1",
 	host = "CentOS8",
 	target = "WebAssembly",
@@ -5083,7 +5083,7 @@ conf.q6_3lx6_W = {
 }
 
 conf.q6_3mx6_W = {
-	name = "Qt6.3.1-WebAssembly-emscripten&TARGETEMCCVERSION&-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
+	name = "Qt6.3.1-WebAssembly-emscripten&TARGETTOOLVERSION&-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "6.3.1",
 	host = "macOS1015",
 	target = "WebAssembly",
@@ -5112,7 +5112,7 @@ conf.q6_3mx6_W = {
 }
 
 conf.q6_3ma6_W = {
-	name = "Qt6.3.1-WebAssembly-emscripten&TARGETEMCCVERSION&-xmacOS-arm64_v8a-AppleClang&HOSTTOOLVERSION&",
+	name = "Qt6.3.1-WebAssembly-emscripten&TARGETTOOLVERSION&-xmacOS-arm64_v8a-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "6.3.1",
 	host = "macOS1015",
 	target = "WebAssembly",
@@ -6099,7 +6099,7 @@ conf.q6_4ma6_ax6n5 = {
 
 -- WebAssembly uses emcmake which don't need a toolchain file
 conf.q6_4wx6g2_W = {
-	name = "Qt6.4.0-beta3-WebAssembly-emscripten&TARGETEMCCVERSION&-xWindows-x86_64-MinGW&HOSTTOOLVERSION&",
+	name = "Qt6.4.0-beta3-WebAssembly-emscripten&TARGETTOOLVERSION&-xWindows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "6.4.0-beta3",
 	host = "Win10",
 	toolchain = "MinGW1210-64",
@@ -6131,7 +6131,7 @@ conf.q6_4wx6g2_W = {
 }
 
 conf.q6_4lx6_W = {
-	name = "Qt6.4.0-beta3-WebAssembly-emscripten&TARGETEMCCVERSION&-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
+	name = "Qt6.4.0-beta3-WebAssembly-emscripten&TARGETTOOLVERSION&-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
 	qtVersion = "6.4.0-beta3",
 	host = "Rocky9",
 	target = "WebAssembly",
@@ -6160,7 +6160,7 @@ conf.q6_4lx6_W = {
 }
 
 conf.q6_4mx6_W = {
-	name = "Qt6.4.0-beta3-WebAssembly-emscripten&TARGETEMCCVERSION&-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
+	name = "Qt6.4.0-beta3-WebAssembly-emscripten&TARGETTOOLVERSION&-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "6.4.0-beta3",
 	host = "macOS1015",
 	target = "WebAssembly",
@@ -6189,7 +6189,7 @@ conf.q6_4mx6_W = {
 }
 
 conf.q6_4ma6_W = {
-	name = "Qt6.4.0-beta3-WebAssembly-emscripten&TARGETEMCCVERSION&-xmacOS-arm64_v8a-AppleClang&HOSTTOOLVERSION&",
+	name = "Qt6.4.0-beta3-WebAssembly-emscripten&TARGETTOOLVERSION&-xmacOS-arm64_v8a-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "6.4.0-beta3",
 	host = "macOS1015",
 	target = "WebAssembly",

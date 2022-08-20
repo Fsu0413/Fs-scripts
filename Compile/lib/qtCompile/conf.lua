@@ -6328,10 +6328,12 @@ for name, value in pairs(conf) do
 		value.sourcePackageBaseName = "qt5-kde"
 	else
 		local qtSourcePackagePrefix = "qt-everywhere-src-"
-		for _, waVersion in ipairs(Win10SrcPackagePrefixWorkaroundVersions) do
-			if value.qtVersion == waVersion then
-				qtSourcePackagePrefix = "qt-src-"
-				break
+		if value.host == "Win10" then
+			for _, waVersion in ipairs(Win10SrcPackagePrefixWorkaroundVersions) do
+				if value.qtVersion == waVersion then
+					qtSourcePackagePrefix = "qt-src-"
+					break
+				end
 			end
 		end
 

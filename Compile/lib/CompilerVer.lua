@@ -15,6 +15,8 @@ local runCmdScript = function(script)
 		local resFile = io.open(fileName2, "r")
 		ret = resFile:read()
 		resFile:close()
+	else
+		io.stderr:write("[CompilerVer.lua][runCmdScript] Following script fails to run:\n" .. script .. "\n")
 	end
 	
 	os.remove(fileName .. ".cmd")
@@ -45,6 +47,8 @@ local runShScript = function(script)
 		local resFile = io.open(fileName2, "r")
 		ret = resFile:read()
 		resFile:close()
+	else
+		io.stderr:write("[CompilerVer.lua][runShScript] Following script fails to run:\n" .. script .. "\n")
 	end
 	
 	os.remove(fileName)
@@ -115,6 +119,12 @@ compilerVer.emcc = function(isWin, path)
 		ret = runCmdScript(script)
 	else
 		ret = runShScript(script)
+	end
+	
+	if not ret then
+		-- workaround: emsdk 1.39.8 don't set path of python
+		io.stderr:write("[CompilerVer.lua][compilerVer.emcc] workaround emsdk version\n")
+		ret = "1.39.8"
 	end
 
 	return parseVersionNum(ret)

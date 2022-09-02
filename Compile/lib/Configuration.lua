@@ -57,7 +57,7 @@ conf.host.win = {
 	["androidNdkPath"] = {
 		["r21e"] = "D:\\android-ndk-r21e",
 		["r23c"] = "D:\\android-ndk-r23c",
-		["r25"] = "D:\\android-ndk-r25",
+		["r25b"] = "D:\\android-ndk-r25b",
 	},
 	["androidNdkHost"] = "windows-x86_64",
 	["emscriptenPath"] = {
@@ -105,7 +105,7 @@ conf.host.msys = {
 	["androidNdkPath"] = {
 		["r21e"] = "/d/android-ndk-r21e/",
 		["r23c"] = "/d/android-ndk-r23c/",
-		["r25"] = "/d/android-ndk-r25/",
+		["r25b"] = "/d/android-ndk-r25b/",
 	},
 	["androidNdkHost"] = "windows-x86_64",
 	["defaultToolchainExecutableName"] = "gcc",
@@ -128,7 +128,7 @@ conf.host.linux = {
 	["androidNdkPath"] = {
 		["r21e"] = "/opt/env/android-ndk-r21e/",
 		["r23c"] = "/opt/env/android-ndk-r23c/",
-		["r25"] = "/opt/env/android-ndk-r25/",
+		["r25b"] = "/opt/env/android-ndk-r25b/",
 	},
 	["androidNdkHost"] = "linux-x86_64",
 	["sourcePackagePath"] = "/opt/sources/",
@@ -163,7 +163,7 @@ conf.host.mac = {
 		["r21e"] = "/opt/env/android-ndk-r21e/",
 		-- NDK after r23 only distributes as APP bundle, so we install the APP in /Applications.
 		["r23c"] = "/Applications/AndroidNDK8568313.app/Contents/NDK/",
-		["r25"] = "/Applications/AndroidNDK8775105.app/Contents/NDK/",
+		["r25b"] = "/Applications/AndroidNDK8937393.app/Contents/NDK/",
 	},
 	["androidNdkHost"] = "darwin-x86_64",
 	["sourcePackagePath"] = "/opt/sources/",

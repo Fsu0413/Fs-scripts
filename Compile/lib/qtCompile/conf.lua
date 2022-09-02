@@ -42,7 +42,7 @@ abbrs:
 		u4 / (deprecated) mu: LLVM/Clang based MinGW-w64, ucrt, with LLVM 14
 		nl: Android NDK r21e/Previous LTS
 		n3: Android NDK r23c/Previous LTS
-		n5: Android NDK r25/Latest LTS
+		n5: Android NDK r25b/Latest LTS
 	If omitted, it use a toolchain in default PATH, which should be AppleClang in macOS, or GCC in Linux.
 
 	Variants:
@@ -5797,12 +5797,12 @@ conf.q6_4ma6st = {
 }
 
 conf.q6_4wx6g2_aa6n5 = {
-	name = "Qt6.4.0-beta4-Android-arm64-Clang-NDKr25-XWindows-x86_64-MinGW&HOSTTOOLVERSION&",
+	name = "Qt6.4.0-beta4-Android-arm64-Clang-NDKr25b-XWindows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "6.4.0-beta4",
 	host = "Win10",
 	target = "Android-27",
 	toolchain = "MinGW1210-64",
-	toolchainT = "Android-27-r25-arm64",
+	toolchainT = "Android-27-r25b-arm64",
 	opensslConf = "o3aa6n527",
 	useCMake = "Latest",
 	androidSdkVersion = "Latest",
@@ -5836,12 +5836,12 @@ conf.q6_4wx6g2_aa6n5 = {
 }
 
 conf.q6_4wx6g2_ax6n5 = {
-	name = "Qt6.4.0-beta4-Android-x86_64-Clang-NDKr25-XWindows-x86_64-MinGW&HOSTTOOLVERSION&",
+	name = "Qt6.4.0-beta4-Android-x86_64-Clang-NDKr25b-XWindows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "6.4.0-beta4",
 	host = "Win10",
 	target = "Android-27",
 	toolchain = "MinGW1210-64",
-	toolchainT = "Android-27-r25-x86_64",
+	toolchainT = "Android-27-r25b-x86_64",
 	opensslConf = "o3ax6n527",
 	useCMake = "Latest",
 	androidSdkVersion = "Latest",
@@ -5875,11 +5875,11 @@ conf.q6_4wx6g2_ax6n5 = {
 }
 
 conf.q6_4lx6_aa6n5 = {
-	name = "Qt6.4.0-beta4-Android-arm64-Clang-NDKr25-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
+	name = "Qt6.4.0-beta4-Android-arm64-Clang-NDKr25b-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
 	qtVersion = "6.4.0-beta4",
 	host = "Rocky9",
 	target = "Android-27",
-	toolchainT = "Android-27-r25-arm64",
+	toolchainT = "Android-27-r25b-arm64",
 	opensslConf = "o3aa6n527",
 	useCMake = "Latest",
 	androidSdkVersion = "Latest",
@@ -5912,11 +5912,11 @@ conf.q6_4lx6_aa6n5 = {
 }
 
 conf.q6_4lx6_ax6n5 = {
-	name = "Qt6.4.0-beta4-Android-x86_64-Clang-NDKr25-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
+	name = "Qt6.4.0-beta4-Android-x86_64-Clang-NDKr25b-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
 	qtVersion = "6.4.0-beta4",
 	host = "Rocky9",
 	target = "Android-27",
-	toolchainT = "Android-27-r25-x86_64",
+	toolchainT = "Android-27-r25b-x86_64",
 	opensslConf = "o3ax6n527",
 	useCMake = "Latest",
 	androidSdkVersion = "Latest",
@@ -5949,11 +5949,11 @@ conf.q6_4lx6_ax6n5 = {
 }
 
 conf.q6_4mx6_aa6n5 = {
-	name = "Qt6.4.0-beta4-Android-arm64-Clang-NDKr25-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
+	name = "Qt6.4.0-beta4-Android-arm64-Clang-NDKr25b-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "6.4.0-beta4",
 	host = "macOS1015",
 	target = "Android-27",
-	toolchainT = "Android-27-r25-arm64",
+	toolchainT = "Android-27-r25b-arm64",
 	opensslConf = "o3aa6n527",
 	useCMake = "Latest",
 	androidSdkVersion = "Latest",
@@ -5986,11 +5986,11 @@ conf.q6_4mx6_aa6n5 = {
 }
 
 conf.q6_4mx6_ax6n5 = {
-	name = "Qt6.4.0-beta4-Android-x86_64-Clang-NDKr25-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
+	name = "Qt6.4.0-beta4-Android-x86_64-Clang-NDKr25b-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "6.4.0-beta4",
 	host = "macOS1015",
 	target = "Android-27",
-	toolchainT = "Android-27-r25-x86_64",
+	toolchainT = "Android-27-r25b-x86_64",
 	opensslConf = "o3ax6n527",
 	useCMake = "Latest",
 	androidSdkVersion = "Latest",
@@ -6023,11 +6023,11 @@ conf.q6_4mx6_ax6n5 = {
 }
 
 conf.q6_4ma6_aa6n5 = {
-	name = "Qt6.4.0-beta4-Android-arm64-Clang-NDKr25-xmacOS-arm64_v8a-AppleClang&HOSTTOOLVERSION&",
+	name = "Qt6.4.0-beta4-Android-arm64-Clang-NDKr25b-xmacOS-arm64_v8a-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "6.4.0-beta4",
 	host = "macOSM1",
 	target = "Android-27",
-	toolchainT = "Android-27-r25-arm64",
+	toolchainT = "Android-27-r25b-arm64",
 	opensslConf = "o3aa6n527",
 	useCMake = "Latest",
 	androidSdkVersion = "Latest",
@@ -6060,11 +6060,11 @@ conf.q6_4ma6_aa6n5 = {
 }
 
 conf.q6_4ma6_ax6n5 = {
-	name = "Qt6.4.0-beta4-Android-x86_64-Clang-NDKr25-xmacOS-arm64_v8a-AppleClang&HOSTTOOLVERSION&",
+	name = "Qt6.4.0-beta4-Android-x86_64-Clang-NDKr25b-xmacOS-arm64_v8a-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "6.4.0-beta4",
 	host = "macOSM1",
 	target = "Android-27",
-	toolchainT = "Android-27-r25-x86_64",
+	toolchainT = "Android-27-r25b-x86_64",
 	opensslConf = "o3ax6n527",
 	useCMake = "Latest",
 	androidSdkVersion = "Latest",

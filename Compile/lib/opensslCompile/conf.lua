@@ -36,7 +36,7 @@ abbrs:
 		u4 / (deprecated) mu: LLVM/Clang based MinGW-w64, ucrt, with LLVM 14
 		nl: Android NDK r21e/Previous LTS
 		n3: Android NDK r23c/Previous LTS
-		n5: Android NDK r25/Latest LTS
+		n5: Android NDK r25b/Latest LTS
 	If omitted, it use a toolchain in default PATH, which should be AppleClang in macOS, or GCC in Linux.
 
 	Variants:
@@ -618,7 +618,7 @@ conf.o3aa3n527 = {
 	opensslVersion = "3.0.5",
 	host = "Rocky9",
 	target = "Android-27",
-	toolchainT = "Android-27-r25-arm",
+	toolchainT = "Android-27-r25b-arm",
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -643,7 +643,7 @@ conf.o3aa6n527 = {
 	opensslVersion = "3.0.5",
 	host = "Rocky9",
 	target = "Android-27",
-	toolchainT = "Android-27-r25-arm64",
+	toolchainT = "Android-27-r25b-arm64",
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -663,7 +663,7 @@ conf.o3ax3n527 = {
 	opensslVersion = "3.0.5",
 	host = "Rocky9",
 	target = "Android-27",
-	toolchainT = "Android-27-r25-x86",
+	toolchainT = "Android-27-r25b-x86",
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -683,7 +683,7 @@ conf.o3ax6n527 = {
 	opensslVersion = "3.0.5",
 	host = "Rocky9",
 	target = "Android-27",
-	toolchainT = "Android-27-r25-x86_64",
+	toolchainT = "Android-27-r25b-x86_64",
 	configureParameter = [[
 		no-asm
 		no-shared

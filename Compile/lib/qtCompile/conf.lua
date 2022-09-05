@@ -6105,7 +6105,7 @@ conf.q6_4wx6g2_W = {
 	host = "Win10",
 	toolchain = "MinGW1210-64",
 	target = "WebAssembly",
-	toolchainT = "emscripten-3.1.10",
+	toolchainT = "emscripten-3.1.14",
 	useCMake = "Latest",
 	-- workaround https://github.com/emscripten-core/emscripten/issues/15163
 	configureParameter = [[
@@ -6136,7 +6136,7 @@ conf.q6_4lx6_W = {
 	qtVersion = "6.4.0-beta4",
 	host = "Rocky9",
 	target = "WebAssembly",
-	toolchainT = "emscripten-3.1.10",
+	toolchainT = "emscripten-3.1.14",
 	useCMake = "Latest",
 	configureParameter = [[
 		-GNinja
@@ -6165,7 +6165,7 @@ conf.q6_4mx6_W = {
 	qtVersion = "6.4.0-beta4",
 	host = "macOS1015",
 	target = "WebAssembly",
-	toolchainT = "emscripten-3.1.10",
+	toolchainT = "emscripten-3.1.14",
 	useCMake = "Latest",
 	configureParameter = [[
 		-GNinja
@@ -6194,7 +6194,7 @@ conf.q6_4ma6_W = {
 	qtVersion = "6.4.0-beta4",
 	host = "macOS1015",
 	target = "WebAssembly",
-	toolchainT = "emscripten-3.1.10",
+	toolchainT = "emscripten-3.1.14",
 	useCMake = "Latest",
 	configureParameter = [[
 		-GNinja

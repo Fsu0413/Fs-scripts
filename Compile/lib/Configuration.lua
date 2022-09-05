@@ -64,7 +64,7 @@ conf.host.win = {
 		["1.39.8"] = "D:\\emsdk-1.39.8\\",
 		["2.0.14"] = "D:\\emsdk-2.0.14\\",
 		["3.1.6"] = "D:\\emsdk-3.1.6\\",
-		["3.1.10"] = "D:\\emsdk-3.1.10\\",
+		["3.1.14"] = "D:\\emsdk-3.1.14\\",
 	},
 	["cMakePath"] = {
 		["20"] = {"D:\\cmake-3.20.2-windows-x86_64\\bin", "D:\\ninja"},
@@ -137,7 +137,7 @@ conf.host.linux = {
 		["1.39.8"] = "/opt/env/emsdk-1.39.8/",
 		["2.0.14"] = "/opt/env/emsdk-2.0.14/",
 		["3.1.6"] = "/opt/env/emsdk-3.1.6/",
-		["3.1.10"] = "/opt/env/emsdk-3.1.10/",
+		["3.1.14"] = "/opt/env/emsdk-3.1.14/",
 	},
 	["jdkPath"] = {
 		["8"] = "/usr/lib/jvm/java-1.8.0-openjdk",
@@ -171,7 +171,7 @@ conf.host.mac = {
 	["emscriptenPath"] = {
 		["2.0.14"] = "/opt/env/emsdk-2.0.14/",
 		["3.1.6"] = "/opt/env/emsdk-3.1.6/",
-		["3.1.10"] = "/opt/env/emsdk-3.1.10/",
+		["3.1.14"] = "/opt/env/emsdk-3.1.14/",
 	},
 	["defaultToolchainExecutableName"] = "clang",
 }

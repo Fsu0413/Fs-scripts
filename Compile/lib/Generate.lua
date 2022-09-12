@@ -128,6 +128,8 @@ cd /d &INSTALLROOT&\..
 %SEVENZIP% a -t7z -m0=LZMA2:d256m:fb273 -mmt=3 -myx -mqs -ms=on -- &INSTALLPATHWITHDATE&.7z &INSTALLPATH&
 copy /y &INSTALLPATHWITHDATE&.7z &INSTALLPATH&.7z
 
+rmdir /s /q &BUILDDIR&
+
 exit 0
 
 ]]
@@ -238,6 +240,10 @@ if errorlevel 1 goto LOOP2
 cd /d &INSTALLROOT&\..
 
 %SEVENZIP% a -t7z -m0=LZMA2:d256m:fb273 -mmt=3 -myx -mqs -ms=on -- &INSTALLPATH&.7z &INSTALLPATH&
+
+rmdir /s /q &BUILDDIR&
+
+exit 0
 
 ]]
 
@@ -374,6 +380,10 @@ $SEVENZIP a -t7z -m0=LZMA2:d256m:fb273 -mmt=3 -myx -mqs -ms=on -- &INSTALLPATHWI
 cp &INSTALLPATHWITHDATE&.tar.xz &INSTALLPATH&.tar.xz
 cp &INSTALLPATHWITHDATE&.7z &INSTALLPATH&.7z
 
+rm -rf &BUILDDIR&
+
+exit 0
+
 ]]
 
 -- QTDIR
@@ -497,6 +507,10 @@ cd &INSTALLROOT&/..
 $TAR -cf - &INSTALLPATH& | $SEVENZIP a -txz -m0=LZMA2:d256m:fb273 -mmt=3 -myx -si -- &INSTALLPATH&.tar.xz
 $SEVENZIP a -t7z -m0=LZMA2:d256m:fb273 -mmt=3 -myx -mqs -ms=on -- &INSTALLPATH&.7z &INSTALLPATH&
 
+rm -rf &BUILDDIR&
+
+exit 0
+
 ]]
 
 -- PATHSET
@@ -594,6 +608,8 @@ cd &INSTALLROOT&/..
 
 $TAR -cf - &INSTALLPATH& | $SEVENZIP a -txz -m0=LZMA2:d256m:fb273 -mmt=3 -myx -si -- &INSTALLPATH&.tar.xz
 $SEVENZIP a -t7z -m0=LZMA2:d256m:fb273 -mmt=3 -myx -mqs -ms=on -- &INSTALLPATH&.7z &INSTALLPATH&
+
+exit 0
 
 ]]
 

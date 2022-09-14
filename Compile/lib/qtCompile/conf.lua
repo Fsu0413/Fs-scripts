@@ -2665,7 +2665,7 @@ conf.q5_kdemx6_aalnl = {
 
 conf.q6_2wx6v9 = {
 	name = "Qt6.2.4-Windows-x86_64-VS2019-&HOSTTOOLVERSION&",
-	qtVersion = "6.2.4",
+	qtVersion = "6.2.4-3",
 	host = "Win10",
 	toolchain = "MSVC2019-64",
 	opensslConf = "o3wx6v9",
@@ -2694,7 +2694,7 @@ conf.q6_2wx6v9 = {
 		-DFEATURE_sql_odbc=ON
 		-DFEATURE_system_sqlite=OFF
 		-DFEATURE_webengine_proprietary_codecs=ON
-		-DFEATURE_qtpdf_build=ON
+		-DFEATURE_qtpdf_build=OFF
 		-DBUILD_qtopcua=OFF
 	]],
 }
@@ -2830,7 +2830,7 @@ conf.q6_2wx6v9_wa6v9 = {
 
 conf.q6_2wx6v2 = {
 	name = "Qt6.2.4-Windows-x86_64-VS2022-&HOSTTOOLVERSION&",
-	qtVersion = "6.2.4",
+	qtVersion = "6.2.4-3",
 	host = "Win10",
 	toolchain = "MSVC2022-64",
 	opensslConf = "o3wx6v2",
@@ -2859,7 +2859,7 @@ conf.q6_2wx6v2 = {
 		-DFEATURE_sql_odbc=ON
 		-DFEATURE_system_sqlite=OFF
 		-DFEATURE_webengine_proprietary_codecs=ON
-		-DFEATURE_qtpdf_build=ON
+		-DFEATURE_qtpdf_build=OFF
 		-DBUILD_qtopcua=OFF
 	]],
 }
@@ -3194,7 +3194,7 @@ conf.q6_2lx6st = {
 
 conf.q6_2mx6 = {
 	name = "Qt6.2.4-macOS-x86_64-AppleClang&HOSTTOOLVERSION&",
-	qtVersion = "6.2.4",
+	qtVersion = "6.2.4-3",
 	host = "macOS1015",
 	opensslConf = "o3mx6",
 	useCMake = "Latest",
@@ -3221,7 +3221,8 @@ conf.q6_2mx6 = {
 		-DFEATURE_securetransport=ON
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_system_sqlite=OFF
-		-DBUILD_qtwebengine=OFF
+		-DFEATURE_webengine_proprietary_codecs=ON
+		-DFEATURE_qtpdf_build=OFF
 		-DCMAKE_SKIP_BUILD_RPATH=OFF
 		-DCMAKE_SKIP_INSTALL_RPATH=OFF
 		-DFEATURE_framework=ON
@@ -3231,7 +3232,7 @@ conf.q6_2mx6 = {
 
 conf.q6_2mx6nf = {
 	name = "Qt6.2.4-macOS-x86_64-AppleClang&HOSTTOOLVERSION&-noFramework",
-	qtVersion = "6.2.4",
+	qtVersion = "6.2.4-3",
 	host = "macOS1015",
 	variant = {"-noFramework"},
 	opensslConf = "o3mx6",
@@ -3259,7 +3260,8 @@ conf.q6_2mx6nf = {
 		-DFEATURE_securetransport=ON
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_system_sqlite=OFF
-		-DBUILD_qtwebengine=OFF
+		-DFEATURE_webengine_proprietary_codecs=ON
+		-DFEATURE_qtpdf_build=OFF
 		-DCMAKE_SKIP_BUILD_RPATH=OFF
 		-DCMAKE_SKIP_INSTALL_RPATH=OFF
 		-DFEATURE_framework=OFF
@@ -3362,7 +3364,7 @@ conf.q6_2mx6sf = {
 
 conf.q6_2ma6 = {
 	name = "Qt6.2.4-macOS-arm64_v8a-AppleClang&HOSTTOOLVERSION&",
-	qtVersion = "6.2.4",
+	qtVersion = "6.2.4-3",
 	host = "macOSM1",
 	opensslConf = "o3ma6",
 	useCMake = "Latest",
@@ -3389,7 +3391,8 @@ conf.q6_2ma6 = {
 		-DFEATURE_securetransport=ON
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_system_sqlite=OFF
-		-DBUILD_qtwebengine=OFF
+		-DFEATURE_webengine_proprietary_codecs=ON
+		-DFEATURE_qtpdf_build=OFF
 		-DCMAKE_SKIP_BUILD_RPATH=OFF
 		-DCMAKE_SKIP_INSTALL_RPATH=OFF
 		-DFEATURE_framework=ON
@@ -3399,7 +3402,7 @@ conf.q6_2ma6 = {
 
 conf.q6_2ma6nf = {
 	name = "Qt6.2.4-macOS-arm64_v8a-AppleClang&HOSTTOOLVERSION&-noFramework",
-	qtVersion = "6.2.4",
+	qtVersion = "6.2.4-3",
 	host = "macOSM1",
 	variant = {"-noFramework"},
 	opensslConf = "o3ma6",
@@ -3427,7 +3430,8 @@ conf.q6_2ma6nf = {
 		-DFEATURE_securetransport=ON
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_system_sqlite=OFF
-		-DBUILD_qtwebengine=OFF
+		-DFEATURE_webengine_proprietary_codecs=ON
+		-DFEATURE_qtpdf_build=OFF
 		-DCMAKE_SKIP_BUILD_RPATH=OFF
 		-DCMAKE_SKIP_INSTALL_RPATH=OFF
 		-DFEATURE_framework=OFF
@@ -6303,6 +6307,7 @@ local valueMo = {
 local Win10SrcPackagePrefixWorkaroundVersions = {
 	"5.15.6-4",
 	"6.2.4",
+	"6.2.4-3",
 	"6.3.2",
 	"6.4.0-beta4",
 }

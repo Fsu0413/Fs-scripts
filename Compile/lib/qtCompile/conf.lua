@@ -3066,12 +3066,12 @@ conf.q6_2wx6m2sf = {
 	]],
 }
 
-conf.q6_2wx6mu = {
+conf.q6_2wx6u5 = {
 	name = "Qt6.2.4-Windows-x86_64-llvm-mingw-&HOSTTOOLVERSION&-ucrt",
 	qtVersion = "6.2.4",
 	host = "Win10",
-	toolchain = "MinGWLLVM-ucrt14-64",
-	opensslConf = "o3wx6mu",
+	toolchain = "MinGWLLVM-ucrt15-64",
+	opensslConf = "o3wx6u5",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -3104,12 +3104,12 @@ conf.q6_2wx6mu = {
 	]],
 }
 
-conf.q6_2wx6mv = {
+conf.q6_2wx6s5 = {
 	name = "Qt6.2.4-Windows-x86_64-llvm-mingw-&HOSTTOOLVERSION&-msvcrt",
 	qtVersion = "6.2.4",
 	host = "Win10",
-	toolchain = "MinGWLLVM-msvcrt14-64",
-	opensslConf = "o3wx6mv",
+	toolchain = "MinGWLLVM-msvcrt15-64",
+	opensslConf = "o3wx6s5",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -4320,13 +4320,12 @@ conf.q6_3wx6m2 = {
 	]],
 }
 
--- Note: Future version of this build configuration is called "q*_*wx6u4" where "u" means LLVM-based toolchain with MinGW-w64 UCRT.
-conf.q6_3wx6mu = {
+conf.q6_3wx6u5 = {
 	name = "Qt6.3.2-Windows-x86_64-llvm-mingw-&HOSTTOOLVERSION&-ucrt",
 	qtVersion = "6.3.2",
 	host = "Win10",
-	toolchain = "MinGWLLVM-ucrt14-64",
-	opensslConf = "o3wx6mu",
+	toolchain = "MinGWLLVM-ucrt15-64",
+	opensslConf = "o3wx6u5",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -4359,13 +4358,12 @@ conf.q6_3wx6mu = {
 	]],
 }
 
--- Note: Future version of this build configuration is called "q*_*wx6m4" where "m" means LLVM-based toolchain with MinGW-w64 MSVCRT.
-conf.q6_3wx6mv = {
+conf.q6_3wx6s5 = {
 	name = "Qt6.3.2-Windows-x86_64-llvm-mingw-&HOSTTOOLVERSION&-msvcrt",
 	qtVersion = "6.3.2",
 	host = "Win10",
-	toolchain = "MinGWLLVM-msvcrt14-64",
-	opensslConf = "o3wx6mv",
+	toolchain = "MinGWLLVM-msvcrt15-64",
+	opensslConf = "o3wx6s5",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -5404,12 +5402,12 @@ conf.q6_4wx6g2st = {
 	]],
 }
 
-conf.q6_4wx6u4 = {
+conf.q6_4wx6u5 = {
 	name = "Qt6.4.0-rc-Windows-x86_64-llvm-mingw-&HOSTTOOLVERSION&-ucrt",
 	qtVersion = "6.4.0-rc",
 	host = "Win10",
-	toolchain = "MinGWLLVM-ucrt14-64",
-	opensslConf = "o3wx6mu",
+	toolchain = "MinGWLLVM-ucrt15-64",
+	opensslConf = "o3wx6u5",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -5442,12 +5440,12 @@ conf.q6_4wx6u4 = {
 	]],
 }
 
-conf.q6_4wx6m4 = {
+conf.q6_4wx6s5 = {
 	name = "Qt6.4.0-rc-Windows-x86_64-llvm-mingw-&HOSTTOOLVERSION&-msvcrt",
 	qtVersion = "6.4.0-rc",
 	host = "Win10",
-	toolchain = "MinGWLLVM-msvcrt14-64",
-	opensslConf = "o3wx6mv",
+	toolchain = "MinGWLLVM-msvcrt15-64",
+	opensslConf = "o3wx6s5",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"

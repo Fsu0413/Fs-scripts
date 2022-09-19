@@ -5,10 +5,10 @@ local compilerVer = require("CompilerVer")
 conf.host = {}
 
 conf.host.win = {
-	-- Preinstalled jom(need to set path manually)
-	-- Preinstalled MSVC(need to set path manually)
-	-- Preinstalled MinGW-w64 toolchain(need to set path manually)
-	-- Preinstalled CMake and ninja
+	-- Preinstalled jom in path and is used
+	-- Preinstalled MSVC (need to set path manually)
+	-- Preinstalled MinGW-w64 toolchain (need to set path manually)
+	-- Preinstalled CMake and ninja in path and used
 	-- Preinstalled Android-NDK/SDK toolchain
 	-- Preinstalled emsdk toolchain
 	["makefileTemplate"] = "win",
@@ -43,10 +43,8 @@ conf.host.win = {
 		-- MinGW toolchains with Clang / LLVM, currently used in Qt 6 only
 		-- LLVM always acts as an cross compiler, but the target libraries are architecture-dependent
 		-- Since some binaries built also acts as host tool, we should add the target libraries to PATH too, otherwise the program won't start
-		["MinGWLLVM-msvcrt14-64"] = {"D:\\mingw-w64\\llvm-mingw-20220323-msvcrt-x86_64\\x86_64-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20220323-msvcrt-x86_64\\bin"},
-		["MinGWLLVM-msvcrt14-32"] = {"D:\\mingw-w64\\llvm-mingw-20220323-msvcrt-x86_64\\i686-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20220323-msvcrt-x86_64\\bin"},
-		["MinGWLLVM-ucrt14-64"] = {"D:\\mingw-w64\\llvm-mingw-20220323-ucrt-x86_64\\x86_64-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20220323-ucrt-x86_64\\bin"},
-		["MinGWLLVM-ucrt14-32"] = {"D:\\mingw-w64\\llvm-mingw-20220323-ucrt-x86_64\\i686-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20220323-ucrt-x86_64\\bin"},
+		["MinGWLLVM-msvcrt15-64"] = {"D:\\mingw-w64\\llvm-mingw-20220906-msvcrt-x86_64\\x86_64-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20220906-msvcrt-x86_64\\bin"},
+		["MinGWLLVM-ucrt15-64"] = {"D:\\mingw-w64\\llvm-mingw-20220906-ucrt-x86_64\\x86_64-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20220906-ucrt-x86_64\\bin"},
 	},
 	["sourcePackagePath"] = "D:\\Qt\\",
 	["buildRootPath"] = "D:\\Qt\\", -- On Windows, the build root should be same with source package
@@ -98,8 +96,8 @@ conf.host.msys = {
 		["MinGW1120-64"] = "/d/mingw-w64/11.2.0-4/mingw64/bin/",
 		["MinGW1210-64"] = "/d/mingw-w64/12.1.0/mingw64/bin/",
 
-		["MinGWLLVM-msvcrt14-64"] = {"/d/mingw-w64/llvm-mingw-20220323-msvcrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20220323-msvcrt-x86_64/bin"},
-		["MinGWLLVM-ucrt14-64"] = {"/d/mingw-w64/llvm-mingw-20220323-ucrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20220323-ucrt-x86_64/bin"},
+		["MinGWLLVM-msvcrt15-64"] = {"/d/mingw-w64/llvm-mingw-20220906-msvcrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20220906-msvcrt-x86_64/bin"},
+		["MinGWLLVM-ucrt15-64"] = {"/d/mingw-w64/llvm-mingw-20220906-ucrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20220906-ucrt-x86_64/bin"},
 	},
 	["sourcePackagePath"] = "/d/Qt/",
 	["androidNdkPath"] = {
@@ -178,6 +176,8 @@ conf.host.mac = {
 
 conf.host.macLegacy = {
 	-- Preinstalled GNU make in path and is used
+	-- Preinstalled Android-NDK/SDK toolchain
+	-- Preinstalled emsdk toolchain
 	-- Preinstalled host toolchain in path and is used
 	-- Preinstalled p7zip in path and is used
 	["makefileTemplate"] = "unix",
@@ -380,7 +380,7 @@ conf.Qt.generateConfTable = function(self, host, job)
 		ret.MAKE = "emmake " .. ret.MAKE
 	end
 
-	-- For whatever reason Python can't be in PATH in Windows.
+	-- For whatever reason Python can't be in PATH on Windows.
 	-- Python for windows has its executable versionless. We need to prepend its path to the PATH variable.
 	if confHost.pythonPath then
 		if string.sub(confDetail.qtVersion, 1, 2) == "6." then
@@ -505,7 +505,7 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 	ret.download = {}
 
 	if confDetail.opensslAndroidAll then
-		-- currently this part of script runs only on whatever Linux host (CentOS8 on my build environment) and no Windows compatibility is made.
+		-- currently this part of script runs only on whatever Linux host (CentOS8 / Rocky9 on my build environment) and no Windows compatibility is made.
 		-- no plan for Windows support.
 		ret.buildContent = "OpenSSLAndroidAll"
 		ret.INSTALLROOT = ret.WORKSPACE .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. confDetail.name
@@ -597,7 +597,7 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 			if string.sub(confDetail.toolchain, 1, 4) == "MSVC" then -- if conf.hostToConfMap[host] == "win" then
 				-- nothing special
 			elseif string.sub(confDetail.toolchain, 1, 5) == "MinGW" then -- elseif conf.hostToConfMap[host] == "msys" then
-				-- Clang-llvm need clang be called with target triplet
+				-- Clang-llvm need clang be called with target triplet and should be set to environment variable CC
 				if confDetail.clangTriplet then
 					ret.envSet.CC = "clang --target=" .. confDetail.clangTriplet
 				end
@@ -621,6 +621,7 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 			configureArgs = configureArgs .. " " .. p
 		end
 
+		-- Yeah. './config' totally sucks. It is of no use even during host build.
 		ret.CONFIGURECOMMANDLINE = "perl ../" .. confDetail.sourcePackageBaseName .. "/Configure "
 		ret.CONFIGURECOMMANDLINE = ret.CONFIGURECOMMANDLINE .. string.gsub(string.gsub(confDetail.configureParameter, "%&([%w_]+)%&", function(s)
 			if repl[s] then
@@ -636,13 +637,13 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 
 		if confHost.makefileTemplate == "unix" then
 			-- OpenSSL on MinGW is built using MSYS2, so only runs on Unix environment
+			-- See https://github.com/openssl/openssl/issues/6111 for MinGW without MSYS2 discussion
 			ret.MAKE = "make -j$PARALLELNUM"
 			ret.INSTALLCOMMANDLINE = ret.MAKE .. " install_sw install_ssldirs " .. ret.INSTALLCOMMANDLINE
 		elseif string.sub(confDetail.toolchain, 1, 4) == "MSVC" then
-			-- MSVC version of Makefile supports only nmake, jom is not supported offically
-			-- some pull requests which tries to support jom on MSVC builds are simply closed.
-			-- OpenSSL maintainers said that cmake can't cover their supported platforms, so they use a custom build system.
-			-- It seems reasonable but is not the reason why they don't accept modifications about a 'speed-boosting drop-in replacement' make tool with just a few workarounds.
+			-- MSVC version of Makefile supports only nmake, jom is neither supported nor tested offically.
+			-- On https://github.com/openssl/openssl/issues/10902 CMake is suggested to be the official supported build tool but got rejected.
+			-- OpenSSL maintainers said that cmake can't cover their supported platforms, so they use a custom build system. e.g. they need to support OpenVMS where CMake can't be run.
 
 			-- currently adding "/FS" to the compiler command line, but it fails randomly.
 			-- Retry is added when build fails, for 3 times.

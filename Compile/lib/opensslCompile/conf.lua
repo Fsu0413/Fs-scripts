@@ -441,12 +441,11 @@ conf.o3wx6m2 = {
 	]],
 }
 
--- Note: Future version of this build configuration should be called "o*wx6u4" where "u" means LLVM-based toolchain with MinGW-w64 UCRT.
-conf.o3wx6mu = {
+conf.o3wx6u5 = {
 	name = "OpenSSL3.0.5-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-ucrt",
 	opensslVersion = "3.0.5",
 	host = "Win10SH",
-	toolchain = "MinGWLLVM-ucrt14-64",
+	toolchain = "MinGWLLVM-ucrt15-64",
 	libPath = { "bin\\libssl-3-x64.dll", "bin\\libcrypto-3-x64.dll" },
 	staticlibPath = { "lib\\libssl.a", "lib\\libcrypto.a" },
 	clangTriplet = "x86_64-w64-mingw32",
@@ -460,12 +459,11 @@ conf.o3wx6mu = {
 	]],
 }
 
--- Note: Future version of this build configuration should be called "o*wx6m4" where "m" means LLVM-based toolchain with MinGW-w64 MSVCRT.
-conf.o3wx6mv = {
+conf.o3wx6s5 = {
 	name = "OpenSSL3.0.5-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-msvcrt",
 	opensslVersion = "3.0.5",
 	host = "Win10SH",
-	toolchain = "MinGWLLVM-msvcrt14-64",
+	toolchain = "MinGWLLVM-msvcrt15-64",
 	libPath = { "bin\\libssl-3-x64.dll", "bin\\libcrypto-3-x64.dll" },
 	staticlibPath = { "lib\\libssl.a", "lib\\libcrypto.a" },
 	clangTriplet = "x86_64-w64-mingw32",

@@ -66,7 +66,7 @@ conf.host.win = {
 	},
 	["cMakePath"] = {
 		["20"] = {"D:\\cmake-3.20.2-windows-x86_64\\bin", "D:\\ninja"},
-		["Latest"] = {"D:\\cmake-3.22.3-windows-x86_64\\bin", "D:\\ninja"},
+		["Latest"] = {"D:\\cmake-3.24.2-windows-x86_64\\bin", "D:\\ninja"},
 	},
 	["jdkPath"] = {
 		["8"] = "D:\\OpenJDK8U-jdk_x64_windows_hotspot_8u332b09\\jdk8u332-b09",

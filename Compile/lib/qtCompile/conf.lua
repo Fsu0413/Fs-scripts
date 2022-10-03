@@ -4032,1136 +4032,9 @@ conf.q6_2mx6_W = {
 
 --------------------------------------------------------------------
 
-conf.q6_3wx6v9 = {
-	name = "Qt6.3.2-Windows-x86_64-VS2019-&HOSTTOOLVERSION&",
-	qtVersion = "6.3.2",
-	host = "Win10",
-	toolchain = "MSVC2019-64",
-	opensslConf = "o3wx6v9",
-	useCMake = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DBUILD_SHARED_LIBS=ON
-		-DCMAKE_BUILD_TYPE="Release"
-		-DQT_QMAKE_TARGET_MKSPEC=win32-msvc
-		-DBUILD_WITH_PCH=ON
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengl_dynamic=ON
-		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=ON
-		-DINPUT_openssl=linked
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
-		-DFEATURE_schannel=ON
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_sql_odbc=ON
-		-DFEATURE_system_sqlite=OFF
-		-DFEATURE_webengine_proprietary_codecs=ON
-		-DFEATURE_qtpdf_build=ON
-		-DBUILD_qtopcua=OFF
-	]],
-}
-
-conf.q6_3wx6v2 = {
-	name = "Qt6.3.2-Windows-x86_64-VS2022-&HOSTTOOLVERSION&",
-	qtVersion = "6.3.2",
-	host = "Win10",
-	toolchain = "MSVC2022-64",
-	opensslConf = "o3wx6v2",
-	useCMake = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DBUILD_SHARED_LIBS=ON
-		-DCMAKE_BUILD_TYPE="Release"
-		-DQT_QMAKE_TARGET_MKSPEC=win32-msvc
-		-DBUILD_WITH_PCH=ON
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengl_dynamic=ON
-		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=ON
-		-DINPUT_openssl=linked
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
-		-DFEATURE_schannel=ON
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_sql_odbc=ON
-		-DFEATURE_system_sqlite=OFF
-		-DFEATURE_webengine_proprietary_codecs=ON
-		-DFEATURE_qtpdf_build=ON
-		-DBUILD_qtopcua=OFF
-	]],
-}
-
-conf.q6_3wx6v2st = {
-	name = "Qt6.3.2-Windows-x86_64-VS2022-&HOSTTOOLVERSION&-static",
-	qtVersion = "6.3.2",
-	host = "Win10",
-	toolchain = "MSVC2022-64",
-	variant = {"-static"},
-	opensslConf = "o3wx6v2st",
-	useCMake = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DBUILD_SHARED_LIBS=OFF
-		-DFEATURE_static_runtime=ON
-		-DCMAKE_BUILD_TYPE="Release"
-		-DQT_QMAKE_TARGET_MKSPEC=win32-msvc
-		-DBUILD_WITH_PCH=ON
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_relocatable=ON
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengl_dynamic=ON
-		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=ON
-		-DINPUT_openssl=linked
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
-		-DOPENSSL_USE_STATIC_LIBS=TRUE
-		-DFEATURE_schannel=ON
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_sql_odbc=ON
-		-DFEATURE_system_sqlite=OFF
-		-DBUILD_qt3d=OFF
-		-DBUILD_qt5compat=OFF
-		-DBUILD_qtcharts=OFF
-		-DBUILD_qtcoap=OFF
-		-DBUILD_qtconnectivity=OFF
-		-DBUILD_qtdatavis3d=OFF
-		-DBUILD_qtdoc=OFF
-		-DBUILD_qtpositioning=OFF
-		-DBUILD_qtlottie=OFF
-		-DBUILD_qtmqtt=OFF
-		-DBUILD_qtnetworkauth=OFF
-		-DBUILD_qtopcua=OFF
-		-DBUILD_qtquicktimeline=OFF
-		-DBUILD_qtsensors=OFF
-		-DBUILD_qtserialbus=OFF
-		-DBUILD_qtserialport=OFF
-		-DBUILD_qtvirtualkeyboard=OFF
-		-DBUILD_qtwayland=OFF
-		-DBUILD_qtwebchannel=OFF
-		-DBUILD_qtwebengine=OFF
-		-DBUILD_qtwebsockets=OFF
-		-DBUILD_qtwebview=OFF
-	]],
-}
-
-conf.q6_3wx6v2_wa6v2 = {
-	name = "Qt6.3.2-Windows-arm64-VS2022-&HOSTTOOLVERSION&-XWindows-x86_64-VS2022-&HOSTTOOLVERSION&",
-	qtVersion = "6.3.2",
-	host = "Win10",
-	target = "Win10Arm",
-	toolchain = "MSVC2022-64", -- only a placeholder here, in fact it uses "toolchainT" instead of "toolchain"
-	toolchainT = "MSVC2022-arm64",
-	-- opensslConf = "???", -- OpenSSL do not provide a way to build for windows-arm64
-	useCMake = "Latest",
-	-- TODO: Toolchain file or just write the CMAKE_xxx_COMPILER here?
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DQT_HOST_PATH=&HOSTQTDIR&
-		-DBUILD_SHARED_LIBS=ON
-		-DCMAKE_BUILD_TYPE="Release"
-		-DQT_QMAKE_TARGET_MKSPEC=win32-arm64-msvc
-		-DBUILD_WITH_PCH=ON
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengl_dynamic=ON
-		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=OFF
-		-DFEATURE_schannel=ON
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_sql_odbc=ON
-		-DFEATURE_system_sqlite=OFF
-		-DBUILD_qtopcua=OFF
-	]],
-}
-
--- Note: "m" changed its meaning for LLVM-based toolchain with MinGW-w64 MSVCRT.
--- Note: Future version of this build configuration should be called "q*_*wx6g1" where "g" means GNU-based toolchain with MinGW-w64.
-conf.q6_3wx6m1 = {
-	name = "Qt6.3.2-Windows-x86_64-MinGW&HOSTTOOLVERSION&",
-	qtVersion = "6.3.2",
-	host = "Win10",
-	toolchain = "MinGW1120-64",
-	opensslConf = "o3wx6m1",
-	useCMake = "20",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DBUILD_SHARED_LIBS=ON
-		-DCMAKE_BUILD_TYPE="Release"
-		-DQT_QMAKE_TARGET_MKSPEC=win32-g++
-		-DBUILD_WITH_PCH=ON
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengl_dynamic=ON
-		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=ON
-		-DINPUT_openssl=linked
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
-		-DFEATURE_schannel=ON
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_sql_odbc=ON
-		-DFEATURE_system_sqlite=OFF
-		-DBUILD_qtopcua=OFF
-	]],
-}
-
--- Note: "m" changed its meaning for LLVM-based toolchain with MinGW-w64 MSVCRT.
--- Note: Future version of this build configuration should be called "q*_*wx6g2st" where "g" means GNU-based toolchain with MinGW-w64, and is updated to GCC 12 series.
-conf.q6_3wx6m1st = {
-	name = "Qt6.3.2-Windows-x86_64-MinGW&HOSTTOOLVERSION&-static",
-	qtVersion = "6.3.2",
-	host = "Win10",
-	toolchain = "MinGW1120-64",
-	variant = {"-static"},
-	opensslConf = "o3wx6m1",
-	useCMake = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DBUILD_SHARED_LIBS=OFF
-		-DFEATURE_static_runtime=ON
-		-DCMAKE_BUILD_TYPE="Release"
-		-DQT_QMAKE_TARGET_MKSPEC=win32-g++
-		-DBUILD_WITH_PCH=ON
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_relocatable=ON
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengl_dynamic=ON
-		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=ON
-		-DINPUT_openssl=linked
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
-		-DOPENSSL_USE_STATIC_LIBS=TRUE
-		-DFEATURE_schannel=ON
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_sql_odbc=ON
-		-DFEATURE_system_sqlite=OFF
-		-DBUILD_qt3d=OFF
-		-DBUILD_qt5compat=OFF
-		-DBUILD_qtcharts=OFF
-		-DBUILD_qtcoap=OFF
-		-DBUILD_qtconnectivity=OFF
-		-DBUILD_qtdatavis3d=OFF
-		-DBUILD_qtdoc=OFF
-		-DBUILD_qtpositioning=OFF
-		-DBUILD_qtlottie=OFF
-		-DBUILD_qtmqtt=OFF
-		-DBUILD_qtnetworkauth=OFF
-		-DBUILD_qtopcua=OFF
-		-DBUILD_qtquicktimeline=OFF
-		-DBUILD_qtsensors=OFF
-		-DBUILD_qtserialbus=OFF
-		-DBUILD_qtserialport=OFF
-		-DBUILD_qtvirtualkeyboard=OFF
-		-DBUILD_qtwayland=OFF
-		-DBUILD_qtwebchannel=OFF
-		-DBUILD_qtwebengine=OFF
-		-DBUILD_qtwebsockets=OFF
-		-DBUILD_qtwebview=OFF
-	]],
-}
-
--- Note: "m" changed its meaning for LLVM-based toolchain with MinGW-w64 MSVCRT.
--- Note: Future version of this build configuration should be called "q*_*wx6g2" where "g" means GNU-based toolchain with MinGW-w64.
-conf.q6_3wx6m2 = {
-	name = "Qt6.3.2-Windows-x86_64-MinGW&HOSTTOOLVERSION&",
-	qtVersion = "6.3.2",
-	host = "Win10",
-	toolchain = "MinGW1210-64",
-	opensslConf = "o3wx6m2",
-	useCMake = "20",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DBUILD_SHARED_LIBS=ON
-		-DCMAKE_BUILD_TYPE="Release"
-		-DQT_QMAKE_TARGET_MKSPEC=win32-g++
-		-DBUILD_WITH_PCH=ON
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengl_dynamic=ON
-		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=ON
-		-DINPUT_openssl=linked
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
-		-DFEATURE_schannel=ON
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_sql_odbc=ON
-		-DFEATURE_system_sqlite=OFF
-		-DBUILD_qtopcua=OFF
-	]],
-}
-
-conf.q6_3wx6u5 = {
-	name = "Qt6.3.2-Windows-x86_64-llvm-mingw-&HOSTTOOLVERSION&-ucrt",
-	qtVersion = "6.3.2",
-	host = "Win10",
-	toolchain = "MinGWLLVM-ucrt15-64",
-	opensslConf = "o3wx6u5",
-	useCMake = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DBUILD_SHARED_LIBS=ON
-		-DCMAKE_BUILD_TYPE="Release"
-		-DQT_QMAKE_TARGET_MKSPEC=win32-clang-g++
-		-DBUILD_WITH_PCH=ON
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengl_dynamic=ON
-		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=ON
-		-DINPUT_openssl=linked
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
-		-DFEATURE_schannel=ON
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_sql_odbc=ON
-		-DFEATURE_system_sqlite=OFF
-		-DBUILD_qtwebengine=OFF
-		-DBUILD_qtopcua=OFF
-		-DCMAKE_C_COMPILER="x86_64-w64-mingw32-clang"
-		-DCMAKE_ASM_COMPILER="x86_64-w64-mingw32-clang"
-		-DCMAKE_CXX_COMPILER="x86_64-w64-mingw32-clang++"
-	]],
-}
-
-conf.q6_3wx6s5 = {
-	name = "Qt6.3.2-Windows-x86_64-llvm-mingw-&HOSTTOOLVERSION&-msvcrt",
-	qtVersion = "6.3.2",
-	host = "Win10",
-	toolchain = "MinGWLLVM-msvcrt15-64",
-	opensslConf = "o3wx6s5",
-	useCMake = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DBUILD_SHARED_LIBS=ON
-		-DCMAKE_BUILD_TYPE="Release"
-		-DQT_QMAKE_TARGET_MKSPEC=win32-clang-g++
-		-DBUILD_WITH_PCH=ON
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengl_dynamic=ON
-		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=ON
-		-DINPUT_openssl=linked
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
-		-DFEATURE_schannel=ON
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_sql_odbc=ON
-		-DFEATURE_system_sqlite=OFF
-		-DBUILD_qtwebengine=OFF
-		-DBUILD_qtopcua=OFF
-		-DCMAKE_C_COMPILER="x86_64-w64-mingw32-clang"
-		-DCMAKE_ASM_COMPILER="x86_64-w64-mingw32-clang"
-		-DCMAKE_CXX_COMPILER="x86_64-w64-mingw32-clang++"
-	]],
-}
-
-conf.q6_3lx6st = {
-	name = "Qt6.3.2-Linux-x86_64-gcc&HOSTTOOLVERSION&-static",
-	qtVersion = "6.3.2",
-	host = "CentOS8",
-	variant = {"-static"},
-	useCMake = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DBUILD_SHARED_LIBS=OFF
-		-DFEATURE_static_runtime=ON
-		-DCMAKE_BUILD_TYPE="Release"
-		-DQT_QMAKE_TARGET_MKSPEC=linux-g++
-		-DBUILD_WITH_PCH=ON
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_relocatable=ON
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DINPUT_opengl=no
-		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=ON
-		-DINPUT_openssl=linked
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_system_sqlite=OFF
-		-DBUILD_qt3d=OFF
-		-DBUILD_qt5compat=OFF
-		-DBUILD_qtcharts=OFF
-		-DBUILD_qtcoap=OFF
-		-DBUILD_qtconnectivity=OFF
-		-DBUILD_qtdatavis3d=OFF
-		-DBUILD_qtdoc=OFF
-		-DBUILD_qtpositioning=OFF
-		-DBUILD_qtlottie=OFF
-		-DBUILD_qtmqtt=OFF
-		-DBUILD_qtnetworkauth=OFF
-		-DBUILD_qtopcua=OFF
-		-DBUILD_qtquicktimeline=OFF
-		-DBUILD_qtsensors=OFF
-		-DBUILD_qtserialbus=OFF
-		-DBUILD_qtserialport=OFF
-		-DBUILD_qtvirtualkeyboard=OFF
-		-DBUILD_qtwayland=OFF
-		-DBUILD_qtwebchannel=OFF
-		-DBUILD_qtwebengine=OFF
-		-DBUILD_qtwebsockets=OFF
-		-DBUILD_qtwebview=OFF
-	]],
-}
-
-conf.q6_3mx6 = {
-	name = "Qt6.3.2-macOS-x86_64-AppleClang&HOSTTOOLVERSION&",
-	qtVersion = "6.3.2",
-	host = "macOS1015",
-	opensslConf = "o3mx6",
-	useCMake = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DBUILD_SHARED_LIBS=ON
-		-DCMAKE_BUILD_TYPE="Release"
-		-DQT_QMAKE_TARGET_MKSPEC=macx-clang
-		-DBUILD_WITH_PCH=ON
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengl=ON
-		-DFEATURE_opengles2=OFF
-		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=ON
-		-DINPUT_openssl=linked
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
-		-DFEATURE_securetransport=ON
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_system_sqlite=OFF
-		-DFEATURE_webengine_proprietary_codecs=ON
-		-DFEATURE_qtpdf_build=ON
-		-DCMAKE_SKIP_BUILD_RPATH=OFF
-		-DCMAKE_SKIP_INSTALL_RPATH=OFF
-		-DFEATURE_framework=ON
-		-DBUILD_qtopcua=OFF
-	]],
-}
-
-conf.q6_3mx6nf = {
-	name = "Qt6.3.2-macOS-x86_64-AppleClang&HOSTTOOLVERSION&-noFramework",
-	qtVersion = "6.3.2",
-	host = "macOS1015",
-	variant = {"-noFramework"},
-	opensslConf = "o3mx6",
-	useCMake = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DBUILD_SHARED_LIBS=ON
-		-DCMAKE_BUILD_TYPE="Release"
-		-DQT_QMAKE_TARGET_MKSPEC=macx-clang
-		-DBUILD_WITH_PCH=ON
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengl=ON
-		-DFEATURE_opengles2=OFF
-		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=ON
-		-DINPUT_openssl=linked
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
-		-DFEATURE_securetransport=ON
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_system_sqlite=OFF
-		-DFEATURE_webengine_proprietary_codecs=ON
-		-DFEATURE_qtpdf_build=ON
-		-DCMAKE_SKIP_BUILD_RPATH=OFF
-		-DCMAKE_SKIP_INSTALL_RPATH=OFF
-		-DFEATURE_framework=OFF
-		-DBUILD_qtopcua=OFF
-	]],
-}
-
-conf.q6_3mx6st = {
-	name = "Qt6.3.2-macOS-x86_64-AppleClang&HOSTTOOLVERSION&-static",
-	qtVersion = "6.3.2",
-	host = "macOS1015",
-	variant = {"-static"},
-	opensslConf = "o3mx6",
-	useCMake = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DBUILD_SHARED_LIBS=OFF
-		-DFEATURE_static_runtime=ON
-		-DCMAKE_BUILD_TYPE="Release"
-		-DQT_QMAKE_TARGET_MKSPEC=macx-clang
-		-DBUILD_WITH_PCH=ON
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_relocatable=ON
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengl=ON
-		-DFEATURE_opengles2=OFF
-		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=ON
-		-DINPUT_openssl=linked
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
-		-DOPENSSL_USE_STATIC_LIBS=TRUE
-		-DFEATURE_securetransport=ON
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_system_sqlite=OFF
-		-DBUILD_qt3d=OFF
-		-DBUILD_qt5compat=OFF
-		-DBUILD_qtcharts=OFF
-		-DBUILD_qtcoap=OFF
-		-DBUILD_qtconnectivity=OFF
-		-DBUILD_qtdatavis3d=OFF
-		-DBUILD_qtdoc=OFF
-		-DBUILD_qtpositioning=OFF
-		-DBUILD_qtlottie=OFF
-		-DBUILD_qtmqtt=OFF
-		-DBUILD_qtnetworkauth=OFF
-		-DBUILD_qtopcua=OFF
-		-DBUILD_qtquicktimeline=OFF
-		-DBUILD_qtsensors=OFF
-		-DBUILD_qtserialbus=OFF
-		-DBUILD_qtserialport=OFF
-		-DBUILD_qtvirtualkeyboard=OFF
-		-DBUILD_qtwayland=OFF
-		-DBUILD_qtwebchannel=OFF
-		-DBUILD_qtwebengine=OFF
-		-DBUILD_qtwebsockets=OFF
-		-DBUILD_qtwebview=OFF
-	]],
-}
-
-conf.q6_3ma6 = {
-	name = "Qt6.3.2-macOS-arm64_v8a-AppleClang&HOSTTOOLVERSION&",
-	qtVersion = "6.3.2",
-	host = "macOSM1",
-	opensslConf = "o3ma6",
-	useCMake = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DBUILD_SHARED_LIBS=ON
-		-DCMAKE_BUILD_TYPE="Release"
-		-DQT_QMAKE_TARGET_MKSPEC=macx-clang
-		-DBUILD_WITH_PCH=ON
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengl=ON
-		-DFEATURE_opengles2=OFF
-		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=ON
-		-DINPUT_openssl=linked
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
-		-DFEATURE_securetransport=ON
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_system_sqlite=OFF
-		-DFEATURE_webengine_proprietary_codecs=ON
-		-DFEATURE_qtpdf_build=ON
-		-DCMAKE_SKIP_BUILD_RPATH=OFF
-		-DCMAKE_SKIP_INSTALL_RPATH=OFF
-		-DFEATURE_framework=ON
-		-DBUILD_qtopcua=OFF
-	]],
-}
-
-conf.q6_3ma6nf = {
-	name = "Qt6.3.2-macOS-arm64_v8a-AppleClang&HOSTTOOLVERSION&-noFramework",
-	qtVersion = "6.3.2",
-	host = "macOSM1",
-	variant = {"-noFramework"},
-	opensslConf = "o3ma6",
-	useCMake = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DBUILD_SHARED_LIBS=ON
-		-DCMAKE_BUILD_TYPE="Release"
-		-DQT_QMAKE_TARGET_MKSPEC=macx-clang
-		-DBUILD_WITH_PCH=ON
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengl=ON
-		-DFEATURE_opengles2=OFF
-		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=ON
-		-DINPUT_openssl=linked
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
-		-DFEATURE_securetransport=ON
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_system_sqlite=OFF
-		-DFEATURE_webengine_proprietary_codecs=ON
-		-DFEATURE_qtpdf_build=ON
-		-DCMAKE_SKIP_BUILD_RPATH=OFF
-		-DCMAKE_SKIP_INSTALL_RPATH=OFF
-		-DFEATURE_framework=OFF
-		-DBUILD_qtopcua=OFF
-	]],
-}
-
-conf.q6_3ma6st = {
-	name = "Qt6.3.2-macOS-arm64_v8a-AppleClang&HOSTTOOLVERSION&-static",
-	qtVersion = "6.3.2",
-	host = "macOSM1",
-	variant = {"-static"},
-	opensslConf = "o3ma6",
-	useCMake = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DBUILD_SHARED_LIBS=OFF
-		-DFEATURE_static_runtime=ON
-		-DCMAKE_BUILD_TYPE="Release"
-		-DQT_QMAKE_TARGET_MKSPEC=macx-clang
-		-DBUILD_WITH_PCH=ON
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_relocatable=ON
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengl=ON
-		-DFEATURE_opengles2=OFF
-		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=ON
-		-DINPUT_openssl=linked
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
-		-DOPENSSL_USE_STATIC_LIBS=TRUE
-		-DFEATURE_securetransport=ON
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_system_sqlite=OFF
-		-DBUILD_qt3d=OFF
-		-DBUILD_qt5compat=OFF
-		-DBUILD_qtcharts=OFF
-		-DBUILD_qtcoap=OFF
-		-DBUILD_qtconnectivity=OFF
-		-DBUILD_qtdatavis3d=OFF
-		-DBUILD_qtdoc=OFF
-		-DBUILD_qtpositioning=OFF
-		-DBUILD_qtlottie=OFF
-		-DBUILD_qtmqtt=OFF
-		-DBUILD_qtnetworkauth=OFF
-		-DBUILD_qtopcua=OFF
-		-DBUILD_qtquicktimeline=OFF
-		-DBUILD_qtsensors=OFF
-		-DBUILD_qtserialbus=OFF
-		-DBUILD_qtserialport=OFF
-		-DBUILD_qtvirtualkeyboard=OFF
-		-DBUILD_qtwayland=OFF
-		-DBUILD_qtwebchannel=OFF
-		-DBUILD_qtwebengine=OFF
-		-DBUILD_qtwebsockets=OFF
-		-DBUILD_qtwebview=OFF
-	]],
-}
-
--- Note: "m" changed its meaning for LLVM-based toolchain with MinGW-w64 MSVCRT.
--- Note: Future version of this build configuration is called "q*_*wx6g2_aa6n5" where "g" means GNU-based toolchain with MinGW-w64, and is updated its host tools to GCC 12 series, while NDK is updated to r25.
-conf.q6_3wx6m1_aa6n3 = {
-	name = "Qt6.3.2-Android-arm64-Clang-NDKr23c-XWindows-x86_64-MinGW&HOSTTOOLVERSION&",
-	qtVersion = "6.3.2",
-	host = "Win10",
-	target = "Android-24",
-	toolchain = "MinGW1120-64",
-	toolchainT = "Android-24-r23c-arm64",
-	opensslConf = "o3aa6n324",
-	useCMake = "Latest",
-	androidSdkVersion = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DQT_HOST_PATH=&HOSTQTDIR&
-		-DCMAKE_BUILD_TYPE=Release
-		-DBUILD_SHARED_LIBS=ON
-		-DQT_QMAKE_TARGET_MKSPEC=android-clang
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengles2=ON
-		-DFEATURE_ssl=ON
-		-DINPUT_openssl=linked
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
-		-DFEATURE_sql_sqlite=ON
-		-DBUILD_qtopcua=OFF
-		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
-		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&\build\cmake\android.toolchain.cmake
-		-DANDROID_NATIVE_API_LEVEL=24
-		-DANDROID_PLATFORM=24
-		-DANDROID_ABI=arm64-v8a
-		-DCMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH=ON
-	]],
-}
-
--- Note: "m" changed its meaning for LLVM-based toolchain with MinGW-w64 MSVCRT.
--- Note: Future version of this build configuration is called "q*_*wx6g2_ax6n5" where "g" means GNU-based toolchain with MinGW-w64, and is updated its host tools to GCC 12 series, while NDK is updated to r25.
-conf.q6_3wx6m1_ax6n3 = {
-	name = "Qt6.3.2-Android-x86_64-Clang-NDKr23c-XWindows-x86_64-MinGW&HOSTTOOLVERSION&",
-	qtVersion = "6.3.2",
-	host = "Win10",
-	target = "Android-24",
-	toolchain = "MinGW1120-64",
-	toolchainT = "Android-24-r23c-x86_64",
-	opensslConf = "o3ax6n324",
-	useCMake = "Latest",
-	androidSdkVersion = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DQT_HOST_PATH=&HOSTQTDIR&
-		-DCMAKE_BUILD_TYPE=Release
-		-DBUILD_SHARED_LIBS=ON
-		-DQT_QMAKE_TARGET_MKSPEC=android-clang
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengles2=ON
-		-DFEATURE_ssl=ON
-		-DINPUT_openssl=linked
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
-		-DFEATURE_sql_sqlite=ON
-		-DBUILD_qtopcua=OFF
-		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
-		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&\build\cmake\android.toolchain.cmake
-		-DANDROID_NATIVE_API_LEVEL=24
-		-DANDROID_PLATFORM=24
-		-DANDROID_ABI=x86_64
-		-DCMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH=ON
-	]],
-}
-
-conf.q6_3lx6_aa6n3 = {
-	name = "Qt6.3.2-Android-arm64-Clang-NDKr23c-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
-	qtVersion = "6.3.2",
-	host = "CentOS8",
-	target = "Android-24",
-	toolchainT = "Android-24-r23c-arm64",
-	opensslConf = "o3aa6n324",
-	useCMake = "Latest",
-	androidSdkVersion = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DQT_HOST_PATH=&HOSTQTDIR&
-		-DCMAKE_BUILD_TYPE=Release
-		-DBUILD_SHARED_LIBS=ON
-		-DQT_QMAKE_TARGET_MKSPEC=android-clang
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengles2=ON
-		-DFEATURE_ssl=ON
-		-DINPUT_openssl=linked
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
-		-DFEATURE_sql_sqlite=ON
-		-DBUILD_qtopcua=OFF
-		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
-		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
-		-DANDROID_NATIVE_API_LEVEL=24
-		-DANDROID_PLATFORM=24
-		-DANDROID_ABI=arm64-v8a
-	]],
-}
-
-conf.q6_3lx6_ax6n3 = {
-	name = "Qt6.3.2-Android-x86_64-Clang-NDKr23c-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
-	qtVersion = "6.3.2",
-	host = "CentOS8",
-	target = "Android-24",
-	toolchainT = "Android-24-r23c-x86_64",
-	opensslConf = "o3ax6n324",
-	useCMake = "Latest",
-	androidSdkVersion = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DQT_HOST_PATH=&HOSTQTDIR&
-		-DCMAKE_BUILD_TYPE=Release
-		-DBUILD_SHARED_LIBS=ON
-		-DQT_QMAKE_TARGET_MKSPEC=android-clang
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengles2=ON
-		-DFEATURE_ssl=ON
-		-DINPUT_openssl=linked
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
-		-DFEATURE_sql_sqlite=ON
-		-DBUILD_qtopcua=OFF
-		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
-		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
-		-DANDROID_NATIVE_API_LEVEL=24
-		-DANDROID_PLATFORM=24
-		-DANDROID_ABI=x86_64
-	]],
-}
-
-conf.q6_3mx6_aa6n3 = {
-	name = "Qt6.3.2-Android-arm64-Clang-NDKr23c-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
-	qtVersion = "6.3.2",
-	host = "macOS1015",
-	target = "Android-24",
-	toolchainT = "Android-24-r23c-arm64",
-	opensslConf = "o3aa6n324",
-	useCMake = "Latest",
-	androidSdkVersion = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DQT_HOST_PATH=&HOSTQTDIR&
-		-DCMAKE_BUILD_TYPE=Release
-		-DBUILD_SHARED_LIBS=ON
-		-DQT_QMAKE_TARGET_MKSPEC=android-clang
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengles2=ON
-		-DFEATURE_ssl=ON
-		-DINPUT_openssl=linked
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
-		-DFEATURE_sql_sqlite=ON
-		-DBUILD_qtopcua=OFF
-		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
-		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
-		-DANDROID_NATIVE_API_LEVEL=24
-		-DANDROID_PLATFORM=24
-		-DANDROID_ABI=arm64-v8a
-	]],
-}
-
-conf.q6_3mx6_ax6n3 = {
-	name = "Qt6.3.2-Android-x86_64-Clang-NDKr23c-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
-	qtVersion = "6.3.2",
-	host = "macOS1015",
-	target = "Android-24",
-	toolchainT = "Android-24-r23c-x86_64",
-	opensslConf = "o3ax6n324",
-	useCMake = "Latest",
-	androidSdkVersion = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DQT_HOST_PATH=&HOSTQTDIR&
-		-DCMAKE_BUILD_TYPE=Release
-		-DBUILD_SHARED_LIBS=ON
-		-DQT_QMAKE_TARGET_MKSPEC=android-clang
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengles2=ON
-		-DFEATURE_ssl=ON
-		-DINPUT_openssl=linked
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
-		-DFEATURE_sql_sqlite=ON
-		-DBUILD_qtopcua=OFF
-		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
-		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
-		-DANDROID_NATIVE_API_LEVEL=24
-		-DANDROID_PLATFORM=24
-		-DANDROID_ABI=x86_64
-	]],
-}
-
-conf.q6_3ma6_aa6n3 = {
-	name = "Qt6.3.2-Android-arm64-Clang-NDKr23c-xmacOS-arm64_v8a-AppleClang&HOSTTOOLVERSION&",
-	qtVersion = "6.3.2",
-	host = "macOSM1",
-	target = "Android-24",
-	toolchainT = "Android-24-r23c-arm64",
-	opensslConf = "o3aa6n324",
-	useCMake = "Latest",
-	androidSdkVersion = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DQT_HOST_PATH=&HOSTQTDIR&
-		-DCMAKE_BUILD_TYPE=Release
-		-DBUILD_SHARED_LIBS=ON
-		-DQT_QMAKE_TARGET_MKSPEC=android-clang
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengles2=ON
-		-DFEATURE_ssl=ON
-		-DINPUT_openssl=linked
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
-		-DFEATURE_sql_sqlite=ON
-		-DBUILD_qtopcua=OFF
-		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
-		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
-		-DANDROID_NATIVE_API_LEVEL=24
-		-DANDROID_PLATFORM=24
-		-DANDROID_ABI=arm64-v8a
-	]],
-}
-
-conf.q6_3ma6_ax6n3 = {
-	name = "Qt6.3.2-Android-x86_64-Clang-NDKr23c-xmacOS-arm64_v8a-AppleClang&HOSTTOOLVERSION&",
-	qtVersion = "6.3.2",
-	host = "macOSM1",
-	target = "Android-24",
-	toolchainT = "Android-24-r23c-x86_64",
-	opensslConf = "o3ax6n324",
-	useCMake = "Latest",
-	androidSdkVersion = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DQT_HOST_PATH=&HOSTQTDIR&
-		-DCMAKE_BUILD_TYPE=Release
-		-DBUILD_SHARED_LIBS=ON
-		-DQT_QMAKE_TARGET_MKSPEC=android-clang
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengles2=ON
-		-DFEATURE_ssl=ON
-		-DINPUT_openssl=linked
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
-		-DFEATURE_sql_sqlite=ON
-		-DBUILD_qtopcua=OFF
-		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
-		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
-		-DANDROID_NATIVE_API_LEVEL=24
-		-DANDROID_PLATFORM=24
-		-DANDROID_ABI=x86_64
-	]],
-}
-
--- WebAssembly uses emcmake which don't need a toolchain file
--- Note: "m" changed its meaning for LLVM-based toolchain with MinGW-w64 MSVCRT.
--- Note: Future version of this build configuration is called "q*_*wx6g2_W" where "g" means GNU-based toolchain with MinGW-w64, and is updated its host tools to GCC 12 series.
-conf.q6_3wx6m1_W = {
-	name = "Qt6.3.2-WebAssembly-emscripten&TARGETTOOLVERSION&-xWindows-x86_64-MinGW&HOSTTOOLVERSION&",
-	qtVersion = "6.3.2",
-	host = "Win10",
-	toolchain = "MinGW1120-64",
-	target = "WebAssembly",
-	toolchainT = "emscripten-3.1.6",
-	useCMake = "Latest",
-	-- workaround https://github.com/emscripten-core/emscripten/issues/15163
-	configureParameter = [[
-		-G
-		Ninja
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DQT_HOST_PATH=&HOSTQTDIR&
-		-DCMAKE_BUILD_TYPE=Release
-		-DBUILD_SHARED_LIBS=OFF
-		-DQT_QMAKE_TARGET_MKSPEC=wasm-emscripten
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DBUILD_WITH_PCH=ON
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengles2=ON
-		-DFEATURE_ssl=OFF
-		-DFEATURE_sql_sqlite=ON
-		-DBUILD_qtopcua=OFF
-	]],
-}
-
-conf.q6_3lx6_W = {
-	name = "Qt6.3.2-WebAssembly-emscripten&TARGETTOOLVERSION&-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
-	qtVersion = "6.3.2",
-	host = "CentOS8",
-	target = "WebAssembly",
-	toolchainT = "emscripten-3.1.6",
-	useCMake = "Latest",
-	configureParameter = [[
-		-GNinja
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DQT_HOST_PATH=&HOSTQTDIR&
-		-DCMAKE_BUILD_TYPE=Release
-		-DBUILD_SHARED_LIBS=OFF
-		-DQT_QMAKE_TARGET_MKSPEC=wasm-emscripten
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DBUILD_WITH_PCH=ON
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengles2=ON
-		-DFEATURE_ssl=OFF
-		-DFEATURE_sql_sqlite=ON
-		-DBUILD_qtopcua=OFF
-	]],
-}
-
-conf.q6_3mx6_W = {
-	name = "Qt6.3.2-WebAssembly-emscripten&TARGETTOOLVERSION&-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
-	qtVersion = "6.3.2",
-	host = "macOS1015",
-	target = "WebAssembly",
-	toolchainT = "emscripten-3.1.6",
-	useCMake = "Latest",
-	configureParameter = [[
-		-GNinja
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DQT_HOST_PATH=&HOSTQTDIR&
-		-DCMAKE_BUILD_TYPE=Release
-		-DBUILD_SHARED_LIBS=OFF
-		-DQT_QMAKE_TARGET_MKSPEC=wasm-emscripten
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DBUILD_WITH_PCH=ON
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengles2=ON
-		-DFEATURE_ssl=OFF
-		-DFEATURE_sql_sqlite=ON
-		-DBUILD_qtopcua=OFF
-	]],
-}
-
-conf.q6_3ma6_W = {
-	name = "Qt6.3.2-WebAssembly-emscripten&TARGETTOOLVERSION&-xmacOS-arm64_v8a-AppleClang&HOSTTOOLVERSION&",
-	qtVersion = "6.3.2",
-	host = "macOS1015",
-	target = "WebAssembly",
-	toolchainT = "emscripten-3.1.6",
-	useCMake = "Latest",
-	configureParameter = [[
-		-GNinja
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DQT_HOST_PATH=&HOSTQTDIR&
-		-DCMAKE_BUILD_TYPE=Release
-		-DBUILD_SHARED_LIBS=OFF
-		-DQT_QMAKE_TARGET_MKSPEC=wasm-emscripten
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DBUILD_WITH_PCH=ON
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengles2=ON
-		-DFEATURE_ssl=OFF
-		-DFEATURE_sql_sqlite=ON
-		-DBUILD_qtopcua=OFF
-	]],
-}
-
---------------------------------------------------------------------
-
 conf.q6_4wx6v9 = {
-	name = "Qt6.4.0-rc-Windows-x86_64-VS2019-&HOSTTOOLVERSION&",
-	qtVersion = "6.4.0-rc",
+	name = "Qt6.4.0-Windows-x86_64-VS2019-&HOSTTOOLVERSION&",
+	qtVersion = "6.4.0",
 	host = "Win10",
 	toolchain = "MSVC2019-64",
 	opensslConf = "o3wx6v9",
@@ -5196,8 +4069,8 @@ conf.q6_4wx6v9 = {
 }
 
 conf.q6_4wx6v2 = {
-	name = "Qt6.4.0-rc-Windows-x86_64-VS2022-&HOSTTOOLVERSION&",
-	qtVersion = "6.4.0-rc",
+	name = "Qt6.4.0-Windows-x86_64-VS2022-&HOSTTOOLVERSION&",
+	qtVersion = "6.4.0",
 	host = "Win10",
 	toolchain = "MSVC2022-64",
 	opensslConf = "o3wx6v2",
@@ -5232,8 +4105,8 @@ conf.q6_4wx6v2 = {
 }
 
 conf.q6_4wx6v2st = {
-	name = "Qt6.4.0-rc-Windows-x86_64-VS2022-&HOSTTOOLVERSION&-static",
-	qtVersion = "6.4.0-rc",
+	name = "Qt6.4.0-Windows-x86_64-VS2022-&HOSTTOOLVERSION&-static",
+	qtVersion = "6.4.0",
 	host = "Win10",
 	toolchain = "MSVC2022-64",
 	variant = {"-static"},
@@ -5291,8 +4164,8 @@ conf.q6_4wx6v2st = {
 }
 
 conf.q6_4wx6v2_wa6v2 = {
-	name = "Qt6.4.0-rc-Windows-arm64-VS2022-&HOSTTOOLVERSION&-XWindows-x86_64-VS2022-&HOSTTOOLVERSION&",
-	qtVersion = "6.4.0-rc",
+	name = "Qt6.4.0-Windows-arm64-VS2022-&HOSTTOOLVERSION&-XWindows-x86_64-VS2022-&HOSTTOOLVERSION&",
+	qtVersion = "6.4.0",
 	host = "Win10",
 	target = "Win10Arm",
 	toolchain = "MSVC2022-64", -- only a placeholder here, in fact it uses "toolchainT" instead of "toolchain"
@@ -5327,8 +4200,8 @@ conf.q6_4wx6v2_wa6v2 = {
 }
 
 conf.q6_4wx6g2 = {
-	name = "Qt6.4.0-rc-Windows-x86_64-MinGW&HOSTTOOLVERSION&",
-	qtVersion = "6.4.0-rc",
+	name = "Qt6.4.0-Windows-x86_64-MinGW&HOSTTOOLVERSION&",
+	qtVersion = "6.4.0",
 	host = "Win10",
 	toolchain = "MinGW1210-64",
 	opensslConf = "o3wx6m2",
@@ -5361,8 +4234,8 @@ conf.q6_4wx6g2 = {
 }
 
 conf.q6_4wx6g2st = {
-	name = "Qt6.4.0-rc-Windows-x86_64-MinGW&HOSTTOOLVERSION&-static",
-	qtVersion = "6.4.0-rc",
+	name = "Qt6.4.0-Windows-x86_64-MinGW&HOSTTOOLVERSION&-static",
+	qtVersion = "6.4.0",
 	host = "Win10",
 	toolchain = "MinGW1210-64",
 	variant = {"-static"},
@@ -5420,8 +4293,8 @@ conf.q6_4wx6g2st = {
 }
 
 conf.q6_4wx6u5 = {
-	name = "Qt6.4.0-rc-Windows-x86_64-llvm-mingw-&HOSTTOOLVERSION&-ucrt",
-	qtVersion = "6.4.0-rc",
+	name = "Qt6.4.0-Windows-x86_64-llvm-mingw-&HOSTTOOLVERSION&-ucrt",
+	qtVersion = "6.4.0",
 	host = "Win10",
 	toolchain = "MinGWLLVM-ucrt15-64",
 	opensslConf = "o3wx6u5",
@@ -5458,8 +4331,8 @@ conf.q6_4wx6u5 = {
 }
 
 conf.q6_4wx6s5 = {
-	name = "Qt6.4.0-rc-Windows-x86_64-llvm-mingw-&HOSTTOOLVERSION&-msvcrt",
-	qtVersion = "6.4.0-rc",
+	name = "Qt6.4.0-Windows-x86_64-llvm-mingw-&HOSTTOOLVERSION&-msvcrt",
+	qtVersion = "6.4.0",
 	host = "Win10",
 	toolchain = "MinGWLLVM-msvcrt15-64",
 	opensslConf = "o3wx6s5",
@@ -5496,8 +4369,8 @@ conf.q6_4wx6s5 = {
 }
 
 conf.q6_4lx6st = {
-	name = "Qt6.4.0-rc-Linux-x86_64-gcc&HOSTTOOLVERSION&-static",
-	qtVersion = "6.4.0-rc",
+	name = "Qt6.4.0-Linux-x86_64-gcc&HOSTTOOLVERSION&-static",
+	qtVersion = "6.4.0",
 	host = "Rocky9",
 	variant = {"-static"},
 	useCMake = "Latest",
@@ -5549,8 +4422,8 @@ conf.q6_4lx6st = {
 }
 
 conf.q6_4mx6 = {
-	name = "Qt6.4.0-rc-macOS-x86_64-AppleClang&HOSTTOOLVERSION&",
-	qtVersion = "6.4.0-rc",
+	name = "Qt6.4.0-macOS-x86_64-AppleClang&HOSTTOOLVERSION&",
+	qtVersion = "6.4.0",
 	host = "macOS1015",
 	opensslConf = "o3mx6",
 	useCMake = "Latest",
@@ -5587,8 +4460,8 @@ conf.q6_4mx6 = {
 }
 
 conf.q6_4mx6nf = {
-	name = "Qt6.4.0-rc-macOS-x86_64-AppleClang&HOSTTOOLVERSION&-noFramework",
-	qtVersion = "6.4.0-rc",
+	name = "Qt6.4.0-macOS-x86_64-AppleClang&HOSTTOOLVERSION&-noFramework",
+	qtVersion = "6.4.0",
 	host = "macOS1015",
 	variant = {"-noFramework"},
 	opensslConf = "o3mx6",
@@ -5626,8 +4499,8 @@ conf.q6_4mx6nf = {
 }
 
 conf.q6_4mx6st = {
-	name = "Qt6.4.0-rc-macOS-x86_64-AppleClang&HOSTTOOLVERSION&-static",
-	qtVersion = "6.4.0-rc",
+	name = "Qt6.4.0-macOS-x86_64-AppleClang&HOSTTOOLVERSION&-static",
+	qtVersion = "6.4.0",
 	host = "macOS1015",
 	variant = {"-static"},
 	opensslConf = "o3mx6",
@@ -5684,8 +4557,8 @@ conf.q6_4mx6st = {
 }
 
 conf.q6_4ma6 = {
-	name = "Qt6.4.0-rc-macOS-arm64_v8a-AppleClang&HOSTTOOLVERSION&",
-	qtVersion = "6.4.0-rc",
+	name = "Qt6.4.0-macOS-arm64_v8a-AppleClang&HOSTTOOLVERSION&",
+	qtVersion = "6.4.0",
 	host = "macOSM1",
 	opensslConf = "o3ma6",
 	useCMake = "Latest",
@@ -5722,8 +4595,8 @@ conf.q6_4ma6 = {
 }
 
 conf.q6_4ma6nf = {
-	name = "Qt6.4.0-rc-macOS-arm64_v8a-AppleClang&HOSTTOOLVERSION&-noFramework",
-	qtVersion = "6.4.0-rc",
+	name = "Qt6.4.0-macOS-arm64_v8a-AppleClang&HOSTTOOLVERSION&-noFramework",
+	qtVersion = "6.4.0",
 	host = "macOSM1",
 	variant = {"-noFramework"},
 	opensslConf = "o3ma6",
@@ -5761,8 +4634,8 @@ conf.q6_4ma6nf = {
 }
 
 conf.q6_4ma6st = {
-	name = "Qt6.4.0-rc-macOS-arm64_v8a-AppleClang&HOSTTOOLVERSION&-static",
-	qtVersion = "6.4.0-rc",
+	name = "Qt6.4.0-macOS-arm64_v8a-AppleClang&HOSTTOOLVERSION&-static",
+	qtVersion = "6.4.0",
 	host = "macOSM1",
 	variant = {"-static"},
 	opensslConf = "o3ma6",
@@ -5819,8 +4692,8 @@ conf.q6_4ma6st = {
 }
 
 conf.q6_4wx6g2_aa6n5 = {
-	name = "Qt6.4.0-rc-Android-arm64-Clang-NDKr25b-XWindows-x86_64-MinGW&HOSTTOOLVERSION&",
-	qtVersion = "6.4.0-rc",
+	name = "Qt6.4.0-Android-arm64-Clang-NDKr25b-XWindows-x86_64-MinGW&HOSTTOOLVERSION&",
+	qtVersion = "6.4.0",
 	host = "Win10",
 	target = "Android-27",
 	toolchain = "MinGW1210-64",
@@ -5858,8 +4731,8 @@ conf.q6_4wx6g2_aa6n5 = {
 }
 
 conf.q6_4wx6g2_ax6n5 = {
-	name = "Qt6.4.0-rc-Android-x86_64-Clang-NDKr25b-XWindows-x86_64-MinGW&HOSTTOOLVERSION&",
-	qtVersion = "6.4.0-rc",
+	name = "Qt6.4.0-Android-x86_64-Clang-NDKr25b-XWindows-x86_64-MinGW&HOSTTOOLVERSION&",
+	qtVersion = "6.4.0",
 	host = "Win10",
 	target = "Android-27",
 	toolchain = "MinGW1210-64",
@@ -5897,8 +4770,8 @@ conf.q6_4wx6g2_ax6n5 = {
 }
 
 conf.q6_4lx6_aa6n5 = {
-	name = "Qt6.4.0-rc-Android-arm64-Clang-NDKr25b-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
-	qtVersion = "6.4.0-rc",
+	name = "Qt6.4.0-Android-arm64-Clang-NDKr25b-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
+	qtVersion = "6.4.0",
 	host = "Rocky9",
 	target = "Android-27",
 	toolchainT = "Android-27-r25b-arm64",
@@ -5934,8 +4807,8 @@ conf.q6_4lx6_aa6n5 = {
 }
 
 conf.q6_4lx6_ax6n5 = {
-	name = "Qt6.4.0-rc-Android-x86_64-Clang-NDKr25b-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
-	qtVersion = "6.4.0-rc",
+	name = "Qt6.4.0-Android-x86_64-Clang-NDKr25b-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
+	qtVersion = "6.4.0",
 	host = "Rocky9",
 	target = "Android-27",
 	toolchainT = "Android-27-r25b-x86_64",
@@ -5971,8 +4844,8 @@ conf.q6_4lx6_ax6n5 = {
 }
 
 conf.q6_4mx6_aa6n5 = {
-	name = "Qt6.4.0-rc-Android-arm64-Clang-NDKr25b-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
-	qtVersion = "6.4.0-rc",
+	name = "Qt6.4.0-Android-arm64-Clang-NDKr25b-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
+	qtVersion = "6.4.0",
 	host = "macOS1015",
 	target = "Android-27",
 	toolchainT = "Android-27-r25b-arm64",
@@ -6008,8 +4881,8 @@ conf.q6_4mx6_aa6n5 = {
 }
 
 conf.q6_4mx6_ax6n5 = {
-	name = "Qt6.4.0-rc-Android-x86_64-Clang-NDKr25b-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
-	qtVersion = "6.4.0-rc",
+	name = "Qt6.4.0-Android-x86_64-Clang-NDKr25b-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
+	qtVersion = "6.4.0",
 	host = "macOS1015",
 	target = "Android-27",
 	toolchainT = "Android-27-r25b-x86_64",
@@ -6045,8 +4918,8 @@ conf.q6_4mx6_ax6n5 = {
 }
 
 conf.q6_4ma6_aa6n5 = {
-	name = "Qt6.4.0-rc-Android-arm64-Clang-NDKr25b-xmacOS-arm64_v8a-AppleClang&HOSTTOOLVERSION&",
-	qtVersion = "6.4.0-rc",
+	name = "Qt6.4.0-Android-arm64-Clang-NDKr25b-xmacOS-arm64_v8a-AppleClang&HOSTTOOLVERSION&",
+	qtVersion = "6.4.0",
 	host = "macOSM1",
 	target = "Android-27",
 	toolchainT = "Android-27-r25b-arm64",
@@ -6082,8 +4955,8 @@ conf.q6_4ma6_aa6n5 = {
 }
 
 conf.q6_4ma6_ax6n5 = {
-	name = "Qt6.4.0-rc-Android-x86_64-Clang-NDKr25b-xmacOS-arm64_v8a-AppleClang&HOSTTOOLVERSION&",
-	qtVersion = "6.4.0-rc",
+	name = "Qt6.4.0-Android-x86_64-Clang-NDKr25b-xmacOS-arm64_v8a-AppleClang&HOSTTOOLVERSION&",
+	qtVersion = "6.4.0",
 	host = "macOSM1",
 	target = "Android-27",
 	toolchainT = "Android-27-r25b-x86_64",
@@ -6120,8 +4993,8 @@ conf.q6_4ma6_ax6n5 = {
 
 -- WebAssembly uses emcmake which don't need a toolchain file
 conf.q6_4wx6g2_W = {
-	name = "Qt6.4.0-rc-WebAssembly-emscripten&TARGETTOOLVERSION&-xWindows-x86_64-MinGW&HOSTTOOLVERSION&",
-	qtVersion = "6.4.0-rc",
+	name = "Qt6.4.0-WebAssembly-emscripten&TARGETTOOLVERSION&-xWindows-x86_64-MinGW&HOSTTOOLVERSION&",
+	qtVersion = "6.4.0",
 	host = "Win10",
 	toolchain = "MinGW1210-64",
 	target = "WebAssembly",
@@ -6152,8 +5025,8 @@ conf.q6_4wx6g2_W = {
 }
 
 conf.q6_4lx6_W = {
-	name = "Qt6.4.0-rc-WebAssembly-emscripten&TARGETTOOLVERSION&-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
-	qtVersion = "6.4.0-rc",
+	name = "Qt6.4.0-WebAssembly-emscripten&TARGETTOOLVERSION&-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
+	qtVersion = "6.4.0",
 	host = "Rocky9",
 	target = "WebAssembly",
 	toolchainT = "emscripten-3.1.14",
@@ -6181,8 +5054,8 @@ conf.q6_4lx6_W = {
 }
 
 conf.q6_4mx6_W = {
-	name = "Qt6.4.0-rc-WebAssembly-emscripten&TARGETTOOLVERSION&-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
-	qtVersion = "6.4.0-rc",
+	name = "Qt6.4.0-WebAssembly-emscripten&TARGETTOOLVERSION&-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
+	qtVersion = "6.4.0",
 	host = "macOS1015",
 	target = "WebAssembly",
 	toolchainT = "emscripten-3.1.14",
@@ -6210,8 +5083,8 @@ conf.q6_4mx6_W = {
 }
 
 conf.q6_4ma6_W = {
-	name = "Qt6.4.0-rc-WebAssembly-emscripten&TARGETTOOLVERSION&-xmacOS-arm64_v8a-AppleClang&HOSTTOOLVERSION&",
-	qtVersion = "6.4.0-rc",
+	name = "Qt6.4.0-WebAssembly-emscripten&TARGETTOOLVERSION&-xmacOS-arm64_v8a-AppleClang&HOSTTOOLVERSION&",
+	qtVersion = "6.4.0",
 	host = "macOS1015",
 	target = "WebAssembly",
 	toolchainT = "emscripten-3.1.14",
@@ -6261,30 +5134,30 @@ local Qt6StaticConf = {
 	Win10 = {
 		["6.2.4"] = "q6_2wx6m1st",
 		["6.3.2"] = "q6_3wx6m1st",
-		["6.4.0-rc"] = "q6_4wx6g2st",
+		["6.4.0"] = "q6_4wx6g2st",
 	},
 	Win10MSVC2019 = {
 		["6.2.4"] = "q6_2wx6v9st",
 	},
 	Win10MSVC2022 = {
 		["6.3.2"] = "q6_3wx6v2st",
-		["6.4.0-rc"] = "q6_4wx6v2st",
+		["6.4.0"] = "q6_4wx6v2st",
 	},
 	CentOS8 = {
 		["6.2.4"] = "q6_2lx6st",
 		["6.3.2"] = "q6_3lx6st",
 	},
 	Rocky9 = {
-		["6.4.0-rc"] = "q6_4lx6st",
+		["6.4.0"] = "q6_4lx6st",
 	},
 	macOS1015 = {
 		["6.2.4"] = "q6_2mx6st",
 		["6.3.2"] = "q6_3mx6st",
-		["6.4.0-rc"] = "q6_4mx6st",
+		["6.4.0"] = "q6_4mx6st",
 	},
 	macOSM1 = {
 		["6.3.2"] = "q6_3ma6st",
-		["6.4.0-rc"] = "q6_4ma6st",
+		["6.4.0"] = "q6_4ma6st",
 	},
 }
 
@@ -6330,8 +5203,7 @@ local Win10SrcPackagePrefixWorkaroundVersions = {
 	"5.15.6-4",
 	"6.2.4",
 	"6.2.4-3",
-	"6.3.2",
-	"6.4.0-rc",
+	"6.4.0",
 }
 
 for name, value in pairs(conf) do

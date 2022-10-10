@@ -1504,7 +1504,7 @@ conf.Q5wx6v5 = {
 
 conf.Q5wx3v7 = {
 	name = "Qt5.15.6-Windows-x86-VS2017-&HOSTTOOLVERSION&",
-	qtVersion = "5.15.6-4",
+	qtVersion = "5.15.6-5",
 	host = "Win10",
 	toolchain = "MSVC2017-32",
 	configureParameter = [[
@@ -1541,7 +1541,7 @@ conf.Q5wx3v7 = {
 
 conf.Q5wx6v7 = {
 	name = "Qt5.15.6-Windows-x86_64-VS2017-&HOSTTOOLVERSION&",
-	qtVersion = "5.15.6-4",
+	qtVersion = "5.15.6-5",
 	host = "Win10",
 	toolchain = "MSVC2017-64",
 	configureParameter = [[
@@ -1578,7 +1578,7 @@ conf.Q5wx6v7 = {
 
 conf.Q5wx3v9 = {
 	name = "Qt5.15.6-Windows-x86-VS2019-&HOSTTOOLVERSION&",
-	qtVersion = "5.15.6-4",
+	qtVersion = "5.15.6-5",
 	host = "Win10",
 	toolchain = "MSVC2019-32",
 	configureParameter = [[
@@ -1614,7 +1614,7 @@ conf.Q5wx3v9 = {
 
 conf.Q5wx3v9sf = {
 	name = "Qt5.15.6-Windows-x86-VS2019-&HOSTTOOLVERSION&-staticFull",
-	qtVersion = "5.15.6-4",
+	qtVersion = "5.15.6-5",
 	host = "Win10",
 	toolchain = "MSVC2019-32",
 	variant = {"-staticFull"},
@@ -1656,7 +1656,7 @@ conf.Q5wx3v9sf = {
 
 conf.Q5wx6v9 = {
 	name = "Qt5.15.6-Windows-x86_64-VS2019-&HOSTTOOLVERSION&",
-	qtVersion = "5.15.6-4",
+	qtVersion = "5.15.6-5",
 	host = "Win10",
 	toolchain = "MSVC2019-64",
 	configureParameter = [[
@@ -1692,7 +1692,7 @@ conf.Q5wx6v9 = {
 
 conf.Q5wx6v9sf = {
 	name = "Qt5.15.6-Windows-x86_64-VS2019-&HOSTTOOLVERSION&-staticFull",
-	qtVersion = "5.15.6-4",
+	qtVersion = "5.15.6-5",
 	host = "Win10",
 	toolchain = "MSVC2019-64",
 	variant = {"-staticFull"},
@@ -1734,7 +1734,7 @@ conf.Q5wx6v9sf = {
 
 conf.Q5wx6v2 = {
 	name = "Qt5.15.6-Windows-x86_64-VS2022-&HOSTTOOLVERSION&",
-	qtVersion = "5.15.6-4",
+	qtVersion = "5.15.6-5",
 	host = "Win10",
 	toolchain = "MSVC2022-64",
 	configureParameter = [[
@@ -1920,7 +1920,7 @@ conf.Q5wx6m8sf = {
 
 conf.Q5mx6 = {
 	name = "Qt5.15.6-macOS-x86_64-AppleClang&HOSTTOOLVERSION&",
-	qtVersion = "5.15.6-4",
+	qtVersion = "5.15.6-5",
 	host = "macOSLegacy",
 	configureParameter = [[
 		-prefix
@@ -1955,7 +1955,7 @@ conf.Q5mx6 = {
 
 conf.Q5mx6nf = {
 	name = "Qt5.15.6-macOS-x86_64-AppleClang&HOSTTOOLVERSION&-noFramework",
-	qtVersion = "5.15.6-4",
+	qtVersion = "5.15.6-5",
 	host = "macOSLegacy",
 	variant = {"-noFramework"},
 	configureParameter = [[
@@ -5200,7 +5200,7 @@ local valueMo = {
 }
 
 local Win10SrcPackagePrefixWorkaroundVersions = {
-	"5.15.6-4",
+	"5.15.6-5",
 	"6.2.4",
 	"6.2.4-3",
 	"6.4.0",

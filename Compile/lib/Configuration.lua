@@ -197,6 +197,10 @@ conf.host.macLegacy = {
 	["emscriptenPath"] = {
 		["1.39.8"] = "/opt/env/emsdk-1.39.8/",
 	},
+	["jdkPath"] = {
+		["8"] = "/usr/local/opt/openjdk@8/",
+		["11"] = "/usr/local/opt/java11/",
+	},
 	["defaultToolchainExecutableName"] = "clang",
 }
 
@@ -297,7 +301,7 @@ conf.Qt.generateConfTable = function(self, host, job)
 
 			if confHost.jdkPath then
 				ret.envSet.JAVA_HOME = confHost.jdkPath["8"]
-				table.insert(ret.path, confHost.jdkPath["8"] .. "\\bin")
+				table.insert(ret.path, confHost.jdkPath["8"] .. confHost.pathSep .. "bin")
 			end
 		elseif string.sub(confDetail.toolchainT, 1, 10) == "emscripten" then -- WebAssembly
 			local matchStr = "^emscripten%-(.+)$"

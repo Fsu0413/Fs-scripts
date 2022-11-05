@@ -1990,14 +1990,14 @@ conf.Q5mx6nf = {
 	]],
 }
 
-conf.Q5wx6m8_aalnl = {
-	name = "Qt5.15.7-Android-ALL-Clang-NDKr21e-XWindows-x86_64-MinGW&HOSTTOOLVERSION&",
+conf.Q5wx6m8_aaln3 = {
+	name = "Qt5.15.7-Android-ALL-Clang-NDKr23c-XWindows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "5.15.7",
 	host = "Win10",
 	toolchain = "MinGW810-64",
 	target = "Android-21",
-	toolchainT = "Android-21-r21e-all",
-	opensslConf = "o1aalnl",
+	toolchainT = "Android-21-r23c-all",
+	opensslConf = "o1aaln321",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
 		-prefix
@@ -2043,13 +2043,13 @@ conf.Q5wx6m8_aalnl = {
 	]],
 }
 
-conf.Q5lx6_aalnl = {
-	name = "Qt5.15.7-Android-ALL-Clang-NDKr21e-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
+conf.Q5lx6_aaln3 = {
+	name = "Qt5.15.7-Android-ALL-Clang-NDKr23c-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
 	qtVersion = "5.15.7",
 	host = "CentOS8",
 	target = "Android-21",
-	toolchainT = "Android-21-r21e-all",
-	opensslConf = "o1aalnl",
+	toolchainT = "Android-21-r23c-all",
+	opensslConf = "o1aaln321",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
 		-prefix
@@ -2095,13 +2095,13 @@ conf.Q5lx6_aalnl = {
 	]],
 }
 
-conf.Q5mx6_aalnl = {
-	name = "Qt5.15.7-Android-ALL-Clang-NDKr21e-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
+conf.Q5mx6_aaln3 = {
+	name = "Qt5.15.7-Android-ALL-Clang-NDKr23c-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "5.15.7",
 	host = "macOSLegacy",
 	target = "Android-21",
-	toolchainT = "Android-21-r21e-all",
-	opensslConf = "o1aalnl",
+	toolchainT = "Android-21-r23c-all",
+	opensslConf = "o1aaln321",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
 		-prefix

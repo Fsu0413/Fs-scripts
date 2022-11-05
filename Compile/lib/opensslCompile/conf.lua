@@ -333,6 +333,105 @@ conf.o1aalnl = {
 
 --------------------------------------------------------------------
 
+conf.o1aa3n321 = {
+	name = "OpenSSL1.1.1s-Android-arm-NDKr23cAPI21",
+	opensslVersion = "1.1.1s",
+	host = "CentOS8",
+	target = "Android-21",
+	toolchainT = "Android-21-r23c-arm",
+	configureParameter = [[
+		no-asm
+		no-shared
+		--prefix=//
+		--openssldir=//ssl
+		android-arm
+		-D__ANDROID_API__=21
+		-march=armv7-a
+		-mfloat-abi=softfp
+		-mfpu=vfp
+		-fno-builtin-memmove
+		-mthumb
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
+}
+
+conf.o1aa6n321 = {
+	name = "OpenSSL1.1.1s-Android-arm64-NDKr23cAPI21",
+	opensslVersion = "1.1.1s",
+	host = "CentOS8",
+	target = "Android-21",
+	toolchainT = "Android-21-r23c-arm64",
+	configureParameter = [[
+		no-asm
+		no-shared
+		--prefix=//
+		--openssldir=//ssl
+		android-arm64
+		-D__ANDROID_API__=21
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
+}
+
+conf.o1ax3n321 = {
+	name = "OpenSSL1.1.1s-Android-x86-NDKr23cAPI21",
+	opensslVersion = "1.1.1s",
+	host = "CentOS8",
+	target = "Android-21",
+	toolchainT = "Android-21-r23c-x86",
+	configureParameter = [[
+		no-asm
+		no-shared
+		--prefix=//
+		--openssldir=//ssl
+		android-x86
+		-D__ANDROID_API__=21
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
+}
+
+conf.o1ax6n321 = {
+	name = "OpenSSL1.1.1s-Android-x86_64-NDKr23cAPI21",
+	opensslVersion = "1.1.1s",
+	host = "CentOS8",
+	target = "Android-21",
+	toolchainT = "Android-21-r23c-x86_64",
+	configureParameter = [[
+		no-asm
+		no-shared
+		--prefix=//
+		--openssldir=//ssl
+		android-x86_64
+		-D__ANDROID_API__=21
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
+}
+
+conf.o1aaln321 = {
+	name = "OpenSSL1.1.1s-Android-ALL-NDKr23cAPI21",
+	opensslVersion = "1.1.1s",
+	host = "CentOS8",
+	opensslAndroidAll = {
+		["armeabi-v7a"] = "o1aa3n321",
+		["arm64-v8a"] = "o1aa6n321",
+		["x86"] = "o1ax3n321",
+		["x86_64"] = "o1ax6n321",
+	},
+}
+
+--------------------------------------------------------------------
+
 -- OpenSSL 3.0.7
 
 conf.o3wx6v9 = {

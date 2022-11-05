@@ -188,6 +188,8 @@ conf.host.macLegacy = {
 	},
 	["androidNdkPath"] = {
 		["r21e"] = "/Volumes/opt/env/android-ndk-r21e/",
+		-- NDK after r23 only distributes as APP bundle, so we install the APP in /Applications.
+		["r23c"] = "/Applications/AndroidNDK8568313.app/Contents/NDK/",
 	},
 	["androidNdkHost"] = "darwin-x86_64",
 	["sourcePackagePath"] = "/Volumes/opt/sources/",

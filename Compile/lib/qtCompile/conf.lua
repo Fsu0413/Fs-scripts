@@ -1949,7 +1949,8 @@ conf.Q5mx6 = {
 		-make-tool
 		"make -j$PARALLELNUM"
 		-rpath
-		-webengine-proprietary-codecs
+		-skip
+		qtwebengine
 	]],
 }
 
@@ -1985,7 +1986,8 @@ conf.Q5mx6nf = {
 		-make-tool
 		"make -j$PARALLELNUM"
 		-rpath
-		-webengine-proprietary-codecs
+		-skip
+		qtwebengine
 		-no-framework
 	]],
 }
@@ -2694,8 +2696,7 @@ conf.q6_2wx6v9 = {
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
 		-DFEATURE_system_sqlite=OFF
-		-DFEATURE_webengine_proprietary_codecs=ON
-		-DFEATURE_qtpdf_build=OFF
+		-DBUILD_qtwebengine=OFF
 		-DBUILD_qtopcua=OFF
 	]],
 }
@@ -2863,8 +2864,7 @@ conf.q6_2wx6v2 = {
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
 		-DFEATURE_system_sqlite=OFF
-		-DFEATURE_webengine_proprietary_codecs=ON
-		-DFEATURE_qtpdf_build=OFF
+		-DBUILD_qtwebengine=OFF
 		-DBUILD_qtopcua=OFF
 	]],
 }
@@ -3230,8 +3230,7 @@ conf.q6_2mx6 = {
 		-DFEATURE_securetransport=ON
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_system_sqlite=OFF
-		-DFEATURE_webengine_proprietary_codecs=ON
-		-DFEATURE_qtpdf_build=OFF
+		-DBUILD_qtwebengine=OFF
 		-DCMAKE_SKIP_BUILD_RPATH=OFF
 		-DCMAKE_SKIP_INSTALL_RPATH=OFF
 		-DFEATURE_framework=ON
@@ -3269,8 +3268,7 @@ conf.q6_2mx6nf = {
 		-DFEATURE_securetransport=ON
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_system_sqlite=OFF
-		-DFEATURE_webengine_proprietary_codecs=ON
-		-DFEATURE_qtpdf_build=OFF
+		-DBUILD_qtwebengine=OFF
 		-DCMAKE_SKIP_BUILD_RPATH=OFF
 		-DCMAKE_SKIP_INSTALL_RPATH=OFF
 		-DFEATURE_framework=OFF
@@ -3402,8 +3400,7 @@ conf.q6_2ma6 = {
 		-DFEATURE_securetransport=ON
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_system_sqlite=OFF
-		-DFEATURE_webengine_proprietary_codecs=ON
-		-DFEATURE_qtpdf_build=OFF
+		-DBUILD_qtwebengine=OFF
 		-DCMAKE_SKIP_BUILD_RPATH=OFF
 		-DCMAKE_SKIP_INSTALL_RPATH=OFF
 		-DFEATURE_framework=ON
@@ -3441,8 +3438,7 @@ conf.q6_2ma6nf = {
 		-DFEATURE_securetransport=ON
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_system_sqlite=OFF
-		-DFEATURE_webengine_proprietary_codecs=ON
-		-DFEATURE_qtpdf_build=OFF
+		-DBUILD_qtwebengine=OFF
 		-DCMAKE_SKIP_BUILD_RPATH=OFF
 		-DCMAKE_SKIP_INSTALL_RPATH=OFF
 		-DFEATURE_framework=OFF

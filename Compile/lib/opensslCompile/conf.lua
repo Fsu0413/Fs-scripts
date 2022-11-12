@@ -589,7 +589,7 @@ conf.o3mx6 = {
 		shared
 		--prefix=&INSTALLROOT&
 		--openssldir=&INSTALLROOT&/ssl
-		darwin64-x86_64-cc
+		darwin64-x86_64
 		-mmacosx-version-min=10.14
 	]],
 }
@@ -605,7 +605,7 @@ conf.o3ma6 = {
 		shared
 		--prefix=&INSTALLROOT&
 		--openssldir=&INSTALLROOT&/ssl
-		darwin64-arm64-cc
+		darwin64-arm64
 		-mmacosx-version-min=10.14
 	]],
 }

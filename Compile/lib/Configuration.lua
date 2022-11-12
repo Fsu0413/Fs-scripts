@@ -608,10 +608,12 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 					ret.envSet.CC = "clang --target=" .. confDetail.clangTriplet
 				end
 			elseif string.sub(conf.hostToConfMap[host], 1, 3) == "mac" then
-				-- OpenSSL build for macOS is not used when building Qt 5. Since build of Qt 4 has been defuncted, this may also be defuncted.
-				-- But you know what? OpenSSL is revived in Qt 6! Seems Strange? It's because that SecureTransport has been deprecated by Apple and won't support TLS 1.3!
-				-- Currently only OpenSSL 3 is building. Since macOS comes with 2 different archtectures, we should distinguish them using CC environment variable
-				ret.envSet.CC = "clang -arch " .. ((host ~= "macOSM1") and "x86_64" or "arm64")
+				-- OpenSSL build for macOS is not used when building Qt 5. SecureTransport is used instead.
+				-- Since build of Qt 4 has been defuncted, this may also be defuncted,,,,, right?
+				-- No! OpenSSL is revived in Qt 6! Seems Strange? It's because that SecureTransport has been deprecated by Apple and won't support TLS 1.3!
+				-- Qt since 6.2 supports multiple SSL backend as Qt plugin. So we are building 2 different backends for macOS - SecureTransport and OpenSSL.
+
+				-- nothing special
 			else
 				error("not supported")
 			end

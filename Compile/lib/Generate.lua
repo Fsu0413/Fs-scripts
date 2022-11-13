@@ -75,6 +75,8 @@ for %%i in (aria2c curl wget) do (
 	)
 )
 
+rem TODO - set --no-conf parameter to aria2c
+
 set pd=o
 if "!DOWNLOADTOOL!" == "wget" set pd=O
 
@@ -186,6 +188,8 @@ for %%i in (aria2c curl wget) do (
 	)
 )
 
+rem TODO - set --no-conf parameter to aria2c
+
 set pd=o
 if "!DOWNLOADTOOL!" == "wget" set pd=O
 
@@ -275,7 +279,10 @@ gen.unix.download = "$DOWNLOADTOOL -$DOWNLOADP"
 -- EXTRAINSTALL
 -- INSTALLPATHWITHDATE
 gen.unix.template4Qt = [[
+
 set -x
+
+unset JAVA_HOME
 
 DOWNLOADTOOL=
 
@@ -293,6 +300,10 @@ done
 if [ "x$DOWNLOADTOOL" = "x" ]; then
 	echo "no download tool" >&2
 	exit 1
+fi
+
+if [ "x$DOWNLOADTOOL" = "xaria2c" ]; then
+	DOWNLOADTOOL="aria2c --no-conf"
 fi
 
 DOWNLOADP="o"
@@ -420,6 +431,8 @@ popd
 gen.unix.template4OpenSSL = [[
 set -x
 
+unset JAVA_HOME
+
 DOWNLOADTOOL=
 
 for i in aria2c wget curl; do
@@ -436,6 +449,10 @@ done
 if [ "x$DOWNLOADTOOL" = "x" ]; then
 	echo "no download tool" >&2
 	exit 1
+fi
+
+if [ "x$DOWNLOADTOOL" = "xaria2c" ]; then
+	DOWNLOADTOOL="aria2c --no-conf"
 fi
 
 DOWNLOADP="o"
@@ -520,8 +537,10 @@ exit 0
 -- WORKSPACE
 -- INSTALLROOT
 -- INSTALLPATH
-gen.unix.template4OpenSSLAndroidAll = [[
+gen.unix.template4OpenSSLUnifyAndroid = [[
 set -x
+
+unset JAVA_HOME
 
 DOWNLOADTOOL=
 
@@ -539,6 +558,10 @@ done
 if [ "x$DOWNLOADTOOL" = "x" ]; then
 	echo "no download tool" >&2
 	exit 1
+fi
+
+if [ "x$DOWNLOADTOOL" = "xaria2c" ]; then
+	DOWNLOADTOOL="aria2c --no-conf"
 fi
 
 DOWNLOADP="o"
@@ -575,8 +598,8 @@ done
 &DELETEUNCOMPRESSED&
 
 getOpenSSLDir() {
-&OPENSSLDIRFUNCTION&
-return 0
+	&OPENSSLDIRFUNCTION&
+	return 0
 }
 
 &PATHSET&
@@ -587,22 +610,155 @@ rm -rf &INSTALLROOT&
 mkdir &INSTALLROOT&
 cd &INSTALLROOT&
 
-mkdir lib
-mkdir bin
+mkdir lib bin
 
 for ar in &ARCHITECTURES&; do
 	getOpenSSLDir "$ar"
 	if [ $? -ne 0 ]; then
 		exit 1
 	fi
+	# It is certain that we built OpenSSL to static library
+	# so all we need are following files
 	cp ../$CURRENTARCHDIR/lib/libssl.a ./lib/libssl_$ar.a
 	cp ../$CURRENTARCHDIR/lib/libcrypto.a ./lib/libcrypto_$ar.a
 	cp ../$CURRENTARCHDIR/bin/openssl ./bin/openssl_$ar
-	if [ "x$ar" = "xarm64-v8a" ]; then
+	if ! [ -d include ]; then
 		cp -R ../$CURRENTARCHDIR/include ./include
+	fi
+	if ! [ -d ssl ]; then
 		cp -R ../$CURRENTARCHDIR/ssl ./ssl
 	fi
 done
+
+cd &INSTALLROOT&/..
+
+$TAR -cf - &INSTALLPATH& | $SEVENZIP a -txz -m0=LZMA2:d256m:fb273 -mmt=3 -myx -si -- &INSTALLPATH&.tar.xz
+$SEVENZIP a -t7z -m0=LZMA2:d256m:fb273 -mmt=3 -myx -mqs -ms=on -- &INSTALLPATH&.7z &INSTALLPATH&
+
+exit 0
+
+]]
+
+-- PATHSET
+-- ENVSET
+-- OPENSSLDIRFUNCTION
+-- ARCHITECTURES
+-- WORKSPACE
+-- INSTALLROOT
+-- INSTALLPATH
+gen.unix.template4OpenSSLUnifymacOS = [[
+set -x
+
+unset JAVA_HOME
+
+DOWNLOADTOOL=
+
+for i in aria2c wget curl; do
+	p="--help"
+	if [ x$i = xaria2c ]; then
+		p="-h"
+	fi
+	if $i $p >/dev/null 2>/dev/null; then
+		DOWNLOADTOOL=$i
+		break
+	fi
+done
+
+if [ "x$DOWNLOADTOOL" = "x" ]; then
+	echo "no download tool" >&2
+	exit 1
+fi
+
+if [ "x$DOWNLOADTOOL" = "xaria2c" ]; then
+	DOWNLOADTOOL="aria2c --no-conf"
+fi
+
+DOWNLOADP="o"
+if [ "x$DOWNLOADTOOL" = "xwget" ]; then
+	DOWNLOADP="O"
+fi
+
+&DOWNLOADPACKAGE&
+
+TAR=
+
+for i in bsdtar tar; do
+	if $i --help; then
+		TAR=$i
+		break
+	fi
+done
+
+if [ "x$TAR" = "x" ]; then
+	echo "tar not found" >&2
+	exit 1
+fi
+
+SEVENZIP=
+
+for i in 7zr 7za 7z; do
+	if $i >/dev/null 2>/dev/null; then
+		SEVENZIP=$i
+		break
+	fi
+done
+
+&UNCOMPRESSPACKAGE&
+&DELETEUNCOMPRESSED&
+
+getOpenSSLDir() {
+	&OPENSSLDIRFUNCTION&
+	return 0
+}
+
+MakeOpenSSLLibLinks()
+{
+	while [ "$#" -gt 0 ]; do
+		ln -s "$1" "$2"
+		shift
+		shift
+	done
+}
+
+&PATHSET&
+
+&ENVSET&
+
+rm -rf &INSTALLROOT&
+mkdir &INSTALLROOT&
+cd &INSTALLROOT&
+
+# We builds only OpenSSL 3 on macOS so following are only for OpenSSL 3.
+
+mkdir lib bin
+mkdir lib/ossl-modules
+
+LIPONAMES="bin/openssl lib/libssl.3.dylib lib/libcrypto.3.dylib lib/libssl.a lib/libcrypto.a lib/ossl-modules/legacy.dylib"
+
+for ar in &ARCHITECTURES&; do
+	getOpenSSLDir "$ar"
+	if [ $? -ne 0 ]; then
+		exit 1
+	fi
+	if ! [ -d include ]; then
+		cp -R ../$CURRENTARCHDIR/include ./include
+	fi
+	if ! [ -d ssl ]; then
+		cp -R ../$CURRENTARCHDIR/ssl ./ssl
+	fi
+done
+
+for n in $LIPONAMES; do
+	EXECUTABLELIST=
+	for ar in &ARCHITECTURES&; do
+		getOpenSSLDir "$ar"
+		EXECUTABLELIST=$EXECUTABLELIST\ "../$CURRENTARCHDIR/$n"
+	done
+
+	lipo $EXECUTABLELIST -create -output "$n"
+done
+
+MakeOpenSSLLibLinks libssl.3.dylib lib/libssl.dylib libcrypto.3.dylib lib/libcrypto.dylib
 
 cd &INSTALLROOT&/..
 
@@ -655,7 +811,7 @@ gen.generate = function(self, para)
 		return
 	end
 
-	if template == "OpenSSLAndroidAll" then
+	if string.sub(template, 1, 12) == "OpenSSLUnify" then
 		if para.template ~= "unix" then
 			print("[Generate.generate] ERROR: Generation of OpenSSL Android All builds is not available in para.template ~= \"unix\"")
 			os.exit(1)

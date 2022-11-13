@@ -510,20 +510,55 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 	-- dirty hack end
 	ret.download = {}
 
-	if confDetail.opensslAndroidAll then
-		-- currently this part of script runs only on whatever Linux host (CentOS8 / Rocky9 on my build environment) and no Windows compatibility is made.
+	-- DO REMEMBER TO USE tostring IF A VERSION STRING IS NEEDED!!
+	local hostToolchainVersion, targetToolchainVersion
+	local hostToolchainVersionQueryFuncName = "gcc"
+	local hostToolchainVersionQueryPath
+	local hostToolchainExecutableName = confHost.defaultToolchainExecutableName
+
+	if confDetail.toolchain ~= "PATH" then
+		local paths = confHost.toolchainPath[confDetail.toolchain]
+		if type(confHost.toolchainPath[confDetail.toolchain]) == "string" then
+			paths = {confHost.toolchainPath[confDetail.toolchain]}
+		end
+		hostToolchainVersionQueryPath = paths[1]
+		if string.sub(confDetail.toolchain, 1, 4) == "MSVC" then
+			hostToolchainVersionQueryFuncName = "msvc"
+			ret.msvcBat = paths[1]
+			table.remove(paths, 1)
+		elseif string.sub(confDetail.toolchain, 1, 9) == "MinGWLLVM" then
+			hostToolchainVersionQueryPath = paths[2]
+			hostToolchainExecutableName = "clang"
+		end
+		for _, x in ipairs(paths) do
+			table.insert(ret.path, x)
+		end
+	end
+
+	hostToolchainVersion = compilerVer[hostToolchainVersionQueryFuncName](confHost.makefileTemplate == "win", hostToolchainVersionQueryPath, hostToolchainExecutableName)
+
+	if confDetail.opensslUnifyType then
+		-- This part of script runs only on whatever Unix-like host (CentOS8 / Rocky9 / macOS on my build environment) and no Windows compatibility is made.
 		-- no plan for Windows support.
-		ret.buildContent = "OpenSSLAndroidAll"
-		ret.INSTALLROOT = ret.WORKSPACE .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. confDetail.name
-		ret.INSTALLPATH = confDetail.name
+
+		-- Useful for building a unified package for Android / macOS
+
+		if confDetail.opensslUnifyType == "macOS" then
+			-- macOS build uses unified clang
+			targetToolchainVersion = hostToolchainVersion
+		end
+
+		ret.buildContent = "OpenSSLUnify" .. confDetail.opensslUnifyType
+		ret.INSTALLROOT = ret.WORKSPACE .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. replaceVersion(confDetail.name, hostToolchainVersion, targetToolchainVersion)
+		ret.INSTALLPATH = replaceVersion(confDetail.name, hostToolchainVersion, targetToolchainVersion)
 		ret.OPENSSLDIRFUNCTION = ""
 
 		local repl = {}
 		repl.arch = {}
 
-		for arch, androidConf in pairs(confDetail.opensslAndroidAll) do
-			table.insert(ret.download, conf.OpenSSL:binaryFileDownloadPath(confHost, androidConf))
-			ret.OPENSSLDIRFUNCTION = ret.OPENSSLDIRFUNCTION .. "if [ \"x$1\" = \"x" .. arch .. "\" ]; then\n" .. "CURRENTARCHDIR=\"" .. conf.OpenSSL.configurations[androidConf].name .. "\"\nexport CURRENTARCHDIR\nel"
+		for arch, unifiedConf in pairs(confDetail.opensslUnifyArch) do
+			table.insert(ret.download, conf.OpenSSL:binaryFileDownloadPath(confHost, unifiedConf, targetToolchainVersion))
+			ret.OPENSSLDIRFUNCTION = ret.OPENSSLDIRFUNCTION .. "if [ \"x$1\" = \"x" .. arch .. "\" ]; then\n" .. "CURRENTARCHDIR=\"" .. replaceVersion(conf.OpenSSL.configurations[unifiedConf].name, hostToolchainVersion, targetToolchainVersion) .. "\"\nexport CURRENTARCHDIR\nel"
 			table.insert(repl.arch, arch)
 		end
 
@@ -538,33 +573,6 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 		ret.BUILDDIR = ret.WORKSPACE .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. "build-OpenSSL" .. job
 		ret.INSTALLCOMMANDLINE = " "
 		table.insert(ret.download, confDetail["sourcePackageUrl" .. confHost.makefileTemplate])
-
-		-- DO REMEMBER TO USE tostring IF A VERSION STRING IS NEEDED!!
-		local hostToolchainVersion, targetToolchainVersion
-		local hostToolchainVersionQueryFuncName = "gcc"
-		local hostToolchainVersionQueryPath
-		local hostToolchainExecutableName = confHost.defaultToolchainExecutableName
-
-		if confDetail.toolchain ~= "PATH" then
-			local paths = confHost.toolchainPath[confDetail.toolchain]
-			if type(confHost.toolchainPath[confDetail.toolchain]) == "string" then
-				paths = {confHost.toolchainPath[confDetail.toolchain]}
-			end
-			hostToolchainVersionQueryPath = paths[1]
-			if string.sub(confDetail.toolchain, 1, 4) == "MSVC" then
-				hostToolchainVersionQueryFuncName = "msvc"
-				ret.msvcBat = paths[1]
-				table.remove(paths, 1)
-			elseif string.sub(confDetail.toolchain, 1, 9) == "MinGWLLVM" then
-				hostToolchainVersionQueryPath = paths[2]
-				hostToolchainExecutableName = "clang"
-			end
-			for _, x in ipairs(paths) do
-				table.insert(ret.path, x)
-			end
-		end
-
-		hostToolchainVersion = compilerVer[hostToolchainVersionQueryFuncName](confHost.makefileTemplate == "win", hostToolchainVersionQueryPath, hostToolchainExecutableName)
 
 		ret.envSet = {}
 

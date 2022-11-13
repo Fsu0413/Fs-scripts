@@ -338,7 +338,8 @@ conf.o1aalnl = {
 	name = "OpenSSL1.1.1s-Android-ALL-NDKr21eAPI21",
 	opensslVersion = "1.1.1s",
 	host = "CentOS8",
-	opensslAndroidAll = {
+	opensslUnifyType = "Android",
+	opensslUnifyArch = {
 		["armeabi-v7a"] = "o1aa3nl",
 		["arm64-v8a"] = "o1aa6nl",
 		["x86"] = "o1ax3nl",
@@ -441,7 +442,8 @@ conf.o1aaln321 = {
 	name = "OpenSSL1.1.1s-Android-ALL-NDKr23cAPI21",
 	opensslVersion = "1.1.1s",
 	host = "CentOS8",
-	opensslAndroidAll = {
+	opensslUnifyType = "Android",
+	opensslUnifyArch = {
 		["armeabi-v7a"] = "o1aa3n321",
 		["arm64-v8a"] = "o1aa6n321",
 		["x86"] = "o1ax3n321",
@@ -605,10 +607,11 @@ conf.o3wx6s5 = {
 
 --------------------------------------------------------------------
 
+-- cross build this configuration for easy unify
 conf.o3mx6 = {
 	name = "OpenSSL3.0.7-macOS-x86_64-AppleClang&TARGETTOOLVERSION&",
 	opensslVersion = "3.0.7",
-	host = "macOS1015",
+	host = "macOSM1",
 	libPath = { "lib/libssl.3.dylib", "lib/libcrypto.3.dylib" },
 	staticlibPath = { "lib/libssl.a", "lib/libcrypto.a" },
 	configureParameter = [[
@@ -637,6 +640,19 @@ conf.o3ma6 = {
 		darwin64-arm64
 		-mmacosx-version-min=10.14
 	]],
+}
+
+conf.o3mal = {
+	name = "OpenSSL3.0.7-macOS-ALL-AppleClang&TARGETTOOLVERSION&",
+	opensslVersion = "3.0.7",
+	host = "macOSM1",
+	libPath = { "lib/libssl.3.dylib", "lib/libcrypto.3.dylib" },
+	staticlibPath = { "lib/libssl.a", "lib/libcrypto.a" },
+	opensslUnifyType = "macOS",
+	opensslUnifyArch = {
+		["arm64"] = "o3ma6",
+		["x86_64"] = "o3mx6",
+	},
 }
 
 --------------------------------------------------------------------
@@ -734,7 +750,8 @@ conf.o3aaln324 = {
 	name = "OpenSSL3.0.7-Android-ALL-NDKr23cAPI24",
 	opensslVersion = "3.0.7",
 	host = "CentOS8",
-	opensslAndroidAll = {
+	opensslUnifyType = "Android",
+	opensslUnifyArch = {
 		["armeabi-v7a"] = "o3aa3n324",
 		["arm64-v8a"] = "o3aa6n324",
 		["x86"] = "o3ax3n324",
@@ -836,7 +853,8 @@ conf.o3aaln527 = {
 	name = "OpenSSL3.0.7-Android-ALL-NDKr25API27",
 	opensslVersion = "3.0.7",
 	host = "Rocky9",
-	opensslAndroidAll = {
+	opensslUnifyType = "Android",
+	opensslUnifyArch = {
 		["armeabi-v7a"] = "o3aa3n527",
 		["arm64-v8a"] = "o3aa6n527",
 		["x86"] = "o3ax3n527",

@@ -56,6 +56,7 @@ conf.o1wx3v5 = {
 	configureParameter = [[
 		no-asm
 		shared
+		enable-static-engine
 		--prefix=&INSTALLROOT&
 		--openssldir=&INSTALLROOT&\ssl
 		VC-WIN32
@@ -73,6 +74,7 @@ conf.o1wx3v5st = {
 	configureParameter = [[
 		no-asm
 		no-shared
+		enable-static-engine
 		--prefix=&INSTALLROOT&
 		--openssldir=&INSTALLROOT&\ssl
 		VC-WIN32
@@ -89,6 +91,7 @@ conf.o1wx6v5 = {
 	configureParameter = [[
 		no-asm
 		shared
+		enable-static-engine
 		--prefix=&INSTALLROOT&
 		--openssldir=&INSTALLROOT&\ssl
 		VC-WIN64A
@@ -108,6 +111,7 @@ conf.o1wx3m7 = {
 	configureParameter = [[
 		no-asm
 		shared
+		enable-static-engine
 		--prefix=&INSTALLROOT&
 		--openssldir=&INSTALLROOT&/ssl
 		mingw
@@ -124,6 +128,7 @@ conf.o1wx6m7 = {
 	configureParameter = [[
 		no-asm
 		shared
+		enable-static-engine
 		--prefix=&INSTALLROOT&
 		--openssldir=&INSTALLROOT&/ssl
 		mingw64
@@ -141,6 +146,7 @@ conf.o1wx3v7 = {
 	configureParameter = [[
 		no-asm
 		shared
+		enable-static-engine
 		--prefix=&INSTALLROOT&
 		--openssldir=&INSTALLROOT&\ssl
 		VC-WIN32
@@ -158,6 +164,7 @@ conf.o1wx3v7st = {
 	configureParameter = [[
 		no-asm
 		no-shared
+		enable-static-engine
 		--prefix=&INSTALLROOT&
 		--openssldir=&INSTALLROOT&\ssl
 		VC-WIN32
@@ -174,6 +181,7 @@ conf.o1wx6v7 = {
 	configureParameter = [[
 		no-asm
 		shared
+		enable-static-engine
 		--prefix=&INSTALLROOT&
 		--openssldir=&INSTALLROOT&\ssl
 		VC-WIN64A
@@ -191,6 +199,7 @@ conf.o1wx6v7st = {
 	configureParameter = [[
 		no-asm
 		no-shared
+		enable-static-engine
 		--prefix=&INSTALLROOT&
 		--openssldir=&INSTALLROOT&\ssl
 		VC-WIN64A
@@ -209,6 +218,7 @@ conf.o1wx3v9 = {
 	configureParameter = [[
 		no-asm
 		shared
+		enable-static-engine
 		--prefix=&INSTALLROOT&
 		--openssldir=&INSTALLROOT&\ssl
 		VC-WIN32
@@ -225,6 +235,7 @@ conf.o1wx6v9 = {
 	configureParameter = [[
 		no-asm
 		shared
+		enable-static-engine
 		--prefix=&INSTALLROOT&
 		--openssldir=&INSTALLROOT&\ssl
 		VC-WIN64A
@@ -243,6 +254,7 @@ conf.o1aa3nl = {
 	configureParameter = [[
 		no-asm
 		no-shared
+		enable-static-engine
 		--prefix=//
 		--openssldir=//ssl
 		android-arm
@@ -268,6 +280,7 @@ conf.o1aa6nl = {
 	configureParameter = [[
 		no-asm
 		no-shared
+		enable-static-engine
 		--prefix=//
 		--openssldir=//ssl
 		android-arm64
@@ -288,6 +301,7 @@ conf.o1ax3nl = {
 	configureParameter = [[
 		no-asm
 		no-shared
+		enable-static-engine
 		--prefix=//
 		--openssldir=//ssl
 		android-x86
@@ -308,6 +322,7 @@ conf.o1ax6nl = {
 	configureParameter = [[
 		no-asm
 		no-shared
+		enable-static-engine
 		--prefix=//
 		--openssldir=//ssl
 		android-x86_64
@@ -342,6 +357,7 @@ conf.o1aa3n321 = {
 	configureParameter = [[
 		no-asm
 		no-shared
+		enable-static-engine
 		--prefix=//
 		--openssldir=//ssl
 		android-arm
@@ -367,6 +383,7 @@ conf.o1aa6n321 = {
 	configureParameter = [[
 		no-asm
 		no-shared
+		enable-static-engine
 		--prefix=//
 		--openssldir=//ssl
 		android-arm64
@@ -387,6 +404,7 @@ conf.o1ax3n321 = {
 	configureParameter = [[
 		no-asm
 		no-shared
+		enable-static-engine
 		--prefix=//
 		--openssldir=//ssl
 		android-x86
@@ -407,6 +425,7 @@ conf.o1ax6n321 = {
 	configureParameter = [[
 		no-asm
 		no-shared
+		enable-static-engine
 		--prefix=//
 		--openssldir=//ssl
 		android-x86_64
@@ -443,6 +462,7 @@ conf.o3wx6v9 = {
 	configureParameter = [[
 		no-asm
 		shared
+		enable-static-engine
 		--prefix=&INSTALLROOT&
 		--openssldir=&INSTALLROOT&\ssl
 		VC-WIN64A
@@ -460,6 +480,7 @@ conf.o3wx6v9st = {
 	configureParameter = [[
 		no-asm
 		no-shared
+		enable-static-engine
 		--prefix=&INSTALLROOT&
 		--openssldir=&INSTALLROOT&\ssl
 		VC-WIN64A
@@ -476,6 +497,7 @@ conf.o3wx6v2 = {
 	configureParameter = [[
 		no-asm
 		shared
+		enable-static-engine
 		--prefix=&INSTALLROOT&
 		--openssldir=&INSTALLROOT&\ssl
 		VC-WIN64A
@@ -493,6 +515,7 @@ conf.o3wx6v2st = {
 	configureParameter = [[
 		no-asm
 		no-shared
+		enable-static-engine
 		--prefix=&INSTALLROOT&
 		--openssldir=&INSTALLROOT&\ssl
 		VC-WIN64A
@@ -514,6 +537,7 @@ conf.o3wx6m1 = {
 	configureParameter = [[
 		no-asm
 		shared
+		enable-static-engine
 		--prefix=&INSTALLROOT&
 		--openssldir=&INSTALLROOT&/ssl
 		--libdir=&INSTALLROOT&/lib
@@ -533,6 +557,7 @@ conf.o3wx6m2 = {
 	configureParameter = [[
 		no-asm
 		shared
+		enable-static-engine
 		--prefix=&INSTALLROOT&
 		--openssldir=&INSTALLROOT&/ssl
 		--libdir=&INSTALLROOT&/lib
@@ -551,6 +576,7 @@ conf.o3wx6u5 = {
 	configureParameter = [[
 		no-asm
 		shared
+		enable-static-engine
 		--prefix=&INSTALLROOT&
 		--openssldir=&INSTALLROOT&/ssl
 		--libdir=&INSTALLROOT&/lib
@@ -569,6 +595,7 @@ conf.o3wx6s5 = {
 	configureParameter = [[
 		no-asm
 		shared
+		enable-static-engine
 		--prefix=&INSTALLROOT&
 		--openssldir=&INSTALLROOT&/ssl
 		--libdir=&INSTALLROOT&/lib
@@ -587,6 +614,7 @@ conf.o3mx6 = {
 	configureParameter = [[
 		no-asm
 		shared
+		enable-static-engine
 		--prefix=&INSTALLROOT&
 		--openssldir=&INSTALLROOT&/ssl
 		darwin64-x86_64
@@ -603,6 +631,7 @@ conf.o3ma6 = {
 	configureParameter = [[
 		no-asm
 		shared
+		enable-static-engine
 		--prefix=&INSTALLROOT&
 		--openssldir=&INSTALLROOT&/ssl
 		darwin64-arm64
@@ -621,6 +650,7 @@ conf.o3aa3n324 = {
 	configureParameter = [[
 		no-asm
 		no-shared
+		enable-static-engine
 		--prefix=//
 		--openssldir=//ssl
 		android-arm
@@ -646,6 +676,7 @@ conf.o3aa6n324 = {
 	configureParameter = [[
 		no-asm
 		no-shared
+		enable-static-engine
 		--prefix=//
 		--openssldir=//ssl
 		android-arm64
@@ -666,6 +697,7 @@ conf.o3ax3n324 = {
 	configureParameter = [[
 		no-asm
 		no-shared
+		enable-static-engine
 		--prefix=//
 		--openssldir=//ssl
 		android-x86
@@ -686,6 +718,7 @@ conf.o3ax6n324 = {
 	configureParameter = [[
 		no-asm
 		no-shared
+		enable-static-engine
 		--prefix=//
 		--openssldir=//ssl
 		android-x86_64
@@ -719,6 +752,7 @@ conf.o3aa3n527 = {
 	configureParameter = [[
 		no-asm
 		no-shared
+		enable-static-engine
 		--prefix=//
 		--openssldir=//ssl
 		android-arm
@@ -744,6 +778,7 @@ conf.o3aa6n527 = {
 	configureParameter = [[
 		no-asm
 		no-shared
+		enable-static-engine
 		--prefix=//
 		--openssldir=//ssl
 		android-arm64
@@ -764,6 +799,7 @@ conf.o3ax3n527 = {
 	configureParameter = [[
 		no-asm
 		no-shared
+		enable-static-engine
 		--prefix=//
 		--openssldir=//ssl
 		android-x86
@@ -784,6 +820,7 @@ conf.o3ax6n527 = {
 	configureParameter = [[
 		no-asm
 		no-shared
+		enable-static-engine
 		--prefix=//
 		--openssldir=//ssl
 		android-x86_64

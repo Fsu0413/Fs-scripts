@@ -2792,293 +2792,6 @@ conf.q6_2lx6st = {
 	]],
 }
 
-conf.q6_2mx6 = {
-	name = "Qt6.2.4-macOS-x86_64-AppleClang&HOSTTOOLVERSION&",
-	qtVersion = "6.2.4-4",
-	host = "macOS1015",
-	opensslConf = "o3mx6",
-	useCMake = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DBUILD_SHARED_LIBS=ON
-		-DCMAKE_BUILD_TYPE="Release"
-		-DQT_QMAKE_TARGET_MKSPEC=macx-clang
-		-DBUILD_WITH_PCH=ON
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengl=ON
-		-DFEATURE_opengles2=OFF
-		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=ON
-		-DINPUT_openssl=linked
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
-		-DFEATURE_securetransport=ON
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_system_sqlite=OFF
-		-DBUILD_qtwebengine=OFF
-		-DCMAKE_SKIP_BUILD_RPATH=OFF
-		-DCMAKE_SKIP_INSTALL_RPATH=OFF
-		-DFEATURE_framework=ON
-		-DBUILD_qtopcua=OFF
-	]],
-}
-
-conf.q6_2mx6nf = {
-	name = "Qt6.2.4-macOS-x86_64-AppleClang&HOSTTOOLVERSION&-noFramework",
-	qtVersion = "6.2.4-4",
-	host = "macOS1015",
-	variant = {"-noFramework"},
-	opensslConf = "o3mx6",
-	useCMake = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DBUILD_SHARED_LIBS=ON
-		-DCMAKE_BUILD_TYPE="Release"
-		-DQT_QMAKE_TARGET_MKSPEC=macx-clang
-		-DBUILD_WITH_PCH=ON
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengl=ON
-		-DFEATURE_opengles2=OFF
-		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=ON
-		-DINPUT_openssl=linked
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
-		-DFEATURE_securetransport=ON
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_system_sqlite=OFF
-		-DBUILD_qtwebengine=OFF
-		-DCMAKE_SKIP_BUILD_RPATH=OFF
-		-DCMAKE_SKIP_INSTALL_RPATH=OFF
-		-DFEATURE_framework=OFF
-		-DBUILD_qtopcua=OFF
-	]],
-}
-
-conf.q6_2mx6st = {
-	name = "Qt6.2.4-macOS-x86_64-AppleClang&HOSTTOOLVERSION&-static",
-	qtVersion = "6.2.4",
-	host = "macOS1015",
-	variant = {"-static"},
-	opensslConf = "o3mx6",
-	useCMake = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DBUILD_SHARED_LIBS=OFF
-		-DFEATURE_static_runtime=ON
-		-DCMAKE_BUILD_TYPE="Release"
-		-DQT_QMAKE_TARGET_MKSPEC=macx-clang
-		-DBUILD_WITH_PCH=ON
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_relocatable=ON
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengl=ON
-		-DFEATURE_opengles2=OFF
-		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=ON
-		-DINPUT_openssl=linked
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
-		-DOPENSSL_USE_STATIC_LIBS=TRUE
-		-DFEATURE_securetransport=ON
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_system_sqlite=OFF
-		-DBUILD_qt3d=OFF
-		-DBUILD_qt5compat=OFF
-		-DBUILD_qtcharts=OFF
-		-DBUILD_qtcoap=OFF
-		-DBUILD_qtconnectivity=OFF
-		-DBUILD_qtdatavis3d=OFF
-		-DBUILD_qtdoc=OFF
-		-DBUILD_qtpositioning=OFF
-		-DBUILD_qtlottie=OFF
-		-DBUILD_qtmqtt=OFF
-		-DBUILD_qtnetworkauth=OFF
-		-DBUILD_qtopcua=OFF
-		-DBUILD_qtquicktimeline=OFF
-		-DBUILD_qtsensors=OFF
-		-DBUILD_qtserialbus=OFF
-		-DBUILD_qtserialport=OFF
-		-DBUILD_qtvirtualkeyboard=OFF
-		-DBUILD_qtwayland=OFF
-		-DBUILD_qtwebchannel=OFF
-		-DBUILD_qtwebengine=OFF
-		-DBUILD_qtwebsockets=OFF
-		-DBUILD_qtwebview=OFF
-	]],
-}
-
-conf.q6_2mx6sf = {
-	name = "Qt6.2.4-macOS-x86_64-AppleClang&HOSTTOOLVERSION&-staticFull",
-	qtVersion = "6.2.4",
-	host = "macOS1015",
-	variant = {"-staticFull"},
-	opensslConf = "o3mx6",
-	useCMake = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DBUILD_SHARED_LIBS=OFF
-		-DFEATURE_static_runtime=ON
-		-DCMAKE_BUILD_TYPE="Release"
-		-DQT_QMAKE_TARGET_MKSPEC=macx-clang
-		-DBUILD_WITH_PCH=ON
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_relocatable=ON
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengl=ON
-		-DFEATURE_opengles2=OFF
-		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=ON
-		-DINPUT_openssl=linked
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
-		-DOPENSSL_USE_STATIC_LIBS=TRUE
-		-DFEATURE_securetransport=ON
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_system_sqlite=OFF
-		-DBUILD_qtopcua=OFF
-	]],
-}
-
-conf.q6_2ma6 = {
-	name = "Qt6.2.4-macOS-arm64_v8a-AppleClang&HOSTTOOLVERSION&",
-	qtVersion = "6.2.4-4",
-	host = "macOSM1",
-	opensslConf = "o3ma6",
-	useCMake = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DBUILD_SHARED_LIBS=ON
-		-DCMAKE_BUILD_TYPE="Release"
-		-DQT_QMAKE_TARGET_MKSPEC=macx-clang
-		-DBUILD_WITH_PCH=ON
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengl=ON
-		-DFEATURE_opengles2=OFF
-		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=ON
-		-DINPUT_openssl=linked
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
-		-DFEATURE_securetransport=ON
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_system_sqlite=OFF
-		-DBUILD_qtwebengine=OFF
-		-DCMAKE_SKIP_BUILD_RPATH=OFF
-		-DCMAKE_SKIP_INSTALL_RPATH=OFF
-		-DFEATURE_framework=ON
-		-DBUILD_qtopcua=OFF
-	]],
-}
-
-conf.q6_2ma6nf = {
-	name = "Qt6.2.4-macOS-arm64_v8a-AppleClang&HOSTTOOLVERSION&-noFramework",
-	qtVersion = "6.2.4-4",
-	host = "macOSM1",
-	variant = {"-noFramework"},
-	opensslConf = "o3ma6",
-	useCMake = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DBUILD_SHARED_LIBS=ON
-		-DCMAKE_BUILD_TYPE="Release"
-		-DQT_QMAKE_TARGET_MKSPEC=macx-clang
-		-DBUILD_WITH_PCH=ON
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengl=ON
-		-DFEATURE_opengles2=OFF
-		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=ON
-		-DINPUT_openssl=linked
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
-		-DFEATURE_securetransport=ON
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_system_sqlite=OFF
-		-DBUILD_qtwebengine=OFF
-		-DCMAKE_SKIP_BUILD_RPATH=OFF
-		-DCMAKE_SKIP_INSTALL_RPATH=OFF
-		-DFEATURE_framework=OFF
-		-DBUILD_qtopcua=OFF
-	]],
-}
-
-conf.q6_2ma6sf = {
-	name = "Qt6.2.4-macOS-arm64_v8a-AppleClang&HOSTTOOLVERSION&-staticFull",
-	qtVersion = "6.2.4",
-	host = "macOSM1",
-	variant = {"-staticFull"},
-	opensslConf = "o3ma6",
-	useCMake = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DBUILD_SHARED_LIBS=OFF
-		-DFEATURE_static_runtime=ON
-		-DCMAKE_BUILD_TYPE="Release"
-		-DQT_QMAKE_TARGET_MKSPEC=macx-clang
-		-DBUILD_WITH_PCH=ON
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_relocatable=ON
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengl=ON
-		-DFEATURE_opengles2=OFF
-		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=ON
-		-DINPUT_openssl=linked
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
-		-DOPENSSL_USE_STATIC_LIBS=TRUE
-		-DFEATURE_securetransport=ON
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_system_sqlite=OFF
-		-DBUILD_qtopcua=OFF
-	]],
-}
-
----------------------------
-
--- Test
-
-
 conf.q6_2mal = {
 	name = "Qt6.2.4-macOS-Universal-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "6.2.4-4",
@@ -3252,9 +2965,6 @@ conf.q6_2malsf = {
 		-DBUILD_qtopcua=OFF
 	]],
 }
-
-
----------------------------
 
 conf.q6_2wx6m1_aa3n3 = {
 	name = "Qt6.2.4-Android-arm-Clang-NDKr23c-XWindows-x86_64-MinGW&HOSTTOOLVERSION&",
@@ -3560,10 +3270,10 @@ conf.q6_2lx6_ax6n3 = {
 	]],
 }
 
-conf.q6_2mx6_aa3n3 = {
-	name = "Qt6.2.4-Android-arm-Clang-NDKr23c-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
+conf.q6_2mal_aa3n3 = {
+	name = "Qt6.2.4-Android-arm-Clang-NDKr23c-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "6.2.4",
-	host = "macOS1015",
+	host = "macOSM1",
 	target = "Android-24",
 	toolchainT = "Android-24-r23c-arm",
 	opensslConf = "o3aa3n324",
@@ -3597,10 +3307,10 @@ conf.q6_2mx6_aa3n3 = {
 	]],
 }
 
-conf.q6_2mx6_aa6n3 = {
-	name = "Qt6.2.4-Android-arm64-Clang-NDKr23c-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
+conf.q6_2mal_aa6n3 = {
+	name = "Qt6.2.4-Android-arm64-Clang-NDKr23c-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "6.2.4",
-	host = "macOS1015",
+	host = "macOSM1",
 	target = "Android-24",
 	toolchainT = "Android-24-r23c-arm64",
 	opensslConf = "o3aa6n324",
@@ -3634,10 +3344,10 @@ conf.q6_2mx6_aa6n3 = {
 	]],
 }
 
-conf.q6_2mx6_ax3n3 = {
-	name = "Qt6.2.4-Android-x86-Clang-NDKr23c-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
+conf.q6_2mal_ax3n3 = {
+	name = "Qt6.2.4-Android-x86-Clang-NDKr23c-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "6.2.4",
-	host = "macOS1015",
+	host = "macOSM1",
 	target = "Android-24",
 	toolchainT = "Android-24-r23c-x86",
 	opensslConf = "o3ax3n324",
@@ -3671,10 +3381,10 @@ conf.q6_2mx6_ax3n3 = {
 	]],
 }
 
-conf.q6_2mx6_ax6n3 = {
-	name = "Qt6.2.4-Android-x86_64-Clang-NDKr23c-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
+conf.q6_2mal_ax6n3 = {
+	name = "Qt6.2.4-Android-x86_64-Clang-NDKr23c-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "6.2.4",
-	host = "macOS1015",
+	host = "macOSM1",
 	target = "Android-24",
 	toolchainT = "Android-24-r23c-x86_64",
 	opensslConf = "o3ax6n324",
@@ -3772,10 +3482,10 @@ conf.q6_2lx6_W = {
 	]],
 }
 
-conf.q6_2mx6_W = {
-	name = "Qt6.2.4-WebAssembly-emscripten&TARGETTOOLVERSION&-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
+conf.q6_2mal_W = {
+	name = "Qt6.2.4-WebAssembly-emscripten&TARGETTOOLVERSION&-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "6.2.4",
-	host = "macOS1015",
+	host = "macOSM1",
 	target = "WebAssembly",
 	toolchainT = "emscripten-2.0.14",
 	useCMake = "Latest",
@@ -4193,17 +3903,18 @@ conf.q6_4lx6st = {
 	]],
 }
 
-conf.q6_4mx6 = {
-	name = "Qt6.4.0-macOS-x86_64-AppleClang&HOSTTOOLVERSION&",
+conf.q6_4mal = {
+	name = "Qt6.4.0-macOS-Universal-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "6.4.0",
-	host = "macOS1015",
-	opensslConf = "o3mx6",
+	host = "macOSM1",
+	opensslConf = "o3mal",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
 		-DBUILD_SHARED_LIBS=ON
 		-DCMAKE_BUILD_TYPE="Release"
+		-DCMAKE_OSX_ARCHITECTURES="x86_64;arm64"
 		-DQT_QMAKE_TARGET_MKSPEC=macx-clang
 		-DBUILD_WITH_PCH=ON
 		-DQT_BUILD_EXAMPLES=OFF
@@ -4231,18 +3942,19 @@ conf.q6_4mx6 = {
 	]],
 }
 
-conf.q6_4mx6nf = {
-	name = "Qt6.4.0-macOS-x86_64-AppleClang&HOSTTOOLVERSION&-noFramework",
+conf.q6_4malnf = {
+	name = "Qt6.4.0-macOS-Universal-AppleClang&HOSTTOOLVERSION&-noFramework",
 	qtVersion = "6.4.0",
-	host = "macOS1015",
+	host = "macOSM1",
 	variant = {"-noFramework"},
-	opensslConf = "o3mx6",
+	opensslConf = "o3mal",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
 		-DBUILD_SHARED_LIBS=ON
 		-DCMAKE_BUILD_TYPE="Release"
+		-DCMAKE_OSX_ARCHITECTURES="x86_64;arm64"
 		-DQT_QMAKE_TARGET_MKSPEC=macx-clang
 		-DBUILD_WITH_PCH=ON
 		-DQT_BUILD_EXAMPLES=OFF
@@ -4270,12 +3982,12 @@ conf.q6_4mx6nf = {
 	]],
 }
 
-conf.q6_4mx6st = {
-	name = "Qt6.4.0-macOS-x86_64-AppleClang&HOSTTOOLVERSION&-static",
+conf.q6_4malst = {
+	name = "Qt6.4.0-macOS-Universal-AppleClang&HOSTTOOLVERSION&-static",
 	qtVersion = "6.4.0",
-	host = "macOS1015",
+	host = "macOSM1",
 	variant = {"-static"},
-	opensslConf = "o3mx6",
+	opensslConf = "o3mal",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -4283,141 +3995,7 @@ conf.q6_4mx6st = {
 		-DBUILD_SHARED_LIBS=OFF
 		-DFEATURE_static_runtime=ON
 		-DCMAKE_BUILD_TYPE="Release"
-		-DQT_QMAKE_TARGET_MKSPEC=macx-clang
-		-DBUILD_WITH_PCH=ON
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_relocatable=ON
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengl=ON
-		-DFEATURE_opengles2=OFF
-		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=ON
-		-DINPUT_openssl=linked
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
-		-DOPENSSL_USE_STATIC_LIBS=TRUE
-		-DFEATURE_securetransport=ON
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_system_sqlite=OFF
-		-DBUILD_qt3d=OFF
-		-DBUILD_qt5compat=OFF
-		-DBUILD_qtcharts=OFF
-		-DBUILD_qtcoap=OFF
-		-DBUILD_qtconnectivity=OFF
-		-DBUILD_qtdatavis3d=OFF
-		-DBUILD_qtdoc=OFF
-		-DBUILD_qtpositioning=OFF
-		-DBUILD_qtlottie=OFF
-		-DBUILD_qtmqtt=OFF
-		-DBUILD_qtnetworkauth=OFF
-		-DBUILD_qtopcua=OFF
-		-DBUILD_qtquicktimeline=OFF
-		-DBUILD_qtsensors=OFF
-		-DBUILD_qtserialbus=OFF
-		-DBUILD_qtserialport=OFF
-		-DBUILD_qtvirtualkeyboard=OFF
-		-DBUILD_qtwayland=OFF
-		-DBUILD_qtwebchannel=OFF
-		-DBUILD_qtwebengine=OFF
-		-DBUILD_qtwebsockets=OFF
-		-DBUILD_qtwebview=OFF
-	]],
-}
-
-conf.q6_4ma6 = {
-	name = "Qt6.4.0-macOS-arm64_v8a-AppleClang&HOSTTOOLVERSION&",
-	qtVersion = "6.4.0",
-	host = "macOSM1",
-	opensslConf = "o3ma6",
-	useCMake = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DBUILD_SHARED_LIBS=ON
-		-DCMAKE_BUILD_TYPE="Release"
-		-DQT_QMAKE_TARGET_MKSPEC=macx-clang
-		-DBUILD_WITH_PCH=ON
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengl=ON
-		-DFEATURE_opengles2=OFF
-		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=ON
-		-DINPUT_openssl=linked
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
-		-DFEATURE_securetransport=ON
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_system_sqlite=OFF
-		-DFEATURE_webengine_proprietary_codecs=ON
-		-DFEATURE_qtpdf_build=ON
-		-DCMAKE_SKIP_BUILD_RPATH=OFF
-		-DCMAKE_SKIP_INSTALL_RPATH=OFF
-		-DFEATURE_framework=ON
-		-DBUILD_qtopcua=OFF
-	]],
-}
-
-conf.q6_4ma6nf = {
-	name = "Qt6.4.0-macOS-arm64_v8a-AppleClang&HOSTTOOLVERSION&-noFramework",
-	qtVersion = "6.4.0",
-	host = "macOSM1",
-	variant = {"-noFramework"},
-	opensslConf = "o3ma6",
-	useCMake = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DBUILD_SHARED_LIBS=ON
-		-DCMAKE_BUILD_TYPE="Release"
-		-DQT_QMAKE_TARGET_MKSPEC=macx-clang
-		-DBUILD_WITH_PCH=ON
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengl=ON
-		-DFEATURE_opengles2=OFF
-		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=ON
-		-DINPUT_openssl=linked
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
-		-DFEATURE_securetransport=ON
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_system_sqlite=OFF
-		-DFEATURE_webengine_proprietary_codecs=ON
-		-DFEATURE_qtpdf_build=ON
-		-DCMAKE_SKIP_BUILD_RPATH=OFF
-		-DCMAKE_SKIP_INSTALL_RPATH=OFF
-		-DFEATURE_framework=OFF
-		-DBUILD_qtopcua=OFF
-	]],
-}
-
-conf.q6_4ma6st = {
-	name = "Qt6.4.0-macOS-arm64_v8a-AppleClang&HOSTTOOLVERSION&-static",
-	qtVersion = "6.4.0",
-	host = "macOSM1",
-	variant = {"-static"},
-	opensslConf = "o3ma6",
-	useCMake = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DBUILD_SHARED_LIBS=OFF
-		-DFEATURE_static_runtime=ON
-		-DCMAKE_BUILD_TYPE="Release"
+		-DCMAKE_OSX_ARCHITECTURES="x86_64;arm64"
 		-DQT_QMAKE_TARGET_MKSPEC=macx-clang
 		-DBUILD_WITH_PCH=ON
 		-DQT_BUILD_EXAMPLES=OFF
@@ -4615,82 +4193,8 @@ conf.q6_4lx6_ax6n5 = {
 	]],
 }
 
-conf.q6_4mx6_aa6n5 = {
-	name = "Qt6.4.0-Android-arm64-Clang-NDKr25b-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
-	qtVersion = "6.4.0",
-	host = "macOS1015",
-	target = "Android-27",
-	toolchainT = "Android-27-r25b-arm64",
-	opensslConf = "o3aa6n527",
-	useCMake = "Latest",
-	androidSdkVersion = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DQT_HOST_PATH=&HOSTQTDIR&
-		-DCMAKE_BUILD_TYPE=Release
-		-DBUILD_SHARED_LIBS=ON
-		-DQT_QMAKE_TARGET_MKSPEC=android-clang
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengles2=ON
-		-DFEATURE_ssl=ON
-		-DINPUT_openssl=linked
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
-		-DFEATURE_sql_sqlite=ON
-		-DBUILD_qtopcua=OFF
-		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
-		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
-		-DANDROID_NATIVE_API_LEVEL=27
-		-DANDROID_PLATFORM=27
-		-DANDROID_ABI=arm64-v8a
-	]],
-}
-
-conf.q6_4mx6_ax6n5 = {
-	name = "Qt6.4.0-Android-x86_64-Clang-NDKr25b-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
-	qtVersion = "6.4.0",
-	host = "macOS1015",
-	target = "Android-27",
-	toolchainT = "Android-27-r25b-x86_64",
-	opensslConf = "o3ax6n527",
-	useCMake = "Latest",
-	androidSdkVersion = "Latest",
-	configureParameter = [[
-		-G"Ninja"
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DQT_HOST_PATH=&HOSTQTDIR&
-		-DCMAKE_BUILD_TYPE=Release
-		-DBUILD_SHARED_LIBS=ON
-		-DQT_QMAKE_TARGET_MKSPEC=android-clang
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengles2=ON
-		-DFEATURE_ssl=ON
-		-DINPUT_openssl=linked
-		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
-		-DFEATURE_sql_sqlite=ON
-		-DBUILD_qtopcua=OFF
-		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
-		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
-		-DANDROID_NATIVE_API_LEVEL=27
-		-DANDROID_PLATFORM=27
-		-DANDROID_ABI=x86_64
-	]],
-}
-
-conf.q6_4ma6_aa6n5 = {
-	name = "Qt6.4.0-Android-arm64-Clang-NDKr25b-xmacOS-arm64_v8a-AppleClang&HOSTTOOLVERSION&",
+conf.q6_4mal_aa6n5 = {
+	name = "Qt6.4.0-Android-arm64-Clang-NDKr25b-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "6.4.0",
 	host = "macOSM1",
 	target = "Android-27",
@@ -4726,8 +4230,8 @@ conf.q6_4ma6_aa6n5 = {
 	]],
 }
 
-conf.q6_4ma6_ax6n5 = {
-	name = "Qt6.4.0-Android-x86_64-Clang-NDKr25b-xmacOS-arm64_v8a-AppleClang&HOSTTOOLVERSION&",
+conf.q6_4mal_ax6n5 = {
+	name = "Qt6.4.0-Android-x86_64-Clang-NDKr25b-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "6.4.0",
 	host = "macOSM1",
 	target = "Android-27",
@@ -4827,40 +4331,10 @@ conf.q6_4lx6_W = {
 	]],
 }
 
-conf.q6_4mx6_W = {
-	name = "Qt6.4.0-WebAssembly-emscripten&TARGETTOOLVERSION&-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
+conf.q6_4mal_W = {
+	name = "Qt6.4.0-WebAssembly-emscripten&TARGETTOOLVERSION&-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "6.4.0",
-	host = "macOS1015",
-	target = "WebAssembly",
-	toolchainT = "emscripten-3.1.14",
-	useCMake = "Latest",
-	configureParameter = [[
-		-GNinja
-		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
-		-DQT_HOST_PATH=&HOSTQTDIR&
-		-DCMAKE_BUILD_TYPE=Release
-		-DBUILD_SHARED_LIBS=OFF
-		-DQT_QMAKE_TARGET_MKSPEC=wasm-emscripten
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DBUILD_WITH_PCH=ON
-		-DFEATURE_thread=ON
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengles2=ON
-		-DFEATURE_ssl=OFF
-		-DFEATURE_sql_sqlite=ON
-		-DBUILD_qtopcua=OFF
-	]],
-}
-
-conf.q6_4ma6_W = {
-	name = "Qt6.4.0-WebAssembly-emscripten&TARGETTOOLVERSION&-xmacOS-arm64_v8a-AppleClang&HOSTTOOLVERSION&",
-	qtVersion = "6.4.0",
-	host = "macOS1015",
+	host = "macOSM1",
 	target = "WebAssembly",
 	toolchainT = "emscripten-3.1.14",
 	useCMake = "Latest",
@@ -4925,14 +4399,9 @@ local Qt6StaticConf = {
 	Rocky9 = {
 		["6.4.0"] = "q6_4lx6st",
 	},
-	macOS1015 = {
-		["6.2.4"] = "q6_2mx6st",
-		["6.3.2"] = "q6_3mx6st",
-		["6.4.0"] = "q6_4mx6st",
-	},
 	macOSM1 = {
-		["6.3.2"] = "q6_3ma6st",
-		["6.4.0"] = "q6_4ma6st",
+		["6.2.4"] = "q6_2malst",
+		["6.4.0"] = "q6_4malst",
 	},
 }
 

@@ -2287,7 +2287,8 @@ conf.q6_2wx6v9 = {
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
 		-DFEATURE_system_sqlite=OFF
-		-DBUILD_qtwebengine=OFF
+		-DFEATURE_webengine_proprietary_codecs=ON
+		-DFEATURE_qtpdf_build=OFF
 		-DBUILD_qtopcua=OFF
 	]],
 }
@@ -2455,7 +2456,8 @@ conf.q6_2wx6v2 = {
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
 		-DFEATURE_system_sqlite=OFF
-		-DBUILD_qtwebengine=OFF
+		-DFEATURE_webengine_proprietary_codecs=ON
+		-DFEATURE_qtpdf_build=OFF
 		-DBUILD_qtopcua=OFF
 	]],
 }
@@ -2822,7 +2824,8 @@ conf.q6_2mal = {
 		-DFEATURE_securetransport=ON
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_system_sqlite=OFF
-		-DBUILD_qtwebengine=OFF
+		-DFEATURE_webengine_proprietary_codecs=ON
+		-DFEATURE_qtpdf_build=OFF
 		-DCMAKE_SKIP_BUILD_RPATH=OFF
 		-DCMAKE_SKIP_INSTALL_RPATH=OFF
 		-DFEATURE_framework=ON
@@ -2861,7 +2864,8 @@ conf.q6_2malnf = {
 		-DFEATURE_securetransport=ON
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_system_sqlite=OFF
-		-DBUILD_qtwebengine=OFF
+		-DFEATURE_webengine_proprietary_codecs=ON
+		-DFEATURE_qtpdf_build=OFF
 		-DCMAKE_SKIP_BUILD_RPATH=OFF
 		-DCMAKE_SKIP_INSTALL_RPATH=OFF
 		-DFEATURE_framework=OFF

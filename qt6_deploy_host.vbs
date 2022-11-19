@@ -60,8 +60,9 @@ Dim target_qtconfold
 Set target_qtconf = fso.OpenTextFile(PATH_TO_TARGET & "\bin\target_qt.conf.new", 2, True)
 Set target_qtconfold = fso.OpenTextFile(PATH_TO_TARGET & "\bin\target_qt.conf", 1, False)
 
+Dim line
+
 Do until target_qtconfold.AtEndOfStream 
-	Dim line
 	line = target_qtconfold.ReadLine
 	If Left(line, 11) = "HostPrefix=" Then line = "HostPrefix=../host"
 	If Left(line, 9) = "HostData=" Then line = "HostData=.."
@@ -82,7 +83,6 @@ Set Qt6Dependencies_cmake = fso.OpenTextFile(PATH_TO_TARGET & "\lib\cmake\Qt6\Qt
 Set Qt6Dependencies_cmakeold = fso.OpenTextFile(PATH_TO_TARGET & "\lib\cmake\Qt6\Qt6Dependencies.cmake", 1, False)
 
 Do until Qt6Dependencies_cmakeold.AtEndOfStream 
-	Dim line
 	line = Qt6Dependencies_cmakeold.ReadLine
 	If Left(Trim(line), 38) = "set(__qt_platform_initial_qt_host_path" Then line = "set(__qt_platform_initial_qt_host_path ""${Qt6_DIR}/../../../host"")"
 	If Left(Trim(line), 48) = "set(__qt_platform_initial_qt_host_path_cmake_dir" Then line = "set(__qt_platform_initial_qt_host_path_cmake_dir ""${Qt6_DIR}/../../../host/lib/cmake"")"

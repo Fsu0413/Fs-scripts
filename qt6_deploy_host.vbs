@@ -96,6 +96,6 @@ fso.DeleteFile PATH_TO_TARGET & "\lib\cmake\Qt6\Qt6Dependencies.cmake"
 fso.MoveFile PATH_TO_TARGET & "\lib\cmake\Qt6\Qt6Dependencies.cmake.new", PATH_TO_TARGET & "\lib\cmake\Qt6\Qt6Dependencies.cmake"
 
 ' lib/cmake/Qt6/QtBuildInternalsExtra.cmake
-' Is this need to be modified? This is the install directory!
-' Our Qt builds are relocatable so it seems like there is no need for modifying it
+' Does this need to be modified? This is the install directory!
+' Our Qt builds are relocatable so it seems like there is no way that the file needs to be modified
 '     set(qtbi_orig_staging_prefix "")

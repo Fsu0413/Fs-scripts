@@ -82,3 +82,9 @@ c\
 set(__qt_platform_initial_qt_host_path_cmake_dir "${CMAKE_CURRENT_LIST_DIR}/../../../host/lib/cmake")
 d
 }' "${PATH_TO_TARGET}/lib/cmake/Qt6/qt.toolchain.cmake"
+
+sed -i '' -e '/^set(__qt_toolchain_initial_qt_host_path_cmake_dir[[:space:]]*$/{N
+c\
+set(__qt_toolchain_initial_qt_host_path_cmake_dir "${CMAKE_CURRENT_LIST_DIR}/../../../host/lib/cmake")
+d
+}' "${PATH_TO_TARGET}/lib/cmake/Qt6/qt.toolchain.cmake"

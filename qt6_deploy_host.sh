@@ -29,13 +29,15 @@ if [ ! -e "${PATH_TO_HOST}/bin/qt-cmake" ]; then
 	exit 1
 fi
 
-mkdir $PATH_TO_TARGET/host
-cp -R $PATH_TO_HOST/bin $PATH_TO_TARGET/host/
-[ -d "${PATH_TO_HOST}/libexec" ] && cp -R ${PATH_TO_HOST}/libexec $PATH_TO_TARGET/host/
-mkdir $PATH_TO_TARGET/host/lib
-cp -R $PATH_TO_HOST/lib/cmake $PATH_TO_TARGET/host/lib/
-cp -R $PATH_TO_HOST/lib/metatypes $PATH_TO_TARGET/host/lib/
-find $PATH_TO_HOST/lib/ -name \*.prl -maxdepth 1 -exec cp '{}' $PATH_TO_TARGET/host/lib ';'
+mkdir "${PATH_TO_TARGET}/host"
+cp -R "${PATH_TO_HOST}/bin" "${PATH_TO_TARGET}/host/"
+[ -d "${PATH_TO_HOST}/libexec" ] && cp -R "${PATH_TO_HOST}/libexec" "${PATH_TO_TARGET}/host/"
+mkdir "${PATH_TO_TARGET}/host/lib"
+cp -R "${PATH_TO_HOST}/lib/cmake" "${PATH_TO_TARGET}/host/lib/"
+cp -R "${PATH_TO_HOST}/lib/metatypes" "${PATH_TO_TARGET}/host/lib/"
+find "${PATH_TO_HOST}/lib/" -name '*.prl' -maxdepth 1 -exec cp '{}' "${PATH_TO_TARGET}/host/lib" ';'
+
+# qmake tweak
 
 (
 	echo '#!/bin/sh'
@@ -44,16 +46,26 @@ find $PATH_TO_HOST/lib/ -name \*.prl -maxdepth 1 -exec cp '{}' $PATH_TO_TARGET/h
 	echo "script_dir_path=\`(cd \"\$script_dir_path\"; /bin/pwd)\`"
 	echo
 	echo "\$script_dir_path/../host/bin/qmake -qtconf \"\$script_dir_path/target_qt.conf\" \$*"
-) > $PATH_TO_TARGET/bin/qmake
+) > "${PATH_TO_TARGET}/bin/qmake"
 
-chmod +x $PATH_TO_TARGET/bin/qmake
+chmod +x "${PATH_TO_TARGET}/bin/qmake"
 
-sed -i -e 's,^HostPrefix=.*$,HostPrefix=../host,g' $PATH_TO_TARGET/bin/target_qt.conf
-sed -i -e 's,^HostData=.*$,HostData=..,g' $PATH_TO_TARGET/bin/target_qt.conf
+(
+	echo '#!/bin/sh'
+	echo
+	echo "script_dir_path=\`dirname \$0\`"
+	echo "script_dir_path=\`(cd \"\$script_dir_path\"; /bin/pwd)\`"
+	echo
+	echo "\$script_dir_path/../host/bin/qtpaths -qtconf \"\$script_dir_path/target_qt.conf\" \$*"
+) > "${PATH_TO_TARGET}/bin/qtpaths"
 
-# CMake is broken even if we have tried to tweak it
-# Temporarily put these things off until we found a solution
+chmod +x "${PATH_TO_TARGET}/bin/qtpaths"
 
-# Currently all we know is that:
-# Qt provides toolchain file which we'd use
-# some variable should be modified using 'sed'-like program
+sed -i -e 's,^HostPrefix=.*$,HostPrefix=../host,g' "${PATH_TO_TARGET}/bin/target_qt.conf"
+sed -i -e 's,^HostData=.*$,HostData=..,g' "${PATH_TO_TARGET}/bin/target_qt.conf"
+
+# CMake tweak
+
+sed -i -e 's,^set(__qt_platform_initial_qt_host_path[[:space:]].*$,set(__qt_platform_initial_qt_host_path "${Qt6_DIR}/../../../host"),' "${PATH_TO_TARGET}/lib/cmake/Qt6/Qt6Dependencies.cmake"
+sed -i -e 's,^set(__qt_platform_initial_qt_host_path_cmake_dir[[:space:]].*$,set(__qt_platform_initial_qt_host_path "${Qt6_DIR}/../../../host/lib/cmake"),' "${PATH_TO_TARGET}/lib/cmake/Qt6/Qt6Dependencies.cmake"
+

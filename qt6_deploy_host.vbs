@@ -26,6 +26,7 @@ End If
 
 fso.CreateFolder PATH_TO_TARGET & "\host"
 fso.CopyFolder PATH_TO_HOST & "\bin", PATH_TO_TARGET & "\host\bin"
+If fso.FolderExists(PATH_TO_HOST & "\libexec") Then fso.CopyFolder PATH_TO_HOST & "\libexec", PATH_TO_TARGET & "\host\libexec"
 fso.CreateFolder PATH_TO_TARGET & "\host\lib"
 fso.CopyFolder PATH_TO_HOST & "\lib\cmake", PATH_TO_TARGET & "\host\lib\cmake"
 fso.CopyFolder PATH_TO_HOST & "\lib\metatypes", PATH_TO_TARGET & "\host\lib\metatypes"
@@ -38,12 +39,21 @@ For Each hostlibfile In hostlibdir.Files
 	End If
 Next
 
+' qmake tweak
+
 fso.DeleteFile PATH_TO_TARGET & "\bin\qmake.bat"
 
 Dim qmake
 Set qmake = fso.OpenTextFile(PATH_TO_TARGET & "\bin\qmake.bat", 2, True)
 qmake.WriteLine """%~dp0\..\host\bin\qmake"" -qtconf ""%~dp0\target_qt.conf"" %*"
 qmake.Close
+
+fso.DeleteFile PATH_TO_TARGET & "\bin\qtpaths.bat"
+
+Dim qtpaths
+Set qtpaths = fso.OpenTextFile(PATH_TO_TARGET & "\bin\qtpaths.bat", 2, True)
+qtpaths.WriteLine """%~dp0\..\host\bin\qtpaths"" -qtconf ""%~dp0\target_qt.conf"" %*"
+qtpaths.Close
 
 Dim target_qtconf
 Dim target_qtconfold
@@ -64,6 +74,28 @@ target_qtconfold.Close
 fso.DeleteFile PATH_TO_TARGET & "\bin\target_qt.conf"
 fso.MoveFile PATH_TO_TARGET & "\bin\target_qt.conf.new", PATH_TO_TARGET & "\bin\target_qt.conf"
 
-' CMake is broken even if we have tried to tweak it
-' Temporarily put these things off until we found a solution
+' CMake tweak
 
+Dim Qt6Dependencies_cmake
+Dim Qt6Dependencies_cmakeold
+Set Qt6Dependencies_cmake = fso.OpenTextFile(PATH_TO_TARGET & "\lib\cmake\Qt6\Qt6Dependencies.cmake.new", 2, True)
+Set Qt6Dependencies_cmakeold = fso.OpenTextFile(PATH_TO_TARGET & "\lib\cmake\Qt6\Qt6Dependencies.cmake", 1, False)
+
+Do until Qt6Dependencies_cmakeold.AtEndOfStream 
+	Dim line
+	line = Qt6Dependencies_cmakeold.ReadLine
+	If Left(Trim(line), 38) = "set(__qt_platform_initial_qt_host_path" Then line = "set(__qt_platform_initial_qt_host_path ""${Qt6_DIR}/../../../host"")"
+	If Left(Trim(line), 48) = "set(__qt_platform_initial_qt_host_path_cmake_dir" Then line = "set(__qt_platform_initial_qt_host_path_cmake_dir ""${Qt6_DIR}/../../../host/lib/cmake"")"
+	Qt6Dependencies_cmake.WriteLine line
+Loop
+
+Qt6Dependencies_cmake.Close
+Qt6Dependencies_cmakeold.Close
+
+fso.DeleteFile PATH_TO_TARGET & "\lib\cmake\Qt6\Qt6Dependencies.cmake"
+fso.MoveFile PATH_TO_TARGET & "\lib\cmake\Qt6\Qt6Dependencies.cmake.new", PATH_TO_TARGET & "\lib\cmake\Qt6\Qt6Dependencies.cmake"
+
+' lib/cmake/Qt6/QtBuildInternalsExtra.cmake
+' Is this need to be modified? This is the install directory!
+' Our Qt builds are relocatable so it seems like there is no need for modifying it
+'     set(qtbi_orig_staging_prefix "")

@@ -75,7 +75,7 @@ target_qtconfold.Close
 fso.DeleteFile PATH_TO_TARGET & "\bin\target_qt.conf"
 fso.MoveFile PATH_TO_TARGET & "\bin\target_qt.conf.new", PATH_TO_TARGET & "\bin\target_qt.conf"
 
-' CMake tweak
+' CMake tweak / Qt 6.4.1 +
 
 Dim Qt6Dependencies_cmake
 Dim Qt6Dependencies_cmakeold
@@ -94,6 +94,32 @@ Qt6Dependencies_cmakeold.Close
 
 fso.DeleteFile PATH_TO_TARGET & "\lib\cmake\Qt6\Qt6Dependencies.cmake"
 fso.MoveFile PATH_TO_TARGET & "\lib\cmake\Qt6\Qt6Dependencies.cmake.new", PATH_TO_TARGET & "\lib\cmake\Qt6\Qt6Dependencies.cmake"
+
+' CMake tweak / Qt 6.2.4
+
+Dim qt_toolchain_cmake
+Dim qt_toolchain_cmakeold
+Set qt_toolchain_cmake = fso.OpenTextFile(PATH_TO_TARGET & "\lib\cmake\Qt6\qt.toolchain.cmake.new", 2, True)
+Set qt_toolchain_cmakeold = fso.OpenTextFile(PATH_TO_TARGET & "\lib\cmake\Qt6\qt.toolchain.cmake", 1, False)
+
+Do until qt_toolchain_cmakeold.AtEndOfStream 
+	line = qt_toolchain_cmakeold.ReadLine
+	If Left(Trim(line), 38) = "set(__qt_platform_initial_qt_host_path" Then
+		line = "set(__qt_platform_initial_qt_host_path ""${CMAKE_CURRENT_LIST_DIR}/../../../host"")"
+		qt_toolchain_cmakeold.ReadLine ' Qt 6.2.4 intentionally put the path to next line. It should be skipped.
+	End If
+	If Left(Trim(line), 48) = "set(__qt_platform_initial_qt_host_path_cmake_dir" Then
+		line = "set(__qt_platform_initial_qt_host_path_cmake_dir ""${CMAKE_CURRENT_LIST_DIR}/../../../host/lib/cmake"")"
+		qt_toolchain_cmakeold.ReadLine
+	End If
+	qt_toolchain_cmake.WriteLine line
+Loop
+
+qt_toolchain_cmake.Close
+qt_toolchain_cmakeold.Close
+
+fso.DeleteFile PATH_TO_TARGET & "\lib\cmake\Qt6\qt.toolchain.cmake"
+fso.MoveFile PATH_TO_TARGET & "\lib\cmake\Qt6\qt.toolchain.cmake.new", PATH_TO_TARGET & "\lib\cmake\Qt6\qt.toolchain.cmake"
 
 ' lib/cmake/Qt6/QtBuildInternalsExtra.cmake
 ' Does this need to be modified? This is the install directory!

@@ -61,11 +61,24 @@ chmod +x "${PATH_TO_TARGET}/bin/qmake"
 
 chmod +x "${PATH_TO_TARGET}/bin/qtpaths"
 
-sed -i -e 's,^HostPrefix=.*$,HostPrefix=../host,g' "${PATH_TO_TARGET}/bin/target_qt.conf"
-sed -i -e 's,^HostData=.*$,HostData=..,g' "${PATH_TO_TARGET}/bin/target_qt.conf"
+sed -i '' -e 's,^HostPrefix=.*$,HostPrefix=../host,g' "${PATH_TO_TARGET}/bin/target_qt.conf"
+sed -i '' -e 's,^HostData=.*$,HostData=..,g' "${PATH_TO_TARGET}/bin/target_qt.conf"
 
-# CMake tweak
+# CMake tweak / Qt 6.4.1 +
 
-sed -i -e 's,^set(__qt_platform_initial_qt_host_path[[:space:]].*$,set(__qt_platform_initial_qt_host_path "${Qt6_DIR}/../../../host"),' "${PATH_TO_TARGET}/lib/cmake/Qt6/Qt6Dependencies.cmake"
-sed -i -e 's,^set(__qt_platform_initial_qt_host_path_cmake_dir[[:space:]].*$,set(__qt_platform_initial_qt_host_path "${Qt6_DIR}/../../../host/lib/cmake"),' "${PATH_TO_TARGET}/lib/cmake/Qt6/Qt6Dependencies.cmake"
+sed -i '' -e 's,^set(__qt_platform_initial_qt_host_path[[:space:]].*$,set(__qt_platform_initial_qt_host_path "${Qt6_DIR}/../../../host"),' "${PATH_TO_TARGET}/lib/cmake/Qt6/Qt6Dependencies.cmake"
+sed -i '' -e 's,^set(__qt_platform_initial_qt_host_path_cmake_dir[[:space:]].*$,set(__qt_platform_initial_qt_host_path_cmake_dir "${Qt6_DIR}/../../../host/lib/cmake"),' "${PATH_TO_TARGET}/lib/cmake/Qt6/Qt6Dependencies.cmake"
 
+# CMake tweak / Qt 6.2.4
+
+sed -i '' -e '/^set(__qt_toolchain_initial_qt_host_path[[:space:]]*$/{N
+c\
+set(__qt_platform_initial_qt_host_path "${CMAKE_CURRENT_LIST_DIR}/../../../host")
+d
+}' "${PATH_TO_TARGET}/lib/cmake/Qt6/qt.toolchain.cmake"
+
+sed -i '' -e '/^set(__qt_platform_initial_qt_host_path_cmake_dir[[:space:]]*$/{N
+c\
+set(__qt_platform_initial_qt_host_path_cmake_dir "${CMAKE_CURRENT_LIST_DIR}/../../../host/lib/cmake")
+d
+}' "${PATH_TO_TARGET}/lib/cmake/Qt6/qt.toolchain.cmake"

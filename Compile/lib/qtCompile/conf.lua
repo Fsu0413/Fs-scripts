@@ -4347,6 +4347,7 @@ conf.q6_4mal_W = {
 		-DQT_BUILD_EXAMPLES=OFF
 		-DQT_BUILD_TESTS=OFF
 		-DBUILD_WITH_PCH=ON
+		-DFEATURE_thread=ON
 		-DFEATURE_doubleconversion=ON
 		-DFEATURE_system_doubleconversion=OFF
 		-DFEATURE_system_zlib=OFF

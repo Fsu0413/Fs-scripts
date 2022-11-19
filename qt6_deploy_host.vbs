@@ -84,8 +84,11 @@ Set Qt6Dependencies_cmakeold = fso.OpenTextFile(PATH_TO_TARGET & "\lib\cmake\Qt6
 
 Do until Qt6Dependencies_cmakeold.AtEndOfStream 
 	line = Qt6Dependencies_cmakeold.ReadLine
-	If Left(Trim(line), 38) = "set(__qt_platform_initial_qt_host_path" Then line = "set(__qt_platform_initial_qt_host_path ""${Qt6_DIR}/../../../host"")"
-	If Left(Trim(line), 48) = "set(__qt_platform_initial_qt_host_path_cmake_dir" Then line = "set(__qt_platform_initial_qt_host_path_cmake_dir ""${Qt6_DIR}/../../../host/lib/cmake"")"
+	If Left(Trim(line), 48) = "set(__qt_platform_initial_qt_host_path_cmake_dir" Then
+		line = "set(__qt_platform_initial_qt_host_path_cmake_dir ""${Qt6_DIR}/../../../host/lib/cmake"")"
+	ElseIf Left(Trim(line), 38) = "set(__qt_platform_initial_qt_host_path" Then
+		line = "set(__qt_platform_initial_qt_host_path ""${Qt6_DIR}/../../../host"")"
+	End if
 	Qt6Dependencies_cmake.WriteLine line
 Loop
 
@@ -104,13 +107,12 @@ Set qt_toolchain_cmakeold = fso.OpenTextFile(PATH_TO_TARGET & "\lib\cmake\Qt6\qt
 
 Do until qt_toolchain_cmakeold.AtEndOfStream 
 	line = qt_toolchain_cmakeold.ReadLine
-	If Left(Trim(line), 38) = "set(__qt_platform_initial_qt_host_path" Then
-		line = "set(__qt_platform_initial_qt_host_path ""${CMAKE_CURRENT_LIST_DIR}/../../../host"")"
-		qt_toolchain_cmakeold.ReadLine ' Qt 6.2.4 intentionally put the path to next line. It should be skipped.
-	End If
 	If Left(Trim(line), 48) = "set(__qt_platform_initial_qt_host_path_cmake_dir" Then
 		line = "set(__qt_platform_initial_qt_host_path_cmake_dir ""${CMAKE_CURRENT_LIST_DIR}/../../../host/lib/cmake"")"
 		qt_toolchain_cmakeold.ReadLine
+	ElseIf Left(Trim(line), 38) = "set(__qt_platform_initial_qt_host_path" Then
+		line = "set(__qt_platform_initial_qt_host_path ""${CMAKE_CURRENT_LIST_DIR}/../../../host"")"
+		qt_toolchain_cmakeold.ReadLine ' Qt 6.2.4 intentionally put the path to next line. It should be skipped.
 	End If
 	qt_toolchain_cmake.WriteLine line
 Loop

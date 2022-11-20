@@ -61,7 +61,6 @@ conf.host.win = {
 	["emscriptenPath"] = {
 		["1.39.8"] = "D:\\emsdk-1.39.8\\",
 		["2.0.14"] = "D:\\emsdk-2.0.14\\",
-		["3.1.6"] = "D:\\emsdk-3.1.6\\",
 		["3.1.14"] = "D:\\emsdk-3.1.14\\",
 	},
 	["cMakePath"] = {
@@ -134,7 +133,6 @@ conf.host.linux = {
 	["emscriptenPath"] = {
 		["1.39.8"] = "/opt/env/emsdk-1.39.8/",
 		["2.0.14"] = "/opt/env/emsdk-2.0.14/",
-		["3.1.6"] = "/opt/env/emsdk-3.1.6/",
 		["3.1.14"] = "/opt/env/emsdk-3.1.14/",
 	},
 	["jdkPath"] = {
@@ -154,7 +152,6 @@ conf.host.mac = {
 	["makefileTemplate"] = "unix",
 	["pathSep"] = '/',
 	["androidSdkPath"] = {
-		["29"] = "/opt/env/android-sdk-mac/",
 		["Latest"] = "/opt/env/android-sdk-mac-20220911/",
 	},
 	["androidNdkPath"] = {
@@ -168,12 +165,42 @@ conf.host.mac = {
 	["emscriptenPath"] = {
 		["1.39.8"] = "/opt/env/emsdk-1.39.8/",
 		["2.0.14"] = "/opt/env/emsdk-2.0.14/",
-		["3.1.6"] = "/opt/env/emsdk-3.1.6/",
 		["3.1.14"] = "/opt/env/emsdk-3.1.14/",
 	},
 	["jdkPath"] = {
 		["8"] = "/usr/local/opt/openjdk@8/",
 		["11"] = "/usr/local/opt/java11/",
+	},
+	["defaultToolchainExecutableName"] = "clang",
+}
+
+conf.host.macM1 = {
+	-- Preinstalled GNU make in path and is used
+	-- Preinstalled CMake and ninja in path and is used
+	-- Preinstalled Android-NDK/SDK toolchain
+	-- Preinstalled emsdk toolchain
+	-- Preinstalled host toolchain in path and is used
+	-- Preinstalled p7zip in path and is used
+	["makefileTemplate"] = "unix",
+	["pathSep"] = '/',
+	["androidSdkPath"] = {
+		["Latest"] = "/opt/env/android-sdk-mac-20220911/",
+	},
+	["androidNdkPath"] = {
+		["r23c"] = "/Applications/AndroidNDK8568313.app/Contents/NDK/",
+		["r25b"] = "/Applications/AndroidNDK8937393.app/Contents/NDK/",
+	},
+	["androidNdkHost"] = "darwin-x86_64",
+	["sourcePackagePath"] = "/opt/sources/",
+	["buildRootPath"] = "/opt/build/",
+	["emscriptenPath"] = {
+		["2.0.14"] = "/opt/env/emsdk-2.0.14/",
+		["3.1.14"] = "/opt/env/emsdk-3.1.14/",
+	},
+	["jdkPath"] = {
+		-- It is said that zulu JDK runs faster on M1 chips...
+		-- If not I'll use OpenJDK from Homebrew later
+		["11"] = "/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home/",
 	},
 	["defaultToolchainExecutableName"] = "clang",
 }
@@ -197,6 +224,8 @@ conf.host.macLegacy = {
 	},
 	["androidNdkHost"] = "darwin-x86_64",
 	["sourcePackagePath"] = "/Volumes/opt/sources/",
+	-- I'd like to link build folder to /opt/build but I remembered that Qt doesn't allow symlink in build dir before...
+	-- If the link works there will be no need to distinguish mac and macLegacy
 	["buildRootPath"] = "/Volumes/opt/build/",
 	["emscriptenPath"] = {
 		["1.39.8"] = "/opt/env/emsdk-1.39.8/",
@@ -705,7 +734,7 @@ conf.hostToConfMap = {
 	["Rocky9"] = "linux",
 	["macOS1015"] = "mac",
 	["macOSLegacy"] = "macLegacy",
-	["macOSM1"] = "mac",
+	["macOSM1"] = "macM1",
 }
 
 return conf

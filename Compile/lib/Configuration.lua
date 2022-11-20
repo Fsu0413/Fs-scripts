@@ -155,7 +155,7 @@ conf.host.mac = {
 		["Latest"] = "/opt/env/android-sdk-mac-20220911/",
 	},
 	["androidNdkPath"] = {
-		["r21e"] = "/Applications/AndroidNDK8568313.app/Contents/NDK/",
+		["r21e"] = "/Applications/AndroidNDK7075529.app/Contents/NDK/",
 		["r23c"] = "/Applications/AndroidNDK8568313.app/Contents/NDK/",
 		["r25b"] = "/Applications/AndroidNDK8937393.app/Contents/NDK/",
 	},

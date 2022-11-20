@@ -171,6 +171,10 @@ conf.host.mac = {
 		["3.1.6"] = "/opt/env/emsdk-3.1.6/",
 		["3.1.14"] = "/opt/env/emsdk-3.1.14/",
 	},
+	["jdkPath"] = {
+		["8"] = "/usr/local/opt/openjdk@8/",
+		["11"] = "/usr/local/opt/java11/",
+	},
 	["defaultToolchainExecutableName"] = "clang",
 }
 

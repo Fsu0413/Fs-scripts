@@ -158,8 +158,7 @@ conf.host.mac = {
 		["Latest"] = "/opt/env/android-sdk-mac-20220911/",
 	},
 	["androidNdkPath"] = {
-		["r21e"] = "/opt/env/android-ndk-r21e/",
-		-- NDK after r23 only distributes as APP bundle, so we install the APP in /Applications.
+		["r21e"] = "/Applications/AndroidNDK8568313.app/Contents/NDK/",
 		["r23c"] = "/Applications/AndroidNDK8568313.app/Contents/NDK/",
 		["r25b"] = "/Applications/AndroidNDK8937393.app/Contents/NDK/",
 	},
@@ -167,6 +166,7 @@ conf.host.mac = {
 	["sourcePackagePath"] = "/opt/sources/",
 	["buildRootPath"] = "/opt/build/",
 	["emscriptenPath"] = {
+		["1.39.8"] = "/opt/env/emsdk-1.39.8/",
 		["2.0.14"] = "/opt/env/emsdk-2.0.14/",
 		["3.1.6"] = "/opt/env/emsdk-3.1.6/",
 		["3.1.14"] = "/opt/env/emsdk-3.1.14/",

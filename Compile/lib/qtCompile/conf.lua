@@ -1921,7 +1921,7 @@ conf.Q5wx6m8sf = {
 conf.Q5mx6 = {
 	name = "Qt5.15.7-macOS-x86_64-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "5.15.7-4",
-	host = "macOSLegacy",
+	host = "macOS1015",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -1949,15 +1949,14 @@ conf.Q5mx6 = {
 		-make-tool
 		"make -j$PARALLELNUM"
 		-rpath
-		-skip
-		qtwebengine
+		-webengine-proprietary-codecs
 	]],
 }
 
 conf.Q5mx6nf = {
 	name = "Qt5.15.7-macOS-x86_64-AppleClang&HOSTTOOLVERSION&-noFramework",
 	qtVersion = "5.15.7-4",
-	host = "macOSLegacy",
+	host = "macOS1015",
 	variant = {"-noFramework"},
 	configureParameter = [[
 		-prefix
@@ -1986,8 +1985,7 @@ conf.Q5mx6nf = {
 		-make-tool
 		"make -j$PARALLELNUM"
 		-rpath
-		-skip
-		qtwebengine
+		-webengine-proprietary-codecs
 		-no-framework
 	]],
 }
@@ -2100,7 +2098,7 @@ conf.Q5lx6_aalnl = {
 conf.Q5mx6_aalnl = {
 	name = "Qt5.15.7-Android-ALL-Clang-NDKr21e-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "5.15.7",
-	host = "macOSLegacy",
+	host = "macOS1015",
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-all",
 	opensslConf = "o1aalnl",
@@ -2223,7 +2221,7 @@ conf.Q5lx6_W = {
 conf.Q5mx6_W = {
 	name = "Qt5.15.7-WebAssembly-emscripten&TARGETTOOLVERSION&-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "5.15.7",
-	host = "macOSLegacy",
+	host = "macOS1015",
 	target = "WebAssembly",
 	toolchainT = "emscripten-1.39.8",
 	configureParameter = [[

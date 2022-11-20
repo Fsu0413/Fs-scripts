@@ -112,11 +112,8 @@ Do until qt_toolchain_cmakeold.AtEndOfStream
 	If Left(Trim(line), 49) = "set(__qt_toolchain_initial_qt_host_path_cmake_dir" Then
 		line = "set(__qt_toolchain_initial_qt_host_path_cmake_dir ""${CMAKE_CURRENT_LIST_DIR}/../../../host/lib/cmake"")"
 		qt_toolchain_cmakeold.ReadLine
-	ElseIf Left(Trim(line), 48) = "set(__qt_platform_initial_qt_host_path_cmake_dir" Then
-		line = "set(__qt_platform_initial_qt_host_path_cmake_dir ""${CMAKE_CURRENT_LIST_DIR}/../../../host/lib/cmake"")"
-		qt_toolchain_cmakeold.ReadLine
-	ElseIf Left(Trim(line), 38) = "set(__qt_platform_initial_qt_host_path" Then
-		line = "set(__qt_platform_initial_qt_host_path ""${CMAKE_CURRENT_LIST_DIR}/../../../host"")"
+	ElseIf Left(Trim(line), 39) = "set(__qt_toolchain_initial_qt_host_path" Then
+		line = "set(__qt_toolchain_initial_qt_host_path ""${CMAKE_CURRENT_LIST_DIR}/../../../host"")"
 		qt_toolchain_cmakeold.ReadLine
 	End If
 	qt_toolchain_cmake.WriteLine line

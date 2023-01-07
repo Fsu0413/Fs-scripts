@@ -59,25 +59,44 @@ chmod +x "${PATH_TO_TARGET}/bin/qmake"
 	echo "\$script_dir_path/../host/bin/qtpaths -qtconf \"\$script_dir_path/target_qt.conf\" \$*"
 ) > "${PATH_TO_TARGET}/bin/qtpaths"
 
+# judge if sed / gsed is GNU sed
+GNU_SED=
+
+for SED_PROGRAM in gsed sed; do
+	GSED_OUTPUT="`LANG=C $SED_PROGRAM --help 2> /dev/null`"
+	if [ $? -eq 0 ] ; then
+		if echo "$GSED_OUTPUT" | grep -q -F "GNU sed"; then
+			echo "Found GNU sed: $SED_PROGRAM"
+			GNU_SED=$SED_PROGRAM
+			break
+		fi
+	fi
+done
+
+# we have no idea but use default sed program
+if [ x"$GNU_SED" = x ]; then
+	GNU_SED=sed
+fi
+
 chmod +x "${PATH_TO_TARGET}/bin/qtpaths"
 
-sed -i '' -e 's,^HostPrefix=.*$,HostPrefix=../host,g' "${PATH_TO_TARGET}/bin/target_qt.conf"
-sed -i '' -e 's,^HostData=.*$,HostData=..,g' "${PATH_TO_TARGET}/bin/target_qt.conf"
+$GNU_SED -i -e 's,^HostPrefix=.*$,HostPrefix=../host,g' "${PATH_TO_TARGET}/bin/target_qt.conf"
+$GNU_SED -i -e 's,^HostData=.*$,HostData=..,g' "${PATH_TO_TARGET}/bin/target_qt.conf"
 
 # CMake tweak / Qt 6.4.1 +
 
-sed -i '' -e 's,^set(__qt_platform_initial_qt_host_path[[:space:]].*$,set(__qt_platform_initial_qt_host_path "${Qt6_DIR}/../../../host"),' "${PATH_TO_TARGET}/lib/cmake/Qt6/Qt6Dependencies.cmake"
-sed -i '' -e 's,^set(__qt_platform_initial_qt_host_path_cmake_dir[[:space:]].*$,set(__qt_platform_initial_qt_host_path_cmake_dir "${Qt6_DIR}/../../../host/lib/cmake"),' "${PATH_TO_TARGET}/lib/cmake/Qt6/Qt6Dependencies.cmake"
+$GNU_SED -i -e 's,^set(__qt_platform_initial_qt_host_path[[:space:]].*$,set(__qt_platform_initial_qt_host_path "${Qt6_DIR}/../../../host"),' "${PATH_TO_TARGET}/lib/cmake/Qt6/Qt6Dependencies.cmake"
+$GNU_SED -i -e 's,^set(__qt_platform_initial_qt_host_path_cmake_dir[[:space:]].*$,set(__qt_platform_initial_qt_host_path_cmake_dir "${Qt6_DIR}/../../../host/lib/cmake"),' "${PATH_TO_TARGET}/lib/cmake/Qt6/Qt6Dependencies.cmake"
 
 # CMake tweak / Qt 6.2.4
 
-sed -i '' -e '/^set(__qt_toolchain_initial_qt_host_path[[:space:]]*$/{N
+$GNU_SED -i -e '/^set(__qt_toolchain_initial_qt_host_path[[:space:]]*$/{N
 c\
 set(__qt_toolchain_initial_qt_host_path "${CMAKE_CURRENT_LIST_DIR}/../../../host")
 d
 }' "${PATH_TO_TARGET}/lib/cmake/Qt6/qt.toolchain.cmake"
 
-sed -i '' -e '/^set(__qt_toolchain_initial_qt_host_path_cmake_dir[[:space:]]*$/{N
+$GNU_SED -i -e '/^set(__qt_toolchain_initial_qt_host_path_cmake_dir[[:space:]]*$/{N
 c\
 set(__qt_toolchain_initial_qt_host_path_cmake_dir "${CMAKE_CURRENT_LIST_DIR}/../../../host/lib/cmake")
 d

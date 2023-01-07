@@ -13,7 +13,7 @@ if [ $# -lt 2 ]; then
 	exit 1
 fi
 
-set -e
+set -ex
 
 PATH_TO_TARGET=`realpath "$1"`
 PATH_TO_HOST=`realpath "$2"`
@@ -63,13 +63,11 @@ chmod +x "${PATH_TO_TARGET}/bin/qmake"
 GNU_SED=
 
 for SED_PROGRAM in gsed sed; do
-	GSED_OUTPUT="`LANG=C $SED_PROGRAM --help 2> /dev/null`"
-	if [ $? -eq 0 ] ; then
-		if echo "$GSED_OUTPUT" | grep -q -F "GNU sed"; then
-			echo "Found GNU sed: $SED_PROGRAM"
-			GNU_SED=$SED_PROGRAM
-			break
-		fi
+	GSED_OUTPUT="`LANG=C $SED_PROGRAM --help 2> /dev/null || :`"
+	if echo "$GSED_OUTPUT" | grep -q -F "GNU sed"; then
+		echo "Found GNU sed: $SED_PROGRAM"
+		GNU_SED=$SED_PROGRAM
+		break
 	fi
 done
 

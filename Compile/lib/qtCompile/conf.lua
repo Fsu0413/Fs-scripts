@@ -3578,7 +3578,8 @@ conf.q6_4wx6v2 = {
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
 		-DFEATURE_system_sqlite=OFF
-		-DBUILD_qtwebengine=OFF
+		-DFEATURE_webengine_proprietary_codecs=ON
+		-DFEATURE_qtpdf_build=ON
 		-DBUILD_qtopcua=OFF
 	]],
 }

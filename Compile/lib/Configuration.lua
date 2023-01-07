@@ -333,8 +333,12 @@ conf.Qt.generateConfTable = function(self, host, job)
 			end
 
 			if confHost.jdkPath then
-				ret.envSet.JAVA_HOME = confHost.jdkPath["8"]
-				table.insert(ret.path, confHost.jdkPath["8"] .. confHost.pathSep .. "bin")
+				local jdkMajorVersion = "8"
+				if string.sub(confDetail.qtVersion, 1, 2) == "6." then
+					jdkMajorVersion = "11"
+				end
+				ret.envSet.JAVA_HOME = confHost.jdkPath[jdkMajorVersion]
+				table.insert(ret.path, confHost.jdkPath[jdkMajorVersion] .. confHost.pathSep .. "bin")
 			end
 		elseif string.sub(confDetail.toolchainT, 1, 10) == "emscripten" then -- WebAssembly
 			local matchStr = "^emscripten%-(.+)$"

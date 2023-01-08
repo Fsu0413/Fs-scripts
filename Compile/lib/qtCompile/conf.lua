@@ -2149,6 +2149,163 @@ conf.Q5mx6_aalnl = {
 	]],
 }
 
+conf.Q5wx6m8_aaln3 = {
+	name = "Qt5.15.8-Android-ALL-Clang-NDKr23c-XWindows-x86_64-MinGW&HOSTTOOLVERSION&",
+	qtVersion = "5.15.8",
+	host = "Win10",
+	toolchain = "MinGW810-64",
+	target = "Android-21",
+	toolchainT = "Android-21-r23c-all",
+	opensslConf = "o1aaln321",
+	androidSdkVersion = "Latest",
+	configureParameter = [[
+		-prefix
+		/
+		-opensource
+		-shared
+		-release
+		-confirm-license
+		-platform
+		win32-g++
+		-xplatform
+		android-clang
+		-nomake
+		examples
+		-nomake
+		tests
+		-no-compile-examples
+		-qt-doubleconversion
+		-qt-zlib
+		-qt-pcre
+		-no-icu
+		-opengl
+		es2
+		-ssl
+		-openssl-linked
+		-I
+		&OPENSSLDIR&\include
+		-L
+		&OPENSSLDIR&/lib/
+		-sql-sqlite
+		-make-tool
+		"mingw32-make -j%PARALLELNUM%"
+		-android-sdk
+		&ANDROIDSDKROOT&
+		-android-ndk
+		&ANDROIDNDKROOT&
+		-android-ndk-platform
+		android-21
+		-android-ndk-host
+		windows-x86_64
+		-skip
+		qtscript
+	]],
+}
+
+conf.Q5lx6_aaln3 = {
+	name = "Qt5.15.8-Android-ALL-Clang-NDKr23c-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
+	qtVersion = "5.15.8",
+	host = "CentOS8",
+	target = "Android-21",
+	toolchainT = "Android-21-r23c-all",
+	opensslConf = "o1aaln321",
+	androidSdkVersion = "Latest",
+	configureParameter = [[
+		-prefix
+		/
+		-opensource
+		-shared
+		-release
+		-confirm-license
+		-platform
+		linux-g++
+		-xplatform
+		android-clang
+		-nomake
+		examples
+		-nomake
+		tests
+		-no-compile-examples
+		-qt-doubleconversion
+		-qt-zlib
+		-qt-pcre
+		-no-icu
+		-opengl
+		es2
+		-ssl
+		-openssl-linked
+		-I
+		&OPENSSLDIR&/include/
+		-L
+		&OPENSSLDIR&/lib/
+		-sql-sqlite
+		-make-tool
+		"make -j$PARALLELNUM"
+		-android-sdk
+		&ANDROIDSDKROOT&
+		-android-ndk
+		&ANDROIDNDKROOT&
+		-android-ndk-platform
+		android-21
+		-android-ndk-host
+		linux-x86_64
+		-skip
+		qtscript
+	]],
+}
+
+conf.Q5mx6_aaln3 = {
+	name = "Qt5.15.8-Android-ALL-Clang-NDKr23c-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
+	qtVersion = "5.15.8",
+	host = "macOS1015",
+	target = "Android-21",
+	toolchainT = "Android-21-r23c-all",
+	opensslConf = "o1aaln321",
+	androidSdkVersion = "Latest",
+	configureParameter = [[
+		-prefix
+		/
+		-opensource
+		-shared
+		-release
+		-confirm-license
+		-platform
+		macx-clang
+		-xplatform
+		android-clang
+		-nomake
+		examples
+		-nomake
+		tests
+		-no-compile-examples
+		-qt-doubleconversion
+		-qt-zlib
+		-qt-pcre
+		-no-icu
+		-opengl
+		es2
+		-ssl
+		-openssl-linked
+		-I
+		&OPENSSLDIR&/include/
+		-L
+		&OPENSSLDIR&/lib/
+		-sql-sqlite
+		-make-tool
+		"make -j$PARALLELNUM"
+		-android-sdk
+		&ANDROIDSDKROOT&
+		-android-ndk
+		&ANDROIDNDKROOT&
+		-android-ndk-platform
+		android-21
+		-android-ndk-host
+		darwin-x86_64
+		-skip
+		qtscript
+	]],
+}
+
 conf.Q5wx6m8_W = {
 	name = "Qt5.15.8-WebAssembly-emscripten&TARGETTOOLVERSION&-xWindows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "5.15.8",

@@ -13,7 +13,7 @@ if [ $# -lt 2 ]; then
 	exit 1
 fi
 
-set -ex
+set -e
 
 PATH_TO_TARGET=`realpath "$1"`
 PATH_TO_HOST=`realpath "$2"`

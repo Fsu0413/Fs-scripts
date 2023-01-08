@@ -1919,6 +1919,76 @@ conf.Q5wx6m8sf = {
 	]],
 }
 
+conf.Q5wx6g1 = {
+	name = "Qt5.15.8-Windows-x86_64-MinGW&HOSTTOOLVERSION&",
+	qtVersion = "5.15.8",
+	host = "Win10",
+	toolchain = "MinGW1120-64",
+	configureParameter = [[
+		-prefix
+		&INSTALLROOT&
+		-opensource
+		-shared
+		-release
+		-confirm-license
+		-platform
+		win32-g++
+		-pch
+		-nomake
+		examples
+		-nomake
+		tests
+		-no-compile-examples
+		-qt-doubleconversion
+		-qt-zlib
+		-qt-pcre
+		-no-icu
+		-opengl
+		dynamic
+		-ssl
+		-schannel
+		-sql-sqlite
+		-sql-odbc
+		-make-tool
+		"mingw32-make -j%PARALLELNUM%"
+	]],
+}
+
+conf.Q5wx6g2 = {
+	name = "Qt5.15.8-Windows-x86_64-MinGW&HOSTTOOLVERSION&",
+	qtVersion = "5.15.8",
+	host = "Win10",
+	toolchain = "MinGW1210-64",
+	configureParameter = [[
+		-prefix
+		&INSTALLROOT&
+		-opensource
+		-shared
+		-release
+		-confirm-license
+		-platform
+		win32-g++
+		-pch
+		-nomake
+		examples
+		-nomake
+		tests
+		-no-compile-examples
+		-qt-doubleconversion
+		-qt-zlib
+		-qt-pcre
+		-no-icu
+		-opengl
+		dynamic
+		-ssl
+		-schannel
+		-sql-sqlite
+		-sql-odbc
+		-make-tool
+		"mingw32-make -j%PARALLELNUM%"
+	]],
+}
+
 conf.Q5mx6 = {
 	name = "Qt5.15.8-macOS-x86_64-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "5.15.8-4",

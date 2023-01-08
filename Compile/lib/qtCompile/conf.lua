@@ -1764,7 +1764,8 @@ conf.Q5wx6v2 = {
 		-sql-odbc
 		-make-tool
 		jom
-		-webengine-proprietary-codecs
+		-skip
+		qtwebengine
 	]],
 }
 
@@ -1948,8 +1949,8 @@ conf.Q5mx6 = {
 		-sql-sqlite
 		-make-tool
 		"make -j$PARALLELNUM"
-		-rpath
-		-webengine-proprietary-codecs
+		-skip
+		qtwebengine
 	]],
 }
 
@@ -1985,7 +1986,8 @@ conf.Q5mx6nf = {
 		-make-tool
 		"make -j$PARALLELNUM"
 		-rpath
-		-webengine-proprietary-codecs
+		-skip
+		qtwebengine
 		-no-framework
 	]],
 }

@@ -5667,7 +5667,7 @@ for name, value in pairs(conf) do
 		if string.sub(value.toolchain, 1, 4) == "MSVC" then
 			valuehost = value.host .. string.sub(value.toolchain, 1, 8)
 		end
-		local staticConfVersion = string.gsub(value.qtVersion, [[(%d+%.%d+%.%d+)(%-?%d*)]], "%1")
+		local staticConfVersion = string.gsub(value.qtVersion, [[^(%d+%.%d+%.%d+)(%-?%d*)$]], "%1")
 		value.hostToolsConf = Qt6StaticConf[valuehost][staticConfVersion]
 		value.hostToolsUrlwin = "http://172.24.13.6:8080/job/Qt/job/" .. value.hostToolsConf .. "/lastSuccessfulBuild/artifact/buildDir/" .. conf[value.hostToolsConf].name .. ".7z"
 		value.hostToolsUrlunix = "http://172.24.13.6:8080/job/Qt/job/" .. value.hostToolsConf .. "/lastSuccessfulBuild/artifact/buildDir/" .. conf[value.hostToolsConf].name .. ".tar.xz"

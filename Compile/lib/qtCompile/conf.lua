@@ -4685,7 +4685,7 @@ conf.q6_5wx6v2st = {
 	]],
 }
 
-conf.q6_5wx6v9sf = {
+conf.q6_5wx6v2sf = {
 	name = "Qt6.5.0-beta1-Windows-x86_64-VS2022-&HOSTTOOLVERSION&-staticFull",
 	qtVersion = "6.5.0-beta1",
 	host = "Win10",

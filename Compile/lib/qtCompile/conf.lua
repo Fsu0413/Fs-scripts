@@ -5428,12 +5428,10 @@ conf.q6_5wx6g2_W = {
 	host = "Win10",
 	toolchain = "MinGW1210-64",
 	target = "WebAssembly",
-	toolchainT = "emscripten-3.1.14",
+	toolchainT = "emscripten-3.1.25",
 	useCMake = "Latest",
-	-- workaround https://github.com/emscripten-core/emscripten/issues/15163
 	configureParameter = [[
-		-G
-		Ninja
+		-GNinja
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
 		-DQT_HOST_PATH=&HOSTQTDIR&
 		-DCMAKE_BUILD_TYPE=Release
@@ -5460,7 +5458,7 @@ conf.q6_5lx6_W = {
 	qtVersion = "6.5.0-beta1",
 	host = "Rocky9",
 	target = "WebAssembly",
-	toolchainT = "emscripten-3.1.14",
+	toolchainT = "emscripten-3.1.25",
 	useCMake = "Latest",
 	configureParameter = [[
 		-GNinja
@@ -5490,7 +5488,7 @@ conf.q6_5mal_W = {
 	qtVersion = "6.5.0-beta1",
 	host = "macOSM1",
 	target = "WebAssembly",
-	toolchainT = "emscripten-3.1.14",
+	toolchainT = "emscripten-3.1.25",
 	useCMake = "Latest",
 	configureParameter = [[
 		-GNinja

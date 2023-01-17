@@ -29,7 +29,7 @@ fso.CopyFolder PATH_TO_HOST & "\bin", PATH_TO_TARGET & "\host\bin"
 If fso.FolderExists(PATH_TO_HOST & "\libexec") Then fso.CopyFolder PATH_TO_HOST & "\libexec", PATH_TO_TARGET & "\host\libexec"
 fso.CreateFolder PATH_TO_TARGET & "\host\lib"
 fso.CopyFolder PATH_TO_HOST & "\lib\cmake", PATH_TO_TARGET & "\host\lib\cmake"
-fso.CopyFolder PATH_TO_HOST & "\lib\metatypes", PATH_TO_TARGET & "\host\lib\metatypes"
+If fso.FolderExists(PATH_TO_HOST & "\lib\metatypes") Then fso.CopyFolder PATH_TO_HOST & "\lib\metatypes", PATH_TO_TARGET & "\host\lib\metatypes"
 
 Dim hostlibdir, hostlibfile
 Set hostlibdir = fso.GetFolder(PATH_TO_HOST & "\lib")

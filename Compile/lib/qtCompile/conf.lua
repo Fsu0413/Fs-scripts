@@ -2777,7 +2777,7 @@ conf.q6_2wx6m1st = {
 		-DBUILD_qtwebengine=OFF
 		-DBUILD_qtwebsockets=OFF
 		-DBUILD_qtwebview=OFF
-		-DCMAKE_EXE_LINKER_FLAGS="--static --static-libgcc --static-libstdc++"
+		-DCMAKE_EXE_LINKER_FLAGS="--static -static-libgcc -static-libstdc++"
 	]],
 }
 
@@ -2816,7 +2816,7 @@ conf.q6_2wx6m1sf = {
 		-DFEATURE_sql_odbc=ON
 		-DFEATURE_system_sqlite=OFF
 		-DBUILD_qtopcua=OFF
-		-DCMAKE_EXE_LINKER_FLAGS="--static --static-libgcc --static-libstdc++"
+		-DCMAKE_EXE_LINKER_FLAGS="--static -static-libgcc -static-libstdc++"
 	]],
 }
 
@@ -2889,7 +2889,7 @@ conf.q6_2wx6m2sf = {
 		-DFEATURE_sql_odbc=ON
 		-DFEATURE_system_sqlite=OFF
 		-DBUILD_qtopcua=OFF
-		-DCMAKE_EXE_LINKER_FLAGS="--static --static-libgcc --static-libstdc++"
+		-DCMAKE_EXE_LINKER_FLAGS="--static -static-libgcc -static-libstdc++"
 	]],
 }
 
@@ -4001,7 +4001,7 @@ conf.q6_4wx6g2st = {
 		-DBUILD_qtwebengine=OFF
 		-DBUILD_qtwebsockets=OFF
 		-DBUILD_qtwebview=OFF
-		-DCMAKE_EXE_LINKER_FLAGS="--static --static-libgcc --static-libstdc++"
+		-DCMAKE_EXE_LINKER_FLAGS="--static -static-libgcc -static-libstdc++"
 	]],
 }
 
@@ -4870,7 +4870,7 @@ conf.q6_5wx6g2st = {
 		-DBUILD_qtwebengine=OFF
 		-DBUILD_qtwebsockets=OFF
 		-DBUILD_qtwebview=OFF
-		-DCMAKE_EXE_LINKER_FLAGS="--static --static-libgcc --static-libstdc++"
+		-DCMAKE_EXE_LINKER_FLAGS="--static -static-libgcc -static-libstdc++"
 	]],
 }
 
@@ -4911,7 +4911,7 @@ conf.q6_5wx6g2sf = {
 		-DBUILD_qtgrpc=OFF
 		-DBUILD_qtopcua=OFF
 		-DBUILD_qtwebengine=OFF
-		-DCMAKE_EXE_LINKER_FLAGS="--static --static-libgcc --static-libstdc++"
+		-DCMAKE_EXE_LINKER_FLAGS="--static -static-libgcc -static-libstdc++"
 	]],
 }
 

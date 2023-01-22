@@ -498,6 +498,16 @@ conf.Qt.generateConfTable = function(self, host, job)
 			for _, path in ipairs(opensslLibPath) do
 				ret.EXTRAINSTALL = ret.EXTRAINSTALL .. copyCmd .. repl.OPENSSLDIR .. confHost.pathSep .. path .. " " .. installRoot .. confHost.pathSep .. targetDir .. "\n"
 			end
+
+			-- for Qt 6.5+ links OpenSSL to QtBase
+			if (not confDetail.crossCompile) and (not staticBuild) then
+				if conf.hostToConfMap[host] == "win" then
+					table.insert(ret.path, repl.OPENSSLDIR .. confHost.pathSep .. "bin")
+				elseif string.sub(conf.hostToConfMap[host], 1, 3) == "mac" then
+					-- todo: is this needed?
+					-- ret.envSet.DYLD_LIBRARY_PATH = repl.OPENSSLDIR .. confHost.pathSep .. "lib"
+				end
+			end
 		end
 	end
 

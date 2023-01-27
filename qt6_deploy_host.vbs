@@ -26,6 +26,7 @@ End If
 
 fso.CreateFolder PATH_TO_TARGET & "\host"
 fso.CopyFolder PATH_TO_HOST & "\bin", PATH_TO_TARGET & "\host\bin"
+If fso.FileExists(PATH_TO_TARGET & "\host\bin\qt.conf") Then fso.DeleteFile PATH_TO_TARGET & "\host\bin\qt.conf"
 If fso.FolderExists(PATH_TO_HOST & "\libexec") Then fso.CopyFolder PATH_TO_HOST & "\libexec", PATH_TO_TARGET & "\host\libexec"
 fso.CreateFolder PATH_TO_TARGET & "\host\lib"
 fso.CopyFolder PATH_TO_HOST & "\lib\cmake", PATH_TO_TARGET & "\host\lib\cmake"

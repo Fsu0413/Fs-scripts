@@ -31,6 +31,7 @@ fi
 
 mkdir "${PATH_TO_TARGET}/host"
 cp -R "${PATH_TO_HOST}/bin" "${PATH_TO_TARGET}/host/"
+[ -e "${PATH_TO_TARGET}/host/bin/qt.conf" ] && rm "${PATH_TO_TARGET}/host/bin/qt.conf"
 [ -d "${PATH_TO_HOST}/libexec" ] && cp -R "${PATH_TO_HOST}/libexec" "${PATH_TO_TARGET}/host/"
 mkdir "${PATH_TO_TARGET}/host/lib"
 cp -R "${PATH_TO_HOST}/lib/cmake" "${PATH_TO_TARGET}/host/lib/"
@@ -59,6 +60,8 @@ chmod +x "${PATH_TO_TARGET}/bin/qmake"
 	echo "\$script_dir_path/../host/bin/qtpaths -qtconf \"\$script_dir_path/target_qt.conf\" \$*"
 ) > "${PATH_TO_TARGET}/bin/qtpaths"
 
+chmod +x "${PATH_TO_TARGET}/bin/qtpaths"
+
 # judge if sed / gsed is GNU sed
 GNU_SED=
 
@@ -75,8 +78,6 @@ done
 if [ x"$GNU_SED" = x ]; then
 	GNU_SED=sed
 fi
-
-chmod +x "${PATH_TO_TARGET}/bin/qtpaths"
 
 $GNU_SED -i -e 's,^HostPrefix=.*$,HostPrefix=../host,g' "${PATH_TO_TARGET}/bin/target_qt.conf"
 $GNU_SED -i -e 's,^HostData=.*$,HostData=..,g' "${PATH_TO_TARGET}/bin/target_qt.conf"

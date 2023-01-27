@@ -475,19 +475,25 @@ conf.Qt.generateConfTable = function(self, host, job)
 		if confHost.makefileTemplate == "win" then
 			file = string.gsub(file, "%/", "\\")
 		end
-		ret.EXTRAINSTALL = ret.EXTRAINSTALL .. copyCmd .. " " .. ret.BUILDDIR .. confHost.pathSep .. file .. " " .. installRoot .. "\n"
+		ret.EXTRAINSTALL = ret.EXTRAINSTALL .. copyCmd .. ret.BUILDDIR .. confHost.pathSep .. file .. " " .. installRoot .. "\n"
+	end
+
+	-- check for static builds
+	local staticBuild = false
+	for _, v in ipairs(confDetail.variant) do
+		if (v == "-static") or (v == "-staticFull") then
+			staticBuild = true
+			break
+		end
+	end
+
+	-- hack for static Qt 6.2 series: they can't be used without workaround of qt.conf
+	if staticBuild and (string.sub(confDetail.qtVersion, 1, 4) == "6.2.") then
+		ret.EXTRAINSTALL = ret.EXTRAINSTALL .. copyCmd .. scriptPath .. confHost.pathSep .. ".." .. confHost.pathSep .. "qtconf-ForQt6.2Static" .. " " .. installRoot .. confHost.pathSep .. "bin" .. confHost.pathSep .. "qt.conf\n"
 	end
 
 	-- OpenSSL libraries
 	if confDetail.opensslConf then
-		-- check for static builds
-		local staticBuild = false
-		for _, v in ipairs(confDetail.variant) do
-			if (v == "-static") or (v == "-staticFull") then
-				staticBuild = true
-				break
-			end
-		end
 		local opensslLibPath = conf.OpenSSL.configurations[confDetail.opensslConf][(staticBuild and "static" or "") .. "libPath"]
 		if opensslLibPath then
 			local targetDir = "lib"

@@ -2776,6 +2776,7 @@ conf.q6_2wx6m1st = {
 		-DBUILD_qtwebengine=OFF
 		-DBUILD_qtwebsockets=OFF
 		-DBUILD_qtwebview=OFF
+		-DCMAKE_EXE_LINKER_FLAGS="--static -static-libgcc -static-libstdc++"
 	]],
 }
 
@@ -2814,6 +2815,7 @@ conf.q6_2wx6m1sf = {
 		-DFEATURE_sql_odbc=ON
 		-DFEATURE_system_sqlite=OFF
 		-DBUILD_qtopcua=OFF
+		-DCMAKE_EXE_LINKER_FLAGS="--static -static-libgcc -static-libstdc++"
 	]],
 }
 
@@ -2886,6 +2888,7 @@ conf.q6_2wx6m2sf = {
 		-DFEATURE_sql_odbc=ON
 		-DFEATURE_system_sqlite=OFF
 		-DBUILD_qtopcua=OFF
+		-DCMAKE_EXE_LINKER_FLAGS="--static -static-libgcc -static-libstdc++"
 	]],
 }
 
@@ -3997,6 +4000,7 @@ conf.q6_4wx6g2st = {
 		-DBUILD_qtwebengine=OFF
 		-DBUILD_qtwebsockets=OFF
 		-DBUILD_qtwebview=OFF
+		-DCMAKE_EXE_LINKER_FLAGS="--static -static-libgcc -static-libstdc++"
 	]],
 }
 
@@ -4621,7 +4625,7 @@ conf.q6_5wx6v2 = {
 		-DFEATURE_system_sqlite=OFF
 		-DFEATURE_webengine_proprietary_codecs=ON
 		-DFEATURE_qtpdf_build=ON
-		-DBUILD_qtopcua=OFF
+		-DBUILD_qtgrpc=OFF
 	]],
 }
 
@@ -4666,13 +4670,13 @@ conf.q6_5wx6v2st = {
 		-DBUILD_qtconnectivity=OFF
 		-DBUILD_qtdatavis3d=OFF
 		-DBUILD_qtdoc=OFF
+		-DBUILD_qtgrpc=OFF
 		-DBUILD_qthttpserver=OFF
 		-DBUILD_qtlanguageserver=OFF
 		-DBUILD_qtlocation=OFF
 		-DBUILD_qtlottie=OFF
 		-DBUILD_qtmqtt=OFF
 		-DBUILD_qtnetworkauth=OFF
-		-DBUILD_qtopcua=OFF
 		-DBUILD_qtpositioning=OFF
 		-DBUILD_qtquick3dphysics=OFF
 		-DBUILD_qtquicktimeline=OFF
@@ -4723,7 +4727,8 @@ conf.q6_5wx6v2sf = {
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
 		-DFEATURE_system_sqlite=OFF
-		-DBUILD_qtopcua=OFF
+		-DBUILD_qtgrpc=OFF
+		-DBUILD_qtwebengine=OFF
 	]],
 }
 
@@ -4759,7 +4764,7 @@ conf.q6_5wx6v2_wa6v2 = {
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
 		-DFEATURE_system_sqlite=OFF
-		-DBUILD_qtopcua=OFF
+		-DBUILD_qtgrpc=OFF
 	]],
 }
 
@@ -4793,7 +4798,7 @@ conf.q6_5wx6g2 = {
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
 		-DFEATURE_system_sqlite=OFF
-		-DBUILD_qtopcua=OFF
+		-DBUILD_qtgrpc=OFF
 	]],
 }
 
@@ -4838,13 +4843,13 @@ conf.q6_5wx6g2st = {
 		-DBUILD_qtconnectivity=OFF
 		-DBUILD_qtdatavis3d=OFF
 		-DBUILD_qtdoc=OFF
+		-DBUILD_qtgrpc=OFF
 		-DBUILD_qthttpserver=OFF
 		-DBUILD_qtlanguageserver=OFF
 		-DBUILD_qtlocation=OFF
 		-DBUILD_qtlottie=OFF
 		-DBUILD_qtmqtt=OFF
 		-DBUILD_qtnetworkauth=OFF
-		-DBUILD_qtopcua=OFF
 		-DBUILD_qtpositioning=OFF
 		-DBUILD_qtquick3dphysics=OFF
 		-DBUILD_qtquicktimeline=OFF
@@ -4858,6 +4863,7 @@ conf.q6_5wx6g2st = {
 		-DBUILD_qtwebengine=OFF
 		-DBUILD_qtwebsockets=OFF
 		-DBUILD_qtwebview=OFF
+		-DCMAKE_EXE_LINKER_FLAGS="--static -static-libgcc -static-libstdc++"
 	]],
 }
 
@@ -4895,7 +4901,9 @@ conf.q6_5wx6g2sf = {
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
 		-DFEATURE_system_sqlite=OFF
-		-DBUILD_qtopcua=OFF
+		-DBUILD_qtgrpc=OFF
+		-DBUILD_qtwebengine=OFF
+		-DCMAKE_EXE_LINKER_FLAGS="--static -static-libgcc -static-libstdc++"
 	]],
 }
 
@@ -4929,8 +4937,8 @@ conf.q6_5wx6u5 = {
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
 		-DFEATURE_system_sqlite=OFF
+		-DBUILD_qtgrpc=OFF
 		-DBUILD_qtwebengine=OFF
-		-DBUILD_qtopcua=OFF
 		-DCMAKE_C_COMPILER="x86_64-w64-mingw32-clang"
 		-DCMAKE_ASM_COMPILER="x86_64-w64-mingw32-clang"
 		-DCMAKE_CXX_COMPILER="x86_64-w64-mingw32-clang++"
@@ -4967,8 +4975,8 @@ conf.q6_5wx6s5 = {
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
 		-DFEATURE_system_sqlite=OFF
+		-DBUILD_qtgrpc=OFF
 		-DBUILD_qtwebengine=OFF
-		-DBUILD_qtopcua=OFF
 		-DCMAKE_C_COMPILER="x86_64-w64-mingw32-clang"
 		-DCMAKE_ASM_COMPILER="x86_64-w64-mingw32-clang"
 		-DCMAKE_CXX_COMPILER="x86_64-w64-mingw32-clang++"
@@ -5010,13 +5018,13 @@ conf.q6_5lx6st = {
 		-DBUILD_qtconnectivity=OFF
 		-DBUILD_qtdatavis3d=OFF
 		-DBUILD_qtdoc=OFF
+		-DBUILD_qtgrpc=OFF
 		-DBUILD_qthttpserver=OFF
 		-DBUILD_qtlanguageserver=OFF
 		-DBUILD_qtlocation=OFF
 		-DBUILD_qtlottie=OFF
 		-DBUILD_qtmqtt=OFF
 		-DBUILD_qtnetworkauth=OFF
-		-DBUILD_qtopcua=OFF
 		-DBUILD_qtpositioning=OFF
 		-DBUILD_qtquick3dphysics=OFF
 		-DBUILD_qtquicktimeline=OFF
@@ -5068,7 +5076,7 @@ conf.q6_5mal = {
 		-DCMAKE_SKIP_BUILD_RPATH=OFF
 		-DCMAKE_SKIP_INSTALL_RPATH=OFF
 		-DFEATURE_framework=ON
-		-DBUILD_qtopcua=OFF
+		-DBUILD_qtgrpc=OFF
 	]],
 }
 
@@ -5108,7 +5116,7 @@ conf.q6_5malnf = {
 		-DCMAKE_SKIP_BUILD_RPATH=OFF
 		-DCMAKE_SKIP_INSTALL_RPATH=OFF
 		-DFEATURE_framework=OFF
-		-DBUILD_qtopcua=OFF
+		-DBUILD_qtgrpc=OFF
 	]],
 }
 
@@ -5153,13 +5161,13 @@ conf.q6_5malst = {
 		-DBUILD_qtconnectivity=OFF
 		-DBUILD_qtdatavis3d=OFF
 		-DBUILD_qtdoc=OFF
+		-DBUILD_qtgrpc=OFF
 		-DBUILD_qthttpserver=OFF
 		-DBUILD_qtlanguageserver=OFF
 		-DBUILD_qtlocation=OFF
 		-DBUILD_qtlottie=OFF
 		-DBUILD_qtmqtt=OFF
 		-DBUILD_qtnetworkauth=OFF
-		-DBUILD_qtopcua=OFF
 		-DBUILD_qtpositioning=OFF
 		-DBUILD_qtquick3dphysics=OFF
 		-DBUILD_qtquicktimeline=OFF
@@ -5210,7 +5218,8 @@ conf.q6_5malsf = {
 		-DFEATURE_securetransport=ON
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_system_sqlite=OFF
-		-DBUILD_qtopcua=OFF
+		-DBUILD_qtgrpc=OFF
+		-DBUILD_qtwebengine=OFF
 	]],
 }
 
@@ -5243,7 +5252,7 @@ conf.q6_5wx6g2_aa6n5 = {
 		-DINPUT_openssl=linked
 		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
 		-DFEATURE_sql_sqlite=ON
-		-DBUILD_qtopcua=OFF
+		-DBUILD_qtgrpc=OFF
 		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
 		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&\build\cmake\android.toolchain.cmake
 		-DANDROID_NATIVE_API_LEVEL=27
@@ -5282,7 +5291,7 @@ conf.q6_5wx6g2_ax6n5 = {
 		-DINPUT_openssl=linked
 		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
 		-DFEATURE_sql_sqlite=ON
-		-DBUILD_qtopcua=OFF
+		-DBUILD_qtgrpc=OFF
 		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
 		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&\build\cmake\android.toolchain.cmake
 		-DANDROID_NATIVE_API_LEVEL=27
@@ -5320,7 +5329,7 @@ conf.q6_5lx6_aa6n5 = {
 		-DINPUT_openssl=linked
 		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
 		-DFEATURE_sql_sqlite=ON
-		-DBUILD_qtopcua=OFF
+		-DBUILD_qtgrpc=OFF
 		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
 		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
 		-DANDROID_NATIVE_API_LEVEL=27
@@ -5357,7 +5366,7 @@ conf.q6_5lx6_ax6n5 = {
 		-DINPUT_openssl=linked
 		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
 		-DFEATURE_sql_sqlite=ON
-		-DBUILD_qtopcua=OFF
+		-DBUILD_qtgrpc=OFF
 		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
 		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
 		-DANDROID_NATIVE_API_LEVEL=27
@@ -5394,7 +5403,7 @@ conf.q6_5mal_aa6n5 = {
 		-DINPUT_openssl=linked
 		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
 		-DFEATURE_sql_sqlite=ON
-		-DBUILD_qtopcua=OFF
+		-DBUILD_qtgrpc=OFF
 		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
 		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
 		-DANDROID_NATIVE_API_LEVEL=27
@@ -5431,7 +5440,7 @@ conf.q6_5mal_ax6n5 = {
 		-DINPUT_openssl=linked
 		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
 		-DFEATURE_sql_sqlite=ON
-		-DBUILD_qtopcua=OFF
+		-DBUILD_qtgrpc=OFF
 		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
 		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
 		-DANDROID_NATIVE_API_LEVEL=27
@@ -5468,7 +5477,7 @@ conf.q6_5wx6g2_W = {
 		-DFEATURE_opengles2=ON
 		-DFEATURE_ssl=OFF
 		-DFEATURE_sql_sqlite=ON
-		-DBUILD_qtopcua=OFF
+		-DBUILD_qtgrpc=OFF
 	]],
 }
 
@@ -5498,7 +5507,7 @@ conf.q6_5lx6_W = {
 		-DFEATURE_opengles2=ON
 		-DFEATURE_ssl=OFF
 		-DFEATURE_sql_sqlite=ON
-		-DBUILD_qtopcua=OFF
+		-DBUILD_qtgrpc=OFF
 	]],
 }
 
@@ -5528,7 +5537,7 @@ conf.q6_5mal_W = {
 		-DFEATURE_opengles2=ON
 		-DFEATURE_ssl=OFF
 		-DFEATURE_sql_sqlite=ON
-		-DBUILD_qtopcua=OFF
+		-DBUILD_qtgrpc=OFF
 	]],
 }
 

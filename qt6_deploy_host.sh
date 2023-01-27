@@ -34,7 +34,7 @@ cp -R "${PATH_TO_HOST}/bin" "${PATH_TO_TARGET}/host/"
 [ -d "${PATH_TO_HOST}/libexec" ] && cp -R "${PATH_TO_HOST}/libexec" "${PATH_TO_TARGET}/host/"
 mkdir "${PATH_TO_TARGET}/host/lib"
 cp -R "${PATH_TO_HOST}/lib/cmake" "${PATH_TO_TARGET}/host/lib/"
-cp -R "${PATH_TO_HOST}/lib/metatypes" "${PATH_TO_TARGET}/host/lib/"
+[ -d "${PATH_TO_HOST}/lib/metatypes" ] && cp -R "${PATH_TO_HOST}/lib/metatypes" "${PATH_TO_TARGET}/host/lib/"
 find "${PATH_TO_HOST}/lib/" -name '*.prl' -maxdepth 1 -exec cp '{}' "${PATH_TO_TARGET}/host/lib" ';'
 
 # qmake tweak

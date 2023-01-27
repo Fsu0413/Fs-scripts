@@ -6,10 +6,9 @@ abbrs:
 	Qt Versions:
 		Q2 / q5_12: Qt 5.12.12/Discontinued Qt 5 LTS
 		Q5: Qt 5.15.8/Previous Qt 5 LTS w/ latest QtWebEngine and latest QtScript
-		q5_kde: Qt 5.15.x KDE maintained version w/ latest QtWebEngine and latest QtScript
 		q6_2: Qt 6.2.4/Latest Qt 6 LTS w/ latest QtWebEngine
-		q6_3: Qt 6.3.2
-		q6_4: Qt 6.4.2 (Pre-release)
+		q6_4: Qt 6.4.2
+		q6_5: Qt 6.5.0 (Pre-release)
 	If prefixed with a lower-case "m", it is a modified Qt version
 
 	Platforms:
@@ -38,8 +37,8 @@ abbrs:
 		m8: MinGW-w64, with GCC 8.1.0
 		g1 / (deprecated) m1: MinGW-w64, with GCC 11.2.0
 		g2 / (deprecated) m2: MinGW-w64, with GCC 12.1.0
-		m4 / (deprecated) mv: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 14 (naming conflicted with previous MinGW-w64 with GCC 4.9.4. Since there is currently no build who uses GCC 4.9.4 we can safely use this name)
-		u4 / (deprecated) mu: LLVM/Clang based MinGW-w64, ucrt, with LLVM 14
+		s5 / (deprecated) mv: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 15
+		u5 / (deprecated) mu: LLVM/Clang based MinGW-w64, ucrt, with LLVM 15
 		nl: Android NDK r21e/Previous LTS
 		n3: Android NDK r23c/Previous LTS
 		n5: Android NDK r25b/Latest LTS
@@ -5637,21 +5636,18 @@ for name, value in pairs(conf) do
 	end
 
 	local qtVersionSplit = split(value.qtVersion, ".")
-	if value.qtVersion == "5.15.k" then
-		value.sourcePackageBaseName = "qt5-kde"
-	else
-		local qtSourcePackagePrefix = "qt-everywhere-src-"
-		if value.host == "Win10" then
-			for _, waVersion in ipairs(Win10SrcPackagePrefixWorkaroundVersions) do
-				if value.qtVersion == waVersion then
-					qtSourcePackagePrefix = "qt-src-"
-					break
-				end
+	local qtSourcePackagePrefix = "qt-everywhere-src-"
+	if value.host == "Win10" then
+		for _, waVersion in ipairs(Win10SrcPackagePrefixWorkaroundVersions) do
+			if value.qtVersion == waVersion then
+				qtSourcePackagePrefix = "qt-src-"
+				break
 			end
 		end
-
-		value.sourcePackageBaseName = qtSourcePackagePrefix .. value.qtVersion
 	end
+
+	value.sourcePackageBaseName = qtSourcePackagePrefix .. value.qtVersion
+
 	-- config file
 	if tonumber(qtVersionSplit[1]) == 5 then
 		value.configFile = { "config.log", "config.opt", "config.summary" }

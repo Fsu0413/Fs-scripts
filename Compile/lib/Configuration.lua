@@ -489,7 +489,11 @@ conf.Qt.generateConfTable = function(self, host, job)
 
 	-- hack for static Qt 6.2 series: they can't be used without workaround of qt.conf
 	if staticBuild and (string.sub(confDetail.qtVersion, 1, 4) == "6.2.") then
-		ret.EXTRAINSTALL = ret.EXTRAINSTALL .. copyCmd .. scriptPath .. confHost.pathSep .. ".." .. confHost.pathSep .. "qtconf-ForQt6.2Static" .. " " .. installRoot .. confHost.pathSep .. "bin" .. confHost.pathSep .. "qt.conf\n"
+		local scriptPathNative = scriptPath
+		if confHost.makefileTemplate == "win" then
+			scriptPathNative = string.gsub(scriptPath, "%/", "\\")
+		end
+		ret.EXTRAINSTALL = ret.EXTRAINSTALL .. copyCmd .. scriptPathNative .. confHost.pathSep .. ".." .. confHost.pathSep .. "qtconf-ForQt6.2Static" .. " " .. installRoot .. confHost.pathSep .. "bin" .. confHost.pathSep .. "qt.conf\n"
 	end
 
 	-- OpenSSL libraries

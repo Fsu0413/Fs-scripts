@@ -505,7 +505,7 @@ for name, value in pairs(conf) do
 	-- add dump function
 	value.dump = function(self)
 		local ret = name .. " - " .. self.name .. ":\n"
-		ret = ret .. "\MariaDB Version: " .. self.mariadbVersion .. "\n"
+		ret = ret .. "\tMariaDB Version: " .. self.mariadbVersion .. "\n"
 		ret = ret .. "\tHost: " .. self.host .. "\n"
 		ret = ret .. "\tToolchain: " .. self.toolchain .. "\n"
 		ret = ret .. "\tCross Compile: " .. (self.crossCompile and "true" or "false") .. "\n"

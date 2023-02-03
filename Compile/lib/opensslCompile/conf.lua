@@ -6,14 +6,13 @@ abbrs:
 	OpenSSL Versions:
 		o1: OpenSSL 1.1.1s
 		o3: OpenSSL 3.0.7-2
-	Most of OpenSSL builds has its makefiles changed for our use. No "m" will be prefixed.
 
 	Platforms:
 		w: Windows
 		m: macOS
 		a: Android
 	Other platforms will be added when supported.
-	Crossed compiled versions does not marked using underscore because there is no need for distinguishing it from another version.
+	Crossed built versions does not marked using underscore because there is no need for distinguishing it from another version.
 
 	Supported Architectures:
 		x3: x86
@@ -32,8 +31,8 @@ abbrs:
 		m8: MinGW-w64, with GCC 8.1.0 (no new builds)
 		g1 / (deprecated) m1: MinGW-w64, with GCC 11.2.0
 		g2 / (deprecated) m2: MinGW-w64, with GCC 12.1.0
-		m4 / (deprecated) mv: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 14 (naming conflicted with previous MinGW-w64 with GCC 4.9.4. Since there is currently no build who uses GCC 4.9.4 we can safely use this name)
-		u4 / (deprecated) mu: LLVM/Clang based MinGW-w64, ucrt, with LLVM 14
+		s5 / (deprecated) mv: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 15
+		u5 / (deprecated) mu: LLVM/Clang based MinGW-w64, ucrt, with LLVM 15
 		nl: Android NDK r21e/Previous LTS
 		n3: Android NDK r23c/Previous LTS
 		n5: Android NDK r25b/Latest LTS

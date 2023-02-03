@@ -383,10 +383,8 @@ conf.Qt.generateConfTable = function(self, host, job)
 	local installRoot = ret.WORKSPACE .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. installFolderName
 	repl.INSTALLROOT = installRoot
 
-	local sourcePackageBaseName = confDetail.sourcePackageBaseName
-
 	if not confDetail.useCMake then
-		ret.CONFIGURECOMMANDLINE = confHost.sourcePackagePath .. sourcePackageBaseName .. confHost.pathSep .. "configure "
+		ret.CONFIGURECOMMANDLINE = confHost.sourcePackagePath .. confDetail.sourcePackageBaseName .. confHost.pathSep .. "configure "
 	else
 		ret.CONFIGURECOMMANDLINE = "cmake "
 	end
@@ -398,7 +396,7 @@ conf.Qt.generateConfTable = function(self, host, job)
 		end
 	end), "%s+", " ")
 	if confDetail.useCMake then
-		ret.CONFIGURECOMMANDLINE = ret.CONFIGURECOMMANDLINE .. confHost.sourcePackagePath .. sourcePackageBaseName
+		ret.CONFIGURECOMMANDLINE = ret.CONFIGURECOMMANDLINE .. confHost.sourcePackagePath .. confDetail.sourcePackageBaseName
 	end
 	if (string.sub(confDetail.qtVersion, 1, 2) == "6.") and confDetail.crossCompile and (string.sub(confDetail.toolchainT, 1, 10) == "emscripten") then
 		if not confDetail.useCMake then
@@ -637,7 +635,6 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 		ret.envSet = {}
 
 		local repl = {}
-		repl.parameter = {}
 
 		if confDetail.crossCompile then
 			if string.sub(confDetail.toolchainT, 1, 7) == "Android" then -- Android
@@ -692,11 +689,6 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 
 		repl.INSTALLROOT = installRoot
 
-		local configureArgs = ""
-		for _, p in ipairs(repl.parameter) do
-			configureArgs = configureArgs .. " " .. p
-		end
-
 		-- Yeah. './config' totally sucks. It is of no use even during host build.
 		ret.CONFIGURECOMMANDLINE = "perl ../" .. confDetail.sourcePackageBaseName .. "/Configure "
 		ret.CONFIGURECOMMANDLINE = ret.CONFIGURECOMMANDLINE .. string.gsub(string.gsub(confDetail.configureParameter, "%&([%w_]+)%&", function(s)
@@ -742,11 +734,130 @@ conf.OpenSSL.binaryFileDownloadPath = function(self, confHost, job, version)
 	return replaceVersion(pathWithVersionNotSubstituted, nil, version)
 end
 
+conf.MariaDB = {}
+
+conf.MariaDB.configurations = dofile(scriptPath .. "/lib/mriadbCompile/conf.lua")
+
+conf.MariaDB.generateConfTable = function(self, host, job)
+	local confHost = conf.host[conf.hostToConfMap[host]]
+	local confDetail = conf.MariaDB.configurations[job]
+	local ret = {}
+	ret.template = confHost.makefileTemplate
+	ret.path = {}
+	ret.WORKSPACE = os.getenv("WORKSPACE")
+	-- dirty hack here for Windows drive since Windows services always starts in drive C
+	if confHost.makefileTemplate == "win" and string.sub(ret.WORKSPACE, 1, 24) == "C:\\Users\\Fs\\Work\\Jenkins" then
+		local rightpart = string.sub(ret.WORKSPACE, 25)
+		ret.WORKSPACE = "D:\\Jenkins" .. rightpart
+	end
+	-- dirty hack end
+	ret.download = {}
+
+	-- DO REMEMBER TO USE tostring IF A VERSION STRING IS NEEDED!!
+	local hostToolchainVersion, targetToolchainVersion
+	local hostToolchainVersionQueryFuncName = "gcc"
+	local hostToolchainVersionQueryPath
+	local hostToolchainExecutableName = confHost.defaultToolchainExecutableName
+
+	if confDetail.toolchain ~= "PATH" then
+		local paths = confHost.toolchainPath[confDetail.toolchain]
+		if type(confHost.toolchainPath[confDetail.toolchain]) == "string" then
+			paths = {confHost.toolchainPath[confDetail.toolchain]}
+		end
+		hostToolchainVersionQueryPath = paths[1]
+		if string.sub(confDetail.toolchain, 1, 4) == "MSVC" then
+			hostToolchainVersionQueryFuncName = "msvc"
+			ret.msvcBat = paths[1]
+			table.remove(paths, 1)
+		elseif string.sub(confDetail.toolchain, 1, 9) == "MinGWLLVM" then
+			hostToolchainVersionQueryPath = paths[2]
+			hostToolchainExecutableName = "clang"
+		end
+		for _, x in ipairs(paths) do
+			table.insert(ret.path, x)
+		end
+	end
+
+	hostToolchainVersion = compilerVer[hostToolchainVersionQueryFuncName](confHost.makefileTemplate == "win", hostToolchainVersionQueryPath, hostToolchainExecutableName)
+
+	for _, p in ipairs(confHost.cMakePath[confDetail.useCMake]) do
+		table.insert(ret.path, p)
+	end
+		
+	ret.buildContent = "MariaDB"
+	ret.BUILDDIR = ret.WORKSPACE .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. "build-MariaDB" .. job
+	ret.INSTALLCOMMANDLINE = " "
+	table.insert(ret.download, confDetail["sourcePackageUrl" .. confHost.makefileTemplate])
+
+	ret.envSet = {}
+
+	local repl = {}
+	
+	if confDetail.crossCompile then
+		if string.sub(confDetail.toolchainT, 1, 7) == "Android" then -- Android
+			error("todo....")
+		elseif string.sub(confDetail.toolchainT, 1, 10) == "emscripten" then -- WebAssembly
+			error("todo....")
+		elseif string.sub(confDetail.toolchainT, 1, 4) == "MSVC" then -- Windows UWP/ARM64 Desktop
+			error("todo....")
+		elseif string.sub(confDetail.toolchainT, 1, 11) == "GCCForLinux" then -- GNU/Linux cross builds(Todo)
+			error("todo....")
+		elseif string.sub(confDetail.toolchainT, 1, 5) == "MinGW" then -- MinGW cross builds(Todo)
+			error("todo....")
+		else
+			error("not supported")
+		end
+	else
+		targetToolchainVersion = hostToolchainVersion
+		if string.sub(confDetail.toolchain, 1, 4) == "MSVC" then
+			-- nothing special
+		elseif string.sub(confDetail.toolchain, 1, 5) == "MinGW" then
+			-- nothing special
+		elseif string.sub(conf.hostToConfMap[host], 1, 3) == "mac" then
+			-- nothing special
+		else
+			error("not supported")
+		end
+	end
+
+	local installFolderName = replaceVersion(confDetail.name, nil, targetToolchainVersion)
+	local installRoot = ret.WORKSPACE .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. installFolderName
+	repl.INSTALLROOT = installRoot
+
+	ret.CONFIGURECOMMANDLINE = "cmake "
+
+	ret.CONFIGURECOMMANDLINE = ret.CONFIGURECOMMANDLINE .. string.gsub(string.gsub(confDetail.configureParameter, "%&([%w_]+)%&", function(s)
+		if repl[s] then
+			return repl[s]
+		else
+			return ""
+		end
+	end), "%s+", " ")
+
+	ret.CONFIGURECOMMANDLINE = ret.CONFIGURECOMMANDLINE .. ".." .. confHost.pathSep .. confDetail.sourcePackageBaseName
+
+	ret.MAKE = "cmake --build . --parallel -- "
+	
+	ret.INSTALLCOMMANDLINE = "cmake --install . --strip"
+
+	ret.INSTALLROOT = installRoot
+	ret.INSTALLPATH = installFolderName
+	
+	return ret
+end
+
+conf.MariaDB.binaryFileDownloadPath = function(self, confHost, job, version)
+	local pathWithVersionNotSubstituted = conf.MariaDB.configurations[job]["binaryPackageUrl" .. confHost.makefileTemplate]
+	return replaceVersion(pathWithVersionNotSubstituted, nil, version)
+end
+
 conf.buildContent = function(self, buildJob)
 	if (string.sub(buildJob, 1, 1) == 'Q') or (string.sub(buildJob, 1, 1) == "q") then
 		return "Qt"
 	elseif (string.sub(buildJob, 1, 1) == 'o') then
 		return "OpenSSL"
+	elseif (string.sub(buildJob, 1, 1) == 'm') then
+		return "MariaDB"
 	else
 		error(buildJob .. " is not supported.")
 	end

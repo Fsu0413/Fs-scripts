@@ -736,7 +736,7 @@ end
 
 conf.MariaDB = {}
 
-conf.MariaDB.configurations = dofile(scriptPath .. "/lib/mriadbCompile/conf.lua")
+conf.MariaDB.configurations = dofile(scriptPath .. "/lib/mariadbCompile/conf.lua")
 
 conf.MariaDB.generateConfTable = function(self, host, job)
 	local confHost = conf.host[conf.hostToConfMap[host]]

@@ -251,6 +251,98 @@ exit 0
 
 ]]
 
+-- MSVCBATCALL
+-- PATHSET
+-- ENVSET
+-- BUILDDIR
+-- WORKSPACE
+-- CONFIGURECOMMANDLINE
+-- MAKE
+-- INSTALLCOMMANDLINE
+-- INSTALLROOT
+-- INSTALLPATH
+gen.win.template4MariaDB = [[
+
+rem Unset it for now since it is only used in Jenkins.
+rem Building MariaDB doesn't need JDK.
+
+set JAVA_HOME=
+
+setlocal enabledelayedexpansion
+
+set DOWNLOADTOOL=
+
+for %%i in (aria2c curl wget) do (
+	if "!DOWNLOADTOOL!" == "" (
+		set p="--help"
+		if "%%i" == "aria2c" set p="-h"
+		%%i !p! >NUL 2>NUL
+		if not ERRORLEVEL 1 set DOWNLOADTOOL=%%i
+		set p=
+	)
+)
+
+rem TODO - set --no-conf parameter to aria2c
+
+set pd=o
+if "!DOWNLOADTOOL!" == "wget" set pd=O
+
+&DOWNLOADPACKAGE&
+
+endlocal
+
+set SEVENZIP=7z
+
+&UNCOMPRESSPACKAGE&
+&DELETEUNCOMPRESSED&
+
+&PATHSET&
+
+&MSVCBATCALL&
+
+&PATHSET&
+
+&ENVSET&
+
+rmdir /s /q &BUILDDIR&
+mkdir &BUILDDIR&
+cd /d &BUILDDIR&
+
+set PARALLELNUM=0
+
+set /a PARALLELNUM=%NUMBER_OF_PROCESSORS%+1
+
+cmd /c &CONFIGURECOMMANDLINE&
+if errorlevel 1 exit 1
+
+set i=0
+
+:LOOP
+set /a i=%i%+1
+if %i% gtr 3 exit 1
+
+cmd /c &MAKE&
+if errorlevel 1 goto LOOP
+
+set j=0
+
+:LOOP2
+set /a j=%j%+1
+if %j% gtr 3 exit 1
+
+cmd /c &INSTALLCOMMANDLINE&
+if errorlevel 1 goto LOOP2
+
+cd /d &INSTALLROOT&\..
+
+%SEVENZIP% a -t7z -m0=LZMA2:d256m:fb273 -mmt=3 -myx -mqs -ms=on -- &INSTALLPATH&.7z &INSTALLPATH&
+
+rmdir /s /q &BUILDDIR&
+
+exit 0
+
+]]
+
 gen.unix = {}
 
 gen.unix.pathEnvPre = "PATH=\""
@@ -769,6 +861,115 @@ exit 0
 
 ]]
 
+-- PATHSET
+-- ENVSET
+-- BUILDDIR
+-- WORKSPACE
+-- CONFIGURECOMMANDLINE
+-- MAKE
+-- INSTALLCOMMANDLINE
+-- INSTALLROOT
+-- INSTALLPATH
+gen.unix.template4MariaDB = [[
+set -x
+
+unset JAVA_HOME
+
+DOWNLOADTOOL=
+
+for i in aria2c wget curl; do
+	p="--help"
+	if [ x$i = xaria2c ]; then
+		p="-h"
+	fi
+	if $i $p >/dev/null 2>/dev/null; then
+		DOWNLOADTOOL=$i
+		break
+	fi
+done
+
+if [ "x$DOWNLOADTOOL" = "x" ]; then
+	echo "no download tool" >&2
+	exit 1
+fi
+
+if [ "x$DOWNLOADTOOL" = "xaria2c" ]; then
+	DOWNLOADTOOL="aria2c --no-conf"
+fi
+
+DOWNLOADP="o"
+if [ "x$DOWNLOADTOOL" = "xwget" ]; then
+	DOWNLOADP="O"
+fi
+
+&DOWNLOADPACKAGE&
+
+TAR=
+
+for i in bsdtar tar; do
+	if $i --help >/dev/null 2>/dev/null; then
+		TAR=$i
+		break
+	fi
+done
+
+if [ "x$TAR" = "x" ]; then
+	echo "tar not found" >&2
+	exit 1
+fi
+
+SEVENZIP=
+
+for i in 7zr 7za 7z; do
+	if $i >/dev/null 2>/dev/null; then
+		SEVENZIP=$i
+		break
+	fi
+done
+
+&UNCOMPRESSPACKAGE&
+&DELETEUNCOMPRESSED&
+
+&PATHSET&
+
+&ENVSET&
+
+rm -rf &BUILDDIR&
+mkdir &BUILDDIR&
+cd &BUILDDIR&
+
+PARALLELNUM=`nproc 2> /dev/null`
+if [ $? -ne 0 ]; then
+	PARALLELNUM=3
+	if [ "$NUMBER_OF_PROCESSORS" ]; then
+		PARALLELNUM=`expr $NUMBER_OF_PROCESSORS + 1`
+	elif [ -e /proc/cpuinfo ]; then
+		PARALLELNUM=$(expr `cat /proc/cpuinfo | grep processor | wc -l` + 1 )
+	elif [ x`uname` = xDarwin ]; then
+		PARALLELNUM=$(expr `sysctl machdep.cpu.thread_count | cut -d " " -f 2` + 1 )
+	fi
+fi
+
+&CONFIGURECOMMANDLINE&
+[ $? -eq 0 ] || exit 1
+
+&MAKE&
+[ $? -eq 0 ] || exit 1
+
+&INSTALLCOMMANDLINE&
+[ $? -eq 0 ] || exit 1
+
+cd &INSTALLROOT&/..
+
+$TAR -cf - &INSTALLPATH& | $SEVENZIP a -txz -m0=LZMA2:d256m:fb273 -mmt=3 -myx -si -- &INSTALLPATH&.tar.xz
+$SEVENZIP a -t7z -m0=LZMA2:d256m:fb273 -mmt=3 -myx -mqs -ms=on -- &INSTALLPATH&.7z &INSTALLPATH&
+
+rm -rf &BUILDDIR&
+
+exit 0
+
+]]
+
 local filenameAndToolFromUrl = function(url)
 	-- get filename from URL since we don't use redirections
 	local n, n2
@@ -791,7 +992,7 @@ end
 
 gen.generate = function(self, para)
 	-- para.template should be "unix" or "win"
-	-- para.buildContent should be "Qt", "OpenSSL", "OpenSSLAndroidAll" or "QQtPatcher"
+	-- para.buildContent should be "Qt", "OpenSSL", "OpenSSLUnify***", "MariaDB" or "QQtPatcher"
 	-- other contents in para goes to the replacement function
 	-- for buildContent other than QQtPatcher:
 	--   "MAKE" "CONFIGURECOMMANDLINE" "date" must be provided. Fails if either one is missing.
@@ -813,7 +1014,7 @@ gen.generate = function(self, para)
 
 	if string.sub(template, 1, 12) == "OpenSSLUnify" then
 		if para.template ~= "unix" then
-			print("[Generate.generate] ERROR: Generation of OpenSSL Android All builds is not available in para.template ~= \"unix\"")
+			print("[Generate.generate] ERROR: Generation of OpenSSL Unify builds is not available in para.template ~= \"unix\"")
 			os.exit(1)
 		end
 	end
@@ -869,12 +1070,12 @@ gen.generate = function(self, para)
 	end
 
 	local ret = string.gsub(template, "%&([%w_]+)%&", function(s)
-			if paraCopy[s] then
-				return paraCopy[s]
-			else
-				return ""
-			end
-		end)
+		if paraCopy[s] then
+			return paraCopy[s]
+		else
+			return ""
+		end
+	end)
 
 	return ret
 end

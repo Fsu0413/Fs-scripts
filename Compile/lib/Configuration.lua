@@ -780,8 +780,10 @@ conf.MariaDB.generateConfTable = function(self, host, job)
 
 	hostToolchainVersion = compilerVer[hostToolchainVersionQueryFuncName](confHost.makefileTemplate == "win", hostToolchainVersionQueryPath, hostToolchainExecutableName)
 
-	for _, p in ipairs(confHost.cMakePath[confDetail.useCMake]) do
-		table.insert(ret.path, p)
+	if confHost.cMakePath and confHost.cMakePath.Latest then
+		for _, p in ipairs(confHost.cMakePath.Latest) do
+			table.insert(ret.path, p)
+		end
 	end
 		
 	ret.buildContent = "MariaDB"

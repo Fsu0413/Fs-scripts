@@ -42,7 +42,7 @@ conf.m3_1wx3v5 = {
 	mariadbVersion = "3.1.19",
 	host = "Win8",
 	toolchain = "MSVC2015-32",
-	-- libPath = { "bin\\libssl-1_1.dll", "bin\\libcrypto-1_1.dll" },
+	libPath = { "lib\\mariadb\\libmariadb.dll" },
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -65,7 +65,7 @@ conf.m3_1wx6v5 = {
 	mariadbVersion = "3.1.19",
 	host = "Win8",
 	toolchain = "MSVC2015-64",
-	-- libPath = { "bin\\libssl-1_1-x64.dll", "bin\\libcrypto-1_1-x64.dll" },
+	libPath = { "lib\\mariadb\\libmariadb.dll" },
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -88,7 +88,7 @@ conf.m3_1wx3v7 = {
 	mariadbVersion = "3.1.19",
 	host = "Win10",
 	toolchain = "MSVC2017-32",
-	-- libPath = { "bin\\libssl-1_1.dll", "bin\\libcrypto-1_1.dll" },
+	libPath = { "lib\\mariadb\\libmariadb.dll" },
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -111,7 +111,7 @@ conf.m3_1wx6v7 = {
 	mariadbVersion = "3.1.19",
 	host = "Win10",
 	toolchain = "MSVC2017-64",
-	-- libPath = { "bin\\libssl-1_1-x64.dll", "bin\\libcrypto-1_1-x64.dll" },
+	libPath = { "lib\\mariadb\\libmariadb.dll" },
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -134,7 +134,7 @@ conf.m3_1wx3v9 = {
 	mariadbVersion = "3.1.19",
 	host = "Win10",
 	toolchain = "MSVC2019-32",
-	-- libPath = { "bin\\libssl-1_1.dll", "bin\\libcrypto-1_1.dll" },
+	libPath = { "lib\\mariadb\\libmariadb.dll" },
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -157,7 +157,7 @@ conf.m3_1wx6v9 = {
 	mariadbVersion = "3.1.19",
 	host = "Win10",
 	toolchain = "MSVC2019-64",
-	-- libPath = { "bin\\libssl-1_1-x64.dll", "bin\\libcrypto-1_1-x64.dll" },
+	libPath = { "lib\\mariadb\\libmariadb.dll" },
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -180,7 +180,7 @@ conf.m3_1wx6v2 = {
 	mariadbVersion = "3.1.19",
 	host = "Win10",
 	toolchain = "MSVC2022-64",
-	-- libPath = { "bin\\libssl-1_1-x64.dll", "bin\\libcrypto-1_1-x64.dll" },
+	libPath = { "lib\\mariadb\\libmariadb.dll" },
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -200,13 +200,13 @@ conf.m3_1wx6v2 = {
 
 --------------------------------------------------------------------
 
+-- build failed due to conflicting function definition???
 conf.m3_1wx3g8 = {
 	name = "mariadb_connector_c3.1.19-Windows-x86-MinGW-GCC&TARGETTOOLVERSION&",
 	mariadbVersion = "3.1.19",
 	host = "Win10",
 	toolchain = "MinGW810-32",
-	-- libPath = { "bin\\libssl-1_1.dll", "bin\\libcrypto-1_1.dll" },
-	-- staticlibPath = { "lib\\libssl.a", "lib\\libcrypto.a" },
+	libPath = { "lib\\mariadb\\libmariadb.dll" },
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -229,8 +229,7 @@ conf.m3_1wx6g8 = {
 	mariadbVersion = "3.1.19",
 	host = "Win10",
 	toolchain = "MinGW810-64",
-	-- libPath = { "bin\\libssl-1_1.dll", "bin\\libcrypto-1_1.dll" },
-	-- staticlibPath = { "lib\\libssl.a", "lib\\libcrypto.a" },
+	libPath = { "lib\\mariadb\\libmariadb.dll" },
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -254,8 +253,7 @@ conf.m3_1mal = {
 	name = "mariadb_connector_c3.1.19-macOS-ALL-AppleClang&TARGETTOOLVERSION&",
 	mariadbVersion = "3.1.19",
 	host = "macOSM1",
-	-- libPath = { "lib/libssl.3.dylib", "lib/libcrypto.3.dylib" },
-	-- staticlibPath = { "lib/libssl.a", "lib/libcrypto.a" },
+	libPath = { "lib/mariadb/libmariadb.3.dylib" },
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -282,7 +280,7 @@ conf.m3_3wx6v9 = {
 	mariadbVersion = "3.3.3",
 	host = "Win10",
 	toolchain = "MSVC2019-64",
-	-- libPath = { "bin\\libssl-1_1-x64.dll", "bin\\libcrypto-1_1-x64.dll" },
+	libPath = { "lib\\mariadb\\libmariadb.dll" },
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -305,7 +303,7 @@ conf.m3_3wx6v2 = {
 	mariadbVersion = "3.3.3",
 	host = "Win10",
 	toolchain = "MSVC2022-64",
-	-- libPath = { "bin\\libssl-1_1-x64.dll", "bin\\libcrypto-1_1-x64.dll" },
+	libPath = { "lib\\mariadb\\libmariadb.dll" },
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -330,8 +328,7 @@ conf.m3_3wx6g1 = {
 	mariadbVersion = "3.3.3",
 	host = "Win10",
 	toolchain = "MinGW1120-64",
-	-- libPath = { "bin\\libssl-1_1.dll", "bin\\libcrypto-1_1.dll" },
-	-- staticlibPath = { "lib\\libssl.a", "lib\\libcrypto.a" },
+	libPath = { "lib\\mariadb\\libmariadb.dll" },
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -354,8 +351,7 @@ conf.m3_3wx6g2 = {
 	mariadbVersion = "3.3.3",
 	host = "Win10",
 	toolchain = "MinGW1210-64",
-	-- libPath = { "bin\\libssl-1_1.dll", "bin\\libcrypto-1_1.dll" },
-	-- staticlibPath = { "lib\\libssl.a", "lib\\libcrypto.a" },
+	libPath = { "lib\\mariadb\\libmariadb.dll" },
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -380,8 +376,7 @@ conf.m3_3wx6u5 = {
 	mariadbVersion = "3.3.3",
 	host = "Win10",
 	toolchain = "MinGWLLVM-ucrt15-64",
-	-- libPath = { "bin\\libssl-1_1.dll", "bin\\libcrypto-1_1.dll" },
-	-- staticlibPath = { "lib\\libssl.a", "lib\\libcrypto.a" },
+	libPath = { "lib\\mariadb\\libmariadb.dll" },
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -406,8 +401,7 @@ conf.m3_3wx6s5 = {
 	mariadbVersion = "3.3.3",
 	host = "Win10",
 	toolchain = "MinGWLLVM-msvcrt15-64",
-	-- libPath = { "bin\\libssl-1_1.dll", "bin\\libcrypto-1_1.dll" },
-	-- staticlibPath = { "lib\\libssl.a", "lib\\libcrypto.a" },
+	libPath = { "lib\\mariadb\\libmariadb.dll" },
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -433,8 +427,7 @@ conf.m3_3mal = {
 	name = "mariadb_connector_c3.3.3-macOS-ALL-AppleClang&TARGETTOOLVERSION&",
 	mariadbVersion = "3.3.3",
 	host = "macOSM1",
-	-- libPath = { "lib/libssl.3.dylib", "lib/libcrypto.3.dylib" },
-	-- staticlibPath = { "lib/libssl.a", "lib/libcrypto.a" },
+	libPath = { "lib/mariadb/libmariadb.3.dylib" },
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&

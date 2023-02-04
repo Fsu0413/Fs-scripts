@@ -274,7 +274,7 @@ conf.Qt.generateConfTable = function(self, host, job)
 	-- dirty hack end
 	ret.BUILDDIR = confHost.buildRootPath .. "build-Qt" .. job
 	ret.download = {}
-	
+
 	-- DO REMEMBER TO USE tostring IF A VERSION STRING IS NEEDED!!
 	local hostToolchainVersion, targetToolchainVersion
 	local hostToolchainVersionQueryFuncName = "gcc"
@@ -312,7 +312,7 @@ conf.Qt.generateConfTable = function(self, host, job)
 	ret.date = string.format("%04d%02d%02d", BuildTime.year, BuildTime.month, BuildTime.day)
 
 	local repl = {}
-	
+
 	if confDetail.crossCompile then
 		-- Qt 6: We need host tool to cross build Qt
 		if confDetail.hostToolsConf then
@@ -354,7 +354,7 @@ conf.Qt.generateConfTable = function(self, host, job)
 				else
 					ret.emSource = confHost.emscriptenPath[emsdkVer] .. "emsdk_env.bat"
 				end
-				
+
 				targetToolchainVersion = compilerVer.emcc(confHost.makefileTemplate == "win", confHost.emscriptenPath[emsdkVer])
 			else
 				error("WebAssembly - confDetail.toolchainT is not matched")
@@ -377,6 +377,11 @@ conf.Qt.generateConfTable = function(self, host, job)
 			local opensslLibs = string.gsub(confDetail.OPENSSL_LIBS, "%&OPENSSLDIR%&", repl.OPENSSLDIR)
 			ret.envSet.OPENSSL_LIBS = opensslLibs
 		end
+	end
+
+	if confDetail.mysqlConf then
+		table.insert(ret.download, conf.MariaDB:binaryFileDownloadPath(confHost, confDetail.mysqlConf, targetToolchainVersion))
+		repl.MYSQLPREFIX = ret.WORKSPACE .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. replaceVersion(conf.MariaDB.configurations[confDetail.mysqlConf].name, nil, targetToolchainVersion)
 	end
 
 	local installFolderName = replaceVersion(confDetail.name, hostToolchainVersion, targetToolchainVersion)
@@ -499,7 +504,7 @@ conf.Qt.generateConfTable = function(self, host, job)
 		local opensslLibPath = conf.OpenSSL.configurations[confDetail.opensslConf][(staticBuild and "static" or "") .. "libPath"]
 		if opensslLibPath then
 			local targetDir = "lib"
-			-- todo: deal with the condition where the openssl libs are symbolic link to the real file (only for unix)
+			-- todo: deal with the condition where the OpenSSL libs are symbolic link to the real file (only for unix)
 			if string.sub(opensslLibPath[1], -4) == ".dll" then
 				targetDir = "bin"
 			end
@@ -515,6 +520,22 @@ conf.Qt.generateConfTable = function(self, host, job)
 					-- todo: is this needed?
 					-- ret.envSet.DYLD_LIBRARY_PATH = repl.OPENSSLDIR .. confHost.pathSep .. "lib"
 				end
+			end
+		end
+	end
+
+	-- MySQL libraries / MariaDB libraries
+	-- Currently we are using MariaDB for MySQL connector. It is the REAL MySQL per se!!
+	if confDetail.mysqlConf then
+		local mysqlLibPath = conf.MariaDB.configurations[confDetail.mysqlConf].libPath
+		if mysqlLibPath then
+			local targetDir = "lib"
+			-- todo: deal with the condition where the MariaDB libs are symbolic link to the real file (only for unix)
+			if string.sub(mysqlLibPath[1], -4) == ".dll" then
+				targetDir = "bin"
+			end
+			for _, path in ipairs(mysqlLibPath) do
+				ret.EXTRAINSTALL = ret.EXTRAINSTALL .. copyCmd .. repl.MYSQLPREFIX .. confHost.pathSep .. path .. " " .. installRoot .. confHost.pathSep .. targetDir .. "\n"
 			end
 		end
 	end
@@ -698,7 +719,7 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 				return ""
 			end
 		end), "%s+", " ")
-		
+
 		if confDetail.crossCompile then
 			ret.INSTALLCOMMANDLINE = ret.INSTALLCOMMANDLINE .. " DESTDIR=" .. installRoot .. " "
 		end
@@ -785,7 +806,7 @@ conf.MariaDB.generateConfTable = function(self, host, job)
 			table.insert(ret.path, p)
 		end
 	end
-		
+
 	ret.buildContent = "MariaDB"
 	ret.BUILDDIR = ret.WORKSPACE .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. "build-MariaDB" .. job
 	ret.INSTALLCOMMANDLINE = " "
@@ -794,7 +815,7 @@ conf.MariaDB.generateConfTable = function(self, host, job)
 	ret.envSet = {}
 
 	local repl = {}
-	
+
 	if confDetail.crossCompile then
 		if string.sub(confDetail.toolchainT, 1, 7) == "Android" then -- Android
 			error("todo....")
@@ -839,12 +860,12 @@ conf.MariaDB.generateConfTable = function(self, host, job)
 	ret.CONFIGURECOMMANDLINE = ret.CONFIGURECOMMANDLINE .. ".." .. confHost.pathSep .. confDetail.sourcePackageBaseName
 
 	ret.MAKE = "cmake --build . --parallel -- "
-	
+
 	ret.INSTALLCOMMANDLINE = "cmake --install . --strip"
 
 	ret.INSTALLROOT = installRoot
 	ret.INSTALLPATH = installFolderName
-	
+
 	return ret
 end
 

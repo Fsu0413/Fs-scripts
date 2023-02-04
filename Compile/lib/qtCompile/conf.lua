@@ -1436,6 +1436,7 @@ conf.Q5wx3v5 = {
 	qtVersion = "5.15.8",
 	host = "Win8",
 	toolchain = "MSVC2015-32",
+	mysqlConf = "m3_1wx3v5",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -1461,6 +1462,8 @@ conf.Q5wx3v5 = {
 		-schannel
 		-sql-sqlite
 		-sql-odbc
+		-sql-mysql
+		"MYSQL_PREFIX=&MYSQLPREFIX&"
 		-make-tool
 		jom
 	]],
@@ -1471,6 +1474,7 @@ conf.Q5wx6v5 = {
 	qtVersion = "5.15.8",
 	host = "Win8",
 	toolchain = "MSVC2015-64",
+	mysqlConf = "m3_1wx6v5",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -1496,6 +1500,8 @@ conf.Q5wx6v5 = {
 		-schannel
 		-sql-sqlite
 		-sql-odbc
+		-sql-mysql
+		"MYSQL_PREFIX=&MYSQLPREFIX&"
 		-make-tool
 		jom
 	]],
@@ -1506,6 +1512,7 @@ conf.Q5wx3v7 = {
 	qtVersion = "5.15.8-4",
 	host = "Win10",
 	toolchain = "MSVC2017-32",
+	mysqlConf = "m3_1wx3v7",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -1531,6 +1538,8 @@ conf.Q5wx3v7 = {
 		-schannel
 		-sql-sqlite
 		-sql-odbc
+		-sql-mysql
+		"MYSQL_PREFIX=&MYSQLPREFIX&"
 		-make-tool
 		jom
 		-skip
@@ -1543,6 +1552,7 @@ conf.Q5wx6v7 = {
 	qtVersion = "5.15.8-4",
 	host = "Win10",
 	toolchain = "MSVC2017-64",
+	mysqlConf = "m3_1wx6v7",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -1568,6 +1578,8 @@ conf.Q5wx6v7 = {
 		-schannel
 		-sql-sqlite
 		-sql-odbc
+		-sql-mysql
+		"MYSQL_PREFIX=&MYSQLPREFIX&"
 		-make-tool
 		jom
 		-skip
@@ -1580,6 +1592,7 @@ conf.Q5wx3v9 = {
 	qtVersion = "5.15.8-4",
 	host = "Win10",
 	toolchain = "MSVC2019-32",
+	mysqlConf = "m3_1wx3v9",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -1605,6 +1618,8 @@ conf.Q5wx3v9 = {
 		-schannel
 		-sql-sqlite
 		-sql-odbc
+		-sql-mysql
+		"MYSQL_PREFIX=&MYSQLPREFIX&"
 		-make-tool
 		jom
 		-webengine-proprietary-codecs
@@ -1658,6 +1673,7 @@ conf.Q5wx6v9 = {
 	qtVersion = "5.15.8-4",
 	host = "Win10",
 	toolchain = "MSVC2019-64",
+	mysqlConf = "m3_1wx6v9",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -1683,6 +1699,8 @@ conf.Q5wx6v9 = {
 		-schannel
 		-sql-sqlite
 		-sql-odbc
+		-sql-mysql
+		"MYSQL_PREFIX=&MYSQLPREFIX&"
 		-make-tool
 		jom
 		-webengine-proprietary-codecs
@@ -1736,6 +1754,7 @@ conf.Q5wx6v2 = {
 	qtVersion = "5.15.8-4",
 	host = "Win10",
 	toolchain = "MSVC2022-64",
+	mysqlConf = "m3_1wx6v2",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -1761,6 +1780,8 @@ conf.Q5wx6v2 = {
 		-schannel
 		-sql-sqlite
 		-sql-odbc
+		-sql-mysql
+		"MYSQL_PREFIX=&MYSQLPREFIX&"
 		-make-tool
 		jom
 		-skip
@@ -1773,6 +1794,7 @@ conf.Q5wx3m8 = {
 	qtVersion = "5.15.8",
 	host = "Win10",
 	toolchain = "MinGW810-32",
+	-- mysqlConf = "m3_1wx3g8",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -1848,6 +1870,7 @@ conf.Q5wx6m8 = {
 	qtVersion = "5.15.8",
 	host = "Win10",
 	toolchain = "MinGW810-64",
+	mysqlConf = "m3_1wx6g8",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -1873,6 +1896,8 @@ conf.Q5wx6m8 = {
 		-schannel
 		-sql-sqlite
 		-sql-odbc
+		-sql-mysql
+		"MYSQL_PREFIX=&MYSQLPREFIX&"
 		-make-tool
 		"mingw32-make -j%PARALLELNUM%"
 	]],
@@ -1923,6 +1948,7 @@ conf.Q5wx6g1 = {
 	qtVersion = "5.15.8",
 	host = "Win10",
 	toolchain = "MinGW1120-64",
+	-- mysqlConf = "m3_1wx6g1",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -1958,6 +1984,7 @@ conf.Q5wx6g2 = {
 	qtVersion = "5.15.8",
 	host = "Win10",
 	toolchain = "MinGW1210-64",
+	-- mysqlConf = "m3_1wx6g2",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -1992,6 +2019,7 @@ conf.Q5mx6 = {
 	name = "Qt5.15.8-macOS-x86_64-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "5.15.8-4",
 	host = "macOS1015",
+	mysqlConf = "m3_1mal",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -2016,6 +2044,8 @@ conf.Q5mx6 = {
 		-no-openssl
 		-securetransport
 		-sql-sqlite
+		-sql-mysql
+		"MYSQL_PREFIX=&MYSQLPREFIX&"
 		-make-tool
 		"make -j$PARALLELNUM"
 		-skip
@@ -2028,6 +2058,7 @@ conf.Q5mx6nf = {
 	qtVersion = "5.15.8-4",
 	host = "macOS1015",
 	variant = {"-noFramework"},
+	mysqlConf = "m3_1mal",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -2052,6 +2083,8 @@ conf.Q5mx6nf = {
 		-no-openssl
 		-securetransport
 		-sql-sqlite
+		-sql-mysql
+		"MYSQL_PREFIX=&MYSQLPREFIX&"
 		-make-tool
 		"make -j$PARALLELNUM"
 		-rpath
@@ -2489,6 +2522,7 @@ conf.q6_2wx6v9 = {
 	host = "Win10",
 	toolchain = "MSVC2019-64",
 	opensslConf = "o3wx6v9",
+	mysqlConf = "m3_3wx6v9",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -2512,6 +2546,9 @@ conf.q6_2wx6v9 = {
 		-DFEATURE_schannel=ON
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
+		-DFEATURE_sql_mysql=ON
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include"
+		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\libmariadb.lib"
 		-DFEATURE_system_sqlite=OFF
 		-DBUILD_qtwebengine=OFF
 		-DBUILD_qtopcua=OFF
@@ -2657,6 +2694,7 @@ conf.q6_2wx6v2 = {
 	host = "Win10",
 	toolchain = "MSVC2022-64",
 	opensslConf = "o3wx6v2",
+	mysqlConf = "m3_3wx6v2",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -2680,6 +2718,9 @@ conf.q6_2wx6v2 = {
 		-DFEATURE_schannel=ON
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
+		-DFEATURE_sql_mysql=ON
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include"
+		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\libmariadb.lib"
 		-DFEATURE_system_sqlite=OFF
 		-DBUILD_qtwebengine=OFF
 		-DBUILD_qtopcua=OFF
@@ -2692,6 +2733,7 @@ conf.q6_2wx6m1 = {
 	host = "Win10",
 	toolchain = "MinGW1120-64",
 	opensslConf = "o3wx6m1",
+	mysqlConf = "m3_3wx6g1",
 	useCMake = "20",
 	configureParameter = [[
 		-G"Ninja"
@@ -2715,6 +2757,9 @@ conf.q6_2wx6m1 = {
 		-DFEATURE_schannel=ON
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
+		-DFEATURE_sql_mysql=ON
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include"
+		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\liblibmariadb.dll.a"
 		-DFEATURE_system_sqlite=OFF
 		-DBUILD_qtopcua=OFF
 	]],
@@ -2825,6 +2870,7 @@ conf.q6_2wx6m2 = {
 	host = "Win10",
 	toolchain = "MinGW1210-64",
 	opensslConf = "o3wx6m2",
+	mysqlConf = "m3_3wx6g2",
 	useCMake = "20",
 	configureParameter = [[
 		-G"Ninja"
@@ -2848,6 +2894,9 @@ conf.q6_2wx6m2 = {
 		-DFEATURE_schannel=ON
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
+		-DFEATURE_sql_mysql=ON
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include"
+		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\liblibmariadb.dll.a"
 		-DFEATURE_system_sqlite=OFF
 		-DBUILD_qtopcua=OFF
 	]],
@@ -2898,6 +2947,7 @@ conf.q6_2wx6u5 = {
 	host = "Win10",
 	toolchain = "MinGWLLVM-ucrt15-64",
 	opensslConf = "o3wx6u5",
+	mysqlConf = "m3_3wx6u5",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -2921,6 +2971,9 @@ conf.q6_2wx6u5 = {
 		-DFEATURE_schannel=ON
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
+		-DFEATURE_sql_mysql=ON
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include"
+		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\liblibmariadb.dll.a"
 		-DFEATURE_system_sqlite=OFF
 		-DBUILD_qtwebengine=OFF
 		-DBUILD_qtopcua=OFF
@@ -2936,6 +2989,7 @@ conf.q6_2wx6s5 = {
 	host = "Win10",
 	toolchain = "MinGWLLVM-msvcrt15-64",
 	opensslConf = "o3wx6s5",
+	mysqlConf = "m3_3wx6s5",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -2959,6 +3013,9 @@ conf.q6_2wx6s5 = {
 		-DFEATURE_schannel=ON
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
+		-DFEATURE_sql_mysql=ON
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include"
+		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\liblibmariadb.dll.a"
 		-DFEATURE_system_sqlite=OFF
 		-DBUILD_qtwebengine=OFF
 		-DBUILD_qtopcua=OFF
@@ -3026,6 +3083,7 @@ conf.q6_2mal = {
 	qtVersion = "6.2.4-5",
 	host = "macOSM1",
 	opensslConf = "o3mal",
+	mysqlConf = "m3_3mal",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -3050,6 +3108,9 @@ conf.q6_2mal = {
 		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
 		-DFEATURE_securetransport=ON
 		-DFEATURE_sql_sqlite=ON
+		-DFEATURE_sql_mysql=ON
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&/include"
+		-DMySQL_LIBRARY="&MYSQLPREFIX&/lib/mariadb/libmariadb.3.dylib"
 		-DFEATURE_system_sqlite=OFF
 		-DBUILD_qtwebengine=OFF
 		-DCMAKE_SKIP_BUILD_RPATH=OFF
@@ -3065,6 +3126,7 @@ conf.q6_2malnf = {
 	host = "macOSM1",
 	variant = {"-noFramework"},
 	opensslConf = "o3mal",
+	mysqlConf = "m3_3mal",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -3089,6 +3151,9 @@ conf.q6_2malnf = {
 		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
 		-DFEATURE_securetransport=ON
 		-DFEATURE_sql_sqlite=ON
+		-DFEATURE_sql_mysql=ON
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&/include"
+		-DMySQL_LIBRARY="&MYSQLPREFIX&/lib/mariadb/libmariadb.3.dylib"
 		-DFEATURE_system_sqlite=OFF
 		-DBUILD_qtwebengine=OFF
 		-DCMAKE_SKIP_BUILD_RPATH=OFF
@@ -3749,6 +3814,7 @@ conf.q6_4wx6v9 = {
 	host = "Win10",
 	toolchain = "MSVC2019-64",
 	opensslConf = "o3wx6v9",
+	mysqlConf = "m3_3wx6v9",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -3772,6 +3838,9 @@ conf.q6_4wx6v9 = {
 		-DFEATURE_schannel=ON
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
+		-DFEATURE_sql_mysql=ON
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include"
+		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\libmariadb.lib"
 		-DFEATURE_system_sqlite=OFF
 		-DFEATURE_webengine_proprietary_codecs=ON
 		-DFEATURE_qtpdf_build=ON
@@ -3785,6 +3854,7 @@ conf.q6_4wx6v2 = {
 	host = "Win10",
 	toolchain = "MSVC2022-64",
 	opensslConf = "o3wx6v2",
+	mysqlConf = "m3_3wx6v2",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -3808,6 +3878,9 @@ conf.q6_4wx6v2 = {
 		-DFEATURE_schannel=ON
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
+		-DFEATURE_sql_mysql=ON
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include"
+		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\libmariadb.lib"
 		-DFEATURE_system_sqlite=OFF
 		-DFEATURE_webengine_proprietary_codecs=ON
 		-DFEATURE_qtpdf_build=ON
@@ -3916,6 +3989,7 @@ conf.q6_4wx6g2 = {
 	host = "Win10",
 	toolchain = "MinGW1210-64",
 	opensslConf = "o3wx6m2",
+	mysqlConf = "m3_3wx6g2",
 	useCMake = "20",
 	configureParameter = [[
 		-G"Ninja"
@@ -3939,6 +4013,9 @@ conf.q6_4wx6g2 = {
 		-DFEATURE_schannel=ON
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
+		-DFEATURE_sql_mysql=ON
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include"
+		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\liblibmariadb.dll.a"
 		-DFEATURE_system_sqlite=OFF
 		-DBUILD_qtopcua=OFF
 	]],
@@ -4010,6 +4087,7 @@ conf.q6_4wx6u5 = {
 	host = "Win10",
 	toolchain = "MinGWLLVM-ucrt15-64",
 	opensslConf = "o3wx6u5",
+	mysqlConf = "m3_3wx6u5",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -4033,6 +4111,9 @@ conf.q6_4wx6u5 = {
 		-DFEATURE_schannel=ON
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
+		-DFEATURE_sql_mysql=ON
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include"
+		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\liblibmariadb.dll.a"
 		-DFEATURE_system_sqlite=OFF
 		-DBUILD_qtwebengine=OFF
 		-DBUILD_qtopcua=OFF
@@ -4048,6 +4129,7 @@ conf.q6_4wx6s5 = {
 	host = "Win10",
 	toolchain = "MinGWLLVM-msvcrt15-64",
 	opensslConf = "o3wx6s5",
+	mysqlConf = "m3_3wx6s5",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -4071,6 +4153,9 @@ conf.q6_4wx6s5 = {
 		-DFEATURE_schannel=ON
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
+		-DFEATURE_sql_mysql=ON
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include"
+		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\liblibmariadb.dll.a"
 		-DFEATURE_system_sqlite=OFF
 		-DBUILD_qtwebengine=OFF
 		-DBUILD_qtopcua=OFF
@@ -4138,6 +4223,7 @@ conf.q6_4mal = {
 	qtVersion = "6.4.2",
 	host = "macOSM1",
 	opensslConf = "o3mal",
+	mysqlConf = "m3_3mal",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -4162,6 +4248,9 @@ conf.q6_4mal = {
 		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
 		-DFEATURE_securetransport=ON
 		-DFEATURE_sql_sqlite=ON
+		-DFEATURE_sql_mysql=ON
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&/include"
+		-DMySQL_LIBRARY="&MYSQLPREFIX&/lib/mariadb/libmariadb.3.dylib"
 		-DFEATURE_system_sqlite=OFF
 		-DFEATURE_webengine_proprietary_codecs=ON
 		-DFEATURE_qtpdf_build=ON
@@ -4178,6 +4267,7 @@ conf.q6_4malnf = {
 	host = "macOSM1",
 	variant = {"-noFramework"},
 	opensslConf = "o3mal",
+	mysqlConf = "m3_3mal",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -4202,6 +4292,9 @@ conf.q6_4malnf = {
 		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
 		-DFEATURE_securetransport=ON
 		-DFEATURE_sql_sqlite=ON
+		-DFEATURE_sql_mysql=ON
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&/include"
+		-DMySQL_LIBRARY="&MYSQLPREFIX&/lib/mariadb/libmariadb.3.dylib"
 		-DFEATURE_system_sqlite=OFF
 		-DFEATURE_webengine_proprietary_codecs=ON
 		-DFEATURE_qtpdf_build=ON
@@ -4599,6 +4692,7 @@ conf.q6_5wx6v2 = {
 	host = "Win10",
 	toolchain = "MSVC2022-64",
 	opensslConf = "o3wx6v2",
+	mysqlConf = "m3_3wx6v2",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -4622,6 +4716,9 @@ conf.q6_5wx6v2 = {
 		-DFEATURE_schannel=ON
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
+		-DFEATURE_sql_mysql=ON
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include"
+		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\libmariadb.lib"
 		-DFEATURE_system_sqlite=OFF
 		-DFEATURE_webengine_proprietary_codecs=ON
 		-DFEATURE_qtpdf_build=ON
@@ -4774,6 +4871,7 @@ conf.q6_5wx6g2 = {
 	host = "Win10",
 	toolchain = "MinGW1210-64",
 	opensslConf = "o3wx6m2",
+	mysqlConf = "m3_3wx6g2",
 	useCMake = "20",
 	configureParameter = [[
 		-G"Ninja"
@@ -4797,6 +4895,9 @@ conf.q6_5wx6g2 = {
 		-DFEATURE_schannel=ON
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
+		-DFEATURE_sql_mysql=ON
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include"
+		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\liblibmariadb.dll.a"
 		-DFEATURE_system_sqlite=OFF
 		-DBUILD_qtgrpc=OFF
 	]],
@@ -4913,6 +5014,7 @@ conf.q6_5wx6u5 = {
 	host = "Win10",
 	toolchain = "MinGWLLVM-ucrt15-64",
 	opensslConf = "o3wx6u5",
+	mysqlConf = "m3_3wx6u5",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -4936,6 +5038,9 @@ conf.q6_5wx6u5 = {
 		-DFEATURE_schannel=ON
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
+		-DFEATURE_sql_mysql=ON
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include"
+		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\liblibmariadb.dll.a"
 		-DFEATURE_system_sqlite=OFF
 		-DBUILD_qtgrpc=OFF
 		-DBUILD_qtwebengine=OFF
@@ -4951,6 +5056,7 @@ conf.q6_5wx6s5 = {
 	host = "Win10",
 	toolchain = "MinGWLLVM-msvcrt15-64",
 	opensslConf = "o3wx6s5",
+	mysqlConf = "m3_3wx6s5",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -4974,6 +5080,9 @@ conf.q6_5wx6s5 = {
 		-DFEATURE_schannel=ON
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
+		-DFEATURE_sql_mysql=ON
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include"
+		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\liblibmariadb.dll.a"
 		-DFEATURE_system_sqlite=OFF
 		-DBUILD_qtgrpc=OFF
 		-DBUILD_qtwebengine=OFF
@@ -5046,6 +5155,7 @@ conf.q6_5mal = {
 	qtVersion = "6.5.0-beta2",
 	host = "macOSM1",
 	opensslConf = "o3mal",
+	mysqlConf = "m3_3mal",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -5070,6 +5180,9 @@ conf.q6_5mal = {
 		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
 		-DFEATURE_securetransport=ON
 		-DFEATURE_sql_sqlite=ON
+		-DFEATURE_sql_mysql=ON
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&/include"
+		-DMySQL_LIBRARY="&MYSQLPREFIX&/lib/mariadb/libmariadb.3.dylib"
 		-DFEATURE_system_sqlite=OFF
 		-DFEATURE_webengine_proprietary_codecs=ON
 		-DFEATURE_qtpdf_build=ON
@@ -5086,6 +5199,7 @@ conf.q6_5malnf = {
 	host = "macOSM1",
 	variant = {"-noFramework"},
 	opensslConf = "o3mal",
+	mysqlConf = "m3_3mal",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -5110,6 +5224,9 @@ conf.q6_5malnf = {
 		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
 		-DFEATURE_securetransport=ON
 		-DFEATURE_sql_sqlite=ON
+		-DFEATURE_sql_mysql=ON
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&/include"
+		-DMySQL_LIBRARY="&MYSQLPREFIX&/lib/mariadb/libmariadb.3.dylib"
 		-DFEATURE_system_sqlite=OFF
 		-DFEATURE_webengine_proprietary_codecs=ON
 		-DFEATURE_qtpdf_build=ON

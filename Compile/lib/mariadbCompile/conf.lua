@@ -492,7 +492,7 @@ for name, value in pairs(conf) do
 	value.binaryPackageUrlunix = "http://172.24.13.6:8080/job/MariaDB/job/" .. name .. "/lastSuccessfulBuild/artifact/buildDir/" .. value.name .. ".tar.xz"
 	value.sourcePackageUrlunix = "http://172.24.13.6/webdav/sources/mariadb-connector-c-" .. value.mariadbVersion .. "-src.tar.gz"
 	value.sourcePackageBaseName = "mariadb-connector-c-" .. value.mariadbVersion .. "-src"
-	value.binaryPackageUrlwin = "http://172.24.13.6:8080/job/OpenSSL/job/" .. name .. "/lastSuccessfulBuild/artifact/buildDir/" .. value.name .. ".7z"
+	value.binaryPackageUrlwin = "http://172.24.13.6:8080/job/MariaDB/job/" .. name .. "/lastSuccessfulBuild/artifact/buildDir/" .. value.name .. ".7z"
 	value.sourcePackageUrlwin = "http://172.24.13.6/webdav/sources/mariadb-connector-c-" .. value.mariadbVersion .. "-src.zip"
 
 	-- add dump function

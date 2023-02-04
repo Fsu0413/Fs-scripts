@@ -1463,7 +1463,8 @@ conf.Q5wx3v5 = {
 		-sql-sqlite
 		-sql-odbc
 		-sql-mysql
-		"MYSQL_PREFIX=&MYSQLPREFIX&"
+		"MYSQL_INCDIR=&MYSQLPREFIX&\include\mariadb"
+		"MYSQL_LIBDIR=&MYSQLPREFIX&\lib\mariadb"
 		-make-tool
 		jom
 	]],
@@ -1501,7 +1502,8 @@ conf.Q5wx6v5 = {
 		-sql-sqlite
 		-sql-odbc
 		-sql-mysql
-		"MYSQL_PREFIX=&MYSQLPREFIX&"
+		"MYSQL_INCDIR=&MYSQLPREFIX&\include\mariadb"
+		"MYSQL_LIBDIR=&MYSQLPREFIX&\lib\mariadb"
 		-make-tool
 		jom
 	]],
@@ -1539,7 +1541,8 @@ conf.Q5wx3v7 = {
 		-sql-sqlite
 		-sql-odbc
 		-sql-mysql
-		"MYSQL_PREFIX=&MYSQLPREFIX&"
+		"MYSQL_INCDIR=&MYSQLPREFIX&\include\mariadb"
+		"MYSQL_LIBDIR=&MYSQLPREFIX&\lib\mariadb"
 		-make-tool
 		jom
 		-skip
@@ -1579,7 +1582,8 @@ conf.Q5wx6v7 = {
 		-sql-sqlite
 		-sql-odbc
 		-sql-mysql
-		"MYSQL_PREFIX=&MYSQLPREFIX&"
+		"MYSQL_INCDIR=&MYSQLPREFIX&\include\mariadb"
+		"MYSQL_LIBDIR=&MYSQLPREFIX&\lib\mariadb"
 		-make-tool
 		jom
 		-skip
@@ -1619,7 +1623,8 @@ conf.Q5wx3v9 = {
 		-sql-sqlite
 		-sql-odbc
 		-sql-mysql
-		"MYSQL_PREFIX=&MYSQLPREFIX&"
+		"MYSQL_INCDIR=&MYSQLPREFIX&\include\mariadb"
+		"MYSQL_LIBDIR=&MYSQLPREFIX&\lib\mariadb"
 		-make-tool
 		jom
 		-webengine-proprietary-codecs
@@ -1700,7 +1705,8 @@ conf.Q5wx6v9 = {
 		-sql-sqlite
 		-sql-odbc
 		-sql-mysql
-		"MYSQL_PREFIX=&MYSQLPREFIX&"
+		"MYSQL_INCDIR=&MYSQLPREFIX&\include\mariadb"
+		"MYSQL_LIBDIR=&MYSQLPREFIX&\lib\mariadb"
 		-make-tool
 		jom
 		-webengine-proprietary-codecs
@@ -1781,7 +1787,8 @@ conf.Q5wx6v2 = {
 		-sql-sqlite
 		-sql-odbc
 		-sql-mysql
-		"MYSQL_PREFIX=&MYSQLPREFIX&"
+		"MYSQL_INCDIR=&MYSQLPREFIX&\include\mariadb"
+		"MYSQL_LIBDIR=&MYSQLPREFIX&\lib\mariadb"
 		-make-tool
 		jom
 		-skip
@@ -1897,7 +1904,8 @@ conf.Q5wx6m8 = {
 		-sql-sqlite
 		-sql-odbc
 		-sql-mysql
-		"MYSQL_PREFIX=&MYSQLPREFIX&"
+		"MYSQL_INCDIR=&MYSQLPREFIX&\include\mariadb"
+		"MYSQL_LIBDIR=&MYSQLPREFIX&\lib\mariadb"
 		-make-tool
 		"mingw32-make -j%PARALLELNUM%"
 	]],
@@ -2045,7 +2053,8 @@ conf.Q5mx6 = {
 		-securetransport
 		-sql-sqlite
 		-sql-mysql
-		"MYSQL_PREFIX=&MYSQLPREFIX&"
+		"MYSQL_INCDIR=&MYSQLPREFIX&/include/mariadb"
+		"MYSQL_LIBDIR=&MYSQLPREFIX&/lib/mariadb"
 		-make-tool
 		"make -j$PARALLELNUM"
 		-skip
@@ -2084,7 +2093,8 @@ conf.Q5mx6nf = {
 		-securetransport
 		-sql-sqlite
 		-sql-mysql
-		"MYSQL_PREFIX=&MYSQLPREFIX&"
+		"MYSQL_INCDIR=&MYSQLPREFIX&/include/mariadb"
+		"MYSQL_LIBDIR=&MYSQLPREFIX&/lib/mariadb"
 		-make-tool
 		"make -j$PARALLELNUM"
 		-rpath
@@ -2547,7 +2557,7 @@ conf.q6_2wx6v9 = {
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
 		-DFEATURE_sql_mysql=ON
-		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include"
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include\mariadb"
 		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\libmariadb.lib"
 		-DFEATURE_system_sqlite=OFF
 		-DBUILD_qtwebengine=OFF
@@ -2719,7 +2729,7 @@ conf.q6_2wx6v2 = {
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
 		-DFEATURE_sql_mysql=ON
-		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include"
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include\mariadb"
 		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\libmariadb.lib"
 		-DFEATURE_system_sqlite=OFF
 		-DBUILD_qtwebengine=OFF
@@ -2758,7 +2768,7 @@ conf.q6_2wx6m1 = {
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
 		-DFEATURE_sql_mysql=ON
-		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include"
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include\mariadb"
 		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\liblibmariadb.dll.a"
 		-DFEATURE_system_sqlite=OFF
 		-DBUILD_qtopcua=OFF
@@ -2895,7 +2905,7 @@ conf.q6_2wx6m2 = {
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
 		-DFEATURE_sql_mysql=ON
-		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include"
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include\mariadb"
 		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\liblibmariadb.dll.a"
 		-DFEATURE_system_sqlite=OFF
 		-DBUILD_qtopcua=OFF
@@ -2972,7 +2982,7 @@ conf.q6_2wx6u5 = {
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
 		-DFEATURE_sql_mysql=ON
-		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include"
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include\mariadb"
 		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\liblibmariadb.dll.a"
 		-DFEATURE_system_sqlite=OFF
 		-DBUILD_qtwebengine=OFF
@@ -3014,7 +3024,7 @@ conf.q6_2wx6s5 = {
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
 		-DFEATURE_sql_mysql=ON
-		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include"
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include\mariadb"
 		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\liblibmariadb.dll.a"
 		-DFEATURE_system_sqlite=OFF
 		-DBUILD_qtwebengine=OFF
@@ -3109,7 +3119,7 @@ conf.q6_2mal = {
 		-DFEATURE_securetransport=ON
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_mysql=ON
-		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&/include"
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&/include/mariadb"
 		-DMySQL_LIBRARY="&MYSQLPREFIX&/lib/mariadb/libmariadb.3.dylib"
 		-DFEATURE_system_sqlite=OFF
 		-DBUILD_qtwebengine=OFF
@@ -3152,7 +3162,7 @@ conf.q6_2malnf = {
 		-DFEATURE_securetransport=ON
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_mysql=ON
-		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&/include"
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&/include/mriadb"
 		-DMySQL_LIBRARY="&MYSQLPREFIX&/lib/mariadb/libmariadb.3.dylib"
 		-DFEATURE_system_sqlite=OFF
 		-DBUILD_qtwebengine=OFF
@@ -3839,7 +3849,7 @@ conf.q6_4wx6v9 = {
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
 		-DFEATURE_sql_mysql=ON
-		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include"
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include\mariadb"
 		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\libmariadb.lib"
 		-DFEATURE_system_sqlite=OFF
 		-DFEATURE_webengine_proprietary_codecs=ON
@@ -3879,7 +3889,7 @@ conf.q6_4wx6v2 = {
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
 		-DFEATURE_sql_mysql=ON
-		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include"
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include\mariadb"
 		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\libmariadb.lib"
 		-DFEATURE_system_sqlite=OFF
 		-DFEATURE_webengine_proprietary_codecs=ON
@@ -4014,7 +4024,7 @@ conf.q6_4wx6g2 = {
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
 		-DFEATURE_sql_mysql=ON
-		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include"
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include\mariadb"
 		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\liblibmariadb.dll.a"
 		-DFEATURE_system_sqlite=OFF
 		-DBUILD_qtopcua=OFF
@@ -4112,7 +4122,7 @@ conf.q6_4wx6u5 = {
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
 		-DFEATURE_sql_mysql=ON
-		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include"
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include\mariadb"
 		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\liblibmariadb.dll.a"
 		-DFEATURE_system_sqlite=OFF
 		-DBUILD_qtwebengine=OFF
@@ -4154,7 +4164,7 @@ conf.q6_4wx6s5 = {
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
 		-DFEATURE_sql_mysql=ON
-		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include"
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include\mariadb"
 		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\liblibmariadb.dll.a"
 		-DFEATURE_system_sqlite=OFF
 		-DBUILD_qtwebengine=OFF
@@ -4249,7 +4259,7 @@ conf.q6_4mal = {
 		-DFEATURE_securetransport=ON
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_mysql=ON
-		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&/include"
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&/include/mariadb"
 		-DMySQL_LIBRARY="&MYSQLPREFIX&/lib/mariadb/libmariadb.3.dylib"
 		-DFEATURE_system_sqlite=OFF
 		-DFEATURE_webengine_proprietary_codecs=ON
@@ -4293,7 +4303,7 @@ conf.q6_4malnf = {
 		-DFEATURE_securetransport=ON
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_mysql=ON
-		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&/include"
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&/include/mariadb"
 		-DMySQL_LIBRARY="&MYSQLPREFIX&/lib/mariadb/libmariadb.3.dylib"
 		-DFEATURE_system_sqlite=OFF
 		-DFEATURE_webengine_proprietary_codecs=ON
@@ -4717,7 +4727,7 @@ conf.q6_5wx6v2 = {
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
 		-DFEATURE_sql_mysql=ON
-		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include"
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include\mariadb"
 		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\libmariadb.lib"
 		-DFEATURE_system_sqlite=OFF
 		-DFEATURE_webengine_proprietary_codecs=ON
@@ -4896,7 +4906,7 @@ conf.q6_5wx6g2 = {
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
 		-DFEATURE_sql_mysql=ON
-		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include"
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include\mariadb"
 		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\liblibmariadb.dll.a"
 		-DFEATURE_system_sqlite=OFF
 		-DBUILD_qtgrpc=OFF
@@ -5039,7 +5049,7 @@ conf.q6_5wx6u5 = {
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
 		-DFEATURE_sql_mysql=ON
-		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include"
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include\mariadb"
 		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\liblibmariadb.dll.a"
 		-DFEATURE_system_sqlite=OFF
 		-DBUILD_qtgrpc=OFF
@@ -5081,7 +5091,7 @@ conf.q6_5wx6s5 = {
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
 		-DFEATURE_sql_mysql=ON
-		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include"
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include\mariadb"
 		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\liblibmariadb.dll.a"
 		-DFEATURE_system_sqlite=OFF
 		-DBUILD_qtgrpc=OFF
@@ -5181,7 +5191,7 @@ conf.q6_5mal = {
 		-DFEATURE_securetransport=ON
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_mysql=ON
-		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&/include"
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&/include/mariadb"
 		-DMySQL_LIBRARY="&MYSQLPREFIX&/lib/mariadb/libmariadb.3.dylib"
 		-DFEATURE_system_sqlite=OFF
 		-DFEATURE_webengine_proprietary_codecs=ON
@@ -5225,7 +5235,7 @@ conf.q6_5malnf = {
 		-DFEATURE_securetransport=ON
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_mysql=ON
-		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&/include"
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&/include/mariadb"
 		-DMySQL_LIBRARY="&MYSQLPREFIX&/lib/mariadb/libmariadb.3.dylib"
 		-DFEATURE_system_sqlite=OFF
 		-DFEATURE_webengine_proprietary_codecs=ON

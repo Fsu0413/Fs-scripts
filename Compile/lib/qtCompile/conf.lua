@@ -378,51 +378,6 @@ conf.Q2wx3v7st = {
 	]],
 }
 
-conf.Q2wx3v7sf = {
-	name = "Qt5.12.12-Windows-x86-VS2017-&HOSTTOOLVERSION&-staticFull",
-	qtVersion = "5.12.12",
-	host = "Win10",
-	toolchain = "MSVC2017-32",
-	variant = {"-staticFull"},
-	opensslConf = "o1wx3v7st",
-	configureParameter = [[
-		-prefix
-		&INSTALLROOT&
-		-opensource
-		-static
-		-release
-		-confirm-license
-		-platform
-		win32-msvc
-		-pch
-		-static-runtime
-		-plugin-manifests
-		-nomake
-		examples
-		-nomake
-		tests
-		-no-compile-examples
-		-qt-doubleconversion
-		-qt-zlib
-		-qt-pcre
-		-no-icu
-		-opengl
-		es2
-		-angle
-		-ssl
-		-openssl-linked
-		-I
-		&OPENSSLDIR&\include
-		-L
-		&OPENSSLDIR&\lib
-		"OPENSSL_LIBS=libssl.lib libcrypto.lib advapi32.lib Crypt32.lib user32.lib gdi32.lib wsock32.lib ws2_32.lib"
-		-sql-sqlite
-		-sql-odbc
-		-make-tool
-		jom
-	]],
-}
-
 conf.Q2wx6v7 = {
 	name = "Qt5.12.12-Windows-x86_64-VS2017-&HOSTTOOLVERSION&",
 	qtVersion = "5.12.12",
@@ -460,51 +415,6 @@ conf.Q2wx6v7 = {
 		-make-tool
 		jom
 		-webengine-proprietary-codecs
-	]],
-}
-
-conf.Q2wx6v7sf = {
-	name = "Qt5.12.12-Windows-x86_64-VS2017-&HOSTTOOLVERSION&-staticFull",
-	qtVersion = "5.12.12",
-	host = "Win10",
-	toolchain = "MSVC2017-64",
-	variant = {"-staticFull"},
-	opensslConf = "o1wx6v7st",
-	configureParameter = [[
-		-prefix
-		&INSTALLROOT&
-		-opensource
-		-static
-		-release
-		-confirm-license
-		-platform
-		win32-msvc
-		-pch
-		-static-runtime
-		-plugin-manifests
-		-nomake
-		examples
-		-nomake
-		tests
-		-no-compile-examples
-		-qt-doubleconversion
-		-qt-zlib
-		-qt-pcre
-		-no-icu
-		-opengl
-		es2
-		-angle
-		-ssl
-		-openssl-linked
-		-I
-		&OPENSSLDIR&\include
-		-L
-		&OPENSSLDIR&\lib
-		"OPENSSL_LIBS=libssl.lib libcrypto.lib advapi32.lib Crypt32.lib user32.lib gdi32.lib wsock32.lib ws2_32.lib"
-		-sql-sqlite
-		-sql-odbc
-		-make-tool
-		jom
 	]],
 }
 
@@ -629,51 +539,6 @@ conf.Q2wx3m7 = {
 	]],
 }
 
-conf.Q2wx3m7sf = {
-	name = "Qt5.12.12-Windows-x86-MinGW&HOSTTOOLVERSION&-staticFull",
-	qtVersion = "5.12.12",
-	host = "Win8",
-	toolchain = "MinGW730-32",
-	variant = {"-staticFull"},
-	opensslConf = "o1wx3m7",
-	configureParameter = [[
-		-prefix
-		&INSTALLROOT&
-		-opensource
-		-static
-		-release
-		-confirm-license
-		-platform
-		win32-g++
-		-pch
-		-static-runtime
-		-plugin-manifests
-		-nomake
-		examples
-		-nomake
-		tests
-		-no-compile-examples
-		-qt-doubleconversion
-		-qt-zlib
-		-qt-pcre
-		-no-icu
-		-opengl
-		es2
-		-angle
-		-ssl
-		-openssl-linked
-		-I
-		&OPENSSLDIR&\include
-		-L
-		&OPENSSLDIR&\lib
-		"OPENSSL_LIBS=libssl libcrypto libadvapi32 libcrypt32 libuser32 libgdi32 libwsock32 libws2_32"
-		-sql-sqlite
-		-sql-odbc
-		-make-tool
-		"mingw32-make -j%PARALLELNUM%"
-	]],
-}
-
 conf.Q2wx6m7 = {
 	name = "Qt5.12.12-Windows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "5.12.12",
@@ -706,51 +571,6 @@ conf.Q2wx6m7 = {
 		-I
 		&OPENSSLDIR&\include
 		"OPENSSL_LIBS=&OPENSSLDIR&\lib\libssl.dll.a &OPENSSLDIR&\lib\libcrypto.dll.a"
-		-sql-sqlite
-		-sql-odbc
-		-make-tool
-		"mingw32-make -j%PARALLELNUM%"
-	]],
-}
-
-conf.Q2wx6m7sf = {
-	name = "Qt5.12.12-Windows-x86_64-MinGW&HOSTTOOLVERSION&-staticFull",
-	qtVersion = "5.12.12",
-	host = "Win8",
-	toolchain = "MinGW730-64",
-	variant = {"-staticFull"},
-	opensslConf = "o1wx6m7",
-	configureParameter = [[
-		-prefix
-		&INSTALLROOT&
-		-opensource
-		-static
-		-release
-		-confirm-license
-		-platform
-		win32-g++
-		-pch
-		-static-runtime
-		-plugin-manifests
-		-nomake
-		examples
-		-nomake
-		tests
-		-no-compile-examples
-		-qt-doubleconversion
-		-qt-zlib
-		-qt-pcre
-		-no-icu
-		-opengl
-		es2
-		-angle
-		-ssl
-		-openssl-linked
-		-I
-		&OPENSSLDIR&\include
-		-L
-		&OPENSSLDIR&\lib
-		"OPENSSL_LIBS=libssl libcrypto libadvapi32 libcrypt32 libuser32 libgdi32 libwsock32 libws2_32"
 		-sql-sqlite
 		-sql-odbc
 		-make-tool
@@ -1470,6 +1290,48 @@ conf.Q5wx3v5 = {
 	]],
 }
 
+conf.Q5wx3v5sf = {
+	name = "Qt5.15.8-Windows-x86-VS2015-staticFull",
+	qtVersion = "5.15.8",
+	host = "Win8",
+	toolchain = "MSVC2015-32",
+	variant = {"-staticFull"},
+	configureParameter = [[
+		-prefix
+		&INSTALLROOT&
+		-opensource
+		-static
+		-feature-relocatable
+		-release
+		-confirm-license
+		-platform
+		win32-msvc
+		-pch
+		-static-runtime
+		-plugin-manifests
+		-nomake
+		examples
+		-nomake
+		tests
+		-no-compile-examples
+		-qt-doubleconversion
+		-qt-zlib
+		-qt-pcre
+		-no-icu
+		-opengl
+		es2
+		-angle
+		-ssl
+		-schannel
+		-sql-sqlite
+		-sql-odbc
+		-make-tool
+		jom
+		-skip
+		qtwebengine
+	]],
+}
+
 conf.Q5wx6v5 = {
 	name = "Qt5.15.8-Windows-x86_64-VS2015",
 	qtVersion = "5.15.8",
@@ -1506,6 +1368,48 @@ conf.Q5wx6v5 = {
 		"MYSQL_LIBDIR=&MYSQLPREFIX&\lib\mariadb"
 		-make-tool
 		jom
+	]],
+}
+
+conf.Q5wx6v5sf = {
+	name = "Qt5.15.8-Windows-x86_64-VS2015-staticFull",
+	qtVersion = "5.15.8",
+	host = "Win8",
+	toolchain = "MSVC2015-64",
+	variant = {"-staticFull"},
+	configureParameter = [[
+		-prefix
+		&INSTALLROOT&
+		-opensource
+		-static
+		-feature-relocatable
+		-release
+		-confirm-license
+		-platform
+		win32-msvc
+		-pch
+		-static-runtime
+		-plugin-manifests
+		-nomake
+		examples
+		-nomake
+		tests
+		-no-compile-examples
+		-qt-doubleconversion
+		-qt-zlib
+		-qt-pcre
+		-no-icu
+		-opengl
+		es2
+		-angle
+		-ssl
+		-schannel
+		-sql-sqlite
+		-sql-odbc
+		-make-tool
+		jom
+		-skip
+		qtwebengine
 	]],
 }
 
@@ -1550,6 +1454,48 @@ conf.Q5wx3v7 = {
 	]],
 }
 
+conf.Q5wx3v7sf = {
+	name = "Qt5.15.8-Windows-x86-VS2017-&HOSTTOOLVERSION&-staticFull",
+	qtVersion = "5.15.8",
+	host = "Win10",
+	toolchain = "MSVC2017-32",
+	variant = {"-staticFull"},
+	configureParameter = [[
+		-prefix
+		&INSTALLROOT&
+		-opensource
+		-static
+		-feature-relocatable
+		-release
+		-confirm-license
+		-platform
+		win32-msvc
+		-pch
+		-static-runtime
+		-plugin-manifests
+		-nomake
+		examples
+		-nomake
+		tests
+		-no-compile-examples
+		-qt-doubleconversion
+		-qt-zlib
+		-qt-pcre
+		-no-icu
+		-opengl
+		es2
+		-angle
+		-ssl
+		-schannel
+		-sql-sqlite
+		-sql-odbc
+		-make-tool
+		jom
+		-skip
+		qtwebengine
+	]],
+}
+
 conf.Q5wx6v7 = {
 	name = "Qt5.15.8-Windows-x86_64-VS2017-&HOSTTOOLVERSION&",
 	qtVersion = "5.15.8-4",
@@ -1584,6 +1530,48 @@ conf.Q5wx6v7 = {
 		-sql-mysql
 		"MYSQL_INCDIR=&MYSQLPREFIX&\include\mariadb"
 		"MYSQL_LIBDIR=&MYSQLPREFIX&\lib\mariadb"
+		-make-tool
+		jom
+		-skip
+		qtwebengine
+	]],
+}
+
+conf.Q5wx6v7sf = {
+	name = "Qt5.15.8-Windows-x86_64-VS2017-&HOSTTOOLVERSION&-staticFull",
+	qtVersion = "5.15.8",
+	host = "Win10",
+	toolchain = "MSVC2017-64",
+	variant = {"-staticFull"},
+	configureParameter = [[
+		-prefix
+		&INSTALLROOT&
+		-opensource
+		-static
+		-feature-relocatable
+		-release
+		-confirm-license
+		-platform
+		win32-msvc
+		-pch
+		-static-runtime
+		-plugin-manifests
+		-nomake
+		examples
+		-nomake
+		tests
+		-no-compile-examples
+		-qt-doubleconversion
+		-qt-zlib
+		-qt-pcre
+		-no-icu
+		-opengl
+		es2
+		-angle
+		-ssl
+		-schannel
+		-sql-sqlite
+		-sql-odbc
 		-make-tool
 		jom
 		-skip

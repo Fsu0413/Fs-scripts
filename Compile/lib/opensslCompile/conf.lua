@@ -188,24 +188,6 @@ conf.o1wx6v7 = {
 	]],
 }
 
-conf.o1wx6v7st = {
-	name = "OpenSSL1.1.1s-Windows-x86_64-VS2017-&TARGETTOOLVERSION&-static",
-	opensslVersion = "1.1.1s",
-	host = "Win10",
-	toolchain = "MSVC2017-64",
-	variant = {"-static"},
-	staticlibPath = { "lib\\libssl.lib", "lib\\libcrypto.lib" },
-	configureParameter = [[
-		no-asm
-		no-shared
-		enable-static-engine
-		--prefix=&INSTALLROOT&
-		--openssldir=&INSTALLROOT&\ssl
-		VC-WIN64A
-		-FS
-	]],
-}
-
 --------------------------------------------------------------------
 
 conf.o1wx3v9 = {

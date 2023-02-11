@@ -4,8 +4,8 @@ local conf = {}
 --[[
 abbrs:
 	Qt Versions:
-		Q2 / q5_12: Qt 5.12.12/Discontinued Qt 5 LTS
-		Q5: Qt 5.15.8/Previous Qt 5 LTS w/ latest QtWebEngine and latest QtScript
+		q5_12: Qt 5.12.12/Discontinued Qt 5 LTS
+		q5_15: Qt 5.15.8/Previous Qt 5 LTS w/ latest QtWebEngine and latest QtScript
 		q6_2: Qt 6.2.4/Latest Qt 6 LTS w/ latest QtWebEngine
 		q6_4: Qt 6.4.2
 		q6_5: Qt 6.5.0 (Pre-release)
@@ -33,12 +33,12 @@ abbrs:
 		v7: VS2017
 		v9: VS2019
 		v2: VS2022
-		m7: MinGW-w64, with GCC 7.3.0
-		m8: MinGW-w64, with GCC 8.1.0
-		g1 / (deprecated) m1: MinGW-w64, with GCC 11.2.0
-		g2 / (deprecated) m2: MinGW-w64, with GCC 12.1.0
-		s5 / (deprecated) mv: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 15
-		u5 / (deprecated) mu: LLVM/Clang based MinGW-w64, ucrt, with LLVM 15
+		g7: MinGW-w64, with GCC 7.3.0
+		g8: MinGW-w64, with GCC 8.1.0
+		g1: MinGW-w64, with GCC 11.2.0
+		g2: MinGW-w64, with GCC 12.1.0
+		s5: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 15
+		u5: LLVM/Clang based MinGW-w64, ucrt, with LLVM 15
 		nl: Android NDK r21e/Previous LTS
 		n3: Android NDK r23c/Previous LTS
 		n5: Android NDK r25b/Latest LTS
@@ -54,12 +54,12 @@ abbrs:
 
 -- Qt 5.12.12
 
-conf.Q2wx3v5 = {
+conf.q5_12wx3v5 = {
 	name = "Qt5.12.12-Windows-x86-VS2015",
 	qtVersion = "5.12.12",
 	host = "Win8",
 	toolchain = "MSVC2015-32",
-	opensslConf = "o1wx3v5",
+	opensslConf = "o1_1wx3v5",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -93,13 +93,13 @@ conf.Q2wx3v5 = {
 	]],
 }
 
-conf.Q2wx3v5st = {
+conf.q5_12wx3v5st = {
 	name = "Qt5.12.12-Windows-x86-VS2015-static",
 	qtVersion = "5.12.12",
 	host = "Win8",
 	toolchain = "MSVC2015-32",
 	variant = {"-static"},
-	opensslConf = "o1wx3v5st",
+	opensslConf = "o1_1wx3v5st",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -196,12 +196,12 @@ conf.Q2wx3v5st = {
 	]],
 }
 
-conf.Q2wx6v5 = {
+conf.q5_12wx6v5 = {
 	name = "Qt5.12.12-Windows-x86_64-VS2015",
 	qtVersion = "5.12.12",
 	host = "Win8",
 	toolchain = "MSVC2015-64",
-	opensslConf = "o1wx6v5",
+	opensslConf = "o1_1wx6v5",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -235,12 +235,12 @@ conf.Q2wx6v5 = {
 	]],
 }
 
-conf.Q2wx3v7 = {
+conf.q5_12wx3v7 = {
 	name = "Qt5.12.12-Windows-x86-VS2017-&HOSTTOOLVERSION&",
 	qtVersion = "5.12.12",
 	host = "Win10",
 	toolchain = "MSVC2017-32",
-	opensslConf = "o1wx3v7",
+	opensslConf = "o1_1wx3v7",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -275,13 +275,13 @@ conf.Q2wx3v7 = {
 	]],
 }
 
-conf.Q2wx3v7st = {
+conf.q5_12wx3v7st = {
 	name = "Qt5.12.12-Windows-x86-VS2017-&HOSTTOOLVERSION&-static",
 	qtVersion = "5.12.12",
 	host = "Win10",
 	toolchain = "MSVC2017-32",
 	variant = {"-static"},
-	opensslConf = "o1wx3v7st",
+	opensslConf = "o1_1wx3v7st",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -378,12 +378,12 @@ conf.Q2wx3v7st = {
 	]],
 }
 
-conf.Q2wx6v7 = {
+conf.q5_12wx6v7 = {
 	name = "Qt5.12.12-Windows-x86_64-VS2017-&HOSTTOOLVERSION&",
 	qtVersion = "5.12.12",
 	host = "Win10",
 	toolchain = "MSVC2017-64",
-	opensslConf = "o1wx6v7",
+	opensslConf = "o1_1wx6v7",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -418,12 +418,12 @@ conf.Q2wx6v7 = {
 	]],
 }
 
-conf.Q2wx3v9 = {
+conf.q5_12wx3v9 = {
 	name = "Qt5.12.12-Windows-x86-VS2019-&HOSTTOOLVERSION&",
 	qtVersion = "5.12.12",
 	host = "Win10",
 	toolchain = "MSVC2019-32",
-	opensslConf = "o1wx3v9",
+	opensslConf = "o1_1wx3v9",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -459,12 +459,12 @@ conf.Q2wx3v9 = {
 	]],
 }
 
-conf.Q2wx6v9 = {
+conf.q5_12wx6v9 = {
 	name = "Qt5.12.12-Windows-x86_64-VS2019-&HOSTTOOLVERSION&",
 	qtVersion = "5.12.12",
 	host = "Win10",
 	toolchain = "MSVC2019-64",
-	opensslConf = "o1wx6v9",
+	opensslConf = "o1_1wx6v9",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -500,12 +500,12 @@ conf.Q2wx6v9 = {
 	]],
 }
 
-conf.Q2wx3m7 = {
+conf.q5_12wx3g7 = {
 	name = "Qt5.12.12-Windows-x86-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "5.12.12",
 	host = "Win8",
 	toolchain = "MinGW730-32",
-	opensslConf = "o1wx3m7",
+	opensslConf = "o1_1wx3g7",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -539,12 +539,12 @@ conf.Q2wx3m7 = {
 	]],
 }
 
-conf.Q2wx6m7 = {
+conf.q5_12wx6g7 = {
 	name = "Qt5.12.12-Windows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "5.12.12",
 	host = "Win8",
 	toolchain = "MinGW730-64",
-	opensslConf = "o1wx6m7",
+	opensslConf = "o1_1wx6g7",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -578,7 +578,7 @@ conf.Q2wx6m7 = {
 	]],
 }
 
-conf.Q2lx6st = {
+conf.q5_12lx6st = {
 	name = "Qt5.12.12-Linux-x86_64-gcc&HOSTTOOLVERSION&-static",
 	qtVersion = "5.12.12",
 	host = "CentOS8",
@@ -670,8 +670,8 @@ conf.Q2lx6st = {
 	]],
 }
 
-conf.q5_12mLx6st = {
-	name = "Qt5.12.12-macOSLegacy-x86_64-AppleClang&HOSTTOOLVERSION&-static",
+conf.q5_12mx6st = {
+	name = "Qt5.12.12-macOS-x86_64-AppleClang&HOSTTOOLVERSION&-static",
 	qtVersion = "5.12.12",
 	host = "macOSLegacy",
 	variant = {"-static"},
@@ -767,14 +767,14 @@ conf.q5_12mLx6st = {
 	]],
 }
 
-conf.Q2wx6m7_aa3nl = {
+conf.q5_12wx6g7_aa3nl = {
 	name = "Qt5.12.12-Android-arm-Clang-NDKr21e-XWindows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "5.12.12",
 	host = "Win10",
 	toolchain = "MinGW730-64",
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-arm",
-	opensslConf = "o1aa3nl",
+	opensslConf = "o1_1aa3nl",
 	androidSdkVersion = "29",
 	configureParameter = [[
 		-prefix
@@ -821,14 +821,14 @@ conf.Q2wx6m7_aa3nl = {
 	]],
 }
 
-conf.Q2wx6m7_aa6nl = {
+conf.q5_12wx6g7_aa6nl = {
 	name = "Qt5.12.12-Android-arm64-Clang-NDKr21e-XWindows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "5.12.12",
 	host = "Win10",
 	toolchain = "MinGW730-64",
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-arm64",
-	opensslConf = "o1aa6nl",
+	opensslConf = "o1_1aa6nl",
 	androidSdkVersion = "29",
 	configureParameter = [[
 		-prefix
@@ -875,14 +875,14 @@ conf.Q2wx6m7_aa6nl = {
 	]],
 }
 
-conf.Q2wx6m7_ax3nl = {
+conf.q5_12wx6g7_ax3nl = {
 	name = "Qt5.12.12-Android-x86-Clang-NDKr21e-XWindows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "5.12.12",
 	host = "Win10",
 	toolchain = "MinGW730-64",
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-x86",
-	opensslConf = "o1ax3nl",
+	opensslConf = "o1_1ax3nl",
 	androidSdkVersion = "29",
 	configureParameter = [[
 		-prefix
@@ -929,13 +929,13 @@ conf.Q2wx6m7_ax3nl = {
 	]],
 }
 
-conf.Q2lx6_aa3nl = {
+conf.q5_12lx6_aa3nl = {
 	name = "Qt5.12.12-Android-arm-Clang-NDKr21e-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
 	qtVersion = "5.12.12",
 	host = "CentOS8",
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-arm",
-	opensslConf = "o1aa3nl",
+	opensslConf = "o1_1aa3nl",
 	androidSdkVersion = "29",
 	configureParameter = [[
 		-prefix
@@ -982,13 +982,13 @@ conf.Q2lx6_aa3nl = {
 	OPENSSL_LIBS="&OPENSSLDIR&/lib/libssl.a &OPENSSLDIR&/lib/libcrypto.a"
 }
 
-conf.Q2lx6_aa6nl = {
+conf.q5_12lx6_aa6nl = {
 	name = "Qt5.12.12-Android-arm64-Clang-NDKr21e-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
 	qtVersion = "5.12.12",
 	host = "CentOS8",
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-arm64",
-	opensslConf = "o1aa6nl",
+	opensslConf = "o1_1aa6nl",
 	androidSdkVersion = "29",
 	configureParameter = [[
 		-prefix
@@ -1035,13 +1035,13 @@ conf.Q2lx6_aa6nl = {
 	OPENSSL_LIBS="&OPENSSLDIR&/lib/libssl.a &OPENSSLDIR&/lib/libcrypto.a",
 }
 
-conf.Q2lx6_ax3nl = {
+conf.q5_12lx6_ax3nl = {
 	name = "Qt5.12.12-Android-x86-Clang-NDKr21e-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
 	qtVersion = "5.12.12",
 	host = "CentOS8",
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-x86",
-	opensslConf = "o1ax3nl",
+	opensslConf = "o1_1ax3nl",
 	androidSdkVersion = "29",
 	configureParameter = [[
 		-prefix
@@ -1088,13 +1088,13 @@ conf.Q2lx6_ax3nl = {
 	OPENSSL_LIBS="&OPENSSLDIR&/lib/libssl.a &OPENSSLDIR&/lib/libcrypto.a",
 }
 
-conf.Q2mx6_aa3nl = {
+conf.q5_12mx6_aa3nl = {
 	name = "Qt5.12.12-Android-arm-Clang-NDKr21e-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "5.12.12",
 	host = "macOSLegacy",
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-arm",
-	opensslConf = "o1aa3nl",
+	opensslConf = "o1_1aa3nl",
 	androidSdkVersion = "29",
 	configureParameter = [[
 		-prefix
@@ -1141,13 +1141,13 @@ conf.Q2mx6_aa3nl = {
 	OPENSSL_LIBS="&OPENSSLDIR&/lib/libssl.a &OPENSSLDIR&/lib/libcrypto.a"
 }
 
-conf.Q2mx6_aa6nl = {
+conf.q5_12mx6_aa6nl = {
 	name = "Qt5.12.12-Android-arm64-Clang-NDKr21e-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "5.12.12",
 	host = "macOSLegacy",
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-arm64",
-	opensslConf = "o1aa6nl",
+	opensslConf = "o1_1aa6nl",
 	androidSdkVersion = "29",
 	configureParameter = [[
 		-prefix
@@ -1194,13 +1194,13 @@ conf.Q2mx6_aa6nl = {
 	OPENSSL_LIBS="&OPENSSLDIR&/lib/libssl.a &OPENSSLDIR&/lib/libcrypto.a",
 }
 
-conf.Q2mx6_ax3nl = {
+conf.q5_12mx6_ax3nl = {
 	name = "Qt5.12.12-Android-x86-Clang-NDKr21e-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "5.12.12",
 	host = "macOSLegacy",
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-x86",
-	opensslConf = "o1ax3nl",
+	opensslConf = "o1_1ax3nl",
 	androidSdkVersion = "29",
 	configureParameter = [[
 		-prefix
@@ -1251,7 +1251,7 @@ conf.Q2mx6_ax3nl = {
 
 -- Qt 5.15.8
 
-conf.Q5wx3v5 = {
+conf.q5_15wx3v5 = {
 	name = "Qt5.15.8-Windows-x86-VS2015",
 	qtVersion = "5.15.8",
 	host = "Win8",
@@ -1290,7 +1290,7 @@ conf.Q5wx3v5 = {
 	]],
 }
 
-conf.Q5wx3v5sf = {
+conf.q5_15wx3v5sf = {
 	name = "Qt5.15.8-Windows-x86-VS2015-staticFull",
 	qtVersion = "5.15.8",
 	host = "Win8",
@@ -1332,7 +1332,7 @@ conf.Q5wx3v5sf = {
 	]],
 }
 
-conf.Q5wx6v5 = {
+conf.q5_15wx6v5 = {
 	name = "Qt5.15.8-Windows-x86_64-VS2015",
 	qtVersion = "5.15.8",
 	host = "Win8",
@@ -1371,7 +1371,7 @@ conf.Q5wx6v5 = {
 	]],
 }
 
-conf.Q5wx6v5sf = {
+conf.q5_15wx6v5sf = {
 	name = "Qt5.15.8-Windows-x86_64-VS2015-staticFull",
 	qtVersion = "5.15.8",
 	host = "Win8",
@@ -1413,7 +1413,7 @@ conf.Q5wx6v5sf = {
 	]],
 }
 
-conf.Q5wx3v7 = {
+conf.q5_15wx3v7 = {
 	name = "Qt5.15.8-Windows-x86-VS2017-&HOSTTOOLVERSION&",
 	qtVersion = "5.15.8-4",
 	host = "Win10",
@@ -1454,7 +1454,7 @@ conf.Q5wx3v7 = {
 	]],
 }
 
-conf.Q5wx3v7sf = {
+conf.q5_15wx3v7sf = {
 	name = "Qt5.15.8-Windows-x86-VS2017-&HOSTTOOLVERSION&-staticFull",
 	qtVersion = "5.15.8",
 	host = "Win10",
@@ -1496,7 +1496,7 @@ conf.Q5wx3v7sf = {
 	]],
 }
 
-conf.Q5wx6v7 = {
+conf.q5_15wx6v7 = {
 	name = "Qt5.15.8-Windows-x86_64-VS2017-&HOSTTOOLVERSION&",
 	qtVersion = "5.15.8-4",
 	host = "Win10",
@@ -1537,7 +1537,7 @@ conf.Q5wx6v7 = {
 	]],
 }
 
-conf.Q5wx6v7sf = {
+conf.q5_15wx6v7sf = {
 	name = "Qt5.15.8-Windows-x86_64-VS2017-&HOSTTOOLVERSION&-staticFull",
 	qtVersion = "5.15.8",
 	host = "Win10",
@@ -1579,7 +1579,7 @@ conf.Q5wx6v7sf = {
 	]],
 }
 
-conf.Q5wx3v9 = {
+conf.q5_15wx3v9 = {
 	name = "Qt5.15.8-Windows-x86-VS2019-&HOSTTOOLVERSION&",
 	qtVersion = "5.15.8-4",
 	host = "Win10",
@@ -1619,7 +1619,7 @@ conf.Q5wx3v9 = {
 	]],
 }
 
-conf.Q5wx3v9sf = {
+conf.q5_15wx3v9sf = {
 	name = "Qt5.15.8-Windows-x86-VS2019-&HOSTTOOLVERSION&-staticFull",
 	qtVersion = "5.15.8-4",
 	host = "Win10",
@@ -1661,7 +1661,7 @@ conf.Q5wx3v9sf = {
 	]],
 }
 
-conf.Q5wx6v9 = {
+conf.q5_15wx6v9 = {
 	name = "Qt5.15.8-Windows-x86_64-VS2019-&HOSTTOOLVERSION&",
 	qtVersion = "5.15.8-4",
 	host = "Win10",
@@ -1701,7 +1701,7 @@ conf.Q5wx6v9 = {
 	]],
 }
 
-conf.Q5wx6v9sf = {
+conf.q5_15wx6v9sf = {
 	name = "Qt5.15.8-Windows-x86_64-VS2019-&HOSTTOOLVERSION&-staticFull",
 	qtVersion = "5.15.8-4",
 	host = "Win10",
@@ -1743,7 +1743,7 @@ conf.Q5wx6v9sf = {
 	]],
 }
 
-conf.Q5wx6v2 = {
+conf.q5_15wx6v2 = {
 	name = "Qt5.15.8-Windows-x86_64-VS2022-&HOSTTOOLVERSION&",
 	qtVersion = "5.15.8-4",
 	host = "Win10",
@@ -1784,7 +1784,7 @@ conf.Q5wx6v2 = {
 	]],
 }
 
-conf.Q5wx3m8 = {
+conf.q5_15wx3g8 = {
 	name = "Qt5.15.8-Windows-x86-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "5.15.8",
 	host = "Win10",
@@ -1820,7 +1820,7 @@ conf.Q5wx3m8 = {
 	]],
 }
 
-conf.Q5wx3m8sf = {
+conf.q5_15wx3g8sf = {
 	name = "Qt5.15.8-Windows-x86-MinGW&HOSTTOOLVERSION&-staticFull",
 	qtVersion = "5.15.8",
 	host = "Win10",
@@ -1860,7 +1860,7 @@ conf.Q5wx3m8sf = {
 	]],
 }
 
-conf.Q5wx6m8 = {
+conf.q5_15wx6g8 = {
 	name = "Qt5.15.8-Windows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "5.15.8",
 	host = "Win10",
@@ -1899,7 +1899,7 @@ conf.Q5wx6m8 = {
 	]],
 }
 
-conf.Q5wx6m8sf = {
+conf.q5_15wx6g8sf = {
 	name = "Qt5.15.8-Windows-x86_64-MinGW&HOSTTOOLVERSION&-staticFull",
 	qtVersion = "5.15.8",
 	host = "Win10",
@@ -1939,7 +1939,7 @@ conf.Q5wx6m8sf = {
 	]],
 }
 
-conf.Q5wx6g1 = {
+conf.q5_15wx6g1 = {
 	name = "Qt5.15.8-Windows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "5.15.8",
 	host = "Win10",
@@ -1975,7 +1975,7 @@ conf.Q5wx6g1 = {
 	]],
 }
 
-conf.Q5wx6g2 = {
+conf.q5_15wx6g2 = {
 	name = "Qt5.15.8-Windows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "5.15.8",
 	host = "Win10",
@@ -2011,7 +2011,7 @@ conf.Q5wx6g2 = {
 	]],
 }
 
-conf.Q5mx6 = {
+conf.q5_15mx6 = {
 	name = "Qt5.15.8-macOS-x86_64-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "5.15.8-4",
 	host = "macOS1015",
@@ -2050,7 +2050,7 @@ conf.Q5mx6 = {
 	]],
 }
 
-conf.Q5mx6nf = {
+conf.q5_15mx6nf = {
 	name = "Qt5.15.8-macOS-x86_64-AppleClang&HOSTTOOLVERSION&-noFramework",
 	qtVersion = "5.15.8-4",
 	host = "macOS1015",
@@ -2092,14 +2092,14 @@ conf.Q5mx6nf = {
 	]],
 }
 
-conf.Q5wx6m8_aalnl = {
+conf.q5_15wx6g8_aalnl = {
 	name = "Qt5.15.8-Android-ALL-Clang-NDKr21e-XWindows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "5.15.8",
 	host = "Win10",
 	toolchain = "MinGW810-64",
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-all",
-	opensslConf = "o1aalnl",
+	opensslConf = "o1_1aalnl",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
 		-prefix
@@ -2145,13 +2145,13 @@ conf.Q5wx6m8_aalnl = {
 	]],
 }
 
-conf.Q5lx6_aalnl = {
+conf.q5_15lx6_aalnl = {
 	name = "Qt5.15.8-Android-ALL-Clang-NDKr21e-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
 	qtVersion = "5.15.8",
 	host = "CentOS8",
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-all",
-	opensslConf = "o1aalnl",
+	opensslConf = "o1_1aalnl",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
 		-prefix
@@ -2197,13 +2197,13 @@ conf.Q5lx6_aalnl = {
 	]],
 }
 
-conf.Q5mx6_aalnl = {
+conf.q5_15mx6_aalnl = {
 	name = "Qt5.15.8-Android-ALL-Clang-NDKr21e-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "5.15.8",
 	host = "macOS1015",
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-all",
-	opensslConf = "o1aalnl",
+	opensslConf = "o1_1aalnl",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
 		-prefix
@@ -2249,14 +2249,14 @@ conf.Q5mx6_aalnl = {
 	]],
 }
 
-conf.Q5wx6m8_aaln3 = {
+conf.q5_15wx6g8_aaln3 = {
 	name = "Qt5.15.8-Android-ALL-Clang-NDKr23c-XWindows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "5.15.8",
 	host = "Win10",
 	toolchain = "MinGW810-64",
 	target = "Android-21",
 	toolchainT = "Android-21-r23c-all",
-	opensslConf = "o1aaln321",
+	opensslConf = "o1_1aaln321",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
 		-prefix
@@ -2302,13 +2302,13 @@ conf.Q5wx6m8_aaln3 = {
 	]],
 }
 
-conf.Q5lx6_aaln3 = {
+conf.q5_15lx6_aaln3 = {
 	name = "Qt5.15.8-Android-ALL-Clang-NDKr23c-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
 	qtVersion = "5.15.8",
 	host = "CentOS8",
 	target = "Android-21",
 	toolchainT = "Android-21-r23c-all",
-	opensslConf = "o1aaln321",
+	opensslConf = "o1_1aaln321",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
 		-prefix
@@ -2354,13 +2354,13 @@ conf.Q5lx6_aaln3 = {
 	]],
 }
 
-conf.Q5mx6_aaln3 = {
+conf.q5_15mx6_aaln3 = {
 	name = "Qt5.15.8-Android-ALL-Clang-NDKr23c-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "5.15.8",
 	host = "macOS1015",
 	target = "Android-21",
 	toolchainT = "Android-21-r23c-all",
-	opensslConf = "o1aaln321",
+	opensslConf = "o1_1aaln321",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
 		-prefix
@@ -2406,7 +2406,7 @@ conf.Q5mx6_aaln3 = {
 	]],
 }
 
-conf.Q5wx6m8_W = {
+conf.q5_15wx6g8_W = {
 	name = "Qt5.15.8-WebAssembly-emscripten&TARGETTOOLVERSION&-xWindows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "5.15.8",
 	host = "Win10",
@@ -2442,7 +2442,7 @@ conf.Q5wx6m8_W = {
 	]],
 }
 
-conf.Q5lx6_W = {
+conf.q5_15lx6_W = {
 	name = "Qt5.15.8-WebAssembly-emscripten&TARGETTOOLVERSION&-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
 	qtVersion = "5.15.8",
 	host = "CentOS8",
@@ -2477,7 +2477,7 @@ conf.Q5lx6_W = {
 	]],
 }
 
-conf.Q5mx6_W = {
+conf.q5_15mx6_W = {
 	name = "Qt5.15.8-WebAssembly-emscripten&TARGETTOOLVERSION&-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "5.15.8",
 	host = "macOS1015",
@@ -2519,7 +2519,7 @@ conf.q6_2wx6v9 = {
 	qtVersion = "6.2.4-5",
 	host = "Win10",
 	toolchain = "MSVC2019-64",
-	opensslConf = "o3wx6v9",
+	opensslConf = "o3_0wx6v9",
 	mysqlConf = "m3_3wx6v9",
 	useCMake = "Latest",
 	configureParameter = [[
@@ -2559,7 +2559,7 @@ conf.q6_2wx6v9st = {
 	host = "Win10",
 	toolchain = "MSVC2019-64",
 	variant = {"-static"},
-	opensslConf = "o3wx6v9st",
+	opensslConf = "o3_0wx6v9st",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -2618,7 +2618,7 @@ conf.q6_2wx6v9sf = {
 	host = "Win10",
 	toolchain = "MSVC2019-64",
 	variant = {"-staticFull"},
-	opensslConf = "o3wx6v9st",
+	opensslConf = "o3_0wx6v9st",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -2691,7 +2691,7 @@ conf.q6_2wx6v2 = {
 	qtVersion = "6.2.4-5",
 	host = "Win10",
 	toolchain = "MSVC2022-64",
-	opensslConf = "o3wx6v2",
+	opensslConf = "o3_0wx6v2",
 	mysqlConf = "m3_3wx6v2",
 	useCMake = "Latest",
 	configureParameter = [[
@@ -2725,12 +2725,12 @@ conf.q6_2wx6v2 = {
 	]],
 }
 
-conf.q6_2wx6m1 = {
+conf.q6_2wx6g1 = {
 	name = "Qt6.2.4-Windows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "6.2.4",
 	host = "Win10",
 	toolchain = "MinGW1120-64",
-	opensslConf = "o3wx6m1",
+	opensslConf = "o3_0wx6g1",
 	mysqlConf = "m3_3wx6g1",
 	useCMake = "20",
 	configureParameter = [[
@@ -2763,13 +2763,13 @@ conf.q6_2wx6m1 = {
 	]],
 }
 
-conf.q6_2wx6m1st = {
+conf.q6_2wx6g1st = {
 	name = "Qt6.2.4-Windows-x86_64-MinGW&HOSTTOOLVERSION&-static",
 	qtVersion = "6.2.4",
 	host = "Win10",
 	toolchain = "MinGW1120-64",
 	variant = {"-static"},
-	opensslConf = "o3wx6m1",
+	opensslConf = "o3_0wx6g1",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -2823,13 +2823,13 @@ conf.q6_2wx6m1st = {
 	]],
 }
 
-conf.q6_2wx6m1sf = {
+conf.q6_2wx6g1sf = {
 	name = "Qt6.2.4-Windows-x86_64-MinGW&HOSTTOOLVERSION&-staticFull",
 	qtVersion = "6.2.4",
 	host = "Win10",
 	toolchain = "MinGW1120-64",
 	variant = {"-staticFull"},
-	opensslConf = "o3wx6m1",
+	opensslConf = "o3_0wx6g1",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -2862,12 +2862,12 @@ conf.q6_2wx6m1sf = {
 	]],
 }
 
-conf.q6_2wx6m2 = {
+conf.q6_2wx6g2 = {
 	name = "Qt6.2.4-Windows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "6.2.4",
 	host = "Win10",
 	toolchain = "MinGW1210-64",
-	opensslConf = "o3wx6m2",
+	opensslConf = "o3_0wx6g2",
 	mysqlConf = "m3_3wx6g2",
 	useCMake = "20",
 	configureParameter = [[
@@ -2900,13 +2900,13 @@ conf.q6_2wx6m2 = {
 	]],
 }
 
-conf.q6_2wx6m2sf = {
+conf.q6_2wx6g2sf = {
 	name = "Qt6.2.4-Windows-x86_64-MinGW&HOSTTOOLVERSION&-staticFull",
 	qtVersion = "6.2.4",
 	host = "Win10",
 	toolchain = "MinGW1210-64",
 	variant = {"-staticFull"},
-	opensslConf = "o3wx6m2",
+	opensslConf = "o3_0wx6g2",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -2944,7 +2944,7 @@ conf.q6_2wx6u5 = {
 	qtVersion = "6.2.4",
 	host = "Win10",
 	toolchain = "MinGWLLVM-ucrt15-64",
-	opensslConf = "o3wx6u5",
+	opensslConf = "o3_0wx6u5",
 	mysqlConf = "m3_3wx6u5",
 	useCMake = "Latest",
 	configureParameter = [[
@@ -2986,7 +2986,7 @@ conf.q6_2wx6s5 = {
 	qtVersion = "6.2.4",
 	host = "Win10",
 	toolchain = "MinGWLLVM-msvcrt15-64",
-	opensslConf = "o3wx6s5",
+	opensslConf = "o3_0wx6s5",
 	mysqlConf = "m3_3wx6s5",
 	useCMake = "Latest",
 	configureParameter = [[
@@ -3080,7 +3080,7 @@ conf.q6_2mal = {
 	name = "Qt6.2.4-macOS-Universal-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "6.2.4-5",
 	host = "macOSM1",
-	opensslConf = "o3mal",
+	opensslConf = "o3_0mal",
 	mysqlConf = "m3_3mal",
 	useCMake = "Latest",
 	configureParameter = [[
@@ -3123,7 +3123,7 @@ conf.q6_2malnf = {
 	qtVersion = "6.2.4-5",
 	host = "macOSM1",
 	variant = {"-noFramework"},
-	opensslConf = "o3mal",
+	opensslConf = "o3_0mal",
 	mysqlConf = "m3_3mal",
 	useCMake = "Latest",
 	configureParameter = [[
@@ -3166,7 +3166,7 @@ conf.q6_2malst = {
 	qtVersion = "6.2.4",
 	host = "macOSM1",
 	variant = {"-static"},
-	opensslConf = "o3mal",
+	opensslConf = "o3_0mal",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -3225,7 +3225,7 @@ conf.q6_2malsf = {
 	qtVersion = "6.2.4",
 	host = "macOSM1",
 	variant = {"-staticFull"},
-	opensslConf = "o3mal",
+	opensslConf = "o3_0mal",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -3258,14 +3258,14 @@ conf.q6_2malsf = {
 	]],
 }
 
-conf.q6_2wx6m1_aa3n3 = {
+conf.q6_2wx6g1_aa3n3 = {
 	name = "Qt6.2.4-Android-arm-Clang-NDKr23c-XWindows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "6.2.4",
 	host = "Win10",
 	target = "Android-24",
 	toolchain = "MinGW1120-64",
 	toolchainT = "Android-24-r23c-arm",
-	opensslConf = "o3aa3n324",
+	opensslConf = "o3_0aa3n324",
 	useCMake = "Latest",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
@@ -3297,14 +3297,14 @@ conf.q6_2wx6m1_aa3n3 = {
 	]],
 }
 
-conf.q6_2wx6m1_aa6n3 = {
+conf.q6_2wx6g1_aa6n3 = {
 	name = "Qt6.2.4-Android-arm64-Clang-NDKr23c-XWindows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "6.2.4",
 	host = "Win10",
 	target = "Android-24",
 	toolchain = "MinGW1120-64",
 	toolchainT = "Android-24-r23c-arm64",
-	opensslConf = "o3aa6n324",
+	opensslConf = "o3_0aa6n324",
 	useCMake = "Latest",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
@@ -3336,14 +3336,14 @@ conf.q6_2wx6m1_aa6n3 = {
 	]],
 }
 
-conf.q6_2wx6m1_ax3n3 = {
+conf.q6_2wx6g1_ax3n3 = {
 	name = "Qt6.2.4-Android-x86-Clang-NDKr23c-XWindows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "6.2.4",
 	host = "Win10",
 	target = "Android-24",
 	toolchain = "MinGW1120-64",
 	toolchainT = "Android-24-r23c-x86",
-	opensslConf = "o3ax3n324",
+	opensslConf = "o3_0ax3n324",
 	useCMake = "Latest",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
@@ -3375,14 +3375,14 @@ conf.q6_2wx6m1_ax3n3 = {
 	]],
 }
 
-conf.q6_2wx6m1_ax6n3 = {
+conf.q6_2wx6g1_ax6n3 = {
 	name = "Qt6.2.4-Android-x86_64-Clang-NDKr23c-XWindows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "6.2.4",
 	host = "Win10",
 	target = "Android-24",
 	toolchain = "MinGW1120-64",
 	toolchainT = "Android-24-r23c-x86_64",
-	opensslConf = "o3ax6n324",
+	opensslConf = "o3_0ax6n324",
 	useCMake = "Latest",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
@@ -3420,7 +3420,7 @@ conf.q6_2lx6_aa3n3 = {
 	host = "CentOS8",
 	target = "Android-24",
 	toolchainT = "Android-24-r23c-arm",
-	opensslConf = "o3aa3n324",
+	opensslConf = "o3_0aa3n324",
 	useCMake = "Latest",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
@@ -3457,7 +3457,7 @@ conf.q6_2lx6_aa6n3 = {
 	host = "CentOS8",
 	target = "Android-24",
 	toolchainT = "Android-24-r23c-arm64",
-	opensslConf = "o3aa6n324",
+	opensslConf = "o3_0aa6n324",
 	useCMake = "Latest",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
@@ -3494,7 +3494,7 @@ conf.q6_2lx6_ax3n3 = {
 	host = "CentOS8",
 	target = "Android-24",
 	toolchainT = "Android-24-r23c-x86",
-	opensslConf = "o3ax3n324",
+	opensslConf = "o3_0ax3n324",
 	useCMake = "Latest",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
@@ -3531,7 +3531,7 @@ conf.q6_2lx6_ax6n3 = {
 	host = "CentOS8",
 	target = "Android-24",
 	toolchainT = "Android-24-r23c-x86_64",
-	opensslConf = "o3ax6n324",
+	opensslConf = "o3_0ax6n324",
 	useCMake = "Latest",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
@@ -3568,7 +3568,7 @@ conf.q6_2mal_aa3n3 = {
 	host = "macOSM1",
 	target = "Android-24",
 	toolchainT = "Android-24-r23c-arm",
-	opensslConf = "o3aa3n324",
+	opensslConf = "o3_0aa3n324",
 	useCMake = "Latest",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
@@ -3605,7 +3605,7 @@ conf.q6_2mal_aa6n3 = {
 	host = "macOSM1",
 	target = "Android-24",
 	toolchainT = "Android-24-r23c-arm64",
-	opensslConf = "o3aa6n324",
+	opensslConf = "o3_0aa6n324",
 	useCMake = "Latest",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
@@ -3642,7 +3642,7 @@ conf.q6_2mal_ax3n3 = {
 	host = "macOSM1",
 	target = "Android-24",
 	toolchainT = "Android-24-r23c-x86",
-	opensslConf = "o3ax3n324",
+	opensslConf = "o3_0ax3n324",
 	useCMake = "Latest",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
@@ -3679,7 +3679,7 @@ conf.q6_2mal_ax6n3 = {
 	host = "macOSM1",
 	target = "Android-24",
 	toolchainT = "Android-24-r23c-x86_64",
-	opensslConf = "o3ax6n324",
+	opensslConf = "o3_0ax6n324",
 	useCMake = "Latest",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
@@ -3711,7 +3711,7 @@ conf.q6_2mal_ax6n3 = {
 }
 
 -- WebAssembly uses emcmake which don't need a toolchain file
-conf.q6_2wx6m1_W = {
+conf.q6_2wx6g1_W = {
 	name = "Qt6.2.4-WebAssembly-emscripten&TARGETTOOLVERSION&-xWindows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "6.2.4",
 	host = "Win10",
@@ -3811,7 +3811,7 @@ conf.q6_4wx6v9 = {
 	qtVersion = "6.4.2",
 	host = "Win10",
 	toolchain = "MSVC2019-64",
-	opensslConf = "o3wx6v9",
+	opensslConf = "o3_0wx6v9",
 	mysqlConf = "m3_3wx6v9",
 	useCMake = "Latest",
 	configureParameter = [[
@@ -3851,7 +3851,7 @@ conf.q6_4wx6v2 = {
 	qtVersion = "6.4.2",
 	host = "Win10",
 	toolchain = "MSVC2022-64",
-	opensslConf = "o3wx6v2",
+	opensslConf = "o3_0wx6v2",
 	mysqlConf = "m3_3wx6v2",
 	useCMake = "Latest",
 	configureParameter = [[
@@ -3892,7 +3892,7 @@ conf.q6_4wx6v2st = {
 	host = "Win10",
 	toolchain = "MSVC2022-64",
 	variant = {"-static"},
-	opensslConf = "o3wx6v2st",
+	opensslConf = "o3_0wx6v2st",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -3986,7 +3986,7 @@ conf.q6_4wx6g2 = {
 	qtVersion = "6.4.2",
 	host = "Win10",
 	toolchain = "MinGW1210-64",
-	opensslConf = "o3wx6m2",
+	opensslConf = "o3_0wx6g2",
 	mysqlConf = "m3_3wx6g2",
 	useCMake = "20",
 	configureParameter = [[
@@ -4025,7 +4025,7 @@ conf.q6_4wx6g2st = {
 	host = "Win10",
 	toolchain = "MinGW1210-64",
 	variant = {"-static"},
-	opensslConf = "o3wx6m2",
+	opensslConf = "o3_0wx6g2",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -4084,7 +4084,7 @@ conf.q6_4wx6u5 = {
 	qtVersion = "6.4.2",
 	host = "Win10",
 	toolchain = "MinGWLLVM-ucrt15-64",
-	opensslConf = "o3wx6u5",
+	opensslConf = "o3_0wx6u5",
 	mysqlConf = "m3_3wx6u5",
 	useCMake = "Latest",
 	configureParameter = [[
@@ -4126,7 +4126,7 @@ conf.q6_4wx6s5 = {
 	qtVersion = "6.4.2",
 	host = "Win10",
 	toolchain = "MinGWLLVM-msvcrt15-64",
-	opensslConf = "o3wx6s5",
+	opensslConf = "o3_0wx6s5",
 	mysqlConf = "m3_3wx6s5",
 	useCMake = "Latest",
 	configureParameter = [[
@@ -4220,7 +4220,7 @@ conf.q6_4mal = {
 	name = "Qt6.4.2-macOS-Universal-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "6.4.2",
 	host = "macOSM1",
-	opensslConf = "o3mal",
+	opensslConf = "o3_0mal",
 	mysqlConf = "m3_3mal",
 	useCMake = "Latest",
 	configureParameter = [[
@@ -4264,7 +4264,7 @@ conf.q6_4malnf = {
 	qtVersion = "6.4.2",
 	host = "macOSM1",
 	variant = {"-noFramework"},
-	opensslConf = "o3mal",
+	opensslConf = "o3_0mal",
 	mysqlConf = "m3_3mal",
 	useCMake = "Latest",
 	configureParameter = [[
@@ -4308,7 +4308,7 @@ conf.q6_4malst = {
 	qtVersion = "6.4.2",
 	host = "macOSM1",
 	variant = {"-static"},
-	opensslConf = "o3mal",
+	opensslConf = "o3_0mal",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -4369,7 +4369,7 @@ conf.q6_4wx6g2_aa6n5 = {
 	target = "Android-27",
 	toolchain = "MinGW1210-64",
 	toolchainT = "Android-27-r25b-arm64",
-	opensslConf = "o3aa6n527",
+	opensslConf = "o3_0aa6n527",
 	useCMake = "Latest",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
@@ -4408,7 +4408,7 @@ conf.q6_4wx6g2_ax6n5 = {
 	target = "Android-27",
 	toolchain = "MinGW1210-64",
 	toolchainT = "Android-27-r25b-x86_64",
-	opensslConf = "o3ax6n527",
+	opensslConf = "o3_0ax6n527",
 	useCMake = "Latest",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
@@ -4446,7 +4446,7 @@ conf.q6_4lx6_aa6n5 = {
 	host = "Rocky9",
 	target = "Android-27",
 	toolchainT = "Android-27-r25b-arm64",
-	opensslConf = "o3aa6n527",
+	opensslConf = "o3_0aa6n527",
 	useCMake = "Latest",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
@@ -4483,7 +4483,7 @@ conf.q6_4lx6_ax6n5 = {
 	host = "Rocky9",
 	target = "Android-27",
 	toolchainT = "Android-27-r25b-x86_64",
-	opensslConf = "o3ax6n527",
+	opensslConf = "o3_0ax6n527",
 	useCMake = "Latest",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
@@ -4520,7 +4520,7 @@ conf.q6_4mal_aa6n5 = {
 	host = "macOSM1",
 	target = "Android-27",
 	toolchainT = "Android-27-r25b-arm64",
-	opensslConf = "o3aa6n527",
+	opensslConf = "o3_0aa6n527",
 	useCMake = "Latest",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
@@ -4557,7 +4557,7 @@ conf.q6_4mal_ax6n5 = {
 	host = "macOSM1",
 	target = "Android-27",
 	toolchainT = "Android-27-r25b-x86_64",
-	opensslConf = "o3ax6n527",
+	opensslConf = "o3_0ax6n527",
 	useCMake = "Latest",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
@@ -4689,7 +4689,7 @@ conf.q6_5wx6v2 = {
 	qtVersion = "6.5.0-beta2",
 	host = "Win10",
 	toolchain = "MSVC2022-64",
-	opensslConf = "o3wx6v2",
+	opensslConf = "o3_0wx6v2",
 	mysqlConf = "m3_3wx6v2",
 	useCMake = "Latest",
 	configureParameter = [[
@@ -4730,7 +4730,7 @@ conf.q6_5wx6v2st = {
 	host = "Win10",
 	toolchain = "MSVC2022-64",
 	variant = {"-static"},
-	opensslConf = "o3wx6v2st",
+	opensslConf = "o3_0wx6v2st",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -4794,7 +4794,7 @@ conf.q6_5wx6v2sf = {
 	host = "Win10",
 	toolchain = "MSVC2022-64",
 	variant = {"-staticFull"},
-	opensslConf = "o3wx6v2st",
+	opensslConf = "o3_0wx6v2st",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -4868,7 +4868,7 @@ conf.q6_5wx6g2 = {
 	qtVersion = "6.5.0-beta2",
 	host = "Win10",
 	toolchain = "MinGW1210-64",
-	opensslConf = "o3wx6m2",
+	opensslConf = "o3_0wx6g2",
 	mysqlConf = "m3_3wx6g2",
 	useCMake = "20",
 	configureParameter = [[
@@ -4907,7 +4907,7 @@ conf.q6_5wx6g2st = {
 	host = "Win10",
 	toolchain = "MinGW1210-64",
 	variant = {"-static"},
-	opensslConf = "o3wx6m2",
+	opensslConf = "o3_0wx6g2",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -4972,7 +4972,7 @@ conf.q6_5wx6g2sf = {
 	host = "Win10",
 	toolchain = "MinGW1210-64",
 	variant = {"-staticFull"},
-	opensslConf = "o3wx6m2",
+	opensslConf = "o3_0wx6g2",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -5011,7 +5011,7 @@ conf.q6_5wx6u5 = {
 	qtVersion = "6.5.0-beta2",
 	host = "Win10",
 	toolchain = "MinGWLLVM-ucrt15-64",
-	opensslConf = "o3wx6u5",
+	opensslConf = "o3_0wx6u5",
 	mysqlConf = "m3_3wx6u5",
 	useCMake = "Latest",
 	configureParameter = [[
@@ -5053,7 +5053,7 @@ conf.q6_5wx6s5 = {
 	qtVersion = "6.5.0-beta2",
 	host = "Win10",
 	toolchain = "MinGWLLVM-msvcrt15-64",
-	opensslConf = "o3wx6s5",
+	opensslConf = "o3_0wx6s5",
 	mysqlConf = "m3_3wx6s5",
 	useCMake = "Latest",
 	configureParameter = [[
@@ -5152,7 +5152,7 @@ conf.q6_5mal = {
 	name = "Qt6.5.0-beta2-macOS-Universal-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "6.5.0-beta2",
 	host = "macOSM1",
-	opensslConf = "o3mal",
+	opensslConf = "o3_0mal",
 	mysqlConf = "m3_3mal",
 	useCMake = "Latest",
 	configureParameter = [[
@@ -5196,7 +5196,7 @@ conf.q6_5malnf = {
 	qtVersion = "6.5.0-beta2",
 	host = "macOSM1",
 	variant = {"-noFramework"},
-	opensslConf = "o3mal",
+	opensslConf = "o3_0mal",
 	mysqlConf = "m3_3mal",
 	useCMake = "Latest",
 	configureParameter = [[
@@ -5240,7 +5240,7 @@ conf.q6_5malst = {
 	qtVersion = "6.5.0-beta2",
 	host = "macOSM1",
 	variant = {"-static"},
-	opensslConf = "o3mal",
+	opensslConf = "o3_0mal",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -5304,7 +5304,7 @@ conf.q6_5malsf = {
 	qtVersion = "6.5.0-beta2",
 	host = "macOSM1",
 	variant = {"-staticFull"},
-	opensslConf = "o3mal",
+	opensslConf = "o3_0mal",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -5345,7 +5345,7 @@ conf.q6_5wx6g2_aa6n5 = {
 	target = "Android-27",
 	toolchain = "MinGW1210-64",
 	toolchainT = "Android-27-r25b-arm64",
-	opensslConf = "o3aa6n527",
+	opensslConf = "o3_0aa6n527",
 	useCMake = "Latest",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
@@ -5384,7 +5384,7 @@ conf.q6_5wx6g2_ax6n5 = {
 	target = "Android-27",
 	toolchain = "MinGW1210-64",
 	toolchainT = "Android-27-r25b-x86_64",
-	opensslConf = "o3ax6n527",
+	opensslConf = "o3_0ax6n527",
 	useCMake = "Latest",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
@@ -5422,7 +5422,7 @@ conf.q6_5lx6_aa6n5 = {
 	host = "Rocky9",
 	target = "Android-27",
 	toolchainT = "Android-27-r25b-arm64",
-	opensslConf = "o3aa6n527",
+	opensslConf = "o3_0aa6n527",
 	useCMake = "Latest",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
@@ -5459,7 +5459,7 @@ conf.q6_5lx6_ax6n5 = {
 	host = "Rocky9",
 	target = "Android-27",
 	toolchainT = "Android-27-r25b-x86_64",
-	opensslConf = "o3ax6n527",
+	opensslConf = "o3_0ax6n527",
 	useCMake = "Latest",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
@@ -5496,7 +5496,7 @@ conf.q6_5mal_aa6n5 = {
 	host = "macOSM1",
 	target = "Android-27",
 	toolchainT = "Android-27-r25b-arm64",
-	opensslConf = "o3aa6n527",
+	opensslConf = "o3_0aa6n527",
 	useCMake = "Latest",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
@@ -5533,7 +5533,7 @@ conf.q6_5mal_ax6n5 = {
 	host = "macOSM1",
 	target = "Android-27",
 	toolchainT = "Android-27-r25b-x86_64",
-	opensslConf = "o3ax6n527",
+	opensslConf = "o3_0ax6n527",
 	useCMake = "Latest",
 	androidSdkVersion = "Latest",
 	configureParameter = [[
@@ -5663,10 +5663,10 @@ local versionMo = {
 }
 
 local QQtPatcherConf = {
-	["Win10"] = "Q2wx3v7st",
-	["Win8"] = "Q2wx3v5st",
-	["CentOS8"] = "Q2lx6st",
-	["macOSLegacy"] = "q5_12mLx6st",
+	["Win10"] = "q5_12wx3v7st",
+	["Win8"] = "q5_12wx3v5st",
+	["CentOS8"] = "q5_12lx6st",
+	["macOSLegacy"] = "q5_12mx6st",
 }
 
 local QQtPatcherVersion = {
@@ -5677,7 +5677,7 @@ setmetatable(QQtPatcherVersion, versionMo)
 
 local Qt6StaticConf = {
 	Win10 = {
-		["6.2.4"] = "q6_2wx6m1st",
+		["6.2.4"] = "q6_2wx6g1st",
 		["6.4.2"] = "q6_4wx6g2st",
 		["6.5.0-beta2"] = "q6_5wx6g2st",
 	},

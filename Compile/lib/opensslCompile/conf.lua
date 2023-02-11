@@ -29,10 +29,10 @@ abbrs:
 		v2: VS2022
 		m7: MinGW-w64, with GCC 7.3.0 (no new builds)
 		m8: MinGW-w64, with GCC 8.1.0 (no new builds)
-		g1 / (deprecated) m1: MinGW-w64, with GCC 11.2.0
-		g2 / (deprecated) m2: MinGW-w64, with GCC 12.1.0
-		s5 / (deprecated) mv: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 15
-		u5 / (deprecated) mu: LLVM/Clang based MinGW-w64, ucrt, with LLVM 15
+		g1: MinGW-w64, with GCC 11.2.0
+		g2: MinGW-w64, with GCC 12.1.0
+		s5: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 15
+		u5: LLVM/Clang based MinGW-w64, ucrt, with LLVM 15
 		nl: Android NDK r21e/Previous LTS
 		n3: Android NDK r23c/Previous LTS
 		n5: Android NDK r25b/Latest LTS
@@ -46,7 +46,7 @@ abbrs:
 
 -- OpenSSL 1.1.1t
 
-conf.o1wx3v5 = {
+conf.o1_1wx3v5 = {
 	name = "OpenSSL1.1.1t-Windows-x86-VS2015",
 	opensslVersion = "1.1.1t",
 	host = "Win8",
@@ -63,7 +63,7 @@ conf.o1wx3v5 = {
 	]],
 }
 
-conf.o1wx3v5st = {
+conf.o1_1wx3v5st = {
 	name = "OpenSSL1.1.1t-Windows-x86-VS2015-static",
 	opensslVersion = "1.1.1t",
 	host = "Win8",
@@ -81,7 +81,7 @@ conf.o1wx3v5st = {
 	]],
 }
 
-conf.o1wx6v5 = {
+conf.o1_1wx6v5 = {
 	name = "OpenSSL1.1.1t-Windows-x86_64-VS2015",
 	opensslVersion = "1.1.1t",
 	host = "Win8",
@@ -100,7 +100,7 @@ conf.o1wx6v5 = {
 
 --------------------------------------------------------------------
 
-conf.o1wx3m7 = {
+conf.o1_1wx3g7 = {
 	name = "OpenSSL1.1.1t-Windows-x86-MinGW-GCC&TARGETTOOLVERSION&",
 	opensslVersion = "1.1.1t",
 	host = "Win8SH",
@@ -117,7 +117,7 @@ conf.o1wx3m7 = {
 	]],
 }
 
-conf.o1wx6m7 = {
+conf.o1_1wx6g7 = {
 	name = "OpenSSL1.1.1t-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&",
 	opensslVersion = "1.1.1t",
 	host = "Win8SH",
@@ -136,7 +136,7 @@ conf.o1wx6m7 = {
 
 --------------------------------------------------------------------
 
-conf.o1wx3v7 = {
+conf.o1_1wx3v7 = {
 	name = "OpenSSL1.1.1t-Windows-x86-VS2017-&TARGETTOOLVERSION&",
 	opensslVersion = "1.1.1t",
 	host = "Win10",
@@ -153,7 +153,7 @@ conf.o1wx3v7 = {
 	]],
 }
 
-conf.o1wx3v7st = {
+conf.o1_1wx3v7st = {
 	name = "OpenSSL1.1.1t-Windows-x86-VS2017-&TARGETTOOLVERSION&-static",
 	opensslVersion = "1.1.1t",
 	host = "Win10",
@@ -171,7 +171,7 @@ conf.o1wx3v7st = {
 	]],
 }
 
-conf.o1wx6v7 = {
+conf.o1_1wx6v7 = {
 	name = "OpenSSL1.1.1t-Windows-x86_64-VS2017-&TARGETTOOLVERSION&",
 	opensslVersion = "1.1.1t",
 	host = "Win10",
@@ -190,7 +190,7 @@ conf.o1wx6v7 = {
 
 --------------------------------------------------------------------
 
-conf.o1wx3v9 = {
+conf.o1_1wx3v9 = {
 	name = "OpenSSL1.1.1t-Windows-x86-VS2019-&TARGETTOOLVERSION&",
 	opensslVersion = "1.1.1t",
 	host = "Win10",
@@ -207,7 +207,7 @@ conf.o1wx3v9 = {
 	]],
 }
 
-conf.o1wx6v9 = {
+conf.o1_1wx6v9 = {
 	name = "OpenSSL1.1.1t-Windows-x86_64-VS2019-&TARGETTOOLVERSION&",
 	opensslVersion = "1.1.1t",
 	host = "Win10",
@@ -226,7 +226,7 @@ conf.o1wx6v9 = {
 
 --------------------------------------------------------------------
 
-conf.o1aa3nl = {
+conf.o1_1aa3nl = {
 	name = "OpenSSL1.1.1t-Android-arm-NDKr21eAPI21",
 	opensslVersion = "1.1.1t",
 	host = "CentOS8",
@@ -252,7 +252,7 @@ conf.o1aa3nl = {
 	]],
 }
 
-conf.o1aa6nl = {
+conf.o1_1aa6nl = {
 	name = "OpenSSL1.1.1t-Android-arm64-NDKr21eAPI21",
 	opensslVersion = "1.1.1t",
 	host = "CentOS8",
@@ -273,7 +273,7 @@ conf.o1aa6nl = {
 	]],
 }
 
-conf.o1ax3nl = {
+conf.o1_1ax3nl = {
 	name = "OpenSSL1.1.1t-Android-x86-NDKr21eAPI21",
 	opensslVersion = "1.1.1t",
 	host = "CentOS8",
@@ -294,7 +294,7 @@ conf.o1ax3nl = {
 	]],
 }
 
-conf.o1ax6nl = {
+conf.o1_1ax6nl = {
 	name = "OpenSSL1.1.1t-Android-x86_64-NDKr21eAPI21",
 	opensslVersion = "1.1.1t",
 	host = "CentOS8",
@@ -315,22 +315,22 @@ conf.o1ax6nl = {
 	]],
 }
 
-conf.o1aalnl = {
+conf.o1_1aalnl = {
 	name = "OpenSSL1.1.1t-Android-ALL-NDKr21eAPI21",
 	opensslVersion = "1.1.1t",
 	host = "CentOS8",
 	opensslUnifyType = "Android",
 	opensslUnifyArch = {
-		["armeabi-v7a"] = "o1aa3nl",
-		["arm64-v8a"] = "o1aa6nl",
-		["x86"] = "o1ax3nl",
-		["x86_64"] = "o1ax6nl",
+		["armeabi-v7a"] = "o1_1aa3nl",
+		["arm64-v8a"] = "o1_1aa6nl",
+		["x86"] = "o1_1ax3nl",
+		["x86_64"] = "o1_1ax6nl",
 	},
 }
 
 --------------------------------------------------------------------
 
-conf.o1aa3n321 = {
+conf.o1_1aa3n321 = {
 	name = "OpenSSL1.1.1t-Android-arm-NDKr23cAPI21",
 	opensslVersion = "1.1.1t",
 	host = "CentOS8",
@@ -356,7 +356,7 @@ conf.o1aa3n321 = {
 	]],
 }
 
-conf.o1aa6n321 = {
+conf.o1_1aa6n321 = {
 	name = "OpenSSL1.1.1t-Android-arm64-NDKr23cAPI21",
 	opensslVersion = "1.1.1t",
 	host = "CentOS8",
@@ -377,7 +377,7 @@ conf.o1aa6n321 = {
 	]],
 }
 
-conf.o1ax3n321 = {
+conf.o1_1ax3n321 = {
 	name = "OpenSSL1.1.1t-Android-x86-NDKr23cAPI21",
 	opensslVersion = "1.1.1t",
 	host = "CentOS8",
@@ -398,7 +398,7 @@ conf.o1ax3n321 = {
 	]],
 }
 
-conf.o1ax6n321 = {
+conf.o1_1ax6n321 = {
 	name = "OpenSSL1.1.1t-Android-x86_64-NDKr23cAPI21",
 	opensslVersion = "1.1.1t",
 	host = "CentOS8",
@@ -419,16 +419,16 @@ conf.o1ax6n321 = {
 	]],
 }
 
-conf.o1aaln321 = {
+conf.o1_1aaln321 = {
 	name = "OpenSSL1.1.1t-Android-ALL-NDKr23cAPI21",
 	opensslVersion = "1.1.1t",
 	host = "CentOS8",
 	opensslUnifyType = "Android",
 	opensslUnifyArch = {
-		["armeabi-v7a"] = "o1aa3n321",
-		["arm64-v8a"] = "o1aa6n321",
-		["x86"] = "o1ax3n321",
-		["x86_64"] = "o1ax6n321",
+		["armeabi-v7a"] = "o1_1aa3n321",
+		["arm64-v8a"] = "o1_1aa6n321",
+		["x86"] = "o1_1ax3n321",
+		["x86_64"] = "o1_1ax6n321",
 	},
 }
 
@@ -436,7 +436,7 @@ conf.o1aaln321 = {
 
 -- OpenSSL 3.0.8
 
-conf.o3wx6v9 = {
+conf.o3_0wx6v9 = {
 	name = "OpenSSL3.0.8-Windows-x86_64-VS2019-&TARGETTOOLVERSION&",
 	opensslVersion = "3.0.8",
 	host = "Win10",
@@ -453,7 +453,7 @@ conf.o3wx6v9 = {
 	]],
 }
 
-conf.o3wx6v9st = {
+conf.o3_0wx6v9st = {
 	name = "OpenSSL3.0.8-Windows-x86_64-VS2019-&TARGETTOOLVERSION&-static",
 	opensslVersion = "3.0.8",
 	host = "Win10",
@@ -471,7 +471,7 @@ conf.o3wx6v9st = {
 	]],
 }
 
-conf.o3wx6v2 = {
+conf.o3_0wx6v2 = {
 	name = "OpenSSL3.0.8-Windows-x86_64-VS2022-&TARGETTOOLVERSION&",
 	opensslVersion = "3.0.8",
 	host = "Win10",
@@ -488,7 +488,7 @@ conf.o3wx6v2 = {
 	]],
 }
 
-conf.o3wx6v2st = {
+conf.o3_0wx6v2st = {
 	name = "OpenSSL3.0.8-Windows-x86_64-VS2022-&TARGETTOOLVERSION&-static",
 	opensslVersion = "3.0.8",
 	host = "Win10",
@@ -508,9 +508,7 @@ conf.o3wx6v2st = {
 
 --------------------------------------------------------------------
 
--- Note: "m" changed its meaning for LLVM-based toolchain with MinGW-w64 MSVCRT.
--- Note: Future version of this build configuration should be called "o*wx6g1" where "g" means GNU-based toolchain with MinGW-w64.
-conf.o3wx6m1 = {
+conf.o3_0wx6g1 = {
 	name = "OpenSSL3.0.8-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&",
 	opensslVersion = "3.0.8",
 	host = "Win10SH",
@@ -528,9 +526,7 @@ conf.o3wx6m1 = {
 	]],
 }
 
--- Note: "m" changed its meaning for LLVM-based toolchain with MinGW-w64 MSVCRT.
--- Note: Future version of this build configuration should be called "o*wx6g2" where "g" means GNU-based toolchain with MinGW-w64.
-conf.o3wx6m2 = {
+conf.o3_0wx6g2 = {
 	name = "OpenSSL3.0.8-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&",
 	opensslVersion = "3.0.8",
 	host = "Win10SH",
@@ -548,7 +544,7 @@ conf.o3wx6m2 = {
 	]],
 }
 
-conf.o3wx6u5 = {
+conf.o3_0wx6u5 = {
 	name = "OpenSSL3.0.8-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-ucrt",
 	opensslVersion = "3.0.8",
 	host = "Win10SH",
@@ -567,7 +563,7 @@ conf.o3wx6u5 = {
 	]],
 }
 
-conf.o3wx6s5 = {
+conf.o3_0wx6s5 = {
 	name = "OpenSSL3.0.8-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-msvcrt",
 	opensslVersion = "3.0.8",
 	host = "Win10SH",
@@ -589,7 +585,7 @@ conf.o3wx6s5 = {
 --------------------------------------------------------------------
 
 -- cross build this configuration for easy unify
-conf.o3mx6 = {
+conf.o3_0mx6 = {
 	name = "OpenSSL3.0.8-macOS-x86_64-AppleClang&TARGETTOOLVERSION&",
 	opensslVersion = "3.0.8",
 	host = "macOSM1",
@@ -606,7 +602,7 @@ conf.o3mx6 = {
 	]],
 }
 
-conf.o3ma6 = {
+conf.o3_0ma6 = {
 	name = "OpenSSL3.0.8-macOS-arm64_v8a-AppleClang&TARGETTOOLVERSION&",
 	opensslVersion = "3.0.8",
 	host = "macOSM1",
@@ -623,7 +619,7 @@ conf.o3ma6 = {
 	]],
 }
 
-conf.o3mal = {
+conf.o3_0mal = {
 	name = "OpenSSL3.0.8-macOS-ALL-AppleClang&TARGETTOOLVERSION&",
 	opensslVersion = "3.0.8",
 	host = "macOSM1",
@@ -631,14 +627,14 @@ conf.o3mal = {
 	staticlibPath = { "lib/libssl.a", "lib/libcrypto.a" },
 	opensslUnifyType = "macOS",
 	opensslUnifyArch = {
-		["arm64"] = "o3ma6",
-		["x86_64"] = "o3mx6",
+		["arm64"] = "o3_0ma6",
+		["x86_64"] = "o3_0mx6",
 	},
 }
 
 --------------------------------------------------------------------
 
-conf.o3aa3n324 = {
+conf.o3_0aa3n324 = {
 	name = "OpenSSL3.0.8-Android-arm-NDKr23cAPI24",
 	opensslVersion = "3.0.8",
 	host = "CentOS8",
@@ -664,7 +660,7 @@ conf.o3aa3n324 = {
 	]],
 }
 
-conf.o3aa6n324 = {
+conf.o3_0aa6n324 = {
 	name = "OpenSSL3.0.8-Android-arm64-NDKr23cAPI24",
 	opensslVersion = "3.0.8",
 	host = "CentOS8",
@@ -685,7 +681,7 @@ conf.o3aa6n324 = {
 	]],
 }
 
-conf.o3ax3n324 = {
+conf.o3_0ax3n324 = {
 	name = "OpenSSL3.0.8-Android-x86-NDKr23cAPI24",
 	opensslVersion = "3.0.8",
 	host = "CentOS8",
@@ -706,7 +702,7 @@ conf.o3ax3n324 = {
 	]],
 }
 
-conf.o3ax6n324 = {
+conf.o3_0ax6n324 = {
 	name = "OpenSSL3.0.8-Android-x86_64-NDKr23cAPI24",
 	opensslVersion = "3.0.8",
 	host = "CentOS8",
@@ -727,21 +723,21 @@ conf.o3ax6n324 = {
 	]],
 }
 
-conf.o3aaln324 = {
+conf.o3_0aaln324 = {
 	name = "OpenSSL3.0.8-Android-ALL-NDKr23cAPI24",
 	opensslVersion = "3.0.8",
 	host = "CentOS8",
 	opensslUnifyType = "Android",
 	opensslUnifyArch = {
-		["armeabi-v7a"] = "o3aa3n324",
-		["arm64-v8a"] = "o3aa6n324",
-		["x86"] = "o3ax3n324",
-		["x86_64"] = "o3ax6n324",
+		["armeabi-v7a"] = "o3_0aa3n324",
+		["arm64-v8a"] = "o3_0aa6n324",
+		["x86"] = "o3_0ax3n324",
+		["x86_64"] = "o3_0ax6n324",
 	},
 }
 --------------------------------------------------------------------
 
-conf.o3aa3n527 = {
+conf.o3_0aa3n527 = {
 	name = "OpenSSL3.0.8-Android-arm-NDKr25API27",
 	opensslVersion = "3.0.8",
 	host = "Rocky9",
@@ -767,7 +763,7 @@ conf.o3aa3n527 = {
 	]],
 }
 
-conf.o3aa6n527 = {
+conf.o3_0aa6n527 = {
 	name = "OpenSSL3.0.8-Android-arm64-NDKr25API27",
 	opensslVersion = "3.0.8",
 	host = "Rocky9",
@@ -788,7 +784,7 @@ conf.o3aa6n527 = {
 	]],
 }
 
-conf.o3ax3n527 = {
+conf.o3_0ax3n527 = {
 	name = "OpenSSL3.0.8-Android-x86-NDKr25API27",
 	opensslVersion = "3.0.8",
 	host = "Rocky9",
@@ -809,7 +805,7 @@ conf.o3ax3n527 = {
 	]],
 }
 
-conf.o3ax6n527 = {
+conf.o3_0ax6n527 = {
 	name = "OpenSSL3.0.8-Android-x86_64-NDKr25API27",
 	opensslVersion = "3.0.8",
 	host = "Rocky9",
@@ -830,16 +826,16 @@ conf.o3ax6n527 = {
 	]],
 }
 
-conf.o3aaln527 = {
+conf.o3_0aaln527 = {
 	name = "OpenSSL3.0.8-Android-ALL-NDKr25API27",
 	opensslVersion = "3.0.8",
 	host = "Rocky9",
 	opensslUnifyType = "Android",
 	opensslUnifyArch = {
-		["armeabi-v7a"] = "o3aa3n527",
-		["arm64-v8a"] = "o3aa6n527",
-		["x86"] = "o3ax3n527",
-		["x86_64"] = "o3ax6n527",
+		["armeabi-v7a"] = "o3_0aa3n527",
+		["arm64-v8a"] = "o3_0aa6n527",
+		["x86"] = "o3_0ax3n527",
+		["x86_64"] = "o3_0ax6n527",
 	},
 }
 

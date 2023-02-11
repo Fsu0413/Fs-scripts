@@ -55,7 +55,7 @@ conf.host.win = {
 	["androidNdkPath"] = {
 		["r21e"] = "D:\\android-ndk-r21e",
 		["r23c"] = "D:\\android-ndk-r23c",
-		["r25b"] = "D:\\android-ndk-r25b",
+		["r25c"] = "D:\\android-ndk-r25c",
 	},
 	["androidNdkHost"] = "windows-x86_64",
 	["emscriptenPath"] = {
@@ -103,7 +103,7 @@ conf.host.msys = {
 	["androidNdkPath"] = {
 		["r21e"] = "/d/android-ndk-r21e/",
 		["r23c"] = "/d/android-ndk-r23c/",
-		["r25b"] = "/d/android-ndk-r25b/",
+		["r25c"] = "/d/android-ndk-r25c/",
 	},
 	["androidNdkHost"] = "windows-x86_64",
 	["defaultToolchainExecutableName"] = "gcc",
@@ -126,7 +126,7 @@ conf.host.linux = {
 	["androidNdkPath"] = {
 		["r21e"] = "/opt/env/android-ndk-r21e/",
 		["r23c"] = "/opt/env/android-ndk-r23c/",
-		["r25b"] = "/opt/env/android-ndk-r25b/",
+		["r25c"] = "/opt/env/android-ndk-r25c/",
 	},
 	["androidNdkHost"] = "linux-x86_64",
 	["sourcePackagePath"] = "/opt/sources/",
@@ -159,7 +159,7 @@ conf.host.mac = {
 	["androidNdkPath"] = {
 		["r21e"] = "/Applications/AndroidNDK7075529.app/Contents/NDK/",
 		["r23c"] = "/Applications/AndroidNDK8568313.app/Contents/NDK/",
-		["r25b"] = "/Applications/AndroidNDK8937393.app/Contents/NDK/",
+		["r25c"] = "/Applications/AndroidNDK9519653.app/Contents/NDK/",
 	},
 	["androidNdkHost"] = "darwin-x86_64",
 	["sourcePackagePath"] = "/opt/sources/",
@@ -190,7 +190,7 @@ conf.host.macM1 = {
 	},
 	["androidNdkPath"] = {
 		["r23c"] = "/Applications/AndroidNDK8568313.app/Contents/NDK/",
-		["r25b"] = "/Applications/AndroidNDK8937393.app/Contents/NDK/",
+		["r25c"] = "/Applications/AndroidNDK9519653.app/Contents/NDK/",
 	},
 	["androidNdkHost"] = "darwin-x86_64",
 	["sourcePackagePath"] = "/opt/sources/",

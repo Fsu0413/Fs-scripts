@@ -26,7 +26,8 @@ local main = function(argc, argv)
 
 	local confTable, optionalQQtPatcherTable = conf[buildContent]:generateConfTable(buildHost, buildJob)
 
-	-- QQtPatcher buildconf
+	-- QQtPatcher will be discontinued on 2023.9.11, the time when OpenSSL 1.1 series goes EOL
+	-- Related code can be deleted after that time, when I'll give the QQtPatcher a 1.0.0 version number
 	if optionalQQtPatcherTable then
 		confTable.EXTRAINSTALL = gen:generate(optionalQQtPatcherTable) .. confTable.EXTRAINSTALL
 	end

@@ -258,40 +258,40 @@ conf.Qt = {}
 conf.Qt.configurations = dofile(scriptPath .. "/lib/qtCompile/conf.lua")
 
 conf.Qt.generateConfTable = function(self, host, job)
-	local confHost = conf.host[conf.hostToConfMap[host]]
-	local confDetail = conf.Qt.configurations[job]
+	local configureHost = conf.host[conf.hostToConfMap[host]]
+	local jobConfigureDetail = conf.Qt.configurations[job]
 
 	local ret = {}
 	ret.buildContent = "Qt"
-	ret.template = confHost.makefileTemplate
+	ret.template = configureHost.makefileTemplate
 	ret.path = {}
 	ret.WORKSPACE = os.getenv("WORKSPACE")
 	-- dirty hack here for Windows drive since Windows services always starts in drive C
-	if confHost.makefileTemplate == "win" and string.sub(ret.WORKSPACE, 1, 24) == "C:\\Users\\Fs\\Work\\Jenkins" then
+	if configureHost.makefileTemplate == "win" and string.sub(ret.WORKSPACE, 1, 24) == "C:\\Users\\Fs\\Work\\Jenkins" then
 		local rightpart = string.sub(ret.WORKSPACE, 25)
 		ret.WORKSPACE = "D:\\Jenkins" .. rightpart
 	end
 	-- dirty hack end
-	ret.BUILDDIR = confHost.buildRootPath .. "build-Qt" .. job
+	ret.BUILDDIR = configureHost.buildRootPath .. "build-Qt" .. job
 	ret.download = {}
 
 	-- DO REMEMBER TO USE tostring IF A VERSION STRING IS NEEDED!!
 	local hostToolchainVersion, targetToolchainVersion
 	local hostToolchainVersionQueryFuncName = "gcc"
 	local hostToolchainVersionQueryPath
-	local hostToolchainExecutableName = confHost.defaultToolchainExecutableName
+	local hostToolchainExecutableName = configureHost.defaultToolchainExecutableName
 
-	if confDetail.toolchain ~= "PATH" then
-		local paths = confHost.toolchainPath[confDetail.toolchain]
-		if type(confHost.toolchainPath[confDetail.toolchain]) == "string" then
-			paths = {confHost.toolchainPath[confDetail.toolchain]}
+	if jobConfigureDetail.toolchain ~= "PATH" then
+		local paths = configureHost.toolchainPath[jobConfigureDetail.toolchain]
+		if type(configureHost.toolchainPath[jobConfigureDetail.toolchain]) == "string" then
+			paths = {configureHost.toolchainPath[jobConfigureDetail.toolchain]}
 		end
 		hostToolchainVersionQueryPath = paths[1]
-		if string.sub(confDetail.toolchain, 1, 4) == "MSVC" then
+		if string.sub(jobConfigureDetail.toolchain, 1, 4) == "MSVC" then
 			hostToolchainVersionQueryFuncName = "msvc"
 			ret.msvcBat = paths[1]
 			table.remove(paths, 1)
-		elseif string.sub(confDetail.toolchain, 1, 9) == "MinGWLLVM" then
+		elseif string.sub(jobConfigureDetail.toolchain, 1, 9) == "MinGWLLVM" then
 			hostToolchainVersionQueryPath = paths[2]
 			hostToolchainExecutableName = "clang"
 		end
@@ -300,10 +300,10 @@ conf.Qt.generateConfTable = function(self, host, job)
 		end
 	end
 
-	hostToolchainVersion = compilerVer[hostToolchainVersionQueryFuncName](confHost.makefileTemplate == "win", hostToolchainVersionQueryPath, hostToolchainExecutableName)
+	hostToolchainVersion = compilerVer[hostToolchainVersionQueryFuncName](configureHost.makefileTemplate == "win", hostToolchainVersionQueryPath, hostToolchainExecutableName)
 
-	if confDetail.useCMake and confHost.cMakePath then
-		for _, p in ipairs(confHost.cMakePath[confDetail.useCMake]) do
+	if jobConfigureDetail.useCMake and configureHost.cMakePath then
+		for _, p in ipairs(configureHost.cMakePath[jobConfigureDetail.useCMake]) do
 			table.insert(ret.path, p)
 		end
 	end
@@ -311,112 +311,112 @@ conf.Qt.generateConfTable = function(self, host, job)
 	ret.envSet = {}
 	ret.date = string.format("%04d%02d%02d", BuildTime.year, BuildTime.month, BuildTime.day)
 
-	local repl = {}
+	local commandLineReplacement = {}
 
-	if confDetail.crossCompile then
+	if jobConfigureDetail.crossCompile then
 		-- Qt 6: We need host tool to cross build Qt
-		if confDetail.hostToolsConf then
-			table.insert(ret.download, conf.Qt:hostToolDownloadPath(confHost, job, hostToolchainVersion))
-			repl.HOSTQTDIR = ret.WORKSPACE .. confHost.pathSep .. "buildDir" .. confHost.pathSep ..replaceVersion(conf.Qt.configurations[confDetail.hostToolsConf].name, hostToolchainVersion)
+		if jobConfigureDetail.hostToolsConf then
+			table.insert(ret.download, conf.Qt:hostToolDownloadPath(configureHost, job, hostToolchainVersion))
+			commandLineReplacement.HOSTQTDIR = ret.WORKSPACE .. configureHost.pathSep .. "buildDir" .. configureHost.pathSep ..replaceVersion(conf.Qt.configurations[jobConfigureDetail.hostToolsConf].name, hostToolchainVersion)
 		end
 
-		if string.sub(confDetail.toolchainT, 1, 7) == "Android" then -- Android
+		if string.sub(jobConfigureDetail.toolchainT, 1, 7) == "Android" then -- Android
 			local matchStr = "Android%-(%d+)%-(r%d+%a?)%-(.+)"
-			local api, ndkVer, archi = string.match(confDetail.toolchainT, matchStr)
+			local api, ndkVer, archi = string.match(jobConfigureDetail.toolchainT, matchStr)
 			if api then
-				repl.ANDROIDNDKROOT = confHost.androidNdkPath[ndkVer]
+				commandLineReplacement.ANDROIDNDKROOT = configureHost.androidNdkPath[ndkVer]
 			else
-				error("Android - confDetail.toolchainT is not matched")
+				error("Android - jobConfigureDetail.toolchainT is not matched")
 			end
 
-			if confDetail.androidSdkVersion then
-				repl.ANDROIDSDKROOT = confHost.androidSdkPath[confDetail.androidSdkVersion]
+			if jobConfigureDetail.androidSdkVersion then
+				commandLineReplacement.ANDROIDSDKROOT = configureHost.androidSdkPath[jobConfigureDetail.androidSdkVersion]
 			else
-				error("Android - confDetail.androidSdkVersion is not set")
+				error("Android - jobConfigureDetail.androidSdkVersion is not set")
 			end
 
-			if confHost.jdkPath then
+			if configureHost.jdkPath then
 				local jdkMajorVersion = "8"
-				if string.sub(confDetail.qtVersion, 1, 2) == "6." then
+				if string.sub(jobConfigureDetail.qtVersion, 1, 2) == "6." then
 					jdkMajorVersion = "11"
 				end
-				ret.envSet.JAVA_HOME = confHost.jdkPath[jdkMajorVersion]
-				table.insert(ret.path, confHost.jdkPath[jdkMajorVersion] .. confHost.pathSep .. "bin")
+				ret.envSet.JAVA_HOME = configureHost.jdkPath[jdkMajorVersion]
+				table.insert(ret.path, configureHost.jdkPath[jdkMajorVersion] .. configureHost.pathSep .. "bin")
 			end
-		elseif string.sub(confDetail.toolchainT, 1, 10) == "emscripten" then -- WebAssembly
+		elseif string.sub(jobConfigureDetail.toolchainT, 1, 10) == "emscripten" then -- WebAssembly
 			local matchStr = "^emscripten%-(.+)$"
-			local emsdkVer = string.match(confDetail.toolchainT, matchStr)
+			local emsdkVer = string.match(jobConfigureDetail.toolchainT, matchStr)
 			if emsdkVer then
 				-- Since emsdk doesn't provide a way for downgrade, we have to split each emsdk installation.
 				-- Currently all emsdk version we are using can be simply matched using only its version number, so ...
-				if confHost.makefileTemplate == "unix" then
-					ret.emSource = confHost.emscriptenPath[emsdkVer] .. "/emsdk_env.sh"
+				if configureHost.makefileTemplate == "unix" then
+					ret.emSource = configureHost.emscriptenPath[emsdkVer] .. "/emsdk_env.sh"
 				else
-					ret.emSource = confHost.emscriptenPath[emsdkVer] .. "emsdk_env.bat"
+					ret.emSource = configureHost.emscriptenPath[emsdkVer] .. "emsdk_env.bat"
 				end
 
-				targetToolchainVersion = compilerVer.emcc(confHost.makefileTemplate == "win", confHost.emscriptenPath[emsdkVer])
+				targetToolchainVersion = compilerVer.emcc(configureHost.makefileTemplate == "win", configureHost.emscriptenPath[emsdkVer])
 			else
-				error("WebAssembly - confDetail.toolchainT is not matched")
+				error("WebAssembly - jobConfigureDetail.toolchainT is not matched")
 			end
-		elseif string.sub(confDetail.toolchainT, 1, 4) == "MSVC" then -- Windows UWP/ARM64 Desktop
+		elseif string.sub(jobConfigureDetail.toolchainT, 1, 4) == "MSVC" then -- Windows UWP/ARM64 Desktop
 			-- Nothing needed to do
-		elseif string.sub(confDetail.toolchainT, 1, 11) == "GCCForLinux" then -- GNU/Linux cross builds(Todo)
+		elseif string.sub(jobConfigureDetail.toolchainT, 1, 11) == "GCCForLinux" then -- GNU/Linux cross builds(Todo)
 			error("todo....")
-		elseif string.sub(confDetail.toolchainT, 1, 5) == "MinGW" then -- MinGW cross builds(Todo)
+		elseif string.sub(jobConfigureDetail.toolchainT, 1, 5) == "MinGW" then -- MinGW cross builds(Todo)
 			error("todo....")
 		end
 	else
 		targetToolchainVersion = hostToolchainVersion
 	end
 
-	if confDetail.opensslConf then
-		table.insert(ret.download, conf.OpenSSL:binaryFileDownloadPath(confHost, confDetail.opensslConf, targetToolchainVersion))
-		repl.OPENSSLDIR = ret.WORKSPACE .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. replaceVersion(conf.OpenSSL.configurations[confDetail.opensslConf].name, nil, targetToolchainVersion)
-		if confDetail.OPENSSL_LIBS then
-			local opensslLibs = string.gsub(confDetail.OPENSSL_LIBS, "%&OPENSSLDIR%&", repl.OPENSSLDIR)
+	if jobConfigureDetail.opensslConf then
+		table.insert(ret.download, conf.OpenSSL:binaryFileDownloadPath(configureHost, jobConfigureDetail.opensslConf, targetToolchainVersion))
+		commandLineReplacement.OPENSSLDIR = ret.WORKSPACE .. configureHost.pathSep .. "buildDir" .. configureHost.pathSep .. replaceVersion(conf.OpenSSL.configurations[jobConfigureDetail.opensslConf].name, nil, targetToolchainVersion)
+		if jobConfigureDetail.OPENSSL_LIBS then
+			local opensslLibs = string.gsub(jobConfigureDetail.OPENSSL_LIBS, "%&OPENSSLDIR%&", commandLineReplacement.OPENSSLDIR)
 			ret.envSet.OPENSSL_LIBS = opensslLibs
 		end
 	end
 
-	if confDetail.mysqlConf then
-		table.insert(ret.download, conf.MariaDB:binaryFileDownloadPath(confHost, confDetail.mysqlConf, targetToolchainVersion))
-		repl.MYSQLPREFIX = ret.WORKSPACE .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. replaceVersion(conf.MariaDB.configurations[confDetail.mysqlConf].name, nil, targetToolchainVersion)
+	if jobConfigureDetail.mysqlConf then
+		table.insert(ret.download, conf.MariaDB:binaryFileDownloadPath(configureHost, jobConfigureDetail.mysqlConf, targetToolchainVersion))
+		commandLineReplacement.MYSQLPREFIX = ret.WORKSPACE .. configureHost.pathSep .. "buildDir" .. configureHost.pathSep .. replaceVersion(conf.MariaDB.configurations[jobConfigureDetail.mysqlConf].name, nil, targetToolchainVersion)
 	end
 
-	local installFolderName = replaceVersion(confDetail.name, hostToolchainVersion, targetToolchainVersion)
-	local installRoot = ret.WORKSPACE .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. installFolderName
-	repl.INSTALLROOT = installRoot
+	local installFolderName = replaceVersion(jobConfigureDetail.name, hostToolchainVersion, targetToolchainVersion)
+	local installRoot = ret.WORKSPACE .. configureHost.pathSep .. "buildDir" .. configureHost.pathSep .. installFolderName
+	commandLineReplacement.INSTALLROOT = installRoot
 
-	if not confDetail.useCMake then
-		ret.CONFIGURECOMMANDLINE = confHost.sourcePackagePath .. confDetail.sourcePackageBaseName .. confHost.pathSep .. "configure "
+	if not jobConfigureDetail.useCMake then
+		ret.CONFIGURECOMMANDLINE = configureHost.sourcePackagePath .. jobConfigureDetail.sourcePackageBaseName .. configureHost.pathSep .. "configure "
 	else
 		ret.CONFIGURECOMMANDLINE = "cmake "
 	end
-	ret.CONFIGURECOMMANDLINE = ret.CONFIGURECOMMANDLINE .. string.gsub(string.gsub(confDetail.configureParameter, "%&([%w_]+)%&", function(s)
-		if repl[s] then
-			return repl[s]
+	ret.CONFIGURECOMMANDLINE = ret.CONFIGURECOMMANDLINE .. string.gsub(string.gsub(jobConfigureDetail.configureParameter, "%&([%w_]+)%&", function(s)
+		if commandLineReplacement[s] then
+			return commandLineReplacement[s]
 		else
 			return ""
 		end
 	end), "%s+", " ")
-	if confDetail.useCMake then
-		ret.CONFIGURECOMMANDLINE = ret.CONFIGURECOMMANDLINE .. confHost.sourcePackagePath .. confDetail.sourcePackageBaseName
+	if jobConfigureDetail.useCMake then
+		ret.CONFIGURECOMMANDLINE = ret.CONFIGURECOMMANDLINE .. configureHost.sourcePackagePath .. jobConfigureDetail.sourcePackageBaseName
 	end
-	if (string.sub(confDetail.qtVersion, 1, 2) == "6.") and confDetail.crossCompile and (string.sub(confDetail.toolchainT, 1, 10) == "emscripten") then
-		if not confDetail.useCMake then
+	if (string.sub(jobConfigureDetail.qtVersion, 1, 2) == "6.") and jobConfigureDetail.crossCompile and (string.sub(jobConfigureDetail.toolchainT, 1, 10) == "emscripten") then
+		if not jobConfigureDetail.useCMake then
 			ret.CONFIGURECOMMANDLINE = "emconfigure " .. ret.CONFIGURECOMMANDLINE
 		else
 			ret.CONFIGURECOMMANDLINE = "emcmake " .. ret.CONFIGURECOMMANDLINE
 		end
 	end
 
-	if not confDetail.useCMake then
-		if confHost.makefileTemplate == "unix" then
+	if not jobConfigureDetail.useCMake then
+		if configureHost.makefileTemplate == "unix" then
 			ret.MAKE = "make -j$PARALLELNUM"
-		elseif string.sub(confDetail.toolchain, 1, 5) == "MinGW" then
+		elseif string.sub(jobConfigureDetail.toolchain, 1, 5) == "MinGW" then
 			ret.MAKE = "mingw32-make -j%PARALLELNUM%"
-		elseif string.sub(confDetail.toolchain, 1, 4) == "MSVC" then
+		elseif string.sub(jobConfigureDetail.toolchain, 1, 4) == "MSVC" then
 			ret.MAKE = "jom"
 		else
 			error("not supported")
@@ -425,25 +425,25 @@ conf.Qt.generateConfTable = function(self, host, job)
 		-- let CMake call the underlying make tool
 		ret.MAKE = "cmake --build . --parallel -- "
 	end
-	if (string.sub(confDetail.qtVersion, 1, 2) == "6.") and confDetail.crossCompile and (string.sub(confDetail.toolchainT, 1, 10) == "emscripten") then
+	if (string.sub(jobConfigureDetail.qtVersion, 1, 2) == "6.") and jobConfigureDetail.crossCompile and (string.sub(jobConfigureDetail.toolchainT, 1, 10) == "emscripten") then
 		ret.MAKE = "emmake " .. ret.MAKE
 	end
 
 	-- For whatever reason Python can't be in PATH on Windows.
 	-- Python for windows has its executable versionless. We need to prepend its path to the PATH variable.
-	if confHost.pythonPath then
-		if string.sub(confDetail.qtVersion, 1, 2) == "6." then
-			table.insert(ret.path, confHost.pythonPath["3"])
+	if configureHost.pythonPath then
+		if string.sub(jobConfigureDetail.qtVersion, 1, 2) == "6." then
+			table.insert(ret.path, configureHost.pythonPath["3"])
 		else
-			table.insert(ret.path, confHost.pythonPath["2"])
+			table.insert(ret.path, configureHost.pythonPath["2"])
 		end
 	end
 
-	if not confDetail.useCMake then
+	if not jobConfigureDetail.useCMake then
 		ret.INSTALLCOMMANDLINE = ret.MAKE .. " install "
-		if confDetail.crossCompile then
+		if jobConfigureDetail.crossCompile then
 			local installRootMake = installRoot
-			if confHost.makefileTemplate == "win" then
+			if configureHost.makefileTemplate == "win" then
 				-- suppress "X:" in INSTALLROOT.
 				-- File names with colons in Windows filesystem is not available, so...
 				if string.sub(installRoot, 2, 2) == ":" then
@@ -464,26 +464,26 @@ conf.Qt.generateConfTable = function(self, host, job)
 	ret.EXTRAINSTALL = ""
 
 	-- Qt host tool deploy
-	if confDetail.crossCompile and confDetail.hostToolsConf then
+	if jobConfigureDetail.crossCompile and jobConfigureDetail.hostToolsConf then
 		local deployShellCommand = scriptPath .. "/../qt6_deploy_host.sh"
-		if confHost.makefileTemplate == "win" then
+		if configureHost.makefileTemplate == "win" then
 			deployShellCommand = "cscript " .. scriptPath .. "/../qt6_deploy_host.vbs"
 		end
-		ret.EXTRAINSTALL = ret.EXTRAINSTALL .. deployShellCommand .. " " .. installRoot .. " " .. repl.HOSTQTDIR .. "\n"
+		ret.EXTRAINSTALL = ret.EXTRAINSTALL .. deployShellCommand .. " " .. installRoot .. " " .. commandLineReplacement.HOSTQTDIR .. "\n"
 	end
 
 	-- Qt configure file
-	local copyCmd = ((confHost.makefileTemplate == "unix") and "cp -f " or "copy /y ")
-	for _, file in ipairs(confDetail.configFile) do
-		if confHost.makefileTemplate == "win" then
+	local copyCmd = ((configureHost.makefileTemplate == "unix") and "cp -f " or "copy /y ")
+	for _, file in ipairs(jobConfigureDetail.configFile) do
+		if configureHost.makefileTemplate == "win" then
 			file = string.gsub(file, "%/", "\\")
 		end
-		ret.EXTRAINSTALL = ret.EXTRAINSTALL .. copyCmd .. ret.BUILDDIR .. confHost.pathSep .. file .. " " .. installRoot .. "\n"
+		ret.EXTRAINSTALL = ret.EXTRAINSTALL .. copyCmd .. ret.BUILDDIR .. configureHost.pathSep .. file .. " " .. installRoot .. "\n"
 	end
 
 	-- check for static builds
 	local staticBuild = false
-	for _, v in ipairs(confDetail.variant) do
+	for _, v in ipairs(jobConfigureDetail.variant) do
 		if (v == "-static") or (v == "-staticFull") then
 			staticBuild = true
 			break
@@ -491,17 +491,17 @@ conf.Qt.generateConfTable = function(self, host, job)
 	end
 
 	-- hack for static Qt 6.2 series: they can't be used without workaround of qt.conf
-	if staticBuild and (string.sub(confDetail.qtVersion, 1, 4) == "6.2.") then
+	if staticBuild and (string.sub(jobConfigureDetail.qtVersion, 1, 4) == "6.2.") then
 		local scriptPathNative = scriptPath
-		if confHost.makefileTemplate == "win" then
+		if configureHost.makefileTemplate == "win" then
 			scriptPathNative = string.gsub(scriptPath, "%/", "\\")
 		end
-		ret.EXTRAINSTALL = ret.EXTRAINSTALL .. copyCmd .. scriptPathNative .. confHost.pathSep .. ".." .. confHost.pathSep .. "qtconf-ForQt6.2Static" .. " " .. installRoot .. confHost.pathSep .. "bin" .. confHost.pathSep .. "qt.conf\n"
+		ret.EXTRAINSTALL = ret.EXTRAINSTALL .. copyCmd .. scriptPathNative .. configureHost.pathSep .. ".." .. configureHost.pathSep .. "qtconf-ForQt6.2Static" .. " " .. installRoot .. configureHost.pathSep .. "bin" .. configureHost.pathSep .. "qt.conf\n"
 	end
 
 	-- OpenSSL libraries
-	if confDetail.opensslConf then
-		local opensslLibPath = conf.OpenSSL.configurations[confDetail.opensslConf][(staticBuild and "static" or "") .. "libPath"]
+	if jobConfigureDetail.opensslConf then
+		local opensslLibPath = conf.OpenSSL.configurations[jobConfigureDetail.opensslConf][(staticBuild and "static" or "") .. "libPath"]
 		if opensslLibPath then
 			local targetDir = "lib"
 			-- todo: deal with the condition where the OpenSSL libs are symbolic link to the real file (only for unix)
@@ -509,16 +509,16 @@ conf.Qt.generateConfTable = function(self, host, job)
 				targetDir = "bin"
 			end
 			for _, path in ipairs(opensslLibPath) do
-				ret.EXTRAINSTALL = ret.EXTRAINSTALL .. copyCmd .. repl.OPENSSLDIR .. confHost.pathSep .. path .. " " .. installRoot .. confHost.pathSep .. targetDir .. "\n"
+				ret.EXTRAINSTALL = ret.EXTRAINSTALL .. copyCmd .. commandLineReplacement.OPENSSLDIR .. configureHost.pathSep .. path .. " " .. installRoot .. configureHost.pathSep .. targetDir .. "\n"
 			end
 
 			-- for Qt 6.5+ links OpenSSL to QtBase
-			if (not confDetail.crossCompile) and (not staticBuild) then
+			if (not jobConfigureDetail.crossCompile) and (not staticBuild) then
 				if conf.hostToConfMap[host] == "win" then
-					table.insert(ret.path, repl.OPENSSLDIR .. confHost.pathSep .. "bin")
+					table.insert(ret.path, commandLineReplacement.OPENSSLDIR .. configureHost.pathSep .. "bin")
 				elseif string.sub(conf.hostToConfMap[host], 1, 3) == "mac" then
 					-- todo: is this needed?
-					-- ret.envSet.DYLD_LIBRARY_PATH = repl.OPENSSLDIR .. confHost.pathSep .. "lib"
+					-- ret.envSet.DYLD_LIBRARY_PATH = commandLineReplacement.OPENSSLDIR .. configureHost.pathSep .. "lib"
 				end
 			end
 		end
@@ -526,8 +526,8 @@ conf.Qt.generateConfTable = function(self, host, job)
 
 	-- MySQL libraries / MariaDB libraries
 	-- Currently we are using MariaDB for MySQL connector. It is the REAL MySQL per se!!
-	if confDetail.mysqlConf then
-		local mysqlLibPath = conf.MariaDB.configurations[confDetail.mysqlConf].libPath
+	if jobConfigureDetail.mysqlConf then
+		local mysqlLibPath = conf.MariaDB.configurations[jobConfigureDetail.mysqlConf].libPath
 		if mysqlLibPath then
 			local targetDir = "lib"
 			-- todo: deal with the condition where the MariaDB libs are symbolic link to the real file (only for unix)
@@ -535,29 +535,29 @@ conf.Qt.generateConfTable = function(self, host, job)
 				targetDir = "bin"
 			end
 			for _, path in ipairs(mysqlLibPath) do
-				ret.EXTRAINSTALL = ret.EXTRAINSTALL .. copyCmd .. repl.MYSQLPREFIX .. confHost.pathSep .. path .. " " .. installRoot .. confHost.pathSep .. targetDir .. "\n"
+				ret.EXTRAINSTALL = ret.EXTRAINSTALL .. copyCmd .. commandLineReplacement.MYSQLPREFIX .. configureHost.pathSep .. path .. " " .. installRoot .. configureHost.pathSep .. targetDir .. "\n"
 			end
 		end
 	end
 
 	local qQtPatcherTable = nil
-	if confDetail.qQtPatcher ~= "no" then
+	if jobConfigureDetail.qQtPatcher ~= "no" then
 		-- QQtPatcher
-		if confDetail.qQtPatcher == "build" then
+		if jobConfigureDetail.qQtPatcher == "build" then
 			qQtPatcherTable = {
 				buildContent = "QQtPatcher",
-				template = confHost.makefileTemplate,
+				template = configureHost.makefileTemplate,
 				QTDIR = installRoot,
 				MAKE = ret.MAKE,
-				VERSION = confDetail.qQtPatcherVersion,
+				VERSION = jobConfigureDetail.qQtPatcherVersion,
 			}
-			table.insert(ret.download, confDetail["qQtPatcherSourceUrl" .. confHost.makefileTemplate])
+			table.insert(ret.download, jobConfigureDetail["qQtPatcherSourceUrl" .. configureHost.makefileTemplate])
 		else
-			table.insert(ret.download, confDetail["qQtPatcherUrl" .. confHost.makefileTemplate])
+			table.insert(ret.download, jobConfigureDetail["qQtPatcherUrl" .. configureHost.makefileTemplate])
 		end
-		ret.EXTRAINSTALL = ret.EXTRAINSTALL .. copyCmd .. "QQtPatcher" .. (((confHost.makefileTemplate == "unix") and (conf.hostToConfMap[host] ~= "msys")) and "" or ".exe") .. " " .. installRoot .. "\n"
+		ret.EXTRAINSTALL = ret.EXTRAINSTALL .. copyCmd .. "QQtPatcher" .. (((configureHost.makefileTemplate == "unix") and (conf.hostToConfMap[host] ~= "msys")) and "" or ".exe") .. " " .. installRoot .. "\n"
 
-		if (confHost.makefileTemplate == "unix") and (conf.hostToConfMap[host] ~= "msys") then
+		if (configureHost.makefileTemplate == "unix") and (conf.hostToConfMap[host] ~= "msys") then
 			ret.EXTRAINSTALL = ret.EXTRAINSTALL .. "chmod +x " .. installRoot .. "/QQtPatcher\n"
 		end
 	end
@@ -565,8 +565,8 @@ conf.Qt.generateConfTable = function(self, host, job)
 	return ret, qQtPatcherTable
 end
 
-conf.Qt.hostToolDownloadPath = function(self, confHost, job, version)
-	local pathWithVersionNotSubstituted = conf.Qt.configurations[job]["hostToolsUrl" .. confHost.makefileTemplate]
+conf.Qt.hostToolDownloadPath = function(self, configureHost, job, version)
+	local pathWithVersionNotSubstituted = conf.Qt.configurations[job]["hostToolsUrl" .. configureHost.makefileTemplate]
 	return replaceVersion(pathWithVersionNotSubstituted, version)
 end
 
@@ -575,14 +575,14 @@ conf.OpenSSL = {}
 conf.OpenSSL.configurations = dofile(scriptPath .. "/lib/opensslCompile/conf.lua")
 
 conf.OpenSSL.generateConfTable = function(self, host, job)
-	local confHost = conf.host[conf.hostToConfMap[host]]
-	local confDetail = conf.OpenSSL.configurations[job]
+	local configureHost = conf.host[conf.hostToConfMap[host]]
+	local jobConfigureDetail = conf.OpenSSL.configurations[job]
 	local ret = {}
-	ret.template = confHost.makefileTemplate
+	ret.template = configureHost.makefileTemplate
 	ret.path = {}
 	ret.WORKSPACE = os.getenv("WORKSPACE")
 	-- dirty hack here for Windows drive since Windows services always starts in drive C
-	if confHost.makefileTemplate == "win" and string.sub(ret.WORKSPACE, 1, 24) == "C:\\Users\\Fs\\Work\\Jenkins" then
+	if configureHost.makefileTemplate == "win" and string.sub(ret.WORKSPACE, 1, 24) == "C:\\Users\\Fs\\Work\\Jenkins" then
 		local rightpart = string.sub(ret.WORKSPACE, 25)
 		ret.WORKSPACE = "D:\\Jenkins" .. rightpart
 	end
@@ -593,19 +593,19 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 	local hostToolchainVersion, targetToolchainVersion
 	local hostToolchainVersionQueryFuncName = "gcc"
 	local hostToolchainVersionQueryPath
-	local hostToolchainExecutableName = confHost.defaultToolchainExecutableName
+	local hostToolchainExecutableName = configureHost.defaultToolchainExecutableName
 
-	if confDetail.toolchain ~= "PATH" then
-		local paths = confHost.toolchainPath[confDetail.toolchain]
-		if type(confHost.toolchainPath[confDetail.toolchain]) == "string" then
-			paths = {confHost.toolchainPath[confDetail.toolchain]}
+	if jobConfigureDetail.toolchain ~= "PATH" then
+		local paths = configureHost.toolchainPath[jobConfigureDetail.toolchain]
+		if type(configureHost.toolchainPath[jobConfigureDetail.toolchain]) == "string" then
+			paths = {configureHost.toolchainPath[jobConfigureDetail.toolchain]}
 		end
 		hostToolchainVersionQueryPath = paths[1]
-		if string.sub(confDetail.toolchain, 1, 4) == "MSVC" then
+		if string.sub(jobConfigureDetail.toolchain, 1, 4) == "MSVC" then
 			hostToolchainVersionQueryFuncName = "msvc"
 			ret.msvcBat = paths[1]
 			table.remove(paths, 1)
-		elseif string.sub(confDetail.toolchain, 1, 9) == "MinGWLLVM" then
+		elseif string.sub(jobConfigureDetail.toolchain, 1, 9) == "MinGWLLVM" then
 			hostToolchainVersionQueryPath = paths[2]
 			hostToolchainExecutableName = "clang"
 		end
@@ -614,84 +614,84 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 		end
 	end
 
-	hostToolchainVersion = compilerVer[hostToolchainVersionQueryFuncName](confHost.makefileTemplate == "win", hostToolchainVersionQueryPath, hostToolchainExecutableName)
+	hostToolchainVersion = compilerVer[hostToolchainVersionQueryFuncName](configureHost.makefileTemplate == "win", hostToolchainVersionQueryPath, hostToolchainExecutableName)
 
-	if confDetail.opensslUnifyType then
+	if jobConfigureDetail.opensslUnifyType then
 		-- This part of script runs only on whatever Unix-like host (CentOS8 / Rocky9 / macOS on my build environment) and no Windows compatibility is made.
 		-- no plan for Windows support.
 
 		-- Useful for building a unified package for Android / macOS
 
-		if confDetail.opensslUnifyType == "macOS" then
+		if jobConfigureDetail.opensslUnifyType == "macOS" then
 			-- macOS build uses unified clang
 			targetToolchainVersion = hostToolchainVersion
 		end
 
-		ret.buildContent = "OpenSSLUnify" .. confDetail.opensslUnifyType
-		ret.INSTALLROOT = ret.WORKSPACE .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. replaceVersion(confDetail.name, hostToolchainVersion, targetToolchainVersion)
-		ret.INSTALLPATH = replaceVersion(confDetail.name, hostToolchainVersion, targetToolchainVersion)
+		ret.buildContent = "OpenSSLUnify" .. jobConfigureDetail.opensslUnifyType
+		ret.INSTALLROOT = ret.WORKSPACE .. configureHost.pathSep .. "buildDir" .. configureHost.pathSep .. replaceVersion(jobConfigureDetail.name, hostToolchainVersion, targetToolchainVersion)
+		ret.INSTALLPATH = replaceVersion(jobConfigureDetail.name, hostToolchainVersion, targetToolchainVersion)
 		ret.OPENSSLDIRFUNCTION = ""
 
-		local repl = {}
-		repl.arch = {}
+		local commandLineReplacement = {}
+		commandLineReplacement.arch = {}
 
-		for arch, unifiedConf in pairs(confDetail.opensslUnifyArch) do
-			table.insert(ret.download, conf.OpenSSL:binaryFileDownloadPath(confHost, unifiedConf, targetToolchainVersion))
+		for arch, unifiedConf in pairs(jobConfigureDetail.opensslUnifyArch) do
+			table.insert(ret.download, conf.OpenSSL:binaryFileDownloadPath(configureHost, unifiedConf, targetToolchainVersion))
 			ret.OPENSSLDIRFUNCTION = ret.OPENSSLDIRFUNCTION .. "if [ \"x$1\" = \"x" .. arch .. "\" ]; then\n" .. "CURRENTARCHDIR=\"" .. replaceVersion(conf.OpenSSL.configurations[unifiedConf].name, hostToolchainVersion, targetToolchainVersion) .. "\"\nexport CURRENTARCHDIR\nel"
-			table.insert(repl.arch, arch)
+			table.insert(commandLineReplacement.arch, arch)
 		end
 
-		ret.ARCHITECTURES = repl.arch[1]
-		for i = 2, #repl.arch, 1 do
-			ret.ARCHITECTURES = ret.ARCHITECTURES .. " " .. repl.arch[i]
+		ret.ARCHITECTURES = commandLineReplacement.arch[1]
+		for i = 2, #commandLineReplacement.arch, 1 do
+			ret.ARCHITECTURES = ret.ARCHITECTURES .. " " .. commandLineReplacement.arch[i]
 		end
 
 		ret.OPENSSLDIRFUNCTION = ret.OPENSSLDIRFUNCTION .. "se\nreturn 1\nfi"
 	else
 		ret.buildContent = "OpenSSL"
-		ret.BUILDDIR = ret.WORKSPACE .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. "build-OpenSSL" .. job
+		ret.BUILDDIR = ret.WORKSPACE .. configureHost.pathSep .. "buildDir" .. configureHost.pathSep .. "build-OpenSSL" .. job
 		ret.INSTALLCOMMANDLINE = " "
-		table.insert(ret.download, confDetail["sourcePackageUrl" .. confHost.makefileTemplate])
+		table.insert(ret.download, jobConfigureDetail["sourcePackageUrl" .. configureHost.makefileTemplate])
 
 		ret.envSet = {}
 
-		local repl = {}
+		local commandLineReplacement = {}
 
-		if confDetail.crossCompile then
-			if string.sub(confDetail.toolchainT, 1, 7) == "Android" then -- Android
+		if jobConfigureDetail.crossCompile then
+			if string.sub(jobConfigureDetail.toolchainT, 1, 7) == "Android" then -- Android
 				-- Let's use NDK package directly
 				local matchStr = "Android%-(%d+)%-(r%d+%a?)%-(.+)"
-				local api, ndkVer, archi = string.match(confDetail.toolchainT, matchStr)
+				local api, ndkVer, archi = string.match(jobConfigureDetail.toolchainT, matchStr)
 				if api then
-					ret.envSet.ANDROID_NDK_HOME = confHost.androidNdkPath[ndkVer]
-					ret.envSet.ANDROID_NDK_ROOT = confHost.androidNdkPath[ndkVer]
+					ret.envSet.ANDROID_NDK_HOME = configureHost.androidNdkPath[ndkVer]
+					ret.envSet.ANDROID_NDK_ROOT = configureHost.androidNdkPath[ndkVer]
 					ret.envSet.CC = "clang"
-					table.insert(ret.path, confHost.androidNdkPath[ndkVer] .. confHost.pathSep .. "toolchains" .. confHost.pathSep .. "llvm" .. confHost.pathSep .. "prebuilt" .. confHost.pathSep .. confHost.androidNdkHost .. confHost.pathSep .. "bin")
+					table.insert(ret.path, configureHost.androidNdkPath[ndkVer] .. configureHost.pathSep .. "toolchains" .. configureHost.pathSep .. "llvm" .. configureHost.pathSep .. "prebuilt" .. configureHost.pathSep .. configureHost.androidNdkHost .. configureHost.pathSep .. "bin")
 				else
-					error("confDetail.toolchainT is not matched")
+					error("jobConfigureDetail.toolchainT is not matched")
 				end
-			elseif string.sub(confDetail.toolchainT, 1, 10) == "emscripten" then -- WebAssembly
+			elseif string.sub(jobConfigureDetail.toolchainT, 1, 10) == "emscripten" then -- WebAssembly
 				error("todo....")
-			elseif string.sub(confDetail.toolchainT, 1, 4) == "MSVC" then -- Windows UWP/ARM64 Desktop
+			elseif string.sub(jobConfigureDetail.toolchainT, 1, 4) == "MSVC" then -- Windows UWP/ARM64 Desktop
 				-- First, deal with ret.msvcBat
-				ret.msvcBat = confHost.toolchainPath[confDetail.toolchainT]
+				ret.msvcBat = configureHost.toolchainPath[jobConfigureDetail.toolchainT]
 				-- ... then copy what host build of MSVC does.
 				-- nothing special
-			elseif string.sub(confDetail.toolchainT, 1, 11) == "GCCForLinux" then -- GNU/Linux cross builds(Todo)
+			elseif string.sub(jobConfigureDetail.toolchainT, 1, 11) == "GCCForLinux" then -- GNU/Linux cross builds(Todo)
 				error("todo....")
-			elseif string.sub(confDetail.toolchainT, 1, 5) == "MinGW" then -- MinGW cross builds(Todo)
+			elseif string.sub(jobConfigureDetail.toolchainT, 1, 5) == "MinGW" then -- MinGW cross builds(Todo)
 				error("todo....")
 			else
 				error("not supported")
 			end
 		else
 			targetToolchainVersion = hostToolchainVersion
-			if string.sub(confDetail.toolchain, 1, 4) == "MSVC" then -- if conf.hostToConfMap[host] == "win" then
+			if string.sub(jobConfigureDetail.toolchain, 1, 4) == "MSVC" then -- if conf.hostToConfMap[host] == "win" then
 				-- nothing special
-			elseif string.sub(confDetail.toolchain, 1, 5) == "MinGW" then -- elseif conf.hostToConfMap[host] == "msys" then
+			elseif string.sub(jobConfigureDetail.toolchain, 1, 5) == "MinGW" then -- elseif conf.hostToConfMap[host] == "msys" then
 				-- Clang-llvm need clang be called with target triplet and should be set to environment variable CC
-				if confDetail.clangTriplet then
-					ret.envSet.CC = "clang --target=" .. confDetail.clangTriplet
+				if jobConfigureDetail.clangTriplet then
+					ret.envSet.CC = "clang --target=" .. jobConfigureDetail.clangTriplet
 				end
 			elseif string.sub(conf.hostToConfMap[host], 1, 3) == "mac" then
 				-- OpenSSL build for macOS is not used when building Qt 5. SecureTransport is used instead.
@@ -705,31 +705,31 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 			end
 		end
 
-		local installFolderName = replaceVersion(confDetail.name, nil, targetToolchainVersion)
-		local installRoot = ret.WORKSPACE .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. installFolderName
+		local installFolderName = replaceVersion(jobConfigureDetail.name, nil, targetToolchainVersion)
+		local installRoot = ret.WORKSPACE .. configureHost.pathSep .. "buildDir" .. configureHost.pathSep .. installFolderName
 
-		repl.INSTALLROOT = installRoot
+		commandLineReplacement.INSTALLROOT = installRoot
 
 		-- Yeah. './config' totally sucks. It is of no use even during host build.
-		ret.CONFIGURECOMMANDLINE = "perl ../" .. confDetail.sourcePackageBaseName .. "/Configure "
-		ret.CONFIGURECOMMANDLINE = ret.CONFIGURECOMMANDLINE .. string.gsub(string.gsub(confDetail.configureParameter, "%&([%w_]+)%&", function(s)
-			if repl[s] then
-				return repl[s]
+		ret.CONFIGURECOMMANDLINE = "perl ../" .. jobConfigureDetail.sourcePackageBaseName .. "/Configure "
+		ret.CONFIGURECOMMANDLINE = ret.CONFIGURECOMMANDLINE .. string.gsub(string.gsub(jobConfigureDetail.configureParameter, "%&([%w_]+)%&", function(s)
+			if commandLineReplacement[s] then
+				return commandLineReplacement[s]
 			else
 				return ""
 			end
 		end), "%s+", " ")
 
-		if confDetail.crossCompile then
+		if jobConfigureDetail.crossCompile then
 			ret.INSTALLCOMMANDLINE = ret.INSTALLCOMMANDLINE .. " DESTDIR=" .. installRoot .. " "
 		end
 
-		if confHost.makefileTemplate == "unix" then
+		if configureHost.makefileTemplate == "unix" then
 			-- OpenSSL on MinGW is built using MSYS2, so only runs on Unix environment
 			-- See https://github.com/openssl/openssl/issues/6111 for MinGW without MSYS2 discussion
 			ret.MAKE = "make -j$PARALLELNUM"
 			ret.INSTALLCOMMANDLINE = ret.MAKE .. " install_sw install_ssldirs " .. ret.INSTALLCOMMANDLINE
-		elseif string.sub(confDetail.toolchain, 1, 4) == "MSVC" then
+		elseif string.sub(jobConfigureDetail.toolchain, 1, 4) == "MSVC" then
 			-- MSVC version of Makefile supports only nmake, jom is neither supported nor tested offically.
 			-- On https://github.com/openssl/openssl/issues/10902 CMake is suggested to be the official supported build tool but got rejected.
 			-- OpenSSL maintainers said that cmake can't cover their supported platforms, so they use a custom build system. e.g. they need to support OpenVMS where CMake can't be run.
@@ -750,8 +750,8 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 	return ret
 end
 
-conf.OpenSSL.binaryFileDownloadPath = function(self, confHost, job, version)
-	local pathWithVersionNotSubstituted = conf.OpenSSL.configurations[job]["binaryPackageUrl" .. confHost.makefileTemplate]
+conf.OpenSSL.binaryFileDownloadPath = function(self, configureHost, job, version)
+	local pathWithVersionNotSubstituted = conf.OpenSSL.configurations[job]["binaryPackageUrl" .. configureHost.makefileTemplate]
 	return replaceVersion(pathWithVersionNotSubstituted, nil, version)
 end
 
@@ -760,14 +760,14 @@ conf.MariaDB = {}
 conf.MariaDB.configurations = dofile(scriptPath .. "/lib/mariadbCompile/conf.lua")
 
 conf.MariaDB.generateConfTable = function(self, host, job)
-	local confHost = conf.host[conf.hostToConfMap[host]]
-	local confDetail = conf.MariaDB.configurations[job]
+	local configureHost = conf.host[conf.hostToConfMap[host]]
+	local jobConfigureDetail = conf.MariaDB.configurations[job]
 	local ret = {}
-	ret.template = confHost.makefileTemplate
+	ret.template = configureHost.makefileTemplate
 	ret.path = {}
 	ret.WORKSPACE = os.getenv("WORKSPACE")
 	-- dirty hack here for Windows drive since Windows services always starts in drive C
-	if confHost.makefileTemplate == "win" and string.sub(ret.WORKSPACE, 1, 24) == "C:\\Users\\Fs\\Work\\Jenkins" then
+	if configureHost.makefileTemplate == "win" and string.sub(ret.WORKSPACE, 1, 24) == "C:\\Users\\Fs\\Work\\Jenkins" then
 		local rightpart = string.sub(ret.WORKSPACE, 25)
 		ret.WORKSPACE = "D:\\Jenkins" .. rightpart
 	end
@@ -778,19 +778,19 @@ conf.MariaDB.generateConfTable = function(self, host, job)
 	local hostToolchainVersion, targetToolchainVersion
 	local hostToolchainVersionQueryFuncName = "gcc"
 	local hostToolchainVersionQueryPath
-	local hostToolchainExecutableName = confHost.defaultToolchainExecutableName
+	local hostToolchainExecutableName = configureHost.defaultToolchainExecutableName
 
-	if confDetail.toolchain ~= "PATH" then
-		local paths = confHost.toolchainPath[confDetail.toolchain]
-		if type(confHost.toolchainPath[confDetail.toolchain]) == "string" then
-			paths = {confHost.toolchainPath[confDetail.toolchain]}
+	if jobConfigureDetail.toolchain ~= "PATH" then
+		local paths = configureHost.toolchainPath[jobConfigureDetail.toolchain]
+		if type(configureHost.toolchainPath[jobConfigureDetail.toolchain]) == "string" then
+			paths = {configureHost.toolchainPath[jobConfigureDetail.toolchain]}
 		end
 		hostToolchainVersionQueryPath = paths[1]
-		if string.sub(confDetail.toolchain, 1, 4) == "MSVC" then
+		if string.sub(jobConfigureDetail.toolchain, 1, 4) == "MSVC" then
 			hostToolchainVersionQueryFuncName = "msvc"
 			ret.msvcBat = paths[1]
 			table.remove(paths, 1)
-		elseif string.sub(confDetail.toolchain, 1, 9) == "MinGWLLVM" then
+		elseif string.sub(jobConfigureDetail.toolchain, 1, 9) == "MinGWLLVM" then
 			hostToolchainVersionQueryPath = paths[2]
 			hostToolchainExecutableName = "clang"
 		end
@@ -799,42 +799,42 @@ conf.MariaDB.generateConfTable = function(self, host, job)
 		end
 	end
 
-	hostToolchainVersion = compilerVer[hostToolchainVersionQueryFuncName](confHost.makefileTemplate == "win", hostToolchainVersionQueryPath, hostToolchainExecutableName)
+	hostToolchainVersion = compilerVer[hostToolchainVersionQueryFuncName](configureHost.makefileTemplate == "win", hostToolchainVersionQueryPath, hostToolchainExecutableName)
 
-	if confHost.cMakePath and confHost.cMakePath.Latest then
-		for _, p in ipairs(confHost.cMakePath.Latest) do
+	if configureHost.cMakePath and configureHost.cMakePath.Latest then
+		for _, p in ipairs(configureHost.cMakePath.Latest) do
 			table.insert(ret.path, p)
 		end
 	end
 
 	ret.buildContent = "MariaDB"
-	ret.BUILDDIR = ret.WORKSPACE .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. "build-MariaDB" .. job
+	ret.BUILDDIR = ret.WORKSPACE .. configureHost.pathSep .. "buildDir" .. configureHost.pathSep .. "build-MariaDB" .. job
 	ret.INSTALLCOMMANDLINE = " "
-	table.insert(ret.download, confDetail["sourcePackageUrl" .. confHost.makefileTemplate])
+	table.insert(ret.download, jobConfigureDetail["sourcePackageUrl" .. configureHost.makefileTemplate])
 
 	ret.envSet = {}
 
-	local repl = {}
+	local commandLineReplacement = {}
 
-	if confDetail.crossCompile then
-		if string.sub(confDetail.toolchainT, 1, 7) == "Android" then -- Android
+	if jobConfigureDetail.crossCompile then
+		if string.sub(jobConfigureDetail.toolchainT, 1, 7) == "Android" then -- Android
 			error("todo....")
-		elseif string.sub(confDetail.toolchainT, 1, 10) == "emscripten" then -- WebAssembly
+		elseif string.sub(jobConfigureDetail.toolchainT, 1, 10) == "emscripten" then -- WebAssembly
 			error("todo....")
-		elseif string.sub(confDetail.toolchainT, 1, 4) == "MSVC" then -- Windows UWP/ARM64 Desktop
+		elseif string.sub(jobConfigureDetail.toolchainT, 1, 4) == "MSVC" then -- Windows UWP/ARM64 Desktop
 			error("todo....")
-		elseif string.sub(confDetail.toolchainT, 1, 11) == "GCCForLinux" then -- GNU/Linux cross builds(Todo)
+		elseif string.sub(jobConfigureDetail.toolchainT, 1, 11) == "GCCForLinux" then -- GNU/Linux cross builds(Todo)
 			error("todo....")
-		elseif string.sub(confDetail.toolchainT, 1, 5) == "MinGW" then -- MinGW cross builds(Todo)
+		elseif string.sub(jobConfigureDetail.toolchainT, 1, 5) == "MinGW" then -- MinGW cross builds(Todo)
 			error("todo....")
 		else
 			error("not supported")
 		end
 	else
 		targetToolchainVersion = hostToolchainVersion
-		if string.sub(confDetail.toolchain, 1, 4) == "MSVC" then
+		if string.sub(jobConfigureDetail.toolchain, 1, 4) == "MSVC" then
 			-- nothing special
-		elseif string.sub(confDetail.toolchain, 1, 5) == "MinGW" then
+		elseif string.sub(jobConfigureDetail.toolchain, 1, 5) == "MinGW" then
 			-- nothing special
 		elseif string.sub(conf.hostToConfMap[host], 1, 3) == "mac" then
 			-- nothing special
@@ -843,21 +843,21 @@ conf.MariaDB.generateConfTable = function(self, host, job)
 		end
 	end
 
-	local installFolderName = replaceVersion(confDetail.name, nil, targetToolchainVersion)
-	local installRoot = ret.WORKSPACE .. confHost.pathSep .. "buildDir" .. confHost.pathSep .. installFolderName
-	repl.INSTALLROOT = installRoot
+	local installFolderName = replaceVersion(jobConfigureDetail.name, nil, targetToolchainVersion)
+	local installRoot = ret.WORKSPACE .. configureHost.pathSep .. "buildDir" .. configureHost.pathSep .. installFolderName
+	commandLineReplacement.INSTALLROOT = installRoot
 
 	ret.CONFIGURECOMMANDLINE = "cmake "
 
-	ret.CONFIGURECOMMANDLINE = ret.CONFIGURECOMMANDLINE .. string.gsub(string.gsub(confDetail.configureParameter, "%&([%w_]+)%&", function(s)
-		if repl[s] then
-			return repl[s]
+	ret.CONFIGURECOMMANDLINE = ret.CONFIGURECOMMANDLINE .. string.gsub(string.gsub(jobConfigureDetail.configureParameter, "%&([%w_]+)%&", function(s)
+		if commandLineReplacement[s] then
+			return commandLineReplacement[s]
 		else
 			return ""
 		end
 	end), "%s+", " ")
 
-	ret.CONFIGURECOMMANDLINE = ret.CONFIGURECOMMANDLINE .. ".." .. confHost.pathSep .. confDetail.sourcePackageBaseName
+	ret.CONFIGURECOMMANDLINE = ret.CONFIGURECOMMANDLINE .. ".." .. configureHost.pathSep .. jobConfigureDetail.sourcePackageBaseName
 
 	ret.MAKE = "cmake --build . --parallel -- "
 
@@ -869,8 +869,8 @@ conf.MariaDB.generateConfTable = function(self, host, job)
 	return ret
 end
 
-conf.MariaDB.binaryFileDownloadPath = function(self, confHost, job, version)
-	local pathWithVersionNotSubstituted = conf.MariaDB.configurations[job]["binaryPackageUrl" .. confHost.makefileTemplate]
+conf.MariaDB.binaryFileDownloadPath = function(self, configureHost, job, version)
+	local pathWithVersionNotSubstituted = conf.MariaDB.configurations[job]["binaryPackageUrl" .. configureHost.makefileTemplate]
 	return replaceVersion(pathWithVersionNotSubstituted, nil, version)
 end
 

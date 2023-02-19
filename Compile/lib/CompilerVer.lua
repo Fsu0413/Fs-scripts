@@ -25,7 +25,7 @@ local runCmdScript = function(script)
 	return ret
 end
 
-local parseVersionNum = function(str)
+compilerVer.parseVersionNum = function(str)
 	local major, minor, patch
 	local match = { string.match(str, "(%d+)%.(%d+)%.(%d+)") }
 	if #match > 0 then
@@ -60,7 +60,7 @@ end
 compilerVer.msvc = function(isWin, envBat)
 	local shellScript = "@call \"" .. envBat .. "\" > NUL\r\n@echo %VSCMD_VER%\r\n"
 	local ret = runCmdScript(shellScript)
-	return parseVersionNum(ret)
+	return compilerVer.parseVersionNum(ret)
 end
 
 local gccCommon = function(isWin, executableName)
@@ -99,7 +99,7 @@ compilerVer.gcc = function(isWin, path, executableName)
 		ret = runShScript(script)
 	end
 	
-	return parseVersionNum(ret)
+	return compilerVer.parseVersionNum(ret)
 end
 
 compilerVer.emcc = function(isWin, path)
@@ -127,7 +127,7 @@ compilerVer.emcc = function(isWin, path)
 		ret = "1.39.8"
 	end
 
-	return parseVersionNum(ret)
+	return compilerVer.parseVersionNum(ret)
 end
 
 return compilerVer

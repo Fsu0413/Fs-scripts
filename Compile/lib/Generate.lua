@@ -1,5 +1,3 @@
--- TODO: separate compression to another process
--- for Qt builds, it needs other operations(copy OpenSSL libraries, copy config.opt etc., copy/build QQtPatcher)
 
 local gen = {}
 
@@ -50,8 +48,6 @@ gen.win.download = "!DOWNLOADTOOL! -!pd!"
 -- INSTALLPATH
 -- EXTRAINSTALL
 -- INSTALLPATHWITHDATE
--- CONFIGFAIL
--- CONFIGRETRY
 gen.win.template4Qt = [[
 
 rem Unset it for now since it is only used in Jenkins.
@@ -990,7 +986,7 @@ local filenameAndToolFromUrl = function(url)
 	return target, tool
 end
 
-gen.generate = function(self, para)
+gen.generateBuildCommand = function(self, para)
 	-- para.template should be "unix" or "win"
 	-- para.buildContent should be "Qt", "OpenSSL", "OpenSSLUnify***", "MariaDB" or "QQtPatcher"
 	-- other contents in para goes to the replacement function
@@ -1014,7 +1010,7 @@ gen.generate = function(self, para)
 
 	if string.sub(template, 1, 12) == "OpenSSLUnify" then
 		if para.template ~= "unix" then
-			print("[Generate.generate] ERROR: Generation of OpenSSL Unify builds is not available in para.template ~= \"unix\"")
+			print("[Generate.generateBuildCommand] ERROR: Generation of OpenSSL Unify builds is not available in para.template ~= \"unix\"")
 			os.exit(1)
 		end
 	end
@@ -1054,7 +1050,7 @@ gen.generate = function(self, para)
 		if para.template == "win" then
 			paraCopy.MSVCBATCALL = "call \"" .. para.msvcBat .. "\"\n" .. "echo on\n"
 		else
-			print("[Generate.generate] WARNING: para.msvcBat is set when para.template ~= \"win\"")
+			print("[Generate.generateBuildCommand] WARNING: para.msvcBat is set when para.template ~= \"win\"")
 		end
 	end
 	if para.emSource then
@@ -1080,9 +1076,39 @@ gen.generate = function(self, para)
 	return ret
 end
 
+gen.dumpConfTable = function(self, para)
+	local returnText = "{\n"
+	for k, v in pairs(para) do
+		-- Returns the type of its only argument, coded as a string.
+		-- The possible results of this function are "nil" (a string, not the value nil),
+		-- "number", "string", "boolean", "table", "function", "thread", and "userdata".
+
+		-- key is always string
+		returnText = returnText .. "[\"" .. k .. "\"] = "
+		if type(v) == "nil" then
+			returnText = returnText .. "nil"
+		elseif type(v) == "string" then
+			returnText = returnText .. "[====[" .. v .. "]====]"
+		elseif type(v) == "boolean" then
+			returnText = returnText .. (v and "true" or "false")
+		elseif type(v) == "table" then
+			returnText = returnText .. self:dumpConfTable(v)
+		else
+			returnText = returnText .. tostring(v)
+		end
+		returnText = returnText .. ",\n"
+	end
+	returnText = returnText .. "}"
+	return returnText
+end
+
+gen.generateBuildInfo = function(self, para)
+	return "return " .. self:dumpConfTable(para)
+end
+
 local mo = {
 	__call = function(self, para)
-		return self:generate(para)
+		return self:generateBuildCommand(para)
 	end,
 }
 

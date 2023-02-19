@@ -257,7 +257,7 @@ conf.Qt = {}
 
 conf.Qt.configurations = dofile(scriptPath .. "/lib/qtCompile/conf.lua")
 
-conf.Qt.generateConfTable = function(self, host, job)
+conf.Qt.generateConfTable = function(self, host, job, buildTime)
 	local configureHost = conf.host[conf.hostToConfMap[host]]
 	local jobConfigureDetail = conf.Qt.configurations[job]
 
@@ -309,7 +309,7 @@ conf.Qt.generateConfTable = function(self, host, job)
 	end
 
 	ret.envSet = {}
-	ret.date = string.format("%04d%02d%02d", BuildTime.year, BuildTime.month, BuildTime.day)
+	ret.date = string.format("%04d%02d%02d", buildTime.year, buildTime.month, buildTime.day)
 
 	local commandLineReplacement = {}
 
@@ -325,6 +325,7 @@ conf.Qt.generateConfTable = function(self, host, job)
 			local api, ndkVer, archi = string.match(jobConfigureDetail.toolchainT, matchStr)
 			if api then
 				commandLineReplacement.ANDROIDNDKROOT = configureHost.androidNdkPath[ndkVer]
+				targetToolchainVersion = ndkVer
 			else
 				error("Android - jobConfigureDetail.toolchainT is not matched")
 			end
@@ -562,6 +563,15 @@ conf.Qt.generateConfTable = function(self, host, job)
 		end
 	end
 
+	-- finally, data required for generating website data
+	ret.buildContentVersion = jobConfigureDetail.qtVersion
+	ret.buildHost = host
+	ret.buildHostToolchain = jobConfigureDetail.toolchain
+	ret.buildHostToolchainVersion = tostring(hostToolchainVersion)
+	ret.buildTargetToolchain = (jobConfigureDetail.crossCompile and jobConfigureDetail.toolchainT or jobConfigureDetail.toolchain)
+	ret.buildTargetToolchainVersion = tostring(targetToolchainVersion)
+	ret.isPreview = jobConfigureDetail.isPreview
+
 	return ret, qQtPatcherTable
 end
 
@@ -667,6 +677,8 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 					ret.envSet.ANDROID_NDK_ROOT = configureHost.androidNdkPath[ndkVer]
 					ret.envSet.CC = "clang"
 					table.insert(ret.path, configureHost.androidNdkPath[ndkVer] .. configureHost.pathSep .. "toolchains" .. configureHost.pathSep .. "llvm" .. configureHost.pathSep .. "prebuilt" .. configureHost.pathSep .. configureHost.androidNdkHost .. configureHost.pathSep .. "bin")
+
+					targetToolchainVersion = ndkVer
 				else
 					error("jobConfigureDetail.toolchainT is not matched")
 				end
@@ -746,6 +758,14 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 
 		ret.INSTALLROOT = installRoot
 		ret.INSTALLPATH = installFolderName
+
+		-- finally, data required for generating website data
+		ret.buildContentVersion = jobConfigureDetail.opensslVersion
+		ret.buildHost = host
+		ret.buildHostToolchain = jobConfigureDetail.toolchain
+		ret.buildHostToolchainVersion = tostring(hostToolchainVersion)
+		ret.buildTargetToolchain = (jobConfigureDetail.crossCompile and jobConfigureDetail.toolchainT or jobConfigureDetail.toolchain)
+		ret.buildTargetToolchainVersion = tostring(targetToolchainVersion)
 	end
 	return ret
 end
@@ -866,6 +886,14 @@ conf.MariaDB.generateConfTable = function(self, host, job)
 	ret.INSTALLROOT = installRoot
 	ret.INSTALLPATH = installFolderName
 
+	-- finally, data required for generating website data
+	ret.buildContentVersion = jobConfigureDetail.mariadbVersion
+	ret.buildHost = host
+	ret.buildHostToolchain = jobConfigureDetail.toolchain
+	ret.buildHostToolchainVersion = tostring(hostToolchainVersion)
+	ret.buildTargetToolchain = (jobConfigureDetail.crossCompile and jobConfigureDetail.toolchainT or jobConfigureDetail.toolchain)
+	ret.buildTargetToolchainVersion = tostring(targetToolchainVersion)
+
 	return ret
 end
 
@@ -875,7 +903,7 @@ conf.MariaDB.binaryFileDownloadPath = function(self, configureHost, job, version
 end
 
 conf.buildContent = function(self, buildJob)
-	if (string.sub(buildJob, 1, 1) == 'Q') or (string.sub(buildJob, 1, 1) == "q") then
+	if string.sub(buildJob, 1, 1) == "q" then
 		return "Qt"
 	elseif (string.sub(buildJob, 1, 1) == 'o') then
 		return "OpenSSL"

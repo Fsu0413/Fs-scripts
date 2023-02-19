@@ -4692,6 +4692,7 @@ conf.q6_5wx6v2 = {
 	opensslConf = "o3_0wx6v2",
 	mysqlConf = "m3_3wx6v2",
 	useCMake = "Latest",
+	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -4732,6 +4733,7 @@ conf.q6_5wx6v2st = {
 	variant = {"-static"},
 	opensslConf = "o3_0wx6v2st",
 	useCMake = "Latest",
+	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -4796,6 +4798,7 @@ conf.q6_5wx6v2sf = {
 	variant = {"-staticFull"},
 	opensslConf = "o3_0wx6v2st",
 	useCMake = "Latest",
+	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -4836,6 +4839,7 @@ conf.q6_5wx6v2_wa6v2 = {
 	toolchainT = "MSVC2022-arm64",
 	-- opensslConf = "???", -- OpenSSL do not provide a way to build for windows-arm64
 	useCMake = "Latest",
+	isPreview = true,
 	-- TODO: Toolchain file or just write the CMAKE_xxx_COMPILER here?
 	configureParameter = [[
 		-G"Ninja"
@@ -4871,6 +4875,7 @@ conf.q6_5wx6g2 = {
 	opensslConf = "o3_0wx6g2",
 	mysqlConf = "m3_3wx6g2",
 	useCMake = "20",
+	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -4909,6 +4914,7 @@ conf.q6_5wx6g2st = {
 	variant = {"-static"},
 	opensslConf = "o3_0wx6g2",
 	useCMake = "Latest",
+	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -4974,6 +4980,7 @@ conf.q6_5wx6g2sf = {
 	variant = {"-staticFull"},
 	opensslConf = "o3_0wx6g2",
 	useCMake = "Latest",
+	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -5014,6 +5021,7 @@ conf.q6_5wx6u5 = {
 	opensslConf = "o3_0wx6u5",
 	mysqlConf = "m3_3wx6u5",
 	useCMake = "Latest",
+	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -5056,6 +5064,7 @@ conf.q6_5wx6s5 = {
 	opensslConf = "o3_0wx6s5",
 	mysqlConf = "m3_3wx6s5",
 	useCMake = "Latest",
+	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -5096,6 +5105,7 @@ conf.q6_5lx6st = {
 	host = "Rocky9",
 	variant = {"-static"},
 	useCMake = "Latest",
+	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -5155,6 +5165,7 @@ conf.q6_5mal = {
 	opensslConf = "o3_0mal",
 	mysqlConf = "m3_3mal",
 	useCMake = "Latest",
+	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -5199,6 +5210,7 @@ conf.q6_5malnf = {
 	opensslConf = "o3_0mal",
 	mysqlConf = "m3_3mal",
 	useCMake = "Latest",
+	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -5242,6 +5254,7 @@ conf.q6_5malst = {
 	variant = {"-static"},
 	opensslConf = "o3_0mal",
 	useCMake = "Latest",
+	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -5306,6 +5319,7 @@ conf.q6_5malsf = {
 	variant = {"-staticFull"},
 	opensslConf = "o3_0mal",
 	useCMake = "Latest",
+	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -5348,6 +5362,7 @@ conf.q6_5wx6g2_aa6n5 = {
 	opensslConf = "o3_0aa6n527",
 	useCMake = "Latest",
 	androidSdkVersion = "Latest",
+	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -5387,6 +5402,7 @@ conf.q6_5wx6g2_ax6n5 = {
 	opensslConf = "o3_0ax6n527",
 	useCMake = "Latest",
 	androidSdkVersion = "Latest",
+	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -5425,6 +5441,7 @@ conf.q6_5lx6_aa6n5 = {
 	opensslConf = "o3_0aa6n527",
 	useCMake = "Latest",
 	androidSdkVersion = "Latest",
+	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -5462,6 +5479,7 @@ conf.q6_5lx6_ax6n5 = {
 	opensslConf = "o3_0ax6n527",
 	useCMake = "Latest",
 	androidSdkVersion = "Latest",
+	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -5499,6 +5517,7 @@ conf.q6_5mal_aa6n5 = {
 	opensslConf = "o3_0aa6n527",
 	useCMake = "Latest",
 	androidSdkVersion = "Latest",
+	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -5536,6 +5555,7 @@ conf.q6_5mal_ax6n5 = {
 	opensslConf = "o3_0ax6n527",
 	useCMake = "Latest",
 	androidSdkVersion = "Latest",
+	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -5573,6 +5593,7 @@ conf.q6_5wx6g2_W = {
 	target = "WebAssembly",
 	toolchainT = "emscripten-3.1.25",
 	useCMake = "Latest",
+	isPreview = true,
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -5603,6 +5624,7 @@ conf.q6_5lx6_W = {
 	target = "WebAssembly",
 	toolchainT = "emscripten-3.1.25",
 	useCMake = "Latest",
+	isPreview = true,
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -5633,6 +5655,7 @@ conf.q6_5mal_W = {
 	target = "WebAssembly",
 	toolchainT = "emscripten-3.1.25",
 	useCMake = "Latest",
+	isPreview = true,
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&

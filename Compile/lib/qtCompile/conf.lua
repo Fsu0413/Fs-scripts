@@ -2100,7 +2100,7 @@ conf.q5_15wx6g8_aalnl = {
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-all",
 	opensslConf = "o1_1aalnl",
-	androidSdkVersion = "Latest",
+	androidSdkVersion = "20220911",
 	configureParameter = [[
 		-prefix
 		/
@@ -2152,7 +2152,7 @@ conf.q5_15lx6_aalnl = {
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-all",
 	opensslConf = "o1_1aalnl",
-	androidSdkVersion = "Latest",
+	androidSdkVersion = "20220911",
 	configureParameter = [[
 		-prefix
 		/
@@ -2204,7 +2204,7 @@ conf.q5_15mx6_aalnl = {
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-all",
 	opensslConf = "o1_1aalnl",
-	androidSdkVersion = "Latest",
+	androidSdkVersion = "20220911",
 	configureParameter = [[
 		-prefix
 		/
@@ -2257,7 +2257,7 @@ conf.q5_15wx6g8_aaln3 = {
 	target = "Android-21",
 	toolchainT = "Android-21-r23c-all",
 	opensslConf = "o1_1aaln321",
-	androidSdkVersion = "Latest",
+	androidSdkVersion = "20220911",
 	configureParameter = [[
 		-prefix
 		/
@@ -2309,7 +2309,7 @@ conf.q5_15lx6_aaln3 = {
 	target = "Android-21",
 	toolchainT = "Android-21-r23c-all",
 	opensslConf = "o1_1aaln321",
-	androidSdkVersion = "Latest",
+	androidSdkVersion = "20220911",
 	configureParameter = [[
 		-prefix
 		/
@@ -2361,7 +2361,7 @@ conf.q5_15mx6_aaln3 = {
 	target = "Android-21",
 	toolchainT = "Android-21-r23c-all",
 	opensslConf = "o1_1aaln321",
-	androidSdkVersion = "Latest",
+	androidSdkVersion = "20220911",
 	configureParameter = [[
 		-prefix
 		/
@@ -3267,7 +3267,7 @@ conf.q6_2wx6g1_aa3n3 = {
 	toolchainT = "Android-24-r23c-arm",
 	opensslConf = "o3_0aa3n324",
 	useCMake = "Latest",
-	androidSdkVersion = "Latest",
+	androidSdkVersion = "20220911",
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -3306,7 +3306,7 @@ conf.q6_2wx6g1_aa6n3 = {
 	toolchainT = "Android-24-r23c-arm64",
 	opensslConf = "o3_0aa6n324",
 	useCMake = "Latest",
-	androidSdkVersion = "Latest",
+	androidSdkVersion = "20220911",
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -3345,7 +3345,7 @@ conf.q6_2wx6g1_ax3n3 = {
 	toolchainT = "Android-24-r23c-x86",
 	opensslConf = "o3_0ax3n324",
 	useCMake = "Latest",
-	androidSdkVersion = "Latest",
+	androidSdkVersion = "20220911",
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -3384,7 +3384,7 @@ conf.q6_2wx6g1_ax6n3 = {
 	toolchainT = "Android-24-r23c-x86_64",
 	opensslConf = "o3_0ax6n324",
 	useCMake = "Latest",
-	androidSdkVersion = "Latest",
+	androidSdkVersion = "20220911",
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -3422,7 +3422,7 @@ conf.q6_2lx6_aa3n3 = {
 	toolchainT = "Android-24-r23c-arm",
 	opensslConf = "o3_0aa3n324",
 	useCMake = "Latest",
-	androidSdkVersion = "Latest",
+	androidSdkVersion = "20220911",
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -3459,7 +3459,7 @@ conf.q6_2lx6_aa6n3 = {
 	toolchainT = "Android-24-r23c-arm64",
 	opensslConf = "o3_0aa6n324",
 	useCMake = "Latest",
-	androidSdkVersion = "Latest",
+	androidSdkVersion = "20220911",
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -3496,7 +3496,7 @@ conf.q6_2lx6_ax3n3 = {
 	toolchainT = "Android-24-r23c-x86",
 	opensslConf = "o3_0ax3n324",
 	useCMake = "Latest",
-	androidSdkVersion = "Latest",
+	androidSdkVersion = "20220911",
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -3533,7 +3533,7 @@ conf.q6_2lx6_ax6n3 = {
 	toolchainT = "Android-24-r23c-x86_64",
 	opensslConf = "o3_0ax6n324",
 	useCMake = "Latest",
-	androidSdkVersion = "Latest",
+	androidSdkVersion = "20220911",
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -3570,7 +3570,7 @@ conf.q6_2mal_aa3n3 = {
 	toolchainT = "Android-24-r23c-arm",
 	opensslConf = "o3_0aa3n324",
 	useCMake = "Latest",
-	androidSdkVersion = "Latest",
+	androidSdkVersion = "20220911",
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -3607,7 +3607,7 @@ conf.q6_2mal_aa6n3 = {
 	toolchainT = "Android-24-r23c-arm64",
 	opensslConf = "o3_0aa6n324",
 	useCMake = "Latest",
-	androidSdkVersion = "Latest",
+	androidSdkVersion = "20220911",
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -3644,7 +3644,7 @@ conf.q6_2mal_ax3n3 = {
 	toolchainT = "Android-24-r23c-x86",
 	opensslConf = "o3_0ax3n324",
 	useCMake = "Latest",
-	androidSdkVersion = "Latest",
+	androidSdkVersion = "20220911",
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -3681,7 +3681,7 @@ conf.q6_2mal_ax6n3 = {
 	toolchainT = "Android-24-r23c-x86_64",
 	opensslConf = "o3_0ax6n324",
 	useCMake = "Latest",
-	androidSdkVersion = "Latest",
+	androidSdkVersion = "20220911",
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -4371,7 +4371,7 @@ conf.q6_4wx6g2_aa6n5 = {
 	toolchainT = "Android-27-r25c-arm64",
 	opensslConf = "o3_0aa6n527",
 	useCMake = "Latest",
-	androidSdkVersion = "Latest",
+	androidSdkVersion = "20220911",
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -4410,7 +4410,7 @@ conf.q6_4wx6g2_ax6n5 = {
 	toolchainT = "Android-27-r25c-x86_64",
 	opensslConf = "o3_0ax6n527",
 	useCMake = "Latest",
-	androidSdkVersion = "Latest",
+	androidSdkVersion = "20220911",
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -4448,7 +4448,7 @@ conf.q6_4lx6_aa6n5 = {
 	toolchainT = "Android-27-r25c-arm64",
 	opensslConf = "o3_0aa6n527",
 	useCMake = "Latest",
-	androidSdkVersion = "Latest",
+	androidSdkVersion = "20220911",
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -4485,7 +4485,7 @@ conf.q6_4lx6_ax6n5 = {
 	toolchainT = "Android-27-r25c-x86_64",
 	opensslConf = "o3_0ax6n527",
 	useCMake = "Latest",
-	androidSdkVersion = "Latest",
+	androidSdkVersion = "20220911",
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -4522,7 +4522,7 @@ conf.q6_4mal_aa6n5 = {
 	toolchainT = "Android-27-r25c-arm64",
 	opensslConf = "o3_0aa6n527",
 	useCMake = "Latest",
-	androidSdkVersion = "Latest",
+	androidSdkVersion = "20220911",
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -4559,7 +4559,7 @@ conf.q6_4mal_ax6n5 = {
 	toolchainT = "Android-27-r25c-x86_64",
 	opensslConf = "o3_0ax6n527",
 	useCMake = "Latest",
-	androidSdkVersion = "Latest",
+	androidSdkVersion = "20220911",
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -5361,7 +5361,7 @@ conf.q6_5wx6g2_aa6n5 = {
 	toolchainT = "Android-27-r25c-arm64",
 	opensslConf = "o3_0aa6n527",
 	useCMake = "Latest",
-	androidSdkVersion = "Latest",
+	androidSdkVersion = "20230224",
 	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"
@@ -5401,7 +5401,7 @@ conf.q6_5wx6g2_ax6n5 = {
 	toolchainT = "Android-27-r25c-x86_64",
 	opensslConf = "o3_0ax6n527",
 	useCMake = "Latest",
-	androidSdkVersion = "Latest",
+	androidSdkVersion = "20230224",
 	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"
@@ -5440,7 +5440,7 @@ conf.q6_5lx6_aa6n5 = {
 	toolchainT = "Android-27-r25c-arm64",
 	opensslConf = "o3_0aa6n527",
 	useCMake = "Latest",
-	androidSdkVersion = "Latest",
+	androidSdkVersion = "20230224",
 	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"
@@ -5478,7 +5478,7 @@ conf.q6_5lx6_ax6n5 = {
 	toolchainT = "Android-27-r25c-x86_64",
 	opensslConf = "o3_0ax6n527",
 	useCMake = "Latest",
-	androidSdkVersion = "Latest",
+	androidSdkVersion = "20230224",
 	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"
@@ -5516,7 +5516,7 @@ conf.q6_5mal_aa6n5 = {
 	toolchainT = "Android-27-r25c-arm64",
 	opensslConf = "o3_0aa6n527",
 	useCMake = "Latest",
-	androidSdkVersion = "Latest",
+	androidSdkVersion = "20230224",
 	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"
@@ -5554,7 +5554,7 @@ conf.q6_5mal_ax6n5 = {
 	toolchainT = "Android-27-r25c-x86_64",
 	opensslConf = "o3_0ax6n527",
 	useCMake = "Latest",
-	androidSdkVersion = "Latest",
+	androidSdkVersion = "20230224",
 	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"

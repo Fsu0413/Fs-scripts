@@ -50,7 +50,8 @@ conf.host.win = {
 	["buildRootPath"] = "D:\\Qt\\", -- On Windows, the build root should be same with source package
 	["androidSdkPath"] = {
 		["29"] = "D:\\android-sdk-windows",
-		["Latest"] = "D:\\android-sdk-windows-20220911",
+		["20220911"] = "D:\\android-sdk-windows-20220911",
+		["20230224"] = "D:\\android-sdk-windows-20230224",
 	},
 	["androidNdkPath"] = {
 		["r21e"] = "D:\\android-ndk-r21e",
@@ -121,7 +122,8 @@ conf.host.linux = {
 	["pathSep"] = '/',
 	["androidSdkPath"] = {
 		["29"] = "/opt/env/android-sdk-linux/",
-		["Latest"] = "/opt/env/android-sdk-linux-20220911/",
+		["20220911"] = "/opt/env/android-sdk-linux-20220911/",
+		["20230224"] = "/opt/env/android-sdk-linux-20230224/",
 	},
 	["androidNdkPath"] = {
 		["r21e"] = "/opt/env/android-ndk-r21e/",
@@ -154,7 +156,8 @@ conf.host.mac = {
 	["makefileTemplate"] = "unix",
 	["pathSep"] = '/',
 	["androidSdkPath"] = {
-		["Latest"] = "/opt/env/android-sdk-mac-20220911/",
+		["20220911"] = "/opt/env/android-sdk-mac-20220911/",
+		["20230224"] = "/opt/env/android-sdk-mac-20230224/",
 	},
 	["androidNdkPath"] = {
 		["r21e"] = "/Applications/AndroidNDK7075529.app/Contents/NDK/",
@@ -186,7 +189,8 @@ conf.host.macM1 = {
 	["makefileTemplate"] = "unix",
 	["pathSep"] = '/',
 	["androidSdkPath"] = {
-		["Latest"] = "/opt/env/android-sdk-mac-20220911/",
+		["20220911"] = "/opt/env/android-sdk-mac-20220911/",
+		["20230224"] = "/opt/env/android-sdk-mac-20230224/",
 	},
 	["androidNdkPath"] = {
 		["r23c"] = "/Applications/AndroidNDK8568313.app/Contents/NDK/",
@@ -218,7 +222,8 @@ conf.host.macLegacy = {
 	["pathSep"] = '/',
 	["androidSdkPath"] = {
 		["29"] = "/Volumes/opt/env/android-sdk-mac-2/",
-		["Latest"] = "/Volumes/opt/env/android-sdk-mac-20220911/",
+		["20220911"] = "/Volumes/opt/env/android-sdk-mac-20220911/",
+		["20230224"] = "/Volumes/opt/env/android-sdk-mac-20230224/",
 	},
 	["androidNdkPath"] = {
 		["r21e"] = "/Volumes/opt/env/android-ndk-r21e/",

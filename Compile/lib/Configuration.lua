@@ -272,7 +272,7 @@ conf.Qt.generateConfTable = function(self, host, job, buildTime)
 	ret.path = {}
 	ret.WORKSPACE = os.getenv("WORKSPACE")
 	-- dirty hack here for Windows drive since Windows services always starts in drive C
-	if configureHost.makefileTemplate == "win" and string.sub(ret.WORKSPACE, 1, 24) == "C:\\Users\\Fs\\Work\\Jenkins" then
+	if (configureHost.makefileTemplate == "win") and ((string.sub(ret.WORKSPACE, 1, 24) == "C:\\Users\\Fs\\Work\\Jenkins") or (string.sub(ret.WORKSPACE, 1, 24) == "C:\\Users\\fs\\Work\\Jenkins"))
 		local rightpart = string.sub(ret.WORKSPACE, 25)
 		ret.WORKSPACE = "D:\\Jenkins" .. rightpart
 	end
@@ -597,7 +597,7 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 	ret.path = {}
 	ret.WORKSPACE = os.getenv("WORKSPACE")
 	-- dirty hack here for Windows drive since Windows services always starts in drive C
-	if configureHost.makefileTemplate == "win" and string.sub(ret.WORKSPACE, 1, 24) == "C:\\Users\\Fs\\Work\\Jenkins" then
+	if (configureHost.makefileTemplate == "win") and ((string.sub(ret.WORKSPACE, 1, 24) == "C:\\Users\\Fs\\Work\\Jenkins") or (string.sub(ret.WORKSPACE, 1, 24) == "C:\\Users\\fs\\Work\\Jenkins"))
 		local rightpart = string.sub(ret.WORKSPACE, 25)
 		ret.WORKSPACE = "D:\\Jenkins" .. rightpart
 	end
@@ -792,7 +792,7 @@ conf.MariaDB.generateConfTable = function(self, host, job)
 	ret.path = {}
 	ret.WORKSPACE = os.getenv("WORKSPACE")
 	-- dirty hack here for Windows drive since Windows services always starts in drive C
-	if configureHost.makefileTemplate == "win" and string.sub(ret.WORKSPACE, 1, 24) == "C:\\Users\\Fs\\Work\\Jenkins" then
+	if (configureHost.makefileTemplate == "win") and ((string.sub(ret.WORKSPACE, 1, 24) == "C:\\Users\\Fs\\Work\\Jenkins") or (string.sub(ret.WORKSPACE, 1, 24) == "C:\\Users\\fs\\Work\\Jenkins"))
 		local rightpart = string.sub(ret.WORKSPACE, 25)
 		ret.WORKSPACE = "D:\\Jenkins" .. rightpart
 	end

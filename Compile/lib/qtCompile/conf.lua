@@ -1415,7 +1415,7 @@ conf.q5_15wx6v5sf = {
 
 conf.q5_15wx3v7 = {
 	name = "Qt5.15.8-Windows-x86-VS2017-&HOSTTOOLVERSION&",
-	qtVersion = "5.15.8-4",
+	qtVersion = "5.15.8-5",
 	host = "Win10",
 	toolchain = "MSVC2017-32",
 	mysqlConf = "m3_1wx3v7",
@@ -1498,7 +1498,7 @@ conf.q5_15wx3v7sf = {
 
 conf.q5_15wx6v7 = {
 	name = "Qt5.15.8-Windows-x86_64-VS2017-&HOSTTOOLVERSION&",
-	qtVersion = "5.15.8-4",
+	qtVersion = "5.15.8-5",
 	host = "Win10",
 	toolchain = "MSVC2017-64",
 	mysqlConf = "m3_1wx6v7",
@@ -1581,7 +1581,7 @@ conf.q5_15wx6v7sf = {
 
 conf.q5_15wx3v9 = {
 	name = "Qt5.15.8-Windows-x86-VS2019-&HOSTTOOLVERSION&",
-	qtVersion = "5.15.8-4",
+	qtVersion = "5.15.8-5",
 	host = "Win10",
 	toolchain = "MSVC2019-32",
 	mysqlConf = "m3_1wx3v9",
@@ -1621,7 +1621,7 @@ conf.q5_15wx3v9 = {
 
 conf.q5_15wx3v9sf = {
 	name = "Qt5.15.8-Windows-x86-VS2019-&HOSTTOOLVERSION&-staticFull",
-	qtVersion = "5.15.8-4",
+	qtVersion = "5.15.8-5",
 	host = "Win10",
 	toolchain = "MSVC2019-32",
 	variant = {"-staticFull"},
@@ -1663,7 +1663,7 @@ conf.q5_15wx3v9sf = {
 
 conf.q5_15wx6v9 = {
 	name = "Qt5.15.8-Windows-x86_64-VS2019-&HOSTTOOLVERSION&",
-	qtVersion = "5.15.8-4",
+	qtVersion = "5.15.8-5",
 	host = "Win10",
 	toolchain = "MSVC2019-64",
 	mysqlConf = "m3_1wx6v9",
@@ -1703,7 +1703,7 @@ conf.q5_15wx6v9 = {
 
 conf.q5_15wx6v9sf = {
 	name = "Qt5.15.8-Windows-x86_64-VS2019-&HOSTTOOLVERSION&-staticFull",
-	qtVersion = "5.15.8-4",
+	qtVersion = "5.15.8-5",
 	host = "Win10",
 	toolchain = "MSVC2019-64",
 	variant = {"-staticFull"},
@@ -1745,7 +1745,7 @@ conf.q5_15wx6v9sf = {
 
 conf.q5_15wx6v2 = {
 	name = "Qt5.15.8-Windows-x86_64-VS2022-&HOSTTOOLVERSION&",
-	qtVersion = "5.15.8-4",
+	qtVersion = "5.15.8-5",
 	host = "Win10",
 	toolchain = "MSVC2022-64",
 	mysqlConf = "m3_1wx6v2",
@@ -2013,7 +2013,7 @@ conf.q5_15wx6g2 = {
 
 conf.q5_15mx6 = {
 	name = "Qt5.15.8-macOS-x86_64-AppleClang&HOSTTOOLVERSION&",
-	qtVersion = "5.15.8-4",
+	qtVersion = "5.15.8-5",
 	host = "macOS1015",
 	mysqlConf = "m3_1mal",
 	configureParameter = [[
@@ -2052,7 +2052,7 @@ conf.q5_15mx6 = {
 
 conf.q5_15mx6nf = {
 	name = "Qt5.15.8-macOS-x86_64-AppleClang&HOSTTOOLVERSION&-noFramework",
-	qtVersion = "5.15.8-4",
+	qtVersion = "5.15.8-5",
 	host = "macOS1015",
 	variant = {"-noFramework"},
 	mysqlConf = "m3_1mal",
@@ -2516,7 +2516,7 @@ conf.q5_15mx6_W = {
 
 conf.q6_2wx6v9 = {
 	name = "Qt6.2.4-Windows-x86_64-VS2019-&HOSTTOOLVERSION&",
-	qtVersion = "6.2.4-5",
+	qtVersion = "6.2.4",
 	host = "Win10",
 	toolchain = "MSVC2019-64",
 	opensslConf = "o3_0wx6v9",
@@ -2688,7 +2688,7 @@ conf.q6_2wx6v9_wa6v9 = {
 
 conf.q6_2wx6v2 = {
 	name = "Qt6.2.4-Windows-x86_64-VS2022-&HOSTTOOLVERSION&",
-	qtVersion = "6.2.4-5",
+	qtVersion = "6.2.4",
 	host = "Win10",
 	toolchain = "MSVC2022-64",
 	opensslConf = "o3_0wx6v2",
@@ -3078,7 +3078,7 @@ conf.q6_2lx6st = {
 
 conf.q6_2mal = {
 	name = "Qt6.2.4-macOS-Universal-AppleClang&HOSTTOOLVERSION&",
-	qtVersion = "6.2.4-5",
+	qtVersion = "6.2.4",
 	host = "macOSM1",
 	opensslConf = "o3_0mal",
 	mysqlConf = "m3_3mal",
@@ -3120,7 +3120,7 @@ conf.q6_2mal = {
 
 conf.q6_2malnf = {
 	name = "Qt6.2.4-macOS-Universal-AppleClang&HOSTTOOLVERSION&-noFramework",
-	qtVersion = "6.2.4-5",
+	qtVersion = "6.2.4",
 	host = "macOSM1",
 	variant = {"-noFramework"},
 	opensslConf = "o3_0mal",
@@ -5764,9 +5764,8 @@ local valueMo = {
 }
 
 local Win10SrcPackagePrefixWorkaroundVersions = {
-	"5.15.8-4",
+	"5.15.8-5",
 	"6.2.4",
-	"6.2.4-5",
 	"6.4.2",
 	"6.5.0-beta3",
 }

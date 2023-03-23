@@ -1781,8 +1781,7 @@ conf.q5_15wx6v2 = {
 		"MYSQL_LIBDIR=&MYSQLPREFIX&\lib\mariadb"
 		-make-tool
 		jom
-		-skip
-		qtwebengine
+		-webengine-proprietary-codecs
 	]],
 }
 
@@ -2047,8 +2046,7 @@ conf.q5_15mx6 = {
 		"MYSQL_LIBDIR=&MYSQLPREFIX&/lib/mariadb"
 		-make-tool
 		"make -j$PARALLELNUM"
-		-skip
-		qtwebengine
+		-webengine-proprietary-codecs
 	]],
 }
 
@@ -2088,8 +2086,7 @@ conf.q5_15mx6nf = {
 		-make-tool
 		"make -j$PARALLELNUM"
 		-rpath
-		-skip
-		qtwebengine
+		-webengine-proprietary-codecs
 		-no-framework
 	]],
 }

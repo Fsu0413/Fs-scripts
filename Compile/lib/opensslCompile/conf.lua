@@ -33,6 +33,8 @@ abbrs:
 		g2: MinGW-w64, with GCC 12.1.0
 		s5: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 15
 		u5: LLVM/Clang based MinGW-w64, ucrt, with LLVM 15
+		s6: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 16
+		u6: LLVM/Clang based MinGW-w64, ucrt, with LLVM 16
 		nl: Android NDK r21e/Previous LTS
 		n3: Android NDK r23c/Previous LTS
 		n5: Android NDK r25c/Latest LTS
@@ -568,6 +570,44 @@ conf.o3_0wx6s5 = {
 	opensslVersion = "3.0.8-2",
 	host = "Win10SH",
 	toolchain = "MinGWLLVM-msvcrt15-64",
+	libPath = { "bin\\libssl-3-x64.dll", "bin\\libcrypto-3-x64.dll" },
+	staticlibPath = { "lib\\libssl.a", "lib\\libcrypto.a" },
+	clangTriplet = "x86_64-w64-mingw32",
+	configureParameter = [[
+		no-asm
+		shared
+		enable-static-engine
+		--prefix=&INSTALLROOT&
+		--openssldir=&INSTALLROOT&/ssl
+		--libdir=&INSTALLROOT&/lib
+		mingw64
+	]],
+}
+
+conf.o3_0wx6u6 = {
+	name = "OpenSSL3.0.8-2-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-ucrt",
+	opensslVersion = "3.0.8-2",
+	host = "Win10SH",
+	toolchain = "MinGWLLVM-ucrt16-64",
+	libPath = { "bin\\libssl-3-x64.dll", "bin\\libcrypto-3-x64.dll" },
+	staticlibPath = { "lib\\libssl.a", "lib\\libcrypto.a" },
+	clangTriplet = "x86_64-w64-mingw32",
+	configureParameter = [[
+		no-asm
+		shared
+		enable-static-engine
+		--prefix=&INSTALLROOT&
+		--openssldir=&INSTALLROOT&/ssl
+		--libdir=&INSTALLROOT&/lib
+		mingw64
+	]],
+}
+
+conf.o3_0wx6s6 = {
+	name = "OpenSSL3.0.8-2-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-msvcrt",
+	opensslVersion = "3.0.8-2",
+	host = "Win10SH",
+	toolchain = "MinGWLLVM-msvcrt16-64",
 	libPath = { "bin\\libssl-3-x64.dll", "bin\\libcrypto-3-x64.dll" },
 	staticlibPath = { "lib\\libssl.a", "lib\\libcrypto.a" },
 	clangTriplet = "x86_64-w64-mingw32",

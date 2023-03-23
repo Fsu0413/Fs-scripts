@@ -39,6 +39,8 @@ abbrs:
 		g2: MinGW-w64, with GCC 12.1.0
 		s5: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 15
 		u5: LLVM/Clang based MinGW-w64, ucrt, with LLVM 15
+		s6: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 16
+		u6: LLVM/Clang based MinGW-w64, ucrt, with LLVM 16
 		nl: Android NDK r21e/Previous LTS
 		n3: Android NDK r23c/Previous LTS
 		n5: Android NDK r25c/Latest LTS
@@ -4079,13 +4081,13 @@ conf.q6_4wx6g2st = {
 	]],
 }
 
-conf.q6_4wx6u5 = {
+conf.q6_4wx6u6 = {
 	name = "Qt6.4.3-Windows-x86_64-llvm-mingw-&HOSTTOOLVERSION&-ucrt",
 	qtVersion = "6.4.3",
 	host = "Win10",
-	toolchain = "MinGWLLVM-ucrt15-64",
-	opensslConf = "o3_0wx6u5",
-	mysqlConf = "m3_3wx6u5",
+	toolchain = "MinGWLLVM-ucrt16-64",
+	opensslConf = "o3_0wx6u6",
+	mysqlConf = "m3_3wx6u6",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -4121,13 +4123,13 @@ conf.q6_4wx6u5 = {
 	]],
 }
 
-conf.q6_4wx6s5 = {
+conf.q6_4wx6s6 = {
 	name = "Qt6.4.3-Windows-x86_64-llvm-mingw-&HOSTTOOLVERSION&-msvcrt",
 	qtVersion = "6.4.3",
 	host = "Win10",
-	toolchain = "MinGWLLVM-msvcrt15-64",
-	opensslConf = "o3_0wx6s5",
-	mysqlConf = "m3_3wx6s5",
+	toolchain = "MinGWLLVM-msvcrt16-64",
+	opensslConf = "o3_0wx6s6",
+	mysqlConf = "m3_3wx6s6",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -5013,13 +5015,13 @@ conf.q6_5wx6g2sf = {
 	]],
 }
 
-conf.q6_5wx6u5 = {
+conf.q6_5wx6u6 = {
 	name = "Qt6.5.0-rc-Windows-x86_64-llvm-mingw-&HOSTTOOLVERSION&-ucrt",
 	qtVersion = "6.5.0-rc",
 	host = "Win10",
-	toolchain = "MinGWLLVM-ucrt15-64",
-	opensslConf = "o3_0wx6u5",
-	mysqlConf = "m3_3wx6u5",
+	toolchain = "MinGWLLVM-ucrt16-64",
+	opensslConf = "o3_0wx6u6",
+	mysqlConf = "m3_3wx6u6",
 	useCMake = "Latest",
 	isPreview = true,
 	configureParameter = [[
@@ -5056,13 +5058,13 @@ conf.q6_5wx6u5 = {
 	]],
 }
 
-conf.q6_5wx6s5 = {
+conf.q6_5wx6s6 = {
 	name = "Qt6.5.0-rc-Windows-x86_64-llvm-mingw-&HOSTTOOLVERSION&-msvcrt",
 	qtVersion = "6.5.0-rc",
 	host = "Win10",
-	toolchain = "MinGWLLVM-msvcrt15-64",
-	opensslConf = "o3_0wx6s5",
-	mysqlConf = "m3_3wx6s5",
+	toolchain = "MinGWLLVM-msvcrt16-64",
+	opensslConf = "o3_0wx6s6",
+	mysqlConf = "m3_3wx6s6",
 	useCMake = "Latest",
 	isPreview = true,
 	configureParameter = [[

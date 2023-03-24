@@ -72,8 +72,8 @@ conf.host.win = {
 		["Latest"] = {"D:\\cmake-3.25.2-windows-x86_64\\bin", "D:\\ninja"},
 	},
 	["jdkPath"] = {
-		["8"] = "D:\\OpenJDK8U-jdk_x64_windows_hotspot_8u332b09\\jdk8u332-b09",
-		["11"] = "D:\\OpenJDK11U-jdk_x64_windows_hotspot_11.0.15_10\\jdk-11.0.15+10",
+		["8"] = "D:\\OpenJDK8U-jdk_x64_windows_hotspot_8u362b09\\jdk8u362-b09",
+		["11"] = "D:\\OpenJDK11U-jdk_x64_windows_hotspot_11.0.18_10\jdk-11.0.18+10",
 	},
 	["pythonPath"] = {
 		["2"] = "D:\\Python27",

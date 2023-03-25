@@ -5763,6 +5763,7 @@ local valueMo = {
 }
 
 local Win10SrcPackagePrefixWorkaroundVersions = {
+	"5.12.12",
 	"5.15.8-5",
 	"6.2.4",
 	"6.4.3",

@@ -27,10 +27,10 @@ abbrs:
 		v7: VS2017
 		v9: VS2019
 		v2: VS2022
-		m7: MinGW-w64, with GCC 7.3.0 (no new builds)
-		m8: MinGW-w64, with GCC 8.1.0 (no new builds)
+		g7: MinGW-w64, with GCC 7.3.0
 		g1: MinGW-w64, with GCC 11.2.0
-		g2: MinGW-w64, with GCC 12.1.0
+		g2: MinGW-w64, msvcrt, with GCC 12.2.0
+		p2: MinGW-w64, ucrt, with GCC 12.2.0
 		s5: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 15
 		u5: LLVM/Clang based MinGW-w64, ucrt, with LLVM 15
 		s6: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 16
@@ -532,7 +532,7 @@ conf.o3_0wx6g2 = {
 	name = "OpenSSL3.0.8-2-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&",
 	opensslVersion = "3.0.8-2",
 	host = "Win10SH",
-	toolchain = "MinGW1210-64",
+	toolchain = "MinGW1220-64",
 	libPath = { "bin\\libssl-3-x64.dll", "bin\\libcrypto-3-x64.dll" },
 	staticlibPath = { "lib\\libssl.a", "lib\\libcrypto.a" },
 	configureParameter = [[

@@ -34,9 +34,10 @@ abbrs:
 		v9: VS2019
 		v2: VS2022
 		g7: MinGW-w64, with GCC 7.3.0
-		g8: MinGW-w64, with GCC 8.1.0
+		g8: MinGW-w64, with GCC 8.5.0
 		g1: MinGW-w64, with GCC 11.2.0
-		g2: MinGW-w64, with GCC 12.1.0
+		g2: MinGW-w64, msvcrt, with GCC 12.2.0
+		p2: MinGW-w64, ucrt, with GCC 12.2.0
 		s5: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 15
 		u5: LLVM/Clang based MinGW-w64, ucrt, with LLVM 15
 		s6: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 16
@@ -1789,7 +1790,7 @@ conf.q5_15wx3g8 = {
 	name = "Qt5.15.9-Windows-x86-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "5.15.9",
 	host = "Win10",
-	toolchain = "MinGW810-32",
+	toolchain = "MinGW850-32",
 	-- mysqlConf = "m3_1wx3g8",
 	configureParameter = [[
 		-prefix
@@ -1825,7 +1826,7 @@ conf.q5_15wx3g8sf = {
 	name = "Qt5.15.9-Windows-x86-MinGW&HOSTTOOLVERSION&-staticFull",
 	qtVersion = "5.15.9",
 	host = "Win10",
-	toolchain = "MinGW810-32",
+	toolchain = "MinGW850-32",
 	variant = {"-staticFull"},
 	configureParameter = [[
 		-prefix
@@ -1865,7 +1866,7 @@ conf.q5_15wx6g8 = {
 	name = "Qt5.15.9-Windows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "5.15.9",
 	host = "Win10",
-	toolchain = "MinGW810-64",
+	toolchain = "MinGW850-64",
 	mysqlConf = "m3_1wx6g8",
 	configureParameter = [[
 		-prefix
@@ -1904,7 +1905,7 @@ conf.q5_15wx6g8sf = {
 	name = "Qt5.15.9-Windows-x86_64-MinGW&HOSTTOOLVERSION&-staticFull",
 	qtVersion = "5.15.9",
 	host = "Win10",
-	toolchain = "MinGW810-64",
+	toolchain = "MinGW850-64",
 	variant = {"-staticFull"},
 	configureParameter = [[
 		-prefix
@@ -1980,7 +1981,7 @@ conf.q5_15wx6g2 = {
 	name = "Qt5.15.9-Windows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "5.15.9",
 	host = "Win10",
-	toolchain = "MinGW1210-64",
+	toolchain = "MinGW1220-64",
 	-- mysqlConf = "m3_1wx6g2",
 	configureParameter = [[
 		-prefix
@@ -2095,7 +2096,7 @@ conf.q5_15wx6g8_aalnl = {
 	name = "Qt5.15.9-Android-ALL-Clang-NDKr21e-XWindows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "5.15.9",
 	host = "Win10",
-	toolchain = "MinGW810-64",
+	toolchain = "MinGW850-64",
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-all",
 	opensslConf = "o1_1aalnl",
@@ -2252,7 +2253,7 @@ conf.q5_15wx6g8_aaln3 = {
 	name = "Qt5.15.9-Android-ALL-Clang-NDKr23c-XWindows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "5.15.9",
 	host = "Win10",
-	toolchain = "MinGW810-64",
+	toolchain = "MinGW850-64",
 	target = "Android-21",
 	toolchainT = "Android-21-r23c-all",
 	opensslConf = "o1_1aaln321",
@@ -2409,7 +2410,7 @@ conf.q5_15wx6g8_W = {
 	name = "Qt5.15.9-WebAssembly-emscripten&TARGETTOOLVERSION&-xWindows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "5.15.9",
 	host = "Win10",
-	toolchain = "MinGW810-64",
+	toolchain = "MinGW850-64",
 	target = "WebAssembly",
 	toolchainT = "emscripten-1.39.8",
 	configureParameter = [[
@@ -2865,7 +2866,7 @@ conf.q6_2wx6g2 = {
 	name = "Qt6.2.4-Windows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "6.2.4",
 	host = "Win10",
-	toolchain = "MinGW1210-64",
+	toolchain = "MinGW1220-64",
 	opensslConf = "o3_0wx6g2",
 	mysqlConf = "m3_3wx6g2",
 	useCMake = "20",
@@ -2903,7 +2904,7 @@ conf.q6_2wx6g2sf = {
 	name = "Qt6.2.4-Windows-x86_64-MinGW&HOSTTOOLVERSION&-staticFull",
 	qtVersion = "6.2.4",
 	host = "Win10",
-	toolchain = "MinGW1210-64",
+	toolchain = "MinGW1220-64",
 	variant = {"-staticFull"},
 	opensslConf = "o3_0wx6g2",
 	useCMake = "Latest",
@@ -3813,7 +3814,6 @@ conf.q6_5wx6v2 = {
 	opensslConf = "o3_0wx6v2",
 	mysqlConf = "m3_3wx6v2",
 	useCMake = "Latest",
-	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -3854,7 +3854,6 @@ conf.q6_5wx6v2st = {
 	variant = {"-static"},
 	opensslConf = "o3_0wx6v2st",
 	useCMake = "Latest",
-	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -3919,7 +3918,6 @@ conf.q6_5wx6v2sf = {
 	variant = {"-staticFull"},
 	opensslConf = "o3_0wx6v2st",
 	useCMake = "Latest",
-	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -3960,7 +3958,6 @@ conf.q6_5wx6v2_wa6v2 = {
 	toolchainT = "MSVC2022-arm64",
 	-- opensslConf = "???", -- OpenSSL do not provide a way to build for windows-arm64
 	useCMake = "Latest",
-	isPreview = true,
 	-- TODO: Toolchain file or just write the CMAKE_xxx_COMPILER here?
 	configureParameter = [[
 		-G"Ninja"
@@ -3992,11 +3989,10 @@ conf.q6_5wx6g2 = {
 	name = "Qt6.5.0-Windows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "6.5.0",
 	host = "Win10",
-	toolchain = "MinGW1210-64",
+	toolchain = "MinGW1220-64",
 	opensslConf = "o3_0wx6g2",
 	mysqlConf = "m3_3wx6g2",
 	useCMake = "20",
-	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -4031,11 +4027,10 @@ conf.q6_5wx6g2st = {
 	name = "Qt6.5.0-Windows-x86_64-MinGW&HOSTTOOLVERSION&-static",
 	qtVersion = "6.5.0",
 	host = "Win10",
-	toolchain = "MinGW1210-64",
+	toolchain = "MinGW1220-64",
 	variant = {"-static"},
 	opensslConf = "o3_0wx6g2",
 	useCMake = "Latest",
-	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -4097,11 +4092,10 @@ conf.q6_5wx6g2sf = {
 	name = "Qt6.5.0-Windows-x86_64-MinGW&HOSTTOOLVERSION&-staticFull",
 	qtVersion = "6.5.0",
 	host = "Win10",
-	toolchain = "MinGW1210-64",
+	toolchain = "MinGW1220-64",
 	variant = {"-staticFull"},
 	opensslConf = "o3_0wx6g2",
 	useCMake = "Latest",
-	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -4142,7 +4136,6 @@ conf.q6_5wx6u6 = {
 	opensslConf = "o3_0wx6u6",
 	mysqlConf = "m3_3wx6u6",
 	useCMake = "Latest",
-	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -4185,7 +4178,6 @@ conf.q6_5wx6s6 = {
 	opensslConf = "o3_0wx6s6",
 	mysqlConf = "m3_3wx6s6",
 	useCMake = "Latest",
-	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -4226,7 +4218,6 @@ conf.q6_5lx6st = {
 	host = "Rocky9",
 	variant = {"-static"},
 	useCMake = "Latest",
-	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -4286,7 +4277,6 @@ conf.q6_5mal = {
 	opensslConf = "o3_0mal",
 	mysqlConf = "m3_3mal",
 	useCMake = "Latest",
-	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -4331,7 +4321,6 @@ conf.q6_5malnf = {
 	opensslConf = "o3_0mal",
 	mysqlConf = "m3_3mal",
 	useCMake = "Latest",
-	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -4375,7 +4364,6 @@ conf.q6_5malst = {
 	variant = {"-static"},
 	opensslConf = "o3_0mal",
 	useCMake = "Latest",
-	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -4440,7 +4428,6 @@ conf.q6_5malsf = {
 	variant = {"-staticFull"},
 	opensslConf = "o3_0mal",
 	useCMake = "Latest",
-	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -4478,12 +4465,11 @@ conf.q6_5wx6g2_aa6n5 = {
 	qtVersion = "6.5.0",
 	host = "Win10",
 	target = "Android-27",
-	toolchain = "MinGW1210-64",
+	toolchain = "MinGW1220-64",
 	toolchainT = "Android-27-r25c-arm64",
 	opensslConf = "o3_0aa6n527",
 	useCMake = "Latest",
 	androidSdkVersion = "20230224",
-	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -4518,12 +4504,11 @@ conf.q6_5wx6g2_ax6n5 = {
 	qtVersion = "6.5.0",
 	host = "Win10",
 	target = "Android-27",
-	toolchain = "MinGW1210-64",
+	toolchain = "MinGW1220-64",
 	toolchainT = "Android-27-r25c-x86_64",
 	opensslConf = "o3_0ax6n527",
 	useCMake = "Latest",
 	androidSdkVersion = "20230224",
-	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -4562,7 +4547,6 @@ conf.q6_5lx6_aa6n5 = {
 	opensslConf = "o3_0aa6n527",
 	useCMake = "Latest",
 	androidSdkVersion = "20230224",
-	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -4600,7 +4584,6 @@ conf.q6_5lx6_ax6n5 = {
 	opensslConf = "o3_0ax6n527",
 	useCMake = "Latest",
 	androidSdkVersion = "20230224",
-	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -4638,7 +4621,6 @@ conf.q6_5mal_aa6n5 = {
 	opensslConf = "o3_0aa6n527",
 	useCMake = "Latest",
 	androidSdkVersion = "20230224",
-	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -4676,7 +4658,6 @@ conf.q6_5mal_ax6n5 = {
 	opensslConf = "o3_0ax6n527",
 	useCMake = "Latest",
 	androidSdkVersion = "20230224",
-	isPreview = true,
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -4710,11 +4691,10 @@ conf.q6_5wx6g2_W = {
 	name = "Qt6.5.0-WebAssembly-emscripten&TARGETTOOLVERSION&-xWindows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "6.5.0",
 	host = "Win10",
-	toolchain = "MinGW1210-64",
+	toolchain = "MinGW1220-64",
 	target = "WebAssembly",
 	toolchainT = "emscripten-3.1.25",
 	useCMake = "Latest",
-	isPreview = true,
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -4745,7 +4725,6 @@ conf.q6_5lx6_W = {
 	target = "WebAssembly",
 	toolchainT = "emscripten-3.1.25",
 	useCMake = "Latest",
-	isPreview = true,
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -4776,7 +4755,6 @@ conf.q6_5mal_W = {
 	target = "WebAssembly",
 	toolchainT = "emscripten-3.1.25",
 	useCMake = "Latest",
-	isPreview = true,
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&

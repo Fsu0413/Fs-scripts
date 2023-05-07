@@ -35,10 +35,11 @@ conf.host.win = {
 		-- MinGW toolchains with GCC / Binutils, only path
 		["MinGW730-32"] = "D:\\mingw-w64\\7.3.0\\mingw32\\bin",
 		["MinGW730-64"] = "D:\\mingw-w64\\7.3.0\\mingw64\\bin",
-		["MinGW810-32"] = "D:\\mingw-w64\\8.1.0\\mingw32\\bin",
-		["MinGW810-64"] = "D:\\mingw-w64\\8.1.0\\mingw64\\bin",
+		["MinGW850-32"] = "D:\\mingw-w64\\8.5.0\\mingw32\\bin",
+		["MinGW850-64"] = "D:\\mingw-w64\\8.5.0\\mingw64\\bin",
 		["MinGW1120-64"] = "D:\\mingw-w64\\11.2.0-4\\mingw64\\bin",
-		["MinGW1210-64"] = "D:\\mingw-w64\\12.1.0\\mingw64\\bin",
+		["MinGW1220-64"] = "D:\\mingw-w64\\12.2.0\\mingw64\\bin",
+		["MinGW122u-64"] = "D:\\mingw-w64\\12.2.0u\\mingw64\\bin",
 
 		-- MinGW toolchains with Clang / LLVM, currently used in Qt 6 only
 		-- LLVM always acts as an cross compiler, but the target libraries are architecture-dependent
@@ -46,7 +47,7 @@ conf.host.win = {
 		["MinGWLLVM-msvcrt15-64"] = {"D:\\mingw-w64\\llvm-mingw-20220906-msvcrt-x86_64\\x86_64-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20220906-msvcrt-x86_64\\bin"},
 		["MinGWLLVM-ucrt15-64"] = {"D:\\mingw-w64\\llvm-mingw-20220906-ucrt-x86_64\\x86_64-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20220906-ucrt-x86_64\\bin"},
 		["MinGWLLVM-msvcrt16-64"] = {"D:\\mingw-w64\\llvm-mingw-20230320-msvcrt-x86_64\\x86_64-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20230320-msvcrt-x86_64\\bin"},
-		["MinGWLLVM-ucrt16-64"] = {"D:\\mingw-w64\\llvm-mingw-20230320-ucrt-x86_64\\x86_64-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20230320-ucrt-x86_64\\bin"},
+		["MinGWLLVM-ucrt16-64"] = {"D:\\mingw-w64\\llvm-mingw-20230504-ucrt-x86_64\\x86_64-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20230504-ucrt-x86_64\\bin"},
 	},
 	["sourcePackagePath"] = "D:\\Qt\\",
 	["buildRootPath"] = "D:\\Qt\\", -- On Windows, the build root should be same with source package
@@ -94,15 +95,16 @@ conf.host.msys = {
 	["toolchainPath"] = {
 		["MinGW730-32"] = "/d/mingw-w64/7.3.0/mingw32/bin/",
 		["MinGW730-64"] = "/d/mingw-w64/7.3.0/mingw64/bin/",
-		["MinGW810-32"] = "/d/mingw-w64/8.1.0/mingw32/bin/",
-		["MinGW810-64"] = "/d/mingw-w64/8.1.0/mingw64/bin/",
+		["MinGW850-32"] = "/d/mingw-w64/8.5.0/mingw32/bin/",
+		["MinGW850-64"] = "/d/mingw-w64/8.5.0/mingw64/bin/",
 		["MinGW1120-64"] = "/d/mingw-w64/11.2.0-4/mingw64/bin/",
-		["MinGW1210-64"] = "/d/mingw-w64/12.1.0/mingw64/bin/",
+		["MinGW1220-64"] = "/d/mingw-w64/12.2.0/mingw64/bin/",
+		["MinGW122u-64"] = "/d/mingw-w64/12.2.0u/mingw64/bin/",
 
 		["MinGWLLVM-msvcrt15-64"] = {"/d/mingw-w64/llvm-mingw-20220906-msvcrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20220906-msvcrt-x86_64/bin"},
 		["MinGWLLVM-ucrt15-64"] = {"/d/mingw-w64/llvm-mingw-20220906-ucrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20220906-ucrt-x86_64/bin"},
 		["MinGWLLVM-msvcrt16-64"] = {"/d/mingw-w64/llvm-mingw-20230320-msvcrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20230320-msvcrt-x86_64/bin"},
-		["MinGWLLVM-ucrt16-64"] = {"/d/mingw-w64/llvm-mingw-20230320-ucrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20230320-ucrt-x86_64/bin"},
+		["MinGWLLVM-ucrt16-64"] = {"/d/mingw-w64/llvm-mingw-20230504-ucrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20230504-ucrt-x86_64/bin"},
 	},
 	["sourcePackagePath"] = "/d/Qt/",
 	["androidNdkPath"] = {

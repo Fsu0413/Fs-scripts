@@ -25,9 +25,10 @@ abbrs:
 		v9: VS2019
 		v2: VS2022
 		g7: MinGW-w64, with GCC 7.3.0
-		g8: MinGW-w64, with GCC 8.1.0
+		g8: MinGW-w64, with GCC 8.5.0
 		g1: MinGW-w64, with GCC 11.2.0
-		g2: MinGW-w64, with GCC 12.1.0
+		g2: MinGW-w64, msvcrt, with GCC 12.2.0
+		p2: MinGW-w64, ucrt, with GCC 12.2.0
 		s5: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 15
 		u5: LLVM/Clang based MinGW-w64, ucrt, with LLVM 15
 		s6: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 16
@@ -207,7 +208,7 @@ conf.m3_1wx3g8 = {
 	name = "mariadb_connector_c3.1.20-Windows-x86-MinGW-GCC&TARGETTOOLVERSION&",
 	mariadbVersion = "3.1.20",
 	host = "Win10",
-	toolchain = "MinGW810-32",
+	toolchain = "MinGW850-32",
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
 	configureParameter = [[
 		-GNinja
@@ -230,7 +231,7 @@ conf.m3_1wx6g8 = {
 	name = "mariadb_connector_c3.1.20-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&",
 	mariadbVersion = "3.1.20",
 	host = "Win10",
-	toolchain = "MinGW810-64",
+	toolchain = "MinGW850-64",
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
 	configureParameter = [[
 		-GNinja
@@ -353,7 +354,7 @@ conf.m3_3wx6g2 = {
 	name = "mariadb_connector_c3.3.4-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&",
 	mariadbVersion = "3.3.4",
 	host = "Win10",
-	toolchain = "MinGW1210-64",
+	toolchain = "MinGW1220-64",
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
 	configureParameter = [[
 		-GNinja

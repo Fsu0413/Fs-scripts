@@ -208,7 +208,7 @@ conf.m3_1wx3g8 = {
 	name = "mariadb_connector_c3.1.20-Windows-x86-MinGW-GCC&TARGETTOOLVERSION&",
 	mariadbVersion = "3.1.20",
 	host = "Win10",
-	toolchain = "MinGW850-32",
+	toolchain = "MinGW810-32",
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
 	configureParameter = [[
 		-GNinja
@@ -231,7 +231,7 @@ conf.m3_1wx6g8 = {
 	name = "mariadb_connector_c3.1.20-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&",
 	mariadbVersion = "3.1.20",
 	host = "Win10",
-	toolchain = "MinGW850-64",
+	toolchain = "MinGW810-64",
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
 	configureParameter = [[
 		-GNinja

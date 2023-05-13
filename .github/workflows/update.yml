@@ -6,21 +6,21 @@ jobs:
   osdn:
     runs-on: ubuntu-latest
     steps:
-    - uses: yehan-coding/yehan-git-sync@v1
+    - uses: codions/git-sync@v1.0.2
       with:
-        ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-        source_repo_url: git@github.com:${{ github.repository }}.git
-        source_branch: master
-        destination_repo_url: fsu0413@git.pf.osdn.net:/gitroot/f/fs/fsu0413/Fs-scripts.git
-        destination_branch: master
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        SOURCE_REPO: git@github.com:${{ github.repository }}.git
+        SOURCE_BRANCH: master
+        DESTINATION_REPO: fsu0413@git.pf.osdn.net:/gitroot/f/fs/fsu0413/Fs-scripts.git
+        DESTINATION_BRANCH: master
 
   coding:
     runs-on: ubuntu-latest
     steps:
-    - uses: yehan-coding/yehan-git-sync@v1
+    - uses: codions/git-sync@v1.0.2
       with:
-        ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-        source_repo_url: git@github.com:${{ github.repository }}.git
-        source_branch: master
-        destination_repo_url: git@e.coding.net:Fsu0413/Fs-scripts/Fs-scripts.git
-        destination_branch: master
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        SOURCE_REPO: git@github.com:${{ github.repository }}.git
+        SOURCE_BRANCH: master
+        DESTINATION_REPO: git@e.coding.net:Fsu0413/Fs-scripts/Fs-scripts.git
+        DESTINATION_BRANCH: master

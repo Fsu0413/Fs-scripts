@@ -771,7 +771,7 @@ conf.q5_12mx6st = {
 }
 
 conf.q5_12wx6g7_aa3nl = {
-	name = "Qt5.12.12-Android-arm-Clang-NDKr21e-XWindows-x86_64-MinGW&HOSTTOOLVERSION&",
+	name = "Qt5.12.12-Android-arm-Clang-NDKr21e-xWindows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "5.12.12",
 	host = "Win10",
 	toolchain = "MinGW730-64",
@@ -825,7 +825,7 @@ conf.q5_12wx6g7_aa3nl = {
 }
 
 conf.q5_12wx6g7_aa6nl = {
-	name = "Qt5.12.12-Android-arm64-Clang-NDKr21e-XWindows-x86_64-MinGW&HOSTTOOLVERSION&",
+	name = "Qt5.12.12-Android-arm64-Clang-NDKr21e-xWindows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "5.12.12",
 	host = "Win10",
 	toolchain = "MinGW730-64",
@@ -879,7 +879,7 @@ conf.q5_12wx6g7_aa6nl = {
 }
 
 conf.q5_12wx6g7_ax3nl = {
-	name = "Qt5.12.12-Android-x86-Clang-NDKr21e-XWindows-x86_64-MinGW&HOSTTOOLVERSION&",
+	name = "Qt5.12.12-Android-x86-Clang-NDKr21e-xWindows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "5.12.12",
 	host = "Win10",
 	toolchain = "MinGW730-64",
@@ -1978,7 +1978,7 @@ conf.q5_15wx6g1 = {
 }
 
 conf.q5_15wx6g2 = {
-	name = "Qt5.15.9-Windows-x86_64-MinGW&HOSTTOOLVERSION&",
+	name = "Qt5.15.9-Windows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
 	qtVersion = "5.15.9",
 	host = "Win10",
 	toolchain = "MinGW1220-64",
@@ -2093,7 +2093,7 @@ conf.q5_15mx6nf = {
 }
 
 conf.q5_15wx6g8_aalnl = {
-	name = "Qt5.15.9-Android-ALL-Clang-NDKr21e-XWindows-x86_64-MinGW&HOSTTOOLVERSION&",
+	name = "Qt5.15.9-Android-ALL-Clang-NDKr21e-xWindows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "5.15.9",
 	host = "Win10",
 	toolchain = "MinGW810-64",
@@ -2250,7 +2250,7 @@ conf.q5_15mx6_aalnl = {
 }
 
 conf.q5_15wx6g8_aaln3 = {
-	name = "Qt5.15.9-Android-ALL-Clang-NDKr23c-XWindows-x86_64-MinGW&HOSTTOOLVERSION&",
+	name = "Qt5.15.9-Android-ALL-Clang-NDKr23c-xWindows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "5.15.9",
 	host = "Win10",
 	toolchain = "MinGW810-64",
@@ -2651,7 +2651,7 @@ conf.q6_2wx6v9sf = {
 }
 
 conf.q6_2wx6v9_wa6v9 = {
-	name = "Qt6.2.4-Windows-arm64-VS2019-&HOSTTOOLVERSION&-XWindows-x86_64-VS2019-&HOSTTOOLVERSION&",
+	name = "Qt6.2.4-Windows-arm64-VS2019-&HOSTTOOLVERSION&-xWindows-x86_64-VS2019-&HOSTTOOLVERSION&",
 	qtVersion = "6.2.4",
 	host = "Win10",
 	target = "Win10Arm",
@@ -2863,7 +2863,7 @@ conf.q6_2wx6g1sf = {
 }
 
 conf.q6_2wx6g2 = {
-	name = "Qt6.2.4-Windows-x86_64-MinGW&HOSTTOOLVERSION&",
+	name = "Qt6.2.4-Windows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
 	qtVersion = "6.2.4",
 	host = "Win10",
 	toolchain = "MinGW1220-64",
@@ -2901,7 +2901,7 @@ conf.q6_2wx6g2 = {
 }
 
 conf.q6_2wx6g2sf = {
-	name = "Qt6.2.4-Windows-x86_64-MinGW&HOSTTOOLVERSION&-staticFull",
+	name = "Qt6.2.4-Windows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt-staticFull",
 	qtVersion = "6.2.4",
 	host = "Win10",
 	toolchain = "MinGW1220-64",
@@ -2988,6 +2988,90 @@ conf.q6_2wx6s5 = {
 	toolchain = "MinGWLLVM-msvcrt15-64",
 	opensslConf = "o3_0wx6s5",
 	mysqlConf = "m3_3wx6s5",
+	useCMake = "Latest",
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DBUILD_SHARED_LIBS=ON
+		-DCMAKE_BUILD_TYPE="Release"
+		-DQT_QMAKE_TARGET_MKSPEC=win32-clang-g++
+		-DBUILD_WITH_PCH=ON
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengl_dynamic=ON
+		-DFEATURE_ssl=ON
+		-DFEATURE_openssl=ON
+		-DINPUT_openssl=linked
+		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
+		-DFEATURE_schannel=ON
+		-DFEATURE_sql_sqlite=ON
+		-DFEATURE_sql_odbc=ON
+		-DFEATURE_sql_mysql=ON
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include\mariadb"
+		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\liblibmariadb.dll.a"
+		-DFEATURE_system_sqlite=OFF
+		-DBUILD_qtwebengine=OFF
+		-DBUILD_qtopcua=OFF
+		-DCMAKE_C_COMPILER="x86_64-w64-mingw32-clang"
+		-DCMAKE_ASM_COMPILER="x86_64-w64-mingw32-clang"
+		-DCMAKE_CXX_COMPILER="x86_64-w64-mingw32-clang++"
+	]],
+}
+
+conf.q6_2wx6u6 = {
+	name = "Qt6.2.4-Windows-x86_64-llvm-mingw-&HOSTTOOLVERSION&-ucrt",
+	qtVersion = "6.2.4",
+	host = "Win10",
+	toolchain = "MinGWLLVM-ucrt16-64",
+	opensslConf = "o3_0wx6u6",
+	mysqlConf = "m3_3wx6u6",
+	useCMake = "Latest",
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DBUILD_SHARED_LIBS=ON
+		-DCMAKE_BUILD_TYPE="Release"
+		-DQT_QMAKE_TARGET_MKSPEC=win32-clang-g++
+		-DBUILD_WITH_PCH=ON
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengl_dynamic=ON
+		-DFEATURE_ssl=ON
+		-DFEATURE_openssl=ON
+		-DINPUT_openssl=linked
+		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
+		-DFEATURE_schannel=ON
+		-DFEATURE_sql_sqlite=ON
+		-DFEATURE_sql_odbc=ON
+		-DFEATURE_sql_mysql=ON
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include\mariadb"
+		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\liblibmariadb.dll.a"
+		-DFEATURE_system_sqlite=OFF
+		-DBUILD_qtwebengine=OFF
+		-DBUILD_qtopcua=OFF
+		-DCMAKE_C_COMPILER="x86_64-w64-mingw32-clang"
+		-DCMAKE_ASM_COMPILER="x86_64-w64-mingw32-clang"
+		-DCMAKE_CXX_COMPILER="x86_64-w64-mingw32-clang++"
+	]],
+}
+
+conf.q6_2wx6s6 = {
+	name = "Qt6.2.4-Windows-x86_64-llvm-mingw-&HOSTTOOLVERSION&-msvcrt",
+	qtVersion = "6.2.4",
+	host = "Win10",
+	toolchain = "MinGWLLVM-msvcrt16-64",
+	opensslConf = "o3_0wx6s6",
+	mysqlConf = "m3_3wx6s6",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -3259,7 +3343,7 @@ conf.q6_2malsf = {
 }
 
 conf.q6_2wx6g1_aa3n3 = {
-	name = "Qt6.2.4-Android-arm-Clang-NDKr23c-XWindows-x86_64-MinGW&HOSTTOOLVERSION&",
+	name = "Qt6.2.4-Android-arm-Clang-NDKr23c-xWindows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "6.2.4",
 	host = "Win10",
 	target = "Android-24",
@@ -3298,7 +3382,7 @@ conf.q6_2wx6g1_aa3n3 = {
 }
 
 conf.q6_2wx6g1_aa6n3 = {
-	name = "Qt6.2.4-Android-arm64-Clang-NDKr23c-XWindows-x86_64-MinGW&HOSTTOOLVERSION&",
+	name = "Qt6.2.4-Android-arm64-Clang-NDKr23c-xWindows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "6.2.4",
 	host = "Win10",
 	target = "Android-24",
@@ -3337,7 +3421,7 @@ conf.q6_2wx6g1_aa6n3 = {
 }
 
 conf.q6_2wx6g1_ax3n3 = {
-	name = "Qt6.2.4-Android-x86-Clang-NDKr23c-XWindows-x86_64-MinGW&HOSTTOOLVERSION&",
+	name = "Qt6.2.4-Android-x86-Clang-NDKr23c-xWindows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "6.2.4",
 	host = "Win10",
 	target = "Android-24",
@@ -3376,7 +3460,7 @@ conf.q6_2wx6g1_ax3n3 = {
 }
 
 conf.q6_2wx6g1_ax6n3 = {
-	name = "Qt6.2.4-Android-x86_64-Clang-NDKr23c-XWindows-x86_64-MinGW&HOSTTOOLVERSION&",
+	name = "Qt6.2.4-Android-x86_64-Clang-NDKr23c-xWindows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "6.2.4",
 	host = "Win10",
 	target = "Android-24",
@@ -3950,7 +4034,7 @@ conf.q6_5wx6v2sf = {
 }
 
 conf.q6_5wx6v2_wa6v2 = {
-	name = "Qt6.5.0-Windows-arm64-VS2022-&HOSTTOOLVERSION&-XWindows-x86_64-VS2022-&HOSTTOOLVERSION&",
+	name = "Qt6.5.0-Windows-arm64-VS2022-&HOSTTOOLVERSION&-xWindows-x86_64-VS2022-&HOSTTOOLVERSION&",
 	qtVersion = "6.5.0",
 	host = "Win10",
 	target = "Win10Arm",
@@ -3986,7 +4070,7 @@ conf.q6_5wx6v2_wa6v2 = {
 }
 
 conf.q6_5wx6g2 = {
-	name = "Qt6.5.0-Windows-x86_64-MinGW&HOSTTOOLVERSION&",
+	name = "Qt6.5.0-Windows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
 	qtVersion = "6.5.0",
 	host = "Win10",
 	toolchain = "MinGW1220-64",
@@ -4024,7 +4108,7 @@ conf.q6_5wx6g2 = {
 }
 
 conf.q6_5wx6g2st = {
-	name = "Qt6.5.0-Windows-x86_64-MinGW&HOSTTOOLVERSION&-static",
+	name = "Qt6.5.0-Windows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt-static",
 	qtVersion = "6.5.0",
 	host = "Win10",
 	toolchain = "MinGW1220-64",
@@ -4089,7 +4173,7 @@ conf.q6_5wx6g2st = {
 }
 
 conf.q6_5wx6g2sf = {
-	name = "Qt6.5.0-Windows-x86_64-MinGW&HOSTTOOLVERSION&-staticFull",
+	name = "Qt6.5.0-Windows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt-staticFull",
 	qtVersion = "6.5.0",
 	host = "Win10",
 	toolchain = "MinGW1220-64",
@@ -4461,7 +4545,7 @@ conf.q6_5malsf = {
 }
 
 conf.q6_5wx6g2_aa6n5 = {
-	name = "Qt6.5.0-Android-arm64-Clang-NDKr25c-XWindows-x86_64-MinGW&HOSTTOOLVERSION&",
+	name = "Qt6.5.0-Android-arm64-Clang-NDKr25c-xWindows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
 	qtVersion = "6.5.0",
 	host = "Win10",
 	target = "Android-27",
@@ -4500,7 +4584,7 @@ conf.q6_5wx6g2_aa6n5 = {
 }
 
 conf.q6_5wx6g2_ax6n5 = {
-	name = "Qt6.5.0-Android-x86_64-Clang-NDKr25c-XWindows-x86_64-MinGW&HOSTTOOLVERSION&",
+	name = "Qt6.5.0-Android-x86_64-Clang-NDKr25c-xWindows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
 	qtVersion = "6.5.0",
 	host = "Win10",
 	target = "Android-27",
@@ -4688,7 +4772,7 @@ conf.q6_5mal_ax6n5 = {
 
 -- WebAssembly uses emcmake which don't need a toolchain file
 conf.q6_5wx6g2_W = {
-	name = "Qt6.5.0-WebAssembly-emscripten&TARGETTOOLVERSION&-xWindows-x86_64-MinGW&HOSTTOOLVERSION&",
+	name = "Qt6.5.0-WebAssembly-emscripten&TARGETTOOLVERSION&-xWindows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
 	qtVersion = "6.5.0",
 	host = "Win10",
 	toolchain = "MinGW1220-64",

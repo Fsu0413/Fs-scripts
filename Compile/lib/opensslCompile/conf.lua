@@ -529,7 +529,7 @@ conf.o3_0wx6g1 = {
 }
 
 conf.o3_0wx6g2 = {
-	name = "OpenSSL3.0.8-2-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&",
+	name = "OpenSSL3.0.8-2-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-msvcrt",
 	opensslVersion = "3.0.8-2",
 	host = "Win10SH",
 	toolchain = "MinGW1220-64",

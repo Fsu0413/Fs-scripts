@@ -1977,6 +1977,42 @@ conf.q5_15wx6g1 = {
 	]],
 }
 
+conf.q5_15wx6p2 = {
+	name = "Qt5.15.9-Windows-x86_64-MinGW&HOSTTOOLVERSION&-ucrt",
+	qtVersion = "5.15.9",
+	host = "Win10",
+	toolchain = "MinGW122u-64",
+	-- mysqlConf = "m3_1wx6p2",
+	configureParameter = [[
+		-prefix
+		&INSTALLROOT&
+		-opensource
+		-shared
+		-release
+		-confirm-license
+		-platform
+		win32-g++
+		-pch
+		-nomake
+		examples
+		-nomake
+		tests
+		-no-compile-examples
+		-qt-doubleconversion
+		-qt-zlib
+		-qt-pcre
+		-no-icu
+		-opengl
+		dynamic
+		-ssl
+		-schannel
+		-sql-sqlite
+		-sql-odbc
+		-make-tool
+		"mingw32-make -j%PARALLELNUM%"
+	]],
+}
+
 conf.q5_15wx6g2 = {
 	name = "Qt5.15.9-Windows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
 	qtVersion = "5.15.9",
@@ -2830,6 +2866,83 @@ conf.q6_2wx6g1sf = {
 	toolchain = "MinGW1120-64",
 	variant = {"-staticFull"},
 	opensslConf = "o3_0wx6g1",
+	useCMake = "Latest",
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DBUILD_SHARED_LIBS=OFF
+		-DFEATURE_static_runtime=ON
+		-DCMAKE_BUILD_TYPE="Release"
+		-DQT_QMAKE_TARGET_MKSPEC=win32-g++
+		-DBUILD_WITH_PCH=ON
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_relocatable=ON
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengl_dynamic=ON
+		-DFEATURE_ssl=ON
+		-DFEATURE_openssl=ON
+		-DINPUT_openssl=linked
+		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
+		-DOPENSSL_USE_STATIC_LIBS=TRUE
+		-DFEATURE_schannel=ON
+		-DFEATURE_sql_sqlite=ON
+		-DFEATURE_sql_odbc=ON
+		-DFEATURE_system_sqlite=OFF
+		-DBUILD_qtopcua=OFF
+		-DCMAKE_EXE_LINKER_FLAGS="--static -static-libgcc -static-libstdc++"
+	]],
+}
+
+conf.q6_2wx6p2 = {
+	name = "Qt6.2.4-Windows-x86_64-MinGW&HOSTTOOLVERSION&-ucrt",
+	qtVersion = "6.2.4",
+	host = "Win10",
+	toolchain = "MinGW122u-64",
+	opensslConf = "o3_0wx6p2",
+	mysqlConf = "m3_3wx6p2",
+	useCMake = "20",
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DBUILD_SHARED_LIBS=ON
+		-DCMAKE_BUILD_TYPE="Release"
+		-DQT_QMAKE_TARGET_MKSPEC=win32-g++
+		-DBUILD_WITH_PCH=ON
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengl_dynamic=ON
+		-DFEATURE_ssl=ON
+		-DFEATURE_openssl=ON
+		-DINPUT_openssl=linked
+		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
+		-DFEATURE_schannel=ON
+		-DFEATURE_sql_sqlite=ON
+		-DFEATURE_sql_odbc=ON
+		-DFEATURE_sql_mysql=ON
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include\mariadb"
+		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\liblibmariadb.dll.a"
+		-DFEATURE_system_sqlite=OFF
+		-DBUILD_qtopcua=OFF
+	]],
+}
+
+conf.q6_2wx6p2sf = {
+	name = "Qt6.2.4-Windows-x86_64-MinGW&HOSTTOOLVERSION&-ucrt-staticFull",
+	qtVersion = "6.2.4",
+	host = "Win10",
+	toolchain = "MinGW122u-64",
+	variant = {"-staticFull"},
+	opensslConf = "o3_0wx6p2",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -4066,6 +4179,84 @@ conf.q6_5wx6v2_wa6v2 = {
 		-DFEATURE_sql_odbc=ON
 		-DFEATURE_system_sqlite=OFF
 		-DBUILD_qtgrpc=OFF
+	]],
+}
+
+conf.q6_5wx6p2 = {
+	name = "Qt6.5.0-Windows-x86_64-MinGW&HOSTTOOLVERSION&-ucrt",
+	qtVersion = "6.5.0",
+	host = "Win10",
+	toolchain = "MinGW122u-64",
+	opensslConf = "o3_0wx6p2",
+	mysqlConf = "m3_3wx6p2",
+	useCMake = "20",
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DBUILD_SHARED_LIBS=ON
+		-DCMAKE_BUILD_TYPE="Release"
+		-DQT_QMAKE_TARGET_MKSPEC=win32-g++
+		-DBUILD_WITH_PCH=ON
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengl_dynamic=ON
+		-DFEATURE_ssl=ON
+		-DFEATURE_openssl=ON
+		-DINPUT_openssl=linked
+		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
+		-DFEATURE_schannel=ON
+		-DFEATURE_sql_sqlite=ON
+		-DFEATURE_sql_odbc=ON
+		-DFEATURE_sql_mysql=ON
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include\mariadb"
+		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\liblibmariadb.dll.a"
+		-DFEATURE_system_sqlite=OFF
+		-DBUILD_qtgrpc=OFF
+	]],
+}
+
+conf.q6_5wx6p2sf = {
+	name = "Qt6.5.0-Windows-x86_64-MinGW&HOSTTOOLVERSION&-ucrt-staticFull",
+	qtVersion = "6.5.0",
+	host = "Win10",
+	toolchain = "MinGW122u-64",
+	variant = {"-staticFull"},
+	opensslConf = "o3_0wx6p2",
+	useCMake = "Latest",
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DBUILD_SHARED_LIBS=OFF
+		-DFEATURE_static_runtime=ON
+		-DCMAKE_BUILD_TYPE="Release"
+		-DQT_QMAKE_TARGET_MKSPEC=win32-g++
+		-DBUILD_WITH_PCH=ON
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_relocatable=ON
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengl_dynamic=ON
+		-DFEATURE_ssl=ON
+		-DFEATURE_openssl=ON
+		-DINPUT_openssl=linked
+		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
+		-DOPENSSL_USE_STATIC_LIBS=TRUE
+		-DFEATURE_schannel=ON
+		-DFEATURE_sql_sqlite=ON
+		-DFEATURE_sql_odbc=ON
+		-DFEATURE_system_sqlite=OFF
+		-DBUILD_qtgrpc=OFF
+		-DBUILD_qtwebengine=OFF
+		-DCMAKE_EXE_LINKER_FLAGS="--static -static-libgcc -static-libstdc++"
 	]],
 }
 

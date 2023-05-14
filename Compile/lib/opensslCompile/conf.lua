@@ -528,6 +528,24 @@ conf.o3_0wx6g1 = {
 	]],
 }
 
+conf.o3_0wx6p2 = {
+	name = "OpenSSL3.0.8-2-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-ucrt",
+	opensslVersion = "3.0.8-2",
+	host = "Win10SH",
+	toolchain = "MinGW122u-64",
+	libPath = { "bin\\libssl-3-x64.dll", "bin\\libcrypto-3-x64.dll" },
+	staticlibPath = { "lib\\libssl.a", "lib\\libcrypto.a" },
+	configureParameter = [[
+		no-asm
+		shared
+		enable-static-engine
+		--prefix=&INSTALLROOT&
+		--openssldir=&INSTALLROOT&/ssl
+		--libdir=&INSTALLROOT&/lib
+		mingw64
+	]],
+}
+
 conf.o3_0wx6g2 = {
 	name = "OpenSSL3.0.8-2-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-msvcrt",
 	opensslVersion = "3.0.8-2",

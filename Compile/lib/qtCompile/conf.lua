@@ -2085,8 +2085,8 @@ conf.q5_15mal = {
 		"make -j$PARALLELNUM"
 		-webengine-proprietary-codecs
 		QMAKE_APPLE_DEVICE_ARCHS="arm64 x86_64"
-		NINJAFLAGS="-v -j$(expr $PARALLELNUM / 2)"
 	]],
+	NINJAFLAGS = "-v -j4"
 }
 
 conf.q5_15malnf = {
@@ -2128,8 +2128,8 @@ conf.q5_15malnf = {
 		-webengine-proprietary-codecs
 		-no-framework
 		QMAKE_APPLE_DEVICE_ARCHS="arm64 x86_64"
-		NINJAFLAGS="-v -j$(expr $PARALLELNUM / 2)"
 	]],
+	NINJAFLAGS = "-v -j4"
 }
 
 conf.q5_15malsf = {

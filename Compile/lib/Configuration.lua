@@ -398,6 +398,10 @@ conf.Qt.generateConfTable = function(self, host, job, buildTime)
 		commandLineReplacement.MYSQLPREFIX = ret.WORKSPACE .. configureHost.pathSep .. "buildDir" .. configureHost.pathSep .. replaceVersion(conf.MariaDB.configurations[jobConfigureDetail.mysqlConf].name, nil, targetToolchainVersion)
 	end
 
+	if jobConfigureDetail.NINJAFLAGS then
+		ret.envSet.NINJAFLAGS = jobConfigureDetail.NINJAFLAGS
+	end
+
 	local installFolderName = replaceVersion(jobConfigureDetail.name, hostToolchainVersion, targetToolchainVersion)
 	local installRoot = ret.WORKSPACE .. configureHost.pathSep .. "buildDir" .. configureHost.pathSep .. installFolderName
 	commandLineReplacement.INSTALLROOT = installRoot

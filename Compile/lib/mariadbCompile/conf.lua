@@ -351,7 +351,7 @@ conf.m3_3wx6g1 = {
 }
 
 conf.m3_3wx6p2 = {
-	name = "mariadb_connector_c3.3.4-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION-ucrt",
+	name = "mariadb_connector_c3.3.4-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-ucrt",
 	mariadbVersion = "3.3.4",
 	host = "Win10",
 	toolchain = "MinGW122u-64",
@@ -374,7 +374,7 @@ conf.m3_3wx6p2 = {
 }
 
 conf.m3_3wx6g2 = {
-	name = "mariadb_connector_c3.3.4-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION-msvcrt",
+	name = "mariadb_connector_c3.3.4-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-msvcrt",
 	mariadbVersion = "3.3.4",
 	host = "Win10",
 	toolchain = "MinGW1220-64",

@@ -2049,10 +2049,10 @@ conf.q5_15wx6g2 = {
 	]],
 }
 
-conf.q5_15mx6 = {
-	name = "Qt5.15.9-macOS-x86_64-AppleClang&HOSTTOOLVERSION&",
+conf.q5_15mal = {
+	name = "Qt5.15.9-macOS-Universal-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "5.15.9-4",
-	host = "macOS1015",
+	host = "macOSM1",
 	mysqlConf = "m3_1mal",
 	configureParameter = [[
 		-prefix
@@ -2084,13 +2084,15 @@ conf.q5_15mx6 = {
 		-make-tool
 		"make -j$PARALLELNUM"
 		-webengine-proprietary-codecs
+		QMAKE_APPLE_DEVICE_ARCHS="arm64 x86_64"
+		NINJAFLAGS="-v -j$(expr $PARALLELNUM / 2)"
 	]],
 }
 
-conf.q5_15mx6nf = {
-	name = "Qt5.15.9-macOS-x86_64-AppleClang&HOSTTOOLVERSION&-noFramework",
+conf.q5_15malnf = {
+	name = "Qt5.15.9-macOS-Universal-AppleClang&HOSTTOOLVERSION&-noFramework",
 	qtVersion = "5.15.9-4",
-	host = "macOS1015",
+	host = "macOSM1",
 	variant = {"-noFramework"},
 	mysqlConf = "m3_1mal",
 	configureParameter = [[
@@ -2125,6 +2127,47 @@ conf.q5_15mx6nf = {
 		-rpath
 		-webengine-proprietary-codecs
 		-no-framework
+		QMAKE_APPLE_DEVICE_ARCHS="arm64 x86_64"
+		NINJAFLAGS="-v -j$(expr $PARALLELNUM / 2)"
+	]],
+}
+
+conf.q5_15malsf = {
+	name = "Qt5.15.9-macOS-Universal-AppleClang&HOSTTOOLVERSION&-staticFull",
+	qtVersion = "5.15.9-4",
+	host = "macOSM1",
+	variant = {"-staticFull"},
+	configureParameter = [[
+		-prefix
+		&INSTALLROOT&
+		-opensource
+		-static
+		-feature-relocatable
+		-release
+		-confirm-license
+		-platform
+		macx-clang
+		-pch
+		-nomake
+		examples
+		-nomake
+		tests
+		-no-compile-examples
+		-qt-doubleconversion
+		-qt-zlib
+		-qt-pcre
+		-no-icu
+		-opengl
+		desktop
+		-no-openssl
+		-securetransport
+		-sql-sqlite
+		-make-tool
+		"make -j$PARALLELNUM"
+		-rpath
+		-skip
+		qtwebengine
+		QMAKE_APPLE_DEVICE_ARCHS="arm64 x86_64"
 	]],
 }
 
@@ -2233,10 +2276,10 @@ conf.q5_15lx6_aalnl = {
 	]],
 }
 
-conf.q5_15mx6_aalnl = {
-	name = "Qt5.15.9-Android-ALL-Clang-NDKr21e-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
+conf.q5_15mal_aalnl = {
+	name = "Qt5.15.9-Android-ALL-Clang-NDKr21e-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "5.15.9",
-	host = "macOS1015",
+	host = "macOSM1",
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-all",
 	opensslConf = "o1_1aalnl",
@@ -2282,6 +2325,7 @@ conf.q5_15mx6_aalnl = {
 		darwin-x86_64
 		-skip
 		qtscript
+		QMAKE_APPLE_DEVICE_ARCHS="arm64 x86_64"
 	]],
 }
 
@@ -2390,10 +2434,10 @@ conf.q5_15lx6_aaln3 = {
 	]],
 }
 
-conf.q5_15mx6_aaln3 = {
-	name = "Qt5.15.9-Android-ALL-Clang-NDKr23c-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
+conf.q5_15mal_aaln3 = {
+	name = "Qt5.15.9-Android-ALL-Clang-NDKr23c-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "5.15.9",
-	host = "macOS1015",
+	host = "macOSM1",
 	target = "Android-21",
 	toolchainT = "Android-21-r23c-all",
 	opensslConf = "o1_1aaln321",
@@ -2439,6 +2483,7 @@ conf.q5_15mx6_aaln3 = {
 		darwin-x86_64
 		-skip
 		qtscript
+		QMAKE_APPLE_DEVICE_ARCHS="arm64 x86_64"
 	]],
 }
 
@@ -2513,10 +2558,10 @@ conf.q5_15lx6_W = {
 	]],
 }
 
-conf.q5_15mx6_W = {
-	name = "Qt5.15.9-WebAssembly-emscripten&TARGETTOOLVERSION&-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
+conf.q5_15mal_W = {
+	name = "Qt5.15.9-WebAssembly-emscripten&TARGETTOOLVERSION&-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "5.15.9",
-	host = "macOS1015",
+	host = "macOSM1",
 	target = "WebAssembly",
 	toolchainT = "emscripten-1.39.8",
 	configureParameter = [[
@@ -2545,6 +2590,7 @@ conf.q5_15mx6_W = {
 		-sql-sqlite
 		-make-tool
 		"make -j$PARALLELNUM"
+		QMAKE_APPLE_DEVICE_ARCHS="arm64 x86_64"
 	]],
 }
 

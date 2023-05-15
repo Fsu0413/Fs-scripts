@@ -199,6 +199,7 @@ conf.host.macM1 = {
 		["20230224"] = "/opt/env/android-sdk-mac-20230224/",
 	},
 	["androidNdkPath"] = {
+		["r21e"] = "/Applications/AndroidNDK7075529.app/Contents/NDK/",
 		["r23c"] = "/Applications/AndroidNDK8568313.app/Contents/NDK/",
 		["r25c"] = "/Applications/AndroidNDK9519653.app/Contents/NDK/",
 	},
@@ -206,6 +207,7 @@ conf.host.macM1 = {
 	["sourcePackagePath"] = "/opt/sources/",
 	["buildRootPath"] = "/opt/build/",
 	["emscriptenPath"] = {
+		["1.39.8"] = "/opt/env/emsdk-1.39.8/",
 		["2.0.14"] = "/opt/env/emsdk-2.0.14/",
 		["3.1.14"] = "/opt/env/emsdk-3.1.14/",
 		["3.1.25"] = "/opt/env/emsdk-3.1.25/",

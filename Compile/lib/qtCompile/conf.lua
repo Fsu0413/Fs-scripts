@@ -2275,8 +2275,60 @@ conf.q5_15lx6_aalnl = {
 	]],
 }
 
-conf.q5_15mal_aalnl = {
-	name = "Qt5.15.9-Android-ALL-Clang-NDKr21e-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
+conf.q5_15mx6_aalnl = {
+	name = "Qt5.15.9-Android-ALL-Clang-NDKr21e-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
+	qtVersion = "5.15.9",
+	host = "macOS1015",
+	target = "Android-21",
+	toolchainT = "Android-21-r21e-all",
+	opensslConf = "o1_1aalnl",
+	androidSdkVersion = "20220911",
+	configureParameter = [[
+		-prefix
+		/
+		-opensource
+		-shared
+		-release
+		-confirm-license
+		-platform
+		macx-clang
+		-xplatform
+		android-clang
+		-nomake
+		examples
+		-nomake
+		tests
+		-no-compile-examples
+		-qt-doubleconversion
+		-qt-zlib
+		-qt-pcre
+		-no-icu
+		-opengl
+		es2
+		-ssl
+		-openssl-linked
+		-I
+		&OPENSSLDIR&/include/
+		-L
+		&OPENSSLDIR&/lib/
+		-sql-sqlite
+		-make-tool
+		"make -j$PARALLELNUM"
+		-android-sdk
+		&ANDROIDSDKROOT&
+		-android-ndk
+		&ANDROIDNDKROOT&
+		-android-ndk-platform
+		android-21
+		-android-ndk-host
+		darwin-x86_64
+		-skip
+		qtscript
+	]],
+}
+
+conf.q5_15ma6_aalnl = {
+	name = "Qt5.15.9-Android-ALL-Clang-NDKr21e-xmacOS-arm64-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "5.15.9",
 	host = "macOSM1",
 	target = "Android-21",
@@ -2324,7 +2376,6 @@ conf.q5_15mal_aalnl = {
 		darwin-x86_64
 		-skip
 		qtscript
-		QMAKE_APPLE_DEVICE_ARCHS="arm64 x86_64"
 	]],
 }
 
@@ -2433,8 +2484,60 @@ conf.q5_15lx6_aaln3 = {
 	]],
 }
 
-conf.q5_15mal_aaln3 = {
-	name = "Qt5.15.9-Android-ALL-Clang-NDKr23c-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
+conf.q5_15mx6_aaln3 = {
+	name = "Qt5.15.9-Android-ALL-Clang-NDKr23c-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
+	qtVersion = "5.15.9",
+	host = "macOS1015",
+	target = "Android-21",
+	toolchainT = "Android-21-r23c-all",
+	opensslConf = "o1_1aaln321",
+	androidSdkVersion = "20220911",
+	configureParameter = [[
+		-prefix
+		/
+		-opensource
+		-shared
+		-release
+		-confirm-license
+		-platform
+		macx-clang
+		-xplatform
+		android-clang
+		-nomake
+		examples
+		-nomake
+		tests
+		-no-compile-examples
+		-qt-doubleconversion
+		-qt-zlib
+		-qt-pcre
+		-no-icu
+		-opengl
+		es2
+		-ssl
+		-openssl-linked
+		-I
+		&OPENSSLDIR&/include/
+		-L
+		&OPENSSLDIR&/lib/
+		-sql-sqlite
+		-make-tool
+		"make -j$PARALLELNUM"
+		-android-sdk
+		&ANDROIDSDKROOT&
+		-android-ndk
+		&ANDROIDNDKROOT&
+		-android-ndk-platform
+		android-21
+		-android-ndk-host
+		darwin-x86_64
+		-skip
+		qtscript
+	]],
+}
+
+conf.q5_15ma6_aaln3 = {
+	name = "Qt5.15.9-Android-ALL-Clang-NDKr23c-xmacOS-arm64-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "5.15.9",
 	host = "macOSM1",
 	target = "Android-21",
@@ -2482,7 +2585,6 @@ conf.q5_15mal_aaln3 = {
 		darwin-x86_64
 		-skip
 		qtscript
-		QMAKE_APPLE_DEVICE_ARCHS="arm64 x86_64"
 	]],
 }
 
@@ -2557,8 +2659,43 @@ conf.q5_15lx6_W = {
 	]],
 }
 
-conf.q5_15mal_W = {
-	name = "Qt5.15.9-WebAssembly-emscripten&TARGETTOOLVERSION&-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
+conf.q5_15mx6_W = {
+	name = "Qt5.15.9-WebAssembly-emscripten&TARGETTOOLVERSION&-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
+	qtVersion = "5.15.9",
+	host = "macOS1015",
+	target = "WebAssembly",
+	toolchainT = "emscripten-1.39.8",
+	configureParameter = [[
+		-prefix
+		/
+		-opensource
+		-release
+		-confirm-license
+		-platform
+		macx-clang
+		-xplatform
+		wasm-emscripten
+		-nomake
+		examples
+		-nomake
+		tests
+		-no-compile-examples
+		-qt-doubleconversion
+		-qt-zlib
+		-qt-pcre
+		-no-icu
+		-opengl
+		es2
+		-no-ssl
+		-feature-thread
+		-sql-sqlite
+		-make-tool
+		"make -j$PARALLELNUM"
+	]],
+}
+
+conf.q5_15ma6_W = {
+	name = "Qt5.15.9-WebAssembly-emscripten&TARGETTOOLVERSION&-xmacOS-arm64-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "5.15.9",
 	host = "macOSM1",
 	target = "WebAssembly",
@@ -2589,7 +2726,6 @@ conf.q5_15mal_W = {
 		-sql-sqlite
 		-make-tool
 		"make -j$PARALLELNUM"
-		QMAKE_APPLE_DEVICE_ARCHS="arm64 x86_64"
 	]],
 }
 

@@ -215,6 +215,7 @@ conf.host.macM1 = {
 	["jdkPath"] = {
 		-- It is said that zulu JDK runs faster on M1 chips...
 		-- If not I'll use OpenJDK from Homebrew later
+		["8"] = "/opt/env/jdk-8/zulu8.70.0.23-ca-jdk8.0.372-macosx_aarch64/zulu-8.jdk/Contents/Home/",
 		["11"] = "/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home/",
 	},
 	["defaultToolchainExecutableName"] = "clang",

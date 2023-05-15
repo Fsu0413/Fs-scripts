@@ -2164,7 +2164,6 @@ conf.q5_15malsf = {
 		-sql-sqlite
 		-make-tool
 		"make -j$PARALLELNUM"
-		-rpath
 		-skip
 		qtwebengine
 		QMAKE_APPLE_DEVICE_ARCHS="arm64 x86_64"

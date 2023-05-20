@@ -2049,7 +2049,6 @@ conf.q5_15wx6g2 = {
 	]],
 }
 
--- note: remove skip qtlocation on 5.15.14
 conf.q5_15mal = {
 	name = "Qt5.15.9-macOS-Universal-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "5.15.9-4",
@@ -2084,8 +2083,6 @@ conf.q5_15mal = {
 		"MYSQL_LIBDIR=&MYSQLPREFIX&/lib/mariadb"
 		-make-tool
 		"make -j$PARALLELNUM"
-		-skip
-		qtlocation
 		-webengine-proprietary-codecs
 		QMAKE_APPLE_DEVICE_ARCHS="arm64 x86_64"
 	]],
@@ -2128,8 +2125,6 @@ conf.q5_15malnf = {
 		-make-tool
 		"make -j$PARALLELNUM"
 		-rpath
-		-skip
-		qtlocation
 		-webengine-proprietary-codecs
 		-no-framework
 		QMAKE_APPLE_DEVICE_ARCHS="arm64 x86_64"
@@ -2169,8 +2164,6 @@ conf.q5_15malsf = {
 		-sql-sqlite
 		-make-tool
 		"make -j$PARALLELNUM"
-		-skip
-		qtlocation
 		-skip
 		qtwebengine
 		QMAKE_APPLE_DEVICE_ARCHS="arm64 x86_64"

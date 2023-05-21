@@ -47,7 +47,7 @@ conf.host.win = {
 		["MinGWLLVM-msvcrt15-64"] = {"D:\\mingw-w64\\llvm-mingw-20220906-msvcrt-x86_64\\x86_64-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20220906-msvcrt-x86_64\\bin"},
 		["MinGWLLVM-ucrt15-64"] = {"D:\\mingw-w64\\llvm-mingw-20220906-ucrt-x86_64\\x86_64-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20220906-ucrt-x86_64\\bin"},
 		["MinGWLLVM-msvcrt16-64"] = {"D:\\mingw-w64\\llvm-mingw-20230320-msvcrt-x86_64\\x86_64-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20230320-msvcrt-x86_64\\bin"},
-		["MinGWLLVM-ucrt16-64"] = {"D:\\mingw-w64\\llvm-mingw-20230504-ucrt-x86_64\\x86_64-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20230504-ucrt-x86_64\\bin"},
+		["MinGWLLVM-ucrt16-64"] = {"D:\\mingw-w64\\llvm-mingw-20230517-ucrt-x86_64\\x86_64-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20230517-ucrt-x86_64\\bin"},
 	},
 	["sourcePackagePath"] = "D:\\Qt\\",
 	["buildRootPath"] = "D:\\Qt\\", -- On Windows, the build root should be same with source package
@@ -65,7 +65,6 @@ conf.host.win = {
 	["emscriptenPath"] = {
 		["1.39.8"] = "D:\\emsdk-1.39.8\\",
 		["2.0.14"] = "D:\\emsdk-2.0.14\\",
-		["3.1.14"] = "D:\\emsdk-3.1.14\\",
 		["3.1.25"] = "D:\\emsdk-3.1.25\\",
 	},
 	["cMakePath"] = {
@@ -104,7 +103,7 @@ conf.host.msys = {
 		["MinGWLLVM-msvcrt15-64"] = {"/d/mingw-w64/llvm-mingw-20220906-msvcrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20220906-msvcrt-x86_64/bin"},
 		["MinGWLLVM-ucrt15-64"] = {"/d/mingw-w64/llvm-mingw-20220906-ucrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20220906-ucrt-x86_64/bin"},
 		["MinGWLLVM-msvcrt16-64"] = {"/d/mingw-w64/llvm-mingw-20230320-msvcrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20230320-msvcrt-x86_64/bin"},
-		["MinGWLLVM-ucrt16-64"] = {"/d/mingw-w64/llvm-mingw-20230504-ucrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20230504-ucrt-x86_64/bin"},
+		["MinGWLLVM-ucrt16-64"] = {"/d/mingw-w64/llvm-mingw-20230517-ucrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20230517-ucrt-x86_64/bin"},
 	},
 	["sourcePackagePath"] = "/d/Qt/",
 	["androidNdkPath"] = {
@@ -142,7 +141,6 @@ conf.host.linux = {
 	["emscriptenPath"] = {
 		["1.39.8"] = "/opt/env/emsdk-1.39.8/",
 		["2.0.14"] = "/opt/env/emsdk-2.0.14/",
-		["3.1.14"] = "/opt/env/emsdk-3.1.14/",
 		["3.1.25"] = "/opt/env/emsdk-3.1.25/",
 	},
 	["jdkPath"] = {
@@ -176,7 +174,6 @@ conf.host.mac = {
 	["emscriptenPath"] = {
 		["1.39.8"] = "/opt/env/emsdk-1.39.8/",
 		["2.0.14"] = "/opt/env/emsdk-2.0.14/",
-		["3.1.14"] = "/opt/env/emsdk-3.1.14/",
 	},
 	["jdkPath"] = {
 		["8"] = "/usr/local/opt/openjdk@8/",
@@ -209,7 +206,6 @@ conf.host.macM1 = {
 	["emscriptenPath"] = {
 		["1.39.8"] = "/opt/env/emsdk-1.39.8/",
 		["2.0.14"] = "/opt/env/emsdk-2.0.14/",
-		["3.1.14"] = "/opt/env/emsdk-3.1.14/",
 		["3.1.25"] = "/opt/env/emsdk-3.1.25/",
 	},
 	["jdkPath"] = {

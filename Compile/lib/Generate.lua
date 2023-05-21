@@ -972,7 +972,7 @@ local filenameAndToolFromUrl = function(url)
 	repeat
 		n = n2
 		n2 = string.find(url, "/", n and (n + 1) or 1)
-	until n2 == nil
+	until not n2
 	local target = string.sub(url, n + 1)
 	local tool = nil
 

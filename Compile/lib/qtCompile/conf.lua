@@ -5285,19 +5285,19 @@ end
 
 for name, value in pairs(conf) do
 	-- sanity check
-	if value.name == nil then
+	if not value.name then
 		io.stderr:write("no name for config " .. name .. "\n")
 		io.stderr:flush()
 		os.exit(1)
 	end
 
-	if value.qtVersion == nil then
+	if not value.qtVersion then
 		io.stderr:write("no qtVersion for config " .. name .. "\n")
 		io.stderr:flush()
 		os.exit(1)
 	end
 
-	if value.host == nil then
+	if not value.host then
 		io.stderr:write("no host for config " .. name .. "\n")
 		io.stderr:flush()
 		os.exit(1)

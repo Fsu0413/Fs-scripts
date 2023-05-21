@@ -1,4 +1,7 @@
 
+-- TODO: find a more sensible name for this module.
+-- The version is not for a specific compiler, but rather a version number of a whole toolchain.
+
 local compilerVer = {}
 
 local runCmdScript = function(script)
@@ -31,7 +34,7 @@ compilerVer.parseVersionNum = function(str)
 	if #match > 0 then
 		return setmetatable(match, { __tostring = function(m) return m[1] .. "." .. m[2] .. "." .. m[3] end})
 	end
-	return nil
+	return fail
 end
 
 local runShScript = function(script)
@@ -129,5 +132,46 @@ compilerVer.emcc = function(isWin, path)
 
 	return compilerVer.parseVersionNum(ret)
 end
+
+--[==[
+-- unused function. NDK version is still provided by Configuration.
+compilerVer.ndk = function(_, path)
+	-- NDK r13+ have a file named "source.properties" in its path.
+	-- In this file there is an item calls "Pkg.Revision" which indicates the version of NDK itself.
+
+	local file, err = io.open(path .. "/source.properties", "r")
+
+	if not file then
+		return fail
+	end
+
+	local major, minor
+
+	for line in file:lines() do
+		major, minor = string.match(line, "^Pkg%.Revision = (%d+)%.(%d+)%.%d+$")
+		if major then
+			break
+		end
+	end
+
+	file:close()
+
+	if not major then
+		return fail
+	end
+
+	local ndkMinorRevisionTable = {
+		"",
+		"b",
+		"c",
+		"d",
+		"e",
+		"f", -- no NDK versions ever reached this far, so..
+		"g",
+	}
+
+	return major .. ndkMinorRevisionTable[tonumber(minor) + 1]
+end
+]==]
 
 return compilerVer

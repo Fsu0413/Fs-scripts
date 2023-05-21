@@ -1,13 +1,17 @@
 
+if string.sub(_VERSION, -3) ~= "5.4" then
+	fail = nil
+end
+
 local scriptFile = arg[0]
 local n, n2
 repeat
 	n = n2
 	n2 = string.find(scriptFile, "/", n and (n + 1) or 1)
-	if n2 == nil then
+	if not n2 then
 		n2 = string.find(scriptFile, "\\", n and (n + 1) or 1)
 	end
-until n2 == nil
+until not n2
 
 scriptPath = (n and string.sub(scriptFile, 1, n - 1) or ".")
 

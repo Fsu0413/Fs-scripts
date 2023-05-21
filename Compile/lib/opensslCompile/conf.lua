@@ -901,19 +901,19 @@ conf.o3_0aaln527 = {
 
 for name, value in pairs(conf) do
 	-- sanity check
-	if value.name == nil then
+	if not value.name then
 		io.stderr:write("no name for config " .. name .. "\n")
 		io.stderr:flush()
 		os.exit(1)
 	end
 
-	if value.opensslVersion == nil then
+	if not value.opensslVersion then
 		io.stderr:write("no opensslVersion for config " .. name .. "\n")
 		io.stderr:flush()
 		os.exit(1)
 	end
 
-	if value.host == nil then
+	if not value.host then
 		io.stderr:write("no host for config " .. name .. "\n")
 		io.stderr:flush()
 		os.exit(1)

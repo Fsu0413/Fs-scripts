@@ -80,6 +80,7 @@ conf.o1_1wx3v5st = {
 		--openssldir=&INSTALLROOT&\ssl
 		VC-WIN32
 		-FS
+		-MT
 	]],
 }
 
@@ -108,7 +109,6 @@ conf.o1_1wx3g7 = {
 	host = "Win8SH",
 	toolchain = "MinGW730-32",
 	libPath = { "bin\\libssl-1_1.dll", "bin\\libcrypto-1_1.dll" },
-	staticlibPath = { "lib\\libssl.a", "lib\\libcrypto.a" },
 	configureParameter = [[
 		no-asm
 		shared
@@ -125,7 +125,6 @@ conf.o1_1wx6g7 = {
 	host = "Win8SH",
 	toolchain = "MinGW730-64",
 	libPath = { "bin\\libssl-1_1-x64.dll", "bin\\libcrypto-1_1-x64.dll" },
-	staticlibPath = { "lib\\libssl.a", "lib\\libcrypto.a" },
 	configureParameter = [[
 		no-asm
 		shared
@@ -170,6 +169,7 @@ conf.o1_1wx3v7st = {
 		--openssldir=&INSTALLROOT&\ssl
 		VC-WIN32
 		-FS
+		-MT
 	]],
 }
 
@@ -470,6 +470,7 @@ conf.o3_0wx6v9st = {
 		--openssldir=&INSTALLROOT&\ssl
 		VC-WIN64A
 		-FS
+		-MT
 	]],
 }
 
@@ -505,6 +506,7 @@ conf.o3_0wx6v2st = {
 		--openssldir=&INSTALLROOT&\ssl
 		VC-WIN64A
 		-FS
+		-MT
 	]],
 }
 
@@ -516,7 +518,6 @@ conf.o3_0wx6g1 = {
 	host = "Win10SH",
 	toolchain = "MinGW1120-64",
 	libPath = { "bin\\libssl-3-x64.dll", "bin\\libcrypto-3-x64.dll" },
-	staticlibPath = { "lib\\libssl.a", "lib\\libcrypto.a" },
 	configureParameter = [[
 		no-asm
 		shared
@@ -534,7 +535,6 @@ conf.o3_0wx6p2 = {
 	host = "Win10SH",
 	toolchain = "MinGW122u-64",
 	libPath = { "bin\\libssl-3-x64.dll", "bin\\libcrypto-3-x64.dll" },
-	staticlibPath = { "lib\\libssl.a", "lib\\libcrypto.a" },
 	configureParameter = [[
 		no-asm
 		shared
@@ -552,7 +552,6 @@ conf.o3_0wx6g2 = {
 	host = "Win10SH",
 	toolchain = "MinGW1220-64",
 	libPath = { "bin\\libssl-3-x64.dll", "bin\\libcrypto-3-x64.dll" },
-	staticlibPath = { "lib\\libssl.a", "lib\\libcrypto.a" },
 	configureParameter = [[
 		no-asm
 		shared
@@ -570,7 +569,6 @@ conf.o3_0wx6u5 = {
 	host = "Win10SH",
 	toolchain = "MinGWLLVM-ucrt15-64",
 	libPath = { "bin\\libssl-3-x64.dll", "bin\\libcrypto-3-x64.dll" },
-	staticlibPath = { "lib\\libssl.a", "lib\\libcrypto.a" },
 	clangTriplet = "x86_64-w64-mingw32",
 	configureParameter = [[
 		no-asm
@@ -589,7 +587,6 @@ conf.o3_0wx6s5 = {
 	host = "Win10SH",
 	toolchain = "MinGWLLVM-msvcrt15-64",
 	libPath = { "bin\\libssl-3-x64.dll", "bin\\libcrypto-3-x64.dll" },
-	staticlibPath = { "lib\\libssl.a", "lib\\libcrypto.a" },
 	clangTriplet = "x86_64-w64-mingw32",
 	configureParameter = [[
 		no-asm
@@ -608,7 +605,6 @@ conf.o3_0wx6u6 = {
 	host = "Win10SH",
 	toolchain = "MinGWLLVM-ucrt16-64",
 	libPath = { "bin\\libssl-3-x64.dll", "bin\\libcrypto-3-x64.dll" },
-	staticlibPath = { "lib\\libssl.a", "lib\\libcrypto.a" },
 	clangTriplet = "x86_64-w64-mingw32",
 	configureParameter = [[
 		no-asm
@@ -627,7 +623,6 @@ conf.o3_0wx6s6 = {
 	host = "Win10SH",
 	toolchain = "MinGWLLVM-msvcrt16-64",
 	libPath = { "bin\\libssl-3-x64.dll", "bin\\libcrypto-3-x64.dll" },
-	staticlibPath = { "lib\\libssl.a", "lib\\libcrypto.a" },
 	clangTriplet = "x86_64-w64-mingw32",
 	configureParameter = [[
 		no-asm
@@ -637,6 +632,68 @@ conf.o3_0wx6s6 = {
 		--openssldir=&INSTALLROOT&/ssl
 		--libdir=&INSTALLROOT&/lib
 		mingw64
+	]],
+}
+
+--------------------------------------------------------------------
+
+conf.o3_0wx6g1st = {
+	name = "OpenSSL3.0.8-2-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-static",
+	opensslVersion = "3.0.8-2",
+	host = "Win10SH",
+	toolchain = "MinGW1120-64",
+	variant = {"-static"},
+	staticlibPath = { "lib\\libssl.a", "lib\\libcrypto.a" },
+	configureParameter = [[
+		no-asm
+		no-shared
+		enable-static-engine
+		--prefix=&INSTALLROOT&
+		--openssldir=&INSTALLROOT&/ssl
+		--libdir=&INSTALLROOT&/lib
+		mingw64
+		--static
+		-static-libgcc
+	]],
+}
+
+conf.o3_0wx6p2st = {
+	name = "OpenSSL3.0.8-2-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-ucrt-static",
+	opensslVersion = "3.0.8-2",
+	host = "Win10SH",
+	toolchain = "MinGW122u-64",
+	variant = {"-static"},
+	staticlibPath = { "lib\\libssl.a", "lib\\libcrypto.a" },
+	configureParameter = [[
+		no-asm
+		no-shared
+		enable-static-engine
+		--prefix=&INSTALLROOT&
+		--openssldir=&INSTALLROOT&/ssl
+		--libdir=&INSTALLROOT&/lib
+		mingw64
+		--static
+		-static-libgcc
+	]],
+}
+
+conf.o3_0wx6g2st = {
+	name = "OpenSSL3.0.8-2-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-msvcrt-static",
+	opensslVersion = "3.0.8-2",
+	host = "Win10SH",
+	toolchain = "MinGW1220-64",
+	variant = {"-static"},
+	staticlibPath = { "lib\\libssl.a", "lib\\libcrypto.a" },
+	configureParameter = [[
+		no-asm
+		no-shared
+		enable-static-engine
+		--prefix=&INSTALLROOT&
+		--openssldir=&INSTALLROOT&/ssl
+		--libdir=&INSTALLROOT&/lib
+		mingw64
+		--static
+		-static-libgcc
 	]],
 }
 

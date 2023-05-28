@@ -687,7 +687,6 @@ conf.q5_12mx6st = {
 		-confirm-license
 		-platform
 		macx-clang
-		-static-runtime
 		-pch
 		-nomake
 		examples
@@ -2986,7 +2985,7 @@ conf.q6_2wx6g1st = {
 	host = "Win10",
 	toolchain = "MinGW1120-64",
 	variant = {"-static"},
-	opensslConf = "o3_0wx6g1",
+	opensslConf = "o3_0wx6g1st",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -3046,7 +3045,7 @@ conf.q6_2wx6g1sf = {
 	host = "Win10",
 	toolchain = "MinGW1120-64",
 	variant = {"-staticFull"},
-	opensslConf = "o3_0wx6g1",
+	opensslConf = "o3_0wx6g1st",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -3123,7 +3122,7 @@ conf.q6_2wx6p2sf = {
 	host = "Win10",
 	toolchain = "MinGW122u-64",
 	variant = {"-staticFull"},
-	opensslConf = "o3_0wx6p2",
+	opensslConf = "o3_0wx6p2st",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -3200,7 +3199,7 @@ conf.q6_2wx6g2sf = {
 	host = "Win10",
 	toolchain = "MinGW1220-64",
 	variant = {"-staticFull"},
-	opensslConf = "o3_0wx6g2",
+	opensslConf = "o3_0wx6g2st",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -3550,7 +3549,6 @@ conf.q6_2malst = {
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
 		-DBUILD_SHARED_LIBS=OFF
-		-DFEATURE_static_runtime=ON
 		-DCMAKE_BUILD_TYPE="Release"
 		-DCMAKE_OSX_ARCHITECTURES="x86_64;arm64"
 		-DQT_QMAKE_TARGET_MKSPEC=macx-clang
@@ -3609,7 +3607,6 @@ conf.q6_2malsf = {
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
 		-DBUILD_SHARED_LIBS=OFF
-		-DFEATURE_static_runtime=ON
 		-DCMAKE_BUILD_TYPE="Release"
 		-DCMAKE_OSX_ARCHITECTURES="x86_64;arm64"
 		-DQT_QMAKE_TARGET_MKSPEC=macx-clang
@@ -4407,7 +4404,7 @@ conf.q6_5wx6p2sf = {
 	host = "Win10",
 	toolchain = "MinGW122u-64",
 	variant = {"-staticFull"},
-	opensslConf = "o3_0wx6p2",
+	opensslConf = "o3_0wx6p2st",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -4485,7 +4482,7 @@ conf.q6_5wx6g2st = {
 	host = "Win10",
 	toolchain = "MinGW1220-64",
 	variant = {"-static"},
-	opensslConf = "o3_0wx6g2",
+	opensslConf = "o3_0wx6g2st",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -4550,7 +4547,7 @@ conf.q6_5wx6g2sf = {
 	host = "Win10",
 	toolchain = "MinGW1220-64",
 	variant = {"-staticFull"},
-	opensslConf = "o3_0wx6g2",
+	opensslConf = "o3_0wx6g2st",
 	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
@@ -4824,7 +4821,6 @@ conf.q6_5malst = {
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
 		-DBUILD_SHARED_LIBS=OFF
-		-DFEATURE_static_runtime=ON
 		-DCMAKE_BUILD_TYPE="Release"
 		-DCMAKE_OSX_ARCHITECTURES="x86_64;arm64"
 		-DQT_QMAKE_TARGET_MKSPEC=macx-clang
@@ -4888,7 +4884,6 @@ conf.q6_5malsf = {
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
 		-DBUILD_SHARED_LIBS=OFF
-		-DFEATURE_static_runtime=ON
 		-DCMAKE_BUILD_TYPE="Release"
 		-DCMAKE_OSX_ARCHITECTURES="x86_64;arm64"
 		-DQT_QMAKE_TARGET_MKSPEC=macx-clang

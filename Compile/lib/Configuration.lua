@@ -40,6 +40,8 @@ conf.host.win = {
 		["MinGW1120-64"] = "D:\\mingw-w64\\11.2.0-4\\mingw64\\bin",
 		["MinGW1220-64"] = "D:\\mingw-w64\\12.2.0\\mingw64\\bin",
 		["MinGW122u-64"] = "D:\\mingw-w64\\12.2.0u\\mingw64\\bin",
+		["MinGW1310-64"] = "D:\\mingw-w64\\13.1.0\\mingw64\\bin",
+		["MinGW131u-64"] = "D:\\mingw-w64\\13.1.0u\\mingw64\\bin",
 
 		-- MinGW toolchains with Clang / LLVM, currently used in Qt 6 only
 		-- LLVM always acts as an cross compiler, but the target libraries are architecture-dependent
@@ -99,6 +101,8 @@ conf.host.msys = {
 		["MinGW1120-64"] = "/d/mingw-w64/11.2.0-4/mingw64/bin/",
 		["MinGW1220-64"] = "/d/mingw-w64/12.2.0/mingw64/bin/",
 		["MinGW122u-64"] = "/d/mingw-w64/12.2.0u/mingw64/bin/",
+		["MinGW1310-64"] = "/d/mingw-w64/13.1.0/mingw64/bin/",
+		["MinGW131u-64"] = "/d/mingw-w64/13.1.0u/mingw64/bin/",
 
 		["MinGWLLVM-msvcrt15-64"] = {"/d/mingw-w64/llvm-mingw-20220906-msvcrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20220906-msvcrt-x86_64/bin"},
 		["MinGWLLVM-ucrt15-64"] = {"/d/mingw-w64/llvm-mingw-20220906-ucrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20220906-ucrt-x86_64/bin"},

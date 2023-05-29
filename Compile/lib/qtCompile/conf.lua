@@ -6,9 +6,8 @@ abbrs:
 	Qt Versions:
 		q5_12: Qt 5.12.12/Discontinued Qt 5 LTS
 		q5_15: Qt 5.15.9/Previous Qt 5 LTS w/ latest QtWebEngine and latest QtScript
-		q6_2: Qt 6.2.4/Latest Qt 6 LTS w/ latest QtWebEngine
-		q6_4: Qt 6.4.3
-		q6_5: Qt 6.5.0 (Pre-release)
+		q6_2: Qt 6.2.4/Latest Qt 6 LTS w/o QtWebEngine
+		q6_5: Qt 6.5.1
 	If prefixed with a lower-case "m", it is a modified Qt version
 
 	Platforms:
@@ -38,6 +37,8 @@ abbrs:
 		g1: MinGW-w64, with GCC 11.2.0
 		g2: MinGW-w64, msvcrt, with GCC 12.2.0
 		p2: MinGW-w64, ucrt, with GCC 12.2.0
+		g3: MinGW-w64, msvcrt, with GCC 13.1.0
+		p3: MinGW-w64, ucrt, with GCC 13.1.0
 		s5: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 15
 		u5: LLVM/Clang based MinGW-w64, ucrt, with LLVM 15
 		s6: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 16
@@ -1417,7 +1418,7 @@ conf.q5_15wx6v5sf = {
 
 conf.q5_15wx3v7 = {
 	name = "Qt5.15.9-Windows-x86-VS2017-&HOSTTOOLVERSION&",
-	qtVersion = "5.15.9-4",
+	qtVersion = "5.15.9-5",
 	host = "Win10",
 	toolchain = "MSVC2017-32",
 	mysqlConf = "m3_1wx3v7",
@@ -1500,7 +1501,7 @@ conf.q5_15wx3v7sf = {
 
 conf.q5_15wx6v7 = {
 	name = "Qt5.15.9-Windows-x86_64-VS2017-&HOSTTOOLVERSION&",
-	qtVersion = "5.15.9-4",
+	qtVersion = "5.15.9-5",
 	host = "Win10",
 	toolchain = "MSVC2017-64",
 	mysqlConf = "m3_1wx6v7",
@@ -1583,7 +1584,7 @@ conf.q5_15wx6v7sf = {
 
 conf.q5_15wx3v9 = {
 	name = "Qt5.15.9-Windows-x86-VS2019-&HOSTTOOLVERSION&",
-	qtVersion = "5.15.9-4",
+	qtVersion = "5.15.9-5",
 	host = "Win10",
 	toolchain = "MSVC2019-32",
 	mysqlConf = "m3_1wx3v9",
@@ -1623,7 +1624,7 @@ conf.q5_15wx3v9 = {
 
 conf.q5_15wx3v9sf = {
 	name = "Qt5.15.9-Windows-x86-VS2019-&HOSTTOOLVERSION&-staticFull",
-	qtVersion = "5.15.9-4",
+	qtVersion = "5.15.9-5",
 	host = "Win10",
 	toolchain = "MSVC2019-32",
 	variant = {"-staticFull"},
@@ -1665,7 +1666,7 @@ conf.q5_15wx3v9sf = {
 
 conf.q5_15wx6v9 = {
 	name = "Qt5.15.9-Windows-x86_64-VS2019-&HOSTTOOLVERSION&",
-	qtVersion = "5.15.9-4",
+	qtVersion = "5.15.9-5",
 	host = "Win10",
 	toolchain = "MSVC2019-64",
 	mysqlConf = "m3_1wx6v9",
@@ -1705,7 +1706,7 @@ conf.q5_15wx6v9 = {
 
 conf.q5_15wx6v9sf = {
 	name = "Qt5.15.9-Windows-x86_64-VS2019-&HOSTTOOLVERSION&-staticFull",
-	qtVersion = "5.15.9-4",
+	qtVersion = "5.15.9-5",
 	host = "Win10",
 	toolchain = "MSVC2019-64",
 	variant = {"-staticFull"},
@@ -1747,7 +1748,7 @@ conf.q5_15wx6v9sf = {
 
 conf.q5_15wx6v2 = {
 	name = "Qt5.15.9-Windows-x86_64-VS2022-&HOSTTOOLVERSION&",
-	qtVersion = "5.15.9-4",
+	qtVersion = "5.15.9-5",
 	host = "Win10",
 	toolchain = "MSVC2022-64",
 	mysqlConf = "m3_1wx6v2",
@@ -2050,7 +2051,7 @@ conf.q5_15wx6g2 = {
 
 conf.q5_15mal = {
 	name = "Qt5.15.9-macOS-Universal-AppleClang&HOSTTOOLVERSION&",
-	qtVersion = "5.15.9-4",
+	qtVersion = "5.15.9-5",
 	host = "macOSM1",
 	mysqlConf = "m3_1mal",
 	configureParameter = [[
@@ -2090,7 +2091,7 @@ conf.q5_15mal = {
 
 conf.q5_15malnf = {
 	name = "Qt5.15.9-macOS-Universal-AppleClang&HOSTTOOLVERSION&-noFramework",
-	qtVersion = "5.15.9-4",
+	qtVersion = "5.15.9-5",
 	host = "macOSM1",
 	variant = {"-noFramework"},
 	mysqlConf = "m3_1mal",
@@ -2133,7 +2134,7 @@ conf.q5_15malnf = {
 
 conf.q5_15malsf = {
 	name = "Qt5.15.9-macOS-Universal-AppleClang&HOSTTOOLVERSION&-staticFull",
-	qtVersion = "5.15.9-4",
+	qtVersion = "5.15.9-5",
 	host = "macOSM1",
 	variant = {"-staticFull"},
 	configureParameter = [[
@@ -3232,6 +3233,160 @@ conf.q6_2wx6g2sf = {
 	]],
 }
 
+conf.q6_2wx6p3 = {
+	name = "Qt6.2.4-Windows-x86_64-MinGW&HOSTTOOLVERSION&-ucrt",
+	qtVersion = "6.2.4",
+	host = "Win10",
+	toolchain = "MinGW131u-64",
+	opensslConf = "o3_0wx6p3",
+	mysqlConf = "m3_3wx6p3",
+	useCMake = "20",
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DBUILD_SHARED_LIBS=ON
+		-DCMAKE_BUILD_TYPE="Release"
+		-DQT_QMAKE_TARGET_MKSPEC=win32-g++
+		-DBUILD_WITH_PCH=ON
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengl_dynamic=ON
+		-DFEATURE_ssl=ON
+		-DFEATURE_openssl=ON
+		-DINPUT_openssl=linked
+		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
+		-DFEATURE_schannel=ON
+		-DFEATURE_sql_sqlite=ON
+		-DFEATURE_sql_odbc=ON
+		-DFEATURE_sql_mysql=ON
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include\mariadb"
+		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\liblibmariadb.dll.a"
+		-DFEATURE_system_sqlite=OFF
+		-DBUILD_qtopcua=OFF
+	]],
+}
+
+conf.q6_2wx6p3sf = {
+	name = "Qt6.2.4-Windows-x86_64-MinGW&HOSTTOOLVERSION&-ucrt-staticFull",
+	qtVersion = "6.2.4",
+	host = "Win10",
+	toolchain = "MinGW131u-64",
+	variant = {"-staticFull"},
+	opensslConf = "o3_0wx6p3st",
+	useCMake = "Latest",
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DBUILD_SHARED_LIBS=OFF
+		-DFEATURE_static_runtime=ON
+		-DCMAKE_BUILD_TYPE="Release"
+		-DQT_QMAKE_TARGET_MKSPEC=win32-g++
+		-DBUILD_WITH_PCH=ON
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_relocatable=ON
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengl_dynamic=ON
+		-DFEATURE_ssl=ON
+		-DFEATURE_openssl=ON
+		-DINPUT_openssl=linked
+		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
+		-DOPENSSL_USE_STATIC_LIBS=TRUE
+		-DFEATURE_schannel=ON
+		-DFEATURE_sql_sqlite=ON
+		-DFEATURE_sql_odbc=ON
+		-DFEATURE_system_sqlite=OFF
+		-DBUILD_qtopcua=OFF
+		-DCMAKE_EXE_LINKER_FLAGS="--static -static-libgcc -static-libstdc++"
+	]],
+}
+
+conf.q6_2wx6g3 = {
+	name = "Qt6.2.4-Windows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
+	qtVersion = "6.2.4",
+	host = "Win10",
+	toolchain = "MinGW1310-64",
+	opensslConf = "o3_0wx6g3",
+	mysqlConf = "m3_3wx6g3",
+	useCMake = "20",
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DBUILD_SHARED_LIBS=ON
+		-DCMAKE_BUILD_TYPE="Release"
+		-DQT_QMAKE_TARGET_MKSPEC=win32-g++
+		-DBUILD_WITH_PCH=ON
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengl_dynamic=ON
+		-DFEATURE_ssl=ON
+		-DFEATURE_openssl=ON
+		-DINPUT_openssl=linked
+		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
+		-DFEATURE_schannel=ON
+		-DFEATURE_sql_sqlite=ON
+		-DFEATURE_sql_odbc=ON
+		-DFEATURE_sql_mysql=ON
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include\mariadb"
+		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\liblibmariadb.dll.a"
+		-DFEATURE_system_sqlite=OFF
+		-DBUILD_qtopcua=OFF
+	]],
+}
+
+conf.q6_2wx6g3sf = {
+	name = "Qt6.2.4-Windows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt-staticFull",
+	qtVersion = "6.2.4",
+	host = "Win10",
+	toolchain = "MinGW1310-64",
+	variant = {"-staticFull"},
+	opensslConf = "o3_0wx6g3st",
+	useCMake = "Latest",
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DBUILD_SHARED_LIBS=OFF
+		-DFEATURE_static_runtime=ON
+		-DCMAKE_BUILD_TYPE="Release"
+		-DQT_QMAKE_TARGET_MKSPEC=win32-g++
+		-DBUILD_WITH_PCH=ON
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_relocatable=ON
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengl_dynamic=ON
+		-DFEATURE_ssl=ON
+		-DFEATURE_openssl=ON
+		-DINPUT_openssl=linked
+		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
+		-DOPENSSL_USE_STATIC_LIBS=TRUE
+		-DFEATURE_schannel=ON
+		-DFEATURE_sql_sqlite=ON
+		-DFEATURE_sql_odbc=ON
+		-DFEATURE_system_sqlite=OFF
+		-DBUILD_qtopcua=OFF
+		-DCMAKE_EXE_LINKER_FLAGS="--static -static-libgcc -static-libstdc++"
+	]],
+}
+
 conf.q6_2wx6u5 = {
 	name = "Qt6.2.4-Windows-x86_64-llvm-mingw-&HOSTTOOLVERSION&-ucrt",
 	qtVersion = "6.2.4",
@@ -4182,8 +4337,8 @@ conf.q6_2mal_W = {
 --------------------------------------------------------------------
 
 conf.q6_5wx6v2 = {
-	name = "Qt6.5.0-Windows-x86_64-VS2022-&HOSTTOOLVERSION&",
-	qtVersion = "6.5.0",
+	name = "Qt6.5.1-Windows-x86_64-VS2022-&HOSTTOOLVERSION&",
+	qtVersion = "6.5.1",
 	host = "Win10",
 	toolchain = "MSVC2022-64",
 	opensslConf = "o3_0wx6v2",
@@ -4222,8 +4377,8 @@ conf.q6_5wx6v2 = {
 }
 
 conf.q6_5wx6v2st = {
-	name = "Qt6.5.0-Windows-x86_64-VS2022-&HOSTTOOLVERSION&-static",
-	qtVersion = "6.5.0",
+	name = "Qt6.5.1-Windows-x86_64-VS2022-&HOSTTOOLVERSION&-static",
+	qtVersion = "6.5.1",
 	host = "Win10",
 	toolchain = "MSVC2022-64",
 	variant = {"-static"},
@@ -4286,8 +4441,8 @@ conf.q6_5wx6v2st = {
 }
 
 conf.q6_5wx6v2sf = {
-	name = "Qt6.5.0-Windows-x86_64-VS2022-&HOSTTOOLVERSION&-staticFull",
-	qtVersion = "6.5.0",
+	name = "Qt6.5.1-Windows-x86_64-VS2022-&HOSTTOOLVERSION&-staticFull",
+	qtVersion = "6.5.1",
 	host = "Win10",
 	toolchain = "MSVC2022-64",
 	variant = {"-staticFull"},
@@ -4325,8 +4480,8 @@ conf.q6_5wx6v2sf = {
 }
 
 conf.q6_5wx6v2_wa6v2 = {
-	name = "Qt6.5.0-Windows-arm64-VS2022-&HOSTTOOLVERSION&-xWindows-x86_64-VS2022-&HOSTTOOLVERSION&",
-	qtVersion = "6.5.0",
+	name = "Qt6.5.1-Windows-arm64-VS2022-&HOSTTOOLVERSION&-xWindows-x86_64-VS2022-&HOSTTOOLVERSION&",
+	qtVersion = "6.5.1",
 	host = "Win10",
 	target = "Win10Arm",
 	toolchain = "MSVC2022-64", -- only a placeholder here, in fact it uses "toolchainT" instead of "toolchain"
@@ -4361,8 +4516,8 @@ conf.q6_5wx6v2_wa6v2 = {
 }
 
 conf.q6_5wx6p2 = {
-	name = "Qt6.5.0-Windows-x86_64-MinGW&HOSTTOOLVERSION&-ucrt",
-	qtVersion = "6.5.0",
+	name = "Qt6.5.1-Windows-x86_64-MinGW&HOSTTOOLVERSION&-ucrt",
+	qtVersion = "6.5.1",
 	host = "Win10",
 	toolchain = "MinGW122u-64",
 	opensslConf = "o3_0wx6p2",
@@ -4399,8 +4554,8 @@ conf.q6_5wx6p2 = {
 }
 
 conf.q6_5wx6p2sf = {
-	name = "Qt6.5.0-Windows-x86_64-MinGW&HOSTTOOLVERSION&-ucrt-staticFull",
-	qtVersion = "6.5.0",
+	name = "Qt6.5.1-Windows-x86_64-MinGW&HOSTTOOLVERSION&-ucrt-staticFull",
+	qtVersion = "6.5.1",
 	host = "Win10",
 	toolchain = "MinGW122u-64",
 	variant = {"-staticFull"},
@@ -4439,8 +4594,8 @@ conf.q6_5wx6p2sf = {
 }
 
 conf.q6_5wx6g2 = {
-	name = "Qt6.5.0-Windows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
-	qtVersion = "6.5.0",
+	name = "Qt6.5.1-Windows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
+	qtVersion = "6.5.1",
 	host = "Win10",
 	toolchain = "MinGW1220-64",
 	opensslConf = "o3_0wx6g2",
@@ -4477,8 +4632,8 @@ conf.q6_5wx6g2 = {
 }
 
 conf.q6_5wx6g2st = {
-	name = "Qt6.5.0-Windows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt-static",
-	qtVersion = "6.5.0",
+	name = "Qt6.5.1-Windows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt-static",
+	qtVersion = "6.5.1",
 	host = "Win10",
 	toolchain = "MinGW1220-64",
 	variant = {"-static"},
@@ -4542,8 +4697,8 @@ conf.q6_5wx6g2st = {
 }
 
 conf.q6_5wx6g2sf = {
-	name = "Qt6.5.0-Windows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt-staticFull",
-	qtVersion = "6.5.0",
+	name = "Qt6.5.1-Windows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt-staticFull",
+	qtVersion = "6.5.1",
 	host = "Win10",
 	toolchain = "MinGW1220-64",
 	variant = {"-staticFull"},
@@ -4581,9 +4736,165 @@ conf.q6_5wx6g2sf = {
 	]],
 }
 
+conf.q6_5wx6p3 = {
+	name = "Qt6.5.1-Windows-x86_64-MinGW&HOSTTOOLVERSION&-ucrt",
+	qtVersion = "6.5.1",
+	host = "Win10",
+	toolchain = "MinGW131u-64",
+	opensslConf = "o3_0wx6p3",
+	mysqlConf = "m3_3wx6p3",
+	useCMake = "20",
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DBUILD_SHARED_LIBS=ON
+		-DCMAKE_BUILD_TYPE="Release"
+		-DQT_QMAKE_TARGET_MKSPEC=win32-g++
+		-DBUILD_WITH_PCH=ON
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengl_dynamic=ON
+		-DFEATURE_ssl=ON
+		-DFEATURE_openssl=ON
+		-DINPUT_openssl=linked
+		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
+		-DFEATURE_schannel=ON
+		-DFEATURE_sql_sqlite=ON
+		-DFEATURE_sql_odbc=ON
+		-DFEATURE_sql_mysql=ON
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include\mariadb"
+		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\liblibmariadb.dll.a"
+		-DFEATURE_system_sqlite=OFF
+		-DBUILD_qtgrpc=OFF
+	]],
+}
+
+conf.q6_5wx6p3sf = {
+	name = "Qt6.5.1-Windows-x86_64-MinGW&HOSTTOOLVERSION&-ucrt-staticFull",
+	qtVersion = "6.5.1",
+	host = "Win10",
+	toolchain = "MinGW131u-64",
+	variant = {"-staticFull"},
+	opensslConf = "o3_0wx6p3st",
+	useCMake = "Latest",
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DBUILD_SHARED_LIBS=OFF
+		-DFEATURE_static_runtime=ON
+		-DCMAKE_BUILD_TYPE="Release"
+		-DQT_QMAKE_TARGET_MKSPEC=win32-g++
+		-DBUILD_WITH_PCH=ON
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_relocatable=ON
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengl_dynamic=ON
+		-DFEATURE_ssl=ON
+		-DFEATURE_openssl=ON
+		-DINPUT_openssl=linked
+		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
+		-DOPENSSL_USE_STATIC_LIBS=TRUE
+		-DFEATURE_schannel=ON
+		-DFEATURE_sql_sqlite=ON
+		-DFEATURE_sql_odbc=ON
+		-DFEATURE_system_sqlite=OFF
+		-DBUILD_qtgrpc=OFF
+		-DBUILD_qtwebengine=OFF
+		-DCMAKE_EXE_LINKER_FLAGS="--static -static-libgcc -static-libstdc++"
+	]],
+}
+
+conf.q6_5wx6g3 = {
+	name = "Qt6.5.1-Windows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
+	qtVersion = "6.5.1",
+	host = "Win10",
+	toolchain = "MinGW1310-64",
+	opensslConf = "o3_0wx6g3",
+	mysqlConf = "m3_3wx6g3",
+	useCMake = "20",
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DBUILD_SHARED_LIBS=ON
+		-DCMAKE_BUILD_TYPE="Release"
+		-DQT_QMAKE_TARGET_MKSPEC=win32-g++
+		-DBUILD_WITH_PCH=ON
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengl_dynamic=ON
+		-DFEATURE_ssl=ON
+		-DFEATURE_openssl=ON
+		-DINPUT_openssl=linked
+		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
+		-DFEATURE_schannel=ON
+		-DFEATURE_sql_sqlite=ON
+		-DFEATURE_sql_odbc=ON
+		-DFEATURE_sql_mysql=ON
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include\mariadb"
+		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\liblibmariadb.dll.a"
+		-DFEATURE_system_sqlite=OFF
+		-DBUILD_qtgrpc=OFF
+	]],
+}
+
+conf.q6_5wx6g3sf = {
+	name = "Qt6.5.1-Windows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt-staticFull",
+	qtVersion = "6.5.1",
+	host = "Win10",
+	toolchain = "MinGW1310-64",
+	variant = {"-staticFull"},
+	opensslConf = "o3_0wx6g3st",
+	useCMake = "Latest",
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DBUILD_SHARED_LIBS=OFF
+		-DFEATURE_static_runtime=ON
+		-DCMAKE_BUILD_TYPE="Release"
+		-DQT_QMAKE_TARGET_MKSPEC=win32-g++
+		-DBUILD_WITH_PCH=ON
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_relocatable=ON
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengl_dynamic=ON
+		-DFEATURE_ssl=ON
+		-DFEATURE_openssl=ON
+		-DINPUT_openssl=linked
+		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
+		-DOPENSSL_USE_STATIC_LIBS=TRUE
+		-DFEATURE_schannel=ON
+		-DFEATURE_sql_sqlite=ON
+		-DFEATURE_sql_odbc=ON
+		-DFEATURE_system_sqlite=OFF
+		-DBUILD_qtgrpc=OFF
+		-DBUILD_qtwebengine=OFF
+		-DCMAKE_EXE_LINKER_FLAGS="--static -static-libgcc -static-libstdc++"
+	]],
+}
+
 conf.q6_5wx6u6 = {
-	name = "Qt6.5.0-Windows-x86_64-llvm-mingw-&HOSTTOOLVERSION&-ucrt",
-	qtVersion = "6.5.0",
+	name = "Qt6.5.1-Windows-x86_64-llvm-mingw-&HOSTTOOLVERSION&-ucrt",
+	qtVersion = "6.5.1",
 	host = "Win10",
 	toolchain = "MinGWLLVM-ucrt16-64",
 	opensslConf = "o3_0wx6u6",
@@ -4624,8 +4935,8 @@ conf.q6_5wx6u6 = {
 }
 
 conf.q6_5wx6s6 = {
-	name = "Qt6.5.0-Windows-x86_64-llvm-mingw-&HOSTTOOLVERSION&-msvcrt",
-	qtVersion = "6.5.0",
+	name = "Qt6.5.1-Windows-x86_64-llvm-mingw-&HOSTTOOLVERSION&-msvcrt",
+	qtVersion = "6.5.1",
 	host = "Win10",
 	toolchain = "MinGWLLVM-msvcrt16-64",
 	opensslConf = "o3_0wx6s6",
@@ -4666,8 +4977,8 @@ conf.q6_5wx6s6 = {
 }
 
 conf.q6_5lx6st = {
-	name = "Qt6.5.0-Linux-x86_64-gcc&HOSTTOOLVERSION&-static",
-	qtVersion = "6.5.0",
+	name = "Qt6.5.1-Linux-x86_64-gcc&HOSTTOOLVERSION&-static",
+	qtVersion = "6.5.1",
 	host = "Rocky9",
 	variant = {"-static"},
 	useCMake = "Latest",
@@ -4724,8 +5035,8 @@ conf.q6_5lx6st = {
 }
 
 conf.q6_5mal = {
-	name = "Qt6.5.0-macOS-Universal-AppleClang&HOSTTOOLVERSION&",
-	qtVersion = "6.5.0",
+	name = "Qt6.5.1-macOS-Universal-AppleClang&HOSTTOOLVERSION&",
+	qtVersion = "6.5.1",
 	host = "macOSM1",
 	opensslConf = "o3_0mal",
 	mysqlConf = "m3_3mal",
@@ -4767,8 +5078,8 @@ conf.q6_5mal = {
 }
 
 conf.q6_5malnf = {
-	name = "Qt6.5.0-macOS-Universal-AppleClang&HOSTTOOLVERSION&-noFramework",
-	qtVersion = "6.5.0",
+	name = "Qt6.5.1-macOS-Universal-AppleClang&HOSTTOOLVERSION&-noFramework",
+	qtVersion = "6.5.1",
 	host = "macOSM1",
 	variant = {"-noFramework"},
 	opensslConf = "o3_0mal",
@@ -4811,8 +5122,8 @@ conf.q6_5malnf = {
 }
 
 conf.q6_5malst = {
-	name = "Qt6.5.0-macOS-Universal-AppleClang&HOSTTOOLVERSION&-static",
-	qtVersion = "6.5.0",
+	name = "Qt6.5.1-macOS-Universal-AppleClang&HOSTTOOLVERSION&-static",
+	qtVersion = "6.5.1",
 	host = "macOSM1",
 	variant = {"-static"},
 	opensslConf = "o3_0mal",
@@ -4874,8 +5185,8 @@ conf.q6_5malst = {
 }
 
 conf.q6_5malsf = {
-	name = "Qt6.5.0-macOS-Universal-AppleClang&HOSTTOOLVERSION&-staticFull",
-	qtVersion = "6.5.0",
+	name = "Qt6.5.1-macOS-Universal-AppleClang&HOSTTOOLVERSION&-staticFull",
+	qtVersion = "6.5.1",
 	host = "macOSM1",
 	variant = {"-staticFull"},
 	opensslConf = "o3_0mal",
@@ -4912,8 +5223,8 @@ conf.q6_5malsf = {
 }
 
 conf.q6_5wx6g2_aa6n5 = {
-	name = "Qt6.5.0-Android-arm64-Clang-NDKr25c-xWindows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
-	qtVersion = "6.5.0",
+	name = "Qt6.5.1-Android-arm64-Clang-NDKr25c-xWindows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
+	qtVersion = "6.5.1",
 	host = "Win10",
 	target = "Android-27",
 	toolchain = "MinGW1220-64",
@@ -4951,8 +5262,8 @@ conf.q6_5wx6g2_aa6n5 = {
 }
 
 conf.q6_5wx6g2_ax6n5 = {
-	name = "Qt6.5.0-Android-x86_64-Clang-NDKr25c-xWindows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
-	qtVersion = "6.5.0",
+	name = "Qt6.5.1-Android-x86_64-Clang-NDKr25c-xWindows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
+	qtVersion = "6.5.1",
 	host = "Win10",
 	target = "Android-27",
 	toolchain = "MinGW1220-64",
@@ -4990,8 +5301,8 @@ conf.q6_5wx6g2_ax6n5 = {
 }
 
 conf.q6_5lx6_aa6n5 = {
-	name = "Qt6.5.0-Android-arm64-Clang-NDKr25c-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
-	qtVersion = "6.5.0",
+	name = "Qt6.5.1-Android-arm64-Clang-NDKr25c-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
+	qtVersion = "6.5.1",
 	host = "Rocky9",
 	target = "Android-27",
 	toolchainT = "Android-27-r25c-arm64",
@@ -5027,8 +5338,8 @@ conf.q6_5lx6_aa6n5 = {
 }
 
 conf.q6_5lx6_ax6n5 = {
-	name = "Qt6.5.0-Android-x86_64-Clang-NDKr25c-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
-	qtVersion = "6.5.0",
+	name = "Qt6.5.1-Android-x86_64-Clang-NDKr25c-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
+	qtVersion = "6.5.1",
 	host = "Rocky9",
 	target = "Android-27",
 	toolchainT = "Android-27-r25c-x86_64",
@@ -5064,8 +5375,8 @@ conf.q6_5lx6_ax6n5 = {
 }
 
 conf.q6_5mal_aa6n5 = {
-	name = "Qt6.5.0-Android-arm64-Clang-NDKr25c-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
-	qtVersion = "6.5.0",
+	name = "Qt6.5.1-Android-arm64-Clang-NDKr25c-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
+	qtVersion = "6.5.1",
 	host = "macOSM1",
 	target = "Android-27",
 	toolchainT = "Android-27-r25c-arm64",
@@ -5101,8 +5412,8 @@ conf.q6_5mal_aa6n5 = {
 }
 
 conf.q6_5mal_ax6n5 = {
-	name = "Qt6.5.0-Android-x86_64-Clang-NDKr25c-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
-	qtVersion = "6.5.0",
+	name = "Qt6.5.1-Android-x86_64-Clang-NDKr25c-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
+	qtVersion = "6.5.1",
 	host = "macOSM1",
 	target = "Android-27",
 	toolchainT = "Android-27-r25c-x86_64",
@@ -5139,8 +5450,8 @@ conf.q6_5mal_ax6n5 = {
 
 -- WebAssembly uses emcmake which don't need a toolchain file
 conf.q6_5wx6g2_W = {
-	name = "Qt6.5.0-WebAssembly-emscripten&TARGETTOOLVERSION&-xWindows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
-	qtVersion = "6.5.0",
+	name = "Qt6.5.1-WebAssembly-emscripten&TARGETTOOLVERSION&-xWindows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
+	qtVersion = "6.5.1",
 	host = "Win10",
 	toolchain = "MinGW1220-64",
 	target = "WebAssembly",
@@ -5170,8 +5481,8 @@ conf.q6_5wx6g2_W = {
 }
 
 conf.q6_5lx6_W = {
-	name = "Qt6.5.0-WebAssembly-emscripten&TARGETTOOLVERSION&-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
-	qtVersion = "6.5.0",
+	name = "Qt6.5.1-WebAssembly-emscripten&TARGETTOOLVERSION&-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
+	qtVersion = "6.5.1",
 	host = "Rocky9",
 	target = "WebAssembly",
 	toolchainT = "emscripten-3.1.25",
@@ -5200,8 +5511,8 @@ conf.q6_5lx6_W = {
 }
 
 conf.q6_5mal_W = {
-	name = "Qt6.5.0-WebAssembly-emscripten&TARGETTOOLVERSION&-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
-	qtVersion = "6.5.0",
+	name = "Qt6.5.1-WebAssembly-emscripten&TARGETTOOLVERSION&-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
+	qtVersion = "6.5.1",
 	host = "macOSM1",
 	target = "WebAssembly",
 	toolchainT = "emscripten-3.1.25",
@@ -5251,23 +5562,23 @@ setmetatable(QQtPatcherVersion, versionMo)
 local Qt6StaticConf = {
 	Win10 = {
 		["6.2.4"] = "q6_2wx6g1st",
-		["6.5.0"] = "q6_5wx6g2st",
+		["6.5.1"] = "q6_5wx6g2st",
 	},
 	Win10MSVC2019 = {
 		["6.2.4"] = "q6_2wx6v9st",
 	},
 	Win10MSVC2022 = {
-		["6.5.0"] = "q6_5wx6v2st",
+		["6.5.1"] = "q6_5wx6v2st",
 	},
 	CentOS8 = {
 		["6.2.4"] = "q6_2lx6st",
 	},
 	Rocky9 = {
-		["6.5.0"] = "q6_5lx6st",
+		["6.5.1"] = "q6_5lx6st",
 	},
 	macOSM1 = {
 		["6.2.4"] = "q6_2malst",
-		["6.5.0"] = "q6_5malst",
+		["6.5.1"] = "q6_5malst",
 	},
 }
 
@@ -5311,9 +5622,9 @@ local valueMo = {
 
 local Win10SrcPackagePrefixWorkaroundVersions = {
 	"5.12.12",
-	"5.15.9-4",
+	"5.15.9-5",
 	"6.2.4",
-	"6.5.0",
+	"6.5.1",
 }
 
 for name, value in pairs(conf) do

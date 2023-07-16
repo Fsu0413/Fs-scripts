@@ -5,5 +5,5 @@ Anyone who found a bug in these scripts should open an issue, pull requests will
 
 No document are provided. No warrenty are promized.
 
-__PLEASE NOTE THAT THESE SCRIPTS ARE NOT LICENSED, i.e., IT IS INTENDED NOT TO BE FREE SOFTWARE.__  
+__PLEASE NOTE THAT THESE SCRIPTS DO NOT HAVE OPEN SOURCE LICENSES, i.e., IT IS INTENDED NOT TO BE FREE SOFTWARE.__  
 __GitHub has no config to prevent fork and pull request, kindly please do not fork this repository.__

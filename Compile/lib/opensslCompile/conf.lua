@@ -4,8 +4,8 @@ local conf = {}
 --[[
 abbrs:
 	OpenSSL Versions:
-		o1: OpenSSL 1.1.1u
-		o3: OpenSSL 3.0.9
+		o1: OpenSSL 1.1.1u-2
+		o3: OpenSSL 3.0.9-2
 
 	Platforms:
 		w: Windows
@@ -48,11 +48,11 @@ abbrs:
 
 --------------------------------------------------------------------
 
--- OpenSSL 1.1.1u
+-- OpenSSL 1.1.1u-2
 
 conf.o1_1wx3v5 = {
-	name = "OpenSSL1.1.1u-Windows-x86-VS2015",
-	opensslVersion = "1.1.1u",
+	name = "OpenSSL1.1.1u-2-Windows-x86-VS2015",
+	opensslVersion = "1.1.1u-2",
 	host = "Win8",
 	toolchain = "MSVC2015-32",
 	libPath = { "bin\\libssl-1_1.dll", "bin\\libcrypto-1_1.dll" },
@@ -68,8 +68,8 @@ conf.o1_1wx3v5 = {
 }
 
 conf.o1_1wx3v5st = {
-	name = "OpenSSL1.1.1u-Windows-x86-VS2015-static",
-	opensslVersion = "1.1.1u",
+	name = "OpenSSL1.1.1u-2-Windows-x86-VS2015-static",
+	opensslVersion = "1.1.1u-2",
 	host = "Win8",
 	toolchain = "MSVC2015-32",
 	variant = {"-static"},
@@ -87,8 +87,8 @@ conf.o1_1wx3v5st = {
 }
 
 conf.o1_1wx6v5 = {
-	name = "OpenSSL1.1.1u-Windows-x86_64-VS2015",
-	opensslVersion = "1.1.1u",
+	name = "OpenSSL1.1.1u-2-Windows-x86_64-VS2015",
+	opensslVersion = "1.1.1u-2",
 	host = "Win8",
 	toolchain = "MSVC2015-64",
 	libPath = { "bin\\libssl-1_1-x64.dll", "bin\\libcrypto-1_1-x64.dll" },
@@ -106,8 +106,8 @@ conf.o1_1wx6v5 = {
 --------------------------------------------------------------------
 
 conf.o1_1wx3g7 = {
-	name = "OpenSSL1.1.1u-Windows-x86-MinGW-GCC&TARGETTOOLVERSION&",
-	opensslVersion = "1.1.1u",
+	name = "OpenSSL1.1.1u-2-Windows-x86-MinGW-GCC&TARGETTOOLVERSION&",
+	opensslVersion = "1.1.1u-2",
 	host = "Win8SH",
 	toolchain = "MinGW730-32",
 	libPath = { "bin\\libssl-1_1.dll", "bin\\libcrypto-1_1.dll" },
@@ -122,8 +122,8 @@ conf.o1_1wx3g7 = {
 }
 
 conf.o1_1wx6g7 = {
-	name = "OpenSSL1.1.1u-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&",
-	opensslVersion = "1.1.1u",
+	name = "OpenSSL1.1.1u-2-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&",
+	opensslVersion = "1.1.1u-2",
 	host = "Win8SH",
 	toolchain = "MinGW730-64",
 	libPath = { "bin\\libssl-1_1-x64.dll", "bin\\libcrypto-1_1-x64.dll" },
@@ -140,8 +140,8 @@ conf.o1_1wx6g7 = {
 --------------------------------------------------------------------
 
 conf.o1_1wx3v7 = {
-	name = "OpenSSL1.1.1u-Windows-x86-VS2017-&TARGETTOOLVERSION&",
-	opensslVersion = "1.1.1u",
+	name = "OpenSSL1.1.1u-2-Windows-x86-VS2017-&TARGETTOOLVERSION&",
+	opensslVersion = "1.1.1u-2",
 	host = "Win10",
 	toolchain = "MSVC2017-32",
 	libPath = { "bin\\libssl-1_1.dll", "bin\\libcrypto-1_1.dll" },
@@ -157,8 +157,8 @@ conf.o1_1wx3v7 = {
 }
 
 conf.o1_1wx3v7st = {
-	name = "OpenSSL1.1.1u-Windows-x86-VS2017-&TARGETTOOLVERSION&-static",
-	opensslVersion = "1.1.1u",
+	name = "OpenSSL1.1.1u-2-Windows-x86-VS2017-&TARGETTOOLVERSION&-static",
+	opensslVersion = "1.1.1u-2",
 	host = "Win10",
 	toolchain = "MSVC2017-32",
 	variant = {"-static"},
@@ -176,8 +176,8 @@ conf.o1_1wx3v7st = {
 }
 
 conf.o1_1wx6v7 = {
-	name = "OpenSSL1.1.1u-Windows-x86_64-VS2017-&TARGETTOOLVERSION&",
-	opensslVersion = "1.1.1u",
+	name = "OpenSSL1.1.1u-2-Windows-x86_64-VS2017-&TARGETTOOLVERSION&",
+	opensslVersion = "1.1.1u-2",
 	host = "Win10",
 	toolchain = "MSVC2017-64",
 	libPath = { "bin\\libssl-1_1-x64.dll", "bin\\libcrypto-1_1-x64.dll" },
@@ -195,8 +195,8 @@ conf.o1_1wx6v7 = {
 --------------------------------------------------------------------
 
 conf.o1_1wx3v9 = {
-	name = "OpenSSL1.1.1u-Windows-x86-VS2019-&TARGETTOOLVERSION&",
-	opensslVersion = "1.1.1u",
+	name = "OpenSSL1.1.1u-2-Windows-x86-VS2019-&TARGETTOOLVERSION&",
+	opensslVersion = "1.1.1u-2",
 	host = "Win10",
 	toolchain = "MSVC2019-32",
 	libPath = { "bin\\libssl-1_1.dll", "bin\\libcrypto-1_1.dll" },
@@ -212,8 +212,8 @@ conf.o1_1wx3v9 = {
 }
 
 conf.o1_1wx6v9 = {
-	name = "OpenSSL1.1.1u-Windows-x86_64-VS2019-&TARGETTOOLVERSION&",
-	opensslVersion = "1.1.1u",
+	name = "OpenSSL1.1.1u-2-Windows-x86_64-VS2019-&TARGETTOOLVERSION&",
+	opensslVersion = "1.1.1u-2",
 	host = "Win10",
 	toolchain = "MSVC2019-64",
 	libPath = { "bin\\libssl-1_1-x64.dll", "bin\\libcrypto-1_1-x64.dll" },
@@ -231,8 +231,8 @@ conf.o1_1wx6v9 = {
 --------------------------------------------------------------------
 
 conf.o1_1aa3nl = {
-	name = "OpenSSL1.1.1u-Android-arm-NDKr21eAPI21",
-	opensslVersion = "1.1.1u",
+	name = "OpenSSL1.1.1u-2-Android-arm-NDKr21eAPI21",
+	opensslVersion = "1.1.1u-2",
 	host = "CentOS8",
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-arm",
@@ -257,8 +257,8 @@ conf.o1_1aa3nl = {
 }
 
 conf.o1_1aa6nl = {
-	name = "OpenSSL1.1.1u-Android-arm64-NDKr21eAPI21",
-	opensslVersion = "1.1.1u",
+	name = "OpenSSL1.1.1u-2-Android-arm64-NDKr21eAPI21",
+	opensslVersion = "1.1.1u-2",
 	host = "CentOS8",
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-arm64",
@@ -278,8 +278,8 @@ conf.o1_1aa6nl = {
 }
 
 conf.o1_1ax3nl = {
-	name = "OpenSSL1.1.1u-Android-x86-NDKr21eAPI21",
-	opensslVersion = "1.1.1u",
+	name = "OpenSSL1.1.1u-2-Android-x86-NDKr21eAPI21",
+	opensslVersion = "1.1.1u-2",
 	host = "CentOS8",
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-x86",
@@ -299,8 +299,8 @@ conf.o1_1ax3nl = {
 }
 
 conf.o1_1ax6nl = {
-	name = "OpenSSL1.1.1u-Android-x86_64-NDKr21eAPI21",
-	opensslVersion = "1.1.1u",
+	name = "OpenSSL1.1.1u-2-Android-x86_64-NDKr21eAPI21",
+	opensslVersion = "1.1.1u-2",
 	host = "CentOS8",
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-x86_64",
@@ -320,8 +320,8 @@ conf.o1_1ax6nl = {
 }
 
 conf.o1_1aalnl = {
-	name = "OpenSSL1.1.1u-Android-ALL-NDKr21eAPI21",
-	opensslVersion = "1.1.1u",
+	name = "OpenSSL1.1.1u-2-Android-ALL-NDKr21eAPI21",
+	opensslVersion = "1.1.1u-2",
 	host = "CentOS8",
 	opensslUnifyType = "Android",
 	opensslUnifyArch = {
@@ -335,8 +335,8 @@ conf.o1_1aalnl = {
 --------------------------------------------------------------------
 
 conf.o1_1aa3n321 = {
-	name = "OpenSSL1.1.1u-Android-arm-NDKr23cAPI21",
-	opensslVersion = "1.1.1u",
+	name = "OpenSSL1.1.1u-2-Android-arm-NDKr23cAPI21",
+	opensslVersion = "1.1.1u-2",
 	host = "CentOS8",
 	target = "Android-21",
 	toolchainT = "Android-21-r23c-arm",
@@ -361,8 +361,8 @@ conf.o1_1aa3n321 = {
 }
 
 conf.o1_1aa6n321 = {
-	name = "OpenSSL1.1.1u-Android-arm64-NDKr23cAPI21",
-	opensslVersion = "1.1.1u",
+	name = "OpenSSL1.1.1u-2-Android-arm64-NDKr23cAPI21",
+	opensslVersion = "1.1.1u-2",
 	host = "CentOS8",
 	target = "Android-21",
 	toolchainT = "Android-21-r23c-arm64",
@@ -382,8 +382,8 @@ conf.o1_1aa6n321 = {
 }
 
 conf.o1_1ax3n321 = {
-	name = "OpenSSL1.1.1u-Android-x86-NDKr23cAPI21",
-	opensslVersion = "1.1.1u",
+	name = "OpenSSL1.1.1u-2-Android-x86-NDKr23cAPI21",
+	opensslVersion = "1.1.1u-2",
 	host = "CentOS8",
 	target = "Android-21",
 	toolchainT = "Android-21-r23c-x86",
@@ -403,8 +403,8 @@ conf.o1_1ax3n321 = {
 }
 
 conf.o1_1ax6n321 = {
-	name = "OpenSSL1.1.1u-Android-x86_64-NDKr23cAPI21",
-	opensslVersion = "1.1.1u",
+	name = "OpenSSL1.1.1u-2-Android-x86_64-NDKr23cAPI21",
+	opensslVersion = "1.1.1u-2",
 	host = "CentOS8",
 	target = "Android-21",
 	toolchainT = "Android-21-r23c-x86_64",
@@ -424,8 +424,8 @@ conf.o1_1ax6n321 = {
 }
 
 conf.o1_1aaln321 = {
-	name = "OpenSSL1.1.1u-Android-ALL-NDKr23cAPI21",
-	opensslVersion = "1.1.1u",
+	name = "OpenSSL1.1.1u-2-Android-ALL-NDKr23cAPI21",
+	opensslVersion = "1.1.1u-2",
 	host = "CentOS8",
 	opensslUnifyType = "Android",
 	opensslUnifyArch = {
@@ -438,11 +438,11 @@ conf.o1_1aaln321 = {
 
 --------------------------------------------------------------------
 
--- OpenSSL 3.0.9
+-- OpenSSL 3.0.9-2
 
 conf.o3_0wx6v9 = {
-	name = "OpenSSL3.0.9-Windows-x86_64-VS2019-&TARGETTOOLVERSION&",
-	opensslVersion = "3.0.9",
+	name = "OpenSSL3.0.9-2-Windows-x86_64-VS2019-&TARGETTOOLVERSION&",
+	opensslVersion = "3.0.9-2",
 	host = "Win10",
 	toolchain = "MSVC2019-64",
 	libPath = { "bin\\libssl-3-x64.dll", "bin\\libcrypto-3-x64.dll" },
@@ -458,8 +458,8 @@ conf.o3_0wx6v9 = {
 }
 
 conf.o3_0wx6v9st = {
-	name = "OpenSSL3.0.9-Windows-x86_64-VS2019-&TARGETTOOLVERSION&-static",
-	opensslVersion = "3.0.9",
+	name = "OpenSSL3.0.9-2-Windows-x86_64-VS2019-&TARGETTOOLVERSION&-static",
+	opensslVersion = "3.0.9-2",
 	host = "Win10",
 	toolchain = "MSVC2019-64",
 	variant = {"-static"},
@@ -477,8 +477,8 @@ conf.o3_0wx6v9st = {
 }
 
 conf.o3_0wx6v2 = {
-	name = "OpenSSL3.0.9-Windows-x86_64-VS2022-&TARGETTOOLVERSION&",
-	opensslVersion = "3.0.9",
+	name = "OpenSSL3.0.9-2-Windows-x86_64-VS2022-&TARGETTOOLVERSION&",
+	opensslVersion = "3.0.9-2",
 	host = "Win10",
 	toolchain = "MSVC2022-64",
 	libPath = { "bin\\libssl-3-x64.dll", "bin\\libcrypto-3-x64.dll" },
@@ -494,8 +494,8 @@ conf.o3_0wx6v2 = {
 }
 
 conf.o3_0wx6v2st = {
-	name = "OpenSSL3.0.9-Windows-x86_64-VS2022-&TARGETTOOLVERSION&-static",
-	opensslVersion = "3.0.9",
+	name = "OpenSSL3.0.9-2-Windows-x86_64-VS2022-&TARGETTOOLVERSION&-static",
+	opensslVersion = "3.0.9-2",
 	host = "Win10",
 	toolchain = "MSVC2022-64",
 	variant = {"-static"},
@@ -515,8 +515,8 @@ conf.o3_0wx6v2st = {
 --------------------------------------------------------------------
 
 conf.o3_0wx6g1 = {
-	name = "OpenSSL3.0.9-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&",
-	opensslVersion = "3.0.9",
+	name = "OpenSSL3.0.9-2-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&",
+	opensslVersion = "3.0.9-2",
 	host = "Win10SH",
 	toolchain = "MinGW1120-64",
 	libPath = { "bin\\libssl-3-x64.dll", "bin\\libcrypto-3-x64.dll" },
@@ -532,8 +532,8 @@ conf.o3_0wx6g1 = {
 }
 
 conf.o3_0wx6p2 = {
-	name = "OpenSSL3.0.9-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-ucrt",
-	opensslVersion = "3.0.9",
+	name = "OpenSSL3.0.9-2-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-ucrt",
+	opensslVersion = "3.0.9-2",
 	host = "Win10SH",
 	toolchain = "MinGW122u-64",
 	libPath = { "bin\\libssl-3-x64.dll", "bin\\libcrypto-3-x64.dll" },
@@ -549,8 +549,8 @@ conf.o3_0wx6p2 = {
 }
 
 conf.o3_0wx6g2 = {
-	name = "OpenSSL3.0.9-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-msvcrt",
-	opensslVersion = "3.0.9",
+	name = "OpenSSL3.0.9-2-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-msvcrt",
+	opensslVersion = "3.0.9-2",
 	host = "Win10SH",
 	toolchain = "MinGW1220-64",
 	libPath = { "bin\\libssl-3-x64.dll", "bin\\libcrypto-3-x64.dll" },
@@ -566,8 +566,8 @@ conf.o3_0wx6g2 = {
 }
 
 conf.o3_0wx6p3 = {
-	name = "OpenSSL3.0.9-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-ucrt",
-	opensslVersion = "3.0.9",
+	name = "OpenSSL3.0.9-2-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-ucrt",
+	opensslVersion = "3.0.9-2",
 	host = "Win10SH",
 	toolchain = "MinGW131u-64",
 	libPath = { "bin\\libssl-3-x64.dll", "bin\\libcrypto-3-x64.dll" },
@@ -583,8 +583,8 @@ conf.o3_0wx6p3 = {
 }
 
 conf.o3_0wx6g3 = {
-	name = "OpenSSL3.0.9-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-msvcrt",
-	opensslVersion = "3.0.9",
+	name = "OpenSSL3.0.9-2-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-msvcrt",
+	opensslVersion = "3.0.9-2",
 	host = "Win10SH",
 	toolchain = "MinGW1310-64",
 	libPath = { "bin\\libssl-3-x64.dll", "bin\\libcrypto-3-x64.dll" },
@@ -600,8 +600,8 @@ conf.o3_0wx6g3 = {
 }
 
 conf.o3_0wx6u5 = {
-	name = "OpenSSL3.0.9-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-ucrt",
-	opensslVersion = "3.0.9",
+	name = "OpenSSL3.0.9-2-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-ucrt",
+	opensslVersion = "3.0.9-2",
 	host = "Win10SH",
 	toolchain = "MinGWLLVM-ucrt15-64",
 	libPath = { "bin\\libssl-3-x64.dll", "bin\\libcrypto-3-x64.dll" },
@@ -618,8 +618,8 @@ conf.o3_0wx6u5 = {
 }
 
 conf.o3_0wx6s5 = {
-	name = "OpenSSL3.0.9-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-msvcrt",
-	opensslVersion = "3.0.9",
+	name = "OpenSSL3.0.9-2-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-msvcrt",
+	opensslVersion = "3.0.9-2",
 	host = "Win10SH",
 	toolchain = "MinGWLLVM-msvcrt15-64",
 	libPath = { "bin\\libssl-3-x64.dll", "bin\\libcrypto-3-x64.dll" },
@@ -636,8 +636,8 @@ conf.o3_0wx6s5 = {
 }
 
 conf.o3_0wx6u6 = {
-	name = "OpenSSL3.0.9-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-ucrt",
-	opensslVersion = "3.0.9",
+	name = "OpenSSL3.0.9-2-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-ucrt",
+	opensslVersion = "3.0.9-2",
 	host = "Win10SH",
 	toolchain = "MinGWLLVM-ucrt16-64",
 	libPath = { "bin\\libssl-3-x64.dll", "bin\\libcrypto-3-x64.dll" },
@@ -654,8 +654,8 @@ conf.o3_0wx6u6 = {
 }
 
 conf.o3_0wx6s6 = {
-	name = "OpenSSL3.0.9-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-msvcrt",
-	opensslVersion = "3.0.9",
+	name = "OpenSSL3.0.9-2-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-msvcrt",
+	opensslVersion = "3.0.9-2",
 	host = "Win10SH",
 	toolchain = "MinGWLLVM-msvcrt16-64",
 	libPath = { "bin\\libssl-3-x64.dll", "bin\\libcrypto-3-x64.dll" },
@@ -674,8 +674,8 @@ conf.o3_0wx6s6 = {
 --------------------------------------------------------------------
 
 conf.o3_0wx6g1st = {
-	name = "OpenSSL3.0.9-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-static",
-	opensslVersion = "3.0.9",
+	name = "OpenSSL3.0.9-2-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-static",
+	opensslVersion = "3.0.9-2",
 	host = "Win10SH",
 	toolchain = "MinGW1120-64",
 	variant = {"-static"},
@@ -694,8 +694,8 @@ conf.o3_0wx6g1st = {
 }
 
 conf.o3_0wx6p2st = {
-	name = "OpenSSL3.0.9-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-ucrt-static",
-	opensslVersion = "3.0.9",
+	name = "OpenSSL3.0.9-2-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-ucrt-static",
+	opensslVersion = "3.0.9-2",
 	host = "Win10SH",
 	toolchain = "MinGW122u-64",
 	variant = {"-static"},
@@ -714,8 +714,8 @@ conf.o3_0wx6p2st = {
 }
 
 conf.o3_0wx6g2st = {
-	name = "OpenSSL3.0.9-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-msvcrt-static",
-	opensslVersion = "3.0.9",
+	name = "OpenSSL3.0.9-2-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-msvcrt-static",
+	opensslVersion = "3.0.9-2",
 	host = "Win10SH",
 	toolchain = "MinGW1220-64",
 	variant = {"-static"},
@@ -734,8 +734,8 @@ conf.o3_0wx6g2st = {
 }
 
 conf.o3_0wx6p3st = {
-	name = "OpenSSL3.0.9-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-ucrt-static",
-	opensslVersion = "3.0.9",
+	name = "OpenSSL3.0.9-2-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-ucrt-static",
+	opensslVersion = "3.0.9-2",
 	host = "Win10SH",
 	toolchain = "MinGW131u-64",
 	variant = {"-static"},
@@ -754,8 +754,8 @@ conf.o3_0wx6p3st = {
 }
 
 conf.o3_0wx6g3st = {
-	name = "OpenSSL3.0.9-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-msvcrt-static",
-	opensslVersion = "3.0.9",
+	name = "OpenSSL3.0.9-2-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-msvcrt-static",
+	opensslVersion = "3.0.9-2",
 	host = "Win10SH",
 	toolchain = "MinGW1310-64",
 	variant = {"-static"},
@@ -777,8 +777,8 @@ conf.o3_0wx6g3st = {
 
 -- cross build this configuration for easy unify
 conf.o3_0mx6 = {
-	name = "OpenSSL3.0.9-macOS-x86_64-AppleClang&TARGETTOOLVERSION&",
-	opensslVersion = "3.0.9",
+	name = "OpenSSL3.0.9-2-macOS-x86_64-AppleClang&TARGETTOOLVERSION&",
+	opensslVersion = "3.0.9-2",
 	host = "macOSM1",
 	libPath = { "lib/libssl.3.dylib", "lib/libcrypto.3.dylib" },
 	staticlibPath = { "lib/libssl.a", "lib/libcrypto.a" },
@@ -794,8 +794,8 @@ conf.o3_0mx6 = {
 }
 
 conf.o3_0ma6 = {
-	name = "OpenSSL3.0.9-macOS-arm64_v8a-AppleClang&TARGETTOOLVERSION&",
-	opensslVersion = "3.0.9",
+	name = "OpenSSL3.0.9-2-macOS-arm64_v8a-AppleClang&TARGETTOOLVERSION&",
+	opensslVersion = "3.0.9-2",
 	host = "macOSM1",
 	libPath = { "lib/libssl.3.dylib", "lib/libcrypto.3.dylib" },
 	staticlibPath = { "lib/libssl.a", "lib/libcrypto.a" },
@@ -811,8 +811,8 @@ conf.o3_0ma6 = {
 }
 
 conf.o3_0mal = {
-	name = "OpenSSL3.0.9-macOS-ALL-AppleClang&TARGETTOOLVERSION&",
-	opensslVersion = "3.0.9",
+	name = "OpenSSL3.0.9-2-macOS-ALL-AppleClang&TARGETTOOLVERSION&",
+	opensslVersion = "3.0.9-2",
 	host = "macOSM1",
 	libPath = { "lib/libssl.3.dylib", "lib/libcrypto.3.dylib" },
 	staticlibPath = { "lib/libssl.a", "lib/libcrypto.a" },
@@ -826,8 +826,8 @@ conf.o3_0mal = {
 --------------------------------------------------------------------
 
 conf.o3_0aa3n324 = {
-	name = "OpenSSL3.0.9-Android-arm-NDKr23cAPI24",
-	opensslVersion = "3.0.9",
+	name = "OpenSSL3.0.9-2-Android-arm-NDKr23cAPI24",
+	opensslVersion = "3.0.9-2",
 	host = "CentOS8",
 	target = "Android-24",
 	toolchainT = "Android-24-r23c-arm",
@@ -852,8 +852,8 @@ conf.o3_0aa3n324 = {
 }
 
 conf.o3_0aa6n324 = {
-	name = "OpenSSL3.0.9-Android-arm64-NDKr23cAPI24",
-	opensslVersion = "3.0.9",
+	name = "OpenSSL3.0.9-2-Android-arm64-NDKr23cAPI24",
+	opensslVersion = "3.0.9-2",
 	host = "CentOS8",
 	target = "Android-24",
 	toolchainT = "Android-24-r23c-arm64",
@@ -873,8 +873,8 @@ conf.o3_0aa6n324 = {
 }
 
 conf.o3_0ax3n324 = {
-	name = "OpenSSL3.0.9-Android-x86-NDKr23cAPI24",
-	opensslVersion = "3.0.9",
+	name = "OpenSSL3.0.9-2-Android-x86-NDKr23cAPI24",
+	opensslVersion = "3.0.9-2",
 	host = "CentOS8",
 	target = "Android-24",
 	toolchainT = "Android-24-r23c-x86",
@@ -894,8 +894,8 @@ conf.o3_0ax3n324 = {
 }
 
 conf.o3_0ax6n324 = {
-	name = "OpenSSL3.0.9-Android-x86_64-NDKr23cAPI24",
-	opensslVersion = "3.0.9",
+	name = "OpenSSL3.0.9-2-Android-x86_64-NDKr23cAPI24",
+	opensslVersion = "3.0.9-2",
 	host = "CentOS8",
 	target = "Android-24",
 	toolchainT = "Android-24-r23c-x86_64",
@@ -915,8 +915,8 @@ conf.o3_0ax6n324 = {
 }
 
 conf.o3_0aaln324 = {
-	name = "OpenSSL3.0.9-Android-ALL-NDKr23cAPI24",
-	opensslVersion = "3.0.9",
+	name = "OpenSSL3.0.9-2-Android-ALL-NDKr23cAPI24",
+	opensslVersion = "3.0.9-2",
 	host = "CentOS8",
 	opensslUnifyType = "Android",
 	opensslUnifyArch = {
@@ -929,8 +929,8 @@ conf.o3_0aaln324 = {
 --------------------------------------------------------------------
 
 conf.o3_0aa3n527 = {
-	name = "OpenSSL3.0.9-Android-arm-NDKr25API27",
-	opensslVersion = "3.0.9",
+	name = "OpenSSL3.0.9-2-Android-arm-NDKr25API27",
+	opensslVersion = "3.0.9-2",
 	host = "Rocky9",
 	target = "Android-27",
 	toolchainT = "Android-27-r25c-arm",
@@ -955,8 +955,8 @@ conf.o3_0aa3n527 = {
 }
 
 conf.o3_0aa6n527 = {
-	name = "OpenSSL3.0.9-Android-arm64-NDKr25API27",
-	opensslVersion = "3.0.9",
+	name = "OpenSSL3.0.9-2-Android-arm64-NDKr25API27",
+	opensslVersion = "3.0.9-2",
 	host = "Rocky9",
 	target = "Android-27",
 	toolchainT = "Android-27-r25c-arm64",
@@ -976,8 +976,8 @@ conf.o3_0aa6n527 = {
 }
 
 conf.o3_0ax3n527 = {
-	name = "OpenSSL3.0.9-Android-x86-NDKr25API27",
-	opensslVersion = "3.0.9",
+	name = "OpenSSL3.0.9-2-Android-x86-NDKr25API27",
+	opensslVersion = "3.0.9-2",
 	host = "Rocky9",
 	target = "Android-27",
 	toolchainT = "Android-27-r25c-x86",
@@ -997,8 +997,8 @@ conf.o3_0ax3n527 = {
 }
 
 conf.o3_0ax6n527 = {
-	name = "OpenSSL3.0.9-Android-x86_64-NDKr25API27",
-	opensslVersion = "3.0.9",
+	name = "OpenSSL3.0.9-2-Android-x86_64-NDKr25API27",
+	opensslVersion = "3.0.9-2",
 	host = "Rocky9",
 	target = "Android-27",
 	toolchainT = "Android-27-r25c-x86_64",
@@ -1018,8 +1018,8 @@ conf.o3_0ax6n527 = {
 }
 
 conf.o3_0aaln527 = {
-	name = "OpenSSL3.0.9-Android-ALL-NDKr25API27",
-	opensslVersion = "3.0.9",
+	name = "OpenSSL3.0.9-2-Android-ALL-NDKr25API27",
+	opensslVersion = "3.0.9-2",
 	host = "Rocky9",
 	opensslUnifyType = "Android",
 	opensslUnifyArch = {

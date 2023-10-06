@@ -40,8 +40,8 @@ conf.host.win = {
 		["MinGW1120-64"] = "D:\\mingw-w64\\11.2.0-4\\mingw64\\bin",
 		["MinGW1220-64"] = "D:\\mingw-w64\\12.2.0\\mingw64\\bin",
 		["MinGW122u-64"] = "D:\\mingw-w64\\12.2.0u\\mingw64\\bin",
-		["MinGW1310-64"] = "D:\\mingw-w64\\13.1.0\\mingw64\\bin",
-		["MinGW131u-64"] = "D:\\mingw-w64\\13.1.0u\\mingw64\\bin",
+		["MinGW1320-64"] = "D:\\mingw-w64\\13.2.0\\mingw64\\bin",
+		["MinGW132u-64"] = "D:\\mingw-w64\\13.2.0u\\mingw64\\bin",
 
 		-- MinGW toolchains with Clang / LLVM, currently used in Qt 6 only
 		-- LLVM always acts as an cross compiler, but the target libraries are architecture-dependent
@@ -50,6 +50,8 @@ conf.host.win = {
 		["MinGWLLVM-ucrt15-64"] = {"D:\\mingw-w64\\llvm-mingw-20220906-ucrt-x86_64\\x86_64-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20220906-ucrt-x86_64\\bin"},
 		["MinGWLLVM-msvcrt16-64"] = {"D:\\mingw-w64\\llvm-mingw-20230614-msvcrt-x86_64\\x86_64-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20230614-msvcrt-x86_64\\bin"},
 		["MinGWLLVM-ucrt16-64"] = {"D:\\mingw-w64\\llvm-mingw-20230614-ucrt-x86_64\\x86_64-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20230614-ucrt-x86_64\\bin"},
+		["MinGWLLVM-msvcrt17-64"] = {"D:\\mingw-w64\\llvm-mingw-20231003-msvcrt-x86_64\\x86_64-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20231003-msvcrt-x86_64\\bin"},
+		["MinGWLLVM-ucrt17-64"] = {"D:\\mingw-w64\\llvm-mingw-20231003-ucrt-x86_64\\x86_64-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20231003-ucrt-x86_64\\bin"},
 	},
 	["sourcePackagePath"] = "D:\\Qt\\",
 	["buildRootPath"] = "D:\\Qt\\", -- On Windows, the build root should be same with source package
@@ -62,6 +64,7 @@ conf.host.win = {
 		["r21e"] = "D:\\android-ndk-r21e",
 		["r23c"] = "D:\\android-ndk-r23c",
 		["r25c"] = "D:\\android-ndk-r25c",
+		["r26"] = "D:\\android-ndk-r26",
 	},
 	["androidNdkHost"] = "windows-x86_64",
 	["emscriptenPath"] = {
@@ -71,7 +74,7 @@ conf.host.win = {
 	},
 	["cMakePath"] = {
 		["20"] = {"D:\\cmake-3.20.2-windows-x86_64\\bin", "D:\\ninja"},
-		["Latest"] = {"D:\\cmake-3.25.2-windows-x86_64\\bin", "D:\\ninja"},
+		["Latest"] = {"D:\\cmake-3.27.6-windows-x86_64\\bin", "D:\\ninja"},
 	},
 	["jdkPath"] = {
 		["8"] = "D:\\OpenJDK8U-jdk_x64_windows_hotspot_8u362b09\\jdk8u362-b09",
@@ -101,19 +104,22 @@ conf.host.msys = {
 		["MinGW1120-64"] = "/d/mingw-w64/11.2.0-4/mingw64/bin/",
 		["MinGW1220-64"] = "/d/mingw-w64/12.2.0/mingw64/bin/",
 		["MinGW122u-64"] = "/d/mingw-w64/12.2.0u/mingw64/bin/",
-		["MinGW1310-64"] = "/d/mingw-w64/13.1.0/mingw64/bin/",
-		["MinGW131u-64"] = "/d/mingw-w64/13.1.0u/mingw64/bin/",
+		["MinGW1320-64"] = "/d/mingw-w64/13.2.0/mingw64/bin/",
+		["MinGW132u-64"] = "/d/mingw-w64/13.2.0u/mingw64/bin/",
 
 		["MinGWLLVM-msvcrt15-64"] = {"/d/mingw-w64/llvm-mingw-20220906-msvcrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20220906-msvcrt-x86_64/bin"},
 		["MinGWLLVM-ucrt15-64"] = {"/d/mingw-w64/llvm-mingw-20220906-ucrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20220906-ucrt-x86_64/bin"},
 		["MinGWLLVM-msvcrt16-64"] = {"/d/mingw-w64/llvm-mingw-20230614-msvcrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20230614-msvcrt-x86_64/bin"},
 		["MinGWLLVM-ucrt16-64"] = {"/d/mingw-w64/llvm-mingw-20230614-ucrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20230614-ucrt-x86_64/bin"},
+		["MinGWLLVM-msvcrt17-64"] = {"/d/mingw-w64/llvm-mingw-20231003-msvcrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20231003-msvcrt-x86_64/bin"},
+		["MinGWLLVM-ucrt17-64"] = {"/d/mingw-w64/llvm-mingw-20231003-ucrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20231003-ucrt-x86_64/bin"},
 	},
 	["sourcePackagePath"] = "/d/Qt/",
 	["androidNdkPath"] = {
 		["r21e"] = "/d/android-ndk-r21e/",
 		["r23c"] = "/d/android-ndk-r23c/",
 		["r25c"] = "/d/android-ndk-r25c/",
+		["r26"] = "/d/android-ndk-r26/",
 	},
 	["androidNdkHost"] = "windows-x86_64",
 	["defaultToolchainExecutableName"] = "gcc",
@@ -138,6 +144,7 @@ conf.host.linux = {
 		["r21e"] = "/opt/env/android-ndk-r21e/",
 		["r23c"] = "/opt/env/android-ndk-r23c/",
 		["r25c"] = "/opt/env/android-ndk-r25c/",
+		["r26"] = "/opt/env/android-ndk-r26/",
 	},
 	["androidNdkHost"] = "linux-x86_64",
 	["sourcePackagePath"] = "/opt/sources/",
@@ -203,6 +210,7 @@ conf.host.macM1 = {
 		["r21e"] = "/Applications/AndroidNDK7075529.app/Contents/NDK/",
 		["r23c"] = "/Applications/AndroidNDK8568313.app/Contents/NDK/",
 		["r25c"] = "/Applications/AndroidNDK9519653.app/Contents/NDK/",
+		["r26"] = "/Applications/AndroidNDK10792818.app/Contents/NDK/",
 	},
 	["androidNdkHost"] = "darwin-x86_64",
 	["sourcePackagePath"] = "/opt/sources/",

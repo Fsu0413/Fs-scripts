@@ -27,7 +27,6 @@ abbrs:
 		v7: VS2017
 		v9: VS2019
 		v2: VS2022
-		g7: MinGW-w64, with GCC 7.3.0
 		g1: MinGW-w64, with GCC 11.2.0
 		g2: MinGW-w64, msvcrt, with GCC 12.2.0
 		p2: MinGW-w64, ucrt, with GCC 12.2.0
@@ -42,7 +41,7 @@ abbrs:
 		nl: Android NDK r21e/Previous LTS
 		n3: Android NDK r23c/Previous LTS
 		n5: Android NDK r25c/Previous LTS
-		n6: Android NDK r25c/Latest LTS
+		n6: Android NDK r26/Latest LTS
 	If omitted, it use a toolchain in default PATH, which should be AppleClang in macOS, or GCC in Linux.
 
 	Variants:
@@ -103,40 +102,6 @@ conf.o1_1wx6v5 = {
 		--openssldir=&INSTALLROOT&\ssl
 		VC-WIN64A
 		-FS
-	]],
-}
-
---------------------------------------------------------------------
-
-conf.o1_1wx3g7 = {
-	name = "OpenSSL1.1.1w-Windows-x86-MinGW-GCC&TARGETTOOLVERSION&",
-	opensslVersion = "1.1.1w",
-	host = "Win8SH",
-	toolchain = "MinGW730-32",
-	libPath = { "bin\\libssl-1_1.dll", "bin\\libcrypto-1_1.dll" },
-	configureParameter = [[
-		no-asm
-		shared
-		enable-static-engine
-		--prefix=&INSTALLROOT&
-		--openssldir=&INSTALLROOT&/ssl
-		mingw
-	]],
-}
-
-conf.o1_1wx6g7 = {
-	name = "OpenSSL1.1.1w-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&",
-	opensslVersion = "1.1.1w",
-	host = "Win8SH",
-	toolchain = "MinGW730-64",
-	libPath = { "bin\\libssl-1_1-x64.dll", "bin\\libcrypto-1_1-x64.dll" },
-	configureParameter = [[
-		no-asm
-		shared
-		enable-static-engine
-		--prefix=&INSTALLROOT&
-		--openssldir=&INSTALLROOT&/ssl
-		mingw64
 	]],
 }
 

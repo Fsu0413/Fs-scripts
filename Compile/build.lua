@@ -26,20 +26,13 @@ local main = function(argc, argv)
 	local buildTime = os.date("*t")
 	local buildContent = conf:buildContent(buildJob)
 
-	local confTable, optionalQQtPatcherTable = conf[buildContent]:generateConfTable(buildHost, buildJob, buildTime)
+	local confTable = conf[buildContent]:generateConfTable(buildHost, buildJob, buildTime)
 
 	for k,v in pairs(confTable) do
 		print(k,tostring(v))
 	end
-	-- QQtPatcher will be discontinued on 2023.9.11, the time when OpenSSL 1.1 series goes EOL
-	-- Related code can be deleted after that time, when I'll give the QQtPatcher a 1.0.0 version number
-
 	-- for Building - Generate the build scripts and save to buildCommands.cmd
 	-- Consequent process run the buildCommands.cmd with proper script interpreter
-	if optionalQQtPatcherTable then
-		confTable.EXTRAINSTALL = gen:generateBuildCommand(optionalQQtPatcherTable) .. confTable.EXTRAINSTALL
-	end
-
 	local generatedBuildScript = gen:generateBuildCommand(confTable)
 
 	local buildScriptFile = io.open("buildCommands.cmd", "w+")

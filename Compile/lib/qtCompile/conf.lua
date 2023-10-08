@@ -4760,19 +4760,6 @@ local versionMo = {
 	end
 }
 
-local QQtPatcherConf = {
-	["Win10"] = "q5_12wx3v7st",
-	["Win8"] = "q5_12wx3v5st",
-	["CentOS8"] = "q5_12lx6st",
-	["macOSLegacy"] = "q5_12mx6st",
-}
-
-local QQtPatcherVersion = {
-	["default"] = "0.8.2"
-}
-
-setmetatable(QQtPatcherVersion, versionMo)
-
 local Qt6StaticConf = {
 	Win10 = {
 		["6.2.6"] = "q6_2wx6g1st",
@@ -4877,23 +4864,6 @@ for name, value in pairs(conf) do
 		value.configFile = { "CMakeCache.txt", "config.summary" }
 	end
 
-	if tonumber(qtVersionSplit[1]) > 5 or (tonumber(qtVersionSplit[1]) == 5 and tonumber(qtVersionSplit[2]) >= 14) then
-		value.qQtPatcher = "no"
-	else
-		-- QQtPatcher
-		local usingQQtPatcher = QQtPatcherConf[value.host]
-		if usingQQtPatcher == name then
-			value.qQtPatcher = "build"
-			value.qQtPatcherSourceUrlwin = "http://172.24.13.6/webdav/sources/QQtPatcher-" .. QQtPatcherVersion[value.host] .. ".zip"
-			value.qQtPatcherSourceUrlunix = "http://172.24.13.6/webdav/sources/QQtPatcher-" .. QQtPatcherVersion[value.host] .. ".tar.gz"
-		else
-			value.qQtPatcher = usingQQtPatcher
-			value.qQtPatcherUrlwin = "http://172.24.13.6:8080/job/Qt/job/" .. value.qQtPatcher .. "/lastSuccessfulBuild/artifact/buildDir/QQtPatcher.exe"
-			value.qQtPatcherUrlunix = "http://172.24.13.6:8080/job/Qt/job/" .. value.qQtPatcher .. "/lastSuccessfulBuild/artifact/buildDir/QQtPatcher"
-		end
-		value.qQtPatcherVersion = QQtPatcherVersion[value.host]
-	end
-
 	if tonumber(qtVersionSplit[1]) == 6 and value.crossCompile then
 		-- cross build of MSVC target needs same version of MSVC host
 		local valuehost = value.host
@@ -4919,9 +4889,6 @@ for name, value in pairs(conf) do
 		end
 		if self.opensslConf then
 			ret = ret .. "\tOpenSSL Configuration: " .. self.opensslConf .. "\n"
-		end
-		if self.qQtPatcher ~= "no" then
-			ret = ret .. "\tUsing QQtPatcher config: " .. self.qQtPatcher .. ", version: " .. self.qQtPatcherVersion .. "\n"
 		end
 		if self.crossCompile and self.hostToolsConf then
 			ret = ret .. "\tUsing Host Qt tools: " .. value.hostToolsConf .. "\n"

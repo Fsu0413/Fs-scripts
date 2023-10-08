@@ -132,27 +132,6 @@ exit 0
 
 ]]
 
--- QTDIR
--- VERSION
--- MAKE
-gen.win.template4QQtPatcher = [[
-
-mkdir build-QQtPatcher
-
-pushd build-QQtPatcher
-
-cmd /c &QTDIR&\bin\qmake CONFIG+=release ..\QQtPatcher-&VERSION&\QQtPatcher.pro
-if errorlevel 1 exit 1
-
-cmd /c &MAKE&
-if errorlevel 1 exit 1
-
-copy release\QQtPatcher.exe ..
-
-popd
-
-]]
-
 -- MSVCBATCALL
 -- PATHSET
 -- ENVSET
@@ -482,28 +461,6 @@ cp &INSTALLPATHWITHDATE&.7z &INSTALLPATH&.7z
 rm -rf &BUILDDIR&
 
 exit 0
-
-]]
-
--- QTDIR
--- VERSION
--- MAKE
-gen.unix.template4QQtPatcher = [[
-set -x
-
-mkdir build-QQtPatcher
-
-pushd build-QQtPatcher
-
-&QTDIR&/bin/qmake CONFIG+=release ../QQtPatcher-&VERSION&/QQtPatcher.pro
-[ $? -eq 0 ] || exit 1
-
-&MAKE&
-[ $? -eq 0 ] || exit 1
-
-cp -f QQtPatcher ..
-
-popd
 
 ]]
 
@@ -988,15 +945,13 @@ end
 
 gen.generateBuildCommand = function(self, para)
 	-- para.template should be "unix" or "win"
-	-- para.buildContent should be "Qt", "OpenSSL", "OpenSSLUnify***", "MariaDB" or "QQtPatcher"
+	-- para.buildContent should be "Qt", "OpenSSL", "OpenSSLUnify***" or "MariaDB"
 	-- other contents in para goes to the replacement function
-	-- for buildContent other than QQtPatcher:
+	-- for buildContent:
 	--   "MAKE" "CONFIGURECOMMANDLINE" "date" must be provided. Fails if either one is missing.
 	--   MSVC builds must provide "MSVCBATCALL". MinGW builds must not provide "MSVCBATCALL".
 	--   if there is "path" and no "PATHSET" we calculate the PATHSET for user. If both are missing the PATHSET will be "". "path" should be a table with numbered index
 	--   if there is "download" the final script will download and extract the needed files.
-	-- QQtPatcher buildContent is designed to be put in EXTRAINSTALL so there is neither seprate PATHSET nor ENVSET
-	--   however, MAKE is needed
 	local paraCopy = {}
 	for k, v in pairs(para) do
 		paraCopy[k] = v
@@ -1015,37 +970,36 @@ gen.generateBuildCommand = function(self, para)
 		end
 	end
 
-	if template ~= "QQtPatcher" then
-		if not para.PATHSET then
-			if para.path and (type(para.path) == "table") then
-				paraCopy.PATHSET = pathEnvCalc(self[para.template], para.path)
+	if not para.PATHSET then
+		if para.path and (type(para.path) == "table") then
+			paraCopy.PATHSET = pathEnvCalc(self[para.template], para.path)
+		end
+	end
+
+	if para.envSet then
+		paraCopy.ENVSET = otherEnvCalc(self[para.template], para.envSet)
+	end
+
+	if para.download and type(para.download) == "table" then
+		for _, url in ipairs(para.download) do
+			local filename, tool = filenameAndToolFromUrl(url)
+			if not paraCopy.DOWNLOADPACKAGE then
+				paraCopy.DOWNLOADPACKAGE = ""
 			end
-		end
-
-		if para.envSet then
-			paraCopy.ENVSET = otherEnvCalc(self[para.template], para.envSet)
-		end
-
-		if para.download and type(para.download) == "table" then
-			for _, url in ipairs(para.download) do
-				local filename, tool = filenameAndToolFromUrl(url)
-				if not paraCopy.DOWNLOADPACKAGE then
-					paraCopy.DOWNLOADPACKAGE = ""
+			paraCopy.DOWNLOADPACKAGE = paraCopy.DOWNLOADPACKAGE .. self[para.template].download .. " \"" .. filename .. "\" \"" .. url .. "\"\n"
+			if not paraCopy.UNCOMPRESSPACKAGE then
+				paraCopy.UNCOMPRESSPACKAGE = ""
+			end
+			if tool then
+				paraCopy.UNCOMPRESSPACKAGE = paraCopy.UNCOMPRESSPACKAGE .. self[para.template].extract[tool] .. " \"" .. filename .. "\"\n"
+				if not paraCopy.DELETEUNCOMPRESSED then
+					paraCopy.DELETEUNCOMPRESSED = ""
 				end
-				paraCopy.DOWNLOADPACKAGE = paraCopy.DOWNLOADPACKAGE .. self[para.template].download .. " \"" .. filename .. "\" \"" .. url .. "\"\n"
-				if not paraCopy.UNCOMPRESSPACKAGE then
-					paraCopy.UNCOMPRESSPACKAGE = ""
-				end
-				if tool then
-					paraCopy.UNCOMPRESSPACKAGE = paraCopy.UNCOMPRESSPACKAGE .. self[para.template].extract[tool] .. " \"" .. filename .. "\"\n"
-					if not paraCopy.DELETEUNCOMPRESSED then
-						paraCopy.DELETEUNCOMPRESSED = ""
-					end
-					paraCopy.DELETEUNCOMPRESSED = paraCopy.DELETEUNCOMPRESSED .. self[para.template].delete .. " \"" .. filename .. "\"\n"
-				end
+				paraCopy.DELETEUNCOMPRESSED = paraCopy.DELETEUNCOMPRESSED .. self[para.template].delete .. " \"" .. filename .. "\"\n"
 			end
 		end
 	end
+
 	if para.msvcBat then
 		if para.template == "win" then
 			paraCopy.MSVCBATCALL = "call \"" .. para.msvcBat .. "\"\n" .. "echo on\n"

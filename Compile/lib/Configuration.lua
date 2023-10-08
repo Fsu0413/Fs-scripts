@@ -567,28 +567,6 @@ conf.Qt.generateConfTable = function(self, host, job, buildTime)
 		end
 	end
 
-	local qQtPatcherTable = nil
-	if jobConfigureDetail.qQtPatcher ~= "no" then
-		-- QQtPatcher
-		if jobConfigureDetail.qQtPatcher == "build" then
-			qQtPatcherTable = {
-				buildContent = "QQtPatcher",
-				template = configureHost.makefileTemplate,
-				QTDIR = installRoot,
-				MAKE = ret.MAKE,
-				VERSION = jobConfigureDetail.qQtPatcherVersion,
-			}
-			table.insert(ret.download, jobConfigureDetail["qQtPatcherSourceUrl" .. configureHost.makefileTemplate])
-		else
-			table.insert(ret.download, jobConfigureDetail["qQtPatcherUrl" .. configureHost.makefileTemplate])
-		end
-		ret.EXTRAINSTALL = ret.EXTRAINSTALL .. copyCmd .. "QQtPatcher" .. (((configureHost.makefileTemplate == "unix") and (conf.hostToConfMap[host] ~= "msys")) and "" or ".exe") .. " " .. installRoot .. "\n"
-
-		if (configureHost.makefileTemplate == "unix") and (conf.hostToConfMap[host] ~= "msys") then
-			ret.EXTRAINSTALL = ret.EXTRAINSTALL .. "chmod +x " .. installRoot .. "/QQtPatcher\n"
-		end
-	end
-
 	-- finally, data required for generating website data
 	ret.buildContentVersion = jobConfigureDetail.qtVersion
 	ret.buildHost = host
@@ -598,7 +576,7 @@ conf.Qt.generateConfTable = function(self, host, job, buildTime)
 	ret.buildTargetToolchainVersion = tostring(targetToolchainVersion)
 	ret.isPreview = jobConfigureDetail.isPreview
 
-	return ret, qQtPatcherTable
+	return ret
 end
 
 conf.Qt.hostToolDownloadPath = function(self, configureHost, job, version)

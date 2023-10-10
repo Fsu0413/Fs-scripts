@@ -4198,6 +4198,46 @@ conf.q6_5malsf = {
 	]],
 }
 
+conf.q6_5wx6g2_aa3n5 = {
+	name = "Qt6.5.3-Android-arm-Clang-NDKr25c-xWindows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
+	qtVersion = "6.5.3",
+	host = "Win10",
+	target = "Android-27",
+	toolchain = "MinGW1220-64",
+	toolchainT = "Android-27-r25c-arm",
+	opensslConf = "o3_0aa3n527",
+	useCMake = "Latest",
+	androidSdkVersion = "20230224",
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DQT_HOST_PATH=&HOSTQTDIR&
+		-DCMAKE_BUILD_TYPE=Release
+		-DBUILD_SHARED_LIBS=ON
+		-DQT_QMAKE_TARGET_MKSPEC=android-clang
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengles2=ON
+		-DFEATURE_ssl=ON
+		-DINPUT_openssl=linked
+		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
+		-DFEATURE_sql_sqlite=ON
+		-DBUILD_qtgrpc=OFF
+		-DBUILD_qtwebengine=OFF
+		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
+		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&\build\cmake\android.toolchain.cmake
+		-DANDROID_NATIVE_API_LEVEL=27
+		-DANDROID_PLATFORM=27
+		-DANDROID_ABI=armeabi-v7a
+		-DCMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH=ON
+	]],
+}
+
 conf.q6_5wx6g2_aa6n5 = {
 	name = "Qt6.5.3-Android-arm64-Clang-NDKr25c-xWindows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
 	qtVersion = "6.5.3",
@@ -4278,6 +4318,44 @@ conf.q6_5wx6g2_ax6n5 = {
 	]],
 }
 
+conf.q6_5lx6_aa3n5 = {
+	name = "Qt6.5.3-Android-aarm-Clang-NDKr25c-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
+	qtVersion = "6.5.3",
+	host = "Rocky9",
+	target = "Android-27",
+	toolchainT = "Android-27-r25c-arm",
+	opensslConf = "o3_0aa3n527",
+	useCMake = "Latest",
+	androidSdkVersion = "20230224",
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DQT_HOST_PATH=&HOSTQTDIR&
+		-DCMAKE_BUILD_TYPE=Release
+		-DBUILD_SHARED_LIBS=ON
+		-DQT_QMAKE_TARGET_MKSPEC=android-clang
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengles2=ON
+		-DFEATURE_ssl=ON
+		-DINPUT_openssl=linked
+		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
+		-DFEATURE_sql_sqlite=ON
+		-DBUILD_qtgrpc=OFF
+		-DBUILD_qtwebengine=OFF
+		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
+		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
+		-DANDROID_NATIVE_API_LEVEL=27
+		-DANDROID_PLATFORM=27
+		-DANDROID_ABI=armeabi-v7a
+	]],
+}
+
 conf.q6_5lx6_aa6n5 = {
 	name = "Qt6.5.3-Android-arm64-Clang-NDKr25c-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
 	qtVersion = "6.5.3",
@@ -4354,6 +4432,44 @@ conf.q6_5lx6_ax6n5 = {
 	]],
 }
 
+conf.q6_5mal_aa3n5 = {
+	name = "Qt6.5.3-Android-arm-Clang-NDKr25c-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
+	qtVersion = "6.5.3",
+	host = "macOSM1",
+	target = "Android-27",
+	toolchainT = "Android-27-r25c-arm",
+	opensslConf = "o3_0aa3n527",
+	useCMake = "Latest",
+	androidSdkVersion = "20230224",
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DQT_HOST_PATH=&HOSTQTDIR&
+		-DCMAKE_BUILD_TYPE=Release
+		-DBUILD_SHARED_LIBS=ON
+		-DQT_QMAKE_TARGET_MKSPEC=android-clang
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengles2=ON
+		-DFEATURE_ssl=ON
+		-DINPUT_openssl=linked
+		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
+		-DFEATURE_sql_sqlite=ON
+		-DBUILD_qtgrpc=OFF
+		-DBUILD_qtwebengine=OFF
+		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
+		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
+		-DANDROID_NATIVE_API_LEVEL=27
+		-DANDROID_PLATFORM=27
+		-DANDROID_ABI=armeabi-v7a
+	]],
+}
+
 conf.q6_5mal_aa6n5 = {
 	name = "Qt6.5.3-Android-arm64-Clang-NDKr25c-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "6.5.3",
@@ -4427,6 +4543,46 @@ conf.q6_5mal_ax6n5 = {
 		-DANDROID_NATIVE_API_LEVEL=27
 		-DANDROID_PLATFORM=27
 		-DANDROID_ABI=x86_64
+	]],
+}
+
+conf.q6_5wx6g2_aa3n6 = {
+	name = "Qt6.5.3-Android-arm-Clang-NDKr26-xWindows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
+	qtVersion = "6.5.3",
+	host = "Win10",
+	target = "Android-27",
+	toolchain = "MinGW1220-64",
+	toolchainT = "Android-27-r26-arm",
+	opensslConf = "o3_0aa3n627",
+	useCMake = "Latest",
+	androidSdkVersion = "20230224",
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DQT_HOST_PATH=&HOSTQTDIR&
+		-DCMAKE_BUILD_TYPE=Release
+		-DBUILD_SHARED_LIBS=ON
+		-DQT_QMAKE_TARGET_MKSPEC=android-clang
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengles2=ON
+		-DFEATURE_ssl=ON
+		-DINPUT_openssl=linked
+		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
+		-DFEATURE_sql_sqlite=ON
+		-DBUILD_qtgrpc=OFF
+		-DBUILD_qtwebengine=OFF
+		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
+		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&\build\cmake\android.toolchain.cmake
+		-DANDROID_NATIVE_API_LEVEL=27
+		-DANDROID_PLATFORM=27
+		-DANDROID_ABI=armeabi-v7a
+		-DCMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH=ON
 	]],
 }
 
@@ -4510,6 +4666,44 @@ conf.q6_5wx6g2_ax6n6 = {
 	]],
 }
 
+conf.q6_5lx6_aa3n6 = {
+	name = "Qt6.5.3-Android-arm-Clang-NDKr26-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
+	qtVersion = "6.5.3",
+	host = "Rocky9",
+	target = "Android-27",
+	toolchainT = "Android-27-r26-arm",
+	opensslConf = "o3_0aa3n627",
+	useCMake = "Latest",
+	androidSdkVersion = "20230224",
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DQT_HOST_PATH=&HOSTQTDIR&
+		-DCMAKE_BUILD_TYPE=Release
+		-DBUILD_SHARED_LIBS=ON
+		-DQT_QMAKE_TARGET_MKSPEC=android-clang
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengles2=ON
+		-DFEATURE_ssl=ON
+		-DINPUT_openssl=linked
+		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
+		-DFEATURE_sql_sqlite=ON
+		-DBUILD_qtgrpc=OFF
+		-DBUILD_qtwebengine=OFF
+		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
+		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
+		-DANDROID_NATIVE_API_LEVEL=27
+		-DANDROID_PLATFORM=27
+		-DANDROID_ABI=armeabi-v7a
+	]],
+}
+
 conf.q6_5lx6_aa6n6 = {
 	name = "Qt6.5.3-Android-arm64-Clang-NDKr26-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
 	qtVersion = "6.5.3",
@@ -4583,6 +4777,44 @@ conf.q6_5lx6_ax6n6 = {
 		-DANDROID_NATIVE_API_LEVEL=27
 		-DANDROID_PLATFORM=27
 		-DANDROID_ABI=x86_64
+	]],
+}
+
+conf.q6_5mal_aa3n6 = {
+	name = "Qt6.5.3-Android-arm-Clang-NDKr26-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
+	qtVersion = "6.5.3",
+	host = "macOSM1",
+	target = "Android-27",
+	toolchainT = "Android-27-r26-arm",
+	opensslConf = "o3_0aa3n627",
+	useCMake = "Latest",
+	androidSdkVersion = "20230224",
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DQT_HOST_PATH=&HOSTQTDIR&
+		-DCMAKE_BUILD_TYPE=Release
+		-DBUILD_SHARED_LIBS=ON
+		-DQT_QMAKE_TARGET_MKSPEC=android-clang
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengles2=ON
+		-DFEATURE_ssl=ON
+		-DINPUT_openssl=linked
+		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
+		-DFEATURE_sql_sqlite=ON
+		-DBUILD_qtgrpc=OFF
+		-DBUILD_qtwebengine=OFF
+		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
+		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
+		-DANDROID_NATIVE_API_LEVEL=27
+		-DANDROID_PLATFORM=27
+		-DANDROID_ABI=armeabi-v7a
 	]],
 }
 
@@ -5406,6 +5638,46 @@ conf.q6_6malst = {
 	]],
 }
 
+conf.q6_6wx6g2_aa3n6 = {
+	name = "Qt6.6.0-Android-arm6Clang-NDKr26-xWindows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
+	qtVersion = "6.6.0",
+	host = "Win10",
+	target = "Android-27",
+	toolchain = "MinGW1220-64",
+	toolchainT = "Android-27-r26-arm",
+	opensslConf = "o3_0aa3n627",
+	useCMake = "Latest",
+	androidSdkVersion = "20230224",
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DQT_HOST_PATH=&HOSTQTDIR&
+		-DCMAKE_BUILD_TYPE=Release
+		-DBUILD_SHARED_LIBS=ON
+		-DQT_QMAKE_TARGET_MKSPEC=android-clang
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengles2=ON
+		-DFEATURE_ssl=ON
+		-DINPUT_openssl=linked
+		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
+		-DFEATURE_sql_sqlite=ON
+		-DBUILD_qtgrpc=OFF
+		-DBUILD_qtwebengine=OFF
+		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
+		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&\build\cmake\android.toolchain.cmake
+		-DANDROID_NATIVE_API_LEVEL=27
+		-DANDROID_PLATFORM=27
+		-DANDROID_ABI=armeabi-v7a
+		-DCMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH=ON
+	]],
+}
+
 conf.q6_6wx6g2_aa6n6 = {
 	name = "Qt6.6.0-Android-arm64-Clang-NDKr26-xWindows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
 	qtVersion = "6.6.0",
@@ -5486,6 +5758,44 @@ conf.q6_6wx6g2_ax6n6 = {
 	]],
 }
 
+conf.q6_6lx6_aa3n6 = {
+	name = "Qt6.6.0-Android-arm-Clang-NDKr26-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
+	qtVersion = "6.6.0",
+	host = "Rocky9",
+	target = "Android-27",
+	toolchainT = "Android-27-r26-arm",
+	opensslConf = "o3_0aa3n627",
+	useCMake = "Latest",
+	androidSdkVersion = "20230224",
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DQT_HOST_PATH=&HOSTQTDIR&
+		-DCMAKE_BUILD_TYPE=Release
+		-DBUILD_SHARED_LIBS=ON
+		-DQT_QMAKE_TARGET_MKSPEC=android-clang
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengles2=ON
+		-DFEATURE_ssl=ON
+		-DINPUT_openssl=linked
+		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
+		-DFEATURE_sql_sqlite=ON
+		-DBUILD_qtgrpc=OFF
+		-DBUILD_qtwebengine=OFF
+		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
+		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
+		-DANDROID_NATIVE_API_LEVEL=27
+		-DANDROID_PLATFORM=27
+		-DANDROID_ABI=armeabi-v7a
+	]],
+}
+
 conf.q6_6lx6_aa6n6 = {
 	name = "Qt6.6.0-Android-arm64-Clang-NDKr26-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
 	qtVersion = "6.6.0",
@@ -5559,6 +5869,44 @@ conf.q6_6lx6_ax6n6 = {
 		-DANDROID_NATIVE_API_LEVEL=27
 		-DANDROID_PLATFORM=27
 		-DANDROID_ABI=x86_64
+	]],
+}
+
+conf.q6_6mal_aa3n6 = {
+	name = "Qt6.6.0-Android-arm-Clang-NDKr26-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
+	qtVersion = "6.6.0",
+	host = "macOSM1",
+	target = "Android-27",
+	toolchainT = "Android-27-r26-arm",
+	opensslConf = "o3_0aa3n627",
+	useCMake = "Latest",
+	androidSdkVersion = "20230224",
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DQT_HOST_PATH=&HOSTQTDIR&
+		-DCMAKE_BUILD_TYPE=Release
+		-DBUILD_SHARED_LIBS=ON
+		-DQT_QMAKE_TARGET_MKSPEC=android-clang
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengles2=ON
+		-DFEATURE_ssl=ON
+		-DINPUT_openssl=linked
+		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&/
+		-DFEATURE_sql_sqlite=ON
+		-DBUILD_qtgrpc=OFF
+		-DBUILD_qtwebengine=OFF
+		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
+		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
+		-DANDROID_NATIVE_API_LEVEL=27
+		-DANDROID_PLATFORM=27
+		-DANDROID_ABI=armeabi-v7a
 	]],
 }
 

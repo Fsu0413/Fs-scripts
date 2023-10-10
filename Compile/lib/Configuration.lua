@@ -71,6 +71,7 @@ conf.host.win = {
 		["1.39.8"] = "D:\\emsdk-1.39.8\\",
 		["2.0.14"] = "D:\\emsdk-2.0.14\\",
 		["3.1.25"] = "D:\\emsdk-3.1.25\\",
+		["3.1.37"] = "D:\\emsdk-3.1.37\\",
 	},
 	["cMakePath"] = {
 		["20"] = {"D:\\cmake-3.20.2-windows-x86_64\\bin", "D:\\ninja"},
@@ -153,6 +154,7 @@ conf.host.linux = {
 		["1.39.8"] = "/opt/env/emsdk-1.39.8/",
 		["2.0.14"] = "/opt/env/emsdk-2.0.14/",
 		["3.1.25"] = "/opt/env/emsdk-3.1.25/",
+		["3.1.37"] = "/opt/env/emsdk-3.1.37/",
 	},
 	["jdkPath"] = {
 		["8"] = "/usr/lib/jvm/java-1.8.0-openjdk",
@@ -219,6 +221,7 @@ conf.host.macM1 = {
 		["1.39.8"] = "/opt/env/emsdk-1.39.8/",
 		["2.0.14"] = "/opt/env/emsdk-2.0.14/",
 		["3.1.25"] = "/opt/env/emsdk-3.1.25/",
+		["3.1.37"] = "/opt/env/emsdk-3.1.37/",
 	},
 	["jdkPath"] = {
 		-- It is said that zulu JDK runs faster on M1 chips...

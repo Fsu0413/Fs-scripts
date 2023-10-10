@@ -5128,6 +5128,44 @@ conf.q6_6wx6v2_wa6v2 = {
 	]],
 }
 
+conf.q6_6wx6p2 = {
+	name = "Qt6.6.0-Windows-x86_64-MinGW&HOSTTOOLVERSION&-ucrt",
+	qtVersion = "6.6.0",
+	host = "Win10",
+	toolchain = "MinGW122u-64",
+	opensslConf = "o3_0wx6p2",
+	mysqlConf = "m3_3wx6p2",
+	useCMake = "20",
+	configureParameter = [[
+		-G"Ninja"
+		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
+		-DBUILD_SHARED_LIBS=ON
+		-DCMAKE_BUILD_TYPE="Release"
+		-DQT_QMAKE_TARGET_MKSPEC=win32-g++
+		-DBUILD_WITH_PCH=ON
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengl_dynamic=ON
+		-DFEATURE_ssl=ON
+		-DFEATURE_openssl=ON
+		-DINPUT_openssl=linked
+		-DOPENSSL_ROOT_DIR=&OPENSSLDIR&
+		-DFEATURE_schannel=ON
+		-DFEATURE_sql_sqlite=ON
+		-DFEATURE_sql_odbc=ON
+		-DFEATURE_sql_mysql=ON
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include\mariadb"
+		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\liblibmariadb.dll.a"
+		-DFEATURE_system_sqlite=OFF
+		-DBUILD_qtgrpc=OFF
+	]],
+}
+
 conf.q6_6wx6g2 = {
 	name = "Qt6.6.0-Windows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
 	qtVersion = "6.6.0",

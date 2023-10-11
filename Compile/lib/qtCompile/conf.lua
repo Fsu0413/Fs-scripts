@@ -4771,7 +4771,7 @@ conf.q6_5wx6g2_ax6n5 = {
 }
 
 conf.q6_5lx6_aa3n5 = {
-	name = "Qt6.5.3-Android-aarm-Clang-NDKr25c-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
+	name = "Qt6.5.3-Android-arm-Clang-NDKr25c-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
 	qtVersion = "6.5.3",
 	host = "Rocky9",
 	target = "Android-27",

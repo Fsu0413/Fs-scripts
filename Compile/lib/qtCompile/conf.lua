@@ -985,7 +985,7 @@ conf.q5_15wx6g8_aalnl = {
 	toolchain = "MinGW810-64",
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-all",
-	opensslConf = "o1_1aalnl",
+	opensslConf = "o3_0aalnl",
 	androidSdkVersion = "20220911",
 	configureParameter = [[
 		-prefix
@@ -1037,7 +1037,7 @@ conf.q5_15lx6_aalnl = {
 	host = "CentOS8",
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-all",
-	opensslConf = "o1_1aalnl",
+	opensslConf = "o3_0aalnl",
 	androidSdkVersion = "20220911",
 	configureParameter = [[
 		-prefix
@@ -1089,7 +1089,7 @@ conf.q5_15mx6_aalnl = {
 	host = "macOS1015",
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-all",
-	opensslConf = "o1_1aalnl",
+	opensslConf = "o3_0aalnl",
 	androidSdkVersion = "20220911",
 	configureParameter = [[
 		-prefix
@@ -1141,7 +1141,7 @@ conf.q5_15ma6_aalnl = {
 	host = "macOSM1",
 	target = "Android-21",
 	toolchainT = "Android-21-r21e-all",
-	opensslConf = "o1_1aalnl",
+	opensslConf = "o3_0aalnl",
 	androidSdkVersion = "20220911",
 	configureParameter = [[
 		-prefix
@@ -1194,7 +1194,7 @@ conf.q5_15wx6g8_aaln3 = {
 	toolchain = "MinGW810-64",
 	target = "Android-21",
 	toolchainT = "Android-21-r23c-all",
-	opensslConf = "o1_1aaln321",
+	opensslConf = "o3_0aaln321",
 	androidSdkVersion = "20220911",
 	configureParameter = [[
 		-prefix
@@ -1246,7 +1246,7 @@ conf.q5_15lx6_aaln3 = {
 	host = "CentOS8",
 	target = "Android-21",
 	toolchainT = "Android-21-r23c-all",
-	opensslConf = "o1_1aaln321",
+	opensslConf = "o3_0aaln321",
 	androidSdkVersion = "20220911",
 	configureParameter = [[
 		-prefix
@@ -1298,7 +1298,7 @@ conf.q5_15mx6_aaln3 = {
 	host = "macOS1015",
 	target = "Android-21",
 	toolchainT = "Android-21-r23c-all",
-	opensslConf = "o1_1aaln321",
+	opensslConf = "o3_0aaln321",
 	androidSdkVersion = "20220911",
 	configureParameter = [[
 		-prefix
@@ -1350,7 +1350,7 @@ conf.q5_15ma6_aaln3 = {
 	host = "macOSM1",
 	target = "Android-21",
 	toolchainT = "Android-21-r23c-all",
-	opensslConf = "o1_1aaln321",
+	opensslConf = "o3_0aaln321",
 	androidSdkVersion = "20220911",
 	configureParameter = [[
 		-prefix

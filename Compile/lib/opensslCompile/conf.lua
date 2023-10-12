@@ -4,8 +4,7 @@ local conf = {}
 --[[
 abbrs:
 	OpenSSL Versions:
-		o1: OpenSSL 1.1.1w
-		o3: OpenSSL 3.0.11
+		o3_0: OpenSSL 3.0.11
 
 	Platforms:
 		w: Windows
@@ -45,216 +44,6 @@ abbrs:
 	Variants:
 		st: Static
 ]]
-
---------------------------------------------------------------------
-
--- OpenSSL 1.1.1w
-
-conf.o1_1aa3nl = {
-	name = "OpenSSL1.1.1w-Android-arm-NDKr21eAPI21",
-	opensslVersion = "1.1.1w",
-	host = "CentOS8",
-	target = "Android-21",
-	toolchainT = "Android-21-r21e-arm",
-	configureParameter = [[
-		no-asm
-		no-shared
-		enable-static-engine
-		--prefix=//
-		--openssldir=//ssl
-		android-arm
-		-D__ANDROID_API__=21
-		-march=armv7-a
-		-mfloat-abi=softfp
-		-mfpu=vfp
-		-fno-builtin-memmove
-		-mthumb
-		-fstack-protector-strong
-		-fPIC
-		-Wl,-s
-		-Wl,-z,noexecstack
-	]],
-}
-
-conf.o1_1aa6nl = {
-	name = "OpenSSL1.1.1w-Android-arm64-NDKr21eAPI21",
-	opensslVersion = "1.1.1w",
-	host = "CentOS8",
-	target = "Android-21",
-	toolchainT = "Android-21-r21e-arm64",
-	configureParameter = [[
-		no-asm
-		no-shared
-		enable-static-engine
-		--prefix=//
-		--openssldir=//ssl
-		android-arm64
-		-D__ANDROID_API__=21
-		-fstack-protector-strong
-		-fPIC
-		-Wl,-s
-		-Wl,-z,noexecstack
-	]],
-}
-
-conf.o1_1ax3nl = {
-	name = "OpenSSL1.1.1w-Android-x86-NDKr21eAPI21",
-	opensslVersion = "1.1.1w",
-	host = "CentOS8",
-	target = "Android-21",
-	toolchainT = "Android-21-r21e-x86",
-	configureParameter = [[
-		no-asm
-		no-shared
-		enable-static-engine
-		--prefix=//
-		--openssldir=//ssl
-		android-x86
-		-D__ANDROID_API__=21
-		-fstack-protector-strong
-		-fPIC
-		-Wl,-s
-		-Wl,-z,noexecstack
-	]],
-}
-
-conf.o1_1ax6nl = {
-	name = "OpenSSL1.1.1w-Android-x86_64-NDKr21eAPI21",
-	opensslVersion = "1.1.1w",
-	host = "CentOS8",
-	target = "Android-21",
-	toolchainT = "Android-21-r21e-x86_64",
-	configureParameter = [[
-		no-asm
-		no-shared
-		enable-static-engine
-		--prefix=//
-		--openssldir=//ssl
-		android-x86_64
-		-D__ANDROID_API__=21
-		-fstack-protector-strong
-		-fPIC
-		-Wl,-s
-		-Wl,-z,noexecstack
-	]],
-}
-
-conf.o1_1aalnl = {
-	name = "OpenSSL1.1.1w-Android-ALL-NDKr21eAPI21",
-	opensslVersion = "1.1.1w",
-	host = "CentOS8",
-	opensslUnifyType = "Android",
-	opensslUnifyArch = {
-		["armeabi-v7a"] = "o1_1aa3nl",
-		["arm64-v8a"] = "o1_1aa6nl",
-		["x86"] = "o1_1ax3nl",
-		["x86_64"] = "o1_1ax6nl",
-	},
-}
-
---------------------------------------------------------------------
-
-conf.o1_1aa3n321 = {
-	name = "OpenSSL1.1.1w-Android-arm-NDKr23cAPI21",
-	opensslVersion = "1.1.1w",
-	host = "CentOS8",
-	target = "Android-21",
-	toolchainT = "Android-21-r23c-arm",
-	configureParameter = [[
-		no-asm
-		no-shared
-		enable-static-engine
-		--prefix=//
-		--openssldir=//ssl
-		android-arm
-		-D__ANDROID_API__=21
-		-march=armv7-a
-		-mfloat-abi=softfp
-		-mfpu=vfp
-		-fno-builtin-memmove
-		-mthumb
-		-fstack-protector-strong
-		-fPIC
-		-Wl,-s
-		-Wl,-z,noexecstack
-	]],
-}
-
-conf.o1_1aa6n321 = {
-	name = "OpenSSL1.1.1w-Android-arm64-NDKr23cAPI21",
-	opensslVersion = "1.1.1w",
-	host = "CentOS8",
-	target = "Android-21",
-	toolchainT = "Android-21-r23c-arm64",
-	configureParameter = [[
-		no-asm
-		no-shared
-		enable-static-engine
-		--prefix=//
-		--openssldir=//ssl
-		android-arm64
-		-D__ANDROID_API__=21
-		-fstack-protector-strong
-		-fPIC
-		-Wl,-s
-		-Wl,-z,noexecstack
-	]],
-}
-
-conf.o1_1ax3n321 = {
-	name = "OpenSSL1.1.1w-Android-x86-NDKr23cAPI21",
-	opensslVersion = "1.1.1w",
-	host = "CentOS8",
-	target = "Android-21",
-	toolchainT = "Android-21-r23c-x86",
-	configureParameter = [[
-		no-asm
-		no-shared
-		enable-static-engine
-		--prefix=//
-		--openssldir=//ssl
-		android-x86
-		-D__ANDROID_API__=21
-		-fstack-protector-strong
-		-fPIC
-		-Wl,-s
-		-Wl,-z,noexecstack
-	]],
-}
-
-conf.o1_1ax6n321 = {
-	name = "OpenSSL1.1.1w-Android-x86_64-NDKr23cAPI21",
-	opensslVersion = "1.1.1w",
-	host = "CentOS8",
-	target = "Android-21",
-	toolchainT = "Android-21-r23c-x86_64",
-	configureParameter = [[
-		no-asm
-		no-shared
-		enable-static-engine
-		--prefix=//
-		--openssldir=//ssl
-		android-x86_64
-		-D__ANDROID_API__=21
-		-fstack-protector-strong
-		-fPIC
-		-Wl,-s
-		-Wl,-z,noexecstack
-	]],
-}
-
-conf.o1_1aaln321 = {
-	name = "OpenSSL1.1.1w-Android-ALL-NDKr23cAPI21",
-	opensslVersion = "1.1.1w",
-	host = "CentOS8",
-	opensslUnifyType = "Android",
-	opensslUnifyArch = {
-		["armeabi-v7a"] = "o1_1aa3n321",
-		["arm64-v8a"] = "o1_1aa6n321",
-		["x86"] = "o1_1ax3n321",
-		["x86_64"] = "o1_1ax6n321",
-	},
-}
 
 --------------------------------------------------------------------
 
@@ -676,6 +465,214 @@ conf.o3_0mal = {
 	opensslUnifyArch = {
 		["arm64"] = "o3_0ma6",
 		["x86_64"] = "o3_0mx6",
+	},
+}
+
+--------------------------------------------------------------------
+
+conf.o3_0aa3nl = {
+	name = "OpenSSL3.0.11-Android-arm-NDKr21eAPI21",
+	opensslVersion = "3.0.11",
+	host = "CentOS8",
+	target = "Android-21",
+	toolchainT = "Android-21-r21e-arm",
+	configureParameter = [[
+		no-asm
+		no-shared
+		enable-static-engine
+		--prefix=//
+		--openssldir=//ssl
+		android-arm
+		-D__ANDROID_API__=21
+		-march=armv7-a
+		-mfloat-abi=softfp
+		-mfpu=vfp
+		-fno-builtin-memmove
+		-mthumb
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
+}
+
+conf.o3_0aa6nl = {
+	name = "OpenSSL3.0.11-Android-arm64-NDKr21eAPI21",
+	opensslVersion = "3.0.11",
+	host = "CentOS8",
+	target = "Android-21",
+	toolchainT = "Android-21-r21e-arm64",
+	configureParameter = [[
+		no-asm
+		no-shared
+		enable-static-engine
+		--prefix=//
+		--openssldir=//ssl
+		android-arm64
+		-D__ANDROID_API__=21
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
+}
+
+conf.o3_0ax3nl = {
+	name = "OpenSSL3.0.11-Android-x86-NDKr21eAPI21",
+	opensslVersion = "3.0.11",
+	host = "CentOS8",
+	target = "Android-21",
+	toolchainT = "Android-21-r21e-x86",
+	configureParameter = [[
+		no-asm
+		no-shared
+		enable-static-engine
+		--prefix=//
+		--openssldir=//ssl
+		android-x86
+		-D__ANDROID_API__=21
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
+}
+
+conf.o3_0ax6nl = {
+	name = "OpenSSL3.0.11-Android-x86_64-NDKr21eAPI21",
+	opensslVersion = "3.0.11",
+	host = "CentOS8",
+	target = "Android-21",
+	toolchainT = "Android-21-r21e-x86_64",
+	configureParameter = [[
+		no-asm
+		no-shared
+		enable-static-engine
+		--prefix=//
+		--openssldir=//ssl
+		android-x86_64
+		-D__ANDROID_API__=21
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
+}
+
+conf.o3_0aalnl = {
+	name = "OpenSSL3.0.11-Android-ALL-NDKr21eAPI21",
+	opensslVersion = "3.0.11",
+	host = "CentOS8",
+	opensslUnifyType = "Android",
+	opensslUnifyArch = {
+		["armeabi-v7a"] = "o1_1aa3nl",
+		["arm64-v8a"] = "o1_1aa6nl",
+		["x86"] = "o1_1ax3nl",
+		["x86_64"] = "o1_1ax6nl",
+	},
+}
+
+--------------------------------------------------------------------
+
+conf.o3_0aa3n321 = {
+	name = "OpenSSL3.0.11-Android-arm-NDKr23cAPI21",
+	opensslVersion = "3.0.11",
+	host = "CentOS8",
+	target = "Android-21",
+	toolchainT = "Android-21-r23c-arm",
+	configureParameter = [[
+		no-asm
+		no-shared
+		enable-static-engine
+		--prefix=//
+		--openssldir=//ssl
+		android-arm
+		-D__ANDROID_API__=21
+		-march=armv7-a
+		-mfloat-abi=softfp
+		-mfpu=vfp
+		-fno-builtin-memmove
+		-mthumb
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
+}
+
+conf.o3_0aa6n321 = {
+	name = "OpenSSL3.0.11-Android-arm64-NDKr23cAPI21",
+	opensslVersion = "3.0.11",
+	host = "CentOS8",
+	target = "Android-21",
+	toolchainT = "Android-21-r23c-arm64",
+	configureParameter = [[
+		no-asm
+		no-shared
+		enable-static-engine
+		--prefix=//
+		--openssldir=//ssl
+		android-arm64
+		-D__ANDROID_API__=21
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
+}
+
+conf.o3_0ax3n321 = {
+	name = "OpenSSL3.0.11-Android-x86-NDKr23cAPI21",
+	opensslVersion = "3.0.11",
+	host = "CentOS8",
+	target = "Android-21",
+	toolchainT = "Android-21-r23c-x86",
+	configureParameter = [[
+		no-asm
+		no-shared
+		enable-static-engine
+		--prefix=//
+		--openssldir=//ssl
+		android-x86
+		-D__ANDROID_API__=21
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
+}
+
+conf.o3_0ax6n321 = {
+	name = "OpenSSL3.0.11-Android-x86_64-NDKr23cAPI21",
+	opensslVersion = "3.0.11",
+	host = "CentOS8",
+	target = "Android-21",
+	toolchainT = "Android-21-r23c-x86_64",
+	configureParameter = [[
+		no-asm
+		no-shared
+		enable-static-engine
+		--prefix=//
+		--openssldir=//ssl
+		android-x86_64
+		-D__ANDROID_API__=21
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
+}
+
+conf.o3_0aaln321 = {
+	name = "OpenSSL3.0.11-Android-ALL-NDKr23cAPI21",
+	opensslVersion = "3.0.11",
+	host = "CentOS8",
+	opensslUnifyType = "Android",
+	opensslUnifyArch = {
+		["armeabi-v7a"] = "o1_1aa3n321",
+		["arm64-v8a"] = "o1_1aa6n321",
+		["x86"] = "o1_1ax3n321",
+		["x86_64"] = "o1_1ax6n321",
 	},
 }
 

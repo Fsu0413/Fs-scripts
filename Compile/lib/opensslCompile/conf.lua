@@ -565,10 +565,10 @@ conf.o3_0aalnl = {
 	host = "CentOS8",
 	opensslUnifyType = "Android",
 	opensslUnifyArch = {
-		["armeabi-v7a"] = "o1_1aa3nl",
-		["arm64-v8a"] = "o1_1aa6nl",
-		["x86"] = "o1_1ax3nl",
-		["x86_64"] = "o1_1ax6nl",
+		["armeabi-v7a"] = "o3_0aa3nl",
+		["arm64-v8a"] = "o3_0aa6nl",
+		["x86"] = "o3_0ax3nl",
+		["x86_64"] = "o3_0ax6nl",
 	},
 }
 
@@ -669,10 +669,10 @@ conf.o3_0aaln321 = {
 	host = "CentOS8",
 	opensslUnifyType = "Android",
 	opensslUnifyArch = {
-		["armeabi-v7a"] = "o1_1aa3n321",
-		["arm64-v8a"] = "o1_1aa6n321",
-		["x86"] = "o1_1ax3n321",
-		["x86_64"] = "o1_1ax6n321",
+		["armeabi-v7a"] = "o3_0aa3n321",
+		["arm64-v8a"] = "o3_0aa6n321",
+		["x86"] = "o3_0ax3n321",
+		["x86_64"] = "o3_0ax6n321",
 	},
 }
 

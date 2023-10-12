@@ -6094,7 +6094,7 @@ conf.q6_6malst = {
 }
 
 conf.q6_6wx6g2_aa3n6 = {
-	name = "Qt6.6.0-Android-arm6Clang-NDKr26-xWindows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
+	name = "Qt6.6.0-Android-arm-Clang-NDKr26-xWindows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
 	qtVersion = "6.6.0",
 	host = "Win10",
 	target = "Android-27",

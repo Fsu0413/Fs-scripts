@@ -479,6 +479,7 @@ conf.o3_0aa3nl = {
 	configureParameter = [[
 		no-asm
 		no-shared
+		no-threads
 		enable-static-engine
 		--prefix=//
 		--openssldir=//ssl
@@ -505,6 +506,7 @@ conf.o3_0aa6nl = {
 	configureParameter = [[
 		no-asm
 		no-shared
+		no-threads
 		enable-static-engine
 		--prefix=//
 		--openssldir=//ssl
@@ -526,6 +528,7 @@ conf.o3_0ax3nl = {
 	configureParameter = [[
 		no-asm
 		no-shared
+		no-threads
 		enable-static-engine
 		--prefix=//
 		--openssldir=//ssl
@@ -547,6 +550,7 @@ conf.o3_0ax6nl = {
 	configureParameter = [[
 		no-asm
 		no-shared
+		no-threads
 		enable-static-engine
 		--prefix=//
 		--openssldir=//ssl
@@ -583,6 +587,7 @@ conf.o3_0aa3n321 = {
 	configureParameter = [[
 		no-asm
 		no-shared
+		no-threads
 		enable-static-engine
 		--prefix=//
 		--openssldir=//ssl
@@ -609,6 +614,7 @@ conf.o3_0aa6n321 = {
 	configureParameter = [[
 		no-asm
 		no-shared
+		no-threads
 		enable-static-engine
 		--prefix=//
 		--openssldir=//ssl
@@ -630,6 +636,7 @@ conf.o3_0ax3n321 = {
 	configureParameter = [[
 		no-asm
 		no-shared
+		no-threads
 		enable-static-engine
 		--prefix=//
 		--openssldir=//ssl
@@ -651,6 +658,7 @@ conf.o3_0ax6n321 = {
 	configureParameter = [[
 		no-asm
 		no-shared
+		no-threads
 		enable-static-engine
 		--prefix=//
 		--openssldir=//ssl
@@ -687,6 +695,7 @@ conf.o3_0aa3n324 = {
 	configureParameter = [[
 		no-asm
 		no-shared
+		no-threads
 		enable-static-engine
 		--prefix=//
 		--openssldir=//ssl
@@ -713,6 +722,7 @@ conf.o3_0aa6n324 = {
 	configureParameter = [[
 		no-asm
 		no-shared
+		no-threads
 		enable-static-engine
 		--prefix=//
 		--openssldir=//ssl
@@ -734,6 +744,7 @@ conf.o3_0ax3n324 = {
 	configureParameter = [[
 		no-asm
 		no-shared
+		no-threads
 		enable-static-engine
 		--prefix=//
 		--openssldir=//ssl
@@ -755,6 +766,7 @@ conf.o3_0ax6n324 = {
 	configureParameter = [[
 		no-asm
 		no-shared
+		no-threads
 		enable-static-engine
 		--prefix=//
 		--openssldir=//ssl
@@ -790,6 +802,7 @@ conf.o3_0aa3n527 = {
 	configureParameter = [[
 		no-asm
 		no-shared
+		no-threads
 		enable-static-engine
 		--prefix=//
 		--openssldir=//ssl
@@ -816,6 +829,7 @@ conf.o3_0aa6n527 = {
 	configureParameter = [[
 		no-asm
 		no-shared
+		no-threads
 		enable-static-engine
 		--prefix=//
 		--openssldir=//ssl
@@ -837,6 +851,7 @@ conf.o3_0ax3n527 = {
 	configureParameter = [[
 		no-asm
 		no-shared
+		no-threads
 		enable-static-engine
 		--prefix=//
 		--openssldir=//ssl
@@ -858,6 +873,7 @@ conf.o3_0ax6n527 = {
 	configureParameter = [[
 		no-asm
 		no-shared
+		no-threads
 		enable-static-engine
 		--prefix=//
 		--openssldir=//ssl
@@ -894,6 +910,7 @@ conf.o3_0aa3n627 = {
 	configureParameter = [[
 		no-asm
 		no-shared
+		no-threads
 		enable-static-engine
 		--prefix=//
 		--openssldir=//ssl
@@ -920,6 +937,7 @@ conf.o3_0aa6n627 = {
 	configureParameter = [[
 		no-asm
 		no-shared
+		no-threads
 		enable-static-engine
 		--prefix=//
 		--openssldir=//ssl
@@ -941,6 +959,7 @@ conf.o3_0ax3n627 = {
 	configureParameter = [[
 		no-asm
 		no-shared
+		no-threads
 		enable-static-engine
 		--prefix=//
 		--openssldir=//ssl
@@ -962,6 +981,7 @@ conf.o3_0ax6n627 = {
 	configureParameter = [[
 		no-asm
 		no-shared
+		no-threads
 		enable-static-engine
 		--prefix=//
 		--openssldir=//ssl

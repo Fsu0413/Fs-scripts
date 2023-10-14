@@ -24,7 +24,6 @@ abbrs:
 		v7: VS2017
 		v9: VS2019
 		v2: VS2022
-		g7: MinGW-w64, with GCC 7.3.0
 		g8: MinGW-w64, with GCC 8.1.0
 		g1: MinGW-w64, with GCC 11.2.0
 		g2: MinGW-w64, msvcrt, with GCC 12.2.0

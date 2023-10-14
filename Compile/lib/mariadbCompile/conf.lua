@@ -636,6 +636,7 @@ conf.m3_3mal = {
 		-DWITH_SSL=OFF
 		-DCMAKE_C_FLAGS=-Wno-implicit-function-declaration
 		-DCMAKE_OSX_ARCHITECTURES="x86_64;arm64"
+		-DCMAKE_OSX_DEPLOYMENT_TARGET="10.14"
 	]],
 }
 

@@ -405,7 +405,7 @@ conf.Qt.generateConfTable = function(self, host, job, buildTime)
 		end
 	end
 
-	if jobConfigureDetail.includeDecprecatedOdbcHeader then
+	if jobConfigureDetail.includeDeprecatedOdbcHeader then
 		table.insert(ret.download, "http://172.24.13.6/webdav/sources/iodbc-42-headers.tar.gz")
 		commandLineReplacement.ODBCPREFIX = ret.WORKSPACE .. configureHost.pathSep .. "buildDir" .. configureHost.pathSep .. "iodbc"
 	end

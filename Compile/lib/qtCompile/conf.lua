@@ -860,6 +860,7 @@ conf.q5_15mal = {
 	qtVersion = "5.15.11-4",
 	host = "macOSM1",
 	mysqlConf = "m3_1mal",
+	includeDeprecatedOdbcHeader = true,
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -884,7 +885,9 @@ conf.q5_15mal = {
 		-no-openssl
 		-securetransport
 		-sql-sqlite
+		-sql-odbc
 		-sql-mysql
+		"ODBC_PREFIX=&ODBCPREFIX&"
 		"MYSQL_INCDIR=&MYSQLPREFIX&/include/mariadb"
 		"MYSQL_LIBDIR=&MYSQLPREFIX&/lib/mariadb"
 		-make-tool
@@ -902,6 +905,7 @@ conf.q5_15malnf = {
 	host = "macOSM1",
 	variant = {"-noFramework"},
 	mysqlConf = "m3_1mal",
+	includeDeprecatedOdbcHeader = true,
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -926,7 +930,9 @@ conf.q5_15malnf = {
 		-no-openssl
 		-securetransport
 		-sql-sqlite
+		-sql-odbc
 		-sql-mysql
+		"ODBC_PREFIX=&ODBCPREFIX&"
 		"MYSQL_INCDIR=&MYSQLPREFIX&/include/mariadb"
 		"MYSQL_LIBDIR=&MYSQLPREFIX&/lib/mariadb"
 		-make-tool

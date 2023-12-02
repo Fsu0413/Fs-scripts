@@ -25,23 +25,14 @@ conf.host.win = {
 		["MSVC2015-32"] = "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\bin\\amd64_x86\\vcvarsamd64_x86.bat",
 		["MSVC2015-64"] = "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\bin\\amd64\\vcvars64.bat",
 
-		-- MSVC toolchains with Clang / LLVM, currently not used
-		-- use official LLVM prebuilt binary
-		["MSVC2019LLVM-64"] = {"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Auxiliary\\Build\\vcvars64.bat", "D:\\LLVM\\bin", "D:\\gnuwin32\\bin"},
-
-		-- MSVC2017 toolchains ARM64, currently not used
-		["MSVC2017-arm64"] = "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Auxiliary\\Build\\vcvarsamd64_arm64.bat",
-
 		-- MinGW toolchains with GCC / Binutils, only path
-		["MinGW730-32"] = "D:\\mingw-w64\\7.3.0\\mingw32\\bin",
-		["MinGW730-64"] = "D:\\mingw-w64\\7.3.0\\mingw64\\bin",
 		["MinGW810-32"] = "D:\\mingw-w64\\8.1.0\\mingw32\\bin",
 		["MinGW810-64"] = "D:\\mingw-w64\\8.1.0\\mingw64\\bin",
 		["MinGW1120-64"] = "D:\\mingw-w64\\11.2.0-4\\mingw64\\bin",
 		["MinGW1220-64"] = "D:\\mingw-w64\\12.2.0\\mingw64\\bin",
 		["MinGW122u-64"] = "D:\\mingw-w64\\12.2.0u\\mingw64\\bin",
-		["MinGW1320-64"] = "D:\\mingw-w64\\13.2.0\\mingw64\\bin",
-		["MinGW132u-64"] = "D:\\mingw-w64\\13.2.0u\\mingw64\\bin",
+		["MinGW1320-64"] = "D:\\mingw-w64\\13.2.1\\mingw64\\bin",
+		["MinGW132u-64"] = "D:\\mingw-w64\\13.2.1u\\mingw64\\bin",
 
 		-- MinGW toolchains with Clang / LLVM, currently used in Qt 6 only
 		-- LLVM always acts as an cross compiler, but the target libraries are architecture-dependent
@@ -56,7 +47,6 @@ conf.host.win = {
 	["sourcePackagePath"] = "D:\\Qt\\",
 	["buildRootPath"] = "D:\\Qt\\", -- On Windows, the build root should be same with source package
 	["androidSdkPath"] = {
-		["29"] = "D:\\android-sdk-windows",
 		["20220911"] = "D:\\android-sdk-windows-20220911",
 		["20230224"] = "D:\\android-sdk-windows-20230224",
 	},
@@ -98,15 +88,13 @@ conf.host.msys = {
 	["makefileTemplate"] = "unix",
 	["pathSep"] = '/',
 	["toolchainPath"] = {
-		["MinGW730-32"] = "/d/mingw-w64/7.3.0/mingw32/bin/",
-		["MinGW730-64"] = "/d/mingw-w64/7.3.0/mingw64/bin/",
 		["MinGW810-32"] = "/d/mingw-w64/8.1.0/mingw32/bin/",
 		["MinGW810-64"] = "/d/mingw-w64/8.1.0/mingw64/bin/",
 		["MinGW1120-64"] = "/d/mingw-w64/11.2.0-4/mingw64/bin/",
 		["MinGW1220-64"] = "/d/mingw-w64/12.2.0/mingw64/bin/",
 		["MinGW122u-64"] = "/d/mingw-w64/12.2.0u/mingw64/bin/",
-		["MinGW1320-64"] = "/d/mingw-w64/13.2.0/mingw64/bin/",
-		["MinGW132u-64"] = "/d/mingw-w64/13.2.0u/mingw64/bin/",
+		["MinGW1320-64"] = "/d/mingw-w64/13.2.1/mingw64/bin/",
+		["MinGW132u-64"] = "/d/mingw-w64/13.2.1u/mingw64/bin/",
 
 		["MinGWLLVM-msvcrt15-64"] = {"/d/mingw-w64/llvm-mingw-20220906-msvcrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20220906-msvcrt-x86_64/bin"},
 		["MinGWLLVM-ucrt15-64"] = {"/d/mingw-w64/llvm-mingw-20220906-ucrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20220906-ucrt-x86_64/bin"},
@@ -137,7 +125,6 @@ conf.host.linux = {
 	["makefileTemplate"] = "unix",
 	["pathSep"] = '/',
 	["androidSdkPath"] = {
-		["29"] = "/opt/env/android-sdk-linux/",
 		["20220911"] = "/opt/env/android-sdk-linux-20220911/",
 		["20230224"] = "/opt/env/android-sdk-linux-20230224/",
 	},
@@ -212,7 +199,7 @@ conf.host.macM1 = {
 		["r21e"] = "/Applications/AndroidNDK7075529.app/Contents/NDK/",
 		["r23c"] = "/Applications/AndroidNDK8568313.app/Contents/NDK/",
 		["r25c"] = "/Applications/AndroidNDK9519653.app/Contents/NDK/",
-		["r26b"] = "/Applications/AndroidNDK10792818.app/Contents/NDK/",
+		["r26b"] = "/Applications/AndroidNDK10909125.app/Contents/NDK/",
 	},
 	["androidNdkHost"] = "darwin-x86_64",
 	["sourcePackagePath"] = "/opt/sources/",
@@ -228,39 +215,6 @@ conf.host.macM1 = {
 		-- If not I'll use OpenJDK from Homebrew later
 		["8"] = "/opt/env/jdk-8/zulu8.70.0.23-ca-jdk8.0.372-macosx_aarch64/zulu-8.jdk/Contents/Home/",
 		["11"] = "/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home/",
-	},
-	["defaultToolchainExecutableName"] = "clang",
-}
-
-conf.host.macLegacy = {
-	-- Preinstalled GNU make in path and is used
-	-- Preinstalled Android-NDK/SDK toolchain
-	-- Preinstalled emsdk toolchain
-	-- Preinstalled host toolchain in path and is used
-	-- Preinstalled p7zip in path and is used
-	["makefileTemplate"] = "unix",
-	["pathSep"] = '/',
-	["androidSdkPath"] = {
-		["29"] = "/Volumes/opt/env/android-sdk-mac-2/",
-		["20220911"] = "/Volumes/opt/env/android-sdk-mac-20220911/",
-		["20230224"] = "/Volumes/opt/env/android-sdk-mac-20230224/",
-	},
-	["androidNdkPath"] = {
-		["r21e"] = "/Volumes/opt/env/android-ndk-r21e/",
-		-- NDK after r23 only distributes as APP bundle, so we install the APP in /Applications.
-		["r23c"] = "/Applications/AndroidNDK8568313.app/Contents/NDK/",
-	},
-	["androidNdkHost"] = "darwin-x86_64",
-	["sourcePackagePath"] = "/Volumes/opt/sources/",
-	-- I'd like to link build folder to /opt/build but I remembered that Qt doesn't allow symlink in build dir before...
-	-- If the link works there will be no need to distinguish mac and macLegacy
-	["buildRootPath"] = "/Volumes/opt/build/",
-	["emscriptenPath"] = {
-		["1.39.8"] = "/opt/env/emsdk-1.39.8/",
-	},
-	["jdkPath"] = {
-		["8"] = "/usr/local/opt/openjdk@8/",
-		["11"] = "/usr/local/opt/java11/",
 	},
 	["defaultToolchainExecutableName"] = "clang",
 }
@@ -934,7 +888,6 @@ conf.hostToConfMap = {
 	["CentOS8"] = "linux",
 	["Rocky9"] = "linux",
 	["macOS1015"] = "mac",
-	["macOSLegacy"] = "macLegacy",
 	["macOSM1"] = "macM1",
 }
 

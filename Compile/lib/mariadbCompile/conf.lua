@@ -282,7 +282,7 @@ conf.m3_1mal = {
 		-DCLIENT_PLUGIN_MYSQL_CLEAR_PASSWORD=STATIC
 		-DCLIENT_PLUGIN_REMOTE_IO=STATIC
 		-DWITH_SSL=OFF
-		-DCMAKE_C_FLAGS=-Wno-implicit-function-declaration
+		-DCMAKE_C_FLAGS="-Wno-implicit-function-declaration -Wno-deprecated-non-prototype"
 		-DCMAKE_OSX_ARCHITECTURES="x86_64;arm64"
 		-DCMAKE_OSX_DEPLOYMENT_TARGET="10.13"
 	]],
@@ -658,7 +658,7 @@ conf.m3_3mal = {
 		-DCLIENT_PLUGIN_REMOTE_IO=STATIC
 		-DWARNING_AS_ERROR=
 		-DWITH_SSL=OFF
-		-DCMAKE_C_FLAGS=-Wno-implicit-function-declaration
+		-DCMAKE_C_FLAGS="-Wno-implicit-function-declaration -Wno-deprecated-non-prototype"
 		-DCMAKE_OSX_ARCHITECTURES="x86_64;arm64"
 		-DCMAKE_OSX_DEPLOYMENT_TARGET="10.14"
 	]],

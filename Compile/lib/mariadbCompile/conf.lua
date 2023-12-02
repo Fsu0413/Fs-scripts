@@ -51,6 +51,7 @@ conf.m3_1wx3v5 = {
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
 	configureParameter = [[
 		-GNinja
+		-DCMAKE_C_STANDARD=11
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
 		-DCMAKE_BUILD_TYPE="Release"
 		-DCLIENT_PLUGIN_DIALOG=STATIC
@@ -74,6 +75,7 @@ conf.m3_1wx6v5 = {
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
 	configureParameter = [[
 		-GNinja
+		-DCMAKE_C_STANDARD=11
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
 		-DCMAKE_BUILD_TYPE="Release"
 		-DCLIENT_PLUGIN_DIALOG=STATIC
@@ -97,6 +99,7 @@ conf.m3_1wx3v7 = {
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
 	configureParameter = [[
 		-GNinja
+		-DCMAKE_C_STANDARD=11
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
 		-DCMAKE_BUILD_TYPE="Release"
 		-DCLIENT_PLUGIN_DIALOG=STATIC
@@ -120,6 +123,7 @@ conf.m3_1wx6v7 = {
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
 	configureParameter = [[
 		-GNinja
+		-DCMAKE_C_STANDARD=11
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
 		-DCMAKE_BUILD_TYPE="Release"
 		-DCLIENT_PLUGIN_DIALOG=STATIC
@@ -143,6 +147,7 @@ conf.m3_1wx3v9 = {
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
 	configureParameter = [[
 		-GNinja
+		-DCMAKE_C_STANDARD=11
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
 		-DCMAKE_BUILD_TYPE="Release"
 		-DCLIENT_PLUGIN_DIALOG=STATIC
@@ -166,6 +171,7 @@ conf.m3_1wx6v9 = {
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
 	configureParameter = [[
 		-GNinja
+		-DCMAKE_C_STANDARD=11
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
 		-DCMAKE_BUILD_TYPE="Release"
 		-DCLIENT_PLUGIN_DIALOG=STATIC
@@ -189,6 +195,7 @@ conf.m3_1wx6v2 = {
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
 	configureParameter = [[
 		-GNinja
+		-DCMAKE_C_STANDARD=11
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
 		-DCMAKE_BUILD_TYPE="Release"
 		-DCLIENT_PLUGIN_DIALOG=STATIC
@@ -215,6 +222,7 @@ conf.m3_1wx3g8 = {
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
 	configureParameter = [[
 		-GNinja
+		-DCMAKE_C_STANDARD=11
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
 		-DCMAKE_BUILD_TYPE="Release"
 		-DCLIENT_PLUGIN_DIALOG=STATIC
@@ -238,6 +246,7 @@ conf.m3_1wx6g8 = {
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
 	configureParameter = [[
 		-GNinja
+		-DCMAKE_C_STANDARD=11
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
 		-DCMAKE_BUILD_TYPE="Release"
 		-DCLIENT_PLUGIN_DIALOG=STATIC
@@ -262,6 +271,7 @@ conf.m3_1mal = {
 	libPath = { "lib/mariadb/libmariadb.3.dylib" },
 	configureParameter = [[
 		-GNinja
+		-DCMAKE_C_STANDARD=11
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
 		-DCMAKE_BUILD_TYPE="Release"
 		-DCLIENT_PLUGIN_DIALOG=STATIC
@@ -290,6 +300,7 @@ conf.m3_3wx6v9 = {
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
 	configureParameter = [[
 		-GNinja
+		-DCMAKE_C_STANDARD=11
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
 		-DCMAKE_BUILD_TYPE="Release"
 		-DCLIENT_PLUGIN_DIALOG=STATIC
@@ -314,6 +325,7 @@ conf.m3_3wx6v2 = {
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
 	configureParameter = [[
 		-GNinja
+		-DCMAKE_C_STANDARD=11
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
 		-DCMAKE_BUILD_TYPE="Release"
 		-DCLIENT_PLUGIN_DIALOG=STATIC
@@ -340,6 +352,7 @@ conf.m3_3wx6g1 = {
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
 	configureParameter = [[
 		-GNinja
+		-DCMAKE_C_STANDARD=11
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
 		-DCMAKE_BUILD_TYPE="Release"
 		-DCLIENT_PLUGIN_DIALOG=STATIC
@@ -364,6 +377,7 @@ conf.m3_3wx6p2 = {
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
 	configureParameter = [[
 		-GNinja
+		-DCMAKE_C_STANDARD=11
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
 		-DCMAKE_BUILD_TYPE="Release"
 		-DCLIENT_PLUGIN_DIALOG=STATIC
@@ -388,6 +402,7 @@ conf.m3_3wx6g2 = {
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
 	configureParameter = [[
 		-GNinja
+		-DCMAKE_C_STANDARD=11
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
 		-DCMAKE_BUILD_TYPE="Release"
 		-DCLIENT_PLUGIN_DIALOG=STATIC
@@ -412,6 +427,7 @@ conf.m3_3wx6p3 = {
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
 	configureParameter = [[
 		-GNinja
+		-DCMAKE_C_STANDARD=11
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
 		-DCMAKE_BUILD_TYPE="Release"
 		-DCLIENT_PLUGIN_DIALOG=STATIC
@@ -436,6 +452,7 @@ conf.m3_3wx6g3 = {
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
 	configureParameter = [[
 		-GNinja
+		-DCMAKE_C_STANDARD=11
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
 		-DCMAKE_BUILD_TYPE="Release"
 		-DCLIENT_PLUGIN_DIALOG=STATIC
@@ -462,6 +479,7 @@ conf.m3_3wx6u5 = {
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
 	configureParameter = [[
 		-GNinja
+		-DCMAKE_C_STANDARD=11
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
 		-DCMAKE_BUILD_TYPE="Release"
 		-DCLIENT_PLUGIN_DIALOG=STATIC
@@ -488,6 +506,7 @@ conf.m3_3wx6s5 = {
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
 	configureParameter = [[
 		-GNinja
+		-DCMAKE_C_STANDARD=11
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
 		-DCMAKE_BUILD_TYPE="Release"
 		-DCLIENT_PLUGIN_DIALOG=STATIC
@@ -516,6 +535,7 @@ conf.m3_3wx6u6 = {
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
 	configureParameter = [[
 		-GNinja
+		-DCMAKE_C_STANDARD=11
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
 		-DCMAKE_BUILD_TYPE="Release"
 		-DCLIENT_PLUGIN_DIALOG=STATIC
@@ -542,6 +562,7 @@ conf.m3_3wx6s6 = {
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
 	configureParameter = [[
 		-GNinja
+		-DCMAKE_C_STANDARD=11
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
 		-DCMAKE_BUILD_TYPE="Release"
 		-DCLIENT_PLUGIN_DIALOG=STATIC
@@ -570,6 +591,7 @@ conf.m3_3wx6u7 = {
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
 	configureParameter = [[
 		-GNinja
+		-DCMAKE_C_STANDARD=11
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
 		-DCMAKE_BUILD_TYPE="Release"
 		-DCLIENT_PLUGIN_DIALOG=STATIC
@@ -596,6 +618,7 @@ conf.m3_3wx6s7 = {
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
 	configureParameter = [[
 		-GNinja
+		-DCMAKE_C_STANDARD=11
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
 		-DCMAKE_BUILD_TYPE="Release"
 		-DCLIENT_PLUGIN_DIALOG=STATIC
@@ -623,6 +646,7 @@ conf.m3_3mal = {
 	libPath = { "lib/mariadb/libmariadb.3.dylib" },
 	configureParameter = [[
 		-GNinja
+		-DCMAKE_C_STANDARD=11
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
 		-DCMAKE_BUILD_TYPE="Release"
 		-DCLIENT_PLUGIN_DIALOG=STATIC

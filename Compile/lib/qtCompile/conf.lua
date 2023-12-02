@@ -46,7 +46,7 @@ abbrs:
 		nl: Android NDK r21e/Previous LTS
 		n3: Android NDK r23c/Previous LTS
 		n5: Android NDK r25c/Previous LTS
-		n6: Android NDK r26/Latest LTS
+		n6: Android NDK r26b/Latest LTS
 	If omitted, it use a toolchain in default PATH, which should be AppleClang in macOS, or GCC in Linux.
 
 	Variants:
@@ -5021,12 +5021,12 @@ conf.q6_5mal_ax6n5 = {
 }
 
 conf.q6_5wx6g2_aa3n6 = {
-	name = "Qt6.5.3-Android-arm-Clang-NDKr26-xWindows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
+	name = "Qt6.5.3-Android-arm-Clang-NDKr26b-xWindows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
 	qtVersion = "6.5.3",
 	host = "Win10",
 	target = "Android-27",
 	toolchain = "MinGW1220-64",
-	toolchainT = "Android-27-r26-arm",
+	toolchainT = "Android-27-r26b-arm",
 	opensslConf = "o3_0aa3n627",
 	useCMake = "Latest",
 	androidSdkVersion = "20230224",
@@ -5061,12 +5061,12 @@ conf.q6_5wx6g2_aa3n6 = {
 }
 
 conf.q6_5wx6g2_aa6n6 = {
-	name = "Qt6.5.3-Android-arm64-Clang-NDKr26-xWindows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
+	name = "Qt6.5.3-Android-arm64-Clang-NDKr26b-xWindows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
 	qtVersion = "6.5.3",
 	host = "Win10",
 	target = "Android-27",
 	toolchain = "MinGW1220-64",
-	toolchainT = "Android-27-r26-arm64",
+	toolchainT = "Android-27-r26b-arm64",
 	opensslConf = "o3_0aa6n627",
 	useCMake = "Latest",
 	androidSdkVersion = "20230224",
@@ -5101,12 +5101,12 @@ conf.q6_5wx6g2_aa6n6 = {
 }
 
 conf.q6_5wx6g2_ax6n6 = {
-	name = "Qt6.5.3-Android-x86_64-Clang-NDKr26-xWindows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
+	name = "Qt6.5.3-Android-x86_64-Clang-NDKr26b-xWindows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
 	qtVersion = "6.5.3",
 	host = "Win10",
 	target = "Android-27",
 	toolchain = "MinGW1220-64",
-	toolchainT = "Android-27-r26-x86_64",
+	toolchainT = "Android-27-r26b-x86_64",
 	opensslConf = "o3_0ax6n627",
 	useCMake = "Latest",
 	androidSdkVersion = "20230224",
@@ -5141,11 +5141,11 @@ conf.q6_5wx6g2_ax6n6 = {
 }
 
 conf.q6_5lx6_aa3n6 = {
-	name = "Qt6.5.3-Android-arm-Clang-NDKr26-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
+	name = "Qt6.5.3-Android-arm-Clang-NDKr26b-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
 	qtVersion = "6.5.3",
 	host = "Rocky9",
 	target = "Android-27",
-	toolchainT = "Android-27-r26-arm",
+	toolchainT = "Android-27-r26b-arm",
 	opensslConf = "o3_0aa3n627",
 	useCMake = "Latest",
 	androidSdkVersion = "20230224",
@@ -5179,11 +5179,11 @@ conf.q6_5lx6_aa3n6 = {
 }
 
 conf.q6_5lx6_aa6n6 = {
-	name = "Qt6.5.3-Android-arm64-Clang-NDKr26-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
+	name = "Qt6.5.3-Android-arm64-Clang-NDKr26b-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
 	qtVersion = "6.5.3",
 	host = "Rocky9",
 	target = "Android-27",
-	toolchainT = "Android-27-r26-arm64",
+	toolchainT = "Android-27-r26b-arm64",
 	opensslConf = "o3_0aa6n627",
 	useCMake = "Latest",
 	androidSdkVersion = "20230224",
@@ -5217,11 +5217,11 @@ conf.q6_5lx6_aa6n6 = {
 }
 
 conf.q6_5lx6_ax6n6 = {
-	name = "Qt6.5.3-Android-x86_64-Clang-NDKr26-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
+	name = "Qt6.5.3-Android-x86_64-Clang-NDKr26b-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
 	qtVersion = "6.5.3",
 	host = "Rocky9",
 	target = "Android-27",
-	toolchainT = "Android-27-r26-x86_64",
+	toolchainT = "Android-27-r26b-x86_64",
 	opensslConf = "o3_0ax6n627",
 	useCMake = "Latest",
 	androidSdkVersion = "20230224",
@@ -5255,11 +5255,11 @@ conf.q6_5lx6_ax6n6 = {
 }
 
 conf.q6_5mal_aa3n6 = {
-	name = "Qt6.5.3-Android-arm-Clang-NDKr26-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
+	name = "Qt6.5.3-Android-arm-Clang-NDKr26b-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "6.5.3",
 	host = "macOSM1",
 	target = "Android-27",
-	toolchainT = "Android-27-r26-arm",
+	toolchainT = "Android-27-r26b-arm",
 	opensslConf = "o3_0aa3n627",
 	useCMake = "Latest",
 	androidSdkVersion = "20230224",
@@ -5293,11 +5293,11 @@ conf.q6_5mal_aa3n6 = {
 }
 
 conf.q6_5mal_aa6n6 = {
-	name = "Qt6.5.3-Android-arm64-Clang-NDKr26-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
+	name = "Qt6.5.3-Android-arm64-Clang-NDKr26b-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "6.5.3",
 	host = "macOSM1",
 	target = "Android-27",
-	toolchainT = "Android-27-r26-arm64",
+	toolchainT = "Android-27-r26b-arm64",
 	opensslConf = "o3_0aa6n627",
 	useCMake = "Latest",
 	androidSdkVersion = "20230224",
@@ -5331,11 +5331,11 @@ conf.q6_5mal_aa6n6 = {
 }
 
 conf.q6_5mal_ax6n6 = {
-	name = "Qt6.5.3-Android-x86_64-Clang-NDKr26-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
+	name = "Qt6.5.3-Android-x86_64-Clang-NDKr26b-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "6.5.3",
 	host = "macOSM1",
 	target = "Android-27",
-	toolchainT = "Android-27-r26-x86_64",
+	toolchainT = "Android-27-r26b-x86_64",
 	opensslConf = "o3_0ax6n627",
 	useCMake = "Latest",
 	androidSdkVersion = "20230224",
@@ -5463,8 +5463,8 @@ conf.q6_5mal_W = {
 --------------------------------------------------------------------
 
 conf.q6_6wx6v2 = {
-	name = "Qt6.6.0-Windows-x86_64-VS2022-&HOSTTOOLVERSION&",
-	qtVersion = "6.6.0",
+	name = "Qt6.6.1-Windows-x86_64-VS2022-&HOSTTOOLVERSION&",
+	qtVersion = "6.6.1",
 	host = "Win10",
 	toolchain = "MSVC2022-64",
 	opensslConf = "o3_0wx6v2",
@@ -5503,8 +5503,8 @@ conf.q6_6wx6v2 = {
 }
 
 conf.q6_6wx6v2st = {
-	name = "Qt6.6.0-Windows-x86_64-VS2022-&HOSTTOOLVERSION&-static",
-	qtVersion = "6.6.0",
+	name = "Qt6.6.1-Windows-x86_64-VS2022-&HOSTTOOLVERSION&-static",
+	qtVersion = "6.6.1",
 	host = "Win10",
 	toolchain = "MSVC2022-64",
 	variant = {"-static"},
@@ -5568,8 +5568,8 @@ conf.q6_6wx6v2st = {
 }
 
 conf.q6_6wx6v2_wa6v2 = {
-	name = "Qt6.6.0-Windows-arm64-VS2022-&HOSTTOOLVERSION&-xWindows-x86_64-VS2022-&HOSTTOOLVERSION&",
-	qtVersion = "6.6.0",
+	name = "Qt6.6.1-Windows-arm64-VS2022-&HOSTTOOLVERSION&-xWindows-x86_64-VS2022-&HOSTTOOLVERSION&",
+	qtVersion = "6.6.1",
 	host = "Win10",
 	target = "Win10Arm",
 	toolchain = "MSVC2022-64", -- only a placeholder here, in fact it uses "toolchainT" instead of "toolchain"
@@ -5604,8 +5604,8 @@ conf.q6_6wx6v2_wa6v2 = {
 }
 
 conf.q6_6wx6p2 = {
-	name = "Qt6.6.0-Windows-x86_64-MinGW&HOSTTOOLVERSION&-ucrt",
-	qtVersion = "6.6.0",
+	name = "Qt6.6.1-Windows-x86_64-MinGW&HOSTTOOLVERSION&-ucrt",
+	qtVersion = "6.6.1",
 	host = "Win10",
 	toolchain = "MinGW122u-64",
 	opensslConf = "o3_0wx6p2",
@@ -5642,8 +5642,8 @@ conf.q6_6wx6p2 = {
 }
 
 conf.q6_6wx6g2 = {
-	name = "Qt6.6.0-Windows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
-	qtVersion = "6.6.0",
+	name = "Qt6.6.1-Windows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
+	qtVersion = "6.6.1",
 	host = "Win10",
 	toolchain = "MinGW1220-64",
 	opensslConf = "o3_0wx6g2",
@@ -5680,8 +5680,8 @@ conf.q6_6wx6g2 = {
 }
 
 conf.q6_6wx6g2st = {
-	name = "Qt6.6.0-Windows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt-static",
-	qtVersion = "6.6.0",
+	name = "Qt6.6.1-Windows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt-static",
+	qtVersion = "6.6.1",
 	host = "Win10",
 	toolchain = "MinGW1220-64",
 	variant = {"-static"},
@@ -5746,8 +5746,8 @@ conf.q6_6wx6g2st = {
 }
 
 conf.q6_6wx6p3 = {
-	name = "Qt6.6.0-Windows-x86_64-MinGW&HOSTTOOLVERSION&-ucrt",
-	qtVersion = "6.6.0",
+	name = "Qt6.6.1-Windows-x86_64-MinGW&HOSTTOOLVERSION&-ucrt",
+	qtVersion = "6.6.1",
 	host = "Win10",
 	toolchain = "MinGW132u-64",
 	opensslConf = "o3_0wx6p3",
@@ -5784,8 +5784,8 @@ conf.q6_6wx6p3 = {
 }
 
 conf.q6_6wx6g3 = {
-	name = "Qt6.6.0-Windows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
-	qtVersion = "6.6.0",
+	name = "Qt6.6.1-Windows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
+	qtVersion = "6.6.1",
 	host = "Win10",
 	toolchain = "MinGW1320-64",
 	opensslConf = "o3_0wx6g3",
@@ -5822,8 +5822,8 @@ conf.q6_6wx6g3 = {
 }
 
 conf.q6_6wx6u7 = {
-	name = "Qt6.6.0-Windows-x86_64-llvm-mingw-&HOSTTOOLVERSION&-ucrt",
-	qtVersion = "6.6.0",
+	name = "Qt6.6.1-Windows-x86_64-llvm-mingw-&HOSTTOOLVERSION&-ucrt",
+	qtVersion = "6.6.1",
 	host = "Win10",
 	toolchain = "MinGWLLVM-ucrt17-64",
 	opensslConf = "o3_0wx6u7",
@@ -5864,8 +5864,8 @@ conf.q6_6wx6u7 = {
 }
 
 conf.q6_6wx6s7 = {
-	name = "Qt6.6.0-Windows-x86_64-llvm-mingw-&HOSTTOOLVERSION&-msvcrt",
-	qtVersion = "6.6.0",
+	name = "Qt6.6.1-Windows-x86_64-llvm-mingw-&HOSTTOOLVERSION&-msvcrt",
+	qtVersion = "6.6.1",
 	host = "Win10",
 	toolchain = "MinGWLLVM-msvcrt17-64",
 	opensslConf = "o3_0wx6s7",
@@ -5906,8 +5906,8 @@ conf.q6_6wx6s7 = {
 }
 
 conf.q6_6lx6st = {
-	name = "Qt6.6.0-Linux-x86_64-gcc&HOSTTOOLVERSION&-static",
-	qtVersion = "6.6.0",
+	name = "Qt6.6.1-Linux-x86_64-gcc&HOSTTOOLVERSION&-static",
+	qtVersion = "6.6.1",
 	host = "Rocky9",
 	variant = {"-static"},
 	useCMake = "Latest",
@@ -5965,8 +5965,8 @@ conf.q6_6lx6st = {
 }
 
 conf.q6_6mal = {
-	name = "Qt6.6.0-macOS-Universal-AppleClang&HOSTTOOLVERSION&",
-	qtVersion = "6.6.0",
+	name = "Qt6.6.1-macOS-Universal-AppleClang&HOSTTOOLVERSION&",
+	qtVersion = "6.6.1",
 	host = "macOSM1",
 	opensslConf = "o3_0mal",
 	mysqlConf = "m3_3mal",
@@ -6012,8 +6012,8 @@ conf.q6_6mal = {
 }
 
 conf.q6_6malnf = {
-	name = "Qt6.6.0-macOS-Universal-AppleClang&HOSTTOOLVERSION&-noFramework",
-	qtVersion = "6.6.0",
+	name = "Qt6.6.1-macOS-Universal-AppleClang&HOSTTOOLVERSION&-noFramework",
+	qtVersion = "6.6.1",
 	host = "macOSM1",
 	variant = {"-noFramework"},
 	opensslConf = "o3_0mal",
@@ -6060,8 +6060,8 @@ conf.q6_6malnf = {
 }
 
 conf.q6_6malst = {
-	name = "Qt6.6.0-macOS-Universal-AppleClang&HOSTTOOLVERSION&-static",
-	qtVersion = "6.6.0",
+	name = "Qt6.6.1-macOS-Universal-AppleClang&HOSTTOOLVERSION&-static",
+	qtVersion = "6.6.1",
 	host = "macOSM1",
 	variant = {"-static"},
 	opensslConf = "o3_0mal",
@@ -6124,12 +6124,12 @@ conf.q6_6malst = {
 }
 
 conf.q6_6wx6g2_aa3n6 = {
-	name = "Qt6.6.0-Android-arm-Clang-NDKr26-xWindows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
-	qtVersion = "6.6.0",
+	name = "Qt6.6.1-Android-arm-Clang-NDKr26b-xWindows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
+	qtVersion = "6.6.1",
 	host = "Win10",
 	target = "Android-27",
 	toolchain = "MinGW1220-64",
-	toolchainT = "Android-27-r26-arm",
+	toolchainT = "Android-27-r26b-arm",
 	opensslConf = "o3_0aa3n627",
 	useCMake = "Latest",
 	androidSdkVersion = "20230224",
@@ -6164,12 +6164,12 @@ conf.q6_6wx6g2_aa3n6 = {
 }
 
 conf.q6_6wx6g2_aa6n6 = {
-	name = "Qt6.6.0-Android-arm64-Clang-NDKr26-xWindows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
-	qtVersion = "6.6.0",
+	name = "Qt6.6.1-Android-arm64-Clang-NDKr26b-xWindows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
+	qtVersion = "6.6.1",
 	host = "Win10",
 	target = "Android-27",
 	toolchain = "MinGW1220-64",
-	toolchainT = "Android-27-r26-arm64",
+	toolchainT = "Android-27-r26b-arm64",
 	opensslConf = "o3_0aa6n627",
 	useCMake = "Latest",
 	androidSdkVersion = "20230224",
@@ -6204,12 +6204,12 @@ conf.q6_6wx6g2_aa6n6 = {
 }
 
 conf.q6_6wx6g2_ax6n6 = {
-	name = "Qt6.6.0-Android-x86_64-Clang-NDKr26-xWindows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
-	qtVersion = "6.6.0",
+	name = "Qt6.6.1-Android-x86_64-Clang-NDKr26b-xWindows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
+	qtVersion = "6.6.1",
 	host = "Win10",
 	target = "Android-27",
 	toolchain = "MinGW1220-64",
-	toolchainT = "Android-27-r26-x86_64",
+	toolchainT = "Android-27-r26b-x86_64",
 	opensslConf = "o3_0ax6n627",
 	useCMake = "Latest",
 	androidSdkVersion = "20230224",
@@ -6244,11 +6244,11 @@ conf.q6_6wx6g2_ax6n6 = {
 }
 
 conf.q6_6lx6_aa3n6 = {
-	name = "Qt6.6.0-Android-arm-Clang-NDKr26-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
-	qtVersion = "6.6.0",
+	name = "Qt6.6.1-Android-arm-Clang-NDKr26b-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
+	qtVersion = "6.6.1",
 	host = "Rocky9",
 	target = "Android-27",
-	toolchainT = "Android-27-r26-arm",
+	toolchainT = "Android-27-r26b-arm",
 	opensslConf = "o3_0aa3n627",
 	useCMake = "Latest",
 	androidSdkVersion = "20230224",
@@ -6282,11 +6282,11 @@ conf.q6_6lx6_aa3n6 = {
 }
 
 conf.q6_6lx6_aa6n6 = {
-	name = "Qt6.6.0-Android-arm64-Clang-NDKr26-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
-	qtVersion = "6.6.0",
+	name = "Qt6.6.1-Android-arm64-Clang-NDKr26b-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
+	qtVersion = "6.6.1",
 	host = "Rocky9",
 	target = "Android-27",
-	toolchainT = "Android-27-r26-arm64",
+	toolchainT = "Android-27-r26b-arm64",
 	opensslConf = "o3_0aa6n627",
 	useCMake = "Latest",
 	androidSdkVersion = "20230224",
@@ -6320,11 +6320,11 @@ conf.q6_6lx6_aa6n6 = {
 }
 
 conf.q6_6lx6_ax6n6 = {
-	name = "Qt6.6.0-Android-x86_64-Clang-NDKr26-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
-	qtVersion = "6.6.0",
+	name = "Qt6.6.1-Android-x86_64-Clang-NDKr26b-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
+	qtVersion = "6.6.1",
 	host = "Rocky9",
 	target = "Android-27",
-	toolchainT = "Android-27-r26-x86_64",
+	toolchainT = "Android-27-r26b-x86_64",
 	opensslConf = "o3_0ax6n627",
 	useCMake = "Latest",
 	androidSdkVersion = "20230224",
@@ -6358,11 +6358,11 @@ conf.q6_6lx6_ax6n6 = {
 }
 
 conf.q6_6mal_aa3n6 = {
-	name = "Qt6.6.0-Android-arm-Clang-NDKr26-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
-	qtVersion = "6.6.0",
+	name = "Qt6.6.1-Android-arm-Clang-NDKr26b-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
+	qtVersion = "6.6.1",
 	host = "macOSM1",
 	target = "Android-27",
-	toolchainT = "Android-27-r26-arm",
+	toolchainT = "Android-27-r26b-arm",
 	opensslConf = "o3_0aa3n627",
 	useCMake = "Latest",
 	androidSdkVersion = "20230224",
@@ -6396,11 +6396,11 @@ conf.q6_6mal_aa3n6 = {
 }
 
 conf.q6_6mal_aa6n6 = {
-	name = "Qt6.6.0-Android-arm64-Clang-NDKr26-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
-	qtVersion = "6.6.0",
+	name = "Qt6.6.1-Android-arm64-Clang-NDKr26b-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
+	qtVersion = "6.6.1",
 	host = "macOSM1",
 	target = "Android-27",
-	toolchainT = "Android-27-r26-arm64",
+	toolchainT = "Android-27-r26b-arm64",
 	opensslConf = "o3_0aa6n627",
 	useCMake = "Latest",
 	androidSdkVersion = "20230224",
@@ -6434,11 +6434,11 @@ conf.q6_6mal_aa6n6 = {
 }
 
 conf.q6_6mal_ax6n6 = {
-	name = "Qt6.6.0-Android-x86_64-Clang-NDKr26-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
-	qtVersion = "6.6.0",
+	name = "Qt6.6.1-Android-x86_64-Clang-NDKr26b-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
+	qtVersion = "6.6.1",
 	host = "macOSM1",
 	target = "Android-27",
-	toolchainT = "Android-27-r26-x86_64",
+	toolchainT = "Android-27-r26b-x86_64",
 	opensslConf = "o3_0ax6n627",
 	useCMake = "Latest",
 	androidSdkVersion = "20230224",
@@ -6473,8 +6473,8 @@ conf.q6_6mal_ax6n6 = {
 
 -- WebAssembly uses emcmake which don't need a toolchain file
 conf.q6_6wx6g2_W = {
-	name = "Qt6.6.0-WebAssembly-emscripten&TARGETTOOLVERSION&-xWindows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
-	qtVersion = "6.6.0",
+	name = "Qt6.6.1-WebAssembly-emscripten&TARGETTOOLVERSION&-xWindows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
+	qtVersion = "6.6.1",
 	host = "Win10",
 	toolchain = "MinGW1220-64",
 	target = "WebAssembly",
@@ -6504,8 +6504,8 @@ conf.q6_6wx6g2_W = {
 }
 
 conf.q6_6lx6_W = {
-	name = "Qt6.6.0-WebAssembly-emscripten&TARGETTOOLVERSION&-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
-	qtVersion = "6.6.0",
+	name = "Qt6.6.1-WebAssembly-emscripten&TARGETTOOLVERSION&-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
+	qtVersion = "6.6.1",
 	host = "Rocky9",
 	target = "WebAssembly",
 	toolchainT = "emscripten-3.1.37",
@@ -6534,8 +6534,8 @@ conf.q6_6lx6_W = {
 }
 
 conf.q6_6mal_W = {
-	name = "Qt6.6.0-WebAssembly-emscripten&TARGETTOOLVERSION&-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
-	qtVersion = "6.6.0",
+	name = "Qt6.6.1-WebAssembly-emscripten&TARGETTOOLVERSION&-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
+	qtVersion = "6.6.1",
 	host = "macOSM1",
 	target = "WebAssembly",
 	toolchainT = "emscripten-3.1.37",
@@ -6573,26 +6573,26 @@ local Qt6StaticConf = {
 	Win10 = {
 		["6.2.6"] = "q6_2wx6g1st",
 		["6.5.3"] = "q6_5wx6g2st",
-		["6.6.0"] = "q6_6wx6g2st",
+		["6.6.1"] = "q6_6wx6g2st",
 	},
 	Win10MSVC2019 = {
 		["6.2.6"] = "q6_2wx6v9st",
 	},
 	Win10MSVC2022 = {
 		["6.5.3"] = "q6_5wx6v2st",
-		["6.6.0"] = "q6_6wx6v2st",
+		["6.6.1"] = "q6_6wx6v2st",
 	},
 	CentOS8 = {
 		["6.2.6"] = "q6_2lx6st",
 	},
 	Rocky9 = {
 		["6.5.3"] = "q6_5lx6st",
-		["6.6.0"] = "q6_6lx6st",
+		["6.6.1"] = "q6_6lx6st",
 	},
 	macOSM1 = {
 		["6.2.6"] = "q6_2malst",
 		["6.5.3"] = "q6_5malst",
-		["6.6.0"] = "q6_6malst",
+		["6.6.1"] = "q6_6malst",
 	},
 }
 
@@ -6639,7 +6639,7 @@ local Win10SrcPackagePrefixWorkaroundVersions = {
 	"5.15.11-4",
 	"6.2.6",
 	"6.5.3",
-	"6.6.0",
+	"6.6.1",
 }
 
 for name, value in pairs(conf) do

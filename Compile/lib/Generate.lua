@@ -53,7 +53,6 @@ gen.win.template4Qt = [[
 rem Unset it for now since it is only used in Jenkins.
 rem Building Qt doesn't need JDK, except for Android versions.
 rem Set it in ENVSET instead for using correct JDK version for building.
-rem Temporarily using JDK 8 for all Android versions and switch to JDK 11 if incompatible.
 
 set JAVA_HOME=
 
@@ -1033,10 +1032,6 @@ end
 gen.dumpConfTable = function(self, para)
 	local returnText = "{\n"
 	for k, v in pairs(para) do
-		-- Returns the type of its only argument, coded as a string.
-		-- The possible results of this function are "nil" (a string, not the value nil),
-		-- "number", "string", "boolean", "table", "function", "thread", and "userdata".
-
 		-- key is always string
 		returnText = returnText .. "[\"" .. k .. "\"] = "
 		if type(v) == "nil" then

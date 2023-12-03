@@ -507,7 +507,7 @@ conf.Qt.generateConfTable = function(self, host, job, buildTime)
 					table.insert(ret.path, commandLineReplacement.OPENSSLDIR .. configureHost.pathSep .. "bin")
 				elseif string.sub(conf.hostToConfMap[host], 1, 3) == "mac" then
 					-- todo: is this needed?
-					-- ret.envSet.DYLD_LIBRARY_PATH = commandLineReplacement.OPENSSLDIR .. configureHost.pathSep .. "lib"
+					ret.envSet.DYLD_LIBRARY_PATH = commandLineReplacement.OPENSSLDIR .. configureHost.pathSep .. "lib"
 				end
 			end
 		end

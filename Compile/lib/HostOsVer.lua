@@ -22,7 +22,7 @@ hostOsVer.Windows = function()
 
 	if tonumber(major) < 5 then
 		-- Windows 9x / ME / NT4.0 / pre-3.2, not supported
-	if tonumber(major) == 5 then
+	elseif tonumber(major) == 5 then
 		if tonumber(minor) == 0 then
 			prefix = "Windows 2000"
 		elseif tonumber(minor) == 1 or tonumber(minor) == 2 then
@@ -53,8 +53,9 @@ hostOsVer.Windows = function()
 
 	-- known Windows pre-7 Service Packs / Windows 10~11 codename
 	local codename = {
-		["6001"]  = "Service Pack 1" -- Windows Vista
-		["7601"]  = "Service Pack 1" -- Windows 7
+		["6001"]  = "Service Pack 1", -- Windows Vista
+		["7601"]  = "Service Pack 1", -- Windows 7
+
 		["10240"] = "1507",
 		["10586"] = "1511",
 		["14393"] = "1607", -- or Windows Server 2016
@@ -75,10 +76,17 @@ hostOsVer.Windows = function()
 
 		["22000"] = "21H2", -- first version of Windows 11
 		["22621"] = "22H2",
+		["22631"] = "23H2",
+
+		["25398"] = "23H2", -- What is this... Windows Server 23H2
 	}
 
 	if not prefix then
 		return fail, "Windows version not supported " .. line
+	end
+
+	if codename[patch] then
+		prefix = prefix .. " " .. codename[patch]
 	end
 
 	return prefix .. " " .. major .. "." .. minor .. "." .. patch

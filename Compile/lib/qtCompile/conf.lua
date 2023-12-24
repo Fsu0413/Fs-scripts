@@ -2512,7 +2512,7 @@ conf.q6_2mal = {
 	host = "macOSM1",
 	opensslConf = "o3_0mal",
 	mysqlConf = "m3_3mal",
-	useCMake = "Latest",
+	useCMake = "27",
 	includeDeprecatedOdbcHeader = true,
 	configureParameter = [[
 		-G"Ninja"
@@ -2559,7 +2559,7 @@ conf.q6_2malnf = {
 	variant = {"-noFramework"},
 	opensslConf = "o3_0mal",
 	mysqlConf = "m3_3mal",
-	useCMake = "Latest",
+	useCMake = "27",
 	includeDeprecatedOdbcHeader = true,
 	configureParameter = [[
 		-G"Ninja"
@@ -2605,7 +2605,7 @@ conf.q6_2malst = {
 	host = "macOSM1",
 	variant = {"-static"},
 	opensslConf = "o3_0mal",
-	useCMake = "Latest",
+	useCMake = "27",
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -2663,7 +2663,7 @@ conf.q6_2malsf = {
 	host = "macOSM1",
 	variant = {"-staticFull"},
 	opensslConf = "o3_0mal",
-	useCMake = "Latest",
+	useCMake = "27",
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&

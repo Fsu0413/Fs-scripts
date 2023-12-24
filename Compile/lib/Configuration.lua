@@ -210,6 +210,9 @@ conf.host.macM1 = {
 		["3.1.25"] = "/opt/env/emsdk-3.1.25/",
 		["3.1.37"] = "/opt/env/emsdk-3.1.37/",
 	},
+	["cMakePath"] = {
+		["27"] = {"/Users/fs/install-cmake3_27_6/bin"},
+	},
 	["jdkPath"] = {
 		-- It is said that zulu JDK runs faster on M1 chips...
 		-- If not I'll use OpenJDK from Homebrew later
@@ -281,7 +284,7 @@ conf.Qt.generateConfTable = function(self, host, job, buildTime)
 
 	hostToolchainVersion = compilerVer[hostToolchainVersionQueryFuncName](configureHost.makefileTemplate == "win", hostToolchainVersionQueryPath, hostToolchainExecutableName)
 
-	if jobConfigureDetail.useCMake and configureHost.cMakePath then
+	if jobConfigureDetail.useCMake and configureHost.cMakePath and configureHost.cMakePath[jobConfigureDetail.useCMake] then
 		for _, p in ipairs(configureHost.cMakePath[jobConfigureDetail.useCMake]) do
 			table.insert(ret.path, p)
 		end

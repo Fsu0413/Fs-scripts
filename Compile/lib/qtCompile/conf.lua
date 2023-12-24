@@ -891,7 +891,8 @@ conf.q5_15mal = {
 		"MYSQL_LIBDIR=&MYSQLPREFIX&/lib/mariadb"
 		-make-tool
 		"make -j$PARALLELNUM"
-		-webengine-proprietary-codecs
+		-skip
+		qtwebengine
 		QMAKE_APPLE_DEVICE_ARCHS="arm64 x86_64"
 	]],
 	NINJAFLAGS = "-v -j4"
@@ -936,7 +937,8 @@ conf.q5_15malnf = {
 		-make-tool
 		"make -j$PARALLELNUM"
 		-rpath
-		-webengine-proprietary-codecs
+		-skip
+		qtwebengine
 		-no-framework
 		QMAKE_APPLE_DEVICE_ARCHS="arm64 x86_64"
 	]],

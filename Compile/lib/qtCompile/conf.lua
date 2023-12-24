@@ -3879,7 +3879,7 @@ conf.q6_5wx6p2 = {
 	toolchain = "MinGW122u-64",
 	opensslConf = "o3_0wx6p2",
 	mysqlConf = "m3_3wx6p2",
-	useCMake = "20",
+	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -3957,7 +3957,7 @@ conf.q6_5wx6g2 = {
 	toolchain = "MinGW1220-64",
 	opensslConf = "o3_0wx6g2",
 	mysqlConf = "m3_3wx6g2",
-	useCMake = "20",
+	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -4100,7 +4100,7 @@ conf.q6_5wx6p3 = {
 	toolchain = "MinGW132u-64",
 	opensslConf = "o3_0wx6p3",
 	mysqlConf = "m3_3wx6p3",
-	useCMake = "20",
+	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -4178,7 +4178,7 @@ conf.q6_5wx6g3 = {
 	toolchain = "MinGW1320-64",
 	opensslConf = "o3_0wx6g3",
 	mysqlConf = "m3_3wx6g3",
-	useCMake = "20",
+	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -5609,7 +5609,7 @@ conf.q6_6wx6p2 = {
 	toolchain = "MinGW122u-64",
 	opensslConf = "o3_0wx6p2",
 	mysqlConf = "m3_3wx6p2",
-	useCMake = "20",
+	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -5647,7 +5647,7 @@ conf.q6_6wx6g2 = {
 	toolchain = "MinGW1220-64",
 	opensslConf = "o3_0wx6g2",
 	mysqlConf = "m3_3wx6g2",
-	useCMake = "20",
+	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -5751,7 +5751,7 @@ conf.q6_6wx6p3 = {
 	toolchain = "MinGW132u-64",
 	opensslConf = "o3_0wx6p3",
 	mysqlConf = "m3_3wx6p3",
-	useCMake = "20",
+	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&
@@ -5789,7 +5789,7 @@ conf.q6_6wx6g3 = {
 	toolchain = "MinGW1320-64",
 	opensslConf = "o3_0wx6g3",
 	mysqlConf = "m3_3wx6g3",
-	useCMake = "20",
+	useCMake = "Latest",
 	configureParameter = [[
 		-G"Ninja"
 		-DCMAKE_INSTALL_PREFIX=&INSTALLROOT&

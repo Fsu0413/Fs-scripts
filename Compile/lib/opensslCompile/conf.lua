@@ -791,6 +791,223 @@ conf.o3_0aaln324 = {
 		["x86_64"] = "o3_0ax6n324",
 	},
 }
+
+--------------------------------------------------------------------
+
+conf.o3_0aa3n521 = {
+	name = "OpenSSL3.0.12-Android-arm-NDKr25cAPI21",
+	opensslVersion = "3.0.12",
+	host = "CentOS8",
+	target = "Android-21",
+	toolchainT = "Android-21-r25c-arm",
+	configureParameter = [[
+		no-asm
+		no-shared
+		no-threads
+		enable-static-engine
+		--prefix=//
+		--openssldir=//ssl
+		android-arm
+		-D__ANDROID_API__=21
+		-march=armv7-a
+		-mfloat-abi=softfp
+		-mfpu=vfp
+		-fno-builtin-memmove
+		-mthumb
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
+}
+
+conf.o3_0aa6n521 = {
+	name = "OpenSSL3.0.12-Android-arm64-NDKr25cAPI21",
+	opensslVersion = "3.0.12",
+	host = "CentOS8",
+	target = "Android-21",
+	toolchainT = "Android-21-r25c-arm64",
+	configureParameter = [[
+		no-asm
+		no-shared
+		no-threads
+		enable-static-engine
+		--prefix=//
+		--openssldir=//ssl
+		android-arm64
+		-D__ANDROID_API__=21
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
+}
+
+conf.o3_0ax3n521 = {
+	name = "OpenSSL3.0.12-Android-x86-NDKr25cAPI21",
+	opensslVersion = "3.0.12",
+	host = "CentOS8",
+	target = "Android-21",
+	toolchainT = "Android-21-r25c-x86",
+	configureParameter = [[
+		no-asm
+		no-shared
+		no-threads
+		enable-static-engine
+		--prefix=//
+		--openssldir=//ssl
+		android-x86
+		-D__ANDROID_API__=21
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
+}
+
+conf.o3_0ax6n521 = {
+	name = "OpenSSL3.0.12-Android-x86_64-NDKr25cAPI21",
+	opensslVersion = "3.0.12",
+	host = "CentOS8",
+	target = "Android-21",
+	toolchainT = "Android-21-r25c-x86_64",
+	configureParameter = [[
+		no-asm
+		no-shared
+		no-threads
+		enable-static-engine
+		--prefix=//
+		--openssldir=//ssl
+		android-x86_64
+		-D__ANDROID_API__=21
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
+}
+
+conf.o3_0aaln521 = {
+	name = "OpenSSL3.0.12-Android-ALL-NDKr25cAPI21",
+	opensslVersion = "3.0.12",
+	host = "CentOS8",
+	opensslUnifyType = "Android",
+	opensslUnifyArch = {
+		["armeabi-v7a"] = "o3_0aa3n521",
+		["arm64-v8a"] = "o3_0aa6n521",
+		["x86"] = "o3_0ax3n521",
+		["x86_64"] = "o3_0ax6n521",
+	},
+}
+
+--------------------------------------------------------------------
+
+conf.o3_0aa3n524 = {
+	name = "OpenSSL3.0.12-Android-arm-NDKr25cAPI24",
+	opensslVersion = "3.0.12",
+	host = "CentOS8",
+	target = "Android-24",
+	toolchainT = "Android-24-r25c-arm",
+	configureParameter = [[
+		no-asm
+		no-shared
+		no-threads
+		enable-static-engine
+		--prefix=//
+		--openssldir=//ssl
+		android-arm
+		-D__ANDROID_API__=24
+		-march=armv7-a
+		-mfloat-abi=softfp
+		-mfpu=vfp
+		-fno-builtin-memmove
+		-mthumb
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
+}
+
+conf.o3_0aa6n524 = {
+	name = "OpenSSL3.0.12-Android-arm64-NDKr25cAPI24",
+	opensslVersion = "3.0.12",
+	host = "CentOS8",
+	target = "Android-24",
+	toolchainT = "Android-24-r25c-arm64",
+	configureParameter = [[
+		no-asm
+		no-shared
+		no-threads
+		enable-static-engine
+		--prefix=//
+		--openssldir=//ssl
+		android-arm64
+		-D__ANDROID_API__=24
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
+}
+
+conf.o3_0ax3n524 = {
+	name = "OpenSSL3.0.12-Android-x86-NDKr25cAPI24",
+	opensslVersion = "3.0.12",
+	host = "CentOS8",
+	target = "Android-24",
+	toolchainT = "Android-24-r25c-x86",
+	configureParameter = [[
+		no-asm
+		no-shared
+		no-threads
+		enable-static-engine
+		--prefix=//
+		--openssldir=//ssl
+		android-x86
+		-D__ANDROID_API__=24
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
+}
+
+conf.o3_0ax6n524 = {
+	name = "OpenSSL3.0.12-Android-x86_64-NDKr25cAPI24",
+	opensslVersion = "3.0.12",
+	host = "CentOS8",
+	target = "Android-24",
+	toolchainT = "Android-24-r25c-x86_64",
+	configureParameter = [[
+		no-asm
+		no-shared
+		no-threads
+		enable-static-engine
+		--prefix=//
+		--openssldir=//ssl
+		android-x86_64
+		-D__ANDROID_API__=24
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
+}
+
+conf.o3_0aaln524 = {
+	name = "OpenSSL3.0.12-Android-ALL-NDKr25cAPI24",
+	opensslVersion = "3.0.12",
+	host = "CentOS8",
+	opensslUnifyType = "Android",
+	opensslUnifyArch = {
+		["armeabi-v7a"] = "o3_0aa3n524",
+		["arm64-v8a"] = "o3_0aa6n524",
+		["x86"] = "o3_0ax3n524",
+		["x86_64"] = "o3_0ax6n524",
+	},
+}
+
 --------------------------------------------------------------------
 
 conf.o3_0aa3n527 = {

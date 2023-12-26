@@ -1401,6 +1401,215 @@ conf.q5_15ma6_aaln3 = {
 	]],
 }
 
+conf.q5_15wx6g8_aaln5 = {
+	name = "Qt5.15.12-Android-ALL-Clang-NDKr25c-xWindows-x86_64-MinGW&HOSTTOOLVERSION&",
+	qtVersion = "5.15.12",
+	host = "Win10",
+	toolchain = "MinGW810-64",
+	target = "Android-21",
+	toolchainT = "Android-21-r25c-all",
+	opensslConf = "o3_0aaln521",
+	androidSdkVersion = "20220911",
+	configureParameter = [[
+		-prefix
+		/
+		-opensource
+		-shared
+		-release
+		-confirm-license
+		-platform
+		win32-g++
+		-xplatform
+		android-clang
+		-nomake
+		examples
+		-nomake
+		tests
+		-no-compile-examples
+		-qt-doubleconversion
+		-qt-zlib
+		-qt-pcre
+		-no-icu
+		-opengl
+		es2
+		-ssl
+		-openssl-linked
+		-I
+		&OPENSSLDIR&\include
+		-L
+		&OPENSSLDIR&/lib/
+		-sql-sqlite
+		-make-tool
+		"mingw32-make -j%PARALLELNUM%"
+		-android-sdk
+		&ANDROIDSDKROOT&
+		-android-ndk
+		&ANDROIDNDKROOT&
+		-android-ndk-platform
+		android-21
+		-android-ndk-host
+		windows-x86_64
+		-skip
+		qtscript
+	]],
+}
+
+conf.q5_15lx6_aaln5 = {
+	name = "Qt5.15.12-Android-ALL-Clang-NDKr25c-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
+	qtVersion = "5.15.12",
+	host = "CentOS8",
+	target = "Android-21",
+	toolchainT = "Android-21-r25c-all",
+	opensslConf = "o3_0aaln521",
+	androidSdkVersion = "20220911",
+	configureParameter = [[
+		-prefix
+		/
+		-opensource
+		-shared
+		-release
+		-confirm-license
+		-platform
+		linux-g++
+		-xplatform
+		android-clang
+		-nomake
+		examples
+		-nomake
+		tests
+		-no-compile-examples
+		-qt-doubleconversion
+		-qt-zlib
+		-qt-pcre
+		-no-icu
+		-opengl
+		es2
+		-ssl
+		-openssl-linked
+		-I
+		&OPENSSLDIR&/include/
+		-L
+		&OPENSSLDIR&/lib/
+		-sql-sqlite
+		-make-tool
+		"make -j$PARALLELNUM"
+		-android-sdk
+		&ANDROIDSDKROOT&
+		-android-ndk
+		&ANDROIDNDKROOT&
+		-android-ndk-platform
+		android-21
+		-android-ndk-host
+		linux-x86_64
+		-skip
+		qtscript
+	]],
+}
+
+conf.q5_15mx6_aaln5 = {
+	name = "Qt5.15.12-Android-ALL-Clang-NDKr25c-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
+	qtVersion = "5.15.12",
+	host = "macOS1015",
+	target = "Android-21",
+	toolchainT = "Android-21-r25c-all",
+	opensslConf = "o3_0aaln521",
+	androidSdkVersion = "20220911",
+	configureParameter = [[
+		-prefix
+		/
+		-opensource
+		-shared
+		-release
+		-confirm-license
+		-platform
+		macx-clang
+		-xplatform
+		android-clang
+		-nomake
+		examples
+		-nomake
+		tests
+		-no-compile-examples
+		-qt-doubleconversion
+		-qt-zlib
+		-qt-pcre
+		-no-icu
+		-opengl
+		es2
+		-ssl
+		-openssl-linked
+		-I
+		&OPENSSLDIR&/include/
+		-L
+		&OPENSSLDIR&/lib/
+		-sql-sqlite
+		-make-tool
+		"make -j$PARALLELNUM"
+		-android-sdk
+		&ANDROIDSDKROOT&
+		-android-ndk
+		&ANDROIDNDKROOT&
+		-android-ndk-platform
+		android-21
+		-android-ndk-host
+		darwin-x86_64
+		-skip
+		qtscript
+	]],
+}
+
+conf.q5_15ma6_aaln5 = {
+	name = "Qt5.15.12-Android-ALL-Clang-NDKr25c-xmacOS-arm64-AppleClang&HOSTTOOLVERSION&",
+	qtVersion = "5.15.12",
+	host = "macOSM1",
+	target = "Android-21",
+	toolchainT = "Android-21-r25c-all",
+	opensslConf = "o3_0aaln521",
+	androidSdkVersion = "20220911",
+	configureParameter = [[
+		-prefix
+		/
+		-opensource
+		-shared
+		-release
+		-confirm-license
+		-platform
+		macx-clang
+		-xplatform
+		android-clang
+		-nomake
+		examples
+		-nomake
+		tests
+		-no-compile-examples
+		-qt-doubleconversion
+		-qt-zlib
+		-qt-pcre
+		-no-icu
+		-opengl
+		es2
+		-ssl
+		-openssl-linked
+		-I
+		&OPENSSLDIR&/include/
+		-L
+		&OPENSSLDIR&/lib/
+		-sql-sqlite
+		-make-tool
+		"make -j$PARALLELNUM"
+		-android-sdk
+		&ANDROIDSDKROOT&
+		-android-ndk
+		&ANDROIDNDKROOT&
+		-android-ndk-platform
+		android-21
+		-android-ndk-host
+		darwin-x86_64
+		-skip
+		qtscript
+	]],
+}
+
 conf.q5_15wx6g8_W = {
 	name = "Qt5.15.12-WebAssembly-emscripten&TARGETTOOLVERSION&-xWindows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "5.15.12",
@@ -3149,10 +3358,10 @@ conf.q6_2wx6g1_aa3n5 = {
 	name = "Qt6.2.7-Android-arm-Clang-NDKr25c-xWindows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "6.2.7",
 	host = "Win10",
-	target = "Android-27",
+	target = "Android-24",
 	toolchain = "MinGW1120-64",
-	toolchainT = "Android-27-r25c-arm",
-	opensslConf = "o3_0aa3n527",
+	toolchainT = "Android-24-r25c-arm",
+	opensslConf = "o3_0aa3n524",
 	useCMake = "Latest",
 	androidSdkVersion = "20220911",
 	configureParameter = [[
@@ -3177,8 +3386,8 @@ conf.q6_2wx6g1_aa3n5 = {
 		-DBUILD_qtopcua=OFF
 		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
 		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&\build\cmake\android.toolchain.cmake
-		-DANDROID_NATIVE_API_LEVEL=27
-		-DANDROID_PLATFORM=27
+		-DANDROID_NATIVE_API_LEVEL=24
+		-DANDROID_PLATFORM=24
 		-DANDROID_ABI=armeabi-v7a
 		-DCMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH=ON
 	]],
@@ -3188,10 +3397,10 @@ conf.q6_2wx6g1_aa6n5 = {
 	name = "Qt6.2.7-Android-arm64-Clang-NDKr25c-xWindows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "6.2.7",
 	host = "Win10",
-	target = "Android-27",
+	target = "Android-24",
 	toolchain = "MinGW1120-64",
-	toolchainT = "Android-27-r25c-arm64",
-	opensslConf = "o3_0aa6n527",
+	toolchainT = "Android-24-r25c-arm64",
+	opensslConf = "o3_0aa6n524",
 	useCMake = "Latest",
 	androidSdkVersion = "20220911",
 	configureParameter = [[
@@ -3216,8 +3425,8 @@ conf.q6_2wx6g1_aa6n5 = {
 		-DBUILD_qtopcua=OFF
 		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
 		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&\build\cmake\android.toolchain.cmake
-		-DANDROID_NATIVE_API_LEVEL=27
-		-DANDROID_PLATFORM=27
+		-DANDROID_NATIVE_API_LEVEL=24
+		-DANDROID_PLATFORM=24
 		-DANDROID_ABI=arm64-v8a
 		-DCMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH=ON
 	]],
@@ -3227,10 +3436,10 @@ conf.q6_2wx6g1_ax3n5 = {
 	name = "Qt6.2.7-Android-x86-Clang-NDKr25c-xWindows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "6.2.7",
 	host = "Win10",
-	target = "Android-27",
+	target = "Android-24",
 	toolchain = "MinGW1120-64",
-	toolchainT = "Android-27-r25c-x86",
-	opensslConf = "o3_0ax3n527",
+	toolchainT = "Android-24-r25c-x86",
+	opensslConf = "o3_0ax3n524",
 	useCMake = "Latest",
 	androidSdkVersion = "20220911",
 	configureParameter = [[
@@ -3255,8 +3464,8 @@ conf.q6_2wx6g1_ax3n5 = {
 		-DBUILD_qtopcua=OFF
 		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
 		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&\build\cmake\android.toolchain.cmake
-		-DANDROID_NATIVE_API_LEVEL=27
-		-DANDROID_PLATFORM=27
+		-DANDROID_NATIVE_API_LEVEL=24
+		-DANDROID_PLATFORM=24
 		-DANDROID_ABI=x86
 		-DCMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH=ON
 	]],
@@ -3266,10 +3475,10 @@ conf.q6_2wx6g1_ax6n5 = {
 	name = "Qt6.2.7-Android-x86_64-Clang-NDKr25c-xWindows-x86_64-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "6.2.7",
 	host = "Win10",
-	target = "Android-27",
+	target = "Android-24",
 	toolchain = "MinGW1120-64",
-	toolchainT = "Android-27-r25c-x86_64",
-	opensslConf = "o3_0ax6n527",
+	toolchainT = "Android-24-r25c-x86_64",
+	opensslConf = "o3_0ax6n524",
 	useCMake = "Latest",
 	androidSdkVersion = "20220911",
 	configureParameter = [[
@@ -3294,8 +3503,8 @@ conf.q6_2wx6g1_ax6n5 = {
 		-DBUILD_qtopcua=OFF
 		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
 		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&\build\cmake\android.toolchain.cmake
-		-DANDROID_NATIVE_API_LEVEL=27
-		-DANDROID_PLATFORM=27
+		-DANDROID_NATIVE_API_LEVEL=24
+		-DANDROID_PLATFORM=24
 		-DANDROID_ABI=x86_64
 		-DCMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH=ON
 	]],
@@ -3305,9 +3514,9 @@ conf.q6_2lx6_aa3n5 = {
 	name = "Qt6.2.7-Android-arm-Clang-NDKr25c-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
 	qtVersion = "6.2.7",
 	host = "CentOS8",
-	target = "Android-27",
-	toolchainT = "Android-27-r25c-arm",
-	opensslConf = "o3_0aa3n527",
+	target = "Android-24",
+	toolchainT = "Android-24-r25c-arm",
+	opensslConf = "o3_0aa3n524",
 	useCMake = "Latest",
 	androidSdkVersion = "20220911",
 	configureParameter = [[
@@ -3332,8 +3541,8 @@ conf.q6_2lx6_aa3n5 = {
 		-DBUILD_qtopcua=OFF
 		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
 		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
-		-DANDROID_NATIVE_API_LEVEL=27
-		-DANDROID_PLATFORM=27
+		-DANDROID_NATIVE_API_LEVEL=24
+		-DANDROID_PLATFORM=24
 		-DANDROID_ABI=armeabi-v7a
 	]],
 }
@@ -3342,9 +3551,9 @@ conf.q6_2lx6_aa6n5 = {
 	name = "Qt6.2.7-Android-arm64-Clang-NDKr25c-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
 	qtVersion = "6.2.7",
 	host = "CentOS8",
-	target = "Android-27",
-	toolchainT = "Android-27-r25c-arm64",
-	opensslConf = "o3_0aa6n527",
+	target = "Android-24",
+	toolchainT = "Android-24-r25c-arm64",
+	opensslConf = "o3_0aa6n524",
 	useCMake = "Latest",
 	androidSdkVersion = "20220911",
 	configureParameter = [[
@@ -3369,8 +3578,8 @@ conf.q6_2lx6_aa6n5 = {
 		-DBUILD_qtopcua=OFF
 		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
 		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
-		-DANDROID_NATIVE_API_LEVEL=27
-		-DANDROID_PLATFORM=27
+		-DANDROID_NATIVE_API_LEVEL=24
+		-DANDROID_PLATFORM=24
 		-DANDROID_ABI=arm64-v8a
 	]],
 }
@@ -3379,9 +3588,9 @@ conf.q6_2lx6_ax3n5 = {
 	name = "Qt6.2.7-Android-x86-Clang-NDKr25c-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
 	qtVersion = "6.2.7",
 	host = "CentOS8",
-	target = "Android-27",
-	toolchainT = "Android-27-r25c-x86",
-	opensslConf = "o3_0ax3n527",
+	target = "Android-24",
+	toolchainT = "Android-24-r25c-x86",
+	opensslConf = "o3_0ax3n524",
 	useCMake = "Latest",
 	androidSdkVersion = "20220911",
 	configureParameter = [[
@@ -3406,8 +3615,8 @@ conf.q6_2lx6_ax3n5 = {
 		-DBUILD_qtopcua=OFF
 		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
 		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
-		-DANDROID_NATIVE_API_LEVEL=27
-		-DANDROID_PLATFORM=27
+		-DANDROID_NATIVE_API_LEVEL=24
+		-DANDROID_PLATFORM=24
 		-DANDROID_ABI=x86
 	]],
 }
@@ -3416,9 +3625,9 @@ conf.q6_2lx6_ax6n5 = {
 	name = "Qt6.2.7-Android-x86_64-Clang-NDKr25c-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
 	qtVersion = "6.2.7",
 	host = "CentOS8",
-	target = "Android-27",
-	toolchainT = "Android-27-r25c-x86_64",
-	opensslConf = "o3_0ax6n527",
+	target = "Android-24",
+	toolchainT = "Android-24-r25c-x86_64",
+	opensslConf = "o3_0ax6n524",
 	useCMake = "Latest",
 	androidSdkVersion = "20220911",
 	configureParameter = [[
@@ -3443,8 +3652,8 @@ conf.q6_2lx6_ax6n5 = {
 		-DBUILD_qtopcua=OFF
 		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
 		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
-		-DANDROID_NATIVE_API_LEVEL=27
-		-DANDROID_PLATFORM=27
+		-DANDROID_NATIVE_API_LEVEL=24
+		-DANDROID_PLATFORM=24
 		-DANDROID_ABI=x86_64
 	]],
 }
@@ -3453,9 +3662,9 @@ conf.q6_2mal_aa3n5 = {
 	name = "Qt6.2.7-Android-arm-Clang-NDKr25c-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "6.2.7",
 	host = "macOSM1",
-	target = "Android-27",
-	toolchainT = "Android-27-r25c-arm",
-	opensslConf = "o3_0aa3n527",
+	target = "Android-24",
+	toolchainT = "Android-24-r25c-arm",
+	opensslConf = "o3_0aa3n524",
 	useCMake = "Latest",
 	androidSdkVersion = "20220911",
 	configureParameter = [[
@@ -3480,8 +3689,8 @@ conf.q6_2mal_aa3n5 = {
 		-DBUILD_qtopcua=OFF
 		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
 		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
-		-DANDROID_NATIVE_API_LEVEL=27
-		-DANDROID_PLATFORM=27
+		-DANDROID_NATIVE_API_LEVEL=24
+		-DANDROID_PLATFORM=24
 		-DANDROID_ABI=armeabi-v7a
 	]],
 }
@@ -3490,9 +3699,9 @@ conf.q6_2mal_aa6n5 = {
 	name = "Qt6.2.7-Android-arm64-Clang-NDKr25c-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "6.2.7",
 	host = "macOSM1",
-	target = "Android-27",
-	toolchainT = "Android-27-r25c-arm64",
-	opensslConf = "o3_0aa6n527",
+	target = "Android-24",
+	toolchainT = "Android-24-r25c-arm64",
+	opensslConf = "o3_0aa6n524",
 	useCMake = "Latest",
 	androidSdkVersion = "20220911",
 	configureParameter = [[
@@ -3517,8 +3726,8 @@ conf.q6_2mal_aa6n5 = {
 		-DBUILD_qtopcua=OFF
 		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
 		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
-		-DANDROID_NATIVE_API_LEVEL=27
-		-DANDROID_PLATFORM=27
+		-DANDROID_NATIVE_API_LEVEL=24
+		-DANDROID_PLATFORM=24
 		-DANDROID_ABI=arm64-v8a
 	]],
 }
@@ -3527,9 +3736,9 @@ conf.q6_2mal_ax3n5 = {
 	name = "Qt6.2.7-Android-x86-Clang-NDKr25c-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "6.2.7",
 	host = "macOSM1",
-	target = "Android-27",
-	toolchainT = "Android-27-r25c-x86",
-	opensslConf = "o3_0ax3n527",
+	target = "Android-24",
+	toolchainT = "Android-24-r25c-x86",
+	opensslConf = "o3_0ax3n524",
 	useCMake = "Latest",
 	androidSdkVersion = "20220911",
 	configureParameter = [[
@@ -3554,8 +3763,8 @@ conf.q6_2mal_ax3n5 = {
 		-DBUILD_qtopcua=OFF
 		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
 		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
-		-DANDROID_NATIVE_API_LEVEL=27
-		-DANDROID_PLATFORM=27
+		-DANDROID_NATIVE_API_LEVEL=24
+		-DANDROID_PLATFORM=24
 		-DANDROID_ABI=x86
 	]],
 }
@@ -3564,9 +3773,9 @@ conf.q6_2mal_ax6n5 = {
 	name = "Qt6.2.7-Android-x86_64-Clang-NDKr25c-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "6.2.7",
 	host = "macOSM1",
-	target = "Android-27",
-	toolchainT = "Android-27-r25c-x86_64",
-	opensslConf = "o3_0ax6n527",
+	target = "Android-24",
+	toolchainT = "Android-24-r25c-x86_64",
+	opensslConf = "o3_0ax6n524",
 	useCMake = "Latest",
 	androidSdkVersion = "20220911",
 	configureParameter = [[
@@ -3591,8 +3800,8 @@ conf.q6_2mal_ax6n5 = {
 		-DBUILD_qtopcua=OFF
 		-DANDROID_SDK_ROOT=&ANDROIDSDKROOT&
 		-DCMAKE_TOOLCHAIN_FILE=&ANDROIDNDKROOT&/build/cmake/android.toolchain.cmake
-		-DANDROID_NATIVE_API_LEVEL=27
-		-DANDROID_PLATFORM=27
+		-DANDROID_NATIVE_API_LEVEL=24
+		-DANDROID_PLATFORM=24
 		-DANDROID_ABI=x86_64
 	]],
 }

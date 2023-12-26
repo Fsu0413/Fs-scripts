@@ -167,6 +167,7 @@ conf.host.mac = {
 		["r21e"] = "/Applications/AndroidNDK7075529.app/Contents/NDK/",
 		["r23c"] = "/Applications/AndroidNDK8568313.app/Contents/NDK/",
 		["r25c"] = "/Applications/AndroidNDK9519653.app/Contents/NDK/",
+		["r26b"] = "/Applications/AndroidNDK10909125.app/Contents/NDK/",
 	},
 	["androidNdkHost"] = "darwin-x86_64",
 	["sourcePackagePath"] = "/opt/sources/",

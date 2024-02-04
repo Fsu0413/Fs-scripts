@@ -1,26 +1,24 @@
 name: update
 
-on: [push]
+on:
+  push:
 
 jobs:
-  osdn:
+  sync:
+    strategy:
+      matrix:
+        target:
+          - remote: osdn
+            repo: "fsu0413@git.pf.osdn.net:/gitroot/f/fs/fsu0413/Fs-scripts.git"
+          - remote: coding
+            repo: "git@e.coding.net:Fsu0413/Fs-scripts/Fs-scripts.git"
+    name: ${{ matrix.target.remote }}
     runs-on: ubuntu-latest
     steps:
     - uses: codions/git-sync@v1.0.2
       with:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         SOURCE_REPO: git@github.com:${{ github.repository }}.git
-        SOURCE_BRANCH: master
-        DESTINATION_REPO: fsu0413@git.pf.osdn.net:/gitroot/f/fs/fsu0413/Fs-scripts.git
-        DESTINATION_BRANCH: master
-
-  coding:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: codions/git-sync@v1.0.2
-      with:
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        SOURCE_REPO: git@github.com:${{ github.repository }}.git
-        SOURCE_BRANCH: master
-        DESTINATION_REPO: git@e.coding.net:Fsu0413/Fs-scripts/Fs-scripts.git
-        DESTINATION_BRANCH: master
+        SOURCE_BRANCH: ${{ github.ref_name }}
+        DESTINATION_REPO: ${{ matrix.target.repo }}
+        DESTINATION_BRANCH: ${{ github.ref_name }}

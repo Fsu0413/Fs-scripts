@@ -988,9 +988,9 @@ conf.q5_15wx6g8_aalnl = {
 	qtVersion = "5.15.12",
 	host = "Win10",
 	toolchain = "MinGW810-64",
-	target = "Android-31",
-	toolchainT = "Android-31-r21e-all",
-	opensslConf = "o3_0aalnl31",
+	target = "Android-30",
+	toolchainT = "Android-30-r21e-all",
+	opensslConf = "o3_0aalnl30",
 	androidSdkVersion = "20240204",
 	configureParameter = [[
 		-prefix
@@ -1028,7 +1028,7 @@ conf.q5_15wx6g8_aalnl = {
 		-android-ndk
 		&ANDROIDNDKROOT&
 		-android-ndk-platform
-		android-31
+		android-30
 		-android-ndk-host
 		windows-x86_64
 		-skip
@@ -1040,9 +1040,9 @@ conf.q5_15lx6_aalnl = {
 	name = "Qt5.15.12-Android-ALL-Clang-NDKr21e-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
 	qtVersion = "5.15.12",
 	host = "CentOS8",
-	target = "Android-31",
-	toolchainT = "Android-31-r21e-all",
-	opensslConf = "o3_0aalnl31",
+	target = "Android-30",
+	toolchainT = "Android-30-r21e-all",
+	opensslConf = "o3_0aalnl30",
 	androidSdkVersion = "20240204",
 	configureParameter = [[
 		-prefix
@@ -1080,7 +1080,7 @@ conf.q5_15lx6_aalnl = {
 		-android-ndk
 		&ANDROIDNDKROOT&
 		-android-ndk-platform
-		android-31
+		android-30
 		-android-ndk-host
 		linux-x86_64
 		-skip
@@ -1092,9 +1092,9 @@ conf.q5_15mx6_aalnl = {
 	name = "Qt5.15.12-Android-ALL-Clang-NDKr21e-xmacOS-x86_64-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "5.15.12",
 	host = "macOS1015",
-	target = "Android-31",
-	toolchainT = "Android-31-r21e-all",
-	opensslConf = "o3_0aalnl31",
+	target = "Android-30",
+	toolchainT = "Android-30-r21e-all",
+	opensslConf = "o3_0aalnl30",
 	androidSdkVersion = "20240204",
 	configureParameter = [[
 		-prefix
@@ -1132,7 +1132,7 @@ conf.q5_15mx6_aalnl = {
 		-android-ndk
 		&ANDROIDNDKROOT&
 		-android-ndk-platform
-		android-31
+		android-30
 		-android-ndk-host
 		darwin-x86_64
 		-skip
@@ -1144,9 +1144,9 @@ conf.q5_15ma6_aalnl = {
 	name = "Qt5.15.12-Android-ALL-Clang-NDKr21e-xmacOS-arm64-AppleClang&HOSTTOOLVERSION&",
 	qtVersion = "5.15.12",
 	host = "macOSM1",
-	target = "Android-31",
-	toolchainT = "Android-31-r21e-all",
-	opensslConf = "o3_0aalnl31",
+	target = "Android-30",
+	toolchainT = "Android-30-r21e-all",
+	opensslConf = "o3_0aalnl30",
 	androidSdkVersion = "20240204",
 	configureParameter = [[
 		-prefix
@@ -1184,7 +1184,7 @@ conf.q5_15ma6_aalnl = {
 		-android-ndk
 		&ANDROIDNDKROOT&
 		-android-ndk-platform
-		android-31
+		android-30
 		-android-ndk-host
 		darwin-x86_64
 		-skip

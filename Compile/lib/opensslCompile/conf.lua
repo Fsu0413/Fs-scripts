@@ -470,12 +470,12 @@ conf.o3_0mal = {
 
 --------------------------------------------------------------------
 
-conf.o3_0aa3nl31 = {
-	name = "OpenSSL3.0.13-Android-arm-NDKr21eAPI31",
+conf.o3_0aa3nl30 = {
+	name = "OpenSSL3.0.13-Android-arm-NDKr21eAPI30",
 	opensslVersion = "3.0.13",
 	host = "CentOS8",
-	target = "Android-31",
-	toolchainT = "Android-31-r21e-arm",
+	target = "Android-30",
+	toolchainT = "Android-30-r21e-arm",
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -484,7 +484,7 @@ conf.o3_0aa3nl31 = {
 		--prefix=//
 		--openssldir=//ssl
 		android-arm
-		-D__ANDROID_API__=31
+		-D__ANDROID_API__=30
 		-march=armv7-a
 		-mfloat-abi=softfp
 		-mfpu=vfp
@@ -497,12 +497,12 @@ conf.o3_0aa3nl31 = {
 	]],
 }
 
-conf.o3_0aa6nl31 = {
-	name = "OpenSSL3.0.13-Android-arm64-NDKr21eAPI31",
+conf.o3_0aa6nl30 = {
+	name = "OpenSSL3.0.13-Android-arm64-NDKr21eAPI30",
 	opensslVersion = "3.0.13",
 	host = "CentOS8",
-	target = "Android-31",
-	toolchainT = "Android-31-r21e-arm64",
+	target = "Android-30",
+	toolchainT = "Android-30-r21e-arm64",
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -511,7 +511,7 @@ conf.o3_0aa6nl31 = {
 		--prefix=//
 		--openssldir=//ssl
 		android-arm64
-		-D__ANDROID_API__=31
+		-D__ANDROID_API__=30
 		-fstack-protector-strong
 		-fPIC
 		-Wl,-s
@@ -519,12 +519,12 @@ conf.o3_0aa6nl31 = {
 	]],
 }
 
-conf.o3_0ax3nl31 = {
-	name = "OpenSSL3.0.13-Android-x86-NDKr21eAPI31",
+conf.o3_0ax3nl30 = {
+	name = "OpenSSL3.0.13-Android-x86-NDKr21eAPI30",
 	opensslVersion = "3.0.13",
 	host = "CentOS8",
-	target = "Android-31",
-	toolchainT = "Android-31-r21e-x86",
+	target = "Android-30",
+	toolchainT = "Android-30-r21e-x86",
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -533,7 +533,7 @@ conf.o3_0ax3nl31 = {
 		--prefix=//
 		--openssldir=//ssl
 		android-x86
-		-D__ANDROID_API__=31
+		-D__ANDROID_API__=30
 		-fstack-protector-strong
 		-fPIC
 		-Wl,-s
@@ -541,12 +541,12 @@ conf.o3_0ax3nl31 = {
 	]],
 }
 
-conf.o3_0ax6nl31 = {
-	name = "OpenSSL3.0.13-Android-x86_64-NDKr21eAPI31",
+conf.o3_0ax6nl30 = {
+	name = "OpenSSL3.0.13-Android-x86_64-NDKr21eAPI30",
 	opensslVersion = "3.0.13",
 	host = "CentOS8",
-	target = "Android-31",
-	toolchainT = "Android-31-r21e-x86_64",
+	target = "Android-30",
+	toolchainT = "Android-30-r21e-x86_64",
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -555,7 +555,7 @@ conf.o3_0ax6nl31 = {
 		--prefix=//
 		--openssldir=//ssl
 		android-x86_64
-		-D__ANDROID_API__=31
+		-D__ANDROID_API__=30
 		-fstack-protector-strong
 		-fPIC
 		-Wl,-s
@@ -563,16 +563,16 @@ conf.o3_0ax6nl31 = {
 	]],
 }
 
-conf.o3_0aalnl31 = {
-	name = "OpenSSL3.0.13-Android-ALL-NDKr21eAPI31",
+conf.o3_0aalnl30 = {
+	name = "OpenSSL3.0.13-Android-ALL-NDKr21eAPI30",
 	opensslVersion = "3.0.13",
 	host = "CentOS8",
 	opensslUnifyType = "Android",
 	opensslUnifyArch = {
-		["armeabi-v7a"] = "o3_0aa3nl31",
-		["arm64-v8a"] = "o3_0aa6nl31",
-		["x86"] = "o3_0ax3nl31",
-		["x86_64"] = "o3_0ax6nl31",
+		["armeabi-v7a"] = "o3_0aa3nl30",
+		["arm64-v8a"] = "o3_0aa6nl30",
+		["x86"] = "o3_0ax3nl30",
+		["x86_64"] = "o3_0ax6nl30",
 	},
 }
 

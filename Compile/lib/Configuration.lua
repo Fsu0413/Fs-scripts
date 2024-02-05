@@ -68,8 +68,9 @@ conf.host.win = {
 		["Latest"] = {"D:\\cmake-3.27.6-windows-x86_64\\bin", "D:\\ninja"},
 	},
 	["jdkPath"] = {
-		["8"] = "D:\\OpenJDK8U-jdk_x64_windows_hotspot_8u362b09\\jdk8u362-b09",
-		["11"] = "D:\\OpenJDK11U-jdk_x64_windows_hotspot_11.0.18_10\\jdk-11.0.18+10",
+		["8"] = "D:\\OpenJDK8U-jdk_x64_windows_hotspot_8u402b06\\jdk8u402-b06",
+		["11"] = "D:\\OpenJDK11U-jdk_x64_windows_hotspot_11.0.22_7\\jdk-11.0.22+7",
+		["17"] = "D:\\OpenJDK17U-jdk_x64_windows_hotspot_17.0.10_7\\jdk-17.0.10+7",
 	},
 	["pythonPath"] = {
 		["2"] = "D:\\Python27",
@@ -144,8 +145,9 @@ conf.host.linux = {
 		["3.1.37"] = "/opt/env/emsdk-3.1.37/",
 	},
 	["jdkPath"] = {
-		["8"] = "/usr/lib/jvm/java-1.8.0-openjdk",
-		["11"] = "/usr/lib/jvm/java-11-openjdk",
+		["8"] = "/usr/lib/jvm/java-1.8.0-openjdk/",
+		["11"] = "/usr/lib/jvm/java-11-openjdk/",
+		["17"] = "/usr/lib/jvm/java-17-openjdk/",
 	},
 	["defaultToolchainExecutableName"] = "gcc",
 }
@@ -178,7 +180,8 @@ conf.host.mac = {
 	},
 	["jdkPath"] = {
 		["8"] = "/usr/local/opt/openjdk@8/",
-		["11"] = "/usr/local/opt/java11/",
+		["11"] = "/usr/local/opt/openjdk@11/",
+		["17"] = "/usr/local/opt/openjdk@17/",
 	},
 	["defaultToolchainExecutableName"] = "clang",
 }
@@ -217,8 +220,9 @@ conf.host.macM1 = {
 	["jdkPath"] = {
 		-- It is said that zulu JDK runs faster on M1 chips...
 		-- If not I'll use OpenJDK from Homebrew later
-		["8"] = "/opt/env/jdk-8/zulu8.70.0.23-ca-jdk8.0.372-macosx_aarch64/zulu-8.jdk/Contents/Home/",
-		["11"] = "/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home/",
+		["8"] = "/opt/env/jdk-8/zulu8.76.0.17-ca-jdk8.0.402-macosx_aarch64/zulu-8.jdk/Contents/Home/",
+		["11"] = "/opt/env/jdk-11/zulu11.70.15-ca-jdk11.0.22-macosx_aarch64/zulu-11.jdk/Contents/Home/",
+		["17"] = "/opt/env/jdk-17/zulu17.48.15-ca-jdk17.0.10-macosx_aarch64/zulu-17.jdk/Contents/Home/",
 	},
 	["defaultToolchainExecutableName"] = "clang",
 }

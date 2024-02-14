@@ -35,10 +35,10 @@ abbrs:
 		u6: LLVM/Clang based MinGW-w64, ucrt, with LLVM 16
 		s7: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 17
 		u7: LLVM/Clang based MinGW-w64, ucrt, with LLVM 17
-		nl: Android NDK r21e/Previous LTS
-		n3: Android NDK r23c/Previous LTS
-		n5: Android NDK r25c/Previous LTS
-		n6: Android NDK r26b/Latest LTS
+		nV21: Android NDK r21e/Previous LTS
+		nV23: Android NDK r23c/Previous LTS
+		nV25: Android NDK r25c/Previous LTS
+		nV26: Android NDK r26b/Latest LTS
 	If omitted, it use a toolchain in default PATH, which should be AppleClang in macOS, or GCC in Linux.
 
 	Variants:
@@ -470,12 +470,12 @@ conf.o3_0mal = {
 
 --------------------------------------------------------------------
 
-conf.o3_0aa3nl30 = {
-	name = "OpenSSL3.0.13-Android-arm-NDKr21eAPI30",
+conf.o3_0aa3nV21L23 = {
+	name = "OpenSSL3.0.13-Android-arm-NDKr21eAPI23",
 	opensslVersion = "3.0.13",
 	host = "CentOS8",
-	target = "Android-30",
-	toolchainT = "Android-30-r21e-arm",
+	target = "Android-23",
+	toolchainT = "Android-23-r21e-arm",
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -484,7 +484,7 @@ conf.o3_0aa3nl30 = {
 		--prefix=//
 		--openssldir=//ssl
 		android-arm
-		-D__ANDROID_API__=30
+		-D__ANDROID_API__=23
 		-march=armv7-a
 		-mfloat-abi=softfp
 		-mfpu=vfp
@@ -497,12 +497,12 @@ conf.o3_0aa3nl30 = {
 	]],
 }
 
-conf.o3_0aa6nl30 = {
-	name = "OpenSSL3.0.13-Android-arm64-NDKr21eAPI30",
+conf.o3_0aa6nV21L23 = {
+	name = "OpenSSL3.0.13-Android-arm64-NDKr21eAPI23",
 	opensslVersion = "3.0.13",
 	host = "CentOS8",
-	target = "Android-30",
-	toolchainT = "Android-30-r21e-arm64",
+	target = "Android-23",
+	toolchainT = "Android-23-r21e-arm64",
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -511,7 +511,7 @@ conf.o3_0aa6nl30 = {
 		--prefix=//
 		--openssldir=//ssl
 		android-arm64
-		-D__ANDROID_API__=30
+		-D__ANDROID_API__=23
 		-fstack-protector-strong
 		-fPIC
 		-Wl,-s
@@ -519,12 +519,12 @@ conf.o3_0aa6nl30 = {
 	]],
 }
 
-conf.o3_0ax3nl30 = {
-	name = "OpenSSL3.0.13-Android-x86-NDKr21eAPI30",
+conf.o3_0ax3nV21L23 = {
+	name = "OpenSSL3.0.13-Android-x86-NDKr21eAPI23",
 	opensslVersion = "3.0.13",
 	host = "CentOS8",
-	target = "Android-30",
-	toolchainT = "Android-30-r21e-x86",
+	target = "Android-23",
+	toolchainT = "Android-23-r21e-x86",
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -533,7 +533,7 @@ conf.o3_0ax3nl30 = {
 		--prefix=//
 		--openssldir=//ssl
 		android-x86
-		-D__ANDROID_API__=30
+		-D__ANDROID_API__=23
 		-fstack-protector-strong
 		-fPIC
 		-Wl,-s
@@ -541,12 +541,12 @@ conf.o3_0ax3nl30 = {
 	]],
 }
 
-conf.o3_0ax6nl30 = {
-	name = "OpenSSL3.0.13-Android-x86_64-NDKr21eAPI30",
+conf.o3_0ax6nV21L23 = {
+	name = "OpenSSL3.0.13-Android-x86_64-NDKr21eAPI23",
 	opensslVersion = "3.0.13",
 	host = "CentOS8",
-	target = "Android-30",
-	toolchainT = "Android-30-r21e-x86_64",
+	target = "Android-23",
+	toolchainT = "Android-23-r21e-x86_64",
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -555,7 +555,7 @@ conf.o3_0ax6nl30 = {
 		--prefix=//
 		--openssldir=//ssl
 		android-x86_64
-		-D__ANDROID_API__=30
+		-D__ANDROID_API__=23
 		-fstack-protector-strong
 		-fPIC
 		-Wl,-s
@@ -563,27 +563,27 @@ conf.o3_0ax6nl30 = {
 	]],
 }
 
-conf.o3_0aalnl30 = {
-	name = "OpenSSL3.0.13-Android-ALL-NDKr21eAPI30",
+conf.o3_0aalnV21L23 = {
+	name = "OpenSSL3.0.13-Android-ALL-NDKr21eAPI23",
 	opensslVersion = "3.0.13",
 	host = "CentOS8",
 	opensslUnifyType = "Android",
 	opensslUnifyArch = {
-		["armeabi-v7a"] = "o3_0aa3nl30",
-		["arm64-v8a"] = "o3_0aa6nl30",
-		["x86"] = "o3_0ax3nl30",
-		["x86_64"] = "o3_0ax6nl30",
+		["armeabi-v7a"] = "o3_0aa3nV21L23",
+		["arm64-v8a"] = "o3_0aa6nV21L23",
+		["x86"] = "o3_0ax3nV21L23",
+		["x86_64"] = "o3_0ax6nV21L23",
 	},
 }
 
 --------------------------------------------------------------------
 
-conf.o3_0aa3n331 = {
-	name = "OpenSSL3.0.13-Android-arm-NDKr23cAPI31",
+conf.o3_0aa3nV23L23 = {
+	name = "OpenSSL3.0.13-Android-arm-NDKr23cAPI23",
 	opensslVersion = "3.0.13",
 	host = "CentOS8",
-	target = "Android-31",
-	toolchainT = "Android-31-r23c-arm",
+	target = "Android-23",
+	toolchainT = "Android-23-r23c-arm",
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -592,7 +592,7 @@ conf.o3_0aa3n331 = {
 		--prefix=//
 		--openssldir=//ssl
 		android-arm
-		-D__ANDROID_API__=31
+		-D__ANDROID_API__=23
 		-march=armv7-a
 		-mfloat-abi=softfp
 		-mfpu=vfp
@@ -605,12 +605,12 @@ conf.o3_0aa3n331 = {
 	]],
 }
 
-conf.o3_0aa6n331 = {
-	name = "OpenSSL3.0.13-Android-arm64-NDKr23cAPI31",
+conf.o3_0aa6nV23L23 = {
+	name = "OpenSSL3.0.13-Android-arm64-NDKr23cAPI23",
 	opensslVersion = "3.0.13",
 	host = "CentOS8",
-	target = "Android-31",
-	toolchainT = "Android-31-r23c-arm64",
+	target = "Android-23",
+	toolchainT = "Android-23-r23c-arm64",
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -619,7 +619,7 @@ conf.o3_0aa6n331 = {
 		--prefix=//
 		--openssldir=//ssl
 		android-arm64
-		-D__ANDROID_API__=31
+		-D__ANDROID_API__=23
 		-fstack-protector-strong
 		-fPIC
 		-Wl,-s
@@ -627,12 +627,12 @@ conf.o3_0aa6n331 = {
 	]],
 }
 
-conf.o3_0ax3n331 = {
-	name = "OpenSSL3.0.13-Android-x86-NDKr23cAPI31",
+conf.o3_0ax3nV23L23 = {
+	name = "OpenSSL3.0.13-Android-x86-NDKr23cAPI23",
 	opensslVersion = "3.0.13",
 	host = "CentOS8",
-	target = "Android-31",
-	toolchainT = "Android-31-r23c-x86",
+	target = "Android-23",
+	toolchainT = "Android-23-r23c-x86",
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -641,7 +641,7 @@ conf.o3_0ax3n331 = {
 		--prefix=//
 		--openssldir=//ssl
 		android-x86
-		-D__ANDROID_API__=31
+		-D__ANDROID_API__=23
 		-fstack-protector-strong
 		-fPIC
 		-Wl,-s
@@ -649,12 +649,12 @@ conf.o3_0ax3n331 = {
 	]],
 }
 
-conf.o3_0ax6n331 = {
-	name = "OpenSSL3.0.13-Android-x86_64-NDKr23cAPI31",
+conf.o3_0ax6nV23L23 = {
+	name = "OpenSSL3.0.13-Android-x86_64-NDKr23cAPI23",
 	opensslVersion = "3.0.13",
 	host = "CentOS8",
-	target = "Android-31",
-	toolchainT = "Android-31-r23c-x86_64",
+	target = "Android-23",
+	toolchainT = "Android-23-r23c-x86_64",
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -663,7 +663,7 @@ conf.o3_0ax6n331 = {
 		--prefix=//
 		--openssldir=//ssl
 		android-x86_64
-		-D__ANDROID_API__=31
+		-D__ANDROID_API__=23
 		-fstack-protector-strong
 		-fPIC
 		-Wl,-s
@@ -671,27 +671,27 @@ conf.o3_0ax6n331 = {
 	]],
 }
 
-conf.o3_0aaln331 = {
-	name = "OpenSSL3.0.13-Android-ALL-NDKr23cAPI31",
+conf.o3_0aalnV23L23 = {
+	name = "OpenSSL3.0.13-Android-ALL-NDKr23cAPI23",
 	opensslVersion = "3.0.13",
 	host = "CentOS8",
 	opensslUnifyType = "Android",
 	opensslUnifyArch = {
-		["armeabi-v7a"] = "o3_0aa3n331",
-		["arm64-v8a"] = "o3_0aa6n331",
-		["x86"] = "o3_0ax3n331",
-		["x86_64"] = "o3_0ax6n331",
+		["armeabi-v7a"] = "o3_0aa3nV23L23",
+		["arm64-v8a"] = "o3_0aa6nV23L23",
+		["x86"] = "o3_0ax3nV23L23",
+		["x86_64"] = "o3_0ax6nV23L23",
 	},
 }
 
 --------------------------------------------------------------------
 
-conf.o3_0aa3n531 = {
-	name = "OpenSSL3.0.13-Android-arm-NDKr25cAPI31",
+conf.o3_0aa3nV25L23 = {
+	name = "OpenSSL3.0.13-Android-arm-NDKr25cAPI23",
 	opensslVersion = "3.0.13",
 	host = "CentOS8",
-	target = "Android-31",
-	toolchainT = "Android-31-r25c-arm",
+	target = "Android-23",
+	toolchainT = "Android-23-r25c-arm",
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -700,7 +700,7 @@ conf.o3_0aa3n531 = {
 		--prefix=//
 		--openssldir=//ssl
 		android-arm
-		-D__ANDROID_API__=31
+		-D__ANDROID_API__=23
 		-march=armv7-a
 		-mfloat-abi=softfp
 		-mfpu=vfp
@@ -713,12 +713,12 @@ conf.o3_0aa3n531 = {
 	]],
 }
 
-conf.o3_0aa6n531 = {
-	name = "OpenSSL3.0.13-Android-arm64-NDKr25cAPI31",
+conf.o3_0aa6nV25L23 = {
+	name = "OpenSSL3.0.13-Android-arm64-NDKr25cAPI23",
 	opensslVersion = "3.0.13",
 	host = "CentOS8",
-	target = "Android-31",
-	toolchainT = "Android-31-r25c-arm64",
+	target = "Android-23",
+	toolchainT = "Android-23-r25c-arm64",
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -727,7 +727,7 @@ conf.o3_0aa6n531 = {
 		--prefix=//
 		--openssldir=//ssl
 		android-arm64
-		-D__ANDROID_API__=31
+		-D__ANDROID_API__=23
 		-fstack-protector-strong
 		-fPIC
 		-Wl,-s
@@ -735,12 +735,12 @@ conf.o3_0aa6n531 = {
 	]],
 }
 
-conf.o3_0ax3n531 = {
-	name = "OpenSSL3.0.13-Android-x86-NDKr25cAPI31",
+conf.o3_0ax3nV25L23 = {
+	name = "OpenSSL3.0.13-Android-x86-NDKr25cAPI23",
 	opensslVersion = "3.0.13",
 	host = "CentOS8",
-	target = "Android-31",
-	toolchainT = "Android-31-r25c-x86",
+	target = "Android-23",
+	toolchainT = "Android-23-r25c-x86",
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -749,7 +749,7 @@ conf.o3_0ax3n531 = {
 		--prefix=//
 		--openssldir=//ssl
 		android-x86
-		-D__ANDROID_API__=31
+		-D__ANDROID_API__=23
 		-fstack-protector-strong
 		-fPIC
 		-Wl,-s
@@ -757,12 +757,12 @@ conf.o3_0ax3n531 = {
 	]],
 }
 
-conf.o3_0ax6n531 = {
-	name = "OpenSSL3.0.13-Android-x86_64-NDKr25cAPI31",
+conf.o3_0ax6nV25L23 = {
+	name = "OpenSSL3.0.13-Android-x86_64-NDKr25cAPI23",
 	opensslVersion = "3.0.13",
 	host = "CentOS8",
-	target = "Android-31",
-	toolchainT = "Android-31-r25c-x86_64",
+	target = "Android-23",
+	toolchainT = "Android-23-r25c-x86_64",
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -771,7 +771,7 @@ conf.o3_0ax6n531 = {
 		--prefix=//
 		--openssldir=//ssl
 		android-x86_64
-		-D__ANDROID_API__=31
+		-D__ANDROID_API__=23
 		-fstack-protector-strong
 		-fPIC
 		-Wl,-s
@@ -779,27 +779,27 @@ conf.o3_0ax6n531 = {
 	]],
 }
 
-conf.o3_0aaln531 = {
-	name = "OpenSSL3.0.13-Android-ALL-NDKr25cAPI31",
+conf.o3_0aalnV25L23 = {
+	name = "OpenSSL3.0.13-Android-ALL-NDKr25cAPI23",
 	opensslVersion = "3.0.13",
 	host = "CentOS8",
 	opensslUnifyType = "Android",
 	opensslUnifyArch = {
-		["armeabi-v7a"] = "o3_0aa3n531",
-		["arm64-v8a"] = "o3_0aa6n531",
-		["x86"] = "o3_0ax3n531",
-		["x86_64"] = "o3_0ax6n531",
+		["armeabi-v7a"] = "o3_0aa3nV25L23",
+		["arm64-v8a"] = "o3_0aa6nV25L23",
+		["x86"] = "o3_0ax3nV25L23",
+		["x86_64"] = "o3_0ax6nV25L23",
 	},
 }
 
 --------------------------------------------------------------------
 
-conf.o3_0aa3n533 = {
-	name = "OpenSSL3.0.13-Android-arm-NDKr25cAPI33",
+conf.o3_0aa3nV23L24 = {
+	name = "OpenSSL3.0.13-Android-arm-NDKr23cAPI24",
 	opensslVersion = "3.0.13",
-	host = "Rocky9",
-	target = "Android-33",
-	toolchainT = "Android-33-r25c-arm",
+	host = "CentOS8",
+	target = "Android-24",
+	toolchainT = "Android-24-r23c-arm",
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -808,7 +808,7 @@ conf.o3_0aa3n533 = {
 		--prefix=//
 		--openssldir=//ssl
 		android-arm
-		-D__ANDROID_API__=33
+		-D__ANDROID_API__=24
 		-march=armv7-a
 		-mfloat-abi=softfp
 		-mfpu=vfp
@@ -821,12 +821,12 @@ conf.o3_0aa3n533 = {
 	]],
 }
 
-conf.o3_0aa6n533 = {
-	name = "OpenSSL3.0.13-Android-arm64-NDKr25cAPI33",
+conf.o3_0aa6nV23L24 = {
+	name = "OpenSSL3.0.13-Android-arm64-NDKr23cAPI24",
 	opensslVersion = "3.0.13",
-	host = "Rocky9",
-	target = "Android-33",
-	toolchainT = "Android-33-r25c-arm64",
+	host = "CentOS8",
+	target = "Android-24",
+	toolchainT = "Android-24-r23c-arm64",
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -835,7 +835,7 @@ conf.o3_0aa6n533 = {
 		--prefix=//
 		--openssldir=//ssl
 		android-arm64
-		-D__ANDROID_API__=33
+		-D__ANDROID_API__=24
 		-fstack-protector-strong
 		-fPIC
 		-Wl,-s
@@ -843,12 +843,12 @@ conf.o3_0aa6n533 = {
 	]],
 }
 
-conf.o3_0ax3n533 = {
-	name = "OpenSSL3.0.13-Android-x86-NDKr25cAPI33",
+conf.o3_0ax3nV23L24 = {
+	name = "OpenSSL3.0.13-Android-x86-NDKr23cAPI24",
 	opensslVersion = "3.0.13",
-	host = "Rocky9",
-	target = "Android-33",
-	toolchainT = "Android-33-r25c-x86",
+	host = "CentOS8",
+	target = "Android-24",
+	toolchainT = "Android-24-r23c-x86",
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -857,7 +857,7 @@ conf.o3_0ax3n533 = {
 		--prefix=//
 		--openssldir=//ssl
 		android-x86
-		-D__ANDROID_API__=33
+		-D__ANDROID_API__=24
 		-fstack-protector-strong
 		-fPIC
 		-Wl,-s
@@ -865,12 +865,12 @@ conf.o3_0ax3n533 = {
 	]],
 }
 
-conf.o3_0ax6n533 = {
-	name = "OpenSSL3.0.13-Android-x86_64-NDKr25cAPI33",
+conf.o3_0ax6nV23L24 = {
+	name = "OpenSSL3.0.13-Android-x86_64-NDKr23cAPI24",
 	opensslVersion = "3.0.13",
-	host = "Rocky9",
-	target = "Android-33",
-	toolchainT = "Android-33-r25c-x86_64",
+	host = "CentOS8",
+	target = "Android-24",
+	toolchainT = "Android-24-r23c-x86_64",
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -879,7 +879,7 @@ conf.o3_0ax6n533 = {
 		--prefix=//
 		--openssldir=//ssl
 		android-x86_64
-		-D__ANDROID_API__=33
+		-D__ANDROID_API__=24
 		-fstack-protector-strong
 		-fPIC
 		-Wl,-s
@@ -887,27 +887,27 @@ conf.o3_0ax6n533 = {
 	]],
 }
 
-conf.o3_0aaln533 = {
-	name = "OpenSSL3.0.13-Android-ALL-NDKr25cAPI33",
+conf.o3_0aalnV23L24 = {
+	name = "OpenSSL3.0.13-Android-ALL-NDKr23cAPI24",
 	opensslVersion = "3.0.13",
-	host = "Rocky9",
+	host = "CentOS8",
 	opensslUnifyType = "Android",
 	opensslUnifyArch = {
-		["armeabi-v7a"] = "o3_0aa3n533",
-		["arm64-v8a"] = "o3_0aa6n533",
-		["x86"] = "o3_0ax3n533",
-		["x86_64"] = "o3_0ax6n533",
+		["armeabi-v7a"] = "o3_0aa3nV23L24",
+		["arm64-v8a"] = "o3_0aa6nV23L24",
+		["x86"] = "o3_0ax3nV23L24",
+		["x86_64"] = "o3_0ax6nV23L24",
 	},
 }
 
 --------------------------------------------------------------------
 
-conf.o3_0aa3n633 = {
-	name = "OpenSSL3.0.13-Android-arm-NDKr26bAPI33",
+conf.o3_0aa3nV25L24 = {
+	name = "OpenSSL3.0.13-Android-arm-NDKr25cAPI24",
 	opensslVersion = "3.0.13",
-	host = "Rocky9",
-	target = "Android-33",
-	toolchainT = "Android-33-r26b-arm",
+	host = "CentOS8",
+	target = "Android-24",
+	toolchainT = "Android-24-r25c-arm",
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -916,7 +916,7 @@ conf.o3_0aa3n633 = {
 		--prefix=//
 		--openssldir=//ssl
 		android-arm
-		-D__ANDROID_API__=33
+		-D__ANDROID_API__=24
 		-march=armv7-a
 		-mfloat-abi=softfp
 		-mfpu=vfp
@@ -929,12 +929,12 @@ conf.o3_0aa3n633 = {
 	]],
 }
 
-conf.o3_0aa6n633 = {
-	name = "OpenSSL3.0.13-Android-arm64-NDKr26bAPI33",
+conf.o3_0aa6nV25L24 = {
+	name = "OpenSSL3.0.13-Android-arm64-NDKr25cAPI24",
 	opensslVersion = "3.0.13",
-	host = "Rocky9",
-	target = "Android-33",
-	toolchainT = "Android-33-r26b-arm64",
+	host = "CentOS8",
+	target = "Android-24",
+	toolchainT = "Android-24-r25c-arm64",
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -943,7 +943,7 @@ conf.o3_0aa6n633 = {
 		--prefix=//
 		--openssldir=//ssl
 		android-arm64
-		-D__ANDROID_API__=33
+		-D__ANDROID_API__=24
 		-fstack-protector-strong
 		-fPIC
 		-Wl,-s
@@ -951,12 +951,12 @@ conf.o3_0aa6n633 = {
 	]],
 }
 
-conf.o3_0ax3n633 = {
-	name = "OpenSSL3.0.13-Android-x86-NDKr26bAPI33",
+conf.o3_0ax3nV25L24 = {
+	name = "OpenSSL3.0.13-Android-x86-NDKr25cAPI24",
 	opensslVersion = "3.0.13",
-	host = "Rocky9",
-	target = "Android-33",
-	toolchainT = "Android-33-r26b-x86",
+	host = "CentOS8",
+	target = "Android-24",
+	toolchainT = "Android-24-r25c-x86",
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -965,7 +965,7 @@ conf.o3_0ax3n633 = {
 		--prefix=//
 		--openssldir=//ssl
 		android-x86
-		-D__ANDROID_API__=33
+		-D__ANDROID_API__=24
 		-fstack-protector-strong
 		-fPIC
 		-Wl,-s
@@ -973,12 +973,12 @@ conf.o3_0ax3n633 = {
 	]],
 }
 
-conf.o3_0ax6n633 = {
-	name = "OpenSSL3.0.13-Android-x86_64-NDKr26bAPI33",
+conf.o3_0ax6nV25L24 = {
+	name = "OpenSSL3.0.13-Android-x86_64-NDKr25cAPI24",
 	opensslVersion = "3.0.13",
-	host = "Rocky9",
-	target = "Android-33",
-	toolchainT = "Android-33-r26b-x86_64",
+	host = "CentOS8",
+	target = "Android-24",
+	toolchainT = "Android-24-r25c-x86_64",
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -987,7 +987,7 @@ conf.o3_0ax6n633 = {
 		--prefix=//
 		--openssldir=//ssl
 		android-x86_64
-		-D__ANDROID_API__=33
+		-D__ANDROID_API__=24
 		-fstack-protector-strong
 		-fPIC
 		-Wl,-s
@@ -995,16 +995,232 @@ conf.o3_0ax6n633 = {
 	]],
 }
 
-conf.o3_0aaln633 = {
-	name = "OpenSSL3.0.13-Android-ALL-NDKr26bAPI33",
+conf.o3_0aalnV25L24 = {
+	name = "OpenSSL3.0.13-Android-ALL-NDKr25cAPI24",
+	opensslVersion = "3.0.13",
+	host = "CentOS8",
+	opensslUnifyType = "Android",
+	opensslUnifyArch = {
+		["armeabi-v7a"] = "o3_0aa3nV25L24",
+		["arm64-v8a"] = "o3_0aa6nV25L24",
+		["x86"] = "o3_0ax3nV25L24",
+		["x86_64"] = "o3_0ax6nV25L24",
+	},
+}
+
+--------------------------------------------------------------------
+
+conf.o3_0aa3nV25L27 = {
+	name = "OpenSSL3.0.13-Android-arm-NDKr25cAPI27",
+	opensslVersion = "3.0.13",
+	host = "Rocky9",
+	target = "Android-27",
+	toolchainT = "Android-27-r25c-arm",
+	configureParameter = [[
+		no-asm
+		no-shared
+		no-threads
+		enable-static-engine
+		--prefix=//
+		--openssldir=//ssl
+		android-arm
+		-D__ANDROID_API__=27
+		-march=armv7-a
+		-mfloat-abi=softfp
+		-mfpu=vfp
+		-fno-builtin-memmove
+		-mthumb
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
+}
+
+conf.o3_0aa6nV25L27 = {
+	name = "OpenSSL3.0.13-Android-arm64-NDKr25cAPI27",
+	opensslVersion = "3.0.13",
+	host = "Rocky9",
+	target = "Android-27",
+	toolchainT = "Android-27-r25c-arm64",
+	configureParameter = [[
+		no-asm
+		no-shared
+		no-threads
+		enable-static-engine
+		--prefix=//
+		--openssldir=//ssl
+		android-arm64
+		-D__ANDROID_API__=27
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
+}
+
+conf.o3_0ax3nV25L27 = {
+	name = "OpenSSL3.0.13-Android-x86-NDKr25cAPI27",
+	opensslVersion = "3.0.13",
+	host = "Rocky9",
+	target = "Android-27",
+	toolchainT = "Android-27-r25c-x86",
+	configureParameter = [[
+		no-asm
+		no-shared
+		no-threads
+		enable-static-engine
+		--prefix=//
+		--openssldir=//ssl
+		android-x86
+		-D__ANDROID_API__=27
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
+}
+
+conf.o3_0ax6nV25L27 = {
+	name = "OpenSSL3.0.13-Android-x86_64-NDKr25cAPI27",
+	opensslVersion = "3.0.13",
+	host = "Rocky9",
+	target = "Android-27",
+	toolchainT = "Android-27-r25c-x86_64",
+	configureParameter = [[
+		no-asm
+		no-shared
+		no-threads
+		enable-static-engine
+		--prefix=//
+		--openssldir=//ssl
+		android-x86_64
+		-D__ANDROID_API__=27
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
+}
+
+conf.o3_0aalnV25L27 = {
+	name = "OpenSSL3.0.13-Android-ALL-NDKr25cAPI27",
 	opensslVersion = "3.0.13",
 	host = "Rocky9",
 	opensslUnifyType = "Android",
 	opensslUnifyArch = {
-		["armeabi-v7a"] = "o3_0aa3n633",
-		["arm64-v8a"] = "o3_0aa6n633",
-		["x86"] = "o3_0ax3n633",
-		["x86_64"] = "o3_0ax6n633",
+		["armeabi-v7a"] = "o3_0aa3nV25L27",
+		["arm64-v8a"] = "o3_0aa6nV25L27",
+		["x86"] = "o3_0ax3nV25L27",
+		["x86_64"] = "o3_0ax6nV25L27",
+	},
+}
+
+--------------------------------------------------------------------
+
+conf.o3_0aa3nV26L27 = {
+	name = "OpenSSL3.0.13-Android-arm-NDKr26cAPI27",
+	opensslVersion = "3.0.13",
+	host = "Rocky9",
+	target = "Android-27",
+	toolchainT = "Android-27-r26c-arm",
+	configureParameter = [[
+		no-asm
+		no-shared
+		no-threads
+		enable-static-engine
+		--prefix=//
+		--openssldir=//ssl
+		android-arm
+		-D__ANDROID_API__=27
+		-march=armv7-a
+		-mfloat-abi=softfp
+		-mfpu=vfp
+		-fno-builtin-memmove
+		-mthumb
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
+}
+
+conf.o3_0aa6nV26L27 = {
+	name = "OpenSSL3.0.13-Android-arm64-NDKr26cAPI27",
+	opensslVersion = "3.0.13",
+	host = "Rocky9",
+	target = "Android-27",
+	toolchainT = "Android-27-r26c-arm64",
+	configureParameter = [[
+		no-asm
+		no-shared
+		no-threads
+		enable-static-engine
+		--prefix=//
+		--openssldir=//ssl
+		android-arm64
+		-D__ANDROID_API__=27
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
+}
+
+conf.o3_0ax3nV26L27 = {
+	name = "OpenSSL3.0.13-Android-x86-NDKr26cAPI27",
+	opensslVersion = "3.0.13",
+	host = "Rocky9",
+	target = "Android-27",
+	toolchainT = "Android-27-r26c-x86",
+	configureParameter = [[
+		no-asm
+		no-shared
+		no-threads
+		enable-static-engine
+		--prefix=//
+		--openssldir=//ssl
+		android-x86
+		-D__ANDROID_API__=27
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
+}
+
+conf.o3_0ax6nV26L27 = {
+	name = "OpenSSL3.0.13-Android-x86_64-NDKr26cAPI27",
+	opensslVersion = "3.0.13",
+	host = "Rocky9",
+	target = "Android-27",
+	toolchainT = "Android-27-r26c-x86_64",
+	configureParameter = [[
+		no-asm
+		no-shared
+		no-threads
+		enable-static-engine
+		--prefix=//
+		--openssldir=//ssl
+		android-x86_64
+		-D__ANDROID_API__=27
+		-fstack-protector-strong
+		-fPIC
+		-Wl,-s
+		-Wl,-z,noexecstack
+	]],
+}
+
+conf.o3_0aalnV26L27 = {
+	name = "OpenSSL3.0.13-Android-ALL-NDKr26cAPI27",
+	opensslVersion = "3.0.13",
+	host = "Rocky9",
+	opensslUnifyType = "Android",
+	opensslUnifyArch = {
+		["armeabi-v7a"] = "o3_0aa3nV26L27",
+		["arm64-v8a"] = "o3_0aa6nV26L27",
+		["x86"] = "o3_0ax3nV26L27",
+		["x86_64"] = "o3_0ax6nV26L27",
 	},
 }
 

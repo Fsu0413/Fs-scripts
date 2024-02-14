@@ -37,16 +37,14 @@ abbrs:
 		p2: MinGW-w64, ucrt, with GCC 12.2.0
 		g3: MinGW-w64, msvcrt, with GCC 13.2.0
 		p3: MinGW-w64, ucrt, with GCC 13.2.0
-		s5: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 15
-		u5: LLVM/Clang based MinGW-w64, ucrt, with LLVM 15
 		s6: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 16
 		u6: LLVM/Clang based MinGW-w64, ucrt, with LLVM 16
 		s7: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 17
 		u7: LLVM/Clang based MinGW-w64, ucrt, with LLVM 17
-		nl: Android NDK r21e/Previous LTS
-		n3: Android NDK r23c/Previous LTS
-		n5: Android NDK r25c/Previous LTS
-		n6: Android NDK r26b/Latest LTS
+		nV21: Android NDK r21e/Previous LTS
+		nV23: Android NDK r23c/Previous LTS
+		nV25: Android NDK r25c/Previous LTS
+		nV26: Android NDK r26c/Latest LTS
 	If omitted, it use a toolchain in default PATH, which should be AppleClang in macOS, or GCC in Linux.
 
 	Variants:
@@ -1199,7 +1197,7 @@ conf.q5_15wx6g8_aalnV23 = {
 	toolchain = "MinGW810-64",
 	target = "Android-23",
 	toolchainT = "Android-23-r23c-all",
-	opensslConf = "o3_0aaln3V23L23",
+	opensslConf = "o3_0aalnV23L23",
 	androidSdkVersion = "20240204",
 	configureParameter = [[
 		-prefix
@@ -1251,7 +1249,7 @@ conf.q5_15lx6_aalnV23 = {
 	host = "CentOS8",
 	target = "Android-23",
 	toolchainT = "Android-23-r23c-all",
-	opensslConf = "o3_0aaln3V23L23",
+	opensslConf = "o3_0aalnV23L23",
 	androidSdkVersion = "20240204",
 	configureParameter = [[
 		-prefix
@@ -1303,7 +1301,7 @@ conf.q5_15mx6_aalnV23 = {
 	host = "macOS1015",
 	target = "Android-23",
 	toolchainT = "Android-23-r23c-all",
-	opensslConf = "o3_0aaln3V23L23",
+	opensslConf = "o3_0aalnV23L23",
 	androidSdkVersion = "20240204",
 	configureParameter = [[
 		-prefix
@@ -1355,7 +1353,7 @@ conf.q5_15ma6_aalnV23 = {
 	host = "macOSM1",
 	target = "Android-23",
 	toolchainT = "Android-23-r23c-all",
-	opensslConf = "o3_0aaln3V23L23",
+	opensslConf = "o3_0aalnV23L23",
 	androidSdkVersion = "20240204",
 	configureParameter = [[
 		-prefix

@@ -36,7 +36,7 @@ abbrs:
 		nV21: Android NDK r21e/Previous LTS
 		nV23: Android NDK r23c/Previous LTS
 		nV25: Android NDK r25c/Previous LTS
-		nV26: Android NDK r26b/Latest LTS
+		nV26: Android NDK r26c/Latest LTS
 	If omitted, it use a toolchain in default PATH, which should be AppleClang in macOS, or GCC in Linux.
 
 	Variants:

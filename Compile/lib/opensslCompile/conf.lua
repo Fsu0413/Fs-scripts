@@ -29,8 +29,6 @@ abbrs:
 		p2: MinGW-w64, ucrt, with GCC 12.2.0
 		g3: MinGW-w64, msvcrt, with GCC 13.2.0
 		p3: MinGW-w64, ucrt, with GCC 13.2.0
-		s5: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 15
-		u5: LLVM/Clang based MinGW-w64, ucrt, with LLVM 15
 		s6: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 16
 		u6: LLVM/Clang based MinGW-w64, ucrt, with LLVM 16
 		s7: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 17
@@ -197,42 +195,6 @@ conf.o3_0wx6g3 = {
 	host = "Win10SH",
 	toolchain = "MinGW1320-64",
 	libPath = { "bin\\libssl-3-x64.dll", "bin\\libcrypto-3-x64.dll" },
-	configureParameter = [[
-		no-asm
-		shared
-		enable-static-engine
-		--prefix=&INSTALLROOT&
-		--openssldir=&INSTALLROOT&/ssl
-		--libdir=&INSTALLROOT&/lib
-		mingw64
-	]],
-}
-
-conf.o3_0wx6u5 = {
-	name = "OpenSSL3.0.13-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-ucrt",
-	opensslVersion = "3.0.13",
-	host = "Win10SH",
-	toolchain = "MinGWLLVM-ucrt15-64",
-	libPath = { "bin\\libssl-3-x64.dll", "bin\\libcrypto-3-x64.dll" },
-	clangTriplet = "x86_64-w64-mingw32",
-	configureParameter = [[
-		no-asm
-		shared
-		enable-static-engine
-		--prefix=&INSTALLROOT&
-		--openssldir=&INSTALLROOT&/ssl
-		--libdir=&INSTALLROOT&/lib
-		mingw64
-	]],
-}
-
-conf.o3_0wx6s5 = {
-	name = "OpenSSL3.0.13-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-msvcrt",
-	opensslVersion = "3.0.13",
-	host = "Win10SH",
-	toolchain = "MinGWLLVM-msvcrt15-64",
-	libPath = { "bin\\libssl-3-x64.dll", "bin\\libcrypto-3-x64.dll" },
-	clangTriplet = "x86_64-w64-mingw32",
 	configureParameter = [[
 		no-asm
 		shared

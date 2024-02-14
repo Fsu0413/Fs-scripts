@@ -37,8 +37,6 @@ conf.host.win = {
 		-- MinGW toolchains with Clang / LLVM, currently used in Qt 6 only
 		-- LLVM always acts as an cross compiler, but the target libraries are architecture-dependent
 		-- Since some binaries built also acts as host tool, we should add the target libraries to PATH too, otherwise the program won't start
-		["MinGWLLVM-msvcrt15-64"] = {"D:\\mingw-w64\\llvm-mingw-20220906-msvcrt-x86_64\\x86_64-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20220906-msvcrt-x86_64\\bin"},
-		["MinGWLLVM-ucrt15-64"] = {"D:\\mingw-w64\\llvm-mingw-20220906-ucrt-x86_64\\x86_64-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20220906-ucrt-x86_64\\bin"},
 		["MinGWLLVM-msvcrt16-64"] = {"D:\\mingw-w64\\llvm-mingw-20230614-msvcrt-x86_64\\x86_64-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20230614-msvcrt-x86_64\\bin"},
 		["MinGWLLVM-ucrt16-64"] = {"D:\\mingw-w64\\llvm-mingw-20230614-ucrt-x86_64\\x86_64-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20230614-ucrt-x86_64\\bin"},
 		["MinGWLLVM-msvcrt17-64"] = {"D:\\mingw-w64\\llvm-mingw-20231128-msvcrt-x86_64\\x86_64-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20231128-msvcrt-x86_64\\bin"},
@@ -97,8 +95,6 @@ conf.host.msys = {
 		["MinGW1320-64"] = "/d/mingw-w64/13.2.1/mingw64/bin/",
 		["MinGW132u-64"] = "/d/mingw-w64/13.2.1u/mingw64/bin/",
 
-		["MinGWLLVM-msvcrt15-64"] = {"/d/mingw-w64/llvm-mingw-20220906-msvcrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20220906-msvcrt-x86_64/bin"},
-		["MinGWLLVM-ucrt15-64"] = {"/d/mingw-w64/llvm-mingw-20220906-ucrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20220906-ucrt-x86_64/bin"},
 		["MinGWLLVM-msvcrt16-64"] = {"/d/mingw-w64/llvm-mingw-20230614-msvcrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20230614-msvcrt-x86_64/bin"},
 		["MinGWLLVM-ucrt16-64"] = {"/d/mingw-w64/llvm-mingw-20230614-ucrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20230614-ucrt-x86_64/bin"},
 		["MinGWLLVM-msvcrt17-64"] = {"/d/mingw-w64/llvm-mingw-20231128-msvcrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20231128-msvcrt-x86_64/bin"},

@@ -57,8 +57,8 @@ conf.o3_0wx6v9 = {
 		no-asm
 		shared
 		enable-static-engine
-		--prefix=&INSTALLROOT&
-		--openssldir=&INSTALLROOT&\ssl
+		--prefix="&INSTALLROOT&"
+		--openssldir="&INSTALLROOT&\ssl"
 		VC-WIN64A
 		-FS
 	]],
@@ -75,8 +75,8 @@ conf.o3_0wx6v9st = {
 		no-asm
 		no-shared
 		enable-static-engine
-		--prefix=&INSTALLROOT&
-		--openssldir=&INSTALLROOT&\ssl
+		--prefix="&INSTALLROOT&"
+		--openssldir="&INSTALLROOT&\ssl"
 		VC-WIN64A
 		-FS
 		-MT
@@ -93,8 +93,8 @@ conf.o3_0wx6v2 = {
 		no-asm
 		shared
 		enable-static-engine
-		--prefix=&INSTALLROOT&
-		--openssldir=&INSTALLROOT&\ssl
+		--prefix="&INSTALLROOT&"
+		--openssldir="&INSTALLROOT&\ssl"
 		VC-WIN64A
 		-FS
 	]],
@@ -111,8 +111,8 @@ conf.o3_0wx6v2st = {
 		no-asm
 		no-shared
 		enable-static-engine
-		--prefix=&INSTALLROOT&
-		--openssldir=&INSTALLROOT&\ssl
+		--prefix="&INSTALLROOT&"
+		--openssldir="&INSTALLROOT&\ssl"
 		VC-WIN64A
 		-FS
 		-MT
@@ -131,9 +131,9 @@ conf.o3_0wx6g1 = {
 		no-asm
 		shared
 		enable-static-engine
-		--prefix=&INSTALLROOT&
-		--openssldir=&INSTALLROOT&/ssl
-		--libdir=&INSTALLROOT&/lib
+		--prefix="&INSTALLROOT&"
+		--openssldir="&INSTALLROOT&/ssl"
+		--libdir="&INSTALLROOT&/lib"
 		mingw64
 	]],
 }
@@ -148,9 +148,9 @@ conf.o3_0wx6p2 = {
 		no-asm
 		shared
 		enable-static-engine
-		--prefix=&INSTALLROOT&
-		--openssldir=&INSTALLROOT&/ssl
-		--libdir=&INSTALLROOT&/lib
+		--prefix="&INSTALLROOT&"
+		--openssldir="&INSTALLROOT&/ssl"
+		--libdir="&INSTALLROOT&/lib"
 		mingw64
 	]],
 }
@@ -165,9 +165,9 @@ conf.o3_0wx6g2 = {
 		no-asm
 		shared
 		enable-static-engine
-		--prefix=&INSTALLROOT&
-		--openssldir=&INSTALLROOT&/ssl
-		--libdir=&INSTALLROOT&/lib
+		--prefix="&INSTALLROOT&"
+		--openssldir="&INSTALLROOT&/ssl"
+		--libdir="&INSTALLROOT&/lib"
 		mingw64
 	]],
 }
@@ -182,9 +182,9 @@ conf.o3_0wx6p3 = {
 		no-asm
 		shared
 		enable-static-engine
-		--prefix=&INSTALLROOT&
-		--openssldir=&INSTALLROOT&/ssl
-		--libdir=&INSTALLROOT&/lib
+		--prefix="&INSTALLROOT&"
+		--openssldir="&INSTALLROOT&/ssl"
+		--libdir="&INSTALLROOT&/lib"
 		mingw64
 	]],
 }
@@ -199,9 +199,9 @@ conf.o3_0wx6g3 = {
 		no-asm
 		shared
 		enable-static-engine
-		--prefix=&INSTALLROOT&
-		--openssldir=&INSTALLROOT&/ssl
-		--libdir=&INSTALLROOT&/lib
+		--prefix="&INSTALLROOT&"
+		--openssldir="&INSTALLROOT&/ssl"
+		--libdir="&INSTALLROOT&/lib"
 		mingw64
 	]],
 }
@@ -217,9 +217,9 @@ conf.o3_0wx6u6 = {
 		no-asm
 		shared
 		enable-static-engine
-		--prefix=&INSTALLROOT&
-		--openssldir=&INSTALLROOT&/ssl
-		--libdir=&INSTALLROOT&/lib
+		--prefix="&INSTALLROOT&"
+		--openssldir="&INSTALLROOT&/ssl"
+		--libdir="&INSTALLROOT&/lib"
 		mingw64
 	]],
 }
@@ -235,9 +235,9 @@ conf.o3_0wx6s6 = {
 		no-asm
 		shared
 		enable-static-engine
-		--prefix=&INSTALLROOT&
-		--openssldir=&INSTALLROOT&/ssl
-		--libdir=&INSTALLROOT&/lib
+		--prefix="&INSTALLROOT&"
+		--openssldir="&INSTALLROOT&/ssl"
+		--libdir="&INSTALLROOT&/lib"
 		mingw64
 	]],
 }
@@ -253,9 +253,9 @@ conf.o3_0wx6u7 = {
 		no-asm
 		shared
 		enable-static-engine
-		--prefix=&INSTALLROOT&
-		--openssldir=&INSTALLROOT&/ssl
-		--libdir=&INSTALLROOT&/lib
+		--prefix="&INSTALLROOT&"
+		--openssldir="&INSTALLROOT&/ssl"
+		--libdir="&INSTALLROOT&/lib"
 		mingw64
 	]],
 }
@@ -271,9 +271,9 @@ conf.o3_0wx6s7 = {
 		no-asm
 		shared
 		enable-static-engine
-		--prefix=&INSTALLROOT&
-		--openssldir=&INSTALLROOT&/ssl
-		--libdir=&INSTALLROOT&/lib
+		--prefix="&INSTALLROOT&"
+		--openssldir="&INSTALLROOT&/ssl"
+		--libdir="&INSTALLROOT&/lib"
 		mingw64
 	]],
 }
@@ -291,9 +291,9 @@ conf.o3_0wx6g1st = {
 		no-asm
 		no-shared
 		enable-static-engine
-		--prefix=&INSTALLROOT&
-		--openssldir=&INSTALLROOT&/ssl
-		--libdir=&INSTALLROOT&/lib
+		--prefix="&INSTALLROOT&"
+		--openssldir="&INSTALLROOT&/ssl"
+		--libdir="&INSTALLROOT&/lib"
 		mingw64
 		--static
 		-static-libgcc
@@ -311,9 +311,9 @@ conf.o3_0wx6p2st = {
 		no-asm
 		no-shared
 		enable-static-engine
-		--prefix=&INSTALLROOT&
-		--openssldir=&INSTALLROOT&/ssl
-		--libdir=&INSTALLROOT&/lib
+		--prefix="&INSTALLROOT&"
+		--openssldir="&INSTALLROOT&/ssl"
+		--libdir="&INSTALLROOT&/lib"
 		mingw64
 		--static
 		-static-libgcc
@@ -331,9 +331,9 @@ conf.o3_0wx6g2st = {
 		no-asm
 		no-shared
 		enable-static-engine
-		--prefix=&INSTALLROOT&
-		--openssldir=&INSTALLROOT&/ssl
-		--libdir=&INSTALLROOT&/lib
+		--prefix="&INSTALLROOT&"
+		--openssldir="&INSTALLROOT&/ssl"
+		--libdir="&INSTALLROOT&/lib"
 		mingw64
 		--static
 		-static-libgcc
@@ -351,9 +351,9 @@ conf.o3_0wx6p3st = {
 		no-asm
 		no-shared
 		enable-static-engine
-		--prefix=&INSTALLROOT&
-		--openssldir=&INSTALLROOT&/ssl
-		--libdir=&INSTALLROOT&/lib
+		--prefix="&INSTALLROOT&"
+		--openssldir="&INSTALLROOT&/ssl"
+		--libdir="&INSTALLROOT&/lib"
 		mingw64
 		--static
 		-static-libgcc
@@ -371,9 +371,9 @@ conf.o3_0wx6g3st = {
 		no-asm
 		no-shared
 		enable-static-engine
-		--prefix=&INSTALLROOT&
-		--openssldir=&INSTALLROOT&/ssl
-		--libdir=&INSTALLROOT&/lib
+		--prefix="&INSTALLROOT&"
+		--openssldir="&INSTALLROOT&/ssl"
+		--libdir="&INSTALLROOT&/lib"
 		mingw64
 		--static
 		-static-libgcc
@@ -393,8 +393,8 @@ conf.o3_0mx6 = {
 		no-asm
 		shared
 		enable-static-engine
-		--prefix=&INSTALLROOT&
-		--openssldir=&INSTALLROOT&/ssl
+		--prefix="&INSTALLROOT&"
+		--openssldir="&INSTALLROOT&/ssl"
 		darwin64-x86_64
 		-mmacosx-version-min=10.14
 	]],
@@ -410,8 +410,8 @@ conf.o3_0ma6 = {
 		no-asm
 		shared
 		enable-static-engine
-		--prefix=&INSTALLROOT&
-		--openssldir=&INSTALLROOT&/ssl
+		--prefix="&INSTALLROOT&"
+		--openssldir="&INSTALLROOT&/ssl"
 		darwin64-arm64
 		-mmacosx-version-min=10.14
 	]],

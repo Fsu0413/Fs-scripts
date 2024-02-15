@@ -1406,7 +1406,7 @@ conf.q5_15wx6g8_aalnV25 = {
 	toolchain = "MinGW810-64",
 	target = "Android-23",
 	toolchainT = "Android-23-r25c-all",
-	opensslConf = "o3_0aaln523",
+	opensslConf = "o3_0aalnV25L23",
 	androidSdkVersion = "20240204",
 	configureParameter = [[
 		-prefix
@@ -1458,7 +1458,7 @@ conf.q5_15lx6_aalnV25 = {
 	host = "CentOS8",
 	target = "Android-23",
 	toolchainT = "Android-23-r25c-all",
-	opensslConf = "o3_0aaln523",
+	opensslConf = "o3_0aalnV25L23",
 	androidSdkVersion = "20240204",
 	configureParameter = [[
 		-prefix
@@ -1510,7 +1510,7 @@ conf.q5_15mx6_aalnV25 = {
 	host = "macOS1015",
 	target = "Android-23",
 	toolchainT = "Android-23-r25c-all",
-	opensslConf = "o3_0aaln523",
+	opensslConf = "o3_0aalnV25L23",
 	androidSdkVersion = "20240204",
 	configureParameter = [[
 		-prefix
@@ -1562,7 +1562,7 @@ conf.q5_15ma6_aalnV25 = {
 	host = "macOSM1",
 	target = "Android-23",
 	toolchainT = "Android-23-r25c-all",
-	opensslConf = "o3_0aaln523",
+	opensslConf = "o3_0aalnV25L23",
 	androidSdkVersion = "20240204",
 	configureParameter = [[
 		-prefix

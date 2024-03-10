@@ -1,0 +1,10 @@
+diff -rNu a/qmake/Makefile.unix.win32 b/qmake/Makefile.unix.win32
+--- a/qmake/Makefile.unix.win32	2024-01-05 03:21:43.000000000 +0800
++++ b/qmake/Makefile.unix.win32	2024-03-10 11:59:17.643422000 +0800
+@@ -1,5 +1,5 @@
+ EXEEXT = .exe
+-EXTRA_CXXFLAGS = -DUNICODE -DMINGW_HAS_SECURE_API=1
++EXTRA_CXXFLAGS = -DUNICODE -DMINGW_HAS_SECURE_API=1 -DWINVER=0x0601 -D_WIN32_WINNT=0x0601
+ EXTRA_LFLAGS = -static -s -lole32 -luuid -ladvapi32 -lkernel32 -lnetapi32
+ QTOBJS = \
+     qfilesystemengine_win.o \

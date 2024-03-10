@@ -188,7 +188,6 @@ conf.host.mac = {
 		["17"] = "/usr/local/opt/openjdk@17/",
 	},
 	["nodePath"] = {
-		["14"] = "/usr/local/opt/node@14/bin",
 		["18"] = "/usr/local/opt/node@18/bin",
 	},
 	["defaultToolchainExecutableName"] = "clang",
@@ -233,7 +232,7 @@ conf.host.macM1 = {
 		["17"] = "/opt/env/jdk-17/zulu17.48.15-ca-jdk17.0.10-macosx_aarch64/zulu-17.jdk/Contents/Home/",
 	},
 	["nodePath"] = {
-		["14"] = "/opt/homebrew/opt/node@14/bin",
+		["14"] = "/opt/env/node-v14.21.3-darwin-x64/bin",
 		["18"] = "/opt/homebrew/opt/node@18/bin",
 	},
 	["defaultToolchainExecutableName"] = "clang",

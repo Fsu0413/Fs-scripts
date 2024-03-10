@@ -1758,7 +1758,7 @@ conf.q6_2wx6v9 = {
 	toolchain = "MSVC2019-64",
 	opensslConf = "o3_0wx6v9",
 	mysqlConf = "m3_3wx6v9",
-	useCMake = "Latest",
+	useCMake = "27",
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
@@ -1796,7 +1796,7 @@ conf.q6_2wx6v9st = {
 	host = "Win10",
 	toolchain = "MSVC2019-64",
 	variant = {"-static"},
-	useCMake = "Latest",
+	useCMake = "27",
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
@@ -1852,7 +1852,7 @@ conf.q6_2wx6v9sf = {
 	toolchain = "MSVC2019-64",
 	variant = {"-staticFull"},
 	opensslConf = "o3_0wx6v9st",
-	useCMake = "Latest",
+	useCMake = "27",
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
@@ -1891,7 +1891,7 @@ conf.q6_2wx6v9_wa6v9 = {
 	toolchain = "MSVC2019-64", -- only a placeholder here, in fact it uses "toolchainT" instead of "toolchain"
 	toolchainT = "MSVC2019-arm64",
 	-- opensslConf = "???", -- OpenSSL do not provide a way to build for windows-arm64
-	useCMake = "Latest",
+	useCMake = "27",
 	-- TODO: Toolchain file or just write the CMAKE_xxx_COMPILER here?
 	configureParameter = [[
 		-GNinja
@@ -1926,7 +1926,7 @@ conf.q6_2wx6v2 = {
 	toolchain = "MSVC2022-64",
 	opensslConf = "o3_0wx6v2",
 	mysqlConf = "m3_3wx6v2",
-	useCMake = "Latest",
+	useCMake = "27",
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
@@ -2002,7 +2002,7 @@ conf.q6_2wx6g1st = {
 	host = "Win10",
 	toolchain = "MinGW1120-64",
 	variant = {"-static"},
-	useCMake = "Latest",
+	useCMake = "27",
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
@@ -2059,7 +2059,7 @@ conf.q6_2wx6g1sf = {
 	toolchain = "MinGW1120-64",
 	variant = {"-staticFull"},
 	opensslConf = "o3_0wx6g1st",
-	useCMake = "Latest",
+	useCMake = "27",
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
@@ -2136,7 +2136,7 @@ conf.q6_2wx6p2sf = {
 	toolchain = "MinGW122u-64",
 	variant = {"-staticFull"},
 	opensslConf = "o3_0wx6p2st",
-	useCMake = "Latest",
+	useCMake = "27",
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
@@ -2213,7 +2213,7 @@ conf.q6_2wx6g2sf = {
 	toolchain = "MinGW1220-64",
 	variant = {"-staticFull"},
 	opensslConf = "o3_0wx6g2st",
-	useCMake = "Latest",
+	useCMake = "27",
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
@@ -2290,7 +2290,7 @@ conf.q6_2wx6p3sf = {
 	toolchain = "MinGW132u-64",
 	variant = {"-staticFull"},
 	opensslConf = "o3_0wx6p3st",
-	useCMake = "Latest",
+	useCMake = "27",
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
@@ -2367,7 +2367,7 @@ conf.q6_2wx6g3sf = {
 	toolchain = "MinGW1320-64",
 	variant = {"-staticFull"},
 	opensslConf = "o3_0wx6g3st",
-	useCMake = "Latest",
+	useCMake = "27",
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
@@ -2406,7 +2406,7 @@ conf.q6_2wx6u6 = {
 	toolchain = "MinGWLLVM-ucrt16-64",
 	opensslConf = "o3_0wx6u6",
 	mysqlConf = "m3_3wx6u6",
-	useCMake = "Latest",
+	useCMake = "27",
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
@@ -2448,7 +2448,7 @@ conf.q6_2wx6s6 = {
 	toolchain = "MinGWLLVM-msvcrt16-64",
 	opensslConf = "o3_0wx6s6",
 	mysqlConf = "m3_3wx6s6",
-	useCMake = "Latest",
+	useCMake = "27",
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
@@ -2490,7 +2490,7 @@ conf.q6_2wx6u7 = {
 	toolchain = "MinGWLLVM-ucrt17-64",
 	opensslConf = "o3_0wx6u7",
 	mysqlConf = "m3_3wx6u7",
-	useCMake = "Latest",
+	useCMake = "27",
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
@@ -2532,7 +2532,7 @@ conf.q6_2wx6s7 = {
 	toolchain = "MinGWLLVM-msvcrt17-64",
 	opensslConf = "o3_0wx6s7",
 	mysqlConf = "m3_3wx6s7",
-	useCMake = "Latest",
+	useCMake = "27",
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
@@ -2572,7 +2572,7 @@ conf.q6_2lx6st = {
 	qtVersion = "6.2.7",
 	host = "CentOS8",
 	variant = {"-static"},
-	useCMake = "Latest",
+	useCMake = "27",
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
@@ -2811,7 +2811,7 @@ conf.q6_2wx6g1_aa3nV23 = {
 	toolchain = "MinGW1120-64",
 	toolchainT = "Android-24-r23c-arm",
 	opensslConf = "o3_0aa3nV23L24",
-	useCMake = "Latest",
+	useCMake = "27",
 	androidSdkVersion = "20240204",
 	configureParameter = [[
 		-GNinja
@@ -2850,7 +2850,7 @@ conf.q6_2wx6g1_aa6nV23 = {
 	toolchain = "MinGW1120-64",
 	toolchainT = "Android-24-r23c-arm64",
 	opensslConf = "o3_0aa6nV23L24",
-	useCMake = "Latest",
+	useCMake = "27",
 	androidSdkVersion = "20240204",
 	configureParameter = [[
 		-GNinja
@@ -2889,7 +2889,7 @@ conf.q6_2wx6g1_ax3nV23 = {
 	toolchain = "MinGW1120-64",
 	toolchainT = "Android-24-r23c-x86",
 	opensslConf = "o3_0ax3nV23L24",
-	useCMake = "Latest",
+	useCMake = "27",
 	androidSdkVersion = "20240204",
 	configureParameter = [[
 		-GNinja
@@ -2928,7 +2928,7 @@ conf.q6_2wx6g1_ax6nV23 = {
 	toolchain = "MinGW1120-64",
 	toolchainT = "Android-24-r23c-x86_64",
 	opensslConf = "o3_0ax6nV23L24",
-	useCMake = "Latest",
+	useCMake = "27",
 	androidSdkVersion = "20240204",
 	configureParameter = [[
 		-GNinja
@@ -2966,7 +2966,7 @@ conf.q6_2lx6_aa3nV23 = {
 	target = "Android-24",
 	toolchainT = "Android-24-r23c-arm",
 	opensslConf = "o3_0aa3nV23L24",
-	useCMake = "Latest",
+	useCMake = "27",
 	androidSdkVersion = "20240204",
 	configureParameter = [[
 		-GNinja
@@ -3003,7 +3003,7 @@ conf.q6_2lx6_aa6nV23 = {
 	target = "Android-24",
 	toolchainT = "Android-24-r23c-arm64",
 	opensslConf = "o3_0aa6nV23L24",
-	useCMake = "Latest",
+	useCMake = "27",
 	androidSdkVersion = "20240204",
 	configureParameter = [[
 		-GNinja
@@ -3040,7 +3040,7 @@ conf.q6_2lx6_ax3nV23 = {
 	target = "Android-24",
 	toolchainT = "Android-24-r23c-x86",
 	opensslConf = "o3_0ax3nV23L24",
-	useCMake = "Latest",
+	useCMake = "27",
 	androidSdkVersion = "20240204",
 	configureParameter = [[
 		-GNinja
@@ -3077,7 +3077,7 @@ conf.q6_2lx6_ax6nV23 = {
 	target = "Android-24",
 	toolchainT = "Android-24-r23c-x86_64",
 	opensslConf = "o3_0ax6nV23L24",
-	useCMake = "Latest",
+	useCMake = "27",
 	androidSdkVersion = "20240204",
 	configureParameter = [[
 		-GNinja
@@ -3114,7 +3114,7 @@ conf.q6_2mal_aa3nV23 = {
 	target = "Android-24",
 	toolchainT = "Android-24-r23c-arm",
 	opensslConf = "o3_0aa3nV23L24",
-	useCMake = "Latest",
+	useCMake = "27",
 	androidSdkVersion = "20240204",
 	configureParameter = [[
 		-GNinja
@@ -3151,7 +3151,7 @@ conf.q6_2mal_aa6nV23 = {
 	target = "Android-24",
 	toolchainT = "Android-24-r23c-arm64",
 	opensslConf = "o3_0aa6nV23L24",
-	useCMake = "Latest",
+	useCMake = "27",
 	androidSdkVersion = "20240204",
 	configureParameter = [[
 		-GNinja
@@ -3188,7 +3188,7 @@ conf.q6_2mal_ax3nV23 = {
 	target = "Android-24",
 	toolchainT = "Android-24-r23c-x86",
 	opensslConf = "o3_0ax3nV23L24",
-	useCMake = "Latest",
+	useCMake = "27",
 	androidSdkVersion = "20240204",
 	configureParameter = [[
 		-GNinja
@@ -3225,7 +3225,7 @@ conf.q6_2mal_ax6nV23 = {
 	target = "Android-24",
 	toolchainT = "Android-24-r23c-x86_64",
 	opensslConf = "o3_0ax6nV23L24",
-	useCMake = "Latest",
+	useCMake = "27",
 	androidSdkVersion = "20240204",
 	configureParameter = [[
 		-GNinja
@@ -3263,7 +3263,7 @@ conf.q6_2wx6g1_aa3nV25 = {
 	toolchain = "MinGW1120-64",
 	toolchainT = "Android-24-r25c-arm",
 	opensslConf = "o3_0aa3nV25L24",
-	useCMake = "Latest",
+	useCMake = "27",
 	androidSdkVersion = "20240204",
 	configureParameter = [[
 		-GNinja
@@ -3302,7 +3302,7 @@ conf.q6_2wx6g1_aa6nV25 = {
 	toolchain = "MinGW1120-64",
 	toolchainT = "Android-24-r25c-arm64",
 	opensslConf = "o3_0aa6nV25L24",
-	useCMake = "Latest",
+	useCMake = "27",
 	androidSdkVersion = "20240204",
 	configureParameter = [[
 		-GNinja
@@ -3341,7 +3341,7 @@ conf.q6_2wx6g1_ax3nV25 = {
 	toolchain = "MinGW1120-64",
 	toolchainT = "Android-24-r25c-x86",
 	opensslConf = "o3_0ax3nV25L24",
-	useCMake = "Latest",
+	useCMake = "27",
 	androidSdkVersion = "20240204",
 	configureParameter = [[
 		-GNinja
@@ -3380,7 +3380,7 @@ conf.q6_2wx6g1_ax6nV25 = {
 	toolchain = "MinGW1120-64",
 	toolchainT = "Android-24-r25c-x86_64",
 	opensslConf = "o3_0ax6nV25L24",
-	useCMake = "Latest",
+	useCMake = "27",
 	androidSdkVersion = "20240204",
 	configureParameter = [[
 		-GNinja
@@ -3418,7 +3418,7 @@ conf.q6_2lx6_aa3nV25 = {
 	target = "Android-24",
 	toolchainT = "Android-24-r25c-arm",
 	opensslConf = "o3_0aa3nV25L24",
-	useCMake = "Latest",
+	useCMake = "27",
 	androidSdkVersion = "20240204",
 	configureParameter = [[
 		-GNinja
@@ -3455,7 +3455,7 @@ conf.q6_2lx6_aa6nV25 = {
 	target = "Android-24",
 	toolchainT = "Android-24-r25c-arm64",
 	opensslConf = "o3_0aa6nV25L24",
-	useCMake = "Latest",
+	useCMake = "27",
 	androidSdkVersion = "20240204",
 	configureParameter = [[
 		-GNinja
@@ -3492,7 +3492,7 @@ conf.q6_2lx6_ax3nV25 = {
 	target = "Android-24",
 	toolchainT = "Android-24-r25c-x86",
 	opensslConf = "o3_0ax3nV25L24",
-	useCMake = "Latest",
+	useCMake = "27",
 	androidSdkVersion = "20240204",
 	configureParameter = [[
 		-GNinja
@@ -3529,7 +3529,7 @@ conf.q6_2lx6_ax6nV25 = {
 	target = "Android-24",
 	toolchainT = "Android-24-r25c-x86_64",
 	opensslConf = "o3_0ax6nV25L24",
-	useCMake = "Latest",
+	useCMake = "27",
 	androidSdkVersion = "20240204",
 	configureParameter = [[
 		-GNinja
@@ -3566,7 +3566,7 @@ conf.q6_2mal_aa3nV25 = {
 	target = "Android-24",
 	toolchainT = "Android-24-r25c-arm",
 	opensslConf = "o3_0aa3nV25L24",
-	useCMake = "Latest",
+	useCMake = "27",
 	androidSdkVersion = "20240204",
 	configureParameter = [[
 		-GNinja
@@ -3603,7 +3603,7 @@ conf.q6_2mal_aa6nV25 = {
 	target = "Android-24",
 	toolchainT = "Android-24-r25c-arm64",
 	opensslConf = "o3_0aa6nV25L24",
-	useCMake = "Latest",
+	useCMake = "27",
 	androidSdkVersion = "20240204",
 	configureParameter = [[
 		-GNinja
@@ -3640,7 +3640,7 @@ conf.q6_2mal_ax3nV25 = {
 	target = "Android-24",
 	toolchainT = "Android-24-r25c-x86",
 	opensslConf = "o3_0ax3nV25L24",
-	useCMake = "Latest",
+	useCMake = "27",
 	androidSdkVersion = "20240204",
 	configureParameter = [[
 		-GNinja
@@ -3677,7 +3677,7 @@ conf.q6_2mal_ax6nV25 = {
 	target = "Android-24",
 	toolchainT = "Android-24-r25c-x86_64",
 	opensslConf = "o3_0ax6nV25L24",
-	useCMake = "Latest",
+	useCMake = "27",
 	androidSdkVersion = "20240204",
 	configureParameter = [[
 		-GNinja
@@ -3715,7 +3715,7 @@ conf.q6_2wx6g1_W = {
 	toolchain = "MinGW1120-64",
 	target = "WebAssembly",
 	toolchainT = "emscripten-2.0.14",
-	useCMake = "Latest",
+	useCMake = "27",
 	-- workaround https://github.com/emscripten-core/emscripten/issues/15163
 	configureParameter = [[
 		-G
@@ -3747,7 +3747,7 @@ conf.q6_2lx6_W = {
 	host = "CentOS8",
 	target = "WebAssembly",
 	toolchainT = "emscripten-2.0.14",
-	useCMake = "Latest",
+	useCMake = "27",
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
@@ -3777,7 +3777,7 @@ conf.q6_2mal_W = {
 	host = "macOSM1",
 	target = "WebAssembly",
 	toolchainT = "emscripten-2.0.14",
-	useCMake = "Latest",
+	useCMake = "27",
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"

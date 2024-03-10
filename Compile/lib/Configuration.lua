@@ -63,7 +63,8 @@ conf.host.win = {
 	},
 	["cMakePath"] = {
 		["20"] = {"D:\\cmake-3.20.2-windows-x86_64\\bin", "D:\\ninja"},
-		["Latest"] = {"D:\\cmake-3.27.6-windows-x86_64\\bin", "D:\\ninja"},
+		["27"] = {"D:\\cmake-3.27.6-windows-x86_64\\bin", "D:\\ninja"},
+		["Latest"] = {"D:\\cmake-3.28.3-windows-x86_64\\bin", "D:\\ninja"},
 	},
 	["jdkPath"] = {
 		["8"] = "D:\\OpenJDK8U-jdk_x64_windows_hotspot_8u402b06\\jdk8u402-b06",
@@ -139,6 +140,9 @@ conf.host.linux = {
 		["2.0.14"] = "/opt/env/emsdk-2.0.14/",
 		["3.1.25"] = "/opt/env/emsdk-3.1.25/",
 		["3.1.37"] = "/opt/env/emsdk-3.1.37/",
+	},
+	["cMakePath"] = {
+		["27"] = {"/home/fs/install-cmake3_27_6/bin"},
 	},
 	["jdkPath"] = {
 		["8"] = "/usr/lib/jvm/java-1.8.0-openjdk/",
@@ -285,9 +289,15 @@ conf.Qt.generateConfTable = function(self, host, job, buildTime)
 
 	hostToolchainVersion = compilerVer[hostToolchainVersionQueryFuncName](configureHost.makefileTemplate == "win", hostToolchainVersionQueryPath, hostToolchainExecutableName)
 
-	if jobConfigureDetail.useCMake and configureHost.cMakePath and configureHost.cMakePath[jobConfigureDetail.useCMake] then
-		for _, p in ipairs(configureHost.cMakePath[jobConfigureDetail.useCMake]) do
-			table.insert(ret.path, p)
+	if jobConfigureDetail.useCMake and configureHost.cMakePath then
+		local usedCMakePath = configureHost.cMakePath[jobConfigureDetail.useCMake] or configureHost.cMakePath.Latest
+		if usedCMakePath then
+			if type(usedCMakePath) == "string" then
+				usedCMakePath = {usedCMakePath}
+			end
+			for _, p in ipairs(usedCMakePath) do
+				table.insert(ret.path, p)
+			end
 		end
 	end
 

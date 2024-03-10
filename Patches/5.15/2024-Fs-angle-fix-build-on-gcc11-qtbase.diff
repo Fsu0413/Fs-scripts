@@ -1,0 +1,11 @@
+diff -rNu a/src/3rdparty/angle/src/libANGLE/HandleAllocator.cpp b/src/3rdparty/angle/src/libANGLE/HandleAllocator.cpp
+--- a/src/3rdparty/angle/src/libANGLE/HandleAllocator.cpp	2024-01-05 03:21:43.000000000 +0800
++++ b/src/3rdparty/angle/src/libANGLE/HandleAllocator.cpp	2024-03-10 12:08:52.815179800 +0800
+@@ -10,6 +10,7 @@
+ #include "libANGLE/HandleAllocator.h"
+ 
+ #include <algorithm>
++#include <limits>
+ 
+ #include "common/debug.h"
+ 

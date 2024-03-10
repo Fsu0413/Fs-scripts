@@ -778,6 +778,7 @@ conf.q5_15wx6g1 = {
 		-schannel
 		-sql-sqlite
 		-sql-odbc
+		-no-wmf
 		-make-tool
 		"mingw32-make -j%PARALLELNUM%"
 	]],
@@ -814,6 +815,7 @@ conf.q5_15wx6p2 = {
 		-schannel
 		-sql-sqlite
 		-sql-odbc
+		-no-wmf
 		-make-tool
 		"mingw32-make -j%PARALLELNUM%"
 	]],
@@ -850,6 +852,7 @@ conf.q5_15wx6g2 = {
 		-schannel
 		-sql-sqlite
 		-sql-odbc
+		-no-wmf
 		-make-tool
 		"mingw32-make -j%PARALLELNUM%"
 	]],

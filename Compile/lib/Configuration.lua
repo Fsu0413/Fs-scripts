@@ -75,6 +75,10 @@ conf.host.win = {
 		["2"] = "D:\\Python27",
 		["3"] = "D:\\Python39",
 	},
+	["nodePath"] = {
+		["14"] = "D:\\node-v14.21.3-win-x64",
+		["18"] = "D:\\node-v18.19.1-win-x64",
+	},
 	["defaultToolchainExecutableName"] = "gcc",
 }
 
@@ -183,6 +187,10 @@ conf.host.mac = {
 		["11"] = "/usr/local/opt/openjdk@11/",
 		["17"] = "/usr/local/opt/openjdk@17/",
 	},
+	["nodePath"] = {
+		["14"] = "/usr/local/opt/node@14/bin",
+		["18"] = "/usr/local/opt/node@18/bin",
+	},
 	["defaultToolchainExecutableName"] = "clang",
 }
 
@@ -223,6 +231,10 @@ conf.host.macM1 = {
 		["8"] = "/opt/env/jdk-8/zulu8.76.0.17-ca-jdk8.0.402-macosx_aarch64/zulu-8.jdk/Contents/Home/",
 		["11"] = "/opt/env/jdk-11/zulu11.70.15-ca-jdk11.0.22-macosx_aarch64/zulu-11.jdk/Contents/Home/",
 		["17"] = "/opt/env/jdk-17/zulu17.48.15-ca-jdk17.0.10-macosx_aarch64/zulu-17.jdk/Contents/Home/",
+	},
+	["nodePath"] = {
+		["14"] = "/opt/homebrew/opt/node@14/bin",
+		["18"] = "/opt/homebrew/opt/node@18/bin",
 	},
 	["defaultToolchainExecutableName"] = "clang",
 }
@@ -298,6 +310,13 @@ conf.Qt.generateConfTable = function(self, host, job, buildTime)
 			for _, p in ipairs(usedCMakePath) do
 				table.insert(ret.path, p)
 			end
+		end
+	end
+
+	if jobConfigureDetail.useNode and configureHost.nodePath then
+		local usedNodePath = configureHost.nodePath[jobConfigureDetail.useNode]
+		if usedNodePath then
+			table.insert(ret.path, usedNodePath)
 		end
 	end
 

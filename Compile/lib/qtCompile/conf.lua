@@ -391,6 +391,7 @@ conf.q5_15wx3v9 = {
 	host = "Win10",
 	toolchain = "MSVC2019-32",
 	mysqlConf = "m3_1wx3v9",
+	useNode = "14",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -473,6 +474,7 @@ conf.q5_15wx6v9 = {
 	host = "Win10",
 	toolchain = "MSVC2019-64",
 	mysqlConf = "m3_1wx6v9",
+	useNode = "14",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -555,6 +557,7 @@ conf.q5_15wx6v2 = {
 	host = "Win10",
 	toolchain = "MSVC2022-64",
 	mysqlConf = "m3_1wx6v2",
+	useNode = "14",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -858,6 +861,7 @@ conf.q5_15mal = {
 	host = "macOSM1",
 	mysqlConf = "m3_1mal",
 	includeDeprecatedOdbcHeader = true,
+	useNode = "14",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -902,6 +906,7 @@ conf.q5_15malnf = {
 	variant = {"-noFramework"},
 	mysqlConf = "m3_1mal",
 	includeDeprecatedOdbcHeader = true,
+	useNode = "14",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -3809,6 +3814,7 @@ conf.q6_5wx6v2 = {
 	opensslConf = "o3_0wx6v2",
 	mysqlConf = "m3_3wx6v2",
 	useCMake = "Latest",
+	useNode = "18",
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
@@ -4583,6 +4589,7 @@ conf.q6_5mal = {
 	mysqlConf = "m3_3mal",
 	useCMake = "Latest",
 	includeDeprecatedOdbcHeader = true,
+	useNode = "18",
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
@@ -4631,6 +4638,7 @@ conf.q6_5malnf = {
 	mysqlConf = "m3_3mal",
 	useCMake = "Latest",
 	includeDeprecatedOdbcHeader = true,
+	useNode = "18",
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
@@ -5565,6 +5573,7 @@ conf.q6_6wx6v2 = {
 	opensslConf = "o3_0wx6v2",
 	mysqlConf = "m3_3wx6v2",
 	useCMake = "Latest",
+	useNode = "18",
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
@@ -6058,6 +6067,7 @@ conf.q6_6mal = {
 	mysqlConf = "m3_3mal",
 	useCMake = "Latest",
 	includeDeprecatedOdbcHeader = true,
+	useNode = "18",
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
@@ -6106,6 +6116,7 @@ conf.q6_6malnf = {
 	mysqlConf = "m3_3mal",
 	useCMake = "Latest",
 	includeDeprecatedOdbcHeader = true,
+	useNode = "18",
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"

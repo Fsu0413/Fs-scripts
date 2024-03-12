@@ -1,3 +1,20 @@
+diff -rNu a/features/hlsl_bytecode_header.prf b/features/hlsl_bytecode_header.prf
+--- a/features/hlsl_bytecode_header.prf	2024-01-05 03:21:48.000000000 +0800
++++ b/features/hlsl_bytecode_header.prf	2024-03-10 12:44:14.296339200 +0800
+@@ -1,7 +1,12 @@
++
++# This variable is from a patch from Fsu0413. In order not to conflict with Qt defined one we use custom prefix
++mingw: FSU0413_QTDECLARATIVE_FEATURES_FXC = $$(DXSDK_DIR)/Utilities/bin/x64/fxc.exe
++else: FSU0413_QTDECLARATIVE_FEATURES_FXC = fxc.exe
++
+ for (SHADER, HLSL_SHADERS) {
+     INPUT = $$eval($${SHADER}.input)
+     fxc_$${SHADER}.input = $$INPUT
+-    fxc_$${SHADER}.commands = fxc.exe /nologo /E $$eval($${SHADER}.entry) /T $$eval($${SHADER}.type) /Fh ${QMAKE_FILE_OUT} ${QMAKE_FILE_NAME}
++    fxc_$${SHADER}.commands = $$FSU0413_QTDECLARATIVE_FEATURES_FXC /nologo /E $$eval($${SHADER}.entry) /T $$eval($${SHADER}.type) /Fh ${QMAKE_FILE_OUT} ${QMAKE_FILE_NAME}
+     fxc_$${SHADER}.output = $$eval($${SHADER}.header)
+     fxc_$${SHADER}.dependency_type = TYPE_C
+     fxc_$${SHADER}.variable_out = HEADERS
 diff -rNu a/src/plugins/scenegraph/d3d12/qsgd3d12engine.cpp b/src/plugins/scenegraph/d3d12/qsgd3d12engine.cpp
 --- a/src/plugins/scenegraph/d3d12/qsgd3d12engine.cpp	2024-01-05 03:21:48.000000000 +0800
 +++ b/src/plugins/scenegraph/d3d12/qsgd3d12engine.cpp	2024-03-10 13:51:27.694418200 +0800

@@ -278,6 +278,42 @@ conf.o3_0wx6s7 = {
 	]],
 }
 
+conf.o3_0wx6u8 = {
+	name = "OpenSSL3.0.13-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-ucrt",
+	opensslVersion = "3.0.13",
+	host = "Win10SH",
+	toolchain = "MinGWLLVM-ucrt18-64",
+	libPath = { "bin\\libssl-3-x64.dll", "bin\\libcrypto-3-x64.dll" },
+	clangTriplet = "x86_64-w64-mingw32",
+	configureParameter = [[
+		no-asm
+		shared
+		enable-static-engine
+		--prefix="&INSTALLROOT&"
+		--openssldir="&INSTALLROOT&/ssl"
+		--libdir="&INSTALLROOT&/lib"
+		mingw64
+	]],
+}
+
+conf.o3_0wx6s8 = {
+	name = "OpenSSL3.0.13-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-msvcrt",
+	opensslVersion = "3.0.13",
+	host = "Win10SH",
+	toolchain = "MinGWLLVM-msvcrt18-64",
+	libPath = { "bin\\libssl-3-x64.dll", "bin\\libcrypto-3-x64.dll" },
+	clangTriplet = "x86_64-w64-mingw32",
+	configureParameter = [[
+		no-asm
+		shared
+		enable-static-engine
+		--prefix="&INSTALLROOT&"
+		--openssldir="&INSTALLROOT&/ssl"
+		--libdir="&INSTALLROOT&/lib"
+		mingw64
+	]],
+}
+
 --------------------------------------------------------------------
 
 conf.o3_0wx6g1st = {

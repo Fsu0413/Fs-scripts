@@ -41,6 +41,8 @@ conf.host.win = {
 		["MinGWLLVM-ucrt16-64"] = {"D:\\mingw-w64\\llvm-mingw-20230614-ucrt-x86_64\\x86_64-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20230614-ucrt-x86_64\\bin"},
 		["MinGWLLVM-msvcrt17-64"] = {"D:\\mingw-w64\\llvm-mingw-20231128-msvcrt-x86_64\\x86_64-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20231128-msvcrt-x86_64\\bin"},
 		["MinGWLLVM-ucrt17-64"] = {"D:\\mingw-w64\\llvm-mingw-20231128-ucrt-x86_64\\x86_64-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20231128-ucrt-x86_64\\bin"},
+		["MinGWLLVM-msvcrt18-64"] = {"D:\\mingw-w64\\llvm-mingw-20240308-msvcrt-x86_64\\x86_64-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20240308-msvcrt-x86_64\\bin"},
+		["MinGWLLVM-ucrt18-64"] = {"D:\\mingw-w64\\llvm-mingw-20240308-ucrt-x86_64\\x86_64-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20240308-ucrt-x86_64\\bin"},
 	},
 	["sourcePackagePath"] = "D:\\Qt\\",
 	["buildRootPath"] = "D:\\Qt\\", -- On Windows, the build root should be same with source package
@@ -104,6 +106,8 @@ conf.host.msys = {
 		["MinGWLLVM-ucrt16-64"] = {"/d/mingw-w64/llvm-mingw-20230614-ucrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20230614-ucrt-x86_64/bin"},
 		["MinGWLLVM-msvcrt17-64"] = {"/d/mingw-w64/llvm-mingw-20231128-msvcrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20231128-msvcrt-x86_64/bin"},
 		["MinGWLLVM-ucrt17-64"] = {"/d/mingw-w64/llvm-mingw-20231128-ucrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20231128-ucrt-x86_64/bin"},
+		["MinGWLLVM-msvcrt18-64"] = {"/d/mingw-w64/llvm-mingw-20240308-msvcrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20240308-msvcrt-x86_64/bin"},
+		["MinGWLLVM-ucrt18-64"] = {"/d/mingw-w64/llvm-mingw-20240308-ucrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20240308-ucrt-x86_64/bin"},
 	},
 	["sourcePackagePath"] = "/d/Qt/",
 	["androidNdkPath"] = {

@@ -1,0 +1,12 @@
+diff -rNu a/src/3rdparty/assimp/src/code/AssetLib/FBX/FBXBinaryTokenizer.cpp b/src/3rdparty/assimp/src/code/AssetLib/FBX/FBXBinaryTokenizer.cpp
+--- a/src/3rdparty/assimp/src/code/AssetLib/FBX/FBXBinaryTokenizer.cpp	2023-11-01 06:00:39.000000000 +0800
++++ b/src/3rdparty/assimp/src/code/AssetLib/FBX/FBXBinaryTokenizer.cpp	2024-03-13 18:37:48.797698400 +0800
+@@ -50,7 +50,7 @@
+ #include "FBXTokenizer.h"
+ #include "FBXUtil.h"
+ #include <assimp/defs.h>
+-#include <stdint.h>
++#include <cstdint>
+ #include <assimp/Exceptional.h>
+ #include <assimp/ByteSwapper.h>
+ #include <assimp/DefaultLogger.hpp>

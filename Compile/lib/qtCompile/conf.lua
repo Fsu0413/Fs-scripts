@@ -859,7 +859,7 @@ conf.q5_15wx6g2 = {
 }
 
 conf.q5_15wx6u6 = {
-	name = "Qt5.15.13-Windows-x86_64-MinGW&HOSTTOOLVERSION&",
+	name = "Qt5.15.13-Windows-x86_64-llvm-mingw-&HOSTTOOLVERSION&-ucrt",
 	qtVersion = "5.15.13",
 	host = "Win10",
 	toolchain = "MinGWLLVM-ucrt16-64",
@@ -897,7 +897,7 @@ conf.q5_15wx6u6 = {
 }
 
 conf.q5_15wx6s6 = {
-	name = "Qt5.15.13-Windows-x86_64-MinGW&HOSTTOOLVERSION&",
+	name = "Qt5.15.13-Windows-x86_64-llvm-mingw-&HOSTTOOLVERSION&-msvcrt",
 	qtVersion = "5.15.13",
 	host = "Win10",
 	toolchain = "MinGWLLVM-msvcrt16-64",
@@ -935,7 +935,7 @@ conf.q5_15wx6s6 = {
 }
 
 conf.q5_15wx6u7 = {
-	name = "Qt5.15.13-Windows-x86_64-MinGW&HOSTTOOLVERSION&",
+	name = "Qt5.15.13-Windows-x86_64-llvm-mingw-&HOSTTOOLVERSION&-ucrt",
 	qtVersion = "5.15.13",
 	host = "Win10",
 	toolchain = "MinGWLLVM-ucrt17-64",
@@ -973,7 +973,7 @@ conf.q5_15wx6u7 = {
 }
 
 conf.q5_15wx6s7 = {
-	name = "Qt5.15.13-Windows-x86_64-MinGW&HOSTTOOLVERSION&",
+	name = "Qt5.15.13-Windows-x86_64-llvm-mingw-&HOSTTOOLVERSION&-msvcrt",
 	qtVersion = "5.15.13",
 	host = "Win10",
 	toolchain = "MinGWLLVM-msvcrt17-64",
@@ -1011,7 +1011,7 @@ conf.q5_15wx6s7 = {
 }
 
 conf.q5_15wx6u8 = {
-	name = "Qt5.15.13-Windows-x86_64-MinGW&HOSTTOOLVERSION&",
+	name = "Qt5.15.13-Windows-x86_64-llvm-mingw-&HOSTTOOLVERSION&-ucrt",
 	qtVersion = "5.15.13",
 	host = "Win10",
 	toolchain = "MinGWLLVM-ucrt18-64",
@@ -1049,7 +1049,7 @@ conf.q5_15wx6u8 = {
 }
 
 conf.q5_15wx6s8 = {
-	name = "Qt5.15.13-Windows-x86_64-MinGW&HOSTTOOLVERSION&",
+	name = "Qt5.15.13-Windows-x86_64-llvm-mingw-&HOSTTOOLVERSION&-msvcrt",
 	qtVersion = "5.15.13",
 	host = "Win10",
 	toolchain = "MinGWLLVM-msvcrt18-64",

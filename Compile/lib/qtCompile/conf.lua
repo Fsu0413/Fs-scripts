@@ -892,7 +892,7 @@ conf.q5_15wx6u6 = {
 		-no-wmf
 		-make-tool
 		"mingw32-make -j%PARALLELNUM%"
-		QMAKE_CXXFLAGS="-Wno-enum-constexpr-conversion -Wno-c++11-narrowing-const-reference"
+		QMAKE_CXXFLAGS="-Wno-enum-constexpr-conversion"
 	]],
 }
 
@@ -930,7 +930,7 @@ conf.q5_15wx6s6 = {
 		-no-wmf
 		-make-tool
 		"mingw32-make -j%PARALLELNUM%"
-		QMAKE_CXXFLAGS="-Wno-enum-constexpr-conversion -Wno-c++11-narrowing-const-reference"
+		QMAKE_CXXFLAGS="-Wno-enum-constexpr-conversion"
 	]],
 }
 
@@ -968,7 +968,7 @@ conf.q5_15wx6u7 = {
 		-no-wmf
 		-make-tool
 		"mingw32-make -j%PARALLELNUM%"
-		QMAKE_CXXFLAGS="-Wno-enum-constexpr-conversion -Wno-c++11-narrowing-const-reference"
+		QMAKE_CXXFLAGS="-Wno-enum-constexpr-conversion"
 	]],
 }
 
@@ -1006,7 +1006,7 @@ conf.q5_15wx6s7 = {
 		-no-wmf
 		-make-tool
 		"mingw32-make -j%PARALLELNUM%"
-		QMAKE_CXXFLAGS="-Wno-enum-constexpr-conversion -Wno-c++11-narrowing-const-reference"
+		QMAKE_CXXFLAGS="-Wno-enum-constexpr-conversion"
 	]],
 }
 

@@ -872,7 +872,7 @@ conf.q5_15wx6u6 = {
 		-release
 		-confirm-license
 		-platform
-		win32-g++
+		win32-clang-g++
 		-pch
 		-nomake
 		examples
@@ -910,7 +910,7 @@ conf.q5_15wx6s6 = {
 		-release
 		-confirm-license
 		-platform
-		win32-g++
+		win32-clang-g++
 		-pch
 		-nomake
 		examples
@@ -948,7 +948,7 @@ conf.q5_15wx6u7 = {
 		-release
 		-confirm-license
 		-platform
-		win32-g++
+		win32-clang-g++
 		-pch
 		-nomake
 		examples
@@ -986,7 +986,7 @@ conf.q5_15wx6s7 = {
 		-release
 		-confirm-license
 		-platform
-		win32-g++
+		win32-clang-g++
 		-pch
 		-nomake
 		examples
@@ -1024,7 +1024,7 @@ conf.q5_15wx6u8 = {
 		-release
 		-confirm-license
 		-platform
-		win32-g++
+		win32-clang-g++
 		-pch
 		-nomake
 		examples
@@ -1062,7 +1062,7 @@ conf.q5_15wx6s8 = {
 		-release
 		-confirm-license
 		-platform
-		win32-g++
+		win32-clang-g++
 		-pch
 		-nomake
 		examples

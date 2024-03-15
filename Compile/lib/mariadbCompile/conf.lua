@@ -260,6 +260,294 @@ conf.m3_1wx6g8 = {
 	]],
 }
 
+conf.m3_1wx6g1 = {
+	name = "mariadb_connector_c3.1.23-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&",
+	mariadbVersion = "3.1.23",
+	host = "Win10",
+	toolchain = "MinGW1120-64",
+	libPath = { "lib\\mariadb\\libmariadb.dll" },
+	configureParameter = [[
+		-GNinja
+		-DCMAKE_C_STANDARD=11
+		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
+		-DCMAKE_BUILD_TYPE=Release
+		-DCLIENT_PLUGIN_DIALOG=STATIC
+		-DCLIENT_PLUGIN_CLIENT_ED25519=STATIC
+		-DCLIENT_PLUGIN_CACHING_SHA2_PASSWORD=STATIC
+		-DCLIENT_PLUGIN_SHA256_PASSWORD=STATIC
+		-DCLIENT_PLUGIN_AUTH_GSSAPI_CLIENT=STATIC
+		-DCLIENT_PLUGIN_MYSQL_CLEAR_PASSWORD=STATIC
+		-DCLIENT_PLUGIN_PVIO_NPIPE=STATIC
+		-DCLIENT_PLUGIN_PVIO_SHMEM=STATIC
+		-DWITH_SSL=OFF
+		-DCMAKE_C_FLAGS="-Dstrerror_r(a,b,c)=strerror_s(b,c,a)"
+	]],
+}
+
+conf.m3_1wx6p2 = {
+	name = "mariadb_connector_c3.1.23-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&",
+	mariadbVersion = "3.1.23",
+	host = "Win10",
+	toolchain = "MinGW122u-64",
+	libPath = { "lib\\mariadb\\libmariadb.dll" },
+	configureParameter = [[
+		-GNinja
+		-DCMAKE_C_STANDARD=11
+		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
+		-DCMAKE_BUILD_TYPE=Release
+		-DCLIENT_PLUGIN_DIALOG=STATIC
+		-DCLIENT_PLUGIN_CLIENT_ED25519=STATIC
+		-DCLIENT_PLUGIN_CACHING_SHA2_PASSWORD=STATIC
+		-DCLIENT_PLUGIN_SHA256_PASSWORD=STATIC
+		-DCLIENT_PLUGIN_AUTH_GSSAPI_CLIENT=STATIC
+		-DCLIENT_PLUGIN_MYSQL_CLEAR_PASSWORD=STATIC
+		-DCLIENT_PLUGIN_PVIO_NPIPE=STATIC
+		-DCLIENT_PLUGIN_PVIO_SHMEM=STATIC
+		-DWITH_SSL=OFF
+		-DCMAKE_C_FLAGS="-Dstrerror_r(a,b,c)=strerror_s(b,c,a)"
+	]],
+}
+
+conf.m3_1wx6g2 = {
+	name = "mariadb_connector_c3.1.23-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&",
+	mariadbVersion = "3.1.23",
+	host = "Win10",
+	toolchain = "MinGW1220-64",
+	libPath = { "lib\\mariadb\\libmariadb.dll" },
+	configureParameter = [[
+		-GNinja
+		-DCMAKE_C_STANDARD=11
+		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
+		-DCMAKE_BUILD_TYPE=Release
+		-DCLIENT_PLUGIN_DIALOG=STATIC
+		-DCLIENT_PLUGIN_CLIENT_ED25519=STATIC
+		-DCLIENT_PLUGIN_CACHING_SHA2_PASSWORD=STATIC
+		-DCLIENT_PLUGIN_SHA256_PASSWORD=STATIC
+		-DCLIENT_PLUGIN_AUTH_GSSAPI_CLIENT=STATIC
+		-DCLIENT_PLUGIN_MYSQL_CLEAR_PASSWORD=STATIC
+		-DCLIENT_PLUGIN_PVIO_NPIPE=STATIC
+		-DCLIENT_PLUGIN_PVIO_SHMEM=STATIC
+		-DWITH_SSL=OFF
+		-DCMAKE_C_FLAGS="-Dstrerror_r(a,b,c)=strerror_s(b,c,a)"
+	]],
+}
+
+conf.m3_1wx6p3 = {
+	name = "mariadb_connector_c3.1.23-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&",
+	mariadbVersion = "3.1.23",
+	host = "Win10",
+	toolchain = "MinGW132u-64",
+	libPath = { "lib\\mariadb\\libmariadb.dll" },
+	configureParameter = [[
+		-GNinja
+		-DCMAKE_C_STANDARD=11
+		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
+		-DCMAKE_BUILD_TYPE=Release
+		-DCLIENT_PLUGIN_DIALOG=STATIC
+		-DCLIENT_PLUGIN_CLIENT_ED25519=STATIC
+		-DCLIENT_PLUGIN_CACHING_SHA2_PASSWORD=STATIC
+		-DCLIENT_PLUGIN_SHA256_PASSWORD=STATIC
+		-DCLIENT_PLUGIN_AUTH_GSSAPI_CLIENT=STATIC
+		-DCLIENT_PLUGIN_MYSQL_CLEAR_PASSWORD=STATIC
+		-DCLIENT_PLUGIN_PVIO_NPIPE=STATIC
+		-DCLIENT_PLUGIN_PVIO_SHMEM=STATIC
+		-DWITH_SSL=OFF
+		-DCMAKE_C_FLAGS="-Dstrerror_r(a,b,c)=strerror_s(b,c,a)"
+	]],
+}
+
+conf.m3_1wx6g3 = {
+	name = "mariadb_connector_c3.1.23-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&",
+	mariadbVersion = "3.1.23",
+	host = "Win10",
+	toolchain = "MinGW1320-64",
+	libPath = { "lib\\mariadb\\libmariadb.dll" },
+	configureParameter = [[
+		-GNinja
+		-DCMAKE_C_STANDARD=11
+		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
+		-DCMAKE_BUILD_TYPE=Release
+		-DCLIENT_PLUGIN_DIALOG=STATIC
+		-DCLIENT_PLUGIN_CLIENT_ED25519=STATIC
+		-DCLIENT_PLUGIN_CACHING_SHA2_PASSWORD=STATIC
+		-DCLIENT_PLUGIN_SHA256_PASSWORD=STATIC
+		-DCLIENT_PLUGIN_AUTH_GSSAPI_CLIENT=STATIC
+		-DCLIENT_PLUGIN_MYSQL_CLEAR_PASSWORD=STATIC
+		-DCLIENT_PLUGIN_PVIO_NPIPE=STATIC
+		-DCLIENT_PLUGIN_PVIO_SHMEM=STATIC
+		-DWITH_SSL=OFF
+		-DCMAKE_C_FLAGS="-Dstrerror_r(a,b,c)=strerror_s(b,c,a)"
+	]],
+}
+
+--------------------------------------------------------------------
+
+conf.m3_1wx6u6 = {
+	name = "mariadb_connector_c3.1.23-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-ucrt",
+	mariadbVersion = "3.1.23",
+	host = "Win10",
+	toolchain = "MinGWLLVM-ucrt16-64",
+	libPath = { "lib\\mariadb\\libmariadb.dll" },
+	configureParameter = [[
+		-GNinja
+		-DCMAKE_C_STANDARD=11
+		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
+		-DCMAKE_BUILD_TYPE=Release
+		-DCLIENT_PLUGIN_DIALOG=STATIC
+		-DCLIENT_PLUGIN_CLIENT_ED25519=STATIC
+		-DCLIENT_PLUGIN_CACHING_SHA2_PASSWORD=STATIC
+		-DCLIENT_PLUGIN_SHA256_PASSWORD=STATIC
+		-DCLIENT_PLUGIN_AUTH_GSSAPI_CLIENT=STATIC
+		-DCLIENT_PLUGIN_MYSQL_CLEAR_PASSWORD=STATIC
+		-DCLIENT_PLUGIN_PVIO_NPIPE=STATIC
+		-DCLIENT_PLUGIN_PVIO_SHMEM=STATIC
+		-DWARNING_AS_ERROR=
+		-DWITH_SSL=SCHANNEL
+		-DCMAKE_C_FLAGS="-Dstrerror_r(a,b,c)=strerror_s(b,c,a)"
+		-DCMAKE_C_COMPILER="x86_64-w64-mingw32-clang"
+		-DCMAKE_ASM_COMPILER="x86_64-w64-mingw32-clang"
+	]],
+}
+
+conf.m3_1wx6s6 = {
+	name = "mariadb_connector_c3.1.23-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-msvcrt",
+	mariadbVersion = "3.1.23",
+	host = "Win10",
+	toolchain = "MinGWLLVM-msvcrt16-64",
+	libPath = { "lib\\mariadb\\libmariadb.dll" },
+	configureParameter = [[
+		-GNinja
+		-DCMAKE_C_STANDARD=11
+		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
+		-DCMAKE_BUILD_TYPE=Release
+		-DCLIENT_PLUGIN_DIALOG=STATIC
+		-DCLIENT_PLUGIN_CLIENT_ED25519=STATIC
+		-DCLIENT_PLUGIN_CACHING_SHA2_PASSWORD=STATIC
+		-DCLIENT_PLUGIN_SHA256_PASSWORD=STATIC
+		-DCLIENT_PLUGIN_AUTH_GSSAPI_CLIENT=STATIC
+		-DCLIENT_PLUGIN_MYSQL_CLEAR_PASSWORD=STATIC
+		-DCLIENT_PLUGIN_PVIO_NPIPE=STATIC
+		-DCLIENT_PLUGIN_PVIO_SHMEM=STATIC
+		-DWARNING_AS_ERROR=
+		-DWITH_SSL=SCHANNEL
+		-DCMAKE_C_FLAGS="-Dstrerror_r(a,b,c)=strerror_s(b,c,a)"
+		-DCMAKE_C_COMPILER="x86_64-w64-mingw32-clang"
+		-DCMAKE_ASM_COMPILER="x86_64-w64-mingw32-clang"
+	]],
+}
+
+--------------------------------------------------------------------
+
+conf.m3_1wx6u7 = {
+	name = "mariadb_connector_c3.1.23-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-ucrt",
+	mariadbVersion = "3.1.23",
+	host = "Win10",
+	toolchain = "MinGWLLVM-ucrt17-64",
+	libPath = { "lib\\mariadb\\libmariadb.dll" },
+	configureParameter = [[
+		-GNinja
+		-DCMAKE_C_STANDARD=11
+		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
+		-DCMAKE_BUILD_TYPE=Release
+		-DCLIENT_PLUGIN_DIALOG=STATIC
+		-DCLIENT_PLUGIN_CLIENT_ED25519=STATIC
+		-DCLIENT_PLUGIN_CACHING_SHA2_PASSWORD=STATIC
+		-DCLIENT_PLUGIN_SHA256_PASSWORD=STATIC
+		-DCLIENT_PLUGIN_AUTH_GSSAPI_CLIENT=STATIC
+		-DCLIENT_PLUGIN_MYSQL_CLEAR_PASSWORD=STATIC
+		-DCLIENT_PLUGIN_PVIO_NPIPE=STATIC
+		-DCLIENT_PLUGIN_PVIO_SHMEM=STATIC
+		-DWARNING_AS_ERROR=
+		-DWITH_SSL=SCHANNEL
+		-DCMAKE_C_FLAGS="-Dstrerror_r(a,b,c)=strerror_s(b,c,a)"
+		-DCMAKE_C_COMPILER="x86_64-w64-mingw32-clang"
+		-DCMAKE_ASM_COMPILER="x86_64-w64-mingw32-clang"
+	]],
+}
+
+conf.m3_1wx6s7 = {
+	name = "mariadb_connector_c3.1.23-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-msvcrt",
+	mariadbVersion = "3.1.23",
+	host = "Win10",
+	toolchain = "MinGWLLVM-msvcrt17-64",
+	libPath = { "lib\\mariadb\\libmariadb.dll" },
+	configureParameter = [[
+		-GNinja
+		-DCMAKE_C_STANDARD=11
+		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
+		-DCMAKE_BUILD_TYPE=Release
+		-DCLIENT_PLUGIN_DIALOG=STATIC
+		-DCLIENT_PLUGIN_CLIENT_ED25519=STATIC
+		-DCLIENT_PLUGIN_CACHING_SHA2_PASSWORD=STATIC
+		-DCLIENT_PLUGIN_SHA256_PASSWORD=STATIC
+		-DCLIENT_PLUGIN_AUTH_GSSAPI_CLIENT=STATIC
+		-DCLIENT_PLUGIN_MYSQL_CLEAR_PASSWORD=STATIC
+		-DCLIENT_PLUGIN_PVIO_NPIPE=STATIC
+		-DCLIENT_PLUGIN_PVIO_SHMEM=STATIC
+		-DWARNING_AS_ERROR=
+		-DWITH_SSL=SCHANNEL
+		-DCMAKE_C_FLAGS="-Dstrerror_r(a,b,c)=strerror_s(b,c,a)"
+		-DCMAKE_C_COMPILER="x86_64-w64-mingw32-clang"
+		-DCMAKE_ASM_COMPILER="x86_64-w64-mingw32-clang"
+	]],
+}
+
+--------------------------------------------------------------------
+
+conf.m3_1wx6u8 = {
+	name = "mariadb_connector_c3.1.23-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-ucrt",
+	mariadbVersion = "3.1.23",
+	host = "Win10",
+	toolchain = "MinGWLLVM-ucrt18-64",
+	libPath = { "lib\\mariadb\\libmariadb.dll" },
+	configureParameter = [[
+		-GNinja
+		-DCMAKE_C_STANDARD=11
+		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
+		-DCMAKE_BUILD_TYPE=Release
+		-DCLIENT_PLUGIN_DIALOG=STATIC
+		-DCLIENT_PLUGIN_CLIENT_ED25519=STATIC
+		-DCLIENT_PLUGIN_CACHING_SHA2_PASSWORD=STATIC
+		-DCLIENT_PLUGIN_SHA256_PASSWORD=STATIC
+		-DCLIENT_PLUGIN_AUTH_GSSAPI_CLIENT=STATIC
+		-DCLIENT_PLUGIN_MYSQL_CLEAR_PASSWORD=STATIC
+		-DCLIENT_PLUGIN_PVIO_NPIPE=STATIC
+		-DCLIENT_PLUGIN_PVIO_SHMEM=STATIC
+		-DWARNING_AS_ERROR=
+		-DWITH_SSL=SCHANNEL
+		-DCMAKE_C_FLAGS="-Dstrerror_r(a,b,c)=strerror_s(b,c,a)"
+		-DCMAKE_C_COMPILER="x86_64-w64-mingw32-clang"
+		-DCMAKE_ASM_COMPILER="x86_64-w64-mingw32-clang"
+	]],
+}
+
+conf.m3_1wx6s8 = {
+	name = "mariadb_connector_c3.1.23-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-msvcrt",
+	mariadbVersion = "3.1.23",
+	host = "Win10",
+	toolchain = "MinGWLLVM-msvcrt18-64",
+	libPath = { "lib\\mariadb\\libmariadb.dll" },
+	configureParameter = [[
+		-GNinja
+		-DCMAKE_C_STANDARD=11
+		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
+		-DCMAKE_BUILD_TYPE=Release
+		-DCLIENT_PLUGIN_DIALOG=STATIC
+		-DCLIENT_PLUGIN_CLIENT_ED25519=STATIC
+		-DCLIENT_PLUGIN_CACHING_SHA2_PASSWORD=STATIC
+		-DCLIENT_PLUGIN_SHA256_PASSWORD=STATIC
+		-DCLIENT_PLUGIN_AUTH_GSSAPI_CLIENT=STATIC
+		-DCLIENT_PLUGIN_MYSQL_CLEAR_PASSWORD=STATIC
+		-DCLIENT_PLUGIN_PVIO_NPIPE=STATIC
+		-DCLIENT_PLUGIN_PVIO_SHMEM=STATIC
+		-DWARNING_AS_ERROR=
+		-DWITH_SSL=SCHANNEL
+		-DCMAKE_C_FLAGS="-Dstrerror_r(a,b,c)=strerror_s(b,c,a)"
+		-DCMAKE_C_COMPILER="x86_64-w64-mingw32-clang"
+		-DCMAKE_ASM_COMPILER="x86_64-w64-mingw32-clang"
+	]],
+}
+
 --------------------------------------------------------------------
 
 conf.m3_1mal = {

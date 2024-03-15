@@ -752,7 +752,7 @@ conf.q5_15wx6g1 = {
 	qtVersion = "5.15.13",
 	host = "Win10",
 	toolchain = "MinGW1120-64",
-	-- mysqlConf = "m3_1wx6g1",
+	mysqlConf = "m3_1wx6g1",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -789,7 +789,7 @@ conf.q5_15wx6p2 = {
 	qtVersion = "5.15.13",
 	host = "Win10",
 	toolchain = "MinGW122u-64",
-	-- mysqlConf = "m3_1wx6p2",
+	mysqlConf = "m3_1wx6p2",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -826,7 +826,7 @@ conf.q5_15wx6g2 = {
 	qtVersion = "5.15.13",
 	host = "Win10",
 	toolchain = "MinGW1220-64",
-	-- mysqlConf = "m3_1wx6g2",
+	mysqlConf = "m3_1wx6g2",
 	configureParameter = [[
 		-prefix
 		&INSTALLROOT&
@@ -855,6 +855,234 @@ conf.q5_15wx6g2 = {
 		-no-wmf
 		-make-tool
 		"mingw32-make -j%PARALLELNUM%"
+	]],
+}
+
+conf.q5_15wx6u6 = {
+	name = "Qt5.15.13-Windows-x86_64-MinGW&HOSTTOOLVERSION&",
+	qtVersion = "5.15.13",
+	host = "Win10",
+	toolchain = "MinGWLLVM-ucrt16-64",
+	mysqlConf = "m3_1wx6u6",
+	configureParameter = [[
+		-prefix
+		&INSTALLROOT&
+		-opensource
+		-shared
+		-release
+		-confirm-license
+		-platform
+		win32-g++
+		-pch
+		-nomake
+		examples
+		-nomake
+		tests
+		-no-compile-examples
+		-qt-doubleconversion
+		-qt-zlib
+		-qt-pcre
+		-no-icu
+		-opengl
+		dynamic
+		-ssl
+		-schannel
+		-sql-sqlite
+		-sql-odbc
+		-no-wmf
+		-make-tool
+		"mingw32-make -j%PARALLELNUM%"
+		QMAKE_CXXFLAGS="-Wno-enum-constexpr-conversion -Wno-c++11-narrowing-const-reference"
+	]],
+}
+
+conf.q5_15wx6s6 = {
+	name = "Qt5.15.13-Windows-x86_64-MinGW&HOSTTOOLVERSION&",
+	qtVersion = "5.15.13",
+	host = "Win10",
+	toolchain = "MinGWLLVM-msvcrt16-64",
+	mysqlConf = "m3_1wx6s6",
+	configureParameter = [[
+		-prefix
+		&INSTALLROOT&
+		-opensource
+		-shared
+		-release
+		-confirm-license
+		-platform
+		win32-g++
+		-pch
+		-nomake
+		examples
+		-nomake
+		tests
+		-no-compile-examples
+		-qt-doubleconversion
+		-qt-zlib
+		-qt-pcre
+		-no-icu
+		-opengl
+		dynamic
+		-ssl
+		-schannel
+		-sql-sqlite
+		-sql-odbc
+		-no-wmf
+		-make-tool
+		"mingw32-make -j%PARALLELNUM%"
+		QMAKE_CXXFLAGS="-Wno-enum-constexpr-conversion -Wno-c++11-narrowing-const-reference"
+	]],
+}
+
+conf.q5_15wx6u7 = {
+	name = "Qt5.15.13-Windows-x86_64-MinGW&HOSTTOOLVERSION&",
+	qtVersion = "5.15.13",
+	host = "Win10",
+	toolchain = "MinGWLLVM-ucrt17-64",
+	mysqlConf = "m3_1wx6u7",
+	configureParameter = [[
+		-prefix
+		&INSTALLROOT&
+		-opensource
+		-shared
+		-release
+		-confirm-license
+		-platform
+		win32-g++
+		-pch
+		-nomake
+		examples
+		-nomake
+		tests
+		-no-compile-examples
+		-qt-doubleconversion
+		-qt-zlib
+		-qt-pcre
+		-no-icu
+		-opengl
+		dynamic
+		-ssl
+		-schannel
+		-sql-sqlite
+		-sql-odbc
+		-no-wmf
+		-make-tool
+		"mingw32-make -j%PARALLELNUM%"
+		QMAKE_CXXFLAGS="-Wno-enum-constexpr-conversion -Wno-c++11-narrowing-const-reference"
+	]],
+}
+
+conf.q5_15wx6s7 = {
+	name = "Qt5.15.13-Windows-x86_64-MinGW&HOSTTOOLVERSION&",
+	qtVersion = "5.15.13",
+	host = "Win10",
+	toolchain = "MinGWLLVM-msvcrt17-64",
+	mysqlConf = "m3_1wx6s7",
+	configureParameter = [[
+		-prefix
+		&INSTALLROOT&
+		-opensource
+		-shared
+		-release
+		-confirm-license
+		-platform
+		win32-g++
+		-pch
+		-nomake
+		examples
+		-nomake
+		tests
+		-no-compile-examples
+		-qt-doubleconversion
+		-qt-zlib
+		-qt-pcre
+		-no-icu
+		-opengl
+		dynamic
+		-ssl
+		-schannel
+		-sql-sqlite
+		-sql-odbc
+		-no-wmf
+		-make-tool
+		"mingw32-make -j%PARALLELNUM%"
+		QMAKE_CXXFLAGS="-Wno-enum-constexpr-conversion -Wno-c++11-narrowing-const-reference"
+	]],
+}
+
+conf.q5_15wx6u8 = {
+	name = "Qt5.15.13-Windows-x86_64-MinGW&HOSTTOOLVERSION&",
+	qtVersion = "5.15.13",
+	host = "Win10",
+	toolchain = "MinGWLLVM-ucrt18-64",
+	mysqlConf = "m3_1wx6u8",
+	configureParameter = [[
+		-prefix
+		&INSTALLROOT&
+		-opensource
+		-shared
+		-release
+		-confirm-license
+		-platform
+		win32-g++
+		-pch
+		-nomake
+		examples
+		-nomake
+		tests
+		-no-compile-examples
+		-qt-doubleconversion
+		-qt-zlib
+		-qt-pcre
+		-no-icu
+		-opengl
+		dynamic
+		-ssl
+		-schannel
+		-sql-sqlite
+		-sql-odbc
+		-no-wmf
+		-make-tool
+		"mingw32-make -j%PARALLELNUM%"
+		QMAKE_CXXFLAGS="-Wno-enum-constexpr-conversion -Wno-c++11-narrowing-const-reference"
+	]],
+}
+
+conf.q5_15wx6s8 = {
+	name = "Qt5.15.13-Windows-x86_64-MinGW&HOSTTOOLVERSION&",
+	qtVersion = "5.15.13",
+	host = "Win10",
+	toolchain = "MinGWLLVM-msvcrt18-64",
+	mysqlConf = "m3_1wx6s8",
+	configureParameter = [[
+		-prefix
+		&INSTALLROOT&
+		-opensource
+		-shared
+		-release
+		-confirm-license
+		-platform
+		win32-g++
+		-pch
+		-nomake
+		examples
+		-nomake
+		tests
+		-no-compile-examples
+		-qt-doubleconversion
+		-qt-zlib
+		-qt-pcre
+		-no-icu
+		-opengl
+		dynamic
+		-ssl
+		-schannel
+		-sql-sqlite
+		-sql-odbc
+		-no-wmf
+		-make-tool
+		"mingw32-make -j%PARALLELNUM%"
+		QMAKE_CXXFLAGS="-Wno-enum-constexpr-conversion -Wno-c++11-narrowing-const-reference"
 	]],
 }
 

@@ -2121,23 +2121,20 @@ conf.q6_2wx6v9sf = {
 	]],
 }
 
-conf.q6_2wx6v9_wa6v9 = {
-	name = "Qt6.2.7-Windows-arm64-VS2019-&HOSTTOOLVERSION&-xWindows-x86_64-VS2019-&HOSTTOOLVERSION&",
+conf.q6_2wx6v2 = {
+	name = "Qt6.2.7-Windows-x86_64-VS2022-&HOSTTOOLVERSION&",
 	qtVersion = "6.2.7",
 	host = "Win10",
-	target = "Win10Arm",
-	toolchain = "MSVC2019-64", -- only a placeholder here, in fact it uses "toolchainT" instead of "toolchain"
-	toolchainT = "MSVC2019-arm64",
-	-- opensslConf = "???", -- OpenSSL do not provide a way to build for windows-arm64
+	toolchain = "MSVC2022-64",
+	opensslConf = "o3_0wx6v2",
+	mysqlConf = "m3_3wx6v2",
 	useCMake = "27",
-	-- TODO: Toolchain file or just write the CMAKE_xxx_COMPILER here?
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
-		-DQT_HOST_PATH="&HOSTQTDIR&"
 		-DBUILD_SHARED_LIBS=ON
 		-DCMAKE_BUILD_TYPE=Release
-		-DQT_QMAKE_TARGET_MKSPEC=win32-arm64-msvc
+		-DQT_QMAKE_TARGET_MKSPEC=win32-msvc
 		-DBUILD_WITH_PCH=ON
 		-DQT_BUILD_EXAMPLES=OFF
 		-DQT_BUILD_TESTS=OFF
@@ -2148,22 +2145,28 @@ conf.q6_2wx6v9_wa6v9 = {
 		-DFEATURE_icu=OFF
 		-DFEATURE_opengl_dynamic=ON
 		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=OFF
+		-DFEATURE_openssl=ON
+		-DINPUT_openssl=linked
+		-DOPENSSL_ROOT_DIR="&OPENSSLDIR&"
 		-DFEATURE_schannel=ON
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
+		-DFEATURE_sql_mysql=ON
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include\mariadb"
+		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\libmariadb.lib"
 		-DFEATURE_system_sqlite=OFF
+		-DBUILD_qtwebengine=OFF
 		-DBUILD_qtopcua=OFF
 	]],
 }
 
-conf.q6_2wx6v2 = {
-	name = "Qt6.2.7-Windows-x86_64-VS2022-&HOSTTOOLVERSION&",
+conf.q6_2wa6v2 = {
+	name = "Qt6.2.7-Windows-arm64-VS2022-&HOSTTOOLVERSION&",
 	qtVersion = "6.2.7",
-	host = "Win10",
-	toolchain = "MSVC2022-64",
-	opensslConf = "o3_0wx6v2",
-	mysqlConf = "m3_3wx6v2",
+	host = "Win10Arm",
+	toolchain = "MSVC2022-arm64",
+	opensslConf = "o3_0wa6v2",
+	mysqlConf = "m3_3wa6v2",
 	useCMake = "27",
 	configureParameter = [[
 		-GNinja
@@ -4265,23 +4268,20 @@ conf.q6_5wx6v2sf = {
 	]],
 }
 
-conf.q6_5wx6v2_wa6v2 = {
-	name = "Qt6.5.3-Windows-arm64-VS2022-&HOSTTOOLVERSION&-xWindows-x86_64-VS2022-&HOSTTOOLVERSION&",
+conf.q6_5wa6v2 = {
+	name = "Qt6.5.3-Windows-arm64-VS2022-&HOSTTOOLVERSION&",
 	qtVersion = "6.5.3",
-	host = "Win10",
-	target = "Win10Arm",
-	toolchain = "MSVC2022-64", -- only a placeholder here, in fact it uses "toolchainT" instead of "toolchain"
-	toolchainT = "MSVC2022-arm64",
-	-- opensslConf = "???", -- OpenSSL do not provide a way to build for windows-arm64
+	host = "Win10Arm",
+	toolchain = "MSVC2022-arm64",
+	opensslConf = "o3_0wa6v2",
+	mysqlConf = "m3_3wa6v2",
 	useCMake = "Latest",
-	-- TODO: Toolchain file or just write the CMAKE_xxx_COMPILER here?
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
-		-DQT_HOST_PATH="&HOSTQTDIR&"
 		-DBUILD_SHARED_LIBS=ON
 		-DCMAKE_BUILD_TYPE=Release
-		-DQT_QMAKE_TARGET_MKSPEC=win32-arm64-msvc
+		-DQT_QMAKE_TARGET_MKSPEC=win32-msvc
 		-DBUILD_WITH_PCH=ON
 		-DQT_BUILD_EXAMPLES=OFF
 		-DQT_BUILD_TESTS=OFF
@@ -4292,12 +4292,20 @@ conf.q6_5wx6v2_wa6v2 = {
 		-DFEATURE_icu=OFF
 		-DFEATURE_opengl_dynamic=ON
 		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=OFF
+		-DFEATURE_openssl=ON
+		-DINPUT_openssl=linked
+		-DOPENSSL_ROOT_DIR="&OPENSSLDIR&"
 		-DFEATURE_schannel=ON
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
+		-DFEATURE_sql_mysql=ON
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include\mariadb"
+		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\libmariadb.lib"
 		-DFEATURE_system_sqlite=OFF
+		-DFEATURE_webengine_proprietary_codecs=ON
+		-DFEATURE_qtpdf_build=ON
 		-DBUILD_qtgrpc=OFF
+		-DBUILD_qtwebengine=OFF
 	]],
 }
 
@@ -6070,23 +6078,20 @@ conf.q6_6wx6v2st = {
 	]],
 }
 
-conf.q6_6wx6v2_wa6v2 = {
-	name = "Qt6.6.2-Windows-arm64-VS2022-&HOSTTOOLVERSION&-xWindows-x86_64-VS2022-&HOSTTOOLVERSION&",
+conf.q6_6wa6v2 = {
+	name = "Qt6.6.2-Windows-arm64-VS2022-&HOSTTOOLVERSION&",
 	qtVersion = "6.6.2",
-	host = "Win10",
-	target = "Win10Arm",
-	toolchain = "MSVC2022-64", -- only a placeholder here, in fact it uses "toolchainT" instead of "toolchain"
-	toolchainT = "MSVC2022-arm64",
-	-- opensslConf = "???", -- OpenSSL do not provide a way to build for windows-arm64
+	host = "Win10Arm",
+	toolchain = "MSVC2022-arm64",
+	opensslConf = "o3_0wa6v2",
+	mysqlConf = "m3_3wa6v2",
 	useCMake = "Latest",
-	-- TODO: Toolchain file or just write the CMAKE_xxx_COMPILER here?
 	configureParameter = [[
 		-GNinja
 		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
-		-DQT_HOST_PATH="&HOSTQTDIR&"
 		-DBUILD_SHARED_LIBS=ON
 		-DCMAKE_BUILD_TYPE=Release
-		-DQT_QMAKE_TARGET_MKSPEC=win32-arm64-msvc
+		-DQT_QMAKE_TARGET_MKSPEC=win32-msvc
 		-DBUILD_WITH_PCH=ON
 		-DQT_BUILD_EXAMPLES=OFF
 		-DQT_BUILD_TESTS=OFF
@@ -6097,12 +6102,20 @@ conf.q6_6wx6v2_wa6v2 = {
 		-DFEATURE_icu=OFF
 		-DFEATURE_opengl_dynamic=ON
 		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=OFF
+		-DFEATURE_openssl=ON
+		-DINPUT_openssl=linked
+		-DOPENSSL_ROOT_DIR="&OPENSSLDIR&"
 		-DFEATURE_schannel=ON
 		-DFEATURE_sql_sqlite=ON
 		-DFEATURE_sql_odbc=ON
+		-DFEATURE_sql_mysql=ON
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include\mariadb"
+		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\libmariadb.lib"
 		-DFEATURE_system_sqlite=OFF
+		-DFEATURE_webengine_proprietary_codecs=ON
+		-DFEATURE_qtpdf_build=ON
 		-DBUILD_qtgrpc=OFF
+		-DBUILD_qtwebengine=OFF
 	]],
 }
 

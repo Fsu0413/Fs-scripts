@@ -628,6 +628,31 @@ conf.m3_3wx6v2 = {
 	]],
 }
 
+conf.m3_3wa6v2 = {
+	name = "mariadb_connector_c3.3.8-Windows-arm64-VS2022-&TARGETTOOLVERSION&",
+	mariadbVersion = "3.3.8",
+	host = "Win10Arm",
+	toolchain = "MSVC2022-Arm64",
+	libPath = { "lib\\mariadb\\libmariadb.dll" },
+	configureParameter = [[
+		-GNinja
+		-DCMAKE_C_STANDARD=11
+		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
+		-DCMAKE_BUILD_TYPE=Release
+		-DCLIENT_PLUGIN_DIALOG=STATIC
+		-DCLIENT_PLUGIN_CLIENT_ED25519=STATIC
+		-DCLIENT_PLUGIN_CACHING_SHA2_PASSWORD=STATIC
+		-DCLIENT_PLUGIN_SHA256_PASSWORD=STATIC
+		-DCLIENT_PLUGIN_AUTH_GSSAPI_CLIENT=STATIC
+		-DCLIENT_PLUGIN_MYSQL_CLEAR_PASSWORD=STATIC
+		-DCLIENT_PLUGIN_PVIO_NPIPE=STATIC
+		-DCLIENT_PLUGIN_PVIO_SHMEM=STATIC
+		-DWARNING_AS_ERROR=
+		-DWITH_SSL=SCHANNEL
+		-DCMAKE_C_FLAGS="-wd4244"
+	]],
+}
+
 --------------------------------------------------------------------
 
 conf.m3_3wx6g1 = {

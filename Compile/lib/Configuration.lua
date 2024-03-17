@@ -84,6 +84,33 @@ conf.host.win = {
 	["defaultToolchainExecutableName"] = "gcc",
 }
 
+conf.host.winArm = {
+	-- Preinstalled jom in path and is used
+	-- Preinstalled MSVC (need to set path manually)
+	-- Preinstalled MinGW-w64 toolchain (need to set path manually)
+	-- Preinstalled CMake and ninja in path and used
+	["makefileTemplate"] = "win",
+	["pathSep"] = '\\',
+	["toolchainPath"] = {
+		-- MSVC toolchains
+		-- Since MSVC toolchain must be configured using BAT file, we make this file appear FIRST in the table
+		["MSVC2022-arm64"] = {"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\Build\\vcvarsarm64.bat"},
+	},
+	["sourcePackagePath"] = "D:\\Qt\\",
+	["buildRootPath"] = "D:\\Qt\\", -- On Windows, the build root should be same with source package
+	["cMakePath"] = {
+		["27"] = {"D:\\cmake-3.27.6-windows-arm64\\bin", "D:\\ninja"},
+		["Latest"] = {"D:\\cmake-3.28.3-windows-arm64\\bin", "D:\\ninja"},
+	},
+	["jdkPath"] = {
+		["11"] = "D:\\microsoft-jdk-11.0.22-windows-aarch64\\jdk-11.0.22+7",
+	},
+	["pythonPath"] = {
+		["3"] = "D:\\Python311",
+	},
+	["defaultToolchainExecutableName"] = "gcc",
+}
+
 -- msys is treated as another host since it uses windows agent and unix shell
 -- used in compiling OpenSSL
 conf.host.msys = {
@@ -539,7 +566,7 @@ conf.Qt.generateConfTable = function(self, host, job, buildTime)
 
 			-- for Qt 6.5+ links OpenSSL to QtBase
 			if (not jobConfigureDetail.crossCompile) and (not staticBuild) then
-				if conf.hostToConfMap[host] == "win" then
+				if string.sub(conf.hostToConfMap[host], 1, 3) == "win" then
 					table.insert(ret.path, commandLineReplacement.OPENSSLDIR .. configureHost.pathSep .. "bin")
 				elseif string.sub(conf.hostToConfMap[host], 1, 3) == "mac" then
 					-- todo: is this needed?
@@ -919,6 +946,7 @@ end
 conf.hostToConfMap = {
 	["Win10"] = "win",
 	["Win10SH"] = "msys",
+	["Win10Arm"] = "winArm",
 	["Win8"] = "win",
 	["Win8SH"] = "msys",
 	["CentOS8"] = "linux",

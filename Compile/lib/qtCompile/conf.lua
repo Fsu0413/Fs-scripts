@@ -4302,8 +4302,6 @@ conf.q6_5wa6v2 = {
 		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include\mariadb"
 		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\libmariadb.lib"
 		-DFEATURE_system_sqlite=OFF
-		-DFEATURE_webengine_proprietary_codecs=ON
-		-DFEATURE_qtpdf_build=ON
 		-DBUILD_qtgrpc=OFF
 		-DBUILD_qtwebengine=OFF
 	]],
@@ -6112,8 +6110,6 @@ conf.q6_6wa6v2 = {
 		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include\mariadb"
 		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\libmariadb.lib"
 		-DFEATURE_system_sqlite=OFF
-		-DFEATURE_webengine_proprietary_codecs=ON
-		-DFEATURE_qtpdf_build=ON
 		-DBUILD_qtgrpc=OFF
 		-DBUILD_qtwebengine=OFF
 	]],

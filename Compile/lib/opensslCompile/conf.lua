@@ -104,7 +104,7 @@ conf.o3_0wa6v2 = {
 	name = "OpenSSL3.0.13-Windows-x86_64-VS2022-&TARGETTOOLVERSION&",
 	opensslVersion = "3.0.13",
 	host = "Win10Arm",
-	toolchain = "MSVC2022-64",
+	toolchain = "MSVC2022-arm64",
 	libPath = { "bin\\libssl-3-arm64.dll", "bin\\libcrypto-3-arm64.dll" },
 	configureParameter = [[
 		no-asm

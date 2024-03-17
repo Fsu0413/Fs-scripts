@@ -632,7 +632,7 @@ conf.m3_3wa6v2 = {
 	name = "mariadb_connector_c3.3.8-Windows-arm64-VS2022-&TARGETTOOLVERSION&",
 	mariadbVersion = "3.3.8",
 	host = "Win10Arm",
-	toolchain = "MSVC2022-Arm64",
+	toolchain = "MSVC2022-arm64",
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
 	configureParameter = [[
 		-GNinja

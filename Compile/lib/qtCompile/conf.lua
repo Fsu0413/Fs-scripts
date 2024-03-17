@@ -597,7 +597,7 @@ conf.q5_15wa6v2 = {
 	qtVersion = "5.15.13",
 	host = "Win10",
 	toolchain = "MSVC2022-arm64",
-	mysqlConf = "m3_1wa6v2",
+	-- mysqlConf = "m3_1wa6v2",
 	useNode = "14",
 	configureParameter = [[
 		-prefix
@@ -624,9 +624,6 @@ conf.q5_15wa6v2 = {
 		-schannel
 		-sql-sqlite
 		-sql-odbc
-		-sql-mysql
-		"MYSQL_INCDIR=&MYSQLPREFIX&\include\mariadb"
-		"MYSQL_LIBDIR=&MYSQLPREFIX&\lib\mariadb"
 		-make-tool
 		jom
 		-skip

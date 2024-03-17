@@ -592,6 +592,50 @@ conf.q5_15wx6v2 = {
 	]],
 }
 
+conf.q5_15wa6v2 = {
+	name = "Qt5.15.13-Windows-arm64-VS2022-&HOSTTOOLVERSION&",
+	qtVersion = "5.15.13",
+	host = "Win10",
+	toolchain = "MSVC2022-arm64",
+	mysqlConf = "m3_1wa6v2",
+	useNode = "14",
+	configureParameter = [[
+		-prefix
+		&INSTALLROOT&
+		-opensource
+		-shared
+		-release
+		-confirm-license
+		-platform
+		win32-msvc
+		-pch
+		-nomake
+		examples
+		-nomake
+		tests
+		-no-compile-examples
+		-qt-doubleconversion
+		-qt-zlib
+		-qt-pcre
+		-no-icu
+		-opengl
+		dynamic
+		-ssl
+		-schannel
+		-sql-sqlite
+		-sql-odbc
+		-sql-mysql
+		"MYSQL_INCDIR=&MYSQLPREFIX&\include\mariadb"
+		"MYSQL_LIBDIR=&MYSQLPREFIX&\lib\mariadb"
+		-make-tool
+		jom
+		-skip
+		qtwebengine
+		-skip
+		qtxmlpatterns
+	]],
+}
+
 conf.q5_15wx3g8 = {
 	name = "Qt5.15.13-Windows-x86-MinGW&HOSTTOOLVERSION&",
 	qtVersion = "5.15.13",

@@ -2411,45 +2411,6 @@ conf.q6_2wx6p2 = {
 	]],
 }
 
-conf.q6_2wx6p2sf = {
-	name = "Qt6.2.7-Windows-x86_64-MinGW&HOSTTOOLVERSION&-ucrt-staticFull",
-	qtVersion = "6.2.7",
-	host = "Win10",
-	toolchain = "MinGW122u-64",
-	variant = {"-staticFull"},
-	opensslConf = "o3_0wx6p2st",
-	useCMake = "27",
-	configureParameter = [[
-		-GNinja
-		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
-		-DBUILD_SHARED_LIBS=OFF
-		-DFEATURE_static_runtime=ON
-		-DCMAKE_BUILD_TYPE=Release
-		-DQT_QMAKE_TARGET_MKSPEC=win32-g++
-		-DBUILD_WITH_PCH=ON
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_relocatable=ON
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengl_dynamic=ON
-		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=ON
-		-DINPUT_openssl=linked
-		-DOPENSSL_ROOT_DIR="&OPENSSLDIR&"
-		-DOPENSSL_USE_STATIC_LIBS=TRUE
-		-DFEATURE_schannel=ON
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_sql_odbc=ON
-		-DFEATURE_system_sqlite=OFF
-		-DBUILD_qtopcua=OFF
-		-DCMAKE_EXE_LINKER_FLAGS="--static -static-libgcc -static-libstdc++"
-	]],
-}
-
 conf.q6_2wx6g2 = {
 	name = "Qt6.2.7-Windows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
 	qtVersion = "6.2.7",
@@ -2485,45 +2446,6 @@ conf.q6_2wx6g2 = {
 		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\liblibmariadb.dll.a"
 		-DFEATURE_system_sqlite=OFF
 		-DBUILD_qtopcua=OFF
-	]],
-}
-
-conf.q6_2wx6g2sf = {
-	name = "Qt6.2.7-Windows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt-staticFull",
-	qtVersion = "6.2.7",
-	host = "Win10",
-	toolchain = "MinGW1220-64",
-	variant = {"-staticFull"},
-	opensslConf = "o3_0wx6g2st",
-	useCMake = "27",
-	configureParameter = [[
-		-GNinja
-		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
-		-DBUILD_SHARED_LIBS=OFF
-		-DFEATURE_static_runtime=ON
-		-DCMAKE_BUILD_TYPE=Release
-		-DQT_QMAKE_TARGET_MKSPEC=win32-g++
-		-DBUILD_WITH_PCH=ON
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_relocatable=ON
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengl_dynamic=ON
-		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=ON
-		-DINPUT_openssl=linked
-		-DOPENSSL_ROOT_DIR="&OPENSSLDIR&"
-		-DOPENSSL_USE_STATIC_LIBS=TRUE
-		-DFEATURE_schannel=ON
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_sql_odbc=ON
-		-DFEATURE_system_sqlite=OFF
-		-DBUILD_qtopcua=OFF
-		-DCMAKE_EXE_LINKER_FLAGS="--static -static-libgcc -static-libstdc++"
 	]],
 }
 
@@ -2565,45 +2487,6 @@ conf.q6_2wx6p3 = {
 	]],
 }
 
-conf.q6_2wx6p3sf = {
-	name = "Qt6.2.7-Windows-x86_64-MinGW&HOSTTOOLVERSION&-ucrt-staticFull",
-	qtVersion = "6.2.7",
-	host = "Win10",
-	toolchain = "MinGW132u-64",
-	variant = {"-staticFull"},
-	opensslConf = "o3_0wx6p3st",
-	useCMake = "27",
-	configureParameter = [[
-		-GNinja
-		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
-		-DBUILD_SHARED_LIBS=OFF
-		-DFEATURE_static_runtime=ON
-		-DCMAKE_BUILD_TYPE=Release
-		-DQT_QMAKE_TARGET_MKSPEC=win32-g++
-		-DBUILD_WITH_PCH=ON
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_relocatable=ON
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengl_dynamic=ON
-		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=ON
-		-DINPUT_openssl=linked
-		-DOPENSSL_ROOT_DIR="&OPENSSLDIR&"
-		-DOPENSSL_USE_STATIC_LIBS=TRUE
-		-DFEATURE_schannel=ON
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_sql_odbc=ON
-		-DFEATURE_system_sqlite=OFF
-		-DBUILD_qtopcua=OFF
-		-DCMAKE_EXE_LINKER_FLAGS="--static -static-libgcc -static-libstdc++"
-	]],
-}
-
 conf.q6_2wx6g3 = {
 	name = "Qt6.2.7-Windows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
 	qtVersion = "6.2.7",
@@ -2639,45 +2522,6 @@ conf.q6_2wx6g3 = {
 		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\liblibmariadb.dll.a"
 		-DFEATURE_system_sqlite=OFF
 		-DBUILD_qtopcua=OFF
-	]],
-}
-
-conf.q6_2wx6g3sf = {
-	name = "Qt6.2.7-Windows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt-staticFull",
-	qtVersion = "6.2.7",
-	host = "Win10",
-	toolchain = "MinGW1320-64",
-	variant = {"-staticFull"},
-	opensslConf = "o3_0wx6g3st",
-	useCMake = "27",
-	configureParameter = [[
-		-GNinja
-		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
-		-DBUILD_SHARED_LIBS=OFF
-		-DFEATURE_static_runtime=ON
-		-DCMAKE_BUILD_TYPE=Release
-		-DQT_QMAKE_TARGET_MKSPEC=win32-g++
-		-DBUILD_WITH_PCH=ON
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_relocatable=ON
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengl_dynamic=ON
-		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=ON
-		-DINPUT_openssl=linked
-		-DOPENSSL_ROOT_DIR="&OPENSSLDIR&"
-		-DOPENSSL_USE_STATIC_LIBS=TRUE
-		-DFEATURE_schannel=ON
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_sql_odbc=ON
-		-DFEATURE_system_sqlite=OFF
-		-DBUILD_qtopcua=OFF
-		-DCMAKE_EXE_LINKER_FLAGS="--static -static-libgcc -static-libstdc++"
 	]],
 }
 

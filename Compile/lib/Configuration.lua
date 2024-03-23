@@ -106,6 +106,7 @@ conf.host.winArm = {
 		["11"] = "D:\\microsoft-jdk-11.0.22-windows-aarch64\\jdk-11.0.22+7",
 	},
 	["pythonPath"] = {
+		["2"] = "D:\\Python27",
 		["3"] = "D:\\Python311",
 	},
 	["defaultToolchainExecutableName"] = "gcc",

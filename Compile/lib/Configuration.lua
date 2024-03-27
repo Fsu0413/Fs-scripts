@@ -66,7 +66,7 @@ conf.host.win = {
 	["cMakePath"] = {
 		["20"] = {"D:\\cmake-3.20.2-windows-x86_64\\bin", "D:\\ninja"},
 		["27"] = {"D:\\cmake-3.27.6-windows-x86_64\\bin", "D:\\ninja"},
-		["Latest"] = {"D:\\cmake-3.28.3-windows-x86_64\\bin", "D:\\ninja"},
+		["Latest"] = {"D:\\cmake-3.29.0-windows-x86_64\\bin", "D:\\ninja"},
 	},
 	["jdkPath"] = {
 		["8"] = "D:\\OpenJDK8U-jdk_x64_windows_hotspot_8u402b06\\jdk8u402-b06",
@@ -100,7 +100,7 @@ conf.host.winArm = {
 	["buildRootPath"] = "D:\\Qt\\", -- On Windows, the build root should be same with source package
 	["cMakePath"] = {
 		["27"] = {"D:\\cmake-3.27.6-windows-arm64\\bin", "D:\\ninja"},
-		["Latest"] = {"D:\\cmake-3.28.3-windows-arm64\\bin", "D:\\ninja"},
+		["Latest"] = {"D:\\cmake-3.29.0-windows-arm64\\bin", "D:\\ninja"},
 	},
 	["jdkPath"] = {
 		["11"] = "D:\\microsoft-jdk-11.0.22-windows-aarch64\\jdk-11.0.22+7",

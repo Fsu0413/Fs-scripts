@@ -2069,61 +2069,6 @@ conf.q6_2wx6v9 = {
 	]],
 }
 
-conf.q6_2wx6v9st = {
-	name = "Qt6.2.7-Windows-x86_64-VS2019-&HOSTTOOLVERSION&-static",
-	qtVersion = "6.2.7",
-	host = "Win10",
-	toolchain = "MSVC2019-64",
-	variant = {"-static"},
-	useCMake = "27",
-	configureParameter = [[
-		-GNinja
-		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
-		-DBUILD_SHARED_LIBS=OFF
-		-DFEATURE_static_runtime=ON
-		-DCMAKE_BUILD_TYPE=Release
-		-DQT_QMAKE_TARGET_MKSPEC=win32-msvc
-		-DBUILD_WITH_PCH=ON
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_relocatable=ON
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengl_dynamic=ON
-		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=OFF
-		-DFEATURE_schannel=ON
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_sql_odbc=ON
-		-DFEATURE_system_sqlite=OFF
-		-DBUILD_qt3d=OFF
-		-DBUILD_qt5compat=OFF
-		-DBUILD_qtcharts=OFF
-		-DBUILD_qtcoap=OFF
-		-DBUILD_qtconnectivity=OFF
-		-DBUILD_qtdatavis3d=OFF
-		-DBUILD_qtdoc=OFF
-		-DBUILD_qtpositioning=OFF
-		-DBUILD_qtlottie=OFF
-		-DBUILD_qtmqtt=OFF
-		-DBUILD_qtnetworkauth=OFF
-		-DBUILD_qtopcua=OFF
-		-DBUILD_qtquicktimeline=OFF
-		-DBUILD_qtsensors=OFF
-		-DBUILD_qtserialbus=OFF
-		-DBUILD_qtserialport=OFF
-		-DBUILD_qtvirtualkeyboard=OFF
-		-DBUILD_qtwayland=OFF
-		-DBUILD_qtwebchannel=OFF
-		-DBUILD_qtwebengine=OFF
-		-DBUILD_qtwebsockets=OFF
-		-DBUILD_qtwebview=OFF
-	]],
-}
-
 conf.q6_2wx6v9sf = {
 	name = "Qt6.2.7-Windows-x86_64-VS2019-&HOSTTOOLVERSION&-staticFull",
 	qtVersion = "6.2.7",
@@ -4055,66 +4000,6 @@ conf.q6_5wx6v2 = {
 	]],
 }
 
-conf.q6_5wx6v2st = {
-	name = "Qt6.5.3-Windows-x86_64-VS2022-&HOSTTOOLVERSION&-static",
-	qtVersion = "6.5.3",
-	host = "Win10",
-	toolchain = "MSVC2022-64",
-	variant = {"-static"},
-	useCMake = "Latest",
-	configureParameter = [[
-		-GNinja
-		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
-		-DBUILD_SHARED_LIBS=OFF
-		-DFEATURE_static_runtime=ON
-		-DCMAKE_BUILD_TYPE=Release
-		-DQT_QMAKE_TARGET_MKSPEC=win32-msvc
-		-DBUILD_WITH_PCH=ON
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_relocatable=ON
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengl_dynamic=ON
-		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=OFF
-		-DFEATURE_schannel=ON
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_sql_odbc=ON
-		-DFEATURE_system_sqlite=OFF
-		-DBUILD_qt3d=OFF
-		-DBUILD_qt5compat=OFF
-		-DBUILD_qtcharts=OFF
-		-DBUILD_qtcoap=OFF
-		-DBUILD_qtconnectivity=OFF
-		-DBUILD_qtdatavis3d=OFF
-		-DBUILD_qtdoc=OFF
-		-DBUILD_qtgrpc=OFF
-		-DBUILD_qthttpserver=OFF
-		-DBUILD_qtlanguageserver=OFF
-		-DBUILD_qtlocation=OFF
-		-DBUILD_qtlottie=OFF
-		-DBUILD_qtmqtt=OFF
-		-DBUILD_qtnetworkauth=OFF
-		-DBUILD_qtpositioning=OFF
-		-DBUILD_qtquick3dphysics=OFF
-		-DBUILD_qtquicktimeline=OFF
-		-DBUILD_qtsensors=OFF
-		-DBUILD_qtserialbus=OFF
-		-DBUILD_qtserialport=OFF
-		-DBUILD_qtspeech=OFF
-		-DBUILD_qtvirtualkeyboard=OFF
-		-DBUILD_qtwayland=OFF
-		-DBUILD_qtwebchannel=OFF
-		-DBUILD_qtwebengine=OFF
-		-DBUILD_qtwebsockets=OFF
-		-DBUILD_qtwebview=OFF
-	]],
-}
-
 conf.q6_5wx6v2sf = {
 	name = "Qt6.5.3-Windows-x86_64-VS2022-&HOSTTOOLVERSION&-staticFull",
 	qtVersion = "6.5.3",
@@ -5901,67 +5786,6 @@ conf.q6_6wx6v2 = {
 	]],
 }
 
-conf.q6_6wx6v2st = {
-	name = "Qt6.6.3-Windows-x86_64-VS2022-&HOSTTOOLVERSION&-static",
-	qtVersion = "6.6.3",
-	host = "Win10",
-	toolchain = "MSVC2022-64",
-	variant = {"-static"},
-	useCMake = "Latest",
-	configureParameter = [[
-		-GNinja
-		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
-		-DBUILD_SHARED_LIBS=OFF
-		-DFEATURE_static_runtime=ON
-		-DCMAKE_BUILD_TYPE=Release
-		-DQT_QMAKE_TARGET_MKSPEC=win32-msvc
-		-DBUILD_WITH_PCH=ON
-		-DQT_BUILD_EXAMPLES=OFF
-		-DQT_BUILD_TESTS=OFF
-		-DFEATURE_relocatable=ON
-		-DFEATURE_doubleconversion=ON
-		-DFEATURE_system_doubleconversion=OFF
-		-DFEATURE_system_zlib=OFF
-		-DFEATURE_system_pcre2=OFF
-		-DFEATURE_icu=OFF
-		-DFEATURE_opengl_dynamic=ON
-		-DFEATURE_ssl=ON
-		-DFEATURE_openssl=OFF
-		-DFEATURE_schannel=ON
-		-DFEATURE_sql_sqlite=ON
-		-DFEATURE_sql_odbc=ON
-		-DFEATURE_system_sqlite=OFF
-		-DBUILD_qt3d=OFF
-		-DBUILD_qt5compat=OFF
-		-DBUILD_qtcharts=OFF
-		-DBUILD_qtcoap=OFF
-		-DBUILD_qtconnectivity=OFF
-		-DBUILD_qtdatavis3d=OFF
-		-DBUILD_qtdoc=OFF
-		-DBUILD_qtgrpc=OFF
-		-DBUILD_qtgraphs=OFF
-		-DBUILD_qthttpserver=OFF
-		-DBUILD_qtlanguageserver=OFF
-		-DBUILD_qtlocation=OFF
-		-DBUILD_qtlottie=OFF
-		-DBUILD_qtmqtt=OFF
-		-DBUILD_qtnetworkauth=OFF
-		-DBUILD_qtpositioning=OFF
-		-DBUILD_qtquick3dphysics=OFF
-		-DBUILD_qtquicktimeline=OFF
-		-DBUILD_qtsensors=OFF
-		-DBUILD_qtserialbus=OFF
-		-DBUILD_qtserialport=OFF
-		-DBUILD_qtspeech=OFF
-		-DBUILD_qtvirtualkeyboard=OFF
-		-DBUILD_qtwayland=OFF
-		-DBUILD_qtwebchannel=OFF
-		-DBUILD_qtwebengine=OFF
-		-DBUILD_qtwebsockets=OFF
-		-DBUILD_qtwebview=OFF
-	]],
-}
-
 conf.q6_6wa6v2 = {
 	name = "Qt6.6.3-Windows-arm64-VS2022-&HOSTTOOLVERSION&",
 	qtVersion = "6.6.3",
@@ -7044,13 +6868,6 @@ local Qt6StaticConf = {
 		["6.2.7"] = "q6_2wx6g1st",
 		["6.5.3"] = "q6_5wx6g2st",
 		["6.6.3"] = "q6_6wx6g2st",
-	},
-	Win10MSVC2019 = {
-		["6.2.7"] = "q6_2wx6v9st",
-	},
-	Win10MSVC2022 = {
-		["6.5.3"] = "q6_5wx6v2st",
-		["6.6.3"] = "q6_6wx6v2st",
 	},
 	CentOS8 = {
 		["6.2.7"] = "q6_2lx6st",

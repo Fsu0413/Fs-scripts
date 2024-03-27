@@ -101,7 +101,7 @@ conf.o3_0wx6v2 = {
 }
 
 conf.o3_0wa6v2 = {
-	name = "OpenSSL3.0.13-Windows-x86_64-VS2022-&TARGETTOOLVERSION&",
+	name = "OpenSSL3.0.13-Windows-arm64-VS2022-&TARGETTOOLVERSION&",
 	opensslVersion = "3.0.13",
 	host = "Win10Arm",
 	toolchain = "MSVC2022-arm64",

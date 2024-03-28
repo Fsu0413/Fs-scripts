@@ -62,6 +62,7 @@ conf.host.win = {
 		["2.0.14"] = "D:\\emsdk-2.0.14\\",
 		["3.1.25"] = "D:\\emsdk-3.1.25\\",
 		["3.1.37"] = "D:\\emsdk-3.1.37\\",
+		["3.1.50"] = "D:\\emsdk-3.1.50\\",
 	},
 	["cMakePath"] = {
 		["20"] = {"D:\\cmake-3.20.2-windows-x86_64\\bin", "D:\\ninja"},
@@ -176,6 +177,7 @@ conf.host.linux = {
 		["2.0.14"] = "/opt/env/emsdk-2.0.14/",
 		["3.1.25"] = "/opt/env/emsdk-3.1.25/",
 		["3.1.37"] = "/opt/env/emsdk-3.1.37/",
+		["3.1.50"] = "/opt/env/emsdk-3.1.50/",
 	},
 	["cMakePath"] = {
 		["27"] = {"/home/fs/install-cmake3_27_6/bin"},
@@ -252,6 +254,7 @@ conf.host.macM1 = {
 		["2.0.14"] = "/opt/env/emsdk-2.0.14/",
 		["3.1.25"] = "/opt/env/emsdk-3.1.25/",
 		["3.1.37"] = "/opt/env/emsdk-3.1.37/",
+		["3.1.50"] = "/opt/env/emsdk-3.1.50/",
 	},
 	["cMakePath"] = {
 		["27"] = {"/Users/fs/install-cmake3_27_6/bin"},

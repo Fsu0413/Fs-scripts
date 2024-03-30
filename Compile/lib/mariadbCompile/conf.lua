@@ -209,56 +209,7 @@ conf.m3_1wx6v2 = {
 	]],
 }
 
-conf.m3_1wa6v2 = {
-	name = "mariadb_connector_c3.1.23-Windows-arm64-VS2022-&TARGETTOOLVERSION&",
-	mariadbVersion = "3.1.23",
-	host = "Win10Arm",
-	toolchain = "MSVC2022-arm64",
-	libPath = { "lib\\mariadb\\libmariadb.dll" },
-	configureParameter = [[
-		-GNinja
-		-DCMAKE_C_STANDARD=11
-		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
-		-DCMAKE_BUILD_TYPE=Release
-		-DCLIENT_PLUGIN_DIALOG=STATIC
-		-DCLIENT_PLUGIN_CLIENT_ED25519=STATIC
-		-DCLIENT_PLUGIN_CACHING_SHA2_PASSWORD=STATIC
-		-DCLIENT_PLUGIN_SHA256_PASSWORD=STATIC
-		-DCLIENT_PLUGIN_AUTH_GSSAPI_CLIENT=STATIC
-		-DCLIENT_PLUGIN_MYSQL_CLEAR_PASSWORD=STATIC
-		-DCLIENT_PLUGIN_PVIO_NPIPE=STATIC
-		-DCLIENT_PLUGIN_PVIO_SHMEM=STATIC
-		-DWITH_SSL=SCHANNEL
-		-DCMAKE_C_FLAGS="-wd4244"
-	]],
-}
-
 --------------------------------------------------------------------
-
--- build failed due to conflicting function definition???
-conf.m3_1wx3g8 = {
-	name = "mariadb_connector_c3.1.23-Windows-x86-MinGW-GCC&TARGETTOOLVERSION&",
-	mariadbVersion = "3.1.23",
-	host = "Win10",
-	toolchain = "MinGW810-32",
-	libPath = { "lib\\mariadb\\libmariadb.dll" },
-	configureParameter = [[
-		-GNinja
-		-DCMAKE_C_STANDARD=11
-		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
-		-DCMAKE_BUILD_TYPE=Release
-		-DCLIENT_PLUGIN_DIALOG=STATIC
-		-DCLIENT_PLUGIN_CLIENT_ED25519=STATIC
-		-DCLIENT_PLUGIN_CACHING_SHA2_PASSWORD=STATIC
-		-DCLIENT_PLUGIN_SHA256_PASSWORD=STATIC
-		-DCLIENT_PLUGIN_AUTH_GSSAPI_CLIENT=STATIC
-		-DCLIENT_PLUGIN_MYSQL_CLEAR_PASSWORD=STATIC
-		-DCLIENT_PLUGIN_PVIO_NPIPE=STATIC
-		-DCLIENT_PLUGIN_PVIO_SHMEM=STATIC
-		-DWITH_SSL=OFF
-		-DCMAKE_C_FLAGS="-Dstrerror_r(a,b,c)=strerror_s(b,c,a)"
-	]],
-}
 
 conf.m3_1wx6g8 = {
 	name = "mariadb_connector_c3.1.23-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&",

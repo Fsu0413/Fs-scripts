@@ -1031,7 +1031,16 @@ end
 
 gen.dumpConfTable = function(self, para)
 	local returnText = "{\n"
-	for k, v in pairs(para) do
+	local keys = {}
+
+	for k in pairs(para) do
+		table.insert(keys, k)
+	end
+
+	table.sort(keys)
+
+	for _, k in ipairs(keys) do
+		local v = para[k]
 		-- key is always string
 		returnText = returnText .. "[\"" .. k .. "\"] = "
 		if type(v) == "nil" then

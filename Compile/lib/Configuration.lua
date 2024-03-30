@@ -422,20 +422,20 @@ conf.Qt.generateConfTable = function(self, host, job, buildTime)
 		targetToolchainVersion = hostToolchainVersion
 		if string.sub(jobConfigureDetail.toolchain, 1, 4) == "MSVC" then
 			ret.buildTarget = "Windows"
-			if string.sub(jobConfigureDetail.toolchain, -3) = "-32" then
+			if string.sub(jobConfigureDetail.toolchain, -3) == "-32" then
 				ret.buildTargetArch = "x86"
-			elseif string.sub(jobConfigureDetail.toolchain, -3) = "-64" then
+			elseif string.sub(jobConfigureDetail.toolchain, -3) == "-64" then
 				ret.buildTargetArch = "x86_64"
-			elseif string.sub(jobConfigureDetail.toolchain, -6) = "-arm64" then
+			elseif string.sub(jobConfigureDetail.toolchain, -6) == "-arm64" then
 				ret.buildTargetArch = "arm64"
 			end
 		elseif string.sub(jobConfigureDetail.toolchain, 1, 5) == "MinGW" then
 			ret.buildTarget = "Windows"
-			if string.sub(jobConfigureDetail.toolchain, -3) = "-32" then
+			if string.sub(jobConfigureDetail.toolchain, -3) == "-32" then
 				ret.buildTargetArch = "x86"
-			elseif string.sub(jobConfigureDetail.toolchain, -3) = "-64" then
+			elseif string.sub(jobConfigureDetail.toolchain, -3) == "-64" then
 				ret.buildTargetArch = "x86_64"
-			elseif string.sub(jobConfigureDetail.toolchain, -6) = "-arm64" then
+			elseif string.sub(jobConfigureDetail.toolchain, -6) == "-arm64" then
 				ret.buildTargetArch = "arm64"
 			end
 		elseif string.sub(conf.hostToConfMap[host], 1, 3) == "mac" then
@@ -772,20 +772,20 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 			targetToolchainVersion = hostToolchainVersion
 			if string.sub(jobConfigureDetail.toolchain, 1, 4) == "MSVC" then -- if conf.hostToConfMap[host] == "win" then
 				ret.buildTarget = "Windows"
-				if string.sub(jobConfigureDetail.toolchain, -3) = "-32" then
+				if string.sub(jobConfigureDetail.toolchain, -3) == "-32" then
 					ret.buildTargetArch = "x86"
-				elseif string.sub(jobConfigureDetail.toolchain, -3) = "-64" then
+				elseif string.sub(jobConfigureDetail.toolchain, -3) == "-64" then
 					ret.buildTargetArch = "x86_64"
-				elseif string.sub(jobConfigureDetail.toolchain, -6) = "-arm64" then
+				elseif string.sub(jobConfigureDetail.toolchain, -6) == "-arm64" then
 					ret.buildTargetArch = "arm64"
 				end
 			elseif string.sub(jobConfigureDetail.toolchain, 1, 5) == "MinGW" then -- elseif conf.hostToConfMap[host] == "msys" then
 				ret.buildTarget = "Windows"
-				if string.sub(jobConfigureDetail.toolchain, -3) = "-32" then
+				if string.sub(jobConfigureDetail.toolchain, -3) == "-32" then
 					ret.buildTargetArch = "x86"
-				elseif string.sub(jobConfigureDetail.toolchain, -3) = "-64" then
+				elseif string.sub(jobConfigureDetail.toolchain, -3) == "-64" then
 					ret.buildTargetArch = "x86_64"
-				elseif string.sub(jobConfigureDetail.toolchain, -6) = "-arm64" then
+				elseif string.sub(jobConfigureDetail.toolchain, -6) == "-arm64" then
 					ret.buildTargetArch = "arm64"
 				end
 				-- Clang-llvm need clang be called with target triplet and should be set to environment variable CC
@@ -951,20 +951,20 @@ conf.MariaDB.generateConfTable = function(self, host, job)
 		targetToolchainVersion = hostToolchainVersion
 		if string.sub(jobConfigureDetail.toolchain, 1, 4) == "MSVC" then
 			ret.buildTarget = "Windows"
-			if string.sub(jobConfigureDetail.toolchain, -3) = "-32" then
+			if string.sub(jobConfigureDetail.toolchain, -3) == "-32" then
 				ret.buildTargetArch = "x86"
-			elseif string.sub(jobConfigureDetail.toolchain, -3) = "-64" then
+			elseif string.sub(jobConfigureDetail.toolchain, -3) == "-64" then
 				ret.buildTargetArch = "x86_64"
-			elseif string.sub(jobConfigureDetail.toolchain, -6) = "-arm64" then
+			elseif string.sub(jobConfigureDetail.toolchain, -6) == "-arm64" then
 				ret.buildTargetArch = "arm64"
 			end
 		elseif string.sub(jobConfigureDetail.toolchain, 1, 5) == "MinGW" then
 			ret.buildTarget = "Windows"
-			if string.sub(jobConfigureDetail.toolchain, -3) = "-32" then
+			if string.sub(jobConfigureDetail.toolchain, -3) == "-32" then
 				ret.buildTargetArch = "x86"
-			elseif string.sub(jobConfigureDetail.toolchain, -3) = "-64" then
+			elseif string.sub(jobConfigureDetail.toolchain, -3) == "-64" then
 				ret.buildTargetArch = "x86_64"
-			elseif string.sub(jobConfigureDetail.toolchain, -6) = "-arm64" then
+			elseif string.sub(jobConfigureDetail.toolchain, -6) == "-arm64" then
 				ret.buildTargetArch = "arm64"
 			end
 		elseif string.sub(conf.hostToConfMap[host], 1, 3) == "mac" then

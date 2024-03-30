@@ -1029,7 +1029,9 @@ gen.generateBuildCommand = function(self, para)
 	return ret
 end
 
-gen.dumpConfTable = function(self, para)
+gen.dumpConfTable = function(self, para, indent)
+	if not indent then indent = 1 end
+
 	local returnText = "{\n"
 	local keys = {}
 
@@ -1042,7 +1044,7 @@ gen.dumpConfTable = function(self, para)
 	for _, k in ipairs(keys) do
 		local v = para[k]
 		-- key is always string
-		returnText = returnText .. "[\"" .. k .. "\"] = "
+		returnText = returnText .. string.rep("\t", indent) .. "[\"" .. k .. "\"] = "
 		if type(v) == "nil" then
 			returnText = returnText .. "nil"
 		elseif type(v) == "string" then
@@ -1050,13 +1052,13 @@ gen.dumpConfTable = function(self, para)
 		elseif type(v) == "boolean" then
 			returnText = returnText .. (v and "true" or "false")
 		elseif type(v) == "table" then
-			returnText = returnText .. self:dumpConfTable(v)
+			returnText = returnText .. self:dumpConfTable(v, indent + 1)
 		else
 			returnText = returnText .. tostring(v)
 		end
 		returnText = returnText .. ",\n"
 	end
-	returnText = returnText .. "}"
+	returnText = returnText .. string.rep("\t", indent - 1) .. "}"
 	return returnText
 end
 

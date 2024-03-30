@@ -159,7 +159,7 @@ hostOsVer.linux = function()
 	return ret
 end
 
-hostOsVer.macOS = function()
+hostOsVer.mac = function()
 	-- On macOS / OS X / Mac OS X there is a command called "sw_vers"
 	-- It exists so long that It should not be needed to check if it exists, just using it is possible
 

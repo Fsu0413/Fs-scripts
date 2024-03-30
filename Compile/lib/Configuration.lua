@@ -1,6 +1,7 @@
 local conf = {}
 
 local compilerVer = require("CompilerVer")
+local hostOsVer = require("HostOsVer")
 
 conf.host = {}
 
@@ -34,8 +35,8 @@ conf.host.win = {
 		["MinGW1320-64"] = "D:\\mingw-w64\\13.2.1\\mingw64\\bin",
 		["MinGW132u-64"] = "D:\\mingw-w64\\13.2.1u\\mingw64\\bin",
 
-		-- MinGW toolchains with Clang / LLVM, currently used in Qt 6 only
-		-- LLVM always acts as an cross compiler, but the target libraries are architecture-dependent
+		-- MinGW toolchains with Clang / LLVM
+		-- LLVM always acts as a cross compiler, but the target libraries are architecture-dependent
 		-- Since some binaries built also acts as host tool, we should add the target libraries to PATH too, otherwise the program won't start
 		["MinGWLLVM-msvcrt16-64"] = {"D:\\mingw-w64\\llvm-mingw-20230614-msvcrt-x86_64\\x86_64-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20230614-msvcrt-x86_64\\bin"},
 		["MinGWLLVM-ucrt16-64"] = {"D:\\mingw-w64\\llvm-mingw-20230614-ucrt-x86_64\\x86_64-w64-mingw32\\bin", "D:\\mingw-w64\\llvm-mingw-20230614-ucrt-x86_64\\bin"},
@@ -95,7 +96,7 @@ conf.host.winArm = {
 	["toolchainPath"] = {
 		-- MSVC toolchains
 		-- Since MSVC toolchain must be configured using BAT file, we make this file appear FIRST in the table
-		["MSVC2022-arm64"] = {"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\Build\\vcvarsarm64.bat"},
+		["MSVC2022-arm64"] = "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\Build\\vcvarsarm64.bat",
 	},
 	["sourcePackagePath"] = "D:\\Qt\\",
 	["buildRootPath"] = "D:\\Qt\\", -- On Windows, the build root should be same with source package
@@ -114,7 +115,7 @@ conf.host.winArm = {
 }
 
 -- msys is treated as another host since it uses windows agent and unix shell
--- used in compiling OpenSSL
+-- used only in building OpenSSL (Since OpenSSL treats MinGW as Unix???)
 conf.host.msys = {
 	-- Preinstalled Android-NDK toolchain
 	-- Preinstalled GNU make in path and is used
@@ -390,6 +391,8 @@ conf.Qt.generateConfTable = function(self, host, job, buildTime)
 				ret.envSet.JAVA_HOME = configureHost.jdkPath[jdkMajorVersion]
 				table.insert(ret.path, configureHost.jdkPath[jdkMajorVersion] .. configureHost.pathSep .. "bin")
 			end
+			ret.buildTarget = "Android-" .. api
+			ret.buildTargetArch = archi
 		elseif string.sub(jobConfigureDetail.toolchainT, 1, 10) == "emscripten" then -- WebAssembly
 			local matchStr = "^emscripten%-(.+)$"
 			local emsdkVer = string.match(jobConfigureDetail.toolchainT, matchStr)
@@ -406,8 +409,10 @@ conf.Qt.generateConfTable = function(self, host, job, buildTime)
 			else
 				error("WebAssembly - jobConfigureDetail.toolchainT is not matched")
 			end
+			ret.buildTarget = "WebAssembly"
+			ret.buildTargetArch = "-"
 		elseif string.sub(jobConfigureDetail.toolchainT, 1, 4) == "MSVC" then -- Windows UWP/ARM64 Desktop
-			-- Nothing needed to do
+			error("todo....")
 		elseif string.sub(jobConfigureDetail.toolchainT, 1, 11) == "GCCForLinux" then -- GNU/Linux cross builds(Todo)
 			error("todo....")
 		elseif string.sub(jobConfigureDetail.toolchainT, 1, 5) == "MinGW" then -- MinGW cross builds(Todo)
@@ -415,6 +420,35 @@ conf.Qt.generateConfTable = function(self, host, job, buildTime)
 		end
 	else
 		targetToolchainVersion = hostToolchainVersion
+		if string.sub(jobConfigureDetail.toolchain, 1, 4) == "MSVC" then
+			ret.buildTarget = "Windows"
+			if string.sub(jobConfigureDetail.toolchain, -3) = "-32" then
+				ret.buildTargetArch = "x86"
+			elseif string.sub(jobConfigureDetail.toolchain, -3) = "-64" then
+				ret.buildTargetArch = "x86_64"
+			elseif string.sub(jobConfigureDetail.toolchain, -6) = "-arm64" then
+				ret.buildTargetArch = "arm64"
+			end
+		elseif string.sub(jobConfigureDetail.toolchain, 1, 5) == "MinGW" then
+			ret.buildTarget = "Windows"
+			if string.sub(jobConfigureDetail.toolchain, -3) = "-32" then
+				ret.buildTargetArch = "x86"
+			elseif string.sub(jobConfigureDetail.toolchain, -3) = "-64" then
+				ret.buildTargetArch = "x86_64"
+			elseif string.sub(jobConfigureDetail.toolchain, -6) = "-arm64" then
+				ret.buildTargetArch = "arm64"
+			end
+		elseif string.sub(conf.hostToConfMap[host], 1, 3) == "mac" then
+			-- Currently host built macOS version of Qt has only universal binaries, so dirty trick here!
+			ret.buildTarget = "macOS"
+			ret.buildTargetArch = "Universal (x86_64, arm64)"
+		elseif string.sub(conf.hostToConfMap[host], 1, 5) == "linux" then
+			-- Currently host built macOS version of Qt has only x86_64 builds, so dirty trick here!
+			ret.buildTarget = "Linux"
+			ret.buildTargetArch = "x86_64"
+		else
+			error("undefined..????")
+		end
 	end
 
 	if jobConfigureDetail.opensslConf then
@@ -539,10 +573,12 @@ conf.Qt.generateConfTable = function(self, host, job, buildTime)
 
 	-- check for static builds
 	local staticBuild = false
-	for _, v in ipairs(jobConfigureDetail.variant) do
-		if (v == "-static") or (v == "-staticFull") then
-			staticBuild = true
-			break
+	if jobConfigureDetail.variant then
+		for _, v in ipairs(jobConfigureDetail.variant) do
+			if (v == "-static(Lite)") or (v == "-static(Full)") then
+				staticBuild = true
+				break
+			end
 		end
 	end
 
@@ -573,8 +609,10 @@ conf.Qt.generateConfTable = function(self, host, job, buildTime)
 				if string.sub(conf.hostToConfMap[host], 1, 3) == "win" then
 					table.insert(ret.path, commandLineReplacement.OPENSSLDIR .. configureHost.pathSep .. "bin")
 				elseif string.sub(conf.hostToConfMap[host], 1, 3) == "mac" then
-					-- todo: is this needed?
-					ret.envSet.DYLD_LIBRARY_PATH = commandLineReplacement.OPENSSLDIR .. configureHost.pathSep .. "lib"
+					-- This is not passed through shell and is recognized and cleared when a process is run, and since build process are always called by the build tool this environment variable set is of no use
+					-- now the workaround is keeping the OpenSSL build directory during build process
+					-- Once the Qt library is installed one can run "install_name_tool" to replace the path of OpenSSL libraries
+					-- ret.envSet.DYLD_LIBRARY_PATH = commandLineReplacement.OPENSSLDIR .. configureHost.pathSep .. "lib"
 				end
 			end
 		end
@@ -599,11 +637,13 @@ conf.Qt.generateConfTable = function(self, host, job, buildTime)
 	-- finally, data required for generating website data
 	ret.buildContentVersion = jobConfigureDetail.qtVersion
 	ret.buildHost = host
+	ret.buildHostVersion = hostOsVer[conf.hostToConfMap[host]]()
 	ret.buildHostToolchain = jobConfigureDetail.toolchain
 	ret.buildHostToolchainVersion = tostring(hostToolchainVersion)
 	ret.buildTargetToolchain = (jobConfigureDetail.crossCompile and jobConfigureDetail.toolchainT or jobConfigureDetail.toolchain)
 	ret.buildTargetToolchainVersion = tostring(targetToolchainVersion)
 	ret.isPreview = jobConfigureDetail.isPreview
+	ret.buildVariant = (jobConfigureDetail.variant and table.concat(jobConfigureDetail.variant, ", ") or "")
 
 	return ret
 end
@@ -715,13 +755,12 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 				else
 					error("jobConfigureDetail.toolchainT is not matched")
 				end
+				ret.buildTarget = "Android-" .. api
+				ret.buildTargetArch = archi
 			elseif string.sub(jobConfigureDetail.toolchainT, 1, 10) == "emscripten" then -- WebAssembly
 				error("todo....")
 			elseif string.sub(jobConfigureDetail.toolchainT, 1, 4) == "MSVC" then -- Windows UWP/ARM64 Desktop
-				-- First, deal with ret.msvcBat
-				ret.msvcBat = configureHost.toolchainPath[jobConfigureDetail.toolchainT]
-				-- ... then copy what host build of MSVC does.
-				-- nothing special
+				error("todo....")
 			elseif string.sub(jobConfigureDetail.toolchainT, 1, 11) == "GCCForLinux" then -- GNU/Linux cross builds(Todo)
 				error("todo....")
 			elseif string.sub(jobConfigureDetail.toolchainT, 1, 5) == "MinGW" then -- MinGW cross builds(Todo)
@@ -732,8 +771,23 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 		else
 			targetToolchainVersion = hostToolchainVersion
 			if string.sub(jobConfigureDetail.toolchain, 1, 4) == "MSVC" then -- if conf.hostToConfMap[host] == "win" then
-				-- nothing special
+				ret.buildTarget = "Windows"
+				if string.sub(jobConfigureDetail.toolchain, -3) = "-32" then
+					ret.buildTargetArch = "x86"
+				elseif string.sub(jobConfigureDetail.toolchain, -3) = "-64" then
+					ret.buildTargetArch = "x86_64"
+				elseif string.sub(jobConfigureDetail.toolchain, -6) = "-arm64" then
+					ret.buildTargetArch = "arm64"
+				end
 			elseif string.sub(jobConfigureDetail.toolchain, 1, 5) == "MinGW" then -- elseif conf.hostToConfMap[host] == "msys" then
+				ret.buildTarget = "Windows"
+				if string.sub(jobConfigureDetail.toolchain, -3) = "-32" then
+					ret.buildTargetArch = "x86"
+				elseif string.sub(jobConfigureDetail.toolchain, -3) = "-64" then
+					ret.buildTargetArch = "x86_64"
+				elseif string.sub(jobConfigureDetail.toolchain, -6) = "-arm64" then
+					ret.buildTargetArch = "arm64"
+				end
 				-- Clang-llvm need clang be called with target triplet and should be set to environment variable CC
 				if jobConfigureDetail.clangTriplet then
 					ret.envSet.CC = "clang --target=" .. jobConfigureDetail.clangTriplet
@@ -744,7 +798,15 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 				-- No! OpenSSL is revived in Qt 6! Seems Strange? It's because that SecureTransport has been deprecated by Apple and won't support TLS 1.3!
 				-- Qt since 6.2 supports multiple SSL backend as Qt plugin. So we are building 2 different backends for macOS - SecureTransport and OpenSSL.
 
-				-- nothing special
+				ret.buildTarget = "macOS"
+				-- No dirty trick here, we'd judge the job name
+				if string.sub(job, -2) == "x6" then
+					ret.buildTargetArch = "x86_64"
+				elseif string.sub(job, -2) == "a6" then
+					ret.buildTargetArch = "arm64"
+				else
+					error("unexpected suffix for OpenSSL mac")
+				end
 			else
 				error("not supported")
 			end
@@ -795,10 +857,12 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 		-- finally, data required for generating website data
 		ret.buildContentVersion = jobConfigureDetail.opensslVersion
 		ret.buildHost = host
+		ret.buildHostVersion = hostOsVer[conf.hostToConfMap[host]]()
 		ret.buildHostToolchain = jobConfigureDetail.toolchain
 		ret.buildHostToolchainVersion = tostring(hostToolchainVersion)
 		ret.buildTargetToolchain = (jobConfigureDetail.crossCompile and jobConfigureDetail.toolchainT or jobConfigureDetail.toolchain)
 		ret.buildTargetToolchainVersion = tostring(targetToolchainVersion)
+		ret.buildVariant = (jobConfigureDetail.variant and table.concat(jobConfigureDetail.variant, ", ") or "")
 	end
 	return ret
 end
@@ -886,11 +950,27 @@ conf.MariaDB.generateConfTable = function(self, host, job)
 	else
 		targetToolchainVersion = hostToolchainVersion
 		if string.sub(jobConfigureDetail.toolchain, 1, 4) == "MSVC" then
-			-- nothing special
+			ret.buildTarget = "Windows"
+			if string.sub(jobConfigureDetail.toolchain, -3) = "-32" then
+				ret.buildTargetArch = "x86"
+			elseif string.sub(jobConfigureDetail.toolchain, -3) = "-64" then
+				ret.buildTargetArch = "x86_64"
+			elseif string.sub(jobConfigureDetail.toolchain, -6) = "-arm64" then
+				ret.buildTargetArch = "arm64"
+			end
 		elseif string.sub(jobConfigureDetail.toolchain, 1, 5) == "MinGW" then
-			-- nothing special
+			ret.buildTarget = "Windows"
+			if string.sub(jobConfigureDetail.toolchain, -3) = "-32" then
+				ret.buildTargetArch = "x86"
+			elseif string.sub(jobConfigureDetail.toolchain, -3) = "-64" then
+				ret.buildTargetArch = "x86_64"
+			elseif string.sub(jobConfigureDetail.toolchain, -6) = "-arm64" then
+				ret.buildTargetArch = "arm64"
+			end
 		elseif string.sub(conf.hostToConfMap[host], 1, 3) == "mac" then
-			-- nothing special
+			-- Currently host built macOS version of Qt has only universal binaries, so dirty trick here!
+			ret.buildTarget = "macOS"
+			ret.buildTargetArch = "Universal (x86_64, arm64)"
 		else
 			error("not supported")
 		end
@@ -922,6 +1002,7 @@ conf.MariaDB.generateConfTable = function(self, host, job)
 	-- finally, data required for generating website data
 	ret.buildContentVersion = jobConfigureDetail.mariadbVersion
 	ret.buildHost = host
+	ret.buildHostVersion = hostOsVer[conf.hostToConfMap[host]]()
 	ret.buildHostToolchain = jobConfigureDetail.toolchain
 	ret.buildHostToolchainVersion = tostring(hostToolchainVersion)
 	ret.buildTargetToolchain = (jobConfigureDetail.crossCompile and jobConfigureDetail.toolchainT or jobConfigureDetail.toolchain)

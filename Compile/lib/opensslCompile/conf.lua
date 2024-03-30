@@ -491,6 +491,7 @@ conf.o3_0aa3nV21L23 = {
 	host = "CentOS8",
 	target = "Android-23",
 	toolchainT = "Android-23-r21e-arm",
+	variant = {"-static"},
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -518,6 +519,7 @@ conf.o3_0aa6nV21L23 = {
 	host = "CentOS8",
 	target = "Android-23",
 	toolchainT = "Android-23-r21e-arm64",
+	variant = {"-static"},
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -540,6 +542,7 @@ conf.o3_0ax3nV21L23 = {
 	host = "CentOS8",
 	target = "Android-23",
 	toolchainT = "Android-23-r21e-x86",
+	variant = {"-static"},
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -562,6 +565,7 @@ conf.o3_0ax6nV21L23 = {
 	host = "CentOS8",
 	target = "Android-23",
 	toolchainT = "Android-23-r21e-x86_64",
+	variant = {"-static"},
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -599,6 +603,7 @@ conf.o3_0aa3nV23L23 = {
 	host = "CentOS8",
 	target = "Android-23",
 	toolchainT = "Android-23-r23c-arm",
+	variant = {"-static"},
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -626,6 +631,7 @@ conf.o3_0aa6nV23L23 = {
 	host = "CentOS8",
 	target = "Android-23",
 	toolchainT = "Android-23-r23c-arm64",
+	variant = {"-static"},
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -648,6 +654,7 @@ conf.o3_0ax3nV23L23 = {
 	host = "CentOS8",
 	target = "Android-23",
 	toolchainT = "Android-23-r23c-x86",
+	variant = {"-static"},
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -670,6 +677,7 @@ conf.o3_0ax6nV23L23 = {
 	host = "CentOS8",
 	target = "Android-23",
 	toolchainT = "Android-23-r23c-x86_64",
+	variant = {"-static"},
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -707,6 +715,7 @@ conf.o3_0aa3nV25L23 = {
 	host = "CentOS8",
 	target = "Android-23",
 	toolchainT = "Android-23-r25c-arm",
+	variant = {"-static"},
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -734,6 +743,7 @@ conf.o3_0aa6nV25L23 = {
 	host = "CentOS8",
 	target = "Android-23",
 	toolchainT = "Android-23-r25c-arm64",
+	variant = {"-static"},
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -756,6 +766,7 @@ conf.o3_0ax3nV25L23 = {
 	host = "CentOS8",
 	target = "Android-23",
 	toolchainT = "Android-23-r25c-x86",
+	variant = {"-static"},
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -778,6 +789,7 @@ conf.o3_0ax6nV25L23 = {
 	host = "CentOS8",
 	target = "Android-23",
 	toolchainT = "Android-23-r25c-x86_64",
+	variant = {"-static"},
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -815,6 +827,7 @@ conf.o3_0aa3nV23L24 = {
 	host = "CentOS8",
 	target = "Android-24",
 	toolchainT = "Android-24-r23c-arm",
+	variant = {"-static"},
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -842,6 +855,7 @@ conf.o3_0aa6nV23L24 = {
 	host = "CentOS8",
 	target = "Android-24",
 	toolchainT = "Android-24-r23c-arm64",
+	variant = {"-static"},
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -864,6 +878,7 @@ conf.o3_0ax3nV23L24 = {
 	host = "CentOS8",
 	target = "Android-24",
 	toolchainT = "Android-24-r23c-x86",
+	variant = {"-static"},
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -886,6 +901,7 @@ conf.o3_0ax6nV23L24 = {
 	host = "CentOS8",
 	target = "Android-24",
 	toolchainT = "Android-24-r23c-x86_64",
+	variant = {"-static"},
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -923,6 +939,7 @@ conf.o3_0aa3nV25L24 = {
 	host = "CentOS8",
 	target = "Android-24",
 	toolchainT = "Android-24-r25c-arm",
+	variant = {"-static"},
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -950,6 +967,7 @@ conf.o3_0aa6nV25L24 = {
 	host = "CentOS8",
 	target = "Android-24",
 	toolchainT = "Android-24-r25c-arm64",
+	variant = {"-static"},
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -972,6 +990,7 @@ conf.o3_0ax3nV25L24 = {
 	host = "CentOS8",
 	target = "Android-24",
 	toolchainT = "Android-24-r25c-x86",
+	variant = {"-static"},
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -994,6 +1013,7 @@ conf.o3_0ax6nV25L24 = {
 	host = "CentOS8",
 	target = "Android-24",
 	toolchainT = "Android-24-r25c-x86_64",
+	variant = {"-static"},
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -1031,6 +1051,7 @@ conf.o3_0aa3nV25L27 = {
 	host = "Rocky9",
 	target = "Android-27",
 	toolchainT = "Android-27-r25c-arm",
+	variant = {"-static"},
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -1058,6 +1079,7 @@ conf.o3_0aa6nV25L27 = {
 	host = "Rocky9",
 	target = "Android-27",
 	toolchainT = "Android-27-r25c-arm64",
+	variant = {"-static"},
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -1080,6 +1102,7 @@ conf.o3_0ax3nV25L27 = {
 	host = "Rocky9",
 	target = "Android-27",
 	toolchainT = "Android-27-r25c-x86",
+	variant = {"-static"},
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -1102,6 +1125,7 @@ conf.o3_0ax6nV25L27 = {
 	host = "Rocky9",
 	target = "Android-27",
 	toolchainT = "Android-27-r25c-x86_64",
+	variant = {"-static"},
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -1139,6 +1163,7 @@ conf.o3_0aa3nV26L27 = {
 	host = "Rocky9",
 	target = "Android-27",
 	toolchainT = "Android-27-r26c-arm",
+	variant = {"-static"},
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -1166,6 +1191,7 @@ conf.o3_0aa6nV26L27 = {
 	host = "Rocky9",
 	target = "Android-27",
 	toolchainT = "Android-27-r26c-arm64",
+	variant = {"-static"},
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -1188,6 +1214,7 @@ conf.o3_0ax3nV26L27 = {
 	host = "Rocky9",
 	target = "Android-27",
 	toolchainT = "Android-27-r26c-x86",
+	variant = {"-static"},
 	configureParameter = [[
 		no-asm
 		no-shared
@@ -1210,6 +1237,7 @@ conf.o3_0ax6nV26L27 = {
 	host = "Rocky9",
 	target = "Android-27",
 	toolchainT = "Android-27-r26c-x86_64",
+	variant = {"-static"},
 	configureParameter = [[
 		no-asm
 		no-shared

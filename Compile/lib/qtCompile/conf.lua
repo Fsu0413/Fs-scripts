@@ -6866,8 +6866,8 @@ conf.q6_6mal_W = {
 --------------------------------------------------------------------
 
 conf.q6_7wx6v2 = {
-	name = "Qt6.7.0-rc2-Windows-x86_64-VS2022-&HOSTTOOLVERSION&",
-	qtVersion = "6.7.0-rc2",
+	name = "Qt6.7.0-Windows-x86_64-VS2022-&HOSTTOOLVERSION&",
+	qtVersion = "6.7.0",
 	host = "Win10",
 	toolchain = "MSVC2022-64",
 	opensslConf = "o3_0wx6v2",
@@ -6907,8 +6907,8 @@ conf.q6_7wx6v2 = {
 }
 
 conf.q6_7wa6v2 = {
-	name = "Qt6.7.0-rc2-Windows-arm64-VS2022-&HOSTTOOLVERSION&",
-	qtVersion = "6.7.0-rc2",
+	name = "Qt6.7.0-Windows-arm64-VS2022-&HOSTTOOLVERSION&",
+	qtVersion = "6.7.0",
 	host = "Win10Arm",
 	toolchain = "MSVC2022-arm64",
 	opensslConf = "o3_0wa6v2",
@@ -6946,8 +6946,8 @@ conf.q6_7wa6v2 = {
 }
 
 conf.q6_7wx6p3 = {
-	name = "Qt6.7.0-rc2-Windows-x86_64-MinGW&HOSTTOOLVERSION&-ucrt",
-	qtVersion = "6.7.0-rc2",
+	name = "Qt6.7.0-Windows-x86_64-MinGW&HOSTTOOLVERSION&-ucrt",
+	qtVersion = "6.7.0",
 	host = "Win10",
 	toolchain = "MinGW132u-64",
 	opensslConf = "o3_0wx6p3",
@@ -6984,8 +6984,8 @@ conf.q6_7wx6p3 = {
 }
 
 conf.q6_7wx6g3 = {
-	name = "Qt6.7.0-rc2-Windows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
-	qtVersion = "6.7.0-rc2",
+	name = "Qt6.7.0-Windows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
+	qtVersion = "6.7.0",
 	host = "Win10",
 	toolchain = "MinGW1320-64",
 	opensslConf = "o3_0wx6g3",
@@ -7022,8 +7022,8 @@ conf.q6_7wx6g3 = {
 }
 
 conf.q6_7wx6g3st = {
-	name = "Qt6.7.0-rc2-Windows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt-static",
-	qtVersion = "6.7.0-rc2",
+	name = "Qt6.7.0-Windows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt-static",
+	qtVersion = "6.7.0",
 	host = "Win10",
 	toolchain = "MinGW1320-64",
 	variant = {"-static(Lite)"},
@@ -7084,8 +7084,8 @@ conf.q6_7wx6g3st = {
 }
 
 conf.q6_7wx6u8 = {
-	name = "Qt6.7.0-rc2-Windows-x86_64-llvm-mingw-&HOSTTOOLVERSION&-ucrt",
-	qtVersion = "6.7.0-rc2",
+	name = "Qt6.7.0-Windows-x86_64-llvm-mingw-&HOSTTOOLVERSION&-ucrt",
+	qtVersion = "6.7.0",
 	host = "Win10",
 	toolchain = "MinGWLLVM-ucrt18-64",
 	opensslConf = "o3_0wx6u8",
@@ -7126,8 +7126,8 @@ conf.q6_7wx6u8 = {
 }
 
 conf.q6_7wx6s8 = {
-	name = "Qt6.7.0-rc2-Windows-x86_64-llvm-mingw-&HOSTTOOLVERSION&-msvcrt",
-	qtVersion = "6.7.0-rc2",
+	name = "Qt6.7.0-Windows-x86_64-llvm-mingw-&HOSTTOOLVERSION&-msvcrt",
+	qtVersion = "6.7.0",
 	host = "Win10",
 	toolchain = "MinGWLLVM-msvcrt18-64",
 	opensslConf = "o3_0wx6s8",
@@ -7168,8 +7168,8 @@ conf.q6_7wx6s8 = {
 }
 
 conf.q6_7lx6st = {
-	name = "Qt6.7.0-rc2-Linux-x86_64-gcc&HOSTTOOLVERSION&-static",
-	qtVersion = "6.7.0-rc2",
+	name = "Qt6.7.0-Linux-x86_64-gcc&HOSTTOOLVERSION&-static",
+	qtVersion = "6.7.0",
 	host = "Rocky9",
 	variant = {"-static(Lite)"},
 	useCMake = "Latest",
@@ -7227,8 +7227,8 @@ conf.q6_7lx6st = {
 }
 
 conf.q6_7mal = {
-	name = "Qt6.7.0-rc2-macOS-Universal-AppleClang&HOSTTOOLVERSION&",
-	qtVersion = "6.7.0-rc2",
+	name = "Qt6.7.0-macOS-Universal-AppleClang&HOSTTOOLVERSION&",
+	qtVersion = "6.7.0",
 	host = "macOSM1",
 	opensslConf = "o3_0mal",
 	mysqlConf = "m3_3mal",
@@ -7275,8 +7275,8 @@ conf.q6_7mal = {
 }
 
 conf.q6_7malnf = {
-	name = "Qt6.7.0-rc2-macOS-Universal-AppleClang&HOSTTOOLVERSION&-noFramework",
-	qtVersion = "6.7.0-rc2",
+	name = "Qt6.7.0-macOS-Universal-AppleClang&HOSTTOOLVERSION&-noFramework",
+	qtVersion = "6.7.0",
 	host = "macOSM1",
 	variant = {"-no-framework"},
 	opensslConf = "o3_0mal",
@@ -7324,8 +7324,8 @@ conf.q6_7malnf = {
 }
 
 conf.q6_7malst = {
-	name = "Qt6.7.0-rc2-macOS-Universal-AppleClang&HOSTTOOLVERSION&-static",
-	qtVersion = "6.7.0-rc2",
+	name = "Qt6.7.0-macOS-Universal-AppleClang&HOSTTOOLVERSION&-static",
+	qtVersion = "6.7.0",
 	host = "macOSM1",
 	variant = {"-static(Lite)"},
 	useCMake = "Latest",
@@ -7384,8 +7384,8 @@ conf.q6_7malst = {
 }
 
 conf.q6_7wx6g3_aa3nV26 = {
-	name = "Qt6.7.0-rc2-Android-arm-Clang-NDKr26c-xWindows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
-	qtVersion = "6.7.0-rc2",
+	name = "Qt6.7.0-Android-arm-Clang-NDKr26c-xWindows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
+	qtVersion = "6.7.0",
 	host = "Win10",
 	target = "Android-27",
 	toolchain = "MinGW1320-64",
@@ -7424,8 +7424,8 @@ conf.q6_7wx6g3_aa3nV26 = {
 }
 
 conf.q6_7wx6g3_aa6nV26 = {
-	name = "Qt6.7.0-rc2-Android-arm64-Clang-NDKr26c-xWindows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
-	qtVersion = "6.7.0-rc2",
+	name = "Qt6.7.0-Android-arm64-Clang-NDKr26c-xWindows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
+	qtVersion = "6.7.0",
 	host = "Win10",
 	target = "Android-27",
 	toolchain = "MinGW1320-64",
@@ -7464,8 +7464,8 @@ conf.q6_7wx6g3_aa6nV26 = {
 }
 
 conf.q6_7wx6g3_ax6nV26 = {
-	name = "Qt6.7.0-rc2-Android-x86_64-Clang-NDKr26c-xWindows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
-	qtVersion = "6.7.0-rc2",
+	name = "Qt6.7.0-Android-x86_64-Clang-NDKr26c-xWindows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
+	qtVersion = "6.7.0",
 	host = "Win10",
 	target = "Android-27",
 	toolchain = "MinGW1320-64",
@@ -7504,8 +7504,8 @@ conf.q6_7wx6g3_ax6nV26 = {
 }
 
 conf.q6_7lx6_aa3nV26 = {
-	name = "Qt6.7.0-rc2-Android-arm-Clang-NDKr26c-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
-	qtVersion = "6.7.0-rc2",
+	name = "Qt6.7.0-Android-arm-Clang-NDKr26c-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
+	qtVersion = "6.7.0",
 	host = "Rocky9",
 	target = "Android-27",
 	toolchainT = "Android-27-r26c-arm",
@@ -7542,8 +7542,8 @@ conf.q6_7lx6_aa3nV26 = {
 }
 
 conf.q6_7lx6_aa6nV26 = {
-	name = "Qt6.7.0-rc2-Android-arm64-Clang-NDKr26c-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
-	qtVersion = "6.7.0-rc2",
+	name = "Qt6.7.0-Android-arm64-Clang-NDKr26c-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
+	qtVersion = "6.7.0",
 	host = "Rocky9",
 	target = "Android-27",
 	toolchainT = "Android-27-r26c-arm64",
@@ -7580,8 +7580,8 @@ conf.q6_7lx6_aa6nV26 = {
 }
 
 conf.q6_7lx6_ax6nV26 = {
-	name = "Qt6.7.0-rc2-Android-x86_64-Clang-NDKr26c-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
-	qtVersion = "6.7.0-rc2",
+	name = "Qt6.7.0-Android-x86_64-Clang-NDKr26c-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
+	qtVersion = "6.7.0",
 	host = "Rocky9",
 	target = "Android-27",
 	toolchainT = "Android-27-r26c-x86_64",
@@ -7618,8 +7618,8 @@ conf.q6_7lx6_ax6nV26 = {
 }
 
 conf.q6_7mal_aa3nV26 = {
-	name = "Qt6.7.0-rc2-Android-arm-Clang-NDKr26c-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
-	qtVersion = "6.7.0-rc2",
+	name = "Qt6.7.0-Android-arm-Clang-NDKr26c-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
+	qtVersion = "6.7.0",
 	host = "macOSM1",
 	target = "Android-27",
 	toolchainT = "Android-27-r26c-arm",
@@ -7656,8 +7656,8 @@ conf.q6_7mal_aa3nV26 = {
 }
 
 conf.q6_7mal_aa6nV26 = {
-	name = "Qt6.7.0-rc2-Android-arm64-Clang-NDKr26c-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
-	qtVersion = "6.7.0-rc2",
+	name = "Qt6.7.0-Android-arm64-Clang-NDKr26c-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
+	qtVersion = "6.7.0",
 	host = "macOSM1",
 	target = "Android-27",
 	toolchainT = "Android-27-r26c-arm64",
@@ -7694,8 +7694,8 @@ conf.q6_7mal_aa6nV26 = {
 }
 
 conf.q6_7mal_ax6nV26 = {
-	name = "Qt6.7.0-rc2-Android-x86_64-Clang-NDKr26c-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
-	qtVersion = "6.7.0-rc2",
+	name = "Qt6.7.0-Android-x86_64-Clang-NDKr26c-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
+	qtVersion = "6.7.0",
 	host = "macOSM1",
 	target = "Android-27",
 	toolchainT = "Android-27-r26c-x86_64",
@@ -7733,8 +7733,8 @@ conf.q6_7mal_ax6nV26 = {
 
 -- WebAssembly uses emcmake which don't need a toolchain file
 conf.q6_7wx6g3_W = {
-	name = "Qt6.7.0-rc2-WebAssembly-emscripten&TARGETTOOLVERSION&-xWindows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
-	qtVersion = "6.7.0-rc2",
+	name = "Qt6.7.0-WebAssembly-emscripten&TARGETTOOLVERSION&-xWindows-x86_64-MinGW&HOSTTOOLVERSION&-msvcrt",
+	qtVersion = "6.7.0",
 	host = "Win10",
 	toolchain = "MinGW1320-64",
 	target = "WebAssembly",
@@ -7764,8 +7764,8 @@ conf.q6_7wx6g3_W = {
 }
 
 conf.q6_7lx6_W = {
-	name = "Qt6.7.0-rc2-WebAssembly-emscripten&TARGETTOOLVERSION&-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
-	qtVersion = "6.7.0-rc2",
+	name = "Qt6.7.0-WebAssembly-emscripten&TARGETTOOLVERSION&-xLinux-x86_64-gcc&HOSTTOOLVERSION&",
+	qtVersion = "6.7.0",
 	host = "Rocky9",
 	target = "WebAssembly",
 	toolchainT = "emscripten-3.1.50",
@@ -7794,8 +7794,8 @@ conf.q6_7lx6_W = {
 }
 
 conf.q6_7mal_W = {
-	name = "Qt6.7.0-rc2-WebAssembly-emscripten&TARGETTOOLVERSION&-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
-	qtVersion = "6.7.0-rc2",
+	name = "Qt6.7.0-WebAssembly-emscripten&TARGETTOOLVERSION&-xmacOS-Universal-AppleClang&HOSTTOOLVERSION&",
+	qtVersion = "6.7.0",
 	host = "macOSM1",
 	target = "WebAssembly",
 	toolchainT = "emscripten-3.1.50",
@@ -7828,7 +7828,7 @@ local Qt6StaticConf = {
 		["6.2.7"] = "q6_2wx6g1st",
 		["6.5.3"] = "q6_5wx6g2st",
 		["6.6.3"] = "q6_6wx6g2st",
-		["6.7.0-rc2"] = "q6_7wx6g3st",
+		["6.7.0"] = "q6_7wx6g3st",
 	},
 	CentOS8 = {
 		["6.2.7"] = "q6_2lx6st",
@@ -7836,13 +7836,13 @@ local Qt6StaticConf = {
 	Rocky9 = {
 		["6.5.3"] = "q6_5lx6st",
 		["6.6.3"] = "q6_6lx6st",
-		["6.7.0-rc2"] = "q6_7lx6st",
+		["6.7.0"] = "q6_7lx6st",
 	},
 	macOSM1 = {
 		["6.2.7"] = "q6_2malst",
 		["6.5.3"] = "q6_5malst",
 		["6.6.3"] = "q6_6malst",
-		["6.7.0-rc2"] = "q6_7malst",
+		["6.7.0"] = "q6_7malst",
 	},
 }
 
@@ -7889,7 +7889,7 @@ local Win10SrcPackagePrefixWorkaroundVersions = {
 	"6.2.7",
 	"6.5.3",
 	"6.6.3",
-	"6.7.0-rc2",
+	"6.7.0",
 }
 
 for name, value in pairs(conf) do

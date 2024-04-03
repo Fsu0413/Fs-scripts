@@ -62,7 +62,6 @@ conf.host.win = {
 		["1.39.8"] = "D:\\emsdk-1.39.8\\",
 		["2.0.14"] = "D:\\emsdk-2.0.14\\",
 		["3.1.25"] = "D:\\emsdk-3.1.25\\",
-		["3.1.37"] = "D:\\emsdk-3.1.37\\",
 		["3.1.50"] = "D:\\emsdk-3.1.50\\",
 	},
 	["cMakePath"] = {
@@ -177,7 +176,6 @@ conf.host.linux = {
 		["1.39.8"] = "/opt/env/emsdk-1.39.8/",
 		["2.0.14"] = "/opt/env/emsdk-2.0.14/",
 		["3.1.25"] = "/opt/env/emsdk-3.1.25/",
-		["3.1.37"] = "/opt/env/emsdk-3.1.37/",
 		["3.1.50"] = "/opt/env/emsdk-3.1.50/",
 	},
 	["cMakePath"] = {
@@ -254,7 +252,6 @@ conf.host.macM1 = {
 		["1.39.8"] = "/opt/env/emsdk-1.39.8/",
 		["2.0.14"] = "/opt/env/emsdk-2.0.14/",
 		["3.1.25"] = "/opt/env/emsdk-3.1.25/",
-		["3.1.37"] = "/opt/env/emsdk-3.1.37/",
 		["3.1.50"] = "/opt/env/emsdk-3.1.50/",
 	},
 	["cMakePath"] = {

@@ -49,12 +49,22 @@ Set qmake = fso.OpenTextFile(PATH_TO_TARGET & "\bin\qmake.bat", 2, True)
 qmake.WriteLine """%~dp0\..\host\bin\qmake"" -qtconf ""%~dp0\target_qt.conf"" %*"
 qmake.Close
 
+If fso.FileExists(PATH_TO_TARGET & "\bin\qmake6.bat") Then
+	fso.DeleteFile PATH_TO_TARGET & "\bin\qmake6.bat"
+	fso.CopyFile PATH_TO_TARGET & "\bin\qmake.bat", PATH_TO_TARGET & "\bin\qmake6.bat"
+End If
+
 fso.DeleteFile PATH_TO_TARGET & "\bin\qtpaths.bat"
 
 Dim qtpaths
 Set qtpaths = fso.OpenTextFile(PATH_TO_TARGET & "\bin\qtpaths.bat", 2, True)
 qtpaths.WriteLine """%~dp0\..\host\bin\qtpaths"" -qtconf ""%~dp0\target_qt.conf"" %*"
 qtpaths.Close
+
+If fso.FileExists(PATH_TO_TARGET & "\bin\qtpaths6.bat") Then
+	fso.DeleteFile PATH_TO_TARGET & "\bin\qtpaths6.bat"
+	fso.CopyFile PATH_TO_TARGET & "\bin\qtpaths.bat", PATH_TO_TARGET & "\bin\qtpaths6.bat"
+End If
 
 Dim target_qtconf
 Dim target_qtconfold

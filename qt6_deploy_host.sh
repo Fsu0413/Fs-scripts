@@ -50,6 +50,7 @@ find "${PATH_TO_HOST}/lib/" -name '*.prl' -maxdepth 1 -exec cp '{}' "${PATH_TO_T
 ) > "${PATH_TO_TARGET}/bin/qmake"
 
 chmod +x "${PATH_TO_TARGET}/bin/qmake"
+[ -e "${PATH_TO_TARGET}/bin/qmake6" ] && cp "${PATH_TO_TARGET}/bin/qmake" "${PATH_TO_TARGET}/bin/qmake6"
 
 (
 	echo '#!/bin/sh'
@@ -61,6 +62,7 @@ chmod +x "${PATH_TO_TARGET}/bin/qmake"
 ) > "${PATH_TO_TARGET}/bin/qtpaths"
 
 chmod +x "${PATH_TO_TARGET}/bin/qtpaths"
+[ -e "${PATH_TO_TARGET}/bin/qtpaths6" ] && cp "${PATH_TO_TARGET}/bin/qtpaths" "${PATH_TO_TARGET}/bin/qtpaths6"
 
 # judge if sed / gsed is GNU sed
 GNU_SED=

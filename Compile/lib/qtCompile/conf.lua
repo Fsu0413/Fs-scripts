@@ -6707,7 +6707,6 @@ local Qt6StaticConf = {
 	Win10 = {
 		["6.2.7"] = "q6_2wx6g1st",
 		["6.5.3"] = "q6_5wx6g2st",
-		["6.6.3"] = "q6_6wx6g2st",
 		["6.7.0"] = "q6_7wx6g3st",
 	},
 	CentOS8 = {
@@ -6715,13 +6714,11 @@ local Qt6StaticConf = {
 	},
 	Rocky9 = {
 		["6.5.3"] = "q6_5lx6st",
-		["6.6.3"] = "q6_6lx6st",
 		["6.7.0"] = "q6_7lx6st",
 	},
 	macOSM1 = {
 		["6.2.7"] = "q6_2malst",
 		["6.5.3"] = "q6_5malst",
-		["6.6.3"] = "q6_6malst",
 		["6.7.0"] = "q6_7malst",
 	},
 }

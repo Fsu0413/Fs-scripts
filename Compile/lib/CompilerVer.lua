@@ -29,7 +29,6 @@ local runCmdScript = function(script)
 end
 
 compilerVer.parseVersionNum = function(str)
-	local major, minor, patch
 	local match = { string.match(str, "(%d+)%.(%d+)%.(%d+)") }
 	if #match > 0 then
 		return setmetatable(match, { __tostring = function(m) return m[1] .. "." .. m[2] .. "." .. m[3] end})

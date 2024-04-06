@@ -13,83 +13,9 @@ scriptPath = (n and string.sub(scriptFile, 1, n - 1) or ".")
 
 package.path = scriptPath .. "/lib/?.lua;" .. package.path
 
-local fileName = function(confTable)
-	return confTable.INSTALLPATH .. "-" .. tostring(confTable.date) .. ((confTable.template == "win") and ".7z" or ".tar.xz")
-end
-
-local dataDotVersion = function(confTable)
-	return confTable.buildContentVersion
-end
-
-local dataDotBuildHost = function(confTable)
-	local buildHostNameTable = {
-		Win10 = "Windows 11 10.0.22621",
-		Win10SH = "Windows 11 10.0.22621",
-		Win8 = "Windows 8.1 Update",
-		Win8SH = "Windows 8.1 Update",
-		CentOS8 = "RockyLinux 8.7",
-		Rocky9 = "RockyLinux 9.1",
-		macOS1015 = "macOS 12.6.3",
-		macOSLegacy = "macOS 11.7.2",
-		macOSM1 = "macOS 12.6.3",
-	}
-
-	return buildHostNameTable[confTable.buildHost]
-end
-
-local dataDotToolchain = function(confTable)
-	-- only Target counts?
-
-	if confTable.buildTargetToolchain == "PATH" then
-		if string.sub(confTable.buildHost, 1, 5) == "macOS" then
-			return "AppleClang " .. tostring(confTable.buildTargetToolchainVersion)
-		else
-			return "GCC " .. tostring(confTable.buildTargetToolchainVersion)
-		end
-	elseif string.sub(confTable.buildTargetToolchain, 1, 7) == "Android" then
-		return "ndk " .. tostring(confTable.buildTargetToolchainVersion)
-	elseif string.sub(confTable.buildTargetToolchain, 1, 5) == "MinGW" then
-		-- TODO: need generator compile a program for get mingw-w64 version.
-		-- Let's just hard-code it here
-		local MinGWVersion = 0
-		local compilerId, compilerSuffix = "GCC", ""
-		if string.sub(confTable.buildTargetToolchain, 1, 9) == "MinGWLLVM" then
-			MinGWVersion = 10
-			compilerId = "LLVM"
-			if string.sub(confTable.buildTargetToolchain, 11, 4) == "ucrt" then
-				compilerSuffix = " (ucrt)"
-			else
-				compilerSuffix = " (msvcrt)"
-			end
-		elseif string.sub(confTable.buildTargetToolchainVersion, 1, 3) == "12." then
-			MinGWVersion = 10
-		elseif string.sub(confTable.buildTargetToolchainVersion, 1, 3) == "11." then
-			MinGWVersion = 9
-		elseif string.sub(confTable.buildTargetToolchainVersion, 1, 2) == "8." then
-			MinGWVersion = 6
-		elseif string.sub(confTable.buildTargetToolchainVersion, 1, 2) == "7." then
-			MinGWVersion = 5
-		elseif string.sub(confTable.buildTargetToolchainVersion, 1, 4) == "4.9." then
-			MinGWVersion = 5
-		end
-
-		return "MinGW-w64 v" .. tostring(MinGWVersion) .. " w/ " .. compilerId .. " " .. confTable.buildTargetToolchainVersion .. compilerSuffix
-	elseif string.sub(confTable.buildTargetToolchain, 1, 4) == "MSVC" then
-		if string.sub(confTable.buildTargetToolchain, 5, 4) == "2015" then
-			return "VS2015 Update 3"
-		elseif string.sub(confTable.buildTargetToolchain, 5, 4) == "2017" then
-			return "VS2017 " .. confTable.buildTargetToolchainVersion .. "w/ Windows SDK 10.0.17763"
-		elseif string.sub(confTable.buildTargetToolchain, 5, 4) == "2019" then
-			return "VS2019 " .. confTable.buildTargetToolchainVersion .. "w/ Windows SDK 10.0.22000"
-		elseif string.sub(confTable.buildTargetToolchain, 5, 4) == "2022" then
-			return "VS2022 " .. confTable.buildTargetToolchainVersion .. "w/ Windows SDK 10.0.22621"
-		end
-	elseif string.sub(confTable.buildTargetToolchain, 1, 10) == "emscripten" then
-		return confTable.buildTargetToolchain
-	end
-
-	return confTable.buildTargetToolchainVersion
-end
+parseConfTable = reuqire("ParseConfTable")
+compare = require("Compare")
+download = require("Download")
 
 local buildContent = function(buildJob)
 	if string.sub(buildJob, 1, 1) == "q" then
@@ -103,6 +29,8 @@ local buildContent = function(buildJob)
 	end
 end
 
+--[====[
+-- unusable for now, need refactor.
 local main = function(argc, argv)
 	local dl = require("Download")
 	local buildJob = os.getenv("UPDATE_JOB")
@@ -180,3 +108,4 @@ if r then
 else
 	os.exit(1)
 end
+]====]

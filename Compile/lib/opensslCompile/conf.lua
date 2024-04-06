@@ -1307,9 +1307,7 @@ for name, value in pairs(conf) do
 		value.crossCompile = false
 	end
 
-	if not value.variant then
-		value.variant = {}
-	end
+	value.variant = value.variant or {}
 
 	value.binaryPackageUrlunix = "http://10.0.1.6:8080/job/OpenSSL/job/" .. name .. "/lastSuccessfulBuild/artifact/buildDir/" .. value.name .. ".tar.xz"
 	value.sourcePackageUrlunix = "http://10.0.1.6/webdav/sources/openssl-" .. value.opensslVersion .. ".tar.gz"

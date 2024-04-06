@@ -982,18 +982,12 @@ gen.generateBuildCommand = function(self, para)
 	if para.download and type(para.download) == "table" then
 		for _, url in ipairs(para.download) do
 			local filename, tool = filenameAndToolFromUrl(url)
-			if not paraCopy.DOWNLOADPACKAGE then
-				paraCopy.DOWNLOADPACKAGE = ""
-			end
+			paraCopy.DOWNLOADPACKAGE = paraCopy.DOWNLOADPACKAGE or ""
 			paraCopy.DOWNLOADPACKAGE = paraCopy.DOWNLOADPACKAGE .. self[para.template].download .. " \"" .. filename .. "\" \"" .. url .. "\"\n"
-			if not paraCopy.UNCOMPRESSPACKAGE then
-				paraCopy.UNCOMPRESSPACKAGE = ""
-			end
+			paraCopy.UNCOMPRESSPACKAGE = paraCopy.UNCOMPRESSPACKAGE or ""
 			if tool then
 				paraCopy.UNCOMPRESSPACKAGE = paraCopy.UNCOMPRESSPACKAGE .. self[para.template].extract[tool] .. " \"" .. filename .. "\"\n"
-				if not paraCopy.DELETEUNCOMPRESSED then
-					paraCopy.DELETEUNCOMPRESSED = ""
-				end
+				paraCopy.DELETEUNCOMPRESSED = paraCopy.DELETEUNCOMPRESSED or ""
 				paraCopy.DELETEUNCOMPRESSED = paraCopy.DELETEUNCOMPRESSED .. self[para.template].delete .. " \"" .. filename .. "\"\n"
 			end
 		end
@@ -1019,18 +1013,14 @@ gen.generateBuildCommand = function(self, para)
 	end
 
 	local ret = string.gsub(template, "%&([%w_]+)%&", function(s)
-		if paraCopy[s] then
-			return paraCopy[s]
-		else
-			return ""
-		end
+		return paraCopy[s] or ""
 	end)
 
 	return ret
 end
 
 gen.dumpConfTable = function(self, para, indent)
-	if not indent then indent = 1 end
+	indent = indent or 1
 
 	local returnText = "{\n"
 	local keys = {}

@@ -68,10 +68,7 @@ end
 local gccCommon = function(isWin, executableName)
 	local script = ""
 
-	if not executableName then
-		executableName = "gcc"
-	end
-	
+	executableName = executableName or "gcc"
 	script = script .. executableName .. " -dumpfullversion -dumpversion"
 	if isWin then
 		script = script .. "\r\n"

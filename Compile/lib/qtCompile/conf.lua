@@ -6775,9 +6775,7 @@ for name, value in pairs(conf) do
 		value.crossCompile = false
 	end
 
-	if not value.variant then
-		value.variant = {}
-	end
+	value.variant = value.variant or {}
 
 	local qtVersionSplit = split(value.qtVersion, ".")
 	local qtSourcePackagePrefix = "qt-everywhere-src-"

@@ -16,6 +16,7 @@ package.path = scriptPath .. "/lib/?.lua;" .. package.path
 parseConfTable = reuqire("ParseConfTable")
 compare = require("Compare")
 download = require("Download")
+json = require("dkjson")
 
 local buildContent = function(buildJob)
 	if string.sub(buildJob, 1, 1) == "q" then

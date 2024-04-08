@@ -228,7 +228,6 @@ end
 
 local pathPrefixForBuildTargetArchAndToolchainVersion = function(target, arch, toolchainVersion)
 	if target == "Windows" then
-		-- This expects change
 		-- There is too many toolchain variants in current build: MSVC / MinGW-GCC / MinGW-LLVM, and there is an amazing amount of 18 builds in one single directory!
 		-- So it need subdirectory (will be considered in next whole rebuild):
 

@@ -36,7 +36,7 @@ abbrs:
 		nV21: Android NDK r21e/Previous LTS
 		nV23: Android NDK r23c/Previous LTS
 		nV25: Android NDK r25c/Previous LTS
-		nV26: Android NDK r26c/Latest LTS
+		nV26: Android NDK r26d/Latest LTS
 	If omitted, it use a toolchain in default PATH, which should be AppleClang in macOS, or GCC in Linux.
 
 	Variants:
@@ -1158,11 +1158,11 @@ conf.o3_0aalnV25L27 = {
 --------------------------------------------------------------------
 
 conf.o3_0aa3nV26L27 = {
-	name = "OpenSSL3.0.13-Android-arm-NDKr26cAPI27",
+	name = "OpenSSL3.0.13-Android-arm-NDKr26dAPI27",
 	opensslVersion = "3.0.13",
 	host = "Rocky9",
 	target = "Android-27",
-	toolchainT = "Android-27-r26c-arm",
+	toolchainT = "Android-27-r26d-arm",
 	variant = {"-static"},
 	configureParameter = [[
 		no-asm
@@ -1186,11 +1186,11 @@ conf.o3_0aa3nV26L27 = {
 }
 
 conf.o3_0aa6nV26L27 = {
-	name = "OpenSSL3.0.13-Android-arm64-NDKr26cAPI27",
+	name = "OpenSSL3.0.13-Android-arm64-NDKr26dAPI27",
 	opensslVersion = "3.0.13",
 	host = "Rocky9",
 	target = "Android-27",
-	toolchainT = "Android-27-r26c-arm64",
+	toolchainT = "Android-27-r26d-arm64",
 	variant = {"-static"},
 	configureParameter = [[
 		no-asm
@@ -1209,11 +1209,11 @@ conf.o3_0aa6nV26L27 = {
 }
 
 conf.o3_0ax3nV26L27 = {
-	name = "OpenSSL3.0.13-Android-x86-NDKr26cAPI27",
+	name = "OpenSSL3.0.13-Android-x86-NDKr26dAPI27",
 	opensslVersion = "3.0.13",
 	host = "Rocky9",
 	target = "Android-27",
-	toolchainT = "Android-27-r26c-x86",
+	toolchainT = "Android-27-r26d-x86",
 	variant = {"-static"},
 	configureParameter = [[
 		no-asm
@@ -1232,11 +1232,11 @@ conf.o3_0ax3nV26L27 = {
 }
 
 conf.o3_0ax6nV26L27 = {
-	name = "OpenSSL3.0.13-Android-x86_64-NDKr26cAPI27",
+	name = "OpenSSL3.0.13-Android-x86_64-NDKr26dAPI27",
 	opensslVersion = "3.0.13",
 	host = "Rocky9",
 	target = "Android-27",
-	toolchainT = "Android-27-r26c-x86_64",
+	toolchainT = "Android-27-r26d-x86_64",
 	variant = {"-static"},
 	configureParameter = [[
 		no-asm
@@ -1255,7 +1255,7 @@ conf.o3_0ax6nV26L27 = {
 }
 
 conf.o3_0aalnV26L27 = {
-	name = "OpenSSL3.0.13-Android-ALL-NDKr26cAPI27",
+	name = "OpenSSL3.0.13-Android-ALL-NDKr26dAPI27",
 	opensslVersion = "3.0.13",
 	host = "Rocky9",
 	opensslUnifyType = "Android",

@@ -3959,6 +3959,47 @@ conf.q6_2mal_W = {
 
 --------------------------------------------------------------------
 
+conf.q6_5wx6v9 = {
+	name = "Qt6.5.3-Windows-x86_64-VS2019-&HOSTTOOLVERSION&",
+	qtVersion = "6.5.3",
+	host = "Win10",
+	toolchain = "MSVC2019-64",
+	opensslConf = "o3_0wx6v9",
+	mysqlConf = "m3_3wx6v9",
+	useCMake = "Latest",
+	useNode = "18",
+	configureParameter = [[
+		-GNinja
+		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
+		-DBUILD_SHARED_LIBS=ON
+		-DCMAKE_BUILD_TYPE=Release
+		-DQT_QMAKE_TARGET_MKSPEC=win32-msvc
+		-DBUILD_WITH_PCH=ON
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengl_dynamic=ON
+		-DFEATURE_ssl=ON
+		-DFEATURE_openssl=ON
+		-DINPUT_openssl=linked
+		-DOPENSSL_ROOT_DIR="&OPENSSLDIR&"
+		-DFEATURE_schannel=ON
+		-DFEATURE_sql_sqlite=ON
+		-DFEATURE_sql_odbc=ON
+		-DFEATURE_sql_mysql=ON
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include\mariadb"
+		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\libmariadb.lib"
+		-DFEATURE_system_sqlite=OFF
+		-DFEATURE_webengine_proprietary_codecs=ON
+		-DFEATURE_qtpdf_build=ON
+		-DBUILD_qtgrpc=OFF
+	]],
+}
+
 conf.q6_5wx6v2 = {
 	name = "Qt6.5.3-Windows-x86_64-VS2022-&HOSTTOOLVERSION&",
 	qtVersion = "6.5.3",
@@ -5744,6 +5785,47 @@ conf.q6_5mal_W = {
 }
 
 --------------------------------------------------------------------
+
+conf.q6_7wx6v9 = {
+	name = "Qt6.7.0-Windows-x86_64-VS2019-&HOSTTOOLVERSION&",
+	qtVersion = "6.7.0",
+	host = "Win10",
+	toolchain = "MSVC2019-64",
+	opensslConf = "o3_0wx6v9",
+	mysqlConf = "m3_3wx6v9",
+	useCMake = "Latest",
+	useNode = "18",
+	configureParameter = [[
+		-GNinja
+		-DCMAKE_INSTALL_PREFIX="&INSTALLROOT&"
+		-DBUILD_SHARED_LIBS=ON
+		-DCMAKE_BUILD_TYPE=Release
+		-DQT_QMAKE_TARGET_MKSPEC=win32-msvc
+		-DBUILD_WITH_PCH=ON
+		-DQT_BUILD_EXAMPLES=OFF
+		-DQT_BUILD_TESTS=OFF
+		-DFEATURE_doubleconversion=ON
+		-DFEATURE_system_doubleconversion=OFF
+		-DFEATURE_system_zlib=OFF
+		-DFEATURE_system_pcre2=OFF
+		-DFEATURE_icu=OFF
+		-DFEATURE_opengl_dynamic=ON
+		-DFEATURE_ssl=ON
+		-DFEATURE_openssl=ON
+		-DINPUT_openssl=linked
+		-DOPENSSL_ROOT_DIR="&OPENSSLDIR&"
+		-DFEATURE_schannel=ON
+		-DFEATURE_sql_sqlite=ON
+		-DFEATURE_sql_odbc=ON
+		-DFEATURE_sql_mysql=ON
+		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include\mariadb"
+		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\libmariadb.lib"
+		-DFEATURE_system_sqlite=OFF
+		-DFEATURE_webengine_proprietary_codecs=ON
+		-DFEATURE_qtpdf_build=ON
+		-DBUILD_qtgrpc=OFF
+	]],
+}
 
 conf.q6_7wx6v2 = {
 	name = "Qt6.7.0-Windows-x86_64-VS2022-&HOSTTOOLVERSION&",

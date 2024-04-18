@@ -34,6 +34,8 @@ abbrs:
 		u6: LLVM/Clang based MinGW-w64, ucrt, with LLVM 16
 		s7: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 17
 		u7: LLVM/Clang based MinGW-w64, ucrt, with LLVM 17
+		s8: LLVM/Clang based MinGW-w64, msvcrt, with LLVM 18
+		u8: LLVM/Clang based MinGW-w64, ucrt, with LLVM 18
 	If omitted, it use a toolchain in default PATH, which should be AppleClang in macOS, or GCC in Linux.
 ]]
 

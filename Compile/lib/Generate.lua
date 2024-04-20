@@ -101,6 +101,9 @@ set PARALLELNUM=0
 
 set /a PARALLELNUM=%NUMBER_OF_PROCESSORS%+1
 
+rem Pay attention to space before EOL next line! Keep it!
+set NINJA_STATUS=[%f/%t %P/%o/%c %w/%W] 
+
 cmd /c &CONFIGURECOMMANDLINE&
 if errorlevel 1 exit 1
 
@@ -191,6 +194,9 @@ cd /d &BUILDDIR&
 set PARALLELNUM=0
 
 set /a PARALLELNUM=%NUMBER_OF_PROCESSORS%+1
+
+rem Pay attention to space before EOL next line! Keep it!
+set NINJA_STATUS=[%f/%t %P/%o/%c %w/%W] 
 
 cmd /c &CONFIGURECOMMANDLINE&
 if errorlevel 1 exit 1
@@ -285,6 +291,9 @@ cd /d &BUILDDIR&
 set PARALLELNUM=0
 
 set /a PARALLELNUM=%NUMBER_OF_PROCESSORS%+1
+
+rem Pay attention to space before EOL next line! Keep it!
+set NINJA_STATUS=[%f/%t %P/%o/%c %w/%W] 
 
 cmd /c &CONFIGURECOMMANDLINE&
 if errorlevel 1 exit 1
@@ -434,6 +443,8 @@ if [ $? -ne 0 ]; then
 	fi
 fi
 
+NINJA_STATUS='[%f/%t %P/%o/%c %w/%W] '; export NINJA_STATUS
+
 &CONFIGURECOMMANDLINE&
 [ $? -eq 0 ] || exit 1
 
@@ -551,6 +562,8 @@ if [ $? -ne 0 ]; then
 		PARALLELNUM=$(expr `sysctl machdep.cpu.thread_count | cut -d " " -f 2` + 1 )
 	fi
 fi
+
+NINJA_STATUS='[%f/%t %P/%o/%c %w/%W] '; export NINJA_STATUS
 
 &CONFIGURECOMMANDLINE&
 [ $? -eq 0 ] || exit 1
@@ -901,6 +914,8 @@ if [ $? -ne 0 ]; then
 		PARALLELNUM=$(expr `sysctl machdep.cpu.thread_count | cut -d " " -f 2` + 1 )
 	fi
 fi
+
+NINJA_STATUS='[%f/%t %P/%o/%c %w/%W] '; export NINJA_STATUS
 
 &CONFIGURECOMMANDLINE&
 [ $? -eq 0 ] || exit 1

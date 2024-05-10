@@ -590,7 +590,11 @@ conf.Qt.generateConfTable = function(self, host, job, buildTime)
 
 	-- OpenSSL libraries
 	if jobConfigureDetail.opensslConf then
-		local opensslLibPath = conf.OpenSSL.configurations[jobConfigureDetail.opensslConf][(staticBuild and "static" or "") .. "libPath"]
+		if staticBuild then
+			error("[Configuration] Currently no static build of Qt should support OpenSSL.")
+		end
+
+		local opensslLibPath = conf.OpenSSL.configurations[jobConfigureDetail.opensslConf].libPath
 		if opensslLibPath then
 			local targetDir = "lib"
 			-- todo: deal with the condition where the OpenSSL libs are symbolic link to the real file (only for unix)
@@ -602,13 +606,13 @@ conf.Qt.generateConfTable = function(self, host, job, buildTime)
 			end
 
 			-- for Qt 6.5+ links OpenSSL to QtBase
-			if (not jobConfigureDetail.crossCompile) and (not staticBuild) then
+			if (not jobConfigureDetail.crossCompile) then
 				if string.sub(conf.hostToConfMap[host], 1, 3) == "win" then
 					table.insert(ret.path, commandLineReplacement.OPENSSLDIR .. configureHost.pathSep .. "bin")
 				elseif string.sub(conf.hostToConfMap[host], 1, 3) == "mac" then
 					-- This is not passed through shell and is recognized and cleared when a process is run, and since build process are always called by the build tool this environment variable set is of no use
 					-- now the workaround is keeping the OpenSSL build directory during build process
-					-- Once the Qt library is installed one can run "install_name_tool" to replace the path of OpenSSL libraries
+					-- Once the Qt library is installed one can run "install_name_tool" to replace the path of OpenSSL libraries (TODO)
 					-- ret.envSet.DYLD_LIBRARY_PATH = commandLineReplacement.OPENSSLDIR .. configureHost.pathSep .. "lib"
 				end
 			end

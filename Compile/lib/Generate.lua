@@ -102,7 +102,7 @@ set PARALLELNUM=0
 set /a PARALLELNUM=%NUMBER_OF_PROCESSORS%+1
 
 rem Pay attention to space before EOL next line! Keep it!
-set NINJA_STATUS=[%f/%t %P/%o/%c %w/%W] 
+set NINJA_STATUS=[%%f/%%t %%P/%%o/%%c %%w/%%W] 
 
 cmd /c &CONFIGURECOMMANDLINE&
 if errorlevel 1 exit 1
@@ -196,7 +196,7 @@ set PARALLELNUM=0
 set /a PARALLELNUM=%NUMBER_OF_PROCESSORS%+1
 
 rem Pay attention to space before EOL next line! Keep it!
-set NINJA_STATUS=[%f/%t %P/%o/%c %w/%W] 
+set NINJA_STATUS=[%%f/%%t %%P/%%o/%%c %%w/%%W] 
 
 cmd /c &CONFIGURECOMMANDLINE&
 if errorlevel 1 exit 1
@@ -293,7 +293,7 @@ set PARALLELNUM=0
 set /a PARALLELNUM=%NUMBER_OF_PROCESSORS%+1
 
 rem Pay attention to space before EOL next line! Keep it!
-set NINJA_STATUS=[%f/%t %P/%o/%c %w/%W] 
+set NINJA_STATUS=[%%f/%%t %%P/%%o/%%c %%w/%%W] 
 
 cmd /c &CONFIGURECOMMANDLINE&
 if errorlevel 1 exit 1

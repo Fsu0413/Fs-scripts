@@ -66,25 +66,6 @@ conf.o3_0wx6v9 = {
 	]],
 }
 
-conf.o3_0wx6v9st = {
-	name = "OpenSSL3.0.13-Windows-x86_64-VS2019-&TARGETTOOLVERSION&-static",
-	opensslVersion = "3.0.13",
-	host = "Win10",
-	toolchain = "MSVC2019-64",
-	variant = {"-static"},
-	staticlibPath = { "lib\\libssl.lib", "lib\\libcrypto.lib" },
-	configureParameter = [[
-		no-asm
-		no-shared
-		enable-static-engine
-		--prefix="&INSTALLROOT&"
-		--openssldir="&INSTALLROOT&\ssl"
-		VC-WIN64A
-		-FS
-		-MT
-	]],
-}
-
 conf.o3_0wx6v2 = {
 	name = "OpenSSL3.0.13-Windows-x86_64-VS2022-&TARGETTOOLVERSION&",
 	opensslVersion = "3.0.13",
@@ -116,25 +97,6 @@ conf.o3_0wa6v2 = {
 		--openssldir="&INSTALLROOT&\ssl"
 		VC-WIN64-ARM
 		-FS
-	]],
-}
-
-conf.o3_0wx6v2st = {
-	name = "OpenSSL3.0.13-Windows-x86_64-VS2022-&TARGETTOOLVERSION&-static",
-	opensslVersion = "3.0.13",
-	host = "Win10",
-	toolchain = "MSVC2022-64",
-	variant = {"-static"},
-	staticlibPath = { "lib\\libssl.lib", "lib\\libcrypto.lib" },
-	configureParameter = [[
-		no-asm
-		no-shared
-		enable-static-engine
-		--prefix="&INSTALLROOT&"
-		--openssldir="&INSTALLROOT&\ssl"
-		VC-WIN64A
-		-FS
-		-MT
 	]],
 }
 
@@ -335,115 +297,12 @@ conf.o3_0wx6s8 = {
 
 --------------------------------------------------------------------
 
-conf.o3_0wx6g1st = {
-	name = "OpenSSL3.0.13-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-static",
-	opensslVersion = "3.0.13",
-	host = "Win10SH",
-	toolchain = "MinGW1120-64",
-	variant = {"-static"},
-	staticlibPath = { "lib\\libssl.a", "lib\\libcrypto.a" },
-	configureParameter = [[
-		no-asm
-		no-shared
-		enable-static-engine
-		--prefix="&INSTALLROOT&"
-		--openssldir="&INSTALLROOT&/ssl"
-		--libdir="&INSTALLROOT&/lib"
-		mingw64
-		--static
-		-static-libgcc
-	]],
-}
-
-conf.o3_0wx6p2st = {
-	name = "OpenSSL3.0.13-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-ucrt-static",
-	opensslVersion = "3.0.13",
-	host = "Win10SH",
-	toolchain = "MinGW122u-64",
-	variant = {"-static"},
-	staticlibPath = { "lib\\libssl.a", "lib\\libcrypto.a" },
-	configureParameter = [[
-		no-asm
-		no-shared
-		enable-static-engine
-		--prefix="&INSTALLROOT&"
-		--openssldir="&INSTALLROOT&/ssl"
-		--libdir="&INSTALLROOT&/lib"
-		mingw64
-		--static
-		-static-libgcc
-	]],
-}
-
-conf.o3_0wx6g2st = {
-	name = "OpenSSL3.0.13-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-msvcrt-static",
-	opensslVersion = "3.0.13",
-	host = "Win10SH",
-	toolchain = "MinGW1220-64",
-	variant = {"-static"},
-	staticlibPath = { "lib\\libssl.a", "lib\\libcrypto.a" },
-	configureParameter = [[
-		no-asm
-		no-shared
-		enable-static-engine
-		--prefix="&INSTALLROOT&"
-		--openssldir="&INSTALLROOT&/ssl"
-		--libdir="&INSTALLROOT&/lib"
-		mingw64
-		--static
-		-static-libgcc
-	]],
-}
-
-conf.o3_0wx6p3st = {
-	name = "OpenSSL3.0.13-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-ucrt-static",
-	opensslVersion = "3.0.13",
-	host = "Win10SH",
-	toolchain = "MinGW132u-64",
-	variant = {"-static"},
-	staticlibPath = { "lib\\libssl.a", "lib\\libcrypto.a" },
-	configureParameter = [[
-		no-asm
-		no-shared
-		enable-static-engine
-		--prefix="&INSTALLROOT&"
-		--openssldir="&INSTALLROOT&/ssl"
-		--libdir="&INSTALLROOT&/lib"
-		mingw64
-		--static
-		-static-libgcc
-	]],
-}
-
-conf.o3_0wx6g3st = {
-	name = "OpenSSL3.0.13-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-msvcrt-static",
-	opensslVersion = "3.0.13",
-	host = "Win10SH",
-	toolchain = "MinGW1320-64",
-	variant = {"-static"},
-	staticlibPath = { "lib\\libssl.a", "lib\\libcrypto.a" },
-	configureParameter = [[
-		no-asm
-		no-shared
-		enable-static-engine
-		--prefix="&INSTALLROOT&"
-		--openssldir="&INSTALLROOT&/ssl"
-		--libdir="&INSTALLROOT&/lib"
-		mingw64
-		--static
-		-static-libgcc
-	]],
-}
-
---------------------------------------------------------------------
-
 -- cross build this configuration for easy unify
 conf.o3_0mx6 = {
 	name = "OpenSSL3.0.13-macOS-x86_64-AppleClang&TARGETTOOLVERSION&",
 	opensslVersion = "3.0.13",
 	host = "macOSM1",
 	libPath = { "lib/libssl.3.dylib", "lib/libcrypto.3.dylib" },
-	staticlibPath = { "lib/libssl.a", "lib/libcrypto.a" },
 	configureParameter = [[
 		no-asm
 		shared
@@ -460,7 +319,6 @@ conf.o3_0ma6 = {
 	opensslVersion = "3.0.13",
 	host = "macOSM1",
 	libPath = { "lib/libssl.3.dylib", "lib/libcrypto.3.dylib" },
-	staticlibPath = { "lib/libssl.a", "lib/libcrypto.a" },
 	configureParameter = [[
 		no-asm
 		shared
@@ -477,7 +335,6 @@ conf.o3_0mal = {
 	opensslVersion = "3.0.13",
 	host = "macOSM1",
 	libPath = { "lib/libssl.3.dylib", "lib/libcrypto.3.dylib" },
-	staticlibPath = { "lib/libssl.a", "lib/libcrypto.a" },
 	opensslUnifyType = "macOS",
 	opensslUnifyArch = {
 		["arm64"] = "o3_0ma6",

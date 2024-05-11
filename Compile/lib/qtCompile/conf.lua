@@ -821,6 +821,9 @@ conf.q5_15wx6g1 = {
 		-schannel
 		-sql-sqlite
 		-sql-odbc
+		-sql-mysql
+		"MYSQL_INCDIR=&MYSQLPREFIX&\include\mariadb"
+		"MYSQL_LIBDIR=&MYSQLPREFIX&\lib\mariadb"
 		-no-wmf
 		-make-tool
 		"mingw32-make -j%PARALLELNUM%"
@@ -858,6 +861,9 @@ conf.q5_15wx6p2 = {
 		-schannel
 		-sql-sqlite
 		-sql-odbc
+		-sql-mysql
+		"MYSQL_INCDIR=&MYSQLPREFIX&\include\mariadb"
+		"MYSQL_LIBDIR=&MYSQLPREFIX&\lib\mariadb"
 		-no-wmf
 		-make-tool
 		"mingw32-make -j%PARALLELNUM%"
@@ -895,6 +901,9 @@ conf.q5_15wx6g2 = {
 		-schannel
 		-sql-sqlite
 		-sql-odbc
+		-sql-mysql
+		"MYSQL_INCDIR=&MYSQLPREFIX&\include\mariadb"
+		"MYSQL_LIBDIR=&MYSQLPREFIX&\lib\mariadb"
 		-no-wmf
 		-make-tool
 		"mingw32-make -j%PARALLELNUM%"
@@ -932,6 +941,9 @@ conf.q5_15wx6u6 = {
 		-schannel
 		-sql-sqlite
 		-sql-odbc
+		-sql-mysql
+		"MYSQL_INCDIR=&MYSQLPREFIX&\include\mariadb"
+		"MYSQL_LIBDIR=&MYSQLPREFIX&\lib\mariadb"
 		-no-wmf
 		-make-tool
 		"mingw32-make -j%PARALLELNUM%"
@@ -970,6 +982,9 @@ conf.q5_15wx6s6 = {
 		-schannel
 		-sql-sqlite
 		-sql-odbc
+		-sql-mysql
+		"MYSQL_INCDIR=&MYSQLPREFIX&\include\mariadb"
+		"MYSQL_LIBDIR=&MYSQLPREFIX&\lib\mariadb"
 		-no-wmf
 		-make-tool
 		"mingw32-make -j%PARALLELNUM%"
@@ -1008,6 +1023,9 @@ conf.q5_15wx6u7 = {
 		-schannel
 		-sql-sqlite
 		-sql-odbc
+		-sql-mysql
+		"MYSQL_INCDIR=&MYSQLPREFIX&\include\mariadb"
+		"MYSQL_LIBDIR=&MYSQLPREFIX&\lib\mariadb"
 		-no-wmf
 		-make-tool
 		"mingw32-make -j%PARALLELNUM%"
@@ -1046,6 +1064,9 @@ conf.q5_15wx6s7 = {
 		-schannel
 		-sql-sqlite
 		-sql-odbc
+		-sql-mysql
+		"MYSQL_INCDIR=&MYSQLPREFIX&\include\mariadb"
+		"MYSQL_LIBDIR=&MYSQLPREFIX&\lib\mariadb"
 		-no-wmf
 		-make-tool
 		"mingw32-make -j%PARALLELNUM%"
@@ -1084,6 +1105,9 @@ conf.q5_15wx6u8 = {
 		-schannel
 		-sql-sqlite
 		-sql-odbc
+		-sql-mysql
+		"MYSQL_INCDIR=&MYSQLPREFIX&\include\mariadb"
+		"MYSQL_LIBDIR=&MYSQLPREFIX&\lib\mariadb"
 		-no-wmf
 		-make-tool
 		"mingw32-make -j%PARALLELNUM%"
@@ -1122,6 +1146,9 @@ conf.q5_15wx6s8 = {
 		-schannel
 		-sql-sqlite
 		-sql-odbc
+		-sql-mysql
+		"MYSQL_INCDIR=&MYSQLPREFIX&\include\mariadb"
+		"MYSQL_LIBDIR=&MYSQLPREFIX&\lib\mariadb"
 		-no-wmf
 		-make-tool
 		"mingw32-make -j%PARALLELNUM%"

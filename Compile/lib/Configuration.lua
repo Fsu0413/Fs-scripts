@@ -65,9 +65,9 @@ conf.host.win = {
 		["3.1.50"] = "D:\\emsdk-3.1.50\\",
 	},
 	["cMakePath"] = {
-		["20"] = {"D:\\cmake-3.20.2-windows-x86_64\\bin", "D:\\ninja"},
-		["27"] = {"D:\\cmake-3.27.6-windows-x86_64\\bin", "D:\\ninja"},
-		["Latest"] = {"D:\\cmake-3.29.0-windows-x86_64\\bin", "D:\\ninja"},
+		["20"] = "D:\\cmake-3.20.2-windows-x86_64\\bin",
+		["27"] = "D:\\cmake-3.27.6-windows-x86_64\\bin",
+		["Latest"] = "D:\\cmake-3.29.0-windows-x86_64\\bin",
 	},
 	["jdkPath"] = {
 		["8"] = "D:\\OpenJDK8U-jdk_x64_windows_hotspot_8u402b06\\jdk8u402-b06",
@@ -100,8 +100,8 @@ conf.host.winArm = {
 	["sourcePackagePath"] = "D:\\Qt\\",
 	["buildRootPath"] = "D:\\Qt\\", -- On Windows, the build root should be same with source package
 	["cMakePath"] = {
-		["27"] = {"D:\\cmake-3.27.6-windows-arm64\\bin", "D:\\ninja"},
-		["Latest"] = {"D:\\cmake-3.29.0-windows-arm64\\bin", "D:\\ninja"},
+		["27"] = "D:\\cmake-3.27.6-windows-arm64\\bin",
+		["Latest"] = "D:\\cmake-3.29.0-windows-arm64\\bin",
 	},
 	["jdkPath"] = {
 		["11"] = "D:\\microsoft-jdk-11.0.22-windows-aarch64\\jdk-11.0.22+7",
@@ -179,7 +179,7 @@ conf.host.linux = {
 		["3.1.50"] = "/opt/env/emsdk-3.1.50/",
 	},
 	["cMakePath"] = {
-		["27"] = {"/home/fs/install-cmake3_27_6/bin"},
+		["27"] = "/home/fs/install-cmake3_27_6/bin",
 	},
 	["jdkPath"] = {
 		["8"] = "/usr/lib/jvm/java-1.8.0-openjdk/",
@@ -255,7 +255,7 @@ conf.host.macM1 = {
 		["3.1.50"] = "/opt/env/emsdk-3.1.50/",
 	},
 	["cMakePath"] = {
-		["27"] = {"/Users/fs/install-cmake3_27_6/bin"},
+		["27"] = "/Users/fs/install-cmake3_27_6/bin",
 	},
 	["jdkPath"] = {
 		-- It is said that zulu JDK runs faster on M1 chips...
@@ -919,9 +919,15 @@ conf.MariaDB.generateConfTable = function(self, host, job)
 
 	hostToolchainVersion = compilerVer[hostToolchainVersionQueryFuncName](configureHost.makefileTemplate == "win", hostToolchainVersionQueryPath, hostToolchainExecutableName)
 
-	if configureHost.cMakePath and configureHost.cMakePath.Latest then
-		for _, p in ipairs(configureHost.cMakePath.Latest) do
-			table.insert(ret.path, p)
+	if configureHost.cMakePath then
+		local usedCMakePath = configureHost.cMakePath.Latest
+		if usedCMakePath then
+			if type(usedCMakePath) == "string" then
+				usedCMakePath = {usedCMakePath}
+			end
+			for _, p in ipairs(usedCMakePath) do
+				table.insert(ret.path, p)
+			end
 		end
 	end
 

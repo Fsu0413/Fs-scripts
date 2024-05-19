@@ -1198,7 +1198,6 @@ conf.q5_15mal = {
 		-webengine-jumbo-build
 		0
 		QMAKE_APPLE_DEVICE_ARCHS="arm64 x86_64"
-		QMAKE_CXXFLAGS="-Wno-enum-constexpr-conversion"
 	]],
 	NINJAFLAGS = "-v -j4"
 }
@@ -1248,7 +1247,6 @@ conf.q5_15malnf = {
 		0
 		-no-framework
 		QMAKE_APPLE_DEVICE_ARCHS="arm64 x86_64"
-		QMAKE_CXXFLAGS="-Wno-enum-constexpr-conversion"
 	]],
 	NINJAFLAGS = "-v -j4"
 }
@@ -1288,7 +1286,6 @@ conf.q5_15malsf = {
 		-skip
 		qtwebengine
 		QMAKE_APPLE_DEVICE_ARCHS="arm64 x86_64"
-		QMAKE_CXXFLAGS="-Wno-enum-constexpr-conversion"
 	]],
 }
 

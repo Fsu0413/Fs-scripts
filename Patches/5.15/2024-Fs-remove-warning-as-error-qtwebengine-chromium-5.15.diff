@@ -1,0 +1,13 @@
+diff --git a/chromium/build/config/compiler/BUILD.gn b/chromium/build/config/compiler/BUILD.gn
+index b511a58c5a..f297afe5ae 100644
+--- a/chromium/build/config/compiler/BUILD.gn
++++ b/chromium/build/config/compiler/BUILD.gn
+@@ -1446,6 +1446,8 @@ config("default_warnings") {
+       # When compiling Objective-C, warns if a method is used whose
+       # availability is newer than the deployment target.
+       cflags += [ "-Wunguarded-availability" ]
++
++      cflags += [ "-Wno-enum-constexpr-conversion" ]
+     }
+ 
+     if (is_ios) {

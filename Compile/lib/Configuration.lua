@@ -34,6 +34,8 @@ conf.host.win = {
 		["MinGW122u-64"] = "D:\\mingw-w64\\12.2.0u\\mingw64\\bin",
 		["MinGW1320-64"] = "D:\\mingw-w64\\13.2.1\\mingw64\\bin",
 		["MinGW132u-64"] = "D:\\mingw-w64\\13.2.1u\\mingw64\\bin",
+		["MinGW1410-64"] = "D:\\mingw-w64\\14.1.0\\mingw64\\bin",
+		["MinGW141u-64"] = "D:\\mingw-w64\\14.1.0u\\mingw64\\bin",
 
 		-- MinGW toolchains with Clang / LLVM
 		-- LLVM always acts as a cross compiler, but the target libraries are architecture-dependent
@@ -130,6 +132,8 @@ conf.host.msys = {
 		["MinGW122u-64"] = "/d/mingw-w64/12.2.0u/mingw64/bin/",
 		["MinGW1320-64"] = "/d/mingw-w64/13.2.1/mingw64/bin/",
 		["MinGW132u-64"] = "/d/mingw-w64/13.2.1u/mingw64/bin/",
+		["MinGW1410-64"] = "/d/mingw-w64/14.1.0/mingw64/bin/",
+		["MinGW141u-64"] = "/d/mingw-w64/14.1.0u/mingw64/bin/",
 
 		["MinGWLLVM-msvcrt16-64"] = {"/d/mingw-w64/llvm-mingw-20230614-msvcrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20230614-msvcrt-x86_64/bin"},
 		["MinGWLLVM-ucrt16-64"] = {"/d/mingw-w64/llvm-mingw-20230614-ucrt-x86_64/x86_64-w64-mingw32/bin", "/d/mingw-w64/llvm-mingw-20230614-ucrt-x86_64/bin"},
@@ -518,6 +522,7 @@ conf.Qt.generateConfTable = function(self, host, job, buildTime)
 
 	-- For whatever reason Python can't be in PATH on Windows.
 	-- Python for windows has its executable versionless. We need to prepend its path to the PATH variable.
+	-- QtWebEngine 5.15.17+ supports build using Python 3. We should switch to Python 3 in next build.
 	if configureHost.pythonPath then
 		if string.sub(jobConfigureDetail.qtVersion, 1, 2) == "6." then
 			table.insert(ret.path, configureHost.pythonPath["3"])

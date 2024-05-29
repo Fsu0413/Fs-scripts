@@ -5850,7 +5850,8 @@ conf.q6_7wx6v2 = {
 		-DMySQL_INCLUDE_DIR="&MYSQLPREFIX&\include\mariadb"
 		-DMySQL_LIBRARY="&MYSQLPREFIX&\lib\mariadb\libmariadb.lib"
 		-DFEATURE_system_sqlite=OFF
-		-DBUILD_qtwebengine=OFF
+		-DFEATURE_webengine_proprietary_codecs=ON
+		-DFEATURE_qtpdf_build=ON
 		-DBUILD_qtgrpc=OFF
 	]],
 }

@@ -1,0 +1,34 @@
+diff -rNuZ a/include/mbgl/util/geometry.hpp b/include/mbgl/util/geometry.hpp
+--- a/include/mbgl/util/geometry.hpp	2024-05-08 13:14:45.000000000 +0800
++++ b/include/mbgl/util/geometry.hpp	2024-06-04 21:40:56.423915000 +0800
+@@ -4,6 +4,8 @@
+ #include <mapbox/geometry/point_arithmetic.hpp>
+ #include <mapbox/geometry/for_each_point.hpp>
+ 
++#include <cstdint>
++
+ namespace mbgl {
+ 
+ enum class FeatureType : uint8_t {
+diff -rNuZ a/include/mbgl/util/string.hpp b/include/mbgl/util/string.hpp
+--- a/include/mbgl/util/string.hpp	2024-05-08 13:14:45.000000000 +0800
++++ b/include/mbgl/util/string.hpp	2024-06-04 22:04:37.412340200 +0800
+@@ -5,6 +5,7 @@
+ #include <cassert>
+ #include <cstdlib>
+ #include <exception>
++#include <cstdint>
+ 
+ // Polyfill needed by Qt when building for Android with GCC
+ #if defined(__ANDROID__) && defined(__GLIBCXX__)
+diff -rNuZ a/src/mbgl/gl/stencil_mode.hpp b/src/mbgl/gl/stencil_mode.hpp
+--- a/src/mbgl/gl/stencil_mode.hpp	2024-05-08 13:14:45.000000000 +0800
++++ b/src/mbgl/gl/stencil_mode.hpp	2024-06-04 22:05:17.807399200 +0800
+@@ -1,6 +1,7 @@
+ #pragma once
+ 
+ #include <mbgl/util/variant.hpp>
++#include <cstdint>
+ 
+ namespace mbgl {
+ namespace gl {

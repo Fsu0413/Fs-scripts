@@ -1028,6 +1028,7 @@ conf.q5_15wx6p4 = {
 		-no-wmf
 		-make-tool
 		"mingw32-make -j%PARALLELNUM%"
+		QMAKE_CFLAGS="-Wno-incompatible-pointer-types"
 	]],
 }
 
@@ -1068,6 +1069,7 @@ conf.q5_15wx6g4 = {
 		-no-wmf
 		-make-tool
 		"mingw32-make -j%PARALLELNUM%"
+		QMAKE_CFLAGS="-Wno-incompatible-pointer-types"
 	]],
 }
 

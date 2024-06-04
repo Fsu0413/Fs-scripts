@@ -937,7 +937,7 @@ conf.q5_15wx6p3 = {
 		-qt-pcre
 		-no-icu
 		-opengl
-		dynamic
+		desktop
 		-ssl
 		-schannel
 		-sql-sqlite
@@ -977,7 +977,7 @@ conf.q5_15wx6g3 = {
 		-qt-pcre
 		-no-icu
 		-opengl
-		dynamic
+		desktop
 		-ssl
 		-schannel
 		-sql-sqlite
@@ -1017,7 +1017,7 @@ conf.q5_15wx6p4 = {
 		-qt-pcre
 		-no-icu
 		-opengl
-		dynamic
+		desktop
 		-ssl
 		-schannel
 		-sql-sqlite
@@ -1057,7 +1057,7 @@ conf.q5_15wx6g4 = {
 		-qt-pcre
 		-no-icu
 		-opengl
-		dynamic
+		desktop
 		-ssl
 		-schannel
 		-sql-sqlite

@@ -1,0 +1,12 @@
+diff -rNuZ a/deps/rapidjson/1.1.0/include/rapidjson/document.h b/deps/rapidjson/1.1.0/include/rapidjson/document.h
+--- a/deps/rapidjson/1.1.0/include/rapidjson/document.h	2024-05-08 13:14:45.000000000 +0800
++++ b/deps/rapidjson/1.1.0/include/rapidjson/document.h	2024-06-05 08:12:02.887480000 +0800
+@@ -316,8 +316,6 @@
+ 
+     GenericStringRef(const GenericStringRef& rhs) : s(rhs.s), length(rhs.length) {}
+ 
+-    GenericStringRef& operator=(const GenericStringRef& rhs) { s = rhs.s; length = rhs.length; }
+-
+     //! implicit conversion to plain CharType pointer
+     operator const Ch *() const { return s; }
+ 

@@ -570,11 +570,15 @@ NINJA_STATUS='[%f/%t %P/%o/%c %w/%W] '; export NINJA_STATUS
 
 &MAKE& clean
 
-&MAKE&
-[ $? -eq 0 ] || exit 1
+for i in `seq 4`; do
+if &MAKE&; then break; fi
+if [ $i -eq 4 ]; then exit 1; fi
+done
 
-&INSTALLCOMMANDLINE&
-[ $? -eq 0 ] || exit 1
+for i in `seq 4`; do
+if &INSTALLCOMMANDLINE&; then break; fi
+if [ $i -eq 4 ]; then exit 1; fi
+done
 
 cd &INSTALLROOT&/..
 

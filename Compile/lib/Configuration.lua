@@ -385,10 +385,7 @@ conf.Qt.generateConfTable = function(self, host, job, buildTime)
 			end
 
 			if configureHost.jdkPath then
-				local jdkMajorVersion = "8"
-				if string.sub(jobConfigureDetail.qtVersion, 1, 2) == "6." then
-					jdkMajorVersion = "11"
-				end
+				jdkMajorVersion = "11"
 				ret.envSet.JAVA_HOME = configureHost.jdkPath[jdkMajorVersion]
 				table.insert(ret.path, configureHost.jdkPath[jdkMajorVersion] .. configureHost.pathSep .. "bin")
 			end

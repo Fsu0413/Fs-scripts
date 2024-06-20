@@ -174,7 +174,7 @@ hostOsVer.mac = function()
 	-- macOS system version may not contain the patch digit!
 	local major, minor, patch = string.match(line, "^(%d+)%.(%d+)%.(%d+)$")
 	if not major then major, minor = string.match(line, "^(%d+)%.(%d+)$") end
-	if not major then return fail, "output from sw_vers not reconized: " .. line end
+	if not major then return fail, "output from sw_vers not recognized: " .. line end
 
 	local prefix
 

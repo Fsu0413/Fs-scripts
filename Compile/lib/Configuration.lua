@@ -843,7 +843,7 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 			ret.MAKE = "make -j$PARALLELNUM"
 			ret.INSTALLCOMMANDLINE = ret.MAKE .. " install_sw install_ssldirs " .. ret.INSTALLCOMMANDLINE
 		elseif string.sub(jobConfigureDetail.toolchain, 1, 4) == "MSVC" then
-			-- MSVC version of Makefile supports only nmake, jom is neither supported nor tested offically.
+			-- MSVC version of Makefile supports only nmake, jom is neither supported nor tested officially.
 			-- On https://github.com/openssl/openssl/issues/10902 CMake is suggested to be the official supported build tool but got rejected.
 			-- OpenSSL maintainers said that cmake can't cover their supported platforms, so they use a custom build system. e.g. they need to support OpenVMS where CMake can't be run.
 

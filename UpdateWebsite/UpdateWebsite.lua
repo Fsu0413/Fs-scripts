@@ -13,7 +13,7 @@ scriptPath = (n and string.sub(scriptFile, 1, n - 1) or ".")
 
 package.path = scriptPath .. "/lib/?.lua;" .. package.path
 
-parseConfTable = reuqire("ParseConfTable")
+parseConfTable = require("ParseConfTable")
 compare = require("Compare")
 download = require("Download")
 json = require("dkjson")

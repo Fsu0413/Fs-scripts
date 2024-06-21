@@ -520,8 +520,12 @@ conf.Qt.generateConfTable = function(self, host, job, buildTime)
 	-- For whatever reason Python can't be in PATH on Windows.
 	-- Python for windows has its executable versionless. We need to prepend its path to the PATH variable.
 	-- QtWebEngine 5.15.17+ supports build using Python 3. We should switch to Python 3 in next build.
-	if configureHost.pythonPath and configureHost.pythonPath["3"] then
-		table.insert(ret.path, configureHost.pythonPath["3"])
+	if configureHost.pythonPath then
+		if string.sub(jobConfigureDetail.qtVersion, 1, 2) == "6." then
+			table.insert(ret.path, configureHost.pythonPath["3"])
+		else
+			table.insert(ret.path, configureHost.pythonPath["2"])
+		end
 	end
 
 	if not jobConfigureDetail.useCMake then

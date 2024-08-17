@@ -862,6 +862,33 @@ conf.OpenSSL.generateConfTable = function(self, host, job)
 		ret.INSTALLROOT = installRoot
 		ret.INSTALLPATH = installFolderName
 
+		ret.EXTRAINSTALL = ""
+
+		if (not jobConfigureDetail.crossCompile) and (string.sub(conf.hostToConfMap[host], 1, 3) == "mac") then
+			-- macOS hosts needs the library id changed. By default OpenSSL builds with full path in ID.
+			local libs = {}
+			for _, l in ipairs(jobConfigureDetail.libPath) do
+				local s, e = string.find(l, "/", 1, true)
+				local e2
+				while s do
+					e2 = e
+					s, e = string.find(l, "/", e + 1, true)
+				end
+				table.insert(libs, {p = string.sub(l, 1, e2 - 1), n = string.sub(l, e2 + 1)})
+			end
+
+			for _, lib in ipairs(libs) do
+				ret.EXTRAINSTALL = ret.EXTRAINSTALL .. "\ncd \"" .. installRoot .. "/" .. lib.p .. "\""
+				for _, lib2 in ipairs(libs) do
+					if (lib.p == lib2.p) and (lib.n == lib2.n) then
+						ret.EXTRAINSTALL = ret.EXTRAINSTALL .. "\ninstall_name_tool -id \"" .. lib.n .. "\" \"" .. lib.n .. "\""
+					else
+						ret.EXTRAINSTALL = ret.EXTRAINSTALL .. "\ninstall_name_tool -change \"" .. installRoot .. "/" .. lib2.p .. "/" .. lib2.n .. "\" \"" .. lib2.n .. "\" \"" .. lib.n .. "\"\n"
+					end
+				end
+			end
+		end
+
 		-- finally, data required for generating website data
 		ret.buildContentVersion = jobConfigureDetail.opensslVersion
 		ret.buildHost = host

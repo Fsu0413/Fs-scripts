@@ -483,6 +483,7 @@ exit 0
 -- INSTALLCOMMANDLINE
 -- INSTALLROOT
 -- INSTALLPATH
+-- EXTRAINSTALL
 gen.unix.template4OpenSSL = [[
 set -x
 
@@ -579,6 +580,10 @@ for i in `seq 4`; do
 if &INSTALLCOMMANDLINE&; then break; fi
 if [ $i -eq 4 ]; then exit 1; fi
 done
+
+cd &WORKSPACE&/buildDir
+
+&EXTRAINSTALL&
 
 cd &INSTALLROOT&/..
 

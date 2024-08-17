@@ -4,8 +4,8 @@ local conf = {}
 --[[
 abbrs:
 	mariadb Versions:
-		m3_1: mariadb connector C 3.1.23
-		m3_3: mariadb connector C 3.3.8
+		m3_1: mariadb connector C 3.1.24
+		m3_3: mariadb connector C 3.3.10
 
 	Platforms:
 		w: Windows
@@ -41,11 +41,11 @@ abbrs:
 
 --------------------------------------------------------------------
 
--- mariadb connector 3.1.23
+-- mariadb connector 3.1.24
 
 conf.m3_1wx3v5 = {
-	name = "mariadb_connector_c3.1.23-Windows-x86-VS2015",
-	mariadbVersion = "3.1.23",
+	name = "mariadb_connector_c3.1.24-Windows-x86-VS2015",
+	mariadbVersion = "3.1.24",
 	host = "Win8",
 	toolchain = "MSVC2015-32",
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
@@ -68,8 +68,8 @@ conf.m3_1wx3v5 = {
 }
 
 conf.m3_1wx6v5 = {
-	name = "mariadb_connector_c3.1.23-Windows-x86_64-VS2015",
-	mariadbVersion = "3.1.23",
+	name = "mariadb_connector_c3.1.24-Windows-x86_64-VS2015",
+	mariadbVersion = "3.1.24",
 	host = "Win8",
 	toolchain = "MSVC2015-64",
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
@@ -92,8 +92,8 @@ conf.m3_1wx6v5 = {
 }
 
 conf.m3_1wx3v7 = {
-	name = "mariadb_connector_c3.1.23-Windows-x86-VS2017-&TARGETTOOLVERSION&",
-	mariadbVersion = "3.1.23",
+	name = "mariadb_connector_c3.1.24-Windows-x86-VS2017-&TARGETTOOLVERSION&",
+	mariadbVersion = "3.1.24",
 	host = "Win10",
 	toolchain = "MSVC2017-32",
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
@@ -116,8 +116,8 @@ conf.m3_1wx3v7 = {
 }
 
 conf.m3_1wx6v7 = {
-	name = "mariadb_connector_c3.1.23-Windows-x86_64-VS2017-&TARGETTOOLVERSION&",
-	mariadbVersion = "3.1.23",
+	name = "mariadb_connector_c3.1.24-Windows-x86_64-VS2017-&TARGETTOOLVERSION&",
+	mariadbVersion = "3.1.24",
 	host = "Win10",
 	toolchain = "MSVC2017-64",
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
@@ -140,8 +140,8 @@ conf.m3_1wx6v7 = {
 }
 
 conf.m3_1wx3v9 = {
-	name = "mariadb_connector_c3.1.23-Windows-x86-VS2019-&TARGETTOOLVERSION&",
-	mariadbVersion = "3.1.23",
+	name = "mariadb_connector_c3.1.24-Windows-x86-VS2019-&TARGETTOOLVERSION&",
+	mariadbVersion = "3.1.24",
 	host = "Win10",
 	toolchain = "MSVC2019-32",
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
@@ -164,8 +164,8 @@ conf.m3_1wx3v9 = {
 }
 
 conf.m3_1wx6v9 = {
-	name = "mariadb_connector_c3.1.23-Windows-x86_64-VS2019-&TARGETTOOLVERSION&",
-	mariadbVersion = "3.1.23",
+	name = "mariadb_connector_c3.1.24-Windows-x86_64-VS2019-&TARGETTOOLVERSION&",
+	mariadbVersion = "3.1.24",
 	host = "Win10",
 	toolchain = "MSVC2019-64",
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
@@ -188,8 +188,8 @@ conf.m3_1wx6v9 = {
 }
 
 conf.m3_1wx6v2 = {
-	name = "mariadb_connector_c3.1.23-Windows-x86_64-VS2022-&TARGETTOOLVERSION&",
-	mariadbVersion = "3.1.23",
+	name = "mariadb_connector_c3.1.24-Windows-x86_64-VS2022-&TARGETTOOLVERSION&",
+	mariadbVersion = "3.1.24",
 	host = "Win10",
 	toolchain = "MSVC2022-64",
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
@@ -214,8 +214,8 @@ conf.m3_1wx6v2 = {
 --------------------------------------------------------------------
 
 conf.m3_1wx6g8 = {
-	name = "mariadb_connector_c3.1.23-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&",
-	mariadbVersion = "3.1.23",
+	name = "mariadb_connector_c3.1.24-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&",
+	mariadbVersion = "3.1.24",
 	host = "Win10",
 	toolchain = "MinGW810-64",
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
@@ -238,8 +238,8 @@ conf.m3_1wx6g8 = {
 }
 
 conf.m3_1wx6g1 = {
-	name = "mariadb_connector_c3.1.23-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&",
-	mariadbVersion = "3.1.23",
+	name = "mariadb_connector_c3.1.24-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&",
+	mariadbVersion = "3.1.24",
 	host = "Win10",
 	toolchain = "MinGW1120-64",
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
@@ -262,8 +262,8 @@ conf.m3_1wx6g1 = {
 }
 
 conf.m3_1wx6p2 = {
-	name = "mariadb_connector_c3.1.23-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-ucrt",
-	mariadbVersion = "3.1.23",
+	name = "mariadb_connector_c3.1.24-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-ucrt",
+	mariadbVersion = "3.1.24",
 	host = "Win10",
 	toolchain = "MinGW122u-64",
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
@@ -286,8 +286,8 @@ conf.m3_1wx6p2 = {
 }
 
 conf.m3_1wx6g2 = {
-	name = "mariadb_connector_c3.1.23-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-msvcrt",
-	mariadbVersion = "3.1.23",
+	name = "mariadb_connector_c3.1.24-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-msvcrt",
+	mariadbVersion = "3.1.24",
 	host = "Win10",
 	toolchain = "MinGW1220-64",
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
@@ -310,8 +310,8 @@ conf.m3_1wx6g2 = {
 }
 
 conf.m3_1wx6p3 = {
-	name = "mariadb_connector_c3.1.23-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-ucrt",
-	mariadbVersion = "3.1.23",
+	name = "mariadb_connector_c3.1.24-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-ucrt",
+	mariadbVersion = "3.1.24",
 	host = "Win10",
 	toolchain = "MinGW132u-64",
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
@@ -334,8 +334,8 @@ conf.m3_1wx6p3 = {
 }
 
 conf.m3_1wx6g3 = {
-	name = "mariadb_connector_c3.1.23-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-msvcrt",
-	mariadbVersion = "3.1.23",
+	name = "mariadb_connector_c3.1.24-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-msvcrt",
+	mariadbVersion = "3.1.24",
 	host = "Win10",
 	toolchain = "MinGW1320-64",
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
@@ -358,8 +358,8 @@ conf.m3_1wx6g3 = {
 }
 
 conf.m3_1wx6p4 = {
-	name = "mariadb_connector_c3.1.23-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-ucrt",
-	mariadbVersion = "3.1.23",
+	name = "mariadb_connector_c3.1.24-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-ucrt",
+	mariadbVersion = "3.1.24",
 	host = "Win10",
 	toolchain = "MinGW141u-64",
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
@@ -382,8 +382,8 @@ conf.m3_1wx6p4 = {
 }
 
 conf.m3_1wx6g4 = {
-	name = "mariadb_connector_c3.1.23-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-msvcrt",
-	mariadbVersion = "3.1.23",
+	name = "mariadb_connector_c3.1.24-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-msvcrt",
+	mariadbVersion = "3.1.24",
 	host = "Win10",
 	toolchain = "MinGW1410-64",
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
@@ -408,8 +408,8 @@ conf.m3_1wx6g4 = {
 --------------------------------------------------------------------
 
 conf.m3_1wx6u6 = {
-	name = "mariadb_connector_c3.1.23-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-ucrt",
-	mariadbVersion = "3.1.23",
+	name = "mariadb_connector_c3.1.24-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-ucrt",
+	mariadbVersion = "3.1.24",
 	host = "Win10",
 	toolchain = "MinGWLLVM-ucrt16-64",
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
@@ -435,8 +435,8 @@ conf.m3_1wx6u6 = {
 }
 
 conf.m3_1wx6s6 = {
-	name = "mariadb_connector_c3.1.23-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-msvcrt",
-	mariadbVersion = "3.1.23",
+	name = "mariadb_connector_c3.1.24-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-msvcrt",
+	mariadbVersion = "3.1.24",
 	host = "Win10",
 	toolchain = "MinGWLLVM-msvcrt16-64",
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
@@ -464,8 +464,8 @@ conf.m3_1wx6s6 = {
 --------------------------------------------------------------------
 
 conf.m3_1wx6u7 = {
-	name = "mariadb_connector_c3.1.23-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-ucrt",
-	mariadbVersion = "3.1.23",
+	name = "mariadb_connector_c3.1.24-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-ucrt",
+	mariadbVersion = "3.1.24",
 	host = "Win10",
 	toolchain = "MinGWLLVM-ucrt17-64",
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
@@ -491,8 +491,8 @@ conf.m3_1wx6u7 = {
 }
 
 conf.m3_1wx6s7 = {
-	name = "mariadb_connector_c3.1.23-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-msvcrt",
-	mariadbVersion = "3.1.23",
+	name = "mariadb_connector_c3.1.24-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-msvcrt",
+	mariadbVersion = "3.1.24",
 	host = "Win10",
 	toolchain = "MinGWLLVM-msvcrt17-64",
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
@@ -520,8 +520,8 @@ conf.m3_1wx6s7 = {
 --------------------------------------------------------------------
 
 conf.m3_1wx6u8 = {
-	name = "mariadb_connector_c3.1.23-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-ucrt",
-	mariadbVersion = "3.1.23",
+	name = "mariadb_connector_c3.1.24-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-ucrt",
+	mariadbVersion = "3.1.24",
 	host = "Win10",
 	toolchain = "MinGWLLVM-ucrt18-64",
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
@@ -547,8 +547,8 @@ conf.m3_1wx6u8 = {
 }
 
 conf.m3_1wx6s8 = {
-	name = "mariadb_connector_c3.1.23-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-msvcrt",
-	mariadbVersion = "3.1.23",
+	name = "mariadb_connector_c3.1.24-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-msvcrt",
+	mariadbVersion = "3.1.24",
 	host = "Win10",
 	toolchain = "MinGWLLVM-msvcrt18-64",
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
@@ -576,8 +576,8 @@ conf.m3_1wx6s8 = {
 --------------------------------------------------------------------
 
 conf.m3_1mal = {
-	name = "mariadb_connector_c3.1.23-macOS-ALL-AppleClang&TARGETTOOLVERSION&",
-	mariadbVersion = "3.1.23",
+	name = "mariadb_connector_c3.1.24-macOS-ALL-AppleClang&TARGETTOOLVERSION&",
+	mariadbVersion = "3.1.24",
 	host = "macOSM1",
 	libPath = { "lib/mariadb/libmariadb.3.dylib" },
 	configureParameter = [[
@@ -601,11 +601,11 @@ conf.m3_1mal = {
 
 --------------------------------------------------------------------
 
--- mariadb connector 3.3.8
+-- mariadb connector 3.3.10
 
 conf.m3_3wx6v9 = {
-	name = "mariadb_connector_c3.3.8-Windows-x86_64-VS2019-&TARGETTOOLVERSION&",
-	mariadbVersion = "3.3.8",
+	name = "mariadb_connector_c3.3.10-Windows-x86_64-VS2019-&TARGETTOOLVERSION&",
+	mariadbVersion = "3.3.10",
 	host = "Win10",
 	toolchain = "MSVC2019-64",
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
@@ -629,8 +629,8 @@ conf.m3_3wx6v9 = {
 }
 
 conf.m3_3wx6v2 = {
-	name = "mariadb_connector_c3.3.8-Windows-x86_64-VS2022-&TARGETTOOLVERSION&",
-	mariadbVersion = "3.3.8",
+	name = "mariadb_connector_c3.3.10-Windows-x86_64-VS2022-&TARGETTOOLVERSION&",
+	mariadbVersion = "3.3.10",
 	host = "Win10",
 	toolchain = "MSVC2022-64",
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
@@ -654,8 +654,8 @@ conf.m3_3wx6v2 = {
 }
 
 conf.m3_3wa6v2 = {
-	name = "mariadb_connector_c3.3.8-Windows-arm64-VS2022-&TARGETTOOLVERSION&",
-	mariadbVersion = "3.3.8",
+	name = "mariadb_connector_c3.3.10-Windows-arm64-VS2022-&TARGETTOOLVERSION&",
+	mariadbVersion = "3.3.10",
 	host = "Win10Arm",
 	toolchain = "MSVC2022-arm64",
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
@@ -681,8 +681,8 @@ conf.m3_3wa6v2 = {
 --------------------------------------------------------------------
 
 conf.m3_3wx6g1 = {
-	name = "mariadb_connector_c3.3.8-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&",
-	mariadbVersion = "3.3.8",
+	name = "mariadb_connector_c3.3.10-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&",
+	mariadbVersion = "3.3.10",
 	host = "Win10",
 	toolchain = "MinGW1120-64",
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
@@ -706,8 +706,8 @@ conf.m3_3wx6g1 = {
 }
 
 conf.m3_3wx6p2 = {
-	name = "mariadb_connector_c3.3.8-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-ucrt",
-	mariadbVersion = "3.3.8",
+	name = "mariadb_connector_c3.3.10-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-ucrt",
+	mariadbVersion = "3.3.10",
 	host = "Win10",
 	toolchain = "MinGW122u-64",
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
@@ -731,8 +731,8 @@ conf.m3_3wx6p2 = {
 }
 
 conf.m3_3wx6g2 = {
-	name = "mariadb_connector_c3.3.8-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-msvcrt",
-	mariadbVersion = "3.3.8",
+	name = "mariadb_connector_c3.3.10-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-msvcrt",
+	mariadbVersion = "3.3.10",
 	host = "Win10",
 	toolchain = "MinGW1220-64",
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
@@ -756,8 +756,8 @@ conf.m3_3wx6g2 = {
 }
 
 conf.m3_3wx6p3 = {
-	name = "mariadb_connector_c3.3.8-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-ucrt",
-	mariadbVersion = "3.3.8",
+	name = "mariadb_connector_c3.3.10-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-ucrt",
+	mariadbVersion = "3.3.10",
 	host = "Win10",
 	toolchain = "MinGW132u-64",
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
@@ -781,8 +781,8 @@ conf.m3_3wx6p3 = {
 }
 
 conf.m3_3wx6g3 = {
-	name = "mariadb_connector_c3.3.8-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-msvcrt",
-	mariadbVersion = "3.3.8",
+	name = "mariadb_connector_c3.3.10-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-msvcrt",
+	mariadbVersion = "3.3.10",
 	host = "Win10",
 	toolchain = "MinGW1320-64",
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
@@ -806,8 +806,8 @@ conf.m3_3wx6g3 = {
 }
 
 conf.m3_3wx6p4 = {
-	name = "mariadb_connector_c3.3.8-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-ucrt",
-	mariadbVersion = "3.3.8",
+	name = "mariadb_connector_c3.3.10-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-ucrt",
+	mariadbVersion = "3.3.10",
 	host = "Win10",
 	toolchain = "MinGW141u-64",
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
@@ -831,8 +831,8 @@ conf.m3_3wx6p4 = {
 }
 
 conf.m3_3wx6g4 = {
-	name = "mariadb_connector_c3.3.8-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-msvcrt",
-	mariadbVersion = "3.3.8",
+	name = "mariadb_connector_c3.3.10-Windows-x86_64-MinGW-GCC&TARGETTOOLVERSION&-msvcrt",
+	mariadbVersion = "3.3.10",
 	host = "Win10",
 	toolchain = "MinGW1410-64",
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
@@ -858,8 +858,8 @@ conf.m3_3wx6g4 = {
 --------------------------------------------------------------------
 
 conf.m3_3wx6u6 = {
-	name = "mariadb_connector_c3.3.8-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-ucrt",
-	mariadbVersion = "3.3.8",
+	name = "mariadb_connector_c3.3.10-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-ucrt",
+	mariadbVersion = "3.3.10",
 	host = "Win10",
 	toolchain = "MinGWLLVM-ucrt16-64",
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
@@ -885,8 +885,8 @@ conf.m3_3wx6u6 = {
 }
 
 conf.m3_3wx6s6 = {
-	name = "mariadb_connector_c3.3.8-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-msvcrt",
-	mariadbVersion = "3.3.8",
+	name = "mariadb_connector_c3.3.10-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-msvcrt",
+	mariadbVersion = "3.3.10",
 	host = "Win10",
 	toolchain = "MinGWLLVM-msvcrt16-64",
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
@@ -914,8 +914,8 @@ conf.m3_3wx6s6 = {
 --------------------------------------------------------------------
 
 conf.m3_3wx6u7 = {
-	name = "mariadb_connector_c3.3.8-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-ucrt",
-	mariadbVersion = "3.3.8",
+	name = "mariadb_connector_c3.3.10-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-ucrt",
+	mariadbVersion = "3.3.10",
 	host = "Win10",
 	toolchain = "MinGWLLVM-ucrt17-64",
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
@@ -941,8 +941,8 @@ conf.m3_3wx6u7 = {
 }
 
 conf.m3_3wx6s7 = {
-	name = "mariadb_connector_c3.3.8-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-msvcrt",
-	mariadbVersion = "3.3.8",
+	name = "mariadb_connector_c3.3.10-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-msvcrt",
+	mariadbVersion = "3.3.10",
 	host = "Win10",
 	toolchain = "MinGWLLVM-msvcrt17-64",
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
@@ -970,8 +970,8 @@ conf.m3_3wx6s7 = {
 --------------------------------------------------------------------
 
 conf.m3_3wx6u8 = {
-	name = "mariadb_connector_c3.3.8-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-ucrt",
-	mariadbVersion = "3.3.8",
+	name = "mariadb_connector_c3.3.10-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-ucrt",
+	mariadbVersion = "3.3.10",
 	host = "Win10",
 	toolchain = "MinGWLLVM-ucrt18-64",
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
@@ -997,8 +997,8 @@ conf.m3_3wx6u8 = {
 }
 
 conf.m3_3wx6s8 = {
-	name = "mariadb_connector_c3.3.8-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-msvcrt",
-	mariadbVersion = "3.3.8",
+	name = "mariadb_connector_c3.3.10-Windows-x86_64-llvm-mingw-&TARGETTOOLVERSION&-msvcrt",
+	mariadbVersion = "3.3.10",
 	host = "Win10",
 	toolchain = "MinGWLLVM-msvcrt18-64",
 	libPath = { "lib\\mariadb\\libmariadb.dll" },
@@ -1026,8 +1026,8 @@ conf.m3_3wx6s8 = {
 --------------------------------------------------------------------
 
 conf.m3_3mal = {
-	name = "mariadb_connector_c3.3.8-macOS-ALL-AppleClang&TARGETTOOLVERSION&",
-	mariadbVersion = "3.3.8",
+	name = "mariadb_connector_c3.3.10-macOS-ALL-AppleClang&TARGETTOOLVERSION&",
+	mariadbVersion = "3.3.10",
 	host = "macOSM1",
 	libPath = { "lib/mariadb/libmariadb.3.dylib" },
 	configureParameter = [[

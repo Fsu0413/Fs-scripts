@@ -58,13 +58,14 @@ conf.host.win = {
 		["r23c"] = "D:\\android-ndk-r23c",
 		["r25c"] = "D:\\android-ndk-r25c",
 		["r26d"] = "D:\\android-ndk-r26d",
+		["r27"] = "D:\\android-ndk-r27",
 	},
 	["androidNdkHost"] = "windows-x86_64",
 	["emscriptenPath"] = {
-		["1.39.8"] = "D:\\emsdk-1.39.8\\",
-		["2.0.14"] = "D:\\emsdk-2.0.14\\",
-		["3.1.25"] = "D:\\emsdk-3.1.25\\",
-		["3.1.50"] = "D:\\emsdk-3.1.50\\",
+		["1.39.8"] = "D:\\emsdk-1.39.8\\", -- used in Qt 5.15 series
+		["2.0.14"] = "D:\\emsdk-2.0.14\\", -- used in Qt 6.2 series
+		["3.1.25"] = "D:\\emsdk-3.1.25\\", -- used in Qt 6.5 series
+		["3.1.50"] = "D:\\emsdk-3.1.50\\", -- used in Qt 6.7 series
 	},
 	["cMakePath"] = {
 		["20"] = "D:\\cmake-3.20.2-windows-x86_64\\bin",
@@ -148,6 +149,7 @@ conf.host.msys = {
 		["r23c"] = "/d/android-ndk-r23c/",
 		["r25c"] = "/d/android-ndk-r25c/",
 		["r26d"] = "/d/android-ndk-r26d/",
+		["r27"] = "/d/android-ndk-r27/",
 	},
 	["androidNdkHost"] = "windows-x86_64",
 	["defaultToolchainExecutableName"] = "gcc",
@@ -172,15 +174,16 @@ conf.host.linux = {
 		["r23c"] = "/opt/env/android-ndk-r23c/",
 		["r25c"] = "/opt/env/android-ndk-r25c/",
 		["r26d"] = "/opt/env/android-ndk-r26d/",
+		["r27"] = "/opt/env/android-ndk-r27/",
 	},
 	["androidNdkHost"] = "linux-x86_64",
 	["sourcePackagePath"] = "/opt/sources/",
 	["buildRootPath"] = "/opt/build/",
 	["emscriptenPath"] = {
-		["1.39.8"] = "/opt/env/emsdk-1.39.8/",
-		["2.0.14"] = "/opt/env/emsdk-2.0.14/",
-		["3.1.25"] = "/opt/env/emsdk-3.1.25/",
-		["3.1.50"] = "/opt/env/emsdk-3.1.50/",
+		["1.39.8"] = "/opt/env/emsdk-1.39.8/", -- used in Qt 5.15 series
+		["2.0.14"] = "/opt/env/emsdk-2.0.14/", -- used in Qt 6.2 series
+		["3.1.25"] = "/opt/env/emsdk-3.1.25/", -- used in Qt 6.5 series
+		["3.1.50"] = "/opt/env/emsdk-3.1.50/", -- used in Qt 6.7 series
 	},
 	["cMakePath"] = {
 		["27"] = "/home/fs/install-cmake3_27_6/bin",
@@ -211,13 +214,14 @@ conf.host.mac = {
 		["r23c"] = "/Applications/AndroidNDK8568313.app/Contents/NDK/",
 		["r25c"] = "/Applications/AndroidNDK9519653.app/Contents/NDK/",
 		["r26d"] = "/Applications/AndroidNDK11579264.app/Contents/NDK/",
+		["r27"] = "/Applications/AndroidNDK12077973.app/Contents/NDK/",
 	},
 	["androidNdkHost"] = "darwin-x86_64",
 	["sourcePackagePath"] = "/opt/sources/",
 	["buildRootPath"] = "/opt/build/",
 	["emscriptenPath"] = {
-		["1.39.8"] = "/opt/env/emsdk-1.39.8/",
-		["2.0.14"] = "/opt/env/emsdk-2.0.14/",
+		["1.39.8"] = "/opt/env/emsdk-1.39.8/", -- used in Qt 5.15 series
+		["2.0.14"] = "/opt/env/emsdk-2.0.14/", -- used in Qt 6.2 series
 	},
 	["jdkPath"] = {
 		["8"] = "/usr/local/opt/openjdk@8/",
@@ -248,15 +252,16 @@ conf.host.macM1 = {
 		["r23c"] = "/Applications/AndroidNDK8568313.app/Contents/NDK/",
 		["r25c"] = "/Applications/AndroidNDK9519653.app/Contents/NDK/",
 		["r26d"] = "/Applications/AndroidNDK11579264.app/Contents/NDK/",
+		["r27"] = "/Applications/AndroidNDK12077973.app/Contents/NDK/",
 	},
 	["androidNdkHost"] = "darwin-x86_64",
 	["sourcePackagePath"] = "/opt/sources/",
 	["buildRootPath"] = "/opt/build/",
 	["emscriptenPath"] = {
-		["1.39.8"] = "/opt/env/emsdk-1.39.8/",
-		["2.0.14"] = "/opt/env/emsdk-2.0.14/",
-		["3.1.25"] = "/opt/env/emsdk-3.1.25/",
-		["3.1.50"] = "/opt/env/emsdk-3.1.50/",
+		["1.39.8"] = "/opt/env/emsdk-1.39.8/", -- used in Qt 5.15 series
+		["2.0.14"] = "/opt/env/emsdk-2.0.14/", -- used in Qt 6.2 series
+		["3.1.25"] = "/opt/env/emsdk-3.1.25/", -- used in Qt 6.5 series
+		["3.1.50"] = "/opt/env/emsdk-3.1.50/", -- used in Qt 6.7 series
 	},
 	["cMakePath"] = {
 		["27"] = "/Users/fs/install-cmake3_27_6/bin",

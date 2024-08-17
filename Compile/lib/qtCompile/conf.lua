@@ -5154,6 +5154,7 @@ conf.q6_5mal = {
 		-DCMAKE_SKIP_INSTALL_RPATH=OFF
 		-DFEATURE_framework=ON
 		-DBUILD_qtgrpc=OFF
+		-DCMAKE_BUILD_RPATH="&OPENSSLDIR&/lib"
 	]],
 }
 
@@ -5202,6 +5203,7 @@ conf.q6_5malnf = {
 		-DCMAKE_SKIP_INSTALL_RPATH=OFF
 		-DFEATURE_framework=OFF
 		-DBUILD_qtgrpc=OFF
+		-DCMAKE_BUILD_RPATH="&OPENSSLDIR&/lib"
 	]],
 }
 
@@ -6610,6 +6612,7 @@ conf.q6_7mal = {
 		-DCMAKE_SKIP_INSTALL_RPATH=OFF
 		-DFEATURE_framework=ON
 		-DBUILD_qtgrpc=OFF
+		-DCMAKE_BUILD_RPATH="&OPENSSLDIR&/lib"
 	]],
 }
 
@@ -6659,6 +6662,7 @@ conf.q6_7malnf = {
 		-DCMAKE_SKIP_INSTALL_RPATH=OFF
 		-DFEATURE_framework=OFF
 		-DBUILD_qtgrpc=OFF
+		-DCMAKE_BUILD_RPATH="&OPENSSLDIR&/lib"
 	]],
 }
 

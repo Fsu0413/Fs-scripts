@@ -7273,8 +7273,8 @@ for name, value in pairs(conf) do
 		end
 		local staticConfVersion = string.gsub(value.qtVersion, [[^(%d+%.%d+%.%d+)(%-?%d*)$]], "%1")
 		value.hostToolsConf = Qt6StaticConf[valuehost][staticConfVersion]
-		value.hostToolsUrlwin = "http://10.0.1.6:8080/job/Qt/job/" .. value.hostToolsConf .. "/lastSuccessfulBuild/artifact/buildDir/" .. conf[value.hostToolsConf].name .. ".7z"
-		value.hostToolsUrlunix = "http://10.0.1.6:8080/job/Qt/job/" .. value.hostToolsConf .. "/lastSuccessfulBuild/artifact/buildDir/" .. conf[value.hostToolsConf].name .. ".tar.xz"
+		value.hostToolsUrlwin = "http://10.31.42.6:8080/job/Qt/job/" .. value.hostToolsConf .. "/lastSuccessfulBuild/artifact/buildDir/" .. conf[value.hostToolsConf].name .. ".7z"
+		value.hostToolsUrlunix = "http://10.31.42.6:8080/job/Qt/job/" .. value.hostToolsConf .. "/lastSuccessfulBuild/artifact/buildDir/" .. conf[value.hostToolsConf].name .. ".tar.xz"
 	end
 
 	-- add dump function

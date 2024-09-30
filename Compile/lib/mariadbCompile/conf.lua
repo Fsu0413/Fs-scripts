@@ -1092,11 +1092,11 @@ for name, value in pairs(conf) do
 
 	value.variant = value.variant or {}
 
-	value.binaryPackageUrlunix = "http://10.0.1.6:8080/job/MariaDB/job/" .. name .. "/lastSuccessfulBuild/artifact/buildDir/" .. value.name .. ".tar.xz"
-	value.sourcePackageUrlunix = "http://10.0.1.6/webdav/sources/mariadb-connector-c-" .. value.mariadbVersion .. "-src.tar.gz"
+	value.binaryPackageUrlunix = "http://10.31.42.6:8080/job/MariaDB/job/" .. name .. "/lastSuccessfulBuild/artifact/buildDir/" .. value.name .. ".tar.xz"
+	value.sourcePackageUrlunix = "http://10.31.42.6/webdav/sources/mariadb-connector-c-" .. value.mariadbVersion .. "-src.tar.gz"
 	value.sourcePackageBaseName = "mariadb-connector-c-" .. value.mariadbVersion .. "-src"
-	value.binaryPackageUrlwin = "http://10.0.1.6:8080/job/MariaDB/job/" .. name .. "/lastSuccessfulBuild/artifact/buildDir/" .. value.name .. ".7z"
-	value.sourcePackageUrlwin = "http://10.0.1.6/webdav/sources/mariadb-connector-c-" .. value.mariadbVersion .. "-src.zip"
+	value.binaryPackageUrlwin = "http://10.31.42.6:8080/job/MariaDB/job/" .. name .. "/lastSuccessfulBuild/artifact/buildDir/" .. value.name .. ".7z"
+	value.sourcePackageUrlwin = "http://10.31.42.6/webdav/sources/mariadb-connector-c-" .. value.mariadbVersion .. "-src.zip"
 
 	-- add dump function
 	value.dump = function(self)
